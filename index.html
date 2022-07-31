@@ -16,6 +16,7 @@
     <!--Icon Of Page-->
     <link rel="icon" href="assets/base/img/img-logo.ico" type="image/x-icon">
     <!--Css Linking-->
+    <link rel="stylesheet" href="assets/plugins/bootstrap-icons/bootstrap-icons.css">
     <!--Title Of Page-->
     <title>سیتی نت</title>
 </head>
@@ -37,7 +38,7 @@
             <div class="dropdown">
                 <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     ریال (IRR)
-                    <i class="fa-solid fa-chevron-down"></i>
+                    <i class="bi bi-chevron-down"></i>
                 </button>
                 <!--Drop Down List-->
                 <ul class="dropdown-menu">
@@ -113,8 +114,73 @@
         </div>
     </header>
 </section>
+<!--Second Section-->
+<section>
+    <main>
+        <form action="#">
+            <!--Top Side Buttons-->
+            <div>
+                <button type="button" class="form-page-button active" data-target="fly-page">
+                    <i class="bi bi-airplane"></i>
+                    پرواز
+                </button>
+                <button type="button" class="form-page-button" data-target="hotel-page">
+                    <i class="bi bi-house"></i>
+                    هتل
+                </button>
+                <button type="button" class="form-page-button" data-target="hotel-flight-page">
+                    <i class="bi bi-geo-alt"></i>
+                    پرواز + هتل
+                </button>
+            </div>
+            <!--Bottom Side-->
+            <div id="fly-page">
+                <!--Top Side-->
+                <div>
+                    <input type="radio" id="one-way" class="form-page-radio active" data-target="one-way-page">
+                    <label for="one-way">یک طرفه</label>
+                    <input type="radio" id="two-way" class="form-page-radio" data-target="two-way-page">
+                    <label for="two-way">رفت و برگشت</label>
+                    <input type="radio" id="more-ways" class="form-page-radio" data-target="more-ways-page">
+                    <label for="more-ways">چند مسیره</label>
+                </div>
+                <!--Bottom Side That Changes-->
+                <div>
+                    <!--Top Side-->
+                    <div>
+                        <!--Right Side-->
+                        <div>
+                            <i class="bi bi-geo-alt"></i>
+                            <h6>شهر یا فرودگاه مبدا</h6>
+                        </div>
+                        <!--Left Side-->
+                        <div>
+                            <i class="bi bi-geo-alt"></i>
+                            <h6>شهر یا فرودگاه مقصد</h6>
+                        </div>
+                    </div>
+                    <!--Bottom Side-->
+                    <div>
+                        <div>
+                            <i class="bi bi-calendar4-week"></i>
+                            <h6>تاریخ رفت</h6>
+                        </div>
+                        <div>
+                            <i class="bi bi-calendar4-week"></i>
+                            <h6>بدون برگشت</h6>
+                        </div>
+                        <div>
+                            <i class="bi bi-calendar4-week"></i>
+                            <h6>مسافران/کلاس کابین</h6>
+                        </div>
+                        <button type="submit">جست و جو</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+</section>
 <!--Js Linkings-->
 <noscript>لطفا جاوا اسکریپت مرورگر خود را فعال کنید.</noscript>
-<script src="https://kit.fontawesome.com/1db387e1fa.js" crossorigin="anonymous"></script>
 </body>
 </html>
