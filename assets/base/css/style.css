@@ -1,3 +1,4 @@
+/*Importing Font*/
 @import "../fonts/font.css";
 
 /*Variables*/
@@ -166,10 +167,14 @@ body {
 .my-px-6 {padding-left: 6rem;padding-right: 6rem;}
 .dropdown-menu.show {animation: dropdown-show .3s linear;}
 .transition {transition: .3s;}
+.my-fw-bold {font-family: IRANYekanBold, Tahoma, "Roboto Light", sans-serif;}
 
 .header-link:after {
-    margin-top: .5rem;
     content: '';
+    position: absolute;
+    right: 0;
+    top: 100%;
+    transform: translateY(500%);
     height: 1px;
     background-color: white;
     width: 0;
