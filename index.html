@@ -236,12 +236,11 @@
         circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
         circle.classList.add("ripple");
 
-        if (ripple) {ripple.remove();}
         button.appendChild(circle);
     }
 
     // Adding Event Listener On Each Button With Class Of ripple-button That Listens For Click And Calls createRipple Function
-    document.querySelectorAll('button.ripple-button').forEach(btn => btn.addEventListener("click", createRipple))
+    document.querySelectorAll('button.ripple-button').forEach(btn => btn.addEventListener("mousedown", createRipple))
 </script>
 </body>
 </html>
