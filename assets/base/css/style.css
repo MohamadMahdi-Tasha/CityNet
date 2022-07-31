@@ -164,10 +164,25 @@ body {
 .inset-0 {inset: 0;}
 .first-section {background-image: url('../img/home/first-section.png');}
 .first-section > main {background: linear-gradient(180deg, rgba(0,0,0,0.6), transparent);}
-.my-px-6 {padding-left: 6rem;padding-right: 6rem;}
+.my-px-6 {padding-left: 7rem;padding-right: 7rem;}
 .dropdown-menu.show {animation: dropdown-show .3s linear;}
 .transition {transition: .3s;}
 .my-fw-bold {font-family: IRANYekanBold, Tahoma, "Roboto Light", sans-serif;}
+
+.ripple-button > .ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 600ms linear;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.ripple-button {
+    position: relative;
+    overflow: hidden;
+    transition: .3s;
+    background-color: #6200ee;
+}
 
 .header-link:after {
     content: '';
@@ -192,12 +207,20 @@ body {
     clip-path: ellipse(70% 60% at 50% 40%);
 }
 
-
 /*Hover , active ,....*/
 .header-link:hover:after {width: 100%;}
+.ripple-button:hover {background-color: rgba(256,256,256,.1) !important;}
+.ripple-button:active {background-color: rgba(256,256,256,.3) !important;}
 
 /*Animations*/
 @keyframes dropdown-show {
     from {opacity: 0;}
     to {opacity: 1;}
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
 }

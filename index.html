@@ -114,7 +114,7 @@
                             </li>
                         </ul>
                     </div>
-                    <button class="border bg-transparent text-white px-3 py-1 d-flex justify-content-center align-items-center rounded">ورود/ثبت نام</button>
+                    <button class="border bg-transparent text-white px-4 py-2 d-flex justify-content-center align-items-center rounded ripple-button">ورود/ثبت نام</button>
                 </div>
             </div>
         </header>
@@ -222,5 +222,24 @@
 <!--Js Linkings-->
 <noscript>لطفا جاوا اسکریپت مرورگر خود را فعال کنید.</noscript>
 <script src="assets/plugins/bootstrap/bootstrap.bundle.min.js"></script>
+<script>
+    function createRipple(event) {
+        const button = event.currentTarget;
+        const circle = document.createElement("span");
+        const diameter = Math.max(button.clientWidth, button.clientHeight);
+        const radius = diameter / 2;
+        const ripple = button.getElementsByClassName("ripple")[0];
+
+        circle.style.width = circle.style.height = `${diameter}px`;
+        circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+        circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
+        circle.classList.add("ripple");
+
+        if (ripple) {ripple.remove();}
+        button.appendChild(circle);
+    }
+
+    document.querySelectorAll('.ripple-button').forEach(btn => btn.addEventListener("click", createRipple))
+</script>
 </body>
 </html>
