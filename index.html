@@ -31,11 +31,11 @@
             <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
                 <!--Right Side-->
                 <ul class="list-unstyled d-flex align-items-center gap-5 mb-0">
-                    <li><a href="index.html"><img src="assets/base/img/img-logo-typo.svg" alt="سیتی نت"></a></li>
-                    <li><a class="text-white my-fw-bold header-link d-flex flex-column position-relative" href="index.html">صفحه اصلی</a></li>
-                    <li><a class="text-white my-fw-bold header-link d-flex flex-column position-relative" href="blog.html">بلاگ</a></li>
-                    <li><a class="text-white my-fw-bold header-link d-flex flex-column position-relative" href="about-us.html">درباره ما</a></li>
-                    <li><a class="text-white my-fw-bold header-link d-flex flex-column position-relative" href="contact-us.html">تماس با ما</a></li>
+                    <li><a class="d-block" href="index.html"><img src="assets/base/img/img-logo-typo.svg" alt="سیتی نت"></a></li>
+                    <li><a class="text-white text-nowrap my-fw-bold header-link d-flex flex-column position-relative" href="index.html">صفحه اصلی</a></li>
+                    <li><a class="text-white text-nowrap my-fw-bold header-link d-flex flex-column position-relative" href="blog.html">بلاگ</a></li>
+                    <li><a class="text-white text-nowrap my-fw-bold header-link d-flex flex-column position-relative" href="about-us.html">درباره ما</a></li>
+                    <li><a class="text-white text-nowrap my-fw-bold header-link d-flex flex-column position-relative" href="contact-us.html">تماس با ما</a></li>
                 </ul>
                 <!--Left Side-->
                 <div class="d-flex align-items-center flex-wrap gap-3">
@@ -45,12 +45,12 @@
                             <i class="bi bi-chevron-down me-3"></i>
                         </button>
                         <!--Drop Down List-->
-                        <ul class="dropdown-menu transition">
+                        <ul class="dropdown-menu transition overflow-hidden">
                             <li>
-                                <div class="dropdown-item">
+                                <div class="d-flex align-items-center justify-content-between gap-5 p-2 dropdown-item ripple-button gray" data-value="(IRR)">
                                     <!--Right Side-->
-                                    <div>
-                                        <img src="assets/base/img/header/img-ir.svg" alt="Iran">
+                                    <div class="align-items-center d-flex gap-3">
+                                        <img src="assets/base/img/header/img-ir.svg" alt="Iran" width="50%">
                                         <h6>ریال</h6>
                                     </div>
                                     <!--Left Side-->
@@ -58,10 +58,10 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="dropdown-item">
+                                <div class="d-flex align-items-center justify-content-between gap-5 p-2 dropdown-item ripple-button gray" data-value="(USD)">
                                     <!--Right Side-->
-                                    <div>
-                                        <img src="assets/base/img/header/img-us.svg" alt="USA">
+                                    <div class="align-items-center d-flex gap-3">
+                                        <img src="assets/base/img/header/img-us.svg" alt="USA" width="50%">
                                         <h6>دلار</h6>
                                     </div>
                                     <!--Left Side-->
@@ -69,10 +69,10 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="dropdown-item">
+                                <div class="d-flex align-items-center justify-content-between gap-5 p-2 dropdown-item ripple-button gray" data-value="(EUR)">
                                     <!--Right Side-->
-                                    <div>
-                                        <img src="assets/base/img/header/img-eu.svg" alt="EURO">
+                                    <div class="align-items-center d-flex gap-3">
+                                        <img src="assets/base/img/header/img-eu.svg" alt="EURO" width="50%">
                                         <h6>یورو</h6>
                                     </div>
                                     <!--Left Side-->
@@ -80,10 +80,10 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="dropdown-item">
+                                <div class="d-flex align-items-center justify-content-between gap-5 p-2 dropdown-item ripple-button gray" data-value="(DHS)">
                                     <!--Right Side-->
-                                    <div>
-                                        <img src="assets/base/img/header/img-ae.svg" alt="qatar">
+                                    <div class="align-items-center d-flex gap-3">
+                                        <img src="assets/base/img/header/img-ae.svg" alt="qatar" width="50%">
                                         <h6>درهم</h6>
                                     </div>
                                     <!--Left Side-->
@@ -91,10 +91,10 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="dropdown-item">
+                                <div class="d-flex align-items-center justify-content-between gap-5 p-2 dropdown-item ripple-button gray" data-value="(TRY)">
                                     <!--Right Side-->
-                                    <div>
-                                        <img src="assets/base/img/header/img-tr.svg" alt="Turkey">
+                                    <div class="align-items-center d-flex gap-3">
+                                        <img src="assets/base/img/header/img-tr.svg" alt="Turkey" width="50%">
                                         <h6>لیر ترکیه</h6>
                                     </div>
                                     <!--Left Side-->
@@ -102,10 +102,10 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="dropdown-item">
+                                <div class="d-flex align-items-center justify-content-between gap-5 p-2 dropdown-item ripple-button gray" data-value="(IQD)">
                                     <!--Right Side-->
-                                    <div>
-                                        <img src="assets/base/img/header/img-iq.svg" alt="Iraq">
+                                    <div class="align-items-center d-flex gap-3">
+                                        <img src="assets/base/img/header/img-iq.svg" alt="Iraq" width="50%">
                                         <h6>دینار عراق</h6>
                                     </div>
                                     <!--Left Side-->
@@ -222,25 +222,6 @@
 <!--Js Linkings-->
 <noscript>لطفا جاوا اسکریپت مرورگر خود را فعال کنید.</noscript>
 <script src="assets/plugins/bootstrap/bootstrap.bundle.min.js"></script>
-<script>
-    // A Function That Creates Inner Span In Ripple Buttons And Makes Ripple Effect
-    function createRipple(event) {
-        const button = event.currentTarget;
-        const circle = document.createElement("span");
-        const diameter = Math.max(button.clientWidth, button.clientHeight);
-        const radius = diameter / 2;
-        const ripple = button.getElementsByClassName("ripple")[0];
-
-        circle.style.width = circle.style.height = `${diameter}px`;
-        circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
-        circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
-        circle.classList.add("ripple");
-
-        button.appendChild(circle);
-    }
-
-    // Adding Event Listener On Each Button With Class Of ripple-button That Listens For Click And Calls createRipple Function
-    document.querySelectorAll('button.ripple-button').forEach(btn => btn.addEventListener("mousedown", createRipple))
-</script>
+<script src="assets/base/js/ripple-btn.js"></script>
 </body>
 </html>

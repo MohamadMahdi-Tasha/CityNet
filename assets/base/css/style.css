@@ -168,6 +168,10 @@ body {
 .dropdown-menu.show {animation: dropdown-show .3s linear;}
 .transition {transition: .3s;}
 .my-fw-bold {font-family: IRANYekanBold, Tahoma, "Roboto Light", sans-serif;}
+.dropdown-item {border-radius: 0 !important;transition: .3s}
+button[data-bs-toggle="dropdown"] > .bi:before {transition: .3s}
+button[data-bs-toggle="dropdown"].show > .bi:before {transform: rotate(180deg);}
+header .dropdown-item h6 {font-size: .7rem;margin-bottom: 0;}
 
 .ripple-button > .ripple {
     position: absolute;
@@ -211,6 +215,10 @@ body {
 .header-link:hover:after {width: 100%;}
 .ripple-button:hover {background-color: rgba(256,256,256,.1) !important;}
 .ripple-button:active {background-color: rgba(256,256,256,.3) !important;}
+.ripple-button.gray {background-color: white;}
+.ripple-button.gray:hover {background-color: var(--v-secondary-lighten5) !important;}
+.ripple-button.gray:active {background-color: var(--v-secondary-lighten4) !important;color: #000;}
+.ripple-button.gray > .ripple {background-color: var(--v-secondary-lighten3) !important;}
 
 /*Animations*/
 @keyframes dropdown-show {
