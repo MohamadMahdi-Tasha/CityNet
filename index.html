@@ -223,6 +223,7 @@
 <noscript>لطفا جاوا اسکریپت مرورگر خود را فعال کنید.</noscript>
 <script src="assets/plugins/bootstrap/bootstrap.bundle.min.js"></script>
 <script>
+    // A Function That Creates Inner Span In Ripple Buttons And Makes Ripple Effect
     function createRipple(event) {
         const button = event.currentTarget;
         const circle = document.createElement("span");
@@ -239,7 +240,8 @@
         button.appendChild(circle);
     }
 
-    document.querySelectorAll('.ripple-button').forEach(btn => btn.addEventListener("click", createRipple))
+    // Adding Event Listener On Each Button With Class Of ripple-button That Listens For Click And Calls createRipple Function
+    document.querySelectorAll('button.ripple-button').forEach(btn => btn.addEventListener("click", createRipple))
 </script>
 </body>
 </html>
