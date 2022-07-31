@@ -1,3 +1,5 @@
+@import "../fonts/font.css";
+
 /*Variables*/
 :root {
     --v-anchor-base: #dd9933;
@@ -144,11 +146,18 @@
 }
 
 /*CSS Reset*/
-body {scroll-behavior: smooth;overflow-x: hidden;background-color: #f5f6fa;}
 img {pointer-events: none}
 button {cursor: pointer;}
 a {text-decoration: none}
 ul, ol, li {padding: 0 !important;}
+
+body {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    background-color: #f5f6fa;
+    font-size: .8rem !important;
+    font-family: IRANYekan, Tahoma, "Roboto Light", sans-serif;
+}
 
 /*Styles*/
 .inset-0 {inset: 0;}
