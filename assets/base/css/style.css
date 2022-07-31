@@ -144,8 +144,46 @@
 }
 
 /*CSS Reset*/
-body {scroll-behavior: smooth;overflow-x: hidden;}
+body {scroll-behavior: smooth;overflow-x: hidden;background-color: #f5f6fa;}
 img {pointer-events: none}
 button {cursor: pointer;}
 a {text-decoration: none}
 ul, ol, li {padding: 0 !important;}
+
+/*Styles*/
+.inset-0 {inset: 0;}
+.first-section {background-image: url('../img/home/first-section.png');}
+.first-section > main {background: linear-gradient(180deg, rgba(0,0,0,0.6), transparent);}
+.my-px-6 {padding-left: 6rem;padding-right: 6rem;}
+.dropdown-menu.show {animation: dropdown-show .3s linear;}
+.transition {transition: .3s;}
+
+.header-link:after {
+    margin-top: .5rem;
+    content: '';
+    height: 1px;
+    background-color: white;
+    width: 0;
+    transition: .3s;
+}
+
+.bg-cover-center {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.first-section > main,  .first-section{
+    min-height: 75vh;
+    clip-path: ellipse(70% 60% at 50% 40%);
+}
+
+
+/*Hover , active ,....*/
+.header-link:hover:after {width: 100%;}
+
+/*Animations*/
+@keyframes dropdown-show {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
