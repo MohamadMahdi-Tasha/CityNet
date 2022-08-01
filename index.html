@@ -120,6 +120,82 @@
     <!--Main Side (Added to Add Some Adjustments)-->
     <main></main>
 </section>
+<!--Second Section-->
+<section>
+    <main>
+        <form action="#">
+            <!--Top Side Buttons-->
+            <div>
+               <button class="top-side-page-buttons" data-page-target="flight">
+                    <i class="bi bi-airplane"></i>
+                    پرواز
+                </button>
+                <button class="top-side-page-buttons" data-page-target="hotel">
+                    <i class="bi bi-house"></i>
+                    هتل
+                </button>
+                <button class="top-side-page-buttons" data-page-target="flight-and-hotel">
+                    <i class="bi bi-geo-alt"></i>
+                    پرواز+هتل
+                </button>
+            </div>
+            <!--Bottom Side That Changes-->
+            <div>
+                <div class="bottom-page" id="flight">
+                    <!--Top Side-->
+                    <div>
+                        <input required name="fly-ways" data-page-target="one-way" id="one-way-radio" class="inner-page-toggler" type="radio">
+                        <label for="one-way-radio">یک طرفه</label>
+                        <input required name="fly-ways" data-page-target="two-way" id="two-way-radio" class="inner-page-toggler" type="radio">
+                        <label for="two-way-radio">رفت و برگشت</label>
+                        <input required name="fly-ways" data-page-target="more-ways" id="more-ways-radio" class="inner-page-toggler" type="radio">
+                        <label for="more-ways-radio">چند مسیره</label>
+                    </div>
+                    <!--Bottom Side That Changes-->
+                    <div>
+                        <div id="one-way">
+                            <!--Top Side-->
+                            <div>
+                                <div class="intractive-input-component">
+                                    <i class="bi bi-geo-alt"></i>
+                                    <h6>شهر یا فرودگاه مبدا</h6>
+                                    <input type="text" required>
+                                </div>
+                                <!--Switch Button-->
+                                <button><i class="bi bi-arrow-left-right"></i></button>
+                                <div class="intractive-input-component">
+                                    <i class="bi bi-geo-alt"></i>
+                                    <h6>شهر یا فرودگاه مقصد</h6>
+                                    <input type="text" required>
+                                </div>
+                            </div>
+                            <!--Bottom Side-->
+                            <div>
+                                <div class="intractive-input-component date">
+                                    <i class="bi bi-calendar4-week"></i>
+                                    <h6>تاریخ پرواز</h6>
+                                </div>
+                                <div class="intractive-input-component disabled">
+                                    <i class="bi bi-calendar4-week"></i>
+                                    <h6>بدون برگشت</h6>
+                                </div>
+                                <div class="intractive-input-component focused">
+                                    <div>
+                                        <i class="bi bi-person"></i>
+                                        <h6>مسافران/کلاس کابین</h6>
+                                        <h3>1مسافر ، اکونومی</h3>
+                                    </div>
+                                    <i class="bi bi-chevron-down"></i>
+                                </div>
+                                <button class="submit-btn">جستوجو</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+</section>
 <!--Footer-->
 <footer>
     <main>
