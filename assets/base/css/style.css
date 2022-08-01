@@ -1,0 +1,86 @@
+/*Importing Our Font*/
+@import "../fonts/font.css";
+
+/*CSS RESET*/
+* {outline: none;}
+button {cursor: pointer;transition: .3s}
+ul, ol, li {padding: 0 !important;}
+a {text-decoration: none}
+img {pointer-events: none}
+body {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    background-color: #f5f6fa;
+    font-size: .9rem !important;
+    font-family: IRANYekan, "Roboto Light", Tahoma, sans-serif !important;
+}
+
+/*Styles*/
+header .dropdown-menu {width: 15rem;}
+header .dropdown-item h6 {font-size: .8rem;margin-bottom: 0;}
+button[data-bs-toggle="dropdown"].show > i:before{transform: rotate(180deg);}
+button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
+.my-fw-bold {font-family: IRANYekanBold, "Roboto Light", Tahoma, sans-serif !important;}
+.px-7rem {padding-right: 7rem;padding-left: 7rem;}
+.dropdown-menu.show {animation: dropdown-show .3s linear;}
+.inset-0 {inset: 0;}
+.dropdown-item {transition: .3s;}
+.ripple-btn > .ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 600ms linear;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.ripple-btn {
+    position: relative;
+    overflow: hidden;
+    transition: background .5s;
+    color: #fff;
+}
+
+.header-link:after {
+    content: '';
+    height: 1px;
+    width: 0;
+    position: absolute;
+    top: 130%;
+    right: 0;
+    background-color: white;
+    transform: translateY(100%);
+    transition: .3s;
+}
+
+.home-first-section > main {
+    min-height: 80vh;
+    background: linear-gradient(180deg, rgba(0,0,0,.6), transparent);
+}
+
+.home-first-section {
+    background-image: url('../img/home/first-section.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh;
+    clip-path: ellipse(80% 60% at 50% 40%);
+}
+
+/*Animations*/
+@keyframes dropdown-show {
+    from{opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/*Hover, Active, ...*/
+.header-link:hover:after {width: 100%;}
+.ripple-btn:hover {background-color: rgba(256,256,256,.1) !important;}
+.ripple-btn:active {background-color: rgba(256,256,256,.2) !important;}
+header .dropdown-item:hover {background-color: rgba(185, 185, 185, 0.5) !important;}
+header .dropdown-item:active {background-color: rgba(185, 185, 185, 1) !important;}
