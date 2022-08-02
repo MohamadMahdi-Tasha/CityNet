@@ -2,11 +2,12 @@ const intractiveInputComponentInput = document.querySelectorAll('.intractive-inp
 const plusBtns = document.querySelectorAll('.plus-btn');
 const minusBtns = document.querySelectorAll('.minus-btn');
 const popularCitysBtns = document.querySelectorAll('.popular-citys-btn');
+const switchBtn = document.querySelectorAll('.switch-btn');
 
 intractiveInputComponentInput.forEach(item => {
     item.addEventListener('click', () => {
-        item.classList.toggle('focused');
-        item.firstElementChild.nextElementSibling.focus()
+        item.classList.add('focused');
+        item.firstElementChild.nextElementSibling.focus();
     })
 })
 
@@ -36,6 +37,7 @@ popularCitysBtns.forEach(item => {
         const brand = document.createElement('span');
         const name = document.createElement('h6');
         const component = item.parentElement.parentElement.parentElement;
+        const popCity = component.lastElementChild;
         let brandToShow = '';
         let nameToShow = '';
         let isPrimary = false;
@@ -70,18 +72,32 @@ popularCitysBtns.forEach(item => {
         brand.textContent = brandToShow;
         name.textContent = nameToShow;
 
-        if (!component.contains(document.querySelector('.selected-location'))) {
-            component.appendChild(div);
-        } else {
-            component.lastElementChild.replaceWith(div)
-        }
+        if (!component.contains(document.querySelector('.selected-location'))) {component.appendChild(div);}
+        else {component.lastElementChild.replaceWith(div)}
 
         div.appendChild(iconHolder);
         iconHolder.appendChild(icon);
         iconHolder.appendChild(brand);
         div.appendChild(name);
 
-        item.parentElement.parentElement.parentElement.classList.toggle('focused')
+        component.firstElementChild.nextElementSibling.remove()
+        popCity.classList.add('wasShowing')
     })
 
+})
+
+
+switchBtn.forEach(item => {
+    item.addEventListener('click', () => {
+        const rightSideComponentContentToChange = document.querySelector('.top-side-flight > .intractive-input-component:first-of-type .selected-location');
+        const leftSideComponentContentToChange = document.querySelector('.top-side-flight > .intractive-input-component:last-of-type .selected-location');
+        const cloneOfRightSide = rightSideComponentContentToChange.cloneNode(true);
+        const cloneOfLeftSide = leftSideComponentContentToChange.cloneNode(true);
+
+        rightSideComponentContentToChange.replaceWith(cloneOfLeftSide)
+        leftSideComponentContentToChange.replaceWith(cloneOfRightSide)
+
+        item.classList.add('animation');
+        item.addEventListener('animationend', () => {item.classList.remove('animation')})
+    })
 })
