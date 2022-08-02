@@ -2,23 +2,22 @@
 const inputsInIntractiveInputComponent = document.querySelectorAll('.intractive-input-component.input');
 const intractiveInputComponentDate = document.querySelectorAll('.intractive-input-component.date');
 const intractiveInputComponentCounterCounter = document.querySelector('.intractive-input-component.counter > .counter-select');
-const switchButton = document.querySelectorAll('.switch-btn');
 
 // Selecting Each Interactive Component In Form That Works With Inputs That
 inputsInIntractiveInputComponent.forEach(item => {
     // Adding Event Listener Of Click That Focuses To Input In Component
-    item.addEventListener('click', () => {item.lastElementChild.focus()})
+    item.addEventListener('click', () => {item.firstElementChild.nextElementSibling.focus()})
 
     // Adding Event Listener On Input And Listens To Click And That Add Class Of 'focused' If Input Is Empty
-    item.lastElementChild.addEventListener('focus', () => {
-        if (item.lastElementChild.value === "") {
+    item.firstElementChild.nextElementSibling.addEventListener('focus', () => {
+        if (item.firstElementChild.nextElementSibling.value === "") {
             item.classList.toggle('focused')
         }
     })
 
     // Adding Event Listener Of Blur On Input In Component That Removes 'focused' Class  If Input Is Empty
-    item.lastElementChild.addEventListener('blur', () => {
-        if (item.lastElementChild.value === "") {item.classList.toggle('focused')}
+    item.firstElementChild.nextElementSibling.addEventListener('blur', () => {
+        if (item.firstElementChild.nextElementSibling.value === "") {item.classList.toggle('focused')}
     })
 })
 
