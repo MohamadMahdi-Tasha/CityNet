@@ -54,6 +54,10 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .passenger-counter {width: 20rem !important;}
 .passenger-counter h6{font-size: .8rem;}
 .passenger-counter h6 > span{color: rgba(185, 185, 185, 1);}
+.my-bg-primary {background-color: rgb(81, 137, 246);}
+.my-bg-pink {background-color: rgb(213, 12, 106);}
+.font-small {font-size: .8rem;}
+.font-smallx {font-size: .6rem;}
 
 .popular-citys-btn > span{
     aspect-ratio: 1/1;
@@ -169,7 +173,7 @@ header .dropdown-item:active {background-color: rgba(185, 185, 185, 1) !importan
 .switch-btn:hover {background-color: #e6e6e6 !important;}
 .submit-btn:hover, .submit-btn:active {background-color: var(--primary-base) !important;}
 .hover-text-pink:hover {color: var(--pink) !important;}
-.intractive-input-component > input:focus ~ div {
-    opacity: 1;
-    pointer-events: visible;
+.intractive-input-component.focused > input ~ div{
+    opacity: 1 !important;
+    pointer-events: visible !important;
 }

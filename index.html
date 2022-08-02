@@ -315,13 +315,15 @@
                                                 <button class="minus-btn bg-transparent border-0 rounded-3">-</button>
                                             </div>
                                         </div>
-                                        <select class="form-select form-select-sm" aria-label="Default select example">
-                                            <option value="اکونومی">اکونومی</option>
-                                            <option value="بیزینس">بیزینس</option>
-                                            <option value="پریمیوم">پریمیوم</option>
-                                            <option value="فرست">فرست</option>
-                                            <option value="همه کلاس ها">همه کلاس ها</option>
-                                        </select>
+                                        <div class="border-top pt-3">
+                                            <select class="form-select form-select-sm rounded-3 intractive-input-component h-auto" aria-label="Default select example">
+                                                <option value="اکونومی">اکونومی</option>
+                                                <option value="بیزینس">بیزینس</option>
+                                                <option value="پریمیوم">پریمیوم</option>
+                                                <option value="فرست">فرست</option>
+                                                <option value="همه کلاس ها">همه کلاس ها</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                                 <button type="submit" class="submit-btn border-0 rounded-3 text-white w-25 ripple-btn">جستجو</button>
@@ -371,10 +373,7 @@
 <script src="assets/plugins/bootstrap/bootstrap.bundle.min.js"></script>
 <script src="assets/base/js/ripple-btn.js"></script>
 <script src="assets/base/js/intractive-components.js"></script>
-<script src="assets/base/js/passengers-counter.js"></script>
 <script src="assets/plugins/MCDatepicker/dist/mc-calendar.min.js"></script>
-<script>
-    const myDatePicker = MCDatepicker.create({el: '#example',})
-</script>
+<script>const myDatePicker = MCDatepicker.create({el: '#example',})</script>
 </body>
 </html>
