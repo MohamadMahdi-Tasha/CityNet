@@ -43,46 +43,21 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .intractive-input-component > input{pointer-events: none;}
 .intractive-input-component i {margin-left: .5rem;}
 .text-base {color: var(--primary-base);}
-.date-reset-btn {color: rgba(0,0,0,.8);transition: .3s}
-.date-picker-bottom-side span:nth-of-type(7),
-.date-picker-bottom-side span:nth-of-type(14),
-.date-picker-bottom-side span:nth-of-type(21),
-.date-picker-bottom-side span:nth-of-type(28) {color: red;}
-.date-picker-bottom-side > div {grid-template-columns: repeat(7, 1fr);}
-.date-picker-bottom-side > div:first-of-type > span {color: rgba(142, 142, 142, 0.8);}
-.date-calender-next-prev-btn {background-color: rgba(185, 185, 185, .3);}
-.date-picker-bottom-side span {display: flex;align-items: center;justify-content: center;}
-.date-picker-bottom-side span,
-.date-calender-next-prev-btn{width: 40px;aspect-ratio: 1/1;}
-.date-picker-bottom-side > div:last-of-type > span {border: 1px solid transparent;border-radius: 10px;cursor: pointer;}
-.date-picker-bottom-side > div:last-of-type > span.active {background-color: #0466c8 !important;color: white !important;}
-.date-picker-bottom-side > div:last-of-type > span.today {border-color: #00af87 !important;color: #00af87 !important;}
-.date-picker-mid > div:first-of-type {border-left: 1px dashed rgba(185, 185, 185, .5);}
 .today-btn, .calender-type-button {color: rgba(185, 185, 185, 1);}
-.calender-type-button.active {background-color: #f3f7fc !important;color: #0466c8;}
-.date-picker-bottom-side > div:last-of-type > span.today-selected {
-    border-color: #00af87 !important;
-    background-color: #00af87 !important;
-    color: white !important;
-    animation: selected-today 1s linear;
+.intractive-input-component.date.focused::-webkit-calendar-picker-indicator {top: 0;transform: translateY(-50%);}
+.intractive-input-component.date::-webkit-calendar-picker-indicator {
+    transition: .3s;
+    right: 7%;
+    position: absolute;
+    background-color: white;
+    padding-right: 1rem;
+    padding-left: 1rem;
 }
 
 .today-btn > span {
     width: 10px;
     background-color: #00af87;
     aspect-ratio: 1/1;
-}
-
-.date-picker {
-    pointer-events: none;
-    opacity: 0;
-    z-index: 1000;
-    width: 900px;
-    top: 0;
-    right: 0;
-    transform: translateY(12%);
-    cursor: default;
-    transition: .3s;
 }
 
 .intractive-input-component.disbled {
@@ -184,6 +159,3 @@ header .dropdown-item:active {background-color: rgba(185, 185, 185, 1) !importan
 .switch-btn:hover {background-color: #e6e6e6 !important;}
 .submit-btn:hover, .submit-btn:active {background-color: var(--primary-base) !important;}
 .hover-text-pink:hover {color: var(--pink) !important;}
-.date-reset-btn:hover {background-color: rgba(134, 134, 134, .2) !important;}
-.date-picker-bottom-side > div:last-of-type > span:hover {border-color: #0466c8;color: #0466c8;}
-.calender-type-button:not(.active):hover {background-color: rgba(185, 185, 185, .3) !important}
