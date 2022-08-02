@@ -183,19 +183,65 @@
                             </div>
                             <!--Bottom Side-->
                             <div class="d-flex gap-3">
-                                <input type="date" class="intractive-input-component date overflow-visible position-relative w-25 px-3 py-2 d-flex align-items-center ">
+                                <input type="date" required class="intractive-input-component date overflow-visible position-relative w-25 px-3 py-2 d-flex align-items-center ">
                                 <div class="intractive-input-component position-relative w-25 px-3 py-2 d-flex align-items-center disbled">
                                     <h6>
                                         <i class="bi bi-calendar4-week"></i>
                                         بدون برگشت
                                     </h6>
                                 </div>
-                                <div class="intractive-input-component date position-relative w-25 px-3 py-2 d-flex align-items-center">
+                                <div data-value="" class="intractive-input-component counter position-relative w-25 px-3 py-2 d-flex align-items-center">
                                     <h6>
                                         <i class="bi bi-person"></i>
                                         مسافران/کلاس کابین
                                     </h6>
-                                    <h3 class="d-none">1مسافر ، اکونومی</h3>
+                                    <h3>
+                                        <span id="passenger-number">1</span>
+                                        مسافر ،
+                                        <span id="passenger-type">اکونومی</span>
+                                    </h3>
+                                    <div class="position-absolute bg-white shadow rounded-4 p-4 top-100 w-100 right-0 counter-select">
+                                        <div class="d-flex align-items-center justify-content-between mb-3">
+                                            <h6>
+                                                بزرگسال
+                                                <span>(+12)</span>
+                                            </h6>
+                                            <div class="d-flex align-items-center">
+                                                <button type="button" class="plus-btn rounded-3 border-0">+</button>
+                                                <h6 id="adult-num" class="ms-3 me-3">1</h6>
+                                                <button type="button" class="minus-btn rounded-3 border-0">-</button>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between mb-3">
+                                            <h6>
+                                                کودک
+                                                <span>(2 تا 12 سال)</span>
+                                            </h6>
+                                            <div class="d-flex align-items-center">
+                                                <button type="button" class="plus-btn rounded-3 border-0">+</button>
+                                                <h6 id="baby-num" class="ms-3 me-3">0</h6>
+                                                <button type="button" class="minus-btn rounded-3 border-0">-</button>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between mb-3">
+                                            <h6>
+                                                نوزاد
+                                                <span>(-2)</span>
+                                            </h6>
+                                            <div class="d-flex align-items-center">
+                                                <button type="button" class="plus-btn rounded-3 border-0">+</button>
+                                                <h6 id="new-born-num" class="ms-3 me-3">0</h6>
+                                                <button type="button" class="minus-btn rounded-3 border-0">-</button>
+                                            </div>
+                                        </div>
+                                        <select id="select-class" class="form-select" aria-label="Default select example">
+                                            <option value="اکونومی" selected>اکونومی</option>
+                                            <option value="بیزینس">بیزینس</option>
+                                            <option value="پریمیوم">پریمیوم</option>
+                                            <option value="فرست کلس">فرست کلس</option>
+                                            <option value="همه کلاس ها">همه کلاس ها</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <button type="submit" class="submit-btn border-0 rounded-3 text-white w-25 ripple-btn">جستجو</button>
                             </div>
@@ -245,7 +291,11 @@
 <script src="assets/base/js/ripple-btn.js"></script>
 <script>
     const inputsInIntractiveInputComponent = document.querySelectorAll('.intractive-input-component.input');
-    const intractiveInputComponentDate = document.querySelectorAll('.intractive-input-component.date')
+    const intractiveInputComponentDate = document.querySelectorAll('.intractive-input-component.date');
+    const intractiveInputComponentCounter = document.querySelectorAll('.intractive-input-component.counter');
+    const intractiveInputComponentCounterCounter = document.querySelector('.intractive-input-component.counter > .counter-select');
+    const plusBtn =  document.querySelectorAll('.plus-btn');
+    const minusBtn =  document.querySelectorAll('.minus-btn');
     const switchButton = document.querySelectorAll('.switch-btn');
 
     inputsInIntractiveInputComponent.forEach(item => {
@@ -266,6 +316,46 @@
         item.addEventListener('click', () => {
             item.classList.toggle('focused')
         })
+    })
+
+    intractiveInputComponentCounter.forEach(item => {
+        item.addEventListener('click', () => {
+            item.classList.add('focused');
+        })
+    })
+
+    plusBtn.forEach(item => {
+        item.addEventListener('click', () => {
+            const number = item.nextElementSibling;
+            let currentValue  = Number(item.nextElementSibling.textContent);
+
+            if (currentValue !== 9) {currentValue ++;}
+            number.textContent = currentValue;
+        })
+    })
+
+    minusBtn.forEach(item => {
+        item.addEventListener('click', () => {
+            const number = item.previousElementSibling;
+            let currentValue  = Number(item.previousElementSibling.textContent);
+
+            if (currentValue !== 0) {currentValue --;}
+            number.textContent = currentValue;
+        })
+    })
+
+    intractiveInputComponentCounterCounter.addEventListener('click', () => {
+       const newBornNum = document.getElementById("new-born-num").textContent;
+       const babyNum = document.getElementById("baby-num").textContent;
+       const adultNum = document.getElementById("adult-num").textContent;
+       const passengerNumber = document.getElementById('passenger-number');
+
+       passengerNumber.textContent = Number(newBornNum) + Number(babyNum) + Number(adultNum);
+    })
+
+    document.getElementById('select-class').addEventListener('change', () => {
+        const passengerType = document.getElementById('passenger-type');
+        passengerType.textContent = document.getElementById('select-class').value;
     })
 </script>
 </body>

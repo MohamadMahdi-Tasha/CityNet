@@ -44,7 +44,23 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .intractive-input-component i {margin-left: .5rem;}
 .text-base {color: var(--primary-base);}
 .today-btn, .calender-type-button {color: rgba(185, 185, 185, 1);}
+.intractive-input-component.date:focus::-webkit-calendar-picker-indicator,
 .intractive-input-component.date.focused::-webkit-calendar-picker-indicator {top: 0;transform: translateY(-50%);}
+.intractive-input-component.counter.focused > :last-of-type {opacity: 1;pointer-events: visible;}
+.intractive-input-component.counter > div:last-of-type {opacity: 0;pointer-events: none;transition: .3s}
+.intractive-input-component.counter > h6 {font-size: .7rem;}
+.intractive-input-component.counter > h3 {font-size: .8rem;}
+.right-0 {right: 0;}
+.counter-select {width: 20rem !important;transform: translateY(1%);}
+.counter-select h6 > span {color: rgba(0,0,0,.5);}
+.plus-btn {color: var(--primary-base);}
+.plus-btn, .minus-btn {
+    aspect-ratio: 1/1;
+    width: 30px;
+    background-color: #ececec;
+    font-size: 1.25rem;
+}
+
 .intractive-input-component.date::-webkit-calendar-picker-indicator {
     transition: .3s;
     right: 7%;
