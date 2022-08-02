@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="assets/plugins/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/plugins/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="assets/base/css/style.css">
+    <link rel="stylesheet" href="assets/plugins/MCDatepicker/dist/mc-calendar.min.css" />
     <!--Title Of Page-->
     <title>سیتی نت</title>
 </head>
@@ -164,13 +165,13 @@
                         <div id="one-way">
                             <!--Top Side-->
                             <div class="d-flex gap-3 position-relative mb-3">
-                                <div class="intractive-input-component input position-relative w-50 px-3 py-2 d-flex align-items-center">
+                                <div class="intractive-input-component position-relative w-50 px-3 py-2 d-flex align-items-center">
                                     <h6>
                                         <i class="bi bi-geo-alt"></i>
                                         شهر یا فرودگاه مبدا
                                     </h6>
                                     <input class="border-0 bg-transparent w-100" type="text" required>
-                                    <div class="bg-white shadow rounded-4 position-absolute top-100 popular-citys p-4 right-0">
+                                    <div class="bg-white shadow rounded-4 position-absolute top-100 form-drop-downs p-4 right-0">
                                         <h6 class="mb-5">شهر و فرودگاه های پرتردد</h6>
                                         <div class="popular-city-btns-holder d-grid gap-3 position-relative">
                                             <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تهران</button>
@@ -199,13 +200,13 @@
                                 </div>
                                 <!--Switch Button-->
                                 <button class="switch-btn rounded-circle position-absolute bg-white" type="button"><i class="bi bi-arrow-left-right"></i></button>
-                                <div class="intractive-input-component input position-relative w-50 px-3 py-2 d-flex align-items-center">
+                                <div class="intractive-input-component position-relative w-50 px-3 py-2 d-flex align-items-center">
                                     <h6>
                                         <i class="bi bi-geo-alt"></i>
                                         شهر یا فرودگاه مقصد
                                     </h6>
                                     <input class="border-0 bg-transparent w-100" type="text" required>
-                                    <div class="bg-white shadow rounded-4 position-absolute top-100 popular-citys p-4 right-0">
+                                    <div class="bg-white shadow rounded-4 position-absolute top-100 form-drop-downs p-4 right-0">
                                         <h6 class="mb-5">شهر و فرودگاه های پرتردد</h6>
                                         <div class="popular-city-btns-holder d-grid gap-3 position-relative">
                                             <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تهران</button>
@@ -235,44 +236,72 @@
                             </div>
                             <!--Bottom Side-->
                             <div class="d-flex gap-3">
-                                <input type="date" required class="intractive-input-component date overflow-visible position-relative w-25 px-3 py-2 d-flex align-items-center ">
-                                <div class="intractive-input-component position-relative w-25 px-3 py-2 d-flex align-items-center disbled">
+                                <div class="intractive-input-component position-relative w-25 px-3 py-2 d-flex align-items-center">
                                     <h6>
-                                        <i class="bi bi-calendar4-week"></i>
-                                        بدون برگشت
+                                        <i class="bi bi-geo-alt"></i>
+                                        شهر یا فرودگاه مبدا
                                     </h6>
+                                    <input id="example" autocomplete="no" class="border-0 bg-transparent w-100" type="text" required>
                                 </div>
-                                <div data-value="" class="intractive-input-component counter position-relative w-25 px-3 py-2 d-flex align-items-center">
+                                <div class="intractive-input-component disabled position-relative w-25 px-3 py-2 d-flex align-items-center">
                                     <h6>
-                                        <i class="bi bi-person"></i>
-                                        مسافران/کلاس کابین
+                                        <i class="bi bi-geo-alt"></i>
+                                        شهر یا فرودگاه مبدا
                                     </h6>
-                                    <h3>
-                                        <span id="passenger-number">1</span>
-                                        مسافر ،
-                                        <span id="passenger-type">اکونومی</span>
-                                    </h3>
-                                    <div class="position-absolute bg-white shadow rounded-4 p-4 top-100 w-100 right-0 counter-select">
+                                    <div class="bg-white shadow rounded-4 position-absolute top-100 form-drop-downs p-4 right-0">
+                                        <h6 class="mb-5">شهر و فرودگاه های پرتردد</h6>
+                                        <div class="popular-city-btns-holder d-grid gap-3 position-relative">
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تهران</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>کیش</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>استانبول</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>دبی</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>مشهد</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>اهواز</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>انکارا</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>لندن</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تبریز</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>قشم</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تورنتو</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>ایروان</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>بندر عباس</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>شیراز</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>مسقط</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>پکن</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>رشت</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>اصفهان</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>نجف</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>باکو</button>
+                                            <div class="top-of-buttons-popular-citys w-100 h-100 position-absolute top-0"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="intractive-input-component position-relative w-25 px-3 py-2 d-flex align-items-center">
+                                    <h6>
+                                        <i class="bi bi-geo-alt"></i>
+                                        شهر یا فرودگاه مبدا
+                                    </h6>
+                                    <input class="border-0 bg-transparent w-100" type="text" required>
+                                    <div class="bg-white shadow rounded-4 position-absolute top-100 form-drop-downs p-4 right-0 passenger-counter">
                                         <div class="d-flex align-items-center justify-content-between mb-3">
                                             <h6>
                                                 بزرگسال
                                                 <span>(+12)</span>
                                             </h6>
-                                            <div class="d-flex align-items-center">
-                                                <button type="button" class="plus-btn rounded-3 border-0">+</button>
-                                                <h6 id="adult-num" class="ms-3 me-3">1</h6>
-                                                <button type="button" class="minus-btn rounded-3 border-0">-</button>
+                                            <div class="d-flex align-items-center gap-3">
+                                                <button class="plus-btn bg-transparent border-0 rounded-3">+</button>
+                                                <span>1</span>
+                                                <button class="minus-btn bg-transparent border-0 rounded-3">-</button>
                                             </div>
                                         </div>
                                         <div class="d-flex align-items-center justify-content-between mb-3">
                                             <h6>
                                                 کودک
-                                                <span>(2 تا 12 سال)</span>
+                                                <span>(2 تا 12)</span>
                                             </h6>
-                                            <div class="d-flex align-items-center">
-                                                <button type="button" class="plus-btn rounded-3 border-0">+</button>
-                                                <h6 id="baby-num" class="ms-3 me-3">0</h6>
-                                                <button type="button" class="minus-btn rounded-3 border-0">-</button>
+                                            <div class="d-flex align-items-center gap-3">
+                                                <button class="plus-btn bg-transparent border-0 rounded-3">+</button>
+                                                <span>0</span>
+                                                <button class="minus-btn bg-transparent border-0 rounded-3">-</button>
                                             </div>
                                         </div>
                                         <div class="d-flex align-items-center justify-content-between mb-3">
@@ -280,17 +309,17 @@
                                                 نوزاد
                                                 <span>(-2)</span>
                                             </h6>
-                                            <div class="d-flex align-items-center">
-                                                <button type="button" class="plus-btn rounded-3 border-0">+</button>
-                                                <h6 id="new-born-num" class="ms-3 me-3">0</h6>
-                                                <button type="button" class="minus-btn rounded-3 border-0">-</button>
+                                            <div class="d-flex align-items-center gap-3">
+                                                <button class="plus-btn bg-transparent border-0 rounded-3">+</button>
+                                                <span>0</span>
+                                                <button class="minus-btn bg-transparent border-0 rounded-3">-</button>
                                             </div>
                                         </div>
-                                        <select id="select-class" class="form-select" aria-label="Default select example">
-                                            <option value="اکونومی" selected>اکونومی</option>
+                                        <select class="form-select form-select-sm" aria-label="Default select example">
+                                            <option value="اکونومی">اکونومی</option>
                                             <option value="بیزینس">بیزینس</option>
                                             <option value="پریمیوم">پریمیوم</option>
-                                            <option value="فرست کلس">فرست کلس</option>
+                                            <option value="فرست">فرست</option>
                                             <option value="همه کلاس ها">همه کلاس ها</option>
                                         </select>
                                     </div>
@@ -343,5 +372,9 @@
 <script src="assets/base/js/ripple-btn.js"></script>
 <script src="assets/base/js/intractive-components.js"></script>
 <script src="assets/base/js/passengers-counter.js"></script>
+<script src="assets/plugins/MCDatepicker/dist/mc-calendar.min.js"></script>
+<script>
+    const myDatePicker = MCDatepicker.create({el: '#example',})
+</script>
 </body>
 </html>
