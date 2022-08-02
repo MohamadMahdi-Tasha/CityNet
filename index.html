@@ -289,74 +289,7 @@
 <noscript>لطفا جاوا اسکریپت مرورگر خود را فعال کنید.</noscript>
 <script src="assets/plugins/bootstrap/bootstrap.bundle.min.js"></script>
 <script src="assets/base/js/ripple-btn.js"></script>
-<script>
-    const inputsInIntractiveInputComponent = document.querySelectorAll('.intractive-input-component.input');
-    const intractiveInputComponentDate = document.querySelectorAll('.intractive-input-component.date');
-    const intractiveInputComponentCounter = document.querySelectorAll('.intractive-input-component.counter');
-    const intractiveInputComponentCounterCounter = document.querySelector('.intractive-input-component.counter > .counter-select');
-    const plusBtn =  document.querySelectorAll('.plus-btn');
-    const minusBtn =  document.querySelectorAll('.minus-btn');
-    const switchButton = document.querySelectorAll('.switch-btn');
-
-    inputsInIntractiveInputComponent.forEach(item => {
-        item.addEventListener('click', () => {item.lastElementChild.focus()})
-        item.lastElementChild.addEventListener('focus', () => {
-            item.classList.toggle('current');
-            if (item.lastElementChild.value === "") {
-                item.classList.toggle('focused')
-            }
-        })
-        item.lastElementChild.addEventListener('blur', () => {
-            item.classList.toggle('current');
-            if (item.lastElementChild.value === "") {item.classList.toggle('focused')}
-        })
-    })
-
-    intractiveInputComponentDate.forEach(item => {
-        item.addEventListener('click', () => {
-            item.classList.toggle('focused')
-        })
-    })
-
-    intractiveInputComponentCounter.forEach(item => {
-        item.addEventListener('click', () => {
-            item.classList.add('focused');
-        })
-    })
-
-    plusBtn.forEach(item => {
-        item.addEventListener('click', () => {
-            const number = item.nextElementSibling;
-            let currentValue  = Number(item.nextElementSibling.textContent);
-
-            if (currentValue !== 9) {currentValue ++;}
-            number.textContent = currentValue;
-        })
-    })
-
-    minusBtn.forEach(item => {
-        item.addEventListener('click', () => {
-            const number = item.previousElementSibling;
-            let currentValue  = Number(item.previousElementSibling.textContent);
-
-            if (currentValue !== 0) {currentValue --;}
-            number.textContent = currentValue;
-        })
-    })
-
-    intractiveInputComponentCounterCounter.addEventListener('click', () => {
-       const newBornNum = document.getElementById("new-born-num").textContent;
-       const babyNum = document.getElementById("baby-num").textContent;
-       const adultNum = document.getElementById("adult-num").textContent;
-       const passengerNumber = document.getElementById('passenger-number');
-
-       passengerNumber.textContent = Number(newBornNum) + Number(babyNum) + Number(adultNum);
-    })
-
-    document.getElementById('select-class').addEventListener('change', () => {
-        const passengerType = document.getElementById('passenger-type');
-        passengerType.textContent = document.getElementById('select-class').value;
-    })
-</script>
+<script src="assets/base/js/intractive-components.js"></script>
+<script src="assets/base/js/passengers-counter.js"></script>
 </body>
 </html>
