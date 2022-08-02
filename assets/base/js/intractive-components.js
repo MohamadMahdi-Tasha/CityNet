@@ -1,7 +1,6 @@
 // Variables
 const inputsInIntractiveInputComponent = document.querySelectorAll('.intractive-input-component.input');
 const intractiveInputComponentDate = document.querySelectorAll('.intractive-input-component.date');
-const intractiveInputComponentCounter = document.querySelectorAll('.intractive-input-component.counter');
 const intractiveInputComponentCounterCounter = document.querySelector('.intractive-input-component.counter > .counter-select');
 const switchButton = document.querySelectorAll('.switch-btn');
 
