@@ -16,7 +16,6 @@ plusBtns.forEach(item => {
         let currentNumber = Number(number.textContent);
 
         currentNumber ++;
-        console.log(currentNumber)
     })
 })
 
@@ -26,7 +25,6 @@ minusBtns.forEach(item => {
         let currentNumber = Number(number.textContent);
 
         currentNumber --;
-        console.log(currentNumber)
     })
 })
 
@@ -37,6 +35,7 @@ popularCitysBtns.forEach(item => {
         const icon = document.createElement('i');
         const brand = document.createElement('span');
         const name = document.createElement('h6');
+        const component = item.parentElement.parentElement.parentElement;
         let brandToShow = '';
         let nameToShow = '';
         let isPrimary = false;
@@ -64,18 +63,25 @@ popularCitysBtns.forEach(item => {
             case "باکو":brandToShow = "GYD";nameToShow = "باکو, اذربایجان (Baku)";break;
         }
 
-        div.className = 'd-flex align-items-center flex-wrap';
+        div.className = 'd-flex align-items-center flex-wrap position-absolute gap-1 selected-location';
         iconHolder.className = `${isPrimary ? 'my-bg-primary' : 'my-bg-pink'} rounded-3 p-1 text-white ms-2 font-small`;
-        icon.className = `bi bi-${isPrimary ? 'house' : 'airplane'} ms-2`;
+        icon.className = `bi bi-${isPrimary ? 'house' : 'airplane'}`;
         name.className = 'font-small mb-0';
         brand.textContent = brandToShow;
         name.textContent = nameToShow;
+
+        if (!component.contains(document.querySelector('.selected-location'))) {
+            component.appendChild(div);
+        } else {
+            component.lastElementChild.replaceWith(div)
+        }
 
         div.appendChild(iconHolder);
         iconHolder.appendChild(icon);
         iconHolder.appendChild(brand);
         div.appendChild(name);
 
-        document.body.appendChild(div)
+        item.parentElement.parentElement.parentElement.classList.toggle('focused')
     })
+
 })
