@@ -75,10 +75,11 @@ popularCitysBtn.forEach(item => {
         iconHolder.appendChild(icon);
         iconHolder.appendChild(brand);
         div.appendChild(name);
-
-        // If Component Contains Selected-location Then Replace New Item With Previous, Otherwise Add It To Component As Child
-        !component.contains(document.querySelector('.selected-location'))
-            ? component.appendChild(div) : component.lastElementChild.replaceWith(div)
+        
+        // If Clicked Component Dosnt Contains Element With Class Of selected-location Then Append Div To It OtherWise Replace Div To Last Child Element
+        // Of Component
+        if (component.lastElementChild.classList.contains('selected-location')) {component.lastElementChild.replaceWith(div)}
+        else {component.appendChild(div)}
 
         // Adding Class Of Focused To Component That Prevents Bug
         component.classList.add('focused');
@@ -99,16 +100,6 @@ dateComponent.forEach(item => {
 // With Clones And Adds Class Name Of animation To Switch Button And On Event Of 'animationend' (Its When Animation Ends) Removes It
 switchBtn.forEach(item => {
     item.addEventListener('click', () => {
-        const rightSideComponentContentToChange = document.querySelector('.top-side-flight > .intractive-input-component:first-of-type .selected-location');
-        const leftSideComponentContentToChange = document.querySelector('.top-side-flight > .intractive-input-component:last-of-type .selected-location');
-        const cloneOfRightSide = rightSideComponentContentToChange.cloneNode(true);
-        const cloneOfLeftSide = leftSideComponentContentToChange.cloneNode(true);
-
-        rightSideComponentContentToChange.replaceWith(cloneOfLeftSide)
-        leftSideComponentContentToChange.replaceWith(cloneOfRightSide)
-
-        item.classList.add('animation');
-        item.addEventListener('animationend', () => {item.classList.remove('animation')})
     })
 })
 
