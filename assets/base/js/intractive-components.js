@@ -75,7 +75,7 @@ popularCitysBtn.forEach(item => {
         iconHolder.appendChild(icon);
         iconHolder.appendChild(brand);
         div.appendChild(name);
-        
+
         // If Clicked Component Dosnt Contains Element With Class Of selected-location Then Append Div To It OtherWise Replace Div To Last Child Element
         // Of Component
         if (component.lastElementChild.classList.contains('selected-location')) {component.lastElementChild.replaceWith(div)}
@@ -100,6 +100,16 @@ dateComponent.forEach(item => {
 // With Clones And Adds Class Name Of animation To Switch Button And On Event Of 'animationend' (Its When Animation Ends) Removes It
 switchBtn.forEach(item => {
     item.addEventListener('click', () => {
+        const rightSideComponentContentToChange = document.querySelector('.top-side-flight > .dropdown:first-of-type > .intractive-input-component .selected-location');
+        const leftSideComponentContentToChange = document.querySelector('.top-side-flight > .dropdown:last-of-type > .intractive-input-component .selected-location');
+        const cloneOfRightSide = rightSideComponentContentToChange.cloneNode(true);
+        const cloneOfLeftSide = leftSideComponentContentToChange.cloneNode(true);
+
+        rightSideComponentContentToChange.replaceWith(cloneOfLeftSide)
+        leftSideComponentContentToChange.replaceWith(cloneOfRightSide)
+
+        item.classList.add('animation');
+        item.addEventListener('animationend', () => {item.classList.remove('animation')})
     })
 })
 
