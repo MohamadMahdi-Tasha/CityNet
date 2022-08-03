@@ -40,7 +40,7 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .intractive-input-component.focused > input{pointer-events: visible;}
 .intractive-input-component.focused{border-width: 2px !important;}
 .intractive-input-component.focused > h6 {top: 0;transform: translateY(-50%);}
-.intractive-input-component > input{pointer-events: none;}
+.intractive-input-component > input{pointer-events: none !important;}
 .intractive-input-component i {margin-left: .5rem;}
 .text-base {color: var(--primary-base);}
 .today-btn, .calender-type-button {color: rgba(185, 185, 185, 1);}
@@ -61,7 +61,6 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .intractive-input-component.focused > input ~ div.wasShowing {opacity: 0 !important;pointer-events: none !important;}
 .switch-btn.animation {-webkit-animation:flip-scale-2-hor-top .5s linear both;animation:flip-scale-2-hor-top .5s linear both}
 .border-black {border: 1px solid rgba(0,0,0,.8);}
-.no-touch {pointer-events: none;}
 
 .popular-citys-btn > span{
     aspect-ratio: 1/1;

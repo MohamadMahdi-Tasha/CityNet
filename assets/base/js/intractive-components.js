@@ -1,5 +1,6 @@
 // Variables
 const intractiveInputComponentInput = document.querySelectorAll('.intractive-input-component');
+const inputsOfIntractiveComponentsWithNoActions = document.querySelectorAll('input.no-action');
 const plusBtns = document.querySelectorAll('.plus-btn');
 const minusBtns = document.querySelectorAll('.minus-btn');
 const popularCitysBtns = document.querySelectorAll('.popular-citys-btn');
@@ -152,3 +153,6 @@ oneWayPassengerDropdownItems.forEach(item => {
         setValueOfPassangerInput()
     })
 })
+
+// Adding Event Listener Of Input To Each Input That Has Class Of No-action Then Makes Its Value To ''
+inputsOfIntractiveComponentsWithNoActions.forEach(item => item.addEventListener('input', () => item.value = ''))
