@@ -135,6 +135,7 @@ minusBtns.forEach(item => {
     })
 })
 
+// Adding Event Listener On Each Passenger Numbers Component That Listens To Click And Toggles Class Of show To Component And Dropdown menu
 passangerComponent.forEach(item => {
     item.addEventListener('click', () => {
         item.classList.toggle('show')
