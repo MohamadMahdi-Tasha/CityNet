@@ -164,9 +164,10 @@
                     <div>
                         <div id="one-way">
                             <!--Top Side-->
-                            <div class="d-flex gap-2 position-relative mb-4 top-side-flight">
-                                <div class="dropdown w-50">
-                                    <div class="intractive-input-component position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="d-flex align-items-start gap-2 position-relative mb-4 top-side-flight">
+                                <div class="w-50">
+                                    <div class="dropdown mb-2">
+                                    <div id="intractive-input-component-top-side-1" class="intractive-input-component position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         <h6>
                                             <i class="bi bi-geo-alt"></i>
                                             شهر یا فرودگاه مبدا
@@ -198,11 +199,14 @@
                                             <div class="top-of-buttons-popular-citys w-100 h-100 position-absolute top-0"></div>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
                                 </div>
                                 <!--Switch Button-->
                                 <button class="switch-btn rounded-circle position-absolute bg-white" type="button"><i class="bi bi-arrow-left-right"></i></button>
-                                <div class="dropdown w-50">
-                                    <div class="intractive-input-component position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <div class="w-50">
+                                    <div class="dropdown mb-2">
+                                    <div id="intractive-input-component-top-side-2" class="intractive-input-component position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         <h6>
                                             <i class="bi bi-geo-alt"></i>
                                             شهر یا فرودگاه مبدا
@@ -235,81 +239,93 @@
                                         </div>
                                     </div>
                                 </div>
+                                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                                </div>
                             </div>
                             <!--Bottom Side-->
-                            <div class="d-flex gap-2">
-                                <div class="intractive-input-component date position-relative w-25 px-3 py-2 d-flex align-items-center" type="button">
-                                    <h6>
-                                        <i class="bi bi-calendar4-week"></i>
-                                        تاریخ پرواز
-                                    </h6>
-                                    <input type="text" class="bg-transparent border-0" readonly id="example" required>
-                                </div>
-                                <div class="intractive-input-component disabled position-relative w-25 px-3 py-2 d-flex align-items-center" type="button">
-                                    <h6>
-                                        <i class="bi bi-calendar4-week"></i>
-                                        بدون بازگشت
-                                    </h6>
-                                </div>
-                                <div class="dropdown w-25">
-                                    <div class="intractive-input-component focused passenger position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" aria-expanded="false">
-                                        <h6><i class="bi bi-person"></i>مسافران کلاس کابین</h6>
-                                        <h4 class="passenger-type-and-num mb-0">
-                                            <span class="passenger-number">1</span>
-                                            مسافر,
-                                            <span class="passenger-type">اکونومی</span>
-                                        </h4>
+                            <div class="d-flex align-items-start gap-2">
+                                <div class="w-25">
+                                    <div id="intractive-input-component-top-side-3" class="intractive-input-component mb-2 date position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                                        <h6>
+                                            <i class="bi bi-calendar4-week"></i>
+                                            تاریخ پرواز
+                                        </h6>
+                                        <input type="text" class="bg-transparent border-0" readonly id="example" required>
                                     </div>
-                                    <div class="bg-white dropdown-menu dropdown-menu-end shadow rounded-4 p-4 popular-city">
-                                        <div class="passenger-counter">
-                                            <div class="d-flex align-items-center justify-content-between mb-3">
-                                                <h6>
-                                                    بزرگسال
-                                                    <span>(+12)</span>
-                                                </h6>
-                                                <div class="d-flex align-items-center gap-3">
-                                                    <button class="plus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">+</button>
-                                                    <span class="adult-number">1</span>
-                                                    <button class="minus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">-</button>
+                                    <!--Error Handling-->
+                                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                                </div>
+                                <div class="w-25">
+                                    <div class="intractive-input-component mb-2 disabled position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                                        <h6>
+                                            <i class="bi bi-calendar4-week"></i>
+                                            بدون بازگشت
+                                        </h6>
+                                    </div>
+                                </div>
+                                <div class="w-25">
+                                    <div id="intractive-input-component-top-side-4" class="dropdown mb-2 w-100">
+                                        <div class="intractive-input-component focused passenger position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" aria-expanded="false">
+                                            <h6><i class="bi bi-person"></i>مسافران کلاس کابین</h6>
+                                            <h4 class="passenger-type-and-num mb-0">
+                                                <span class="passenger-number">1</span>
+                                                مسافر,
+                                                <span class="passenger-type">اکونومی</span>
+                                            </h4>
+                                        </div>
+                                        <div class="bg-white dropdown-menu dropdown-menu-end shadow rounded-4 p-4 popular-city">
+                                            <div class="passenger-counter">
+                                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                                    <h6>
+                                                        بزرگسال
+                                                        <span>(+12)</span>
+                                                    </h6>
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <button class="plus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">+</button>
+                                                        <span class="adult-number">1</span>
+                                                        <button class="minus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">-</button>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="d-flex align-items-center justify-content-between mb-3">
-                                                <h6>
-                                                    کودک
-                                                    <span>(2 تا 12)</span>
-                                                </h6>
-                                                <div class="d-flex align-items-center gap-3">
-                                                    <button class="plus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">+</button>
-                                                    <span class="kid-number">0</span>
-                                                    <button class="minus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">-</button>
+                                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                                    <h6>
+                                                        کودک
+                                                        <span>(2 تا 12)</span>
+                                                    </h6>
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <button class="plus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">+</button>
+                                                        <span class="kid-number">0</span>
+                                                        <button class="minus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">-</button>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="d-flex align-items-center justify-content-between mb-3">
-                                                <h6>
-                                                    نوزاد
-                                                    <span>(-2)</span>
-                                                </h6>
-                                                <div class="d-flex align-items-center gap-3">
-                                                    <button class="plus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">+</button>
-                                                    <span class="new-born-number">0</span>
-                                                    <button class="minus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">-</button>
+                                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                                    <h6>
+                                                        نوزاد
+                                                        <span>(-2)</span>
+                                                    </h6>
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <button class="plus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">+</button>
+                                                        <span class="new-born-number">0</span>
+                                                        <button class="minus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">-</button>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="dropdown w-100 border-top pt-3 one-way-passenger-dropdown" data-value="اکونومی">
-                                                <button class="w-100 d-flex align-items-center bg-white justify-content-between p-2 border-black rounded-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <span>اکونومی</span>
-                                                    <i class="bi bi-chevron-down"></i>
-                                                </button>
-                                                <ul class="dropdown-menu dropdown-menu-start w-100 overflow-hidden rounded-3 shadow border-0">
-                                                    <li><button type="button" class="dropdown-item bg-white ripple-btn text-black p-2 fs-6 text-end" data-active="true">اکونومی</button></li>
-                                                    <li><button type="button" class="dropdown-item bg-white ripple-btn text-black p-2 fs-6 text-end">بیزینس</button></li>
-                                                    <li><button type="button" class="dropdown-item bg-white ripple-btn text-black p-2 fs-6 text-end">پریمیوم</button></li>
-                                                    <li><button type="button" class="dropdown-item bg-white ripple-btn text-black p-2 fs-6 text-end">فرست کلاس</button></li>
-                                                    <li><button type="button" class="dropdown-item bg-white ripple-btn text-black p-2 fs-6 text-end">همه کلاس ها</button></li>
-                                                </ul>
+                                                <div class="dropdown w-100 border-top pt-3 one-way-passenger-dropdown" data-value="اکونومی">
+                                                    <button class="w-100 d-flex align-items-center bg-white justify-content-between p-2 border-black rounded-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <span>اکونومی</span>
+                                                        <i class="bi bi-chevron-down"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-start w-100 overflow-hidden rounded-3 shadow border-0">
+                                                        <li><button type="button" class="dropdown-item bg-white ripple-btn text-black p-2 fs-6 text-end" data-active="true">اکونومی</button></li>
+                                                        <li><button type="button" class="dropdown-item bg-white ripple-btn text-black p-2 fs-6 text-end">بیزینس</button></li>
+                                                        <li><button type="button" class="dropdown-item bg-white ripple-btn text-black p-2 fs-6 text-end">پریمیوم</button></li>
+                                                        <li><button type="button" class="dropdown-item bg-white ripple-btn text-black p-2 fs-6 text-end">فرست کلاس</button></li>
+                                                        <li><button type="button" class="dropdown-item bg-white ripple-btn text-black p-2 fs-6 text-end">همه کلاس ها</button></li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <!--Error Handling-->
+                                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
                                 </div>
                                 <button type="button" class="submit-btn border-0 rounded-3 text-white w-25 ripple-btn">جستجو</button>
                             </div>

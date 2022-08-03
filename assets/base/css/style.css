@@ -34,7 +34,7 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .home-first-section > main {min-height: 570px;background: linear-gradient(180deg, rgba(0,0,0,.6), transparent);}
 .home-second-section {transform: translateY(-200px);}
 .top-side-page-buttons.active {border-bottom-color: var(--primary-base);color: var(--primary-base);font-weight: bold;}
-.submit-btn {background-color: var(--primary-base) !important;}
+.submit-btn {background-color: var(--primary-base) !important;height: 60px;}
 .footer-bottom-side h6, .footer-bottom-side a {font-size: .8rem;color: #9e9e9e !important;}
 .hover-text-pink {transition: .3s;}
 .intractive-input-component.show > input, .intractive-input-component.focused > input{pointer-events: visible;}
@@ -46,6 +46,7 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .today-btn, .calender-type-button {color: rgba(185, 185, 185, 1);}
 .right-0 {right: 0;}
 .form-drop-downs {z-index: 100;width: auto !important;transform: translateY(1%);transition: .3s;opacity: 0;pointer-events: none}
+.intractive-input-component.errored {border-color: red !important;border-width: 2px !important}
 .top-of-buttons-popular-citys {background: linear-gradient(transparent, white);pointer-events: none;}
 .plus-btn {color: var(--primary-base);}
 .popular-city-btns-holder {grid-template-columns: repeat(4, 1fr);}
@@ -66,6 +67,9 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .intractive-input-component:not(.passenger) > h6 > i{font-size: 1.2rem !important;}
 .passenger-type-and-num {font-size: .8rem;}
 .dropdown-menu {border: none !important;}
+.error-text {font-size: .8rem;color: red;}
+.error-holder {opacity: 0;pointer-events: none;transition: .3s}
+.error-holder.show {opacity: 1;pointer-events: visible;}
 
 .popular-citys-btn > span{
     aspect-ratio: 1/1;
