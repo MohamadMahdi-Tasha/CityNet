@@ -7,6 +7,7 @@ const switchBtn = document.querySelectorAll('.switch-btn');
 const minusAndPlusButtons = document.querySelectorAll('.minus-and-plus-btn');
 const oneWayPassengerDropdownItems = document.querySelectorAll('.one-way-passenger-dropdown > .dropdown-menu button');
 
+// Adding Event Listener Of Click To Each Intractive Component That Focused To Input In It And Adds Class Of Focused To It.
 intractiveInputComponentInput.forEach(item => {
     item.addEventListener('click', () => {
         item.classList.add('focused');
@@ -14,6 +15,7 @@ intractiveInputComponentInput.forEach(item => {
     })
 })
 
+// Adding Event Listener Event On Each Plus Button That Listens To Click And Checks If Number Is Not 9 Then Adds 1 To It
 plusBtns.forEach(item => {
     item.addEventListener('click', () => {
         const number = item.nextElementSibling;
@@ -24,6 +26,7 @@ plusBtns.forEach(item => {
     })
 })
 
+// Adding Event Listener Event On Each Plus Button That Listens To Click And Checks If Number Is Not 9 Then Reduces 1 From It
 minusBtns.forEach(item => {
     item.addEventListener('click', () => {
         const number = item.previousElementSibling;
@@ -34,6 +37,8 @@ minusBtns.forEach(item => {
     })
 })
 
+// A Function That Sets Value Of Passengers Interactive Components, Input To Total Number Of adultNumber, kidNumber And newBornNumber
+// And Value Of Attritube Of data-value From DropDown Init.
 function setValueOfPassangerInput() {
     const adultNumber = Number(document.querySelector('.adult-number').textContent);
     const kidNumber = Number(document.querySelector('.kid-number').textContent);
@@ -44,10 +49,13 @@ function setValueOfPassangerInput() {
     passengerInput.value = `${adultNumber + kidNumber + newBornNumber} مسافر , ${dropdown.getAttribute('data-value')}`;
 }
 
+//  Adding Event Listener On Click Of Each Minus And Plus Button That Calls setValueOfPassangerInput Function
 minusAndPlusButtons.forEach(item => item.addEventListener('click', () => setValueOfPassangerInput()))
 
+// Adding Event Listener On Each Popular City Dropdown Buttons That Listens To Click
 popularCitysBtns.forEach(item => {
     item.addEventListener('click', () => {
+        // Creating Elements
         const div = document.createElement('div');
         const iconHolder = document.createElement('span');
         const icon = document.createElement('i');
@@ -59,6 +67,7 @@ popularCitysBtns.forEach(item => {
         let nameToShow = '';
         let isPrimary = false;
 
+        // Checks If Clicked Buttons Text Content Is "تهران" Or What Ever, Then Sets Its Brand, Name To Shows , Color Of Its Badge
         switch (item.textContent) {
             case "تهران":brandToShow = "THR";nameToShow = "تهران, ایران (Tehran)";isPrimary = true;break;
             case "کیش":brandToShow = "KIH";nameToShow = "کیش, ایران (Kish Island)";break;
@@ -82,27 +91,37 @@ popularCitysBtns.forEach(item => {
             case "باکو":brandToShow = "GYD";nameToShow = "باکو, اذربایجان (Baku)";break;
         }
 
+        // Adding ClassNames To Created Elements
         div.className = 'd-flex align-items-center flex-wrap position-absolute gap-1 selected-location';
+        // If Clicked Button Is Primary Then Set Class Name Of 'my-bg-primary' else To 'my-bg-pink', Other Classes
         iconHolder.className = `${isPrimary ? 'my-bg-primary' : 'my-bg-pink'} rounded-3 p-1 text-white ms-2 font-small`;
+        // If Clicked Button Is Primary Then Set Icon To House Otherwise To Airplane
         icon.className = `bi bi-${isPrimary ? 'house' : 'airplane'}`;
         name.className = 'font-small mb-0';
         brand.textContent = brandToShow;
         name.textContent = nameToShow;
 
-        if (!component.contains(document.querySelector('.selected-location'))) {component.appendChild(div);}
-        else {component.lastElementChild.replaceWith(div)}
-
+        // Appending Children To Their Parents
         div.appendChild(iconHolder);
         iconHolder.appendChild(icon);
         iconHolder.appendChild(brand);
         div.appendChild(name);
 
+        // If Clicked Component Dosnt Contains Element With Class Of selected-location Then Append Div To It OtherWise Replace Div To Last Child Element
+        // Of Component
+        if (!component.contains(document.querySelector('.selected-location'))) {component.appendChild(div);}
+        else {component.lastElementChild.replaceWith(div)}
+
+        // Removing Input In Components
         component.firstElementChild.nextElementSibling.remove()
+        // Adding Event Listener Of 'wasShowing' To Popular City
         popCity.classList.add('wasShowing')
     })
 
 })
 
+// Adding Event Listener Of Click To Each Switch Buttons That Gets Clone Of Item Of 'selected-location' In Component Then Replaces The Orginals
+// With Clones And Adds Class Name Of animation To Switch Button And On Event Of 'animationend' (Its When Animation Ends) Removes It
 switchBtn.forEach(item => {
     item.addEventListener('click', () => {
         const rightSideComponentContentToChange = document.querySelector('.top-side-flight > .intractive-input-component:first-of-type .selected-location');
@@ -118,6 +137,10 @@ switchBtn.forEach(item => {
     })
 })
 
+// Adding Event Listener On  Each Dropdown Item In Passenger Component And Listens To Click Then Checks If There Is Dropdown Item With
+// Attribute Of data-active="true" Then Removes Attribute From It And Sets data-Value Of Dropdown To Clicked Items TextContent And
+// Sets Text Content OF Input In Component To Clicked Items TextContent Again And Sets Attritube Of Clicked item To 'true' (data-active)
+// And Calls setValueOfPassangerInput Function
 oneWayPassengerDropdownItems.forEach(item => {
     item.addEventListener('click', () => {
         const activeButtons = document.querySelectorAll('.one-way-passenger-dropdown .dropdown-item[data-active="true"]');
