@@ -36,10 +36,7 @@ oneWaySubmitBtn.addEventListener('click', (event) => {
             'مقصد الزامی می باشد'
         );
     }
-    if (
-        intractiveInputComponentTopSide1.lastElementChild.firstElementChild !== null && intractiveInputComponentTopSide1.lastElementChild.firstElementChild.textContent ===
-        intractiveInputComponentTopSide2.lastElementChild.firstElementChild !== null && intractiveInputComponentTopSide2.lastElementChild.firstElementChild.textContent
-    )  {
+    if (intractiveInputComponentTopSide1.lastElementChild.firstElementChild.textContent === intractiveInputComponentTopSide2.lastElementChild.firstElementChild.textContent)  {
         handleError(
             intractiveInputComponentTopSide1,
             intractiveInputComponentTopSide1.parentElement.nextElementSibling,
