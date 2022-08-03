@@ -22,6 +22,7 @@ function setValueOfPassangerInput() {
     passengerType.textContent = dropdown.getAttribute('data-value');
 }
 
+// Adding Event Listener Of Click To Each Popular Citys Button And..
 popularCitysBtn.forEach(item => {
     item.addEventListener('click', () => {
         // Creating Elements
@@ -84,11 +85,13 @@ popularCitysBtn.forEach(item => {
     })
 })
 
+// Added Event Listener Of Click To Components That Contain Input Date That Focuses To Input And Adds Class Of 'focused' To It
+// And Adds Event Listener Of 'blur' That Checks If Inputs Value Is Not Empty Then Removes 'focused' Class
 dateComponent.forEach(item => {
     item.addEventListener('click', () => item.lastElementChild.focus())
     item.lastElementChild.addEventListener('focus', () => item.classList.add('focused'))
     item.lastElementChild.addEventListener('blur', () => {
-        if (item.lastElementChild.value !== "") {item.classList.add('focused')}
+        if (item.lastElementChild.value !== "") {item.classList.remove('focused')}
     })
 })
 
