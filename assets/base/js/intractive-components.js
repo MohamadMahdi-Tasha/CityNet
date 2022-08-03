@@ -1,8 +1,11 @@
+// Variables
 const intractiveInputComponentInput = document.querySelectorAll('.intractive-input-component');
 const plusBtns = document.querySelectorAll('.plus-btn');
 const minusBtns = document.querySelectorAll('.minus-btn');
 const popularCitysBtns = document.querySelectorAll('.popular-citys-btn');
 const switchBtn = document.querySelectorAll('.switch-btn');
+const minusAndPlusButtons = document.querySelectorAll('.minus-and-plus-btn');
+const oneWayPassengerDropdownItems = document.querySelectorAll('.one-way-passenger-dropdown > .dropdown-menu button');
 
 intractiveInputComponentInput.forEach(item => {
     item.addEventListener('click', () => {
@@ -14,20 +17,34 @@ intractiveInputComponentInput.forEach(item => {
 plusBtns.forEach(item => {
     item.addEventListener('click', () => {
         const number = item.nextElementSibling;
-        let currentNumber = Number(number.textContent);
+        let realNumber = Number(number.textContent);
 
-        currentNumber ++;
+        if (realNumber !==  9) {realNumber ++;}
+        number.textContent = realNumber;
     })
 })
 
 minusBtns.forEach(item => {
     item.addEventListener('click', () => {
         const number = item.previousElementSibling;
-        let currentNumber = Number(number.textContent);
+        let realNumber = Number(number.textContent);
 
-        currentNumber --;
+        if (realNumber !==  0) {realNumber --;}
+        number.textContent = realNumber;
     })
 })
+
+function setValueOfPassangerInput() {
+    const adultNumber = Number(document.querySelector('.adult-number').textContent);
+    const kidNumber = Number(document.querySelector('.kid-number').textContent);
+    const newBornNumber = Number(document.querySelector('.new-born-number').textContent);
+    const dropdown = document.querySelector('.one-way-passenger-dropdown');
+    const passengerInput = document.querySelector('.passenger-input');
+
+    passengerInput.value = `${adultNumber + kidNumber + newBornNumber} مسافر , ${dropdown.getAttribute('data-value')}`;
+}
+
+minusAndPlusButtons.forEach(item => item.addEventListener('click', () => setValueOfPassangerInput()))
 
 popularCitysBtns.forEach(item => {
     item.addEventListener('click', () => {
@@ -86,7 +103,6 @@ popularCitysBtns.forEach(item => {
 
 })
 
-
 switchBtn.forEach(item => {
     item.addEventListener('click', () => {
         const rightSideComponentContentToChange = document.querySelector('.top-side-flight > .intractive-input-component:first-of-type .selected-location');
@@ -99,5 +115,17 @@ switchBtn.forEach(item => {
 
         item.classList.add('animation');
         item.addEventListener('animationend', () => {item.classList.remove('animation')})
+    })
+})
+
+oneWayPassengerDropdownItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const activeButtons = document.querySelectorAll('.one-way-passenger-dropdown .dropdown-item[data-active="true"]');
+        activeButtons.forEach(item => item.removeAttribute('data-active'));
+
+        item.parentElement.parentElement.parentElement.setAttribute('data-value', item.textContent);
+        item.parentElement.parentElement.previousElementSibling.firstElementChild.textContent = item.textContent
+        item.setAttribute('data-active', 'true');
+        setValueOfPassangerInput()
     })
 })

@@ -60,6 +60,8 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .font-smallx {font-size: .6rem;}
 .intractive-input-component.focused > input ~ div.wasShowing {opacity: 0 !important;pointer-events: none !important;}
 .switch-btn.animation {-webkit-animation:flip-scale-2-hor-top .5s linear both;animation:flip-scale-2-hor-top .5s linear both}
+.border-black {border: 1px solid rgba(0,0,0,.8);}
+.no-touch {pointer-events: none;}
 
 .popular-citys-btn > span{
     aspect-ratio: 1/1;

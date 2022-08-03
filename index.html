@@ -280,7 +280,7 @@
                                         <i class="bi bi-geo-alt"></i>
                                         شهر یا فرودگاه مبدا
                                     </h6>
-                                    <input class="border-0 bg-transparent w-100" type="text" required>
+                                    <input class="border-0 bg-transparent w-100 no-touch passenger-input" type="text" required >
                                     <div class="bg-white shadow rounded-4 position-absolute top-100 form-drop-downs p-4 right-0 passenger-counter">
                                         <div class="d-flex align-items-center justify-content-between mb-3">
                                             <h6>
@@ -288,9 +288,9 @@
                                                 <span>(+12)</span>
                                             </h6>
                                             <div class="d-flex align-items-center gap-3">
-                                                <button class="plus-btn bg-transparent border-0 rounded-3">+</button>
-                                                <span>1</span>
-                                                <button class="minus-btn bg-transparent border-0 rounded-3">-</button>
+                                                <button class="plus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">+</button>
+                                                <span class="adult-number">1</span>
+                                                <button class="minus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">-</button>
                                             </div>
                                         </div>
                                         <div class="d-flex align-items-center justify-content-between mb-3">
@@ -299,9 +299,9 @@
                                                 <span>(2 تا 12)</span>
                                             </h6>
                                             <div class="d-flex align-items-center gap-3">
-                                                <button class="plus-btn bg-transparent border-0 rounded-3">+</button>
-                                                <span>0</span>
-                                                <button class="minus-btn bg-transparent border-0 rounded-3">-</button>
+                                                <button class="plus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">+</button>
+                                                <span class="kid-number">0</span>
+                                                <button class="minus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">-</button>
                                             </div>
                                         </div>
                                         <div class="d-flex align-items-center justify-content-between mb-3">
@@ -310,19 +310,23 @@
                                                 <span>(-2)</span>
                                             </h6>
                                             <div class="d-flex align-items-center gap-3">
-                                                <button class="plus-btn bg-transparent border-0 rounded-3">+</button>
-                                                <span>0</span>
-                                                <button class="minus-btn bg-transparent border-0 rounded-3">-</button>
+                                                <button class="plus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">+</button>
+                                                <span class="new-born-number">0</span>
+                                                <button class="minus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">-</button>
                                             </div>
                                         </div>
-                                        <div class="border-top pt-3">
-                                            <select class="form-select form-select-sm rounded-3" aria-label="Default select example">
-                                                <option value="اکونومی">اکونومی</option>
-                                                <option value="بیزینس">بیزینس</option>
-                                                <option value="پریمیوم">پریمیوم</option>
-                                                <option value="فرست">فرست</option>
-                                                <option value="همه کلاس ها">همه کلاس ها</option>
-                                            </select>
+                                        <div class="dropdown w-100 border-top pt-3 one-way-passenger-dropdown" data-value="اکونومی">
+                                            <button class="w-100 d-flex align-items-center bg-white justify-content-between p-2 border-black rounded-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <span>اکونومی</span>
+                                                <i class="bi bi-chevron-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu w-100 overflow-hidden rounded-3 shadow border-0">
+                                                <li><button type="button" class="dropdown-item bg-white ripple-btn text-black p-2 fs-6 text-end" data-active="true">اکونومی</button></li>
+                                                <li><button type="button" class="dropdown-item bg-white ripple-btn text-black p-2 fs-6 text-end">بیزینس</button></li>
+                                                <li><button type="button" class="dropdown-item bg-white ripple-btn text-black p-2 fs-6 text-end">پریمیوم</button></li>
+                                                <li><button type="button" class="dropdown-item bg-white ripple-btn text-black p-2 fs-6 text-end">فرست کلاس</button></li>
+                                                <li><button type="button" class="dropdown-item bg-white ripple-btn text-black p-2 fs-6 text-end">همه کلاس ها</button></li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
