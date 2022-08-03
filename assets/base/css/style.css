@@ -61,6 +61,10 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .intractive-input-component.focused > input ~ div.wasShowing {opacity: 0 !important;pointer-events: none !important;}
 .switch-btn.animation {-webkit-animation:flip-scale-2-hor-top .5s linear both;animation:flip-scale-2-hor-top .5s linear both}
 .border-black {border: 1px solid rgba(0,0,0,.8);}
+.intractive-input-component.passenger > h6{font-size: .7rem !important;}
+.intractive-input-component.passenger > h6 > i{font-size: 1rem !important;}
+.intractive-input-component:not(.passenger) > h6{font-size: .9rem !important;}
+.intractive-input-component:not(.passenger) > h6 > i{font-size: 1.2rem !important;}
 
 .popular-citys-btn > span{
     aspect-ratio: 1/1;
