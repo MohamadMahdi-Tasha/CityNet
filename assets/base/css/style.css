@@ -64,6 +64,8 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .intractive-input-component.passenger > h6 > i{font-size: 1rem !important;}
 .intractive-input-component:not(.passenger) > h6{font-size: .9rem !important;}
 .intractive-input-component:not(.passenger) > h6 > i{font-size: 1.2rem !important;}
+.passenger-type-and-num {font-size: .8rem;}
+.dropdown-menu {border: none !important;}
 
 .popular-citys-btn > span{
     aspect-ratio: 1/1;
