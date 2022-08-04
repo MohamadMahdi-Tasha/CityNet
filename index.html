@@ -24,6 +24,55 @@
     <title>سیتی نت</title>
 </head>
 <body dir="rtl" class="home-body">
+<!--Login Modal-->
+<div>
+    <!--Dark Bg Of It-->
+    <div></div>
+    <!--Content-->
+    <div>
+        <!--Top Side-->
+        <div>
+            <button></button>
+            <h6>ورود / ثبت ‌نام</h6>
+            <button><i class="bi bi-x"></i></button>
+        </div>
+        <h6>شماره موبایل، ایمیل یا نام کاربری خود را وارد نمائید.</h6>
+        <!--Top Side-->
+        <div>
+            <div>
+                <input type="checkbox" id="mobile-way" name="login-way" checked>
+                <label for="mobile-way">موبایل</label>
+            </div>
+            <div>
+                <input type="checkbox" id="email-way" name="login-way" checked>
+                <label for="email-way">ایمیل</label>
+            </div>
+            <div>
+                <input type="checkbox" id="user-way" name="login-way" checked>
+                <label for="user-way">شناسه کاربری</label>
+            </div>
+        </div>
+        <!--Middle Side That Changes-->
+        <form action="#">
+            <div>
+                <div class="w-25 mq-991-w-100">
+                    <div class="intractive-input-component mb-2 date position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                        <h6>تاریخ پرواز</h6>
+                        <input type="tel" class="bg-transparent border-0" required>
+                    </div>
+                    <!--Error Handling-->
+                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                </div>
+                <input type="number" maxlength="4" minlength="4">
+            </div>
+            <button type="submit">ورود با رمز یکبار مصرف</button>
+            <div>
+                <button>ورود با رمز ثابت</button>
+                <button>ثبت نام</button>
+            </div>
+        </form>
+    </div>
+</div>
 <!--Dark Bg Of Nav-->
 <div id="dark-bg-of-nav" class="position-fixed w-100 h-100 d-block d-lg-none" data-opened="false"></div>
 <!--nav-->
@@ -130,7 +179,7 @@
                         </li>
                     </ul>
                 </div>
-                <button class="d-none d-lg-block ripple-btn border bg-transparent text-white px-4 py-2 rounded">ورود/ثبت نام</button>
+                <button class="d-none login-btn d-lg-block ripple-btn border bg-transparent text-white px-4 py-2 rounded">ورود/ثبت نام</button>
             </div>
         </div>
     </header>
