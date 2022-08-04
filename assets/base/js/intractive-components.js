@@ -7,6 +7,7 @@ const dateComponent = document.querySelectorAll('.intractive-input-component.dat
 const passangerComponent = document.querySelectorAll('.intractive-input-component.passenger')
 const oneWayPassengerDropdownItems = document.querySelectorAll('.one-way-passenger-dropdown > .dropdown-menu button');
 const minusAndPlusButtons = document.querySelectorAll('.minus-and-plus-btn');
+const intractiveInputComponentModal = document.querySelectorAll('.intractive-input-component.my-modal');
 
 // A Function That Sets Value Of Passengers Interactive Components, Input To Total Number Of adultNumber, kidNumber And newBornNumber
 // And Value Of Attritube Of data-value From DropDown Init.
@@ -161,3 +162,12 @@ oneWayPassengerDropdownItems.forEach(item => {
 
 // Adding Event Listener On Click Of Each Minus And Plus Button That Calls setValueOfPassangerInput Function
 minusAndPlusButtons.forEach(item => item.addEventListener('click', () => setValueOfPassangerInput()))
+
+// Adding Event Listener On Each IntractiveInoutComponent(modal) That Listens To Click And Focuses To Last Child Of It
+// Then Adds Event Listener On Focus To Last Elements Which Is Input And Adds Class Of 'focused' To Clicked Component
+// And On Blur Of It Removes Added Class If Value Of The Input Is ""
+intractiveInputComponentModal.forEach(item => {
+    item.addEventListener('click', () => item.lastElementChild.focus())
+    item.lastElementChild.addEventListener('focus', () => item.classList.add('focused'))
+    item.lastElementChild.addEventListener('blur', () => {if (item.lastElementChild.value === "") {item.classList.remove('focused')}})
+})

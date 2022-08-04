@@ -85,6 +85,8 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .ripple-btn.base > .ripple {background-color: rgba(221, 153, 51, .5);}
 .my-modal::-webkit-scrollbar {display: none;}
 .my-modal::-moz-viewport-scroll {display: none;}
+.intractive-input-component.my-modal.focused {border-color: var(--primary-base);}
+.intractive-input-component.my-modal.focused h6 {color: var(--primary-base) !important;}
 
 #nav {
     z-index: 1030;
