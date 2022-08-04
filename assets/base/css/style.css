@@ -189,7 +189,6 @@ header .dropdown-item:active {background-color: rgba(185, 185, 185, 1) !importan
 /*Media Querys*/
 @media (max-width: 991px) {
     .mq-991-w-100 {width: 100% !important;}
-    .mq-991-w-50 {width: 50% !important;}
     .px-7rem {padding-right: 1rem;padding-left: 1rem;}
     .home-first-section, .home-first-section > main {clip-path: none;min-height: 100vh;}
     .home-second-section {transform: translateY(-60vh);}
