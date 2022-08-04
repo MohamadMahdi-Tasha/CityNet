@@ -79,11 +79,12 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 #nav[data-opened='true'], #dark-bg-of-nav[data-opened='true'] {left: 0 !important;}
 #nav[data-opened='false'], #dark-bg-of-nav[data-opened='false'] {left: -100% !important;}
 .my-bg-dark {background-color: rgba(0,0,0,.2);z-index: 1029;}
-.my-modal {z-index: 1030;
-    width: 35rem;}
+.my-modal {z-index: 1030;width: 35rem;}
 .left-0 {left: 0;}
 .no-touch {pointer-events: none;}
 .ripple-btn.base > .ripple {background-color: rgba(221, 153, 51, .5);}
+.my-modal::-webkit-scrollbar {display: none;}
+.my-modal::-moz-viewport-scroll {display: none;}
 
 #nav {
     z-index: 1030;
@@ -220,4 +221,9 @@ header .dropdown-item:active {background-color: rgba(185, 185, 185, 1) !importan
     .intractive-input-component {margin-bottom: 0 !important;}
     .dropdown {margin-bottom: 0 !important;}
     .mq-991-bg-white {background-color: white;}
+    .my-modal {
+        height: 100%;
+        border-radius: 0 !important;
+        overflow-y: scroll;
+    }
 }
