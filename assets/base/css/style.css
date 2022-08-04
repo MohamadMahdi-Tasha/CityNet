@@ -43,7 +43,7 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .intractive-input-component.show > h6 , .intractive-input-component.focused > h6{top: 0;transform: translateY(-50%);}
 .intractive-input-component > input{pointer-events: none !important;}
 .intractive-input-component i {margin-left: .5rem;}
-.text-base {color: var(--primary-base);}
+.text-base {color: var(--primary-base) !important;}
 .today-btn, .calender-type-button {color: rgba(185, 185, 185, 1);}
 .right-0 {right: 0;}
 .form-drop-downs {z-index: 100;width: auto !important;transform: translateY(1%);transition: .3s;opacity: 0;pointer-events: none}
@@ -79,9 +79,11 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 #nav[data-opened='true'], #dark-bg-of-nav[data-opened='true'] {left: 0 !important;}
 #nav[data-opened='false'], #dark-bg-of-nav[data-opened='false'] {left: -100% !important;}
 .my-bg-dark {background-color: rgba(0,0,0,.2);z-index: 1029;}
-.my-modal {z-index: 1030;}
+.my-modal {z-index: 1030;
+    width: 35rem;}
 .left-0 {left: 0;}
 .no-touch {pointer-events: none;}
+.ripple-btn.base > .ripple {background-color: rgba(221, 153, 51, .5);}
 
 #nav {
     z-index: 1030;
