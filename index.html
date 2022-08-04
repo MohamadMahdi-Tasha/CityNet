@@ -24,36 +24,36 @@
     <title>سیتی نت</title>
 </head>
 <body dir="rtl" class="home-body">
-<!--Login Modal-->
-<div class="fixed-top w-100 h-100 d-flex align-items-center justify-content-center">
+<!--Login With Code 'Subet' Modal-->
+<div data-opened="false" id="login-code-s-modal" class="my-modal-holder fixed-top w-100 h-100 d-flex align-items-center justify-content-center">
     <!--Dark Bg Of It-->
     <div class="my-bg-dark w-100 h-100 position-absolute top-0 left-0"></div>
     <!--Content-->
-    <div class="bg-white my-modal rounded-3 shadow p-4 mq-991-w-100">
+    <div class="bg-white my-modal rounded-5 shadow p-4 mq-991-w-100">
         <!--Top Side-->
         <div class="d-flex align-items-center justify-content-between">
-            <button type="button" class="bg-transparent opacity-0 no-touch"></button>
-            <h6 class="text-black fw-bold font-small">ورود / ثبت ‌نام</h6>
+            <button type="button" class="squar-size border-0 text-black rounded-3"><i class="bi bi-arrow-right"></i></button>
+            <h6 class="text-black fw-bold font-small">ورود با رمز ثابت</h6>
             <button type="button" class="squar-size border-0 text-black rounded-3"><i class="bi bi-x"></i></button>
         </div>
         <h6 class="text-center text-grey mb-2 font-small">شماره موبایل، ایمیل یا نام کاربری خود را وارد نمائید.</h6>
         <!--Top Side-->
         <div class="d-flex flex-wrap align-items-center justify-content-center gap-3 mb-5">
             <div class="d-inline-flex align-items-center gap-2">
-                <input class="inner-page-toggler" type="radio" id="mobile-way" name="login-way" checked>
-                <label class="text-grey font-small" for="mobile-way">موبایل</label>
+                <input class="inner-page-toggler" type="radio" id="mobile-login-code-s-way" name="login-code-s-way" checked data-target="modal-login-code-s-mobile-page">
+                <label class="text-grey font-small" for="mobile-login-code-s-way">موبایل</label>
             </div>
             <div class="d-inline-flex align-items-center gap-2">
-                <input class="inner-page-toggler" type="radio" id="email-way" name="login-way" checked>
-                <label class="text-grey font-small" for="email-way">ایمیل</label>
+                <input class="inner-page-toggler" type="radio" id="email-login-code-s-way" name="login-code-s-way" data-target="modal-login-code-s-email-page">
+                <label class="text-grey font-small" for="email-login-code-s-way">ایمیل</label>
             </div>
             <div class="d-inline-flex align-items-center gap-2">
-                <input class="inner-page-toggler" type="radio" id="user-way" name="login-way" checked>
-                <label class="text-grey font-small" for="user-way">شناسه کاربری</label>
+                <input class="inner-page-toggler" type="radio" id="user-login-code-s-way" name="login-code-s-way" data-target="modal-login-code-s-user-page">
+                <label class="text-grey font-small" for="user-login-code-s-way">شناسه کاربری</label>
             </div>
         </div>
         <!--Middle Side That Changes-->
-        <form action="#">
+        <form action="#" class="page current" id="modal-login-code-s-mobile-page">
             <div class="d-flex align-items-center gap-3 mb-1">
                 <div class="w-75">
                     <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
@@ -70,6 +70,158 @@
                     </div>
                     <!--Error Handling-->
                     <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                </div>
+            </div>
+            <div class="d-flex align-items-center gap-4 mb-1">
+                <div class="w-100">
+                    <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                        <h6>رمز ورود</h6>
+                        <input type="password" class="bg-transparent border-0 w-100" required>
+                    </div>
+                    <!--Error Handling-->
+                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                </div>
+            </div>
+            <a href="#" class="mb-3 d-block font-smallx text-black" data-target="login-s-password-recover">بازیابی رمز ورود</a>
+            <button class="submit-btn w-100 rounded-3 border-0 ripple-btn fw-bold text-white mb-3" type="submit">ورود</button>
+            <button class="bg-transparent text-base fw-bold ripple-btn base p-3 rounded-3 border-0 ripple-btn w-100" type="button" data-target="signup-page">ثبت نام</button>
+        </form>
+        <form action="#" class="page d-none" id="modal-login-code-s-email-page">
+            <div class="d-flex align-items-center gap-3 mb-1">
+                <div class="w-100">
+                    <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                        <h6>ایمیل</h6>
+                        <input type="email" class="bg-transparent border-0 w-100" required>
+                    </div>
+                    <!--Error Handling-->
+                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                </div>
+            </div>
+            <div class="d-flex align-items-center gap-4 mb-1">
+                <div class="w-100">
+                    <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                        <h6>رمز ورود</h6>
+                        <input type="password" class="bg-transparent border-0 w-100" required>
+                    </div>
+                    <!--Error Handling-->
+                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                </div>
+            </div>
+            <a href="#" class="mb-3 d-block font-smallx text-black" data-target="login-s-password-recover">بازیابی رمز ورود</a>
+            <button class="submit-btn w-100 rounded-3 border-0 ripple-btn fw-bold text-white mb-3" type="submit">ورود</button>
+            <button class="bg-transparent text-base fw-bold ripple-btn base p-3 rounded-3 border-0 ripple-btn w-100" type="button" data-target="signup-page">ثبت نام</button>
+        </form>
+        <form action="#" class="page d-none" id="modal-login-code-s-user-page">
+            <div class="d-flex align-items-center gap-3 mb-1">
+                <div class="d-flex align-items-center gap-3 mb-1 w-100">
+                    <div class="w-100">
+                        <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                            <h6>شناسه کاربری</h6>
+                            <input type="text" class="bg-transparent border-0 w-100" required>
+                        </div>
+                        <!--Error Handling-->
+                        <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex align-items-center gap-4 mb-1">
+                <div class="w-100">
+                    <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                        <h6>رمز ورود</h6>
+                        <input type="password" class="bg-transparent border-0 w-100" required>
+                    </div>
+                    <!--Error Handling-->
+                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                </div>
+            </div>
+            <a href="#" class="mb-3 d-block font-smallx text-black" data-target="login-s-password-recover">بازیابی رمز ورود</a>
+            <button class="submit-btn w-100 rounded-3 border-0 ripple-btn fw-bold text-white mb-3" type="submit">ورود</button>
+            <button class="bg-transparent text-base fw-bold ripple-btn base p-3 rounded-3 border-0 ripple-btn w-100" type="button" data-target="signup-page">ثبت نام</button>
+        </form>
+    </div>
+</div>
+<!--Login Modal-->
+<div data-opened="false" id="login-modal" class="my-modal-holder fixed-top w-100 h-100 d-flex align-items-center justify-content-center">
+    <!--Dark Bg Of It-->
+    <div class="my-bg-dark w-100 h-100 position-absolute top-0 left-0"></div>
+    <!--Content-->
+    <div class="bg-white my-modal rounded-5 shadow p-4 mq-991-w-100">
+        <!--Top Side-->
+        <div class="d-flex align-items-center justify-content-between">
+            <button type="button" class="bg-transparent opacity-0 no-touch"></button>
+            <h6 class="text-black fw-bold font-small">ورود / ثبت ‌نام</h6>
+            <button type="button" class="squar-size border-0 text-black rounded-3"><i class="bi bi-x"></i></button>
+        </div>
+        <h6 class="text-center text-grey mb-2 font-small">شماره موبایل، ایمیل یا نام کاربری خود را وارد نمائید.</h6>
+        <!--Top Side-->
+        <div class="d-flex flex-wrap align-items-center justify-content-center gap-3 mb-5">
+            <div class="d-inline-flex align-items-center gap-2">
+                <input class="inner-page-toggler" type="radio" id="mobile-login-way" name="login-way" checked data-target="modal-login-mobile-page">
+                <label class="text-grey font-small" for="mobile-login-way">موبایل</label>
+            </div>
+            <div class="d-inline-flex align-items-center gap-2">
+                <input class="inner-page-toggler" type="radio" id="email-login-way" name="login-way" data-target="modal-login-email-page">
+                <label class="text-grey font-small" for="email-login-way">ایمیل</label>
+            </div>
+            <div class="d-inline-flex align-items-center gap-2">
+                <input class="inner-page-toggler" type="radio" id="user-login-way" name="login-way" data-target="modal-login-user-page">
+                <label class="text-grey font-small" for="user-login-way">شناسه کاربری</label>
+            </div>
+        </div>
+        <!--Middle Side That Changes-->
+        <form action="#" class="page current" id="modal-login-mobile-page">
+            <div class="d-flex align-items-center gap-3 mb-1">
+                <div class="w-75">
+                    <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                        <h6>موبایل</h6>
+                        <input type="tel" class="bg-transparent border-0 w-100" required>
+                    </div>
+                    <!--Error Handling-->
+                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                </div>
+                <div class="w-25">
+                    <div class="intractive-input-component mb-2 disabled position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                        <h6>0098</h6>
+                        <input type="tel" class="bg-transparent border-0 w-100">
+                    </div>
+                    <!--Error Handling-->
+                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                </div>
+            </div>
+            <button class="submit-btn w-100 rounded-3 border-0 ripple-btn fw-bold text-white mb-3" type="submit">ورود با رمز یکبار مصرف</button>
+            <div class="d-flex align-items-center gap-3">
+                <button class="bg-transparent text-base fw-bold ripple-btn base text-base w-50 p-3 rounded-3 border-0" type="button">ورود با رمز ثابت</button>
+                <button class="bg-transparent text-base fw-bold ripple-btn base text-base w-50 p-3 rounded-3 border-0" type="button">ثبت نام</button>
+            </div>
+        </form>
+        <form action="#" class="page d-none" id="modal-login-email-page">
+            <div class="d-flex align-items-center gap-3 mb-1">
+                <div class="w-100">
+                    <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                        <h6>ایمیل</h6>
+                        <input type="email" class="bg-transparent border-0 w-100" required>
+                    </div>
+                    <!--Error Handling-->
+                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                </div>
+            </div>
+            <button class="submit-btn w-100 rounded-3 border-0 ripple-btn fw-bold text-white mb-3" type="submit">ورود با رمز یکبار مصرف</button>
+            <div class="d-flex align-items-center gap-3">
+                <button class="bg-transparent text-base fw-bold ripple-btn base text-base w-50 p-3 rounded-3 border-0" type="button">ورود با رمز ثابت</button>
+                <button class="bg-transparent text-base fw-bold ripple-btn base text-base w-50 p-3 rounded-3 border-0" type="button">ثبت نام</button>
+            </div>
+        </form>
+        <form action="#" class="page d-none" id="modal-login-user-page">
+            <div class="d-flex align-items-center gap-3 mb-1">
+                <div class="d-flex align-items-center gap-3 mb-1 w-100">
+                    <div class="w-100">
+                        <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                            <h6>شناسه کاربری</h6>
+                            <input type="text" class="bg-transparent border-0 w-100" required>
+                        </div>
+                        <!--Error Handling-->
+                        <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                    </div>
                 </div>
             </div>
             <button class="submit-btn w-100 rounded-3 border-0 ripple-btn fw-bold text-white mb-3" type="submit">ورود با رمز یکبار مصرف</button>
@@ -320,7 +472,7 @@
                                             <i class="bi bi-calendar4-week"></i>
                                             تاریخ پرواز
                                         </h6>
-                                        <input type="text" class="bg-transparent border-0" readonly id="example" required>
+                                        <input type="text" class="bg-transparent border-0" readonly id="first-date" required>
                                     </div>
                                     <!--Error Handling-->
                                     <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
@@ -448,6 +600,18 @@
 <script src="assets/plugins/MCDatepicker/dist/mc-calendar.min.js"></script>
 <script src="assets/base/js/error-handling.js"></script>
 <script src="assets/base/js/nav.js"></script>
-<script>const myDatePicker = MCDatepicker.create({el: '#example',})</script>
+<script>const myDatePicker = MCDatepicker.create({el: '#first-date',})</script>
+<script>
+    const innerPageToggler = document.querySelectorAll('.inner-page-toggler');
+    innerPageToggler.forEach(item => {
+        item.addEventListener('click', () => {
+            const pageToShow = item.getAttribute('data-target');
+            const currentPage = document.querySelector('.page.current');
+
+            currentPage.classList.replace('current', 'd-none');
+            document.getElementById(pageToShow).classList.replace('d-none', 'current');
+        })
+    })
+</script>
 </body>
 </html>

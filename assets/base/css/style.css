@@ -85,8 +85,11 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .ripple-btn.base > .ripple {background-color: rgba(221, 153, 51, .5);}
 .my-modal::-webkit-scrollbar {display: none;}
 .my-modal::-moz-viewport-scroll {display: none;}
-.intractive-input-component.my-modal.focused {border-color: var(--primary-base);}
+.intractive-input-component.my-modal.focused {border-color: var(--primary-base) !important;}
 .intractive-input-component.my-modal.focused h6 {color: var(--primary-base) !important;}
+.my-modal-holder[data-opened="false"] {opacity: 0;pointer-events: none;}
+.my-modal-holder[data-opened="true"] {opacity: 1;pointer-events: visible;}
+.my-modal-holder .intractive-input-component {border-color: grey;color: grey !important;}
 
 #nav {
     z-index: 1030;
@@ -207,7 +210,7 @@ header .dropdown-item:active {background-color: rgba(185, 185, 185, 1) !importan
 .switch-btn:hover {background-color: #e6e6e6 !important;}
 .submit-btn:hover, .submit-btn:active {background-color: var(--primary-base) !important;}
 .hover-text-pink:hover {color: var(--pink) !important;}
-.intractive-input-component.focused > input ~ div{opacity: 1 !important;pointer-events: visible !important;}
+.my-modal-holder .intractive-input-component:hover {border-color: black;color: black;}
 
 /*Media Querys*/
 @media (max-width: 991px) {
