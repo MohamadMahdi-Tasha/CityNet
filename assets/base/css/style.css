@@ -70,6 +70,7 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .error-text {font-size: .8rem;color: red;}
 .error-holder {opacity: 0;pointer-events: none;transition: .3s}
 .error-holder.show {opacity: 1;pointer-events: visible;}
+.squar-size {width: 40px;height: 40px;}
 
 .popular-citys-btn > span{
     aspect-ratio: 1/1;
@@ -183,7 +184,13 @@ header .dropdown-item:active {background-color: rgba(185, 185, 185, 1) !importan
 .switch-btn:hover {background-color: #e6e6e6 !important;}
 .submit-btn:hover, .submit-btn:active {background-color: var(--primary-base) !important;}
 .hover-text-pink:hover {color: var(--pink) !important;}
-.intractive-input-component.focused > input ~ div{
-    opacity: 1 !important;
-    pointer-events: visible !important;
+.intractive-input-component.focused > input ~ div{opacity: 1 !important;pointer-events: visible !important;}
+
+/*Media Querys*/
+@media (max-width: 991px) {
+    .mq-991-w-100 {width: 100%;}
+    .mq-991-w-50 {width: 50%;}
+    .px-7rem {padding-right: 1rem;padding-left: 1rem;}
+    .home-first-section, .home-first-section > main {clip-path: none;min-height: 100vh;}
+    .home-f
 }

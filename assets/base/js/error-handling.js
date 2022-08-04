@@ -82,7 +82,4 @@ oneWaySubmitBtn.addEventListener('click', (event) => {
             "تعداد افراد نمیتواند 0 نفر باشد"
         )
     }
-    else {
-        // Send Date Here
-    }
 })
