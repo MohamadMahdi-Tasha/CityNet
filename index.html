@@ -29,11 +29,11 @@
 <!--nav-->
 <nav id="nav" class="position-fixed w-75 h-100 overflow-scroll p-3 d-block d-lg-none" data-opened="false">
     <ul class="list-unstyled">
-        <li><button id="nav-close-btn"><i class="bi bi-x"></i></button></li>
-        <li><a href="index.html">صفحه اصلی</a></li>
-        <li><a href="blog.html">بلاگ</a></li>
-        <li><a href="about-us.html">درباره ما</a></li>
-        <li><a href="contact-us.html">تماس با ما</a></li>
+        <li class="d-flex justify-content-end align-items-center mb-3"><button id="nav-close-btn" class="ripple-btn squar-size border-0 bg-transparent rounded-3 fs-6"><i class="bi bi-x"></i></button></li>
+        <li class="mb-3"><a class="text-white hover-text-pink" href="index.html">صفحه اصلی</a></li>
+        <li class="mb-3"><a class="text-white hover-text-pink" href="blog.html">بلاگ</a></li>
+        <li class="mb-3"><a class="text-white hover-text-pink" href="about-us.html">درباره ما</a></li>
+        <li><a class="text-white hover-text-pink" href="contact-us.html">تماس با ما</a></li>
     </ul>
 </nav>
 <!--First Section-->
@@ -42,9 +42,9 @@
         <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
             <!--Left Side-->
             <ul class="list-unstyled d-flex align-items-center gap-0 gap-lg-4 mb-0">
-                <li class="d-block d-lg-none"><button id="nav-toggler" class="bg-transparent border-0 ripple-btn squar-size fs-5"><i class="bi bi-list"></i></button></li>
-                <li class="d-block d-lg-none"><button class="bg-transparent border-0 ripple-btn squar-size fs-5"><i class="bi bi-person"></i></button></li>
-                <li class="d-block d-lg-none"><button class="bg-transparent border-0 ripple-btn squar-size fs-5">IRR</button></li>
+                <li class="d-block d-lg-none"><button id="nav-toggler" class="bg-transparent rounded-3 border-0 ripple-btn squar-size fs-6"><i class="bi bi-list"></i></button></li>
+                <li class="d-block d-lg-none"><button class="bg-transparent rounded-3 border-0 ripple-btn squar-size fs-6"><i class="bi bi-person"></i></button></li>
+                <li class="d-block d-lg-none"><button class="bg-transparent rounded-3 border-0 ripple-btn squar-size fs-6">IRR</button></li>
                 <li class="d-none d-lg-block">
                     <a href="#" class="d-block"><img src="assets/base/img/img-logo-typo.svg" alt="سیتی نت"></a>
                 </li>
@@ -392,5 +392,24 @@
 <script src="assets/plugins/MCDatepicker/dist/mc-calendar.min.js"></script>
 <script src="assets/base/js/error-handling.js"></script>
 <script>const myDatePicker = MCDatepicker.create({el: '#example',})</script>
+<script>
+    const navToggler = document.getElementById('nav-toggler');
+    const darkBgNav = document.getElementById('dark-bg-of-nav');
+    const nav = document.getElementById('nav');
+    const navCloseBtn = document.getElementById('nav-close-btn');
+
+    function closeNav() {
+        nav.setAttribute('data-opened', 'false')
+        darkBgNav.setAttribute('data-opened', 'false')
+    }
+
+    navToggler.addEventListener('click', () => {
+        nav.setAttribute('data-opened', 'true');
+        darkBgNav.setAttribute('data-opened', 'true');
+    })
+
+    darkBgNav.addEventListener('click', () => closeNav())
+    navCloseBtn.addEventListener('click', () => closeNav())
+</script>
 </body>
 </html>
