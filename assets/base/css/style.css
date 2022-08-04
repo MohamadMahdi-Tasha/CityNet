@@ -203,8 +203,9 @@ header .dropdown-item:active {background-color: rgba(185, 185, 185, 1) !importan
 @media (max-width: 991px) {
     .mq-991-w-100 {width: 100% !important;}
     .px-7rem {padding-right: 1rem;padding-left: 1rem;}
-    .home-first-section, .home-first-section > main {clip-path: none;min-height: 100vh;}
-    .home-second-section {transform: translateY(-60vh);}
+    .home-body {background-image: url('../img/home/first-section.png');background-size: cover;background-position: center;}
+    .home-first-section, .home-first-section > main {clip-path: none;min-height: auto;background-image: none;height: 180px;}
+    .home-second-section {transform: none;}
     .switch-btn {left: 10%;top: 30%;width: 50px;}
     .dropdown-menu {width: 100% !important;}
     .passenger-counter {width: 100% !important;}
