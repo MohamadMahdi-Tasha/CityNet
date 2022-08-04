@@ -188,9 +188,15 @@ header .dropdown-item:active {background-color: rgba(185, 185, 185, 1) !importan
 
 /*Media Querys*/
 @media (max-width: 991px) {
-    .mq-991-w-100 {width: 100%;}
-    .mq-991-w-50 {width: 50%;}
+    .mq-991-w-100 {width: 100% !important;}
+    .mq-991-w-50 {width: 50% !important;}
     .px-7rem {padding-right: 1rem;padding-left: 1rem;}
     .home-first-section, .home-first-section > main {clip-path: none;min-height: 100vh;}
-    .home-f
+    .home-second-section {transform: translateY(-60vh);}
+    .switch-btn {left: 10%;top: 30%;width: 50px;}
+    .dropdown-menu {width: 100% !important;}
+    .passenger-counter {width: 100% !important;}
+    .error-holder {margin-bottom: .4rem;margin-top: .4rem;}
+    .intractive-input-component {margin-bottom: 0 !important;}
+    .dropdown {margin-bottom: 0 !important;}
 }

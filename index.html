@@ -128,7 +128,7 @@
 <!--Second Section-->
 <section class="d-flex justify-content-center">
     <main class="px-7rem container-xxl d-flex justify-content-center">
-        <form action="#" class="bg-white shadow-lg rounded-4 w-75 home-second-section">
+        <form action="#" class="bg-white shadow-lg rounded-4 w-75 mq-991-w-100 home-second-section">
             <!--Top Side Buttons-->
             <div class="d-flex justify-content-center align-items-center border-bottom mx-4">
                <button type="button" class="top-side-page-buttons bg-transparent d-flex flex-column align-items-center justify-content-center active" data-page-target="flight">
@@ -148,7 +148,7 @@
             <div class="p-4">
                 <div class="bottom-page" id="flight">
                     <!--Top Side-->
-                    <div class="d-flex align-items-center gap-3 mb-4">
+                    <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
                         <div class="d-flex align-items-center">
                             <input required name="fly-ways" data-page-target="one-way" id="one-way-radio" class="inner-page-toggler ms-2" type="radio" checked>
                             <label for="one-way-radio">یک طرفه</label>
@@ -166,8 +166,8 @@
                     <div>
                         <div id="one-way">
                             <!--Top Side-->
-                            <div class="d-flex align-items-start gap-2 position-relative mb-4 top-side-flight">
-                                <div class="w-50">
+                            <div class="d-flex flex-lg-row flex-column align-items-start gap-lg-2 gap-0 position-relative mb-lg-4 mb-0 top-side-flight">
+                                <div class="w-50 mq-991-w-100">
                                     <div class="dropdown mb-2">
                                     <div id="intractive-input-component-top-side-1" class="intractive-input-component position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         <h6>
@@ -206,7 +206,7 @@
                                 </div>
                                 <!--Switch Button-->
                                 <button class="switch-btn rounded-circle position-absolute bg-white" type="button"><i class="bi bi-arrow-left-right"></i></button>
-                                <div class="w-50">
+                                <div class="w-50 mq-991-w-100">
                                     <div class="dropdown mb-2">
                                     <div id="intractive-input-component-top-side-2" class="intractive-input-component position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         <h6>
@@ -245,8 +245,8 @@
                                 </div>
                             </div>
                             <!--Bottom Side-->
-                            <div class="d-flex align-items-start gap-2">
-                                <div class="w-25">
+                            <div class="d-flex flex-lg-row flex-column align-items-start gap-2">
+                                <div class="w-25 mq-991-w-100">
                                     <div id="intractive-input-component-top-side-3" class="intractive-input-component mb-2 date position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
                                         <h6>
                                             <i class="bi bi-calendar4-week"></i>
@@ -257,15 +257,16 @@
                                     <!--Error Handling-->
                                     <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
                                 </div>
-                                <div class="w-25">
+                                <div class="w-25 mq-991-w-100">
                                     <div class="intractive-input-component mb-2 disabled position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
                                         <h6>
                                             <i class="bi bi-calendar4-week"></i>
                                             بدون بازگشت
                                         </h6>
                                     </div>
+                                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
                                 </div>
-                                <div class="w-25">
+                                <div class="w-25 mq-991-w-100">
                                     <div id="intractive-input-component-top-side-4" class="dropdown mb-2 w-100">
                                         <div class="intractive-input-component focused passenger position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" aria-expanded="false">
                                             <h6><i class="bi bi-person"></i>مسافران کلاس کابین</h6>
@@ -329,7 +330,7 @@
                                     <!--Error Handling-->
                                     <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
                                 </div>
-                                <button type="button" id="one-way-submit-btn" class="submit-btn border-0 rounded-3 text-white w-25 ripple-btn">جستجو</button>
+                                <button type="button" id="one-way-submit-btn" class="submit-btn border-0 rounded-3 text-white w-25 mq-991-w-100 ripple-btn">جستجو</button>
                             </div>
                         </div>
                     </div>
