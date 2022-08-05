@@ -1280,22 +1280,13 @@
 <!--<script src="assets/base/js/error-handling.js"></script>-->
 <script src="assets/base/js/nav.js"></script>
 <script src="assets/base/js/modals.js"></script>
+<script src="assets/base/js/inner-pages.js"></script>
 <script>
     const myDatePicker1 = MCDatepicker.create({el: '#first-date',})
     const myDatePicker2 = MCDatepicker.create({el: '#second-date',})
     const myDatePicker3 = MCDatepicker.create({el: '#third-date',})
     const myDatePicker4 = MCDatepicker.create({el: '#fourth-date',})
     const myDatePicker5 = MCDatepicker.create({el: '#fifth-date',})
-    const homeFlightInnerPageToggler = document.querySelectorAll('.home-flight-inner-page-toggler');
-
-    homeFlightInnerPageToggler.forEach(item => {
-        item.addEventListener('click', () => {
-            const targetId = item.getAttribute('data-target');
-            const target = document.getElementById(targetId);
-            document.querySelector('.home-flight-inner-page.current').classList.replace('current', 'd-none');
-            target.classList.replace('d-none', 'current');
-        })
-    })
 </script>
 </body>
 </html>
