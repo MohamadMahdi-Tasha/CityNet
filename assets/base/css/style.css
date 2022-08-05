@@ -26,7 +26,7 @@ header .dropdown-menu {width: 15rem;}
 header .dropdown-item h6 {font-size: .8rem;margin-bottom: 0;}
 button[data-bs-toggle="dropdown"].show > i:before{transform: rotate(180deg);}
 button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
-.text-grey {color: grey;}
+.text-grey {color: grey !important;}
 .my-fw-bold {font-family: IRANYekanBold, "Roboto Light", Tahoma, sans-serif !important;}
 .px-7rem {padding-right: 7rem;padding-left: 7rem;}
 .dropdown-menu.show {animation: dropdown-show .3s linear;}
@@ -71,7 +71,7 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .error-text {font-size: .8rem;color: red;}
 .error-holder {opacity: 0;pointer-events: none;transition: .3s}
 .error-holder.show {opacity: 1;pointer-events: visible;}
-.squar-size {width: 40px;height: 40px;}
+.squar-size {width: 40px;height: 40px;aspect-ratio: 1/1}
 #dark-bg-of-nav  {background-color: rgba(0,0,0,.2);z-index: 1029;}
 #dark-bg-of-nav, #nav {transition: .3s}
 #nav::-webkit-scrollbar{display: none;}
@@ -97,6 +97,9 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .user-name-email-signup {grid-column: span 3;}
 .dashed-border-bottom-div {border-bottom: 1px dashed grey;}
 .dashed-border-bottom-div:first-of-type ~ h6 {color: grey;}
+.switch-btn.diffrent {
+    left: calc(67% - 20px);
+}
 .signup-type-button {
     height: 50px;
     width: 25%;

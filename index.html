@@ -621,7 +621,7 @@
 <!--Second Section-->
 <section class="d-flex justify-content-center mb-5">
     <main class="px-7rem container-xxl d-flex justify-content-center">
-        <form action="#" class="bg-white shadow-lg rounded-4 w-75 mq-991-w-100 home-second-section">
+        <div class="bg-white shadow-lg rounded-4 w-75 mq-991-w-100 home-second-section">
             <!--Top Side Buttons-->
             <div class="d-flex justify-content-center align-items-center border-bottom mx-4">
                <button type="button" class="top-side-page-buttons bg-transparent d-flex flex-column align-items-center justify-content-center active" data-page-target="flight">
@@ -643,32 +643,32 @@
                     <!--Top Side-->
                     <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
                         <div class="d-flex align-items-center">
-                            <input required name="fly-ways" data-page-target="one-way" id="one-way-radio" class="inner-page-toggler ms-2" type="radio" checked>
+                            <input required name="fly-ways" data-target="one-way" id="one-way-radio" class="inner-page-toggler home-flight-inner-page-toggler ms-2" type="radio" checked>
                             <label for="one-way-radio">یک طرفه</label>
                         </div>
                         <div class="d-flex align-items-center">
-                            <input required name="fly-ways" data-page-target="two-way" id="two-way-radio" class="inner-page-toggler ms-2" type="radio">
+                            <input required name="fly-ways" data-target="two-way" id="two-way-radio" class="inner-page-toggler home-flight-inner-page-toggler ms-2" type="radio">
                             <label for="two-way-radio">رفت و برگشت</label>
                         </div>
                         <div class="d-flex align-items-center">
-                            <input required name="fly-ways" data-page-target="more-ways" id="more-ways-radio" class="inner-page-toggler ms-2" type="radio">
+                            <input required name="fly-ways" data-target="more-ways" id="more-ways-radio" class="inner-page-toggler home-flight-inner-page-toggler ms-2" type="radio">
                             <label for="more-ways-radio">چند مسیره</label>
                         </div>
                     </div>
                     <!--Bottom Side That Changes-->
                     <div>
-                        <div id="one-way">
+                        <div class="home-flight-inner-page current" id="one-way">
                             <!--Top Side-->
                             <div class="d-flex flex-lg-row flex-column align-items-start gap-lg-2 gap-0 position-relative mb-lg-4 mb-0 top-side-flight">
                                 <div class="w-50 mq-991-w-100">
                                     <div class="dropdown mb-2">
-                                    <div id="intractive-input-component-top-side-1" class="intractive-input-component position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <div class="intractive-input-component position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         <h6>
                                             <i class="bi bi-geo-alt"></i>
                                             شهر یا فرودگاه مبدا
                                         </h6>
                                     </div>
-                                    <div class="bg-white dropdown-menu dropdown-menu-end shadow rounded-4 p-4 popular-city">
+                                        <div class="bg-white dropdown-menu dropdown-menu-end shadow rounded-4 p-4 popular-city">
                                         <h6 class="mb-5">شهر و فرودگاه های پرتردد</h6>
                                         <div class="popular-city-btns-holder d-grid gap-3 position-relative">
                                             <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تهران</button>
@@ -694,14 +694,14 @@
                                             <div class="top-of-buttons-popular-citys w-100 h-100 position-absolute top-0"></div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                                    </div>
+                                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
                                 </div>
                                 <!--Switch Button-->
                                 <button class="switch-btn rounded-circle position-absolute bg-white" type="button"><i class="bi bi-arrow-left-right"></i></button>
                                 <div class="w-50 mq-991-w-100">
                                     <div class="dropdown mb-2">
-                                    <div id="intractive-input-component-top-side-2" class="intractive-input-component position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="intractive-input-component position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         <h6>
                                             <i class="bi bi-geo-alt"></i>
                                             شهر یا فرودگاه مبدا
@@ -740,7 +740,7 @@
                             <!--Bottom Side-->
                             <div class="d-flex flex-lg-row flex-column align-items-start gap-2">
                                 <div class="w-25 mq-991-w-100">
-                                    <div id="intractive-input-component-top-side-3" class="intractive-input-component mb-2 date position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                                    <div class="intractive-input-component mb-2 date position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
                                         <h6>
                                             <i class="bi bi-calendar4-week"></i>
                                             تاریخ پرواز
@@ -760,7 +760,7 @@
                                     <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
                                 </div>
                                 <div class="w-25 mq-991-w-100">
-                                    <div id="intractive-input-component-top-side-4" class="dropdown mb-2 w-100">
+                                    <div class="dropdown mb-2 w-100">
                                         <div class="intractive-input-component focused passenger position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" aria-expanded="false">
                                             <h6><i class="bi bi-person"></i>مسافران کلاس کابین</h6>
                                             <h4 class="passenger-type-and-num mb-0">
@@ -826,10 +826,416 @@
                                 <button type="button" id="one-way-submit-btn" class="submit-btn border-0 rounded-3 text-white w-25 mq-991-w-100 ripple-btn">جستجو</button>
                             </div>
                         </div>
+                        <div class="home-flight-inner-page d-none" id="two-way">
+                            <!--Top Side-->
+                            <div class="d-flex flex-lg-row flex-column align-items-start gap-lg-2 gap-0 position-relative mb-lg-4 mb-0 top-side-flight">
+                                <div class="w-50 mq-991-w-100">
+                                    <div class="dropdown mb-2">
+                                        <div class="intractive-input-component position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <h6>
+                                                <i class="bi bi-geo-alt"></i>
+                                                شهر یا فرودگاه مبدا
+                                            </h6>
+                                        </div>
+                                        <div class="bg-white dropdown-menu dropdown-menu-end shadow rounded-4 p-4 popular-city">
+                                            <h6 class="mb-5">شهر و فرودگاه های پرتردد</h6>
+                                            <div class="popular-city-btns-holder d-grid gap-3 position-relative">
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تهران</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>کیش</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>استانبول</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>دبی</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>مشهد</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>اهواز</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>انکارا</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>لندن</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تبریز</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>قشم</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تورنتو</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>ایروان</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>بندر عباس</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>شیراز</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>مسقط</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>پکن</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>رشت</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>اصفهان</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>نجف</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>باکو</button>
+                                                <div class="top-of-buttons-popular-citys w-100 h-100 position-absolute top-0"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                                </div>
+                                <!--Switch Button-->
+                                <button class="switch-btn rounded-circle position-absolute bg-white" type="button"><i class="bi bi-arrow-left-right"></i></button>
+                                <div class="w-50 mq-991-w-100">
+                                    <div class="dropdown mb-2">
+                                        <div class="intractive-input-component position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <h6>
+                                                <i class="bi bi-geo-alt"></i>
+                                                شهر یا فرودگاه مبدا
+                                            </h6>
+                                        </div>
+                                        <div class="bg-white dropdown-menu dropdown-menu-end shadow rounded-4 p-4 popular-city">
+                                            <h6 class="mb-5">شهر و فرودگاه های پرتردد</h6>
+                                            <div class="popular-city-btns-holder d-grid gap-3 position-relative">
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تهران</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>کیش</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>استانبول</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>دبی</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>مشهد</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>اهواز</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>انکارا</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>لندن</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تبریز</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>قشم</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تورنتو</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>ایروان</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>بندر عباس</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>شیراز</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>مسقط</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>پکن</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>رشت</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>اصفهان</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>نجف</button>
+                                                <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>باکو</button>
+                                                <div class="top-of-buttons-popular-citys w-100 h-100 position-absolute top-0"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                                </div>
+                            </div>
+                            <!--Bottom Side-->
+                            <div class="d-flex flex-lg-row flex-column align-items-start gap-2">
+                                <div class="w-25 mq-991-w-100">
+                                    <div class="intractive-input-component mb-2 date position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                                        <h6>
+                                            <i class="bi bi-calendar4-week"></i>
+                                            تاریخ پرواز
+                                        </h6>
+                                        <input type="text" class="bg-transparent border-0" readonly id="second-date" required>
+                                    </div>
+                                    <!--Error Handling-->
+                                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                                </div>
+                                <div class="w-25 mq-991-w-100">
+                                    <div class="intractive-input-component mb-2 date position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                                        <h6>
+                                            <i class="bi bi-calendar4-week"></i>
+                                            تاریخ بازگشت
+                                        </h6>
+                                        <input type="text" class="bg-transparent border-0" readonly id="third-date" required>
+                                    </div>
+                                    <!--Error Handling-->
+                                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                                </div>
+                                <div class="w-25 mq-991-w-100">
+                                    <div class="dropdown mb-2 w-100">
+                                        <div class="intractive-input-component focused passenger position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" aria-expanded="false">
+                                            <h6><i class="bi bi-person"></i>مسافران کلاس کابین</h6>
+                                            <h4 class="passenger-type-and-num mb-0">
+                                                <span class="passenger-number">1</span>
+                                                مسافر,
+                                                <span class="passenger-type">اکونومی</span>
+                                            </h4>
+                                        </div>
+                                        <div class="bg-white dropdown-menu dropdown-menu-end shadow rounded-4 p-4 popular-city">
+                                            <div class="passenger-counter">
+                                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                                    <h6>
+                                                        بزرگسال
+                                                        <span>(+12)</span>
+                                                    </h6>
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <button class="plus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">+</button>
+                                                        <span class="adult-number">1</span>
+                                                        <button class="minus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">-</button>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                                    <h6>
+                                                        کودک
+                                                        <span>(2 تا 12)</span>
+                                                    </h6>
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <button class="plus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">+</button>
+                                                        <span class="kid-number">0</span>
+                                                        <button class="minus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">-</button>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                                    <h6>
+                                                        نوزاد
+                                                        <span>(-2)</span>
+                                                    </h6>
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <button class="plus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">+</button>
+                                                        <span class="new-born-number">0</span>
+                                                        <button class="minus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">-</button>
+                                                    </div>
+                                                </div>
+                                                <div class="dropdown w-100 border-top pt-3 one-way-passenger-dropdown" data-value="اکونومی">
+                                                    <button class="w-100 d-flex align-items-center bg-white justify-content-between p-2 border-black rounded-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <span>اکونومی</span>
+                                                        <i class="bi bi-chevron-down"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-start w-100 overflow-hidden rounded-3 shadow border-0">
+                                                        <li><button type="button" class="dropdown-item bg-white ripple-btn text-black p-2 fs-6 text-end" data-active="true">اکونومی</button></li>
+                                                        <li><button type="button" class="dropdown-item bg-white ripple-btn text-black p-2 fs-6 text-end">بیزینس</button></li>
+                                                        <li><button type="button" class="dropdown-item bg-white ripple-btn text-black p-2 fs-6 text-end">پریمیوم</button></li>
+                                                        <li><button type="button" class="dropdown-item bg-white ripple-btn text-black p-2 fs-6 text-end">فرست کلاس</button></li>
+                                                        <li><button type="button" class="dropdown-item bg-white ripple-btn text-black p-2 fs-6 text-end">همه کلاس ها</button></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Error Handling-->
+                                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                                </div>
+                                <button type="button" id="two-way-submit-btn" class="submit-btn border-0 rounded-3 text-white w-25 mq-991-w-100 ripple-btn">جستجو</button>
+                            </div>
+                        </div>
+                        <div class="home-flight-inner-page d-none" id="more-ways">
+                            <div class="d-flex align-items-start gap-3">
+                                <button type="button" class="squar-size rounded-3 border-0 text-grey base"><i class="bi bi-x"></i></button>
+                                <div class="d-flex align-items-center justify-content-between position-relative w-100 gap-3">
+                                    <div class="w-50 mq-991-w-100">
+                                        <div class="dropdown mb-2">
+                                            <div class="intractive-input-component position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false"><h6>مبدا اول</h6></div>
+                                            <div class="bg-white dropdown-menu dropdown-menu-end shadow rounded-4 p-4 popular-city">
+                                                <h6 class="mb-5">شهر و فرودگاه های پرتردد</h6>
+                                                <div class="popular-city-btns-holder d-grid gap-3 position-relative">
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تهران</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>کیش</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>استانبول</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>دبی</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>مشهد</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>اهواز</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>انکارا</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>لندن</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تبریز</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>قشم</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تورنتو</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>ایروان</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>بندر عباس</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>شیراز</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>مسقط</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>پکن</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>رشت</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>اصفهان</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>نجف</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>باکو</button>
+                                                    <div class="top-of-buttons-popular-citys w-100 h-100 position-absolute top-0"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                                    </div>
+                                    <button type="button" class="switch-btn diffrent position-absolute rounded-circle bg-white"><i class="bi bi-arrow-left-right"></i></button>
+                                    <div class="w-50 mq-991-w-100">
+                                        <div class="dropdown mb-2">
+                                            <div class="intractive-input-component position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false"><h6>مقصد اول</h6></div>
+                                            <div class="bg-white dropdown-menu dropdown-menu-end shadow rounded-4 p-4 popular-city">
+                                                <h6 class="mb-5">شهر و فرودگاه های پرتردد</h6>
+                                                <div class="popular-city-btns-holder d-grid gap-3 position-relative">
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تهران</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>کیش</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>استانبول</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>دبی</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>مشهد</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>اهواز</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>انکارا</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>لندن</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تبریز</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>قشم</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تورنتو</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>ایروان</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>بندر عباس</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>شیراز</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>مسقط</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>پکن</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>رشت</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>اصفهان</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>نجف</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>باکو</button>
+                                                    <div class="top-of-buttons-popular-citys w-100 h-100 position-absolute top-0"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                                    </div>
+                                    <div class="w-50 mq-991-w-100">
+                                        <div class="intractive-input-component mb-2 date position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                                            <h6>
+                                                <i class="bi bi-calendar4-week"></i>
+                                                تاریخ پرواز
+                                            </h6>
+                                            <input type="text" class="bg-transparent border-0" readonly id="fourth-date" required>
+                                        </div>
+                                        <!--Error Handling-->
+                                        <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start gap-3">
+                                <button type="button" class="squar-size rounded-3 border-0 text-grey base"><i class="bi bi-x"></i></button>
+                                <div class="d-flex align-items-center justify-content-between position-relative w-100 gap-3">
+                                    <div class="w-50 mq-991-w-100">
+                                        <div class="dropdown mb-2">
+                                            <div class="intractive-input-component position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false"><h6>مبدا دوم</h6></div>
+                                            <div class="bg-white dropdown-menu dropdown-menu-end shadow rounded-4 p-4 popular-city">
+                                                <h6 class="mb-5">شهر و فرودگاه های پرتردد</h6>
+                                                <div class="popular-city-btns-holder d-grid gap-3 position-relative">
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تهران</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>کیش</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>استانبول</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>دبی</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>مشهد</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>اهواز</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>انکارا</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>لندن</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تبریز</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>قشم</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تورنتو</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>ایروان</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>بندر عباس</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>شیراز</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>مسقط</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>پکن</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>رشت</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>اصفهان</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>نجف</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>باکو</button>
+                                                    <div class="top-of-buttons-popular-citys w-100 h-100 position-absolute top-0"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                                    </div>
+                                    <button type="button" class="switch-btn diffrent position-absolute rounded-circle bg-white"><i class="bi bi-arrow-left-right"></i></button>
+                                    <div class="w-50 mq-991-w-100">
+                                        <div class="dropdown mb-2">
+                                            <div class="intractive-input-component position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false"><h6>مقصد دوم</h6></div>
+                                            <div class="bg-white dropdown-menu dropdown-menu-end shadow rounded-4 p-4 popular-city">
+                                                <h6 class="mb-5">شهر و فرودگاه های پرتردد</h6>
+                                                <div class="popular-city-btns-holder d-grid gap-3 position-relative">
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تهران</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>کیش</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>استانبول</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>دبی</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>مشهد</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>اهواز</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>انکارا</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>لندن</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تبریز</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>قشم</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تورنتو</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>ایروان</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>بندر عباس</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>شیراز</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>مسقط</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>پکن</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>رشت</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>اصفهان</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>نجف</button>
+                                                    <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>باکو</button>
+                                                    <div class="top-of-buttons-popular-citys w-100 h-100 position-absolute top-0"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                                    </div>
+                                    <div class="w-50 mq-991-w-100">
+                                        <div class="intractive-input-component mb-2 date position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                                            <h6>
+                                                <i class="bi bi-calendar4-week"></i>
+                                                تاریخ پرواز
+                                            </h6>
+                                            <input type="text" class="bg-transparent border-0" readonly id="fifth-date" required>
+                                        </div>
+                                        <!--Error Handling-->
+                                        <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start gap-3">
+                                <button type="button" class="squar-size rounded-3 border-0 text-grey base no-touch opacity-0"><i class="bi bi-x"></i></button>
+                                <div class="d-flex align-items-start justify-content-between position-relative w-100 gap-3">
+                                    <div class="w-50 mq-991-w-100"><button class="intractive-input-component border-0 px-3 py-2"><i class="bi text-grey bi-plus"></i>افزودن مسیر</button></div>
+                                    <div class="w-50 mq-991-w-100">
+                                        <div class="dropdown mb-2 w-100">
+                                            <div class="intractive-input-component focused passenger position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" aria-expanded="false">
+                                                <h6><i class="bi bi-person"></i>مسافران کلاس کابین</h6>
+                                                <h4 class="passenger-type-and-num mb-0">
+                                                    <span class="passenger-number">1</span>
+                                                    مسافر,
+                                                    <span class="passenger-type">اکونومی</span>
+                                                </h4>
+                                            </div>
+                                            <div class="bg-white dropdown-menu dropdown-menu-end shadow rounded-4 p-4 popular-city">
+                                                <div class="passenger-counter">
+                                                    <div class="d-flex align-items-center justify-content-between mb-3">
+                                                        <h6>
+                                                            بزرگسال
+                                                            <span>(+12)</span>
+                                                        </h6>
+                                                        <div class="d-flex align-items-center gap-3">
+                                                            <button class="plus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">+</button>
+                                                            <span class="adult-number">1</span>
+                                                            <button class="minus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">-</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex align-items-center justify-content-between mb-3">
+                                                        <h6>
+                                                            کودک
+                                                            <span>(2 تا 12)</span>
+                                                        </h6>
+                                                        <div class="d-flex align-items-center gap-3">
+                                                            <button class="plus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">+</button>
+                                                            <span class="kid-number">0</span>
+                                                            <button class="minus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">-</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex align-items-center justify-content-between mb-3">
+                                                        <h6>
+                                                            نوزاد
+                                                            <span>(-2)</span>
+                                                        </h6>
+                                                        <div class="d-flex align-items-center gap-3">
+                                                            <button class="plus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">+</button>
+                                                            <span class="new-born-number">0</span>
+                                                            <button class="minus-btn minus-and-plus-btn bg-transparent border-0 rounded-3" type="button">-</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown w-100 border-top pt-3 one-way-passenger-dropdown" data-value="اکونومی">
+                                                        <button class="w-100 d-flex align-items-center bg-white justify-content-between p-2 border-black rounded-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            <span>اکونومی</span>
+                                                            <i class="bi bi-chevron-down"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu dropdown-menu-start w-100 overflow-hidden rounded-3 shadow border-0">
+                                                            <li><button type="button" class="dropdown-item bg-white ripple-btn text-black p-2 fs-6 text-end" data-active="true">اکونومی</button></li>
+                                                            <li><button type="button" class="dropdown-item bg-white ripple-btn text-black p-2 fs-6 text-end">بیزینس</button></li>
+                                                            <li><button type="button" class="dropdown-item bg-white ripple-btn text-black p-2 fs-6 text-end">پریمیوم</button></li>
+                                                            <li><button type="button" class="dropdown-item bg-white ripple-btn text-black p-2 fs-6 text-end">فرست کلاس</button></li>
+                                                            <li><button type="button" class="dropdown-item bg-white ripple-btn text-black p-2 fs-6 text-end">همه کلاس ها</button></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--Error Handling-->
+                                        <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                                    </div>
+                                    <button class="w-50 mq-991-w-100 border-0 rounded-3 ripple-btn text-white submit-btn" type="submit">جستجو</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </form>
+        </div>
     </main>
 </section>
 <!--Footer-->
@@ -871,9 +1277,25 @@
 <script src="assets/base/js/ripple-btn.js"></script>
 <script src="assets/base/js/intractive-components.js"></script>
 <script src="assets/plugins/MCDatepicker/dist/mc-calendar.min.js"></script>
-<script src="assets/base/js/error-handling.js"></script>
+<!--<script src="assets/base/js/error-handling.js"></script>-->
 <script src="assets/base/js/nav.js"></script>
 <script src="assets/base/js/modals.js"></script>
-<script>const myDatePicker = MCDatepicker.create({el: '#first-date',})</script>
+<script>
+    const myDatePicker1 = MCDatepicker.create({el: '#first-date',})
+    const myDatePicker2 = MCDatepicker.create({el: '#second-date',})
+    const myDatePicker3 = MCDatepicker.create({el: '#third-date',})
+    const myDatePicker4 = MCDatepicker.create({el: '#fourth-date',})
+    const myDatePicker5 = MCDatepicker.create({el: '#fifth-date',})
+    const homeFlightInnerPageToggler = document.querySelectorAll('.home-flight-inner-page-toggler');
+
+    homeFlightInnerPageToggler.forEach(item => {
+        item.addEventListener('click', () => {
+            const targetId = item.getAttribute('data-target');
+            const target = document.getElementById(targetId);
+            document.querySelector('.home-flight-inner-page.current').classList.replace('current', 'd-none');
+            target.classList.replace('d-none', 'current');
+        })
+    })
+</script>
 </body>
 </html>
