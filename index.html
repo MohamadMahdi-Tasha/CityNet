@@ -24,6 +24,95 @@
     <title>سیتی نت</title>
 </head>
 <body dir="rtl" class="home-body">
+<!--Signup Modal-->
+<div data-opened="true" id="signup-modal" class="my-modal-holder fixed-top w-100 h-100 d-flex align-items-center justify-content-center">
+    <!--Dark Bg Of It-->
+    <div class="my-bg-dark w-100 h-100 position-absolute top-0 left-0"></div>
+    <!--Content-->
+    <div class="bg-white my-modal w-75 rounded-5 shadow p-4 mq-991-w-100">
+        <!--Top Side-->
+        <div class="d-flex align-items-center justify-content-between mb-3">
+            <button type="button" class="squar-size border-0 text-black rounded-3 prev-page-login-btn"><i class="bi bi-arrow-right"></i></button>
+            <h6 class="text-black fw-bold font-small">ثبت نام کاربر جدید</h6>
+            <button type="button" class="squar-size border-0 text-black rounded-3 my-modal-close-btn"><i class="bi bi-x"></i></button>
+        </div>
+        <form action="#">
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="d-flex align-items-center justify-content-center mb-3 w-50 mq-991-w-100 gap-2">
+                    <button type="button" class="signup-type-button active rounded-3 border-0" data-target="signup-normal">کاربر عادی</button>
+                    <button type="button" class="signup-type-button rounded-3 border-0" data-target="signup-work">همکار</button>
+                </div>
+            </div>
+            <div class="d-flex flex-wrap align-items-center justify-content-center gap-3 mb-5">
+                <div class="d-inline-flex align-items-center gap-2">
+                    <input class="login-s-inner-page-toggle inner-page-toggler" type="radio" id="mobile-signup-normal" name="signup-top-side-togglers" checked data-target="signup-mobile-way">
+                    <label class="text-grey font-small" for="mobile-login-code-s-way">موبایل</label>
+                </div>
+                <div class="d-inline-flex align-items-center gap-2">
+                    <input class="login-s-inner-page-toggle inner-page-toggler" type="radio" id="email-signup-normal" name="signup-top-side-togglers" data-target="signup-email-way">
+                    <label class="text-grey font-small" for="email-login-code-s-way">ایمیل</label>
+                </div>
+                <div class="d-inline-flex align-items-center gap-2">
+                    <input class="login-s-inner-page-toggle inner-page-toggler" type="radio" id="user-signup-normal" name="signup-top-side-togglers" data-target="signup-user-way">
+                    <label class="text-grey font-small" for="user-login-code-s-way">شناسه کاربری</label>
+                </div>
+            </div>
+            <div class="signup-bottom d-grid gap-2">
+                <div>
+                    <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                        <h6>نام</h6>
+                        <input type="text" class="bg-transparent border-0 w-100" required>
+                    </div>
+                    <!--Error Handling-->
+                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                </div>
+                <div>
+                    <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                        <h6>نام خانوادگی</h6>
+                        <input type="text" class="bg-transparent border-0 w-100" required>
+                    </div>
+                    <!--Error Handling-->
+                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                </div>
+                <div class="d-flex align-items-start gap-1">
+                    <div class="w-75">
+                        <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                            <h6>موبایل</h6>
+                            <input type="tel" class="bg-transparent border-0 w-100" required>
+                        </div>
+                        <!--Error Handling-->
+                        <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                    </div>
+                    <div class="w-25">
+                        <div class="intractive-input-component mb-2 disabled position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                            <h6>0098</h6>
+                            <input type="tel" class="bg-transparent border-0 w-100">
+                        </div>
+                        <!--Error Handling-->
+                        <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                        <h6>رمز ورود</h6>
+                        <input type="password" class="bg-transparent border-0 w-100" required>
+                    </div>
+                    <!--Error Handling-->
+                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                </div>
+                <div>
+                    <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                        <h6>تکرار رمز ورود</h6>
+                        <input type="password" class="bg-transparent border-0 w-100" required>
+                    </div>
+                    <!--Error Handling-->
+                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                </div>
+                <button class="submit-btn text-white ripple-btn border-0 rounded-3" type="submit">ادامه</button>
+            </div>
+        </form>
+    </div>
+</div>
 <!--Login With Code 'Subet' Modal-->
 <div data-opened="false" id="login-code-s-modal" class="my-modal-holder fixed-top w-100 h-100 d-flex align-items-center justify-content-center">
     <!--Dark Bg Of It-->
