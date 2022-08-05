@@ -243,6 +243,21 @@ header .dropdown-item:active {background-color: rgba(185, 185, 185, 1) !importan
     .dropdown {margin-bottom: 0 !important;}
     .mq-991-bg-white {background-color: white;}
     .signup-type-button {width: 50%;}
+    .more-ways-item:hover .remove-btn-holder{transform: translateX(0);}
+    .switch-btn.diffrent {left: 10%;top: 20%;}
+
+    .remove-button {pointer-events: visible}
+    .remove-btn-holder {
+        position: absolute;
+        z-index: 1030;
+        background: linear-gradient(to left, rgba(256, 256, 256, .8), transparent);
+        width: 50%;
+        height: 100%;
+        transform: translateX(100%);
+        transition: .3s;
+        pointer-events: none;
+    }
+
     .my-modal {
         height: 100%;
         border-radius: 0 !important;
