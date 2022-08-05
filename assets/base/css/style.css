@@ -243,6 +243,7 @@ header .dropdown-item:active {background-color: rgba(185, 185, 185, 1) !importan
     .dropdown {margin-bottom: 0 !important;}
     .mq-991-bg-white {background-color: white;}
     .signup-type-button {width: 50%;}
+    .more-ways-item {overflow:hidden;}
     .more-ways-item:hover .remove-btn-holder{transform: translateX(0);}
     .switch-btn.diffrent {left: 10%;top: 20%;}
 
