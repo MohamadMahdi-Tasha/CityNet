@@ -34,7 +34,7 @@
         <div class="d-flex align-items-center justify-content-between">
             <button type="button" class="squar-size border-0 text-black rounded-3"><i class="bi bi-arrow-right"></i></button>
             <h6 class="text-black fw-bold font-small">ورود با رمز ثابت</h6>
-            <button type="button" class="squar-size border-0 text-black rounded-3"><i class="bi bi-x"></i></button>
+            <button type="button" class="squar-size border-0 text-black rounded-3 my-modal-close-btn"><i class="bi bi-x"></i></button>
         </div>
         <h6 class="text-center text-grey mb-2 font-small">شماره موبایل، ایمیل یا نام کاربری خود را وارد نمائید.</h6>
         <!--Top Side-->
@@ -150,7 +150,7 @@
         <div class="d-flex align-items-center justify-content-between">
             <button type="button" class="bg-transparent opacity-0 no-touch"></button>
             <h6 class="text-black fw-bold font-small">ورود / ثبت ‌نام</h6>
-            <button type="button" class="squar-size border-0 text-black rounded-3"><i class="bi bi-x"></i></button>
+            <button type="button" class="squar-size border-0 text-black rounded-3 my-modal-close-btn"><i class="bi bi-x"></i></button>
         </div>
         <h6 class="text-center text-grey mb-2 font-small">شماره موبایل، ایمیل یا نام کاربری خود را وارد نمائید.</h6>
         <!--Top Side-->
@@ -338,7 +338,7 @@
                         </li>
                     </ul>
                 </div>
-                <button class="d-none login-btn d-lg-block ripple-btn border bg-transparent text-white px-4 py-2 rounded">ورود/ثبت نام</button>
+                <button id="login-modal-toggler" class="d-none login-btn d-lg-block ripple-btn border bg-transparent text-white px-4 py-2 rounded">ورود/ثبت نام</button>
             </div>
         </div>
     </header>
@@ -603,6 +603,11 @@
 <script>const myDatePicker = MCDatepicker.create({el: '#first-date',})</script>
 <script>
     const innerPageToggler = document.querySelectorAll('.inner-page-toggler');
+    const loginModalToggler = document.getElementById('login-modal-toggler');
+    const loginModal = document.getElementById('login-modal');
+    const modalsDarkBg = document.querySelectorAll('.my-modal-holder > .my-bg-dark');
+    const modalCloseBtn = document.querySelectorAll('.my-modal-close-btn');
+
     innerPageToggler.forEach(item => {
         item.addEventListener('click', () => {
             const pageToShow = item.getAttribute('data-target');
@@ -612,6 +617,10 @@
             document.getElementById(pageToShow).classList.replace('d-none', 'current');
         })
     })
+
+    loginModalToggler.addEventListener('click', () => loginModal.setAttribute('data-opened', 'true'))
+    modalsDarkBg.forEach(item => item.addEventListener('click', () => item.parentElement.setAttribute('data-opened', 'false')))
+    modalCloseBtn.forEach(item => item.addEventListener('click', () => item.parentElement.parentElement.parentElement.setAttribute('data-opened', 'false')))
 </script>
 </body>
 </html>

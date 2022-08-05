@@ -87,6 +87,7 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .my-modal::-moz-viewport-scroll {display: none;}
 .intractive-input-component.my-modal.focused {border-color: var(--primary-base) !important;}
 .intractive-input-component.my-modal.focused h6 {color: var(--primary-base) !important;}
+.my-modal-holder {transition: .3s}
 .my-modal-holder[data-opened="false"] {opacity: 0;pointer-events: none;}
 .my-modal-holder[data-opened="true"] {opacity: 1;pointer-events: visible;}
 .my-modal-holder .intractive-input-component {border-color: grey;color: grey !important;}
