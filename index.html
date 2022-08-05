@@ -156,20 +156,20 @@
         <!--Top Side-->
         <div class="d-flex flex-wrap align-items-center justify-content-center gap-3 mb-5">
             <div class="d-inline-flex align-items-center gap-2">
-                <input class="inner-page-toggler" type="radio" id="mobile-login-way" name="login-way" checked data-target="modal-login-mobile-page">
+                <input class="modal-inner-page-toggler inner-page-toggler" type="radio" id="mobile-login-way" name="login-way" checked data-target="modal-login-mobile-page">
                 <label class="text-grey font-small" for="mobile-login-way">موبایل</label>
             </div>
             <div class="d-inline-flex align-items-center gap-2">
-                <input class="inner-page-toggler" type="radio" id="email-login-way" name="login-way" data-target="modal-login-email-page">
+                <input class="modal-inner-page-toggler inner-page-toggler" type="radio" id="email-login-way" name="login-way" data-target="modal-login-email-page">
                 <label class="text-grey font-small" for="email-login-way">ایمیل</label>
             </div>
             <div class="d-inline-flex align-items-center gap-2">
-                <input class="inner-page-toggler" type="radio" id="user-login-way" name="login-way" data-target="modal-login-user-page">
+                <input class="modal-inner-page-toggler inner-page-toggler" type="radio" id="user-login-way" name="login-way" data-target="modal-login-user-page">
                 <label class="text-grey font-small" for="user-login-way">شناسه کاربری</label>
             </div>
         </div>
         <!--Middle Side That Changes-->
-        <form action="#" class="page current" id="modal-login-mobile-page">
+        <form action="#" class="modal-inner-page current" id="modal-login-mobile-page">
             <div class="d-flex align-items-center gap-3 mb-1">
                 <div class="w-75">
                     <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
@@ -189,12 +189,8 @@
                 </div>
             </div>
             <button class="submit-btn w-100 rounded-3 border-0 ripple-btn fw-bold text-white mb-3" type="submit">ورود با رمز یکبار مصرف</button>
-            <div class="d-flex align-items-center gap-3">
-                <button class="bg-transparent text-base fw-bold ripple-btn base text-base w-50 p-3 rounded-3 border-0" type="button">ورود با رمز ثابت</button>
-                <button class="bg-transparent text-base fw-bold ripple-btn base text-base w-50 p-3 rounded-3 border-0" type="button">ثبت نام</button>
-            </div>
         </form>
-        <form action="#" class="page d-none" id="modal-login-email-page">
+        <form action="#" class="modal-inner-page d-none" id="modal-login-email-page">
             <div class="d-flex align-items-center gap-3 mb-1">
                 <div class="w-100">
                     <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
@@ -206,12 +202,8 @@
                 </div>
             </div>
             <button class="submit-btn w-100 rounded-3 border-0 ripple-btn fw-bold text-white mb-3" type="submit">ورود با رمز یکبار مصرف</button>
-            <div class="d-flex align-items-center gap-3">
-                <button class="bg-transparent text-base fw-bold ripple-btn base text-base w-50 p-3 rounded-3 border-0" type="button">ورود با رمز ثابت</button>
-                <button class="bg-transparent text-base fw-bold ripple-btn base text-base w-50 p-3 rounded-3 border-0" type="button">ثبت نام</button>
-            </div>
         </form>
-        <form action="#" class="page d-none" id="modal-login-user-page">
+        <form action="#" class="modal-inner-page d-none" id="modal-login-user-page">
             <div class="d-flex align-items-center gap-3 mb-1">
                 <div class="d-flex align-items-center gap-3 mb-1 w-100">
                     <div class="w-100">
@@ -225,11 +217,11 @@
                 </div>
             </div>
             <button class="submit-btn w-100 rounded-3 border-0 ripple-btn fw-bold text-white mb-3" type="submit">ورود با رمز یکبار مصرف</button>
-            <div class="d-flex align-items-center gap-3">
-                <button class="bg-transparent text-base fw-bold ripple-btn base text-base w-50 p-3 rounded-3 border-0" type="button">ورود با رمز ثابت</button>
-                <button class="bg-transparent text-base fw-bold ripple-btn base text-base w-50 p-3 rounded-3 border-0" type="button">ثبت نام</button>
-            </div>
         </form>
+        <div class="d-flex align-items-center gap-3">
+            <button class="bg-transparent text-base fw-bold ripple-btn base text-base w-50 p-3 rounded-3 border-0" type="button">ورود با رمز ثابت</button>
+            <button class="bg-transparent text-base fw-bold ripple-btn base text-base w-50 p-3 rounded-3 border-0" type="button">ثبت نام</button>
+        </div>
     </div>
 </div>
 <!--Dark Bg Of Nav-->
@@ -602,19 +594,18 @@
 <script src="assets/base/js/nav.js"></script>
 <script>const myDatePicker = MCDatepicker.create({el: '#first-date',})</script>
 <script>
-    const innerPageToggler = document.querySelectorAll('.inner-page-toggler');
+    const modalInnerPageToggler = document.querySelectorAll('.modal-inner-page-toggler');
     const loginModalToggler = document.getElementById('login-modal-toggler');
     const loginModal = document.getElementById('login-modal');
     const modalsDarkBg = document.querySelectorAll('.my-modal-holder > .my-bg-dark');
     const modalCloseBtn = document.querySelectorAll('.my-modal-close-btn');
 
-    innerPageToggler.forEach(item => {
+    modalInnerPageToggler.forEach(item => {
         item.addEventListener('click', () => {
-            const pageToShow = item.getAttribute('data-target');
-            const currentPage = document.querySelector('.page.current');
-
-            currentPage.classList.replace('current', 'd-none');
-            document.getElementById(pageToShow).classList.replace('d-none', 'current');
+            const targetId = item.getAttribute('data-target');
+            const target = document.getElementById(targetId);
+            document.querySelector('.modal-inner-page.current').classList.replace('current', 'd-none');
+            target.classList.replace('d-none', 'current');
         })
     })
 
