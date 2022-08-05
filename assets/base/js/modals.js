@@ -12,6 +12,7 @@ const signupPageToggler = document.querySelectorAll('.signup-page-toggler');
 const signupModal = document.getElementById('signup-modal');
 const signupInnerPageToggle = document.querySelectorAll('.signup-inner-page-toggle');
 const hamkarOnly = document.querySelector('.hamkar-only');
+const mobileLoginModalToggler = document.getElementById('mobile-login-modal-toggler');
 
 // Adding Event Listener On CSS Selector Of (.signup-type-button-holders > .signup-type-button:last-of-type) That Listens To Click And
 // Adds Class Of active To Last Of Type (signup-type-button) And Removes It From First Of Type And Also Removes class Of d-none From Hamkar Only Section.
@@ -69,8 +70,9 @@ signupInnerPageToggle.forEach(item => item.addEventListener('click', () => showI
 loginSInnerPageToggle.forEach(item => item.addEventListener('click', () => showInnerPage(item, document.querySelector('.login-s-page.current'))))
 modalInnerPageToggler.forEach(item => item.addEventListener('click', () => showInnerPage(item, document.querySelector('.modal-inner-page.current'))))
 
-// Adding Event Listener On Login Modal Toggle That Opens Login Modal
+// Adding Event Listener On Login Modal Togglers That Opens Login Modal
 loginModalToggler.addEventListener('click', () => loginModal.setAttribute('data-opened', 'true'))
+mobileLoginModalToggler.addEventListener('click', () => loginModal.setAttribute('data-opened', 'true'))
 
 // adding Event Listenr On Each Dark Bg Of Modals That Closes Init Modal
 modalsDarkBg.forEach(item => item.addEventListener('click', () => item.parentElement.setAttribute('data-opened', 'false')))

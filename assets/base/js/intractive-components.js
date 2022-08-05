@@ -7,7 +7,7 @@ const dateComponent = document.querySelectorAll('.intractive-input-component.dat
 const passangerComponent = document.querySelectorAll('.intractive-input-component.passenger')
 const oneWayPassengerDropdownItems = document.querySelectorAll('.one-way-passenger-dropdown > .dropdown-menu button');
 const minusAndPlusButtons = document.querySelectorAll('.minus-and-plus-btn');
-const intractiveInputComponentModal = document.querySelectorAll('.intractive-input-component.my-modal');
+const intractiveInputComponentModal = document.querySelectorAll('.intractive-input-component.my-modal-init');
 
 // A Function That Sets Value Of Passengers Interactive Components, Input To Total Number Of adultNumber, kidNumber And newBornNumber
 // And Value Of Attritube Of data-value From DropDown Init.
