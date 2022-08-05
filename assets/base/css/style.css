@@ -97,9 +97,7 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .user-name-email-signup {grid-column: span 3;}
 .dashed-border-bottom-div {border-bottom: 1px dashed grey;}
 .dashed-border-bottom-div:first-of-type ~ h6 {color: grey;}
-.switch-btn.diffrent {
-    left: calc(67% - 20px);
-}
+.switch-btn.diffrent {left: calc(67% - 20px);}
 .signup-type-button {
     height: 50px;
     width: 25%;
@@ -243,7 +241,6 @@ header .dropdown-item:active {background-color: rgba(185, 185, 185, 1) !importan
     .dropdown {margin-bottom: 0 !important;}
     .mq-991-bg-white {background-color: white;}
     .signup-type-button {width: 50%;}
-    .more-ways-item {overflow:hidden;}
     .more-ways-item:hover .remove-btn-holder{transform: translateX(0);}
     .switch-btn.diffrent {left: 10%;top: 20%;}
 

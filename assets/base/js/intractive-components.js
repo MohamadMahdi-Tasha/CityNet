@@ -6,21 +6,42 @@ const minusBtns = document.querySelectorAll('.minus-btn');
 const dateComponent = document.querySelectorAll('.intractive-input-component.date');
 const passangerComponent = document.querySelectorAll('.intractive-input-component.passenger')
 const oneWayPassengerDropdownItems = document.querySelectorAll('.one-way-passenger-dropdown > .dropdown-menu button');
-const minusAndPlusButtons = document.querySelectorAll('.minus-and-plus-btn');
+const twoWayPassengerDropdownItems = document.querySelectorAll('.two-way-passenger-dropdown > .dropdown-menu button');
+const threeWayPassengerDropdownItems = document.querySelectorAll('.three-way-passenger-dropdown > .dropdown-menu button');
+const minusAndPlusButtons1 = document.querySelectorAll('.minus-and-plus-btn-1');
+const minusAndPlusButtons2 = document.querySelectorAll('.minus-and-plus-btn-2');
+const minusAndPlusButtons3 = document.querySelectorAll('.minus-and-plus-btn-3');
 const intractiveInputComponentModal = document.querySelectorAll('.intractive-input-component.my-modal-init');
 
-// A Function That Sets Value Of Passengers Interactive Components, Input To Total Number Of adultNumber, kidNumber And newBornNumber
-// And Value Of Attritube Of data-value From DropDown Init.
-function setValueOfPassangerInput() {
-    const adultNumber = Number(document.querySelector('.adult-number').textContent);
-    const kidNumber = Number(document.querySelector('.kid-number').textContent);
-    const newBornNumber = Number(document.querySelector('.new-born-number').textContent);
-    const dropdown = document.querySelector('.one-way-passenger-dropdown');
-    const passengerNumber = document.querySelector('.passenger-number');
-    const passengerType = document.querySelector('.passenger-type');
+// A Function That Creates List Of Items With Value Of Nothing (Null) Then For Each Given Element Of It, Then Converts Text Content Of
+// Each Item To Number Then Adds It To Created List. After That Adds All Numbers In Created Array To Gether And Shows It In numberElement
+// And Gets Value Of '[data-value]'(Attr) In Dropdown Element And Shows It In 'textElement'.
+function setValueOfPassangerInput(element) {
+    let listOfNumbers = [];
 
-    passengerNumber.textContent = adultNumber + kidNumber + newBornNumber;
-    passengerType.textContent = dropdown.getAttribute('data-value');
+    element.forEach(item => {
+        const numberElement = item.parentElement.parentElement.parentElement.parentElement.previousElementSibling.firstElementChild.nextElementSibling.firstElementChild;
+        const textElement = item.parentElement.parentElement.parentElement.parentElement.previousElementSibling.firstElementChild.nextElementSibling.lastElementChild;
+        const dropDown = item.parentElement.parentElement.nextElementSibling;
+
+        listOfNumbers.push(Number(item.textContent))
+        numberElement.textContent = listOfNumbers.reduce((partialSum, a) => partialSum + a, 0);
+        textElement.textContent = dropDown.getAttribute('data-value');
+    })
+}
+
+// Adding Event Listener On  Each Dropdown Item In Passenger Component And Listens To Click Then Checks If There Is Dropdown Item With
+// Attribute Of data-active="true" Then Removes Attribute From It And Sets data-Value Of Dropdown To Clicked Items TextContent And
+// Sets Text Content OF Input In Component To Clicked Items TextContent Again And Sets Attritube Of Clicked item To 'true' (data-active)
+// And Calls setValueOfPassangerInput Function
+function mmd(dropdown ,items, passengerNum) {
+    const activeButtons = document.querySelectorAll(dropdown);
+
+    activeButtons.forEach(itemsa => itemsa.removeAttribute('data-active'));
+    items.parentElement.parentElement.parentElement.setAttribute('data-value', items.textContent);
+    items.parentElement.parentElement.previousElementSibling.firstElementChild.textContent = items.textContent
+    items.setAttribute('data-active', 'true');
+    setValueOfPassangerInput(document.querySelectorAll(`.passenger-number-${passengerNum}`))
 }
 
 // Adding Event Listener Of Click To Each Popular Citys Button And..
@@ -144,24 +165,14 @@ passangerComponent.forEach(item => {
     })
 })
 
-// Adding Event Listener On  Each Dropdown Item In Passenger Component And Listens To Click Then Checks If There Is Dropdown Item With
-// Attribute Of data-active="true" Then Removes Attribute From It And Sets data-Value Of Dropdown To Clicked Items TextContent And
-// Sets Text Content OF Input In Component To Clicked Items TextContent Again And Sets Attritube Of Clicked item To 'true' (data-active)
-// And Calls setValueOfPassangerInput Function
-oneWayPassengerDropdownItems.forEach(item => {
-    item.addEventListener('click', () => {
-        const activeButtons = document.querySelectorAll('.one-way-passenger-dropdown .dropdown-item[data-active="true"]');
-        activeButtons.forEach(item => item.removeAttribute('data-active'));
-
-        item.parentElement.parentElement.parentElement.setAttribute('data-value', item.textContent);
-        item.parentElement.parentElement.previousElementSibling.firstElementChild.textContent = item.textContent
-        item.setAttribute('data-active', 'true');
-        setValueOfPassangerInput()
-    })
-})
+oneWayPassengerDropdownItems.forEach(item => item.addEventListener('click', () => mmd('.one-way-passenger-dropdown .dropdown-item[data-active="true"]', item, 1)))
+twoWayPassengerDropdownItems.forEach(item => item.addEventListener('click', () => mmd('.two-way-passenger-dropdown .dropdown-item[data-active="true"]', item, 2)))
+threeWayPassengerDropdownItems.forEach(item => item.addEventListener('click', () => mmd('.three-way-passenger-dropdown .dropdown-item[data-active="true"]', item, 3)))
 
 // Adding Event Listener On Click Of Each Minus And Plus Button That Calls setValueOfPassangerInput Function
-minusAndPlusButtons.forEach(item => item.addEventListener('click', () => setValueOfPassangerInput()))
+minusAndPlusButtons1.forEach(item => item.addEventListener('click', () => setValueOfPassangerInput(document.querySelectorAll('.passenger-number-1'))))
+minusAndPlusButtons2.forEach(item => item.addEventListener('click', () => setValueOfPassangerInput(document.querySelectorAll('.passenger-number-2'))))
+minusAndPlusButtons3.forEach(item => item.addEventListener('click', () => setValueOfPassangerInput(document.querySelectorAll('.passenger-number-3'))))
 
 // Adding Event Listener On Each IntractiveInoutComponent(modal) That Listens To Click And Focuses To Last Child Of It
 // Then Adds Event Listener On Focus To Last Elements Which Is Input And Adds Class Of 'focused' To Clicked Component
