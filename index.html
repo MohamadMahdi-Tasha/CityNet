@@ -25,7 +25,7 @@
 </head>
 <body dir="rtl" class="home-body">
 <!--Signup Modal-->
-<div data-opened="true" id="signup-modal" class="my-modal-holder fixed-top w-100 h-100 d-flex align-items-center justify-content-center">
+<div data-opened="false" id="signup-modal" class="my-modal-holder fixed-top w-100 h-100 d-flex align-items-center justify-content-center">
     <!--Dark Bg Of It-->
     <div class="my-bg-dark w-100 h-100 position-absolute top-0 left-0"></div>
     <!--Content-->
@@ -36,28 +36,39 @@
             <h6 class="text-black fw-bold font-small">ثبت نام کاربر جدید</h6>
             <button type="button" class="squar-size border-0 text-black rounded-3 my-modal-close-btn"><i class="bi bi-x"></i></button>
         </div>
-        <form action="#">
-            <div class="d-flex justify-content-center align-items-center">
-                <div class="d-flex align-items-center justify-content-center mb-3 w-50 mq-991-w-100 gap-2">
-                    <button type="button" class="signup-type-button active rounded-3 border-0" data-target="signup-normal">کاربر عادی</button>
-                    <button type="button" class="signup-type-button rounded-3 border-0" data-target="signup-work">همکار</button>
-                </div>
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="d-flex align-items-center justify-content-center mb-3 w-50 mq-991-w-100 gap-2 signup-type-button-holders">
+                <button type="button" class="signup-type-button active rounded-3 border-0" data-target="signup-normal">کاربر عادی</button>
+                <button type="button" class="signup-type-button rounded-3 border-0" data-target="signup-work">همکار</button>
             </div>
-            <div class="d-flex flex-wrap align-items-center justify-content-center gap-3 mb-5">
-                <div class="d-inline-flex align-items-center gap-2">
-                    <input class="login-s-inner-page-toggle inner-page-toggler" type="radio" id="mobile-signup-normal" name="signup-top-side-togglers" checked data-target="signup-mobile-way">
-                    <label class="text-grey font-small" for="mobile-login-code-s-way">موبایل</label>
-                </div>
-                <div class="d-inline-flex align-items-center gap-2">
-                    <input class="login-s-inner-page-toggle inner-page-toggler" type="radio" id="email-signup-normal" name="signup-top-side-togglers" data-target="signup-email-way">
-                    <label class="text-grey font-small" for="email-login-code-s-way">ایمیل</label>
-                </div>
-                <div class="d-inline-flex align-items-center gap-2">
-                    <input class="login-s-inner-page-toggle inner-page-toggler" type="radio" id="user-signup-normal" name="signup-top-side-togglers" data-target="signup-user-way">
-                    <label class="text-grey font-small" for="user-login-code-s-way">شناسه کاربری</label>
-                </div>
+        </div>
+        <!--Hamkar Only-->
+        <div class="mb-4 d-none hamkar-only">
+            <ul class="bg-light-pink text-base p-4 rounded-4">
+                <li class="mb-2">جهت دسترسی به نرخ ویژه یا بهره‌مندی از کمیسیون، لطفا با مشخصات مدیرعامل و اطلاعات شرکت، فرم زیر را تکمیل نمایید.</li>
+                <li>بعد از بررسی و تایید مدارک، مدیر عامل می تواند از طربق پنل کاربری خود برای کانترها و یا سایر همکاران، حساب کاربری ایجاد نماید.</li>
+            </ul>
+            <div class="d-flex align-items-center">
+                <div class="dashed-border-bottom-div w-50"></div>
+                <h6 class="text-nowrap ms-4 me-4"><i class="bi bi-briefcase ms-2"></i>مشخصات مدیر</h6>
+                <div class="dashed-border-bottom-div w-50"></div>
             </div>
-            <div class="signup-bottom d-grid gap-2">
+        </div>
+        <div class="d-flex flex-wrap align-items-center gap-3 mb-5">
+            <div class="d-inline-flex align-items-center gap-2">
+                <input class="signup-inner-page-toggle inner-page-toggler" type="radio" id="mobile-signup-normal" name="signup-top-side-togglers" checked data-target="signup-mobile-way">
+                <label class="text-grey font-small" for="mobile-login-code-s-way">موبایل</label>
+            </div>
+            <div class="d-inline-flex align-items-center gap-2">
+                <input class="signup-inner-page-toggle inner-page-toggler" type="radio" id="email-signup-normal" name="signup-top-side-togglers" data-target="signup-email-way">
+                <label class="text-grey font-small" for="email-login-code-s-way">ایمیل</label>
+            </div>
+            <div class="d-inline-flex align-items-center gap-2">
+                <input class="signup-inner-page-toggle inner-page-toggler" type="radio" id="user-signup-normal" name="signup-top-side-togglers" data-target="signup-user-way">
+                <label class="text-grey font-small" for="user-login-code-s-way">شناسه کاربری</label>
+            </div>
+        </div>
+        <form id="signup-mobile-way" action="#" class="signup-inner-page current"><div class="signup-bottom d-grid gap-2">
                 <div>
                     <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
                         <h6>نام</h6>
@@ -109,8 +120,119 @@
                     <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
                 </div>
                 <button class="submit-btn text-white ripple-btn border-0 rounded-3" type="submit">ادامه</button>
+            </div></form>
+        <form id="signup-email-way" action="#" class="signup-inner-page d-none"><div class="signup-bottom d-grid gap-2">
+                <div>
+                    <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                        <h6>نام</h6>
+                        <input type="text" class="bg-transparent border-0 w-100" required>
+                    </div>
+                    <!--Error Handling-->
+                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                </div>
+                <div>
+                    <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                        <h6>نام خانوادگی</h6>
+                        <input type="text" class="bg-transparent border-0 w-100" required>
+                    </div>
+                    <!--Error Handling-->
+                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                </div>
+                <div>
+                    <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                        <h6>ایمیل</h6>
+                        <input type="email" class="bg-transparent border-0 w-100" required>
+                    </div>
+                    <!--Error Handling-->
+                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                </div>
+                <div>
+                    <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                        <h6>رمز ورود</h6>
+                        <input type="password" class="bg-transparent border-0 w-100" required>
+                    </div>
+                    <!--Error Handling-->
+                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                </div>
+                <div>
+                    <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                        <h6>تکرار رمز ورود</h6>
+                        <input type="password" class="bg-transparent border-0 w-100" required>
+                    </div>
+                    <!--Error Handling-->
+                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                </div>
+                <button class="submit-btn text-white ripple-btn border-0 rounded-3" type="submit">ادامه</button>
+            </div></form>
+        <form id="signup-user-way" action="#" class="signup-inner-page d-none"><div class="signup-bottom d-grid gap-2">
+            <div>
+                <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                    <h6>نام</h6>
+                    <input type="text" class="bg-transparent border-0 w-100" required>
+                </div>
+                <!--Error Handling-->
+                <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
             </div>
-        </form>
+            <div>
+                <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                    <h6>نام خانوادگی</h6>
+                    <input type="text" class="bg-transparent border-0 w-100" required>
+                </div>
+                <!--Error Handling-->
+                <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+            </div>
+            <div class="d-flex align-items-start gap-1">
+                <div class="w-75">
+                    <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                        <h6>موبایل</h6>
+                        <input type="tel" class="bg-transparent border-0 w-100" required>
+                    </div>
+                    <!--Error Handling-->
+                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                </div>
+                <div class="w-25">
+                    <div class="intractive-input-component mb-2 disabled position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                        <h6>0098</h6>
+                        <input type="tel" class="bg-transparent border-0 w-100">
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex align-items-center user-name-email-signup gap-3">
+                <div class="w-50">
+                    <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                        <h6>ایمیل</h6>
+                        <input type="email" class="bg-transparent border-0 w-100" required>
+                    </div>
+                    <!--Error Handling-->
+                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                </div>
+                <div class="w-50">
+                    <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                        <h6>نام کاربری</h6>
+                        <input type="text" class="bg-transparent border-0 w-100" required>
+                    </div>
+                    <!--Error Handling-->
+                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                </div>
+            </div>
+            <div>
+                <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                    <h6>رمز ورود</h6>
+                    <input type="password" class="bg-transparent border-0 w-100" required>
+                </div>
+                <!--Error Handling-->
+                <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+            </div>
+            <div>
+                <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                    <h6>تکرار رمز ورود</h6>
+                    <input type="password" class="bg-transparent border-0 w-100" required>
+                </div>
+                <!--Error Handling-->
+                <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+            </div>
+            <button class="submit-btn text-white ripple-btn border-0 rounded-3" type="submit">ادامه</button>
+        </div></form>
     </div>
 </div>
 <!--Login With Code 'Subet' Modal-->
@@ -692,6 +814,22 @@
     const loginSInnerPageToggle = document.querySelectorAll('.login-s-inner-page-toggle');
     const signupPageToggler = document.querySelectorAll('.signup-page-toggler');
     const signupModal = document.getElementById('signup-modal');
+    const signupInnerPageToggle = document.querySelectorAll('.signup-inner-page-toggle');
+    const signupTypeButton = document.querySelectorAll('.signup-type-button');
+    const hamkarOnly = document.querySelector('.hamkar-only');
+    const signupTypeButtonActive = document.querySelectorAll('.signup-type-button.active');
+
+    document.querySelector('.signup-type-button-holders > .signup-type-button:last-of-type').addEventListener('click', () => {
+        document.querySelector('.signup-type-button-holders > .signup-type-button:last-of-type').classList.add('active');
+        document.querySelector('.signup-type-button-holders > .signup-type-button:first-of-type').classList.remove('active');
+        hamkarOnly.classList.remove('d-none');
+    })
+
+    document.querySelector('.signup-type-button-holders > .signup-type-button:first-of-type').addEventListener('click', () => {
+        document.querySelector('.signup-type-button-holders > .signup-type-button:first-of-type').classList.add('active');
+        document.querySelector('.signup-type-button-holders > .signup-type-button:last-of-type').classList.remove('active');
+        hamkarOnly.classList.add('d-none');
+    })
 
     signupPageToggler.forEach(item => {
         item.addEventListener('click', () => {
@@ -714,6 +852,14 @@
         target.classList.replace('d-none', 'current');
         elementToHide.classList.replace('current', 'd-none');
     }
+
+    signupInnerPageToggle.forEach(item => {
+        item.addEventListener('click', () => {
+            const targetId = item.getAttribute('data-target');
+            const target = document.getElementById(targetId);
+            mmd(target, document.querySelector('.signup-inner-page.current'))
+        })
+    })
 
     loginSInnerPageToggle.forEach(item => {
         item.addEventListener('click', () => {

@@ -93,6 +93,10 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .my-modal-holder .intractive-input-component {border-color: grey;color: grey !important;}
 .signup-bottom {grid-template-columns: repeat(3, 1fr);}
 .signup-type-button.active {background-color: var(--primary-base);color: white;}
+.bg-light-pink {background-color: rgb(255, 242, 233);}
+.user-name-email-signup {grid-column: span 3;}
+.dashed-border-bottom-div {border-bottom: 1px dashed grey;}
+.dashed-border-bottom-div:first-of-type ~ h6 {color: grey;}
 .signup-type-button {
     height: 50px;
     width: 25%;
