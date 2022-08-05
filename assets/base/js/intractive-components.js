@@ -101,8 +101,8 @@ dateComponent.forEach(item => {
 // With Clones And Adds Class Name Of animation To Switch Button And On Event Of 'animationend' (Its When Animation Ends) Removes It
 switchBtn.forEach(item => {
     item.addEventListener('click', () => {
-        const rightSideComponentContentToChange = document.querySelector('.top-side-flight > div:first-of-type .intractive-input-component .selected-location');
-        const leftSideComponentContentToChange = document.querySelector('.top-side-flight > div:last-of-type .intractive-input-component .selected-location');
+        const rightSideComponentContentToChange = item.nextElementSibling.firstElementChild.firstElementChild.lastElementChild;
+        const leftSideComponentContentToChange = item.previousElementSibling.firstElementChild.firstElementChild.lastElementChild;
         const cloneOfRightSide = rightSideComponentContentToChange.cloneNode(true);
         const cloneOfLeftSide = leftSideComponentContentToChange.cloneNode(true);
 
