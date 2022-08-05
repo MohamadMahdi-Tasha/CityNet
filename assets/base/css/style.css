@@ -91,6 +91,14 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .my-modal-holder[data-opened="false"] {opacity: 0;pointer-events: none;}
 .my-modal-holder[data-opened="true"] {opacity: 1;pointer-events: visible;}
 .my-modal-holder .intractive-input-component {border-color: grey;color: grey !important;}
+.signup-bottom {grid-template-columns: repeat(3, 1fr);}
+.signup-type-button.active {background-color: var(--primary-base);color: white;}
+.signup-type-button {
+    height: 50px;
+    width: 25%;
+    background-color: rgba(0,0,0,.05);
+    color: rgba(0,0,0,.5);
+}
 
 #nav {
     z-index: 1030;
@@ -227,6 +235,7 @@ header .dropdown-item:active {background-color: rgba(185, 185, 185, 1) !importan
     .intractive-input-component {margin-bottom: 0 !important;}
     .dropdown {margin-bottom: 0 !important;}
     .mq-991-bg-white {background-color: white;}
+    .signup-type-button {width: 50%;}
     .my-modal {
         height: 100%;
         border-radius: 0 !important;

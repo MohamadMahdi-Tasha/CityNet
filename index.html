@@ -32,7 +32,7 @@
     <div class="bg-white my-modal rounded-5 shadow p-4 mq-991-w-100">
         <!--Top Side-->
         <div class="d-flex align-items-center justify-content-between">
-            <button type="button" class="squar-size border-0 text-black rounded-3"><i class="bi bi-arrow-right"></i></button>
+            <button type="button" class="squar-size border-0 text-black rounded-3 prev-page-login-btn"><i class="bi bi-arrow-right"></i></button>
             <h6 class="text-black fw-bold font-small">ورود با رمز ثابت</h6>
             <button type="button" class="squar-size border-0 text-black rounded-3 my-modal-close-btn"><i class="bi bi-x"></i></button>
         </div>
@@ -40,20 +40,20 @@
         <!--Top Side-->
         <div class="d-flex flex-wrap align-items-center justify-content-center gap-3 mb-5">
             <div class="d-inline-flex align-items-center gap-2">
-                <input class="inner-page-toggler" type="radio" id="mobile-login-code-s-way" name="login-code-s-way" checked data-target="modal-login-code-s-mobile-page">
+                <input class="login-s-inner-page-toggle inner-page-toggler" type="radio" id="mobile-login-code-s-way" name="login-code-s-way" checked data-target="modal-login-code-s-mobile-page">
                 <label class="text-grey font-small" for="mobile-login-code-s-way">موبایل</label>
             </div>
             <div class="d-inline-flex align-items-center gap-2">
-                <input class="inner-page-toggler" type="radio" id="email-login-code-s-way" name="login-code-s-way" data-target="modal-login-code-s-email-page">
+                <input class="login-s-inner-page-toggle inner-page-toggler" type="radio" id="email-login-code-s-way" name="login-code-s-way" data-target="modal-login-code-s-email-page">
                 <label class="text-grey font-small" for="email-login-code-s-way">ایمیل</label>
             </div>
             <div class="d-inline-flex align-items-center gap-2">
-                <input class="inner-page-toggler" type="radio" id="user-login-code-s-way" name="login-code-s-way" data-target="modal-login-code-s-user-page">
+                <input class="login-s-inner-page-toggle inner-page-toggler" type="radio" id="user-login-code-s-way" name="login-code-s-way" data-target="modal-login-code-s-user-page">
                 <label class="text-grey font-small" for="user-login-code-s-way">شناسه کاربری</label>
             </div>
         </div>
         <!--Middle Side That Changes-->
-        <form action="#" class="page current" id="modal-login-code-s-mobile-page">
+        <form action="#" class="login-s-page current" id="modal-login-code-s-mobile-page">
             <div class="d-flex align-items-center gap-3 mb-1">
                 <div class="w-75">
                     <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
@@ -84,9 +84,8 @@
             </div>
             <a href="#" class="mb-3 d-block font-smallx text-black" data-target="login-s-password-recover">بازیابی رمز ورود</a>
             <button class="submit-btn w-100 rounded-3 border-0 ripple-btn fw-bold text-white mb-3" type="submit">ورود</button>
-            <button class="bg-transparent text-base fw-bold ripple-btn base p-3 rounded-3 border-0 ripple-btn w-100" type="button" data-target="signup-page">ثبت نام</button>
         </form>
-        <form action="#" class="page d-none" id="modal-login-code-s-email-page">
+        <form action="#" class="login-s-page d-none" id="modal-login-code-s-email-page">
             <div class="d-flex align-items-center gap-3 mb-1">
                 <div class="w-100">
                     <div class="intractive-input-component mb-2 my-modal position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
@@ -109,9 +108,8 @@
             </div>
             <a href="#" class="mb-3 d-block font-smallx text-black" data-target="login-s-password-recover">بازیابی رمز ورود</a>
             <button class="submit-btn w-100 rounded-3 border-0 ripple-btn fw-bold text-white mb-3" type="submit">ورود</button>
-            <button class="bg-transparent text-base fw-bold ripple-btn base p-3 rounded-3 border-0 ripple-btn w-100" type="button" data-target="signup-page">ثبت نام</button>
         </form>
-        <form action="#" class="page d-none" id="modal-login-code-s-user-page">
+        <form action="#" class="login-s-page d-none" id="modal-login-code-s-user-page">
             <div class="d-flex align-items-center gap-3 mb-1">
                 <div class="d-flex align-items-center gap-3 mb-1 w-100">
                     <div class="w-100">
@@ -136,8 +134,8 @@
             </div>
             <a href="#" class="mb-3 d-block font-smallx text-black" data-target="login-s-password-recover">بازیابی رمز ورود</a>
             <button class="submit-btn w-100 rounded-3 border-0 ripple-btn fw-bold text-white mb-3" type="submit">ورود</button>
-            <button class="bg-transparent text-base fw-bold ripple-btn base p-3 rounded-3 border-0 ripple-btn w-100" type="button" data-target="signup-page">ثبت نام</button>
         </form>
+        <button class="bg-transparent signup-page-toggler text-base fw-bold ripple-btn base p-3 rounded-3 border-0 ripple-btn w-100" type="button">ثبت نام</button>
     </div>
 </div>
 <!--Login Modal-->
@@ -219,8 +217,8 @@
             <button class="submit-btn w-100 rounded-3 border-0 ripple-btn fw-bold text-white mb-3" type="submit">ورود با رمز یکبار مصرف</button>
         </form>
         <div class="d-flex align-items-center gap-3">
-            <button class="bg-transparent text-base fw-bold ripple-btn base text-base w-50 p-3 rounded-3 border-0" type="button">ورود با رمز ثابت</button>
-            <button class="bg-transparent text-base fw-bold ripple-btn base text-base w-50 p-3 rounded-3 border-0" type="button">ثبت نام</button>
+            <button class="bg-transparent text-base fw-bold ripple-btn base text-base w-50 p-3 rounded-3 border-0" id="login-w-s-password-toggler" type="button">ورود با رمز ثابت</button>
+            <button class="bg-transparent from-login text-base fw-bold ripple-btn base text-base w-50 p-3 rounded-3 border-0 signup-page-toggler" type="button">ثبت نام</button>
         </div>
     </div>
 </div>
@@ -595,18 +593,58 @@
 <script>const myDatePicker = MCDatepicker.create({el: '#first-date',})</script>
 <script>
     const modalInnerPageToggler = document.querySelectorAll('.modal-inner-page-toggler');
+    const loginCodeSModal = document.getElementById('login-code-s-modal');
     const loginModalToggler = document.getElementById('login-modal-toggler');
     const loginModal = document.getElementById('login-modal');
     const modalsDarkBg = document.querySelectorAll('.my-modal-holder > .my-bg-dark');
     const modalCloseBtn = document.querySelectorAll('.my-modal-close-btn');
+    const loginWSPasswordToggler = document.getElementById('login-w-s-password-toggler');
+    const prevPageLoginBtn = document.querySelectorAll('.prev-page-login-btn');
+    const loginSInnerPageToggle = document.querySelectorAll('.login-s-inner-page-toggle');
+    const signupPageToggler = document.querySelectorAll('.signup-page-toggler');
+    const signupModal = document.getElementById('signup-modal');
+
+    signupPageToggler.forEach(item => {
+        item.addEventListener('click', () => {
+            signupModal.setAttribute('data-opened', 'true');
+
+            (item.classList.contains('from-login'))
+                ? item.parentElement.parentElement.parentElement.setAttribute('data-opened', 'false')
+                : item.parentElement.parentElement.setAttribute('data-opened', 'false');
+        })
+    })
+
+    prevPageLoginBtn.forEach(item => {
+      item.addEventListener('click', () => {
+          loginWSPasswordToggler.parentElement.parentElement.parentElement.setAttribute('data-opened', 'true');
+          loginCodeSModal.setAttribute('data-opened', 'false');
+      })
+    })
+
+    function mmd(target, elementToHide) {
+        target.classList.replace('d-none', 'current');
+        elementToHide.classList.replace('current', 'd-none');
+    }
+
+    loginSInnerPageToggle.forEach(item => {
+        item.addEventListener('click', () => {
+            const targetId = item.getAttribute('data-target');
+            const target = document.getElementById(targetId);
+            mmd(target, document.querySelector('.login-s-page.current'))
+        })
+    })
 
     modalInnerPageToggler.forEach(item => {
         item.addEventListener('click', () => {
             const targetId = item.getAttribute('data-target');
             const target = document.getElementById(targetId);
-            document.querySelector('.modal-inner-page.current').classList.replace('current', 'd-none');
-            target.classList.replace('d-none', 'current');
+            mmd(target, document.querySelector('.modal-inner-page.current'))
         })
+    })
+
+    loginWSPasswordToggler.addEventListener('click', () => {
+        loginWSPasswordToggler.parentElement.parentElement.parentElement.setAttribute('data-opened', 'false');
+        loginCodeSModal.setAttribute('data-opened', 'true');
     })
 
     loginModalToggler.addEventListener('click', () => loginModal.setAttribute('data-opened', 'true'))
