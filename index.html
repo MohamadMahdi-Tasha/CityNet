@@ -1398,7 +1398,137 @@
                         </div>
                     </div>
                 </div>
-                <div class="bottom-page d-none" id="hotel"><h1>Hotel</h1></div>
+                <div class="bottom-page d-none" id="hotel">
+                    <div class="d-flex flex-wrap align-items-center gap-3 mb-4 no-touch opacity-0">
+                        <div class="d-flex align-items-center">
+                            <input class="inner-page-toggler home-flight-inner-page-toggler ms-2" type="radio" checked>
+                            <label for="one-way-radio">یک طرفه</label>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <input class="inner-page-toggler home-flight-inner-page-toggler ms-2" type="radio">
+                            <label for="two-way-radio">رفت و برگشت</label>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <input class="inner-page-toggler home-flight-inner-page-toggler ms-2" type="radio">
+                            <label for="more-ways-radio">چند مسیره</label>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="w-50 mq-991-w-100">
+                            <div class="dropdown mb-2">
+                                <div class="intractive-input-component position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <h6>
+                                        <i class="bi bi-geo-alt"></i>
+                                        شهر مقصد
+                                    </h6>
+                                </div>
+                                <div class="bg-white dropdown-menu dropdown-menu-end shadow rounded-4 p-4 popular-city">
+                                    <h6 class="mb-5">شهر و فرودگاه های پرتردد</h6>
+                                    <div class="popular-city-btns-holder d-grid gap-3 position-relative">
+                                        <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تهران</button>
+                                        <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>کیش</button>
+                                        <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>استانبول</button>
+                                        <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>دبی</button>
+                                        <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>مشهد</button>
+                                        <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>اهواز</button>
+                                        <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>انکارا</button>
+                                        <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>لندن</button>
+                                        <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تبریز</button>
+                                        <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>قشم</button>
+                                        <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تورنتو</button>
+                                        <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>ایروان</button>
+                                        <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>بندر عباس</button>
+                                        <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>شیراز</button>
+                                        <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>مسقط</button>
+                                        <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>پکن</button>
+                                        <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>رشت</button>
+                                        <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>اصفهان</button>
+                                        <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>نجف</button>
+                                        <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>باکو</button>
+                                        <div class="top-of-buttons-popular-citys w-100 h-100 position-absolute top-0"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                        </div>
+                        <div class="w-25 mq-991-w-100">
+                            <div class="intractive-input-component mb-2 date position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                                <h6>
+                                    <i class="bi bi-calendar4-week"></i>
+                                    تاریخ ورود
+                                </h6>
+                                <input type="text" class="bg-transparent border-0" readonly id="eight-date" required>
+                            </div>
+                            <!--Error Handling-->
+                            <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                        </div>
+                        <div class="w-25 mq-991-w-100">
+                            <div class="intractive-input-component mb-2 date position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                                <h6>
+                                    <i class="bi bi-calendar4-week"></i>
+                                    تاریخ خروج
+                                </h6>
+                                <input type="text" class="bg-transparent border-0" readonly id="nine-date" required>
+                            </div>
+                            <!--Error Handling-->
+                            <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start gap-3 justify-content-end">
+                        <div class="w-25 mq-991-w-100">
+                            <div class="dropdown mb-2 w-100">
+                                <div class="intractive-input-component focused room position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <h6 style="font-size: .1rem"><i class="bi bi-person"></i>مسافران/اتاق</h6>
+                                    <h5 class="mb-0">
+                                        <span>1</span>
+                                        اتاق,
+                                        <span>7</span>
+                                        بزرگسال,
+                                        <span>0</span>
+                                        کودک
+                                    </h5>
+                                </div>
+                                <div class="bg-white dropdown-menu dropdown-menu-end shadow rounded-4">
+                                    <h6 class="mb-0 border-bottom m-4">
+                                        <span>1</span>
+                                        اتاق,
+                                        <span>7</span>
+                                        بزرگسال,
+                                        <span>0</span>
+                                        کودک
+                                    </h6>
+                                    <div class="p-4">
+                                        <h6>اتاق اول</h6>
+                                        <button><i class="bi bi-trash"></i></button>
+                                    </div>
+                                    <div class="p-4">
+                                        <h6>بزرگسال<span>(12+)</span></h6>
+                                        <div>
+                                            <button><i class="bi bi-plus"></i></button>
+                                            <span>1</span>
+                                            <button><i class="bi bi-minus"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="p-4">
+                                        <h6>کودک<span>(12-)</span></h6>
+                                        <div>
+                                            <button><i class="bi bi-plus"></i></button>
+                                            <span>0</span>
+                                            <button><i class="bi bi-minus"></i></button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button><i class="bi bi-plus"></i>افزودن اتاق</button>
+                                        <button>تایید</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Error Handling-->
+                            <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                        </div>
+                        <button class="submit-btn border-0 rounded-3 text-white ripple-btn w-25">جستجو</button>
+                    </div>
+                </div>
                 <div class="bottom-page d-none" id="flight-and-hotel"><h1>flight + Hotel</h1></div>
             </div>
         </div>

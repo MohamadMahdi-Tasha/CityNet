@@ -55,6 +55,7 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .intractive-input-component.disabled > h6 {color: rgba(185, 185, 185, .8) !important;}
 .passenger-counter {width: 20rem !important;}
 .passenger-counter h6{font-size: .8rem;}
+.intractive-input-component.room > h5 {font-size: .7rem}
 .passenger-counter h6 > span{color: rgba(185, 185, 185, 1);}
 .my-bg-primary {background-color: rgb(81, 137, 246);}
 .my-bg-pink {background-color: rgb(213, 12, 106);}
