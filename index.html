@@ -1477,7 +1477,7 @@
                     <div class="d-flex align-items-start gap-3 justify-content-end">
                         <div class="w-25 mq-991-w-100">
                             <div class="dropdown mb-2 w-100">
-                                <div class="intractive-input-component focused room position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <div class="intractive-input-component focused room position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" aria-expanded="false">
                                     <h6 style="font-size: .1rem"><i class="bi bi-person"></i>مسافران/اتاق</h6>
                                     <h5 class="mb-0">
                                         <span>1</span>
@@ -1488,38 +1488,66 @@
                                         کودک
                                     </h5>
                                 </div>
-                                <div class="bg-white dropdown-menu dropdown-menu-end shadow rounded-4">
-                                    <h6 class="mb-0 border-bottom m-4">
-                                        <span>1</span>
-                                        اتاق,
-                                        <span>7</span>
-                                        بزرگسال,
-                                        <span>0</span>
-                                        کودک
-                                    </h6>
-                                    <div class="p-4">
-                                        <h6>اتاق اول</h6>
-                                        <button><i class="bi bi-trash"></i></button>
-                                    </div>
-                                    <div class="p-4">
-                                        <h6>بزرگسال<span>(12+)</span></h6>
-                                        <div>
-                                            <button><i class="bi bi-plus"></i></button>
+                                <div class="bg-white py-0 overflow-hidden dropdown-menu shadow rounded-4 text-end">
+                                    <div class="p-3 border-bottom">
+                                        <h6 class="mb-0">
                                             <span>1</span>
-                                            <button><i class="bi bi-minus"></i></button>
-                                        </div>
-                                    </div>
-                                    <div class="p-4">
-                                        <h6>کودک<span>(12-)</span></h6>
-                                        <div>
-                                            <button><i class="bi bi-plus"></i></button>
+                                            اتاق,
+                                            <span>7</span>
+                                            بزرگسال,
                                             <span>0</span>
-                                            <button><i class="bi bi-minus"></i></button>
+                                            کودک
+                                        </h6>
+                                    </div>
+                                    <div class="p-3 d-flex align-items-center room-item-holder">
+                                        <div class="room-item">
+                                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                                <h6 class="font-small">اتاق اول</h6>
+                                                <button class="bg-transparent border-0"><i class="bi bi-trash fs-5"></i></button>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                                <h6 class="font-small">بزرگسال<span class="text-grey"> (12+) </span></h6>
+                                                <div>
+                                                    <button class="plus-btn rounded-3 border-0 text-primary">+</button>
+                                                    <span class="ms-2 me-2">1</span>
+                                                    <button class="minus-btn rounded-3 border-0 text-primary">-</button>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <h6 class="font-small">کودک<span class="text-grey"> (12-) </span></h6>
+                                                <div>
+                                                    <button class="plus-btn rounded-3 border-0 text-primary">+</button>
+                                                    <span class="ms-2 me-2">0</span>
+                                                    <button class="minus-btn rounded-3 border-0 text-primary">-</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="room-item">
+                                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                                <h6 class="font-small">اتاق اول</h6>
+                                                <button class="bg-transparent border-0"><i class="bi bi-trash fs-5"></i></button>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                                <h6 class="font-small">بزرگسال<span class="text-grey"> (12+) </span></h6>
+                                                <div>
+                                                    <button class="plus-btn rounded-3 border-0 text-primary">+</button>
+                                                    <span class="ms-2 me-2">1</span>
+                                                    <button class="minus-btn rounded-3 border-0 text-primary">-</button>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <h6 class="font-small">کودک<span class="text-grey"> (12-) </span></h6>
+                                                <div>
+                                                    <button class="plus-btn rounded-3 border-0 text-primary">+</button>
+                                                    <span class="ms-2 me-2">0</span>
+                                                    <button class="minus-btn rounded-3 border-0 text-primary">-</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div>
-                                        <button><i class="bi bi-plus"></i>افزودن اتاق</button>
-                                        <button>تایید</button>
+                                    <div class="p-3 bg-grey d-flex align-items-center justify-content-between">
+                                        <button class="rounded-3 border-0 text-dark font-small px-3 py-2 bg-grey"><i class="bi bi-plus"></i>افزودن اتاق</button>
+                                        <button class="rounded-3 border-0 font-small text-white px-3 py-2 bg-base">تایید</button>
                                     </div>
                                 </div>
                             </div>
@@ -1579,6 +1607,13 @@
 <script src="assets/base/js/inner-pages.js"></script>
 <script src="assets/base/js/scripts.js"></script>
 <script>
+    const intractiveInputComponentRoom = document.querySelectorAll('.intractive-input-component.room');
+
+    intractiveInputComponentRoom.forEach(item => {
+        item.addEventListener('click', () => {
+            item.nextElementSibling.classList.toggle('show')
+        })
+    })
 </script>
 </body>
 </html>

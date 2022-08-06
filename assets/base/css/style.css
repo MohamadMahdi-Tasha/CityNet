@@ -68,6 +68,12 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .intractive-input-component:not(.passenger) > h6{font-size: .9rem !important;}
 .intractive-input-component:not(.passenger) > h6 > i{font-size: 1.2rem !important;}
 .passenger-type-and-num {font-size: .8rem;}
+.intractive-input-component.room ~ .dropdown-menu > div:first-of-type > h6{font-size: .8rem;}
+.bg-grey { background-color: rgba(0,0,0,.1);}
+.room-item {width: 20rem;}
+.room-item-holder > .room-item:not(:first-of-type) {border-right: 1px dashed #dee2e6;padding-right: 1rem;}
+.room-item-holder > .room-item:first-of-type{padding-left: 1rem;}
+.bg-base {background-color: var(--primary-base);}
 .dropdown-menu {border: none !important;}
 .error-text {font-size: .8rem;color: red;}
 .error-holder {opacity: 0;pointer-events: none;transition: .3s}
