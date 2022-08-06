@@ -624,22 +624,22 @@
         <div class="bg-white shadow-lg rounded-4 w-75 mq-991-w-100 home-second-section">
             <!--Top Side Buttons-->
             <div class="d-flex justify-content-center align-items-center border-bottom mx-4">
-               <button type="button" class="top-side-page-buttons bg-transparent d-flex flex-column align-items-center justify-content-center active" data-page-target="flight">
+               <button type="button" class="top-side-page-buttons bg-transparent d-flex flex-column align-items-center justify-content-center active" data-target="flight">
                     <i class="bi bi-airplane"></i>
                     پرواز
                 </button>
-                <button type="button" class="top-side-page-buttons bg-transparent d-flex flex-column align-items-center justify-content-center" data-page-target="hotel">
+                <button type="button" class="top-side-page-buttons bg-transparent d-flex flex-column align-items-center justify-content-center" data-target="hotel">
                     <i class="bi bi-house"></i>
                     هتل
                 </button>
-                <button type="button" class="top-side-page-buttons bg-transparent d-flex flex-column align-items-center justify-content-center" data-page-target="flight-and-hotel">
+                <button type="button" class="top-side-page-buttons bg-transparent d-flex flex-column align-items-center justify-content-center" data-target="flight-and-hotel">
                     <i class="bi bi-geo-alt"></i>
                     پرواز+هتل
                 </button>
             </div>
             <!--Bottom Side That Changes-->
             <div class="p-4">
-                <div class="bottom-page" id="flight">
+                <div class="bottom-page current" id="flight">
                     <!--Top Side-->
                     <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
                         <div class="d-flex align-items-center">
@@ -1398,6 +1398,8 @@
                         </div>
                     </div>
                 </div>
+                <div class="bottom-page d-none" id="hotel"><h1>Hotel</h1></div>
+                <div class="bottom-page d-none" id="flight-and-hotel"><h1>flight + Hotel</h1></div>
             </div>
         </div>
     </main>
@@ -1447,7 +1449,6 @@
 <script src="assets/base/js/inner-pages.js"></script>
 <script src="assets/base/js/scripts.js"></script>
 <script>
-
 </script>
 </body>
 </html>
