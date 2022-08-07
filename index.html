@@ -1478,7 +1478,7 @@
                         <div class="w-25 mq-991-w-100">
                             <div class="dropdown mb-2 w-100">
                                 <div class="intractive-input-component focused room position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" aria-expanded="false">
-                                    <h6 style="font-size: .1rem"><i class="bi bi-person"></i>مسافران/اتاق</h6>
+                                    <h6 class="font-smallx"><i class="bi bi-person"></i>مسافران/اتاق</h6>
                                     <h5 class="mb-0">
                                         <span>1</span>
                                         اتاق,
@@ -1493,61 +1493,105 @@
                                         <h6 class="mb-0">
                                             <span>1</span>
                                             اتاق,
-                                            <span>7</span>
+                                            <span>1</span>
                                             بزرگسال,
                                             <span>0</span>
                                             کودک
                                         </h6>
                                     </div>
                                     <div class="p-3 d-flex align-items-center room-item-holder">
-                                        <div class="room-item">
+                                        <div class="room-item px-3">
                                             <div class="d-flex align-items-center justify-content-between mb-3">
                                                 <h6 class="font-small">اتاق اول</h6>
                                                 <button class="bg-transparent border-0"><i class="bi bi-trash fs-5"></i></button>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mb-3">
                                                 <h6 class="font-small">بزرگسال<span class="text-grey"> (12+) </span></h6>
-                                                <div>
+                                                <div class="adult-actions-holder">
                                                     <button class="plus-btn rounded-3 border-0 text-primary">+</button>
-                                                    <span class="ms-2 me-2">1</span>
+                                                    <span class="ms-2 me-2 adult-number-hotel">1</span>
                                                     <button class="minus-btn rounded-3 border-0 text-primary">-</button>
                                                 </div>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between">
                                                 <h6 class="font-small">کودک<span class="text-grey"> (12-) </span></h6>
-                                                <div>
+                                                <div class="kid-actions-holder">
                                                     <button class="plus-btn rounded-3 border-0 text-primary">+</button>
-                                                    <span class="ms-2 me-2">0</span>
+                                                    <span class="ms-2 me-2 kid-number-hotel">0</span>
                                                     <button class="minus-btn rounded-3 border-0 text-primary">-</button>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="room-item">
+                                        <div id="room-item-2" class="room-item px-3 d-none">
                                             <div class="d-flex align-items-center justify-content-between mb-3">
-                                                <h6 class="font-small">اتاق اول</h6>
-                                                <button class="bg-transparent border-0"><i class="bi bi-trash fs-5"></i></button>
+                                                <h6 class="font-small">اتاق دوم</h6>
+                                                <button id="remove-room-btn-2" class="remove-room-btn bg-transparent border-0"><i class="bi bi-trash fs-5"></i></button>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mb-3">
                                                 <h6 class="font-small">بزرگسال<span class="text-grey"> (12+) </span></h6>
-                                                <div>
+                                                <div class="adult-actions-holder">
                                                     <button class="plus-btn rounded-3 border-0 text-primary">+</button>
-                                                    <span class="ms-2 me-2">1</span>
+                                                    <span class="ms-2 me-2 adult-number-hotel">0</span>
                                                     <button class="minus-btn rounded-3 border-0 text-primary">-</button>
                                                 </div>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between">
                                                 <h6 class="font-small">کودک<span class="text-grey"> (12-) </span></h6>
-                                                <div>
+                                                <div class="kid-actions-holder">
                                                     <button class="plus-btn rounded-3 border-0 text-primary">+</button>
-                                                    <span class="ms-2 me-2">0</span>
+                                                    <span class="ms-2 me-2 kid-number-hotel">0</span>
+                                                    <button class="minus-btn rounded-3 border-0 text-primary">-</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="room-item-3" class="room-item px-3 d-none">
+                                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                                <h6 class="font-small">اتاق سوم</h6>
+                                                <button id="remove-room-btn-3" class="remove-room-btn bg-transparent border-0"><i class="bi bi-trash fs-5"></i></button>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                                <h6 class="font-small">بزرگسال<span class="text-grey"> (12+) </span></h6>
+                                                <div class="adult-actions-holder">
+                                                    <button class="plus-btn rounded-3 border-0 text-primary">+</button>
+                                                    <span class="ms-2 me-2 adult-number-hotel">0</span>
+                                                    <button class="minus-btn rounded-3 border-0 text-primary">-</button>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <h6 class="font-small">کودک<span class="text-grey"> (12-) </span></h6>
+                                                <div class="kid-actions-holder">
+                                                    <button class="plus-btn rounded-3 border-0 text-primary">+</button>
+                                                    <span class="ms-2 me-2 kid-number-hotel">0</span>
+                                                    <button class="minus-btn rounded-3 border-0 text-primary">-</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="room-item-4" class="room-item px-3 d-none">
+                                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                                <h6 class="font-small">اتاق چهارم</h6>
+                                                <button id="remove-room-btn-4" class="remove-room-btn bg-transparent border-0"><i class="bi bi-trash fs-5"></i></button>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                                <h6 class="font-small">بزرگسال<span class="text-grey"> (12+) </span></h6>
+                                                <div class="adult-actions-holder">
+                                                    <button class="plus-btn rounded-3 border-0 text-primary">+</button>
+                                                    <span class="ms-2 me-2 adult-number-hotel">0</span>
+                                                    <button class="minus-btn rounded-3 border-0 text-primary">-</button>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <h6 class="font-small">کودک<span class="text-grey"> (12-) </span></h6>
+                                                <div class="kid-actions-holder">
+                                                    <button class="plus-btn rounded-3 border-0 text-primary">+</button>
+                                                    <span class="ms-2 me-2 kid-number-hotel">0</span>
                                                     <button class="minus-btn rounded-3 border-0 text-primary">-</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="p-3 bg-grey d-flex align-items-center justify-content-between">
-                                        <button class="rounded-3 border-0 text-dark font-small px-3 py-2 bg-grey"><i class="bi bi-plus"></i>افزودن اتاق</button>
-                                        <button class="rounded-3 border-0 font-small text-white px-3 py-2 bg-base">تایید</button>
+                                        <button class="add-room-btn rounded-3 border-0 text-dark font-small px-3 py-2 bg-grey"><i class="bi bi-plus"></i>افزودن اتاق</button>
+                                        <button class="coniform-btn rounded-3 border-0 font-small text-white px-3 py-2 bg-base">تایید</button>
                                     </div>
                                 </div>
                             </div>
@@ -1608,12 +1652,47 @@
 <script src="assets/base/js/scripts.js"></script>
 <script>
     const intractiveInputComponentRoom = document.querySelectorAll('.intractive-input-component.room');
+    const roomItem2 = document.getElementById('room-item-2');
+    const roomItem3 = document.getElementById('room-item-3');
+    const roomItem4 = document.getElementById('room-item-4');
+    const addRoomBtn = document.querySelectorAll('.add-room-btn');
+    const coniformBtn = document.querySelectorAll('.coniform-btn');
+    const removeRoomBtn = document.querySelectorAll('.remove-room-btn');
+    const kidActionsHolder = document.querySelectorAll('.kid-actions-holder > button');
+    const adultActionsHolder = document.querySelectorAll('.adult-actions-holder > button');
 
-    intractiveInputComponentRoom.forEach(item => {
-        item.addEventListener('click', () => {
-            item.nextElementSibling.classList.toggle('show')
+    intractiveInputComponentRoom.forEach(item => item.addEventListener('click', () => item.nextElementSibling.classList.toggle('show')))
+
+    addRoomBtn.forEach(item => {
+        item.addEventListener('click', () =>  {
+            if (roomItem2.classList.contains('d-none')) {roomItem2.classList.remove('d-none')}
+            else if (roomItem3.classList.contains('d-none')) {roomItem3.classList.remove('d-none')}
+            else if (roomItem4.classList.contains('d-none')) {roomItem4.classList.remove('d-none')}
         })
     })
+
+    function arraySum(elements) {
+        let array = [];
+        document.querySelectorAll(elements).forEach(item => array.push(Number(item.textContent)))
+        return array.reduce((partialSum, a) => partialSum + a, 0);
+    }
+
+    kidActionsHolder.forEach(item => {
+        item.addEventListener('click', () => {
+            const text = item.parentElement.parentElement.parentElement.parentElement.previousElementSibling.firstElementChild.lastElementChild;
+            text.textContent = arraySum('.kid-number-hotel')
+        })
+    })
+
+    adultActionsHolder.forEach(item => {
+        item.addEventListener('click', () => {
+            const text = item.parentElement.parentElement.parentElement.parentElement.previousElementSibling.firstElementChild.firstElementChild.nextElementSibling;
+            text.textContent = arraySum('.adult-number-hotel')
+        })
+    })
+
+    coniformBtn.forEach(item => {item.addEventListener('click', () => item.parentElement.parentElement.classList.remove('show'))})
+    removeRoomBtn.forEach(item => item.addEventListener('click', () => item.parentElement.parentElement.classList.add('d-none')))
 </script>
 </body>
 </html>
