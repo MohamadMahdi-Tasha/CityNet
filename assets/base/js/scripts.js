@@ -30,3 +30,6 @@ addRouteBtn.forEach(item => {
         else if (moreWaysItem4.classList.contains('d-none')) {moreWaysItem4.classList.replace('d-none', 'd-flex');}
     })
 })
+
+// Getting All Elements With Class Of form-check-input And Adding Event Listener That Listens To Click On Them That Toggles Class Of Checked To Grand Parent Of Clicked Item
+document.querySelectorAll('.form-check-input').forEach(item => item.addEventListener('click', () => item.parentElement.parentElement.classList.toggle('checked-ok')))
