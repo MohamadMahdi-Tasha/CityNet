@@ -1479,7 +1479,7 @@
                             <div class="dropdown mb-2 w-100">
                                 <div class="intractive-input-component focused room position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" aria-expanded="false">
                                     <h6 class="font-smallx"><i class="bi bi-person"></i>مسافران/اتاق</h6>
-                                    <h5 class="mb-0">
+                                    <h5 class="mb-0 intractive-input-component-inner-text-1">
                                         <span>1</span>
                                         اتاق,
                                         <span>7</span>
@@ -1490,8 +1490,8 @@
                                 </div>
                                 <div class="bg-white py-0 overflow-hidden dropdown-menu shadow rounded-4 text-end">
                                     <div class="p-3 border-bottom">
-                                        <h6 class="mb-0">
-                                            <span>1</span>
+                                        <h6 class="mb-0 intractive-input-component-inner-text-1-to-copy">
+                                            <span class="room-number room-number-1">1</span>
                                             اتاق,
                                             <span>1</span>
                                             بزرگسال,
@@ -1660,14 +1660,16 @@
     const removeRoomBtn = document.querySelectorAll('.remove-room-btn');
     const kidActionsHolder = document.querySelectorAll('.kid-actions-holder > button');
     const adultActionsHolder = document.querySelectorAll('.adult-actions-holder > button');
+    const roomNumberElement = document.querySelector('.room-number.room-number-1');
 
     intractiveInputComponentRoom.forEach(item => item.addEventListener('click', () => item.nextElementSibling.classList.toggle('show')))
-
     addRoomBtn.forEach(item => {
+        let num;
         item.addEventListener('click', () =>  {
-            if (roomItem2.classList.contains('d-none')) {roomItem2.classList.remove('d-none')}
-            else if (roomItem3.classList.contains('d-none')) {roomItem3.classList.remove('d-none')}
-            else if (roomItem4.classList.contains('d-none')) {roomItem4.classList.remove('d-none')}
+            if (roomItem2.classList.contains('d-none')) {roomItem2.classList.remove('d-none');num = "2"}
+            else if (roomItem3.classList.contains('d-none')) {roomItem3.classList.remove('d-none');num = "3"}
+            else if (roomItem4.classList.contains('d-none')) {roomItem4.classList.remove('d-none');num = "4"}
+            roomNumberElement.textContent = num;
         })
     })
 
@@ -1692,7 +1694,12 @@
     })
 
     coniformBtn.forEach(item => {item.addEventListener('click', () => item.parentElement.parentElement.classList.remove('show'))})
-    removeRoomBtn.forEach(item => item.addEventListener('click', () => item.parentElement.parentElement.classList.add('d-none')))
+    removeRoomBtn.forEach(item => item.addEventListener('click', () => {
+        roomNumberElement.textContent = (Number(roomNumberElement.textContent) - 1);
+        item.parentElement.parentElement.classList.add('d-none')
+        roomNumberElement.textContent = document.querySelectorAll('.room-item:not(.d-none)').length;
+        intractiveInputComponentRoom.forEach(item => item.addEventListener('click', () => item.nextElementSibling.classList.toggle('show')))
+    }))
 </script>
 </body>
 </html>
