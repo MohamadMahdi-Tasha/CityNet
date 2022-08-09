@@ -275,6 +275,7 @@ header .dropdown-item:active {background-color: rgba(185, 185, 185, 1) !importan
     .dropdown.position-static {position: relative !important;}
     .blog-holder {grid-template-columns: repeat(2, 1fr);}
     ol {list-style: none;padding: 0 !important;}
+    .signup-bottom {grid-template-columns: repeat(1, 1fr);}
 
     .room-item-holder > .room-item:not(:first-of-type) {
         border-right: none;
