@@ -1597,6 +1597,68 @@
                     </div>
                     <!--Bottom Side That Changes-->
                     <div>
+                        <!--Top Side Advanced-->
+                        <div class="d-flex align-items-center gap-2 flex-lg-row flex-column mb-3">
+                            <div class="w-50 mq-991-w-100">
+                                <div class="dropdown mb-2">
+                                    <div class="intractive-input-component position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <h6>
+                                            <i class="bi bi-geo-alt"></i>
+                                            شهر هتل
+                                        </h6>
+                                    </div>
+                                    <div class="bg-white dropdown-menu dropdown-menu-end shadow rounded-4 p-4 popular-city">
+                                        <h6 class="mb-5">شهر و فرودگاه های پرتردد</h6>
+                                        <div class="popular-city-btns-holder d-grid gap-3 position-relative">
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تهران</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>کیش</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>استانبول</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>دبی</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>مشهد</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>اهواز</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>انکارا</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>لندن</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تبریز</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>قشم</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تورنتو</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>ایروان</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>بندر عباس</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>شیراز</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>مسقط</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>پکن</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>رشت</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>اصفهان</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>نجف</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>باکو</button>
+                                            <div class="top-of-buttons-popular-citys w-100 h-100 position-absolute top-0"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                            </div>
+                            <div class="w-25 mq-991-w-100">
+                                <div class="intractive-input-component mb-2 date position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                                    <h6>
+                                        <i class="bi bi-calendar4-week"></i>
+                                        تاریخ ورود به هتل
+                                    </h6>
+                                    <input type="text" class="bg-transparent border-0" readonly id="twelve-date" required>
+                                </div>
+                                <!--Error Handling-->
+                                <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                            </div>
+                            <div class="w-25 mq-991-w-100">
+                                <div class="intractive-input-component mb-2 date position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                                    <h6>
+                                        <i class="bi bi-calendar4-week"></i>
+                                        تاریخ خروج از هتل
+                                    </h6>
+                                    <input type="text" class="bg-transparent border-0" readonly id="thirteen-date" required>
+                                </div>
+                                <!--Error Handling-->
+                                <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                            </div>
+                        </div>
                         <!--Top Side-->
                         <div class="d-flex flex-lg-row flex-column align-items-start gap-lg-2 gap-0 position-relative mb-lg-4 mb-0 top-side-flight">
                             <div class="w-50 mq-991-w-100">
@@ -1875,5 +1937,6 @@
 <script src="assets/base/js/modals.js"></script>
 <script src="assets/base/js/inner-pages.js"></script>
 <script src="assets/base/js/scripts.js"></script>
+<script>document.querySelectorAll('.form-check-input').forEach(item => item.addEventListener('click', () => item.classList.toggle('checked-ok')))</script>
 </body>
 </html>

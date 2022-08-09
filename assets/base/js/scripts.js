@@ -10,6 +10,8 @@ const myDatePicker8 = MCDatepicker.create({el: '#eight-date',})
 const myDatePicker9 = MCDatepicker.create({el: '#nine-date',})
 const myDatePicker10 = MCDatepicker.create({el: '#ten-date',})
 const myDatePicker11 = MCDatepicker.create({el: '#eleven-date',})
+const myDatePicker12 = MCDatepicker.create({el: '#twelve-date',})
+const myDatePicker13 = MCDatepicker.create({el: '#thirteen-date',})
 
 // Variables
 const removeButtons = document.querySelectorAll('.remove-button.can-delete');
