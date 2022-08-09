@@ -14,6 +14,7 @@ button {cursor: pointer;transition: .3s}
 ul, ol, li {padding: 0 !important;}
 a {text-decoration: none}
 img {pointer-events: none}
+textarea {resize: none}
 body {
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -110,6 +111,13 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .advanced-top-side-holder.checked-ok ~ div > div:first-of-type {display: flex !important;}
 .blog-holder {grid-template-columns: repeat(4, 1fr);}
 .transition {transition: .3s;}
+.contact-us-form .intractive-input-component {height: 50px;border-color: rgba(0,0,0,.2);}
+.contact-us-form .intractive-input-component > h6{color: rgba(0,0,0,.5);background-color: #f5f6fa;}
+.intractive-input-component.textarea {height: 200px;}
+.intractive-input-component.textarea > textarea::-webkit-scrollbar {width: 10px;}
+.intractive-input-component.textarea > textarea::-webkit-scrollbar-thumb {background-color: var(--primary-base);border-radius: 50rem;}
+.intractive-input-component.textarea > textarea::-webkit-scrollbar-track {background-color: transparent;}
+
 .signup-type-button {
     height: 50px;
     width: 25%;
