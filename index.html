@@ -1462,9 +1462,9 @@
                     </div>
                     <div class="d-flex flex-lg-row flex-column align-items-start gap-3 justify-content-end">
                         <div class="w-25 mq-991-w-100">
-                            <div class="dropdown mb-2 w-100">
+                            <div class="dropdown position-static mb-2 w-100">
                                 <div class="intractive-input-component focused room position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" aria-expanded="false">
-                                    <h6 class="font-smallx"><i class="bi bi-person"></i>مسافران/اتاق</h6>
+                                    <h6 class="font-smallx"><i class="bi bi-person"></i>مسافران/اتاق/کلاس کابین</h6>
                                     <h5 class="mb-0 intractive-input-component-inner-text-1">
                                         <span>1</span>
                                         اتاق,
@@ -1474,7 +1474,7 @@
                                         کودک
                                     </h5>
                                 </div>
-                                <div class="bg-white py-0 overflow-hidden dropdown-menu shadow rounded-4 text-end">
+                                <div class="bg-white py-0 overflow-hidden dropdown-menu shadow rounded-4 left-0 right-0 text-end">
                                     <div class="p-3 border-bottom">
                                         <h6 class="mb-0 intractive-input-component-inner-text-1-to-copy">
                                             <span class="room-number room-number-1">1</span>
@@ -1485,7 +1485,7 @@
                                             کودک
                                         </h6>
                                     </div>
-                                    <div class="p-3 d-flex flex-lg-row flex-column align-items-center room-item-holder">
+                                    <div class="p-3 room-item-holder d-grid gap-3">
                                         <div class="room-item mq-991-w-100 px-3">
                                             <div class="d-flex align-items-center justify-content-between mb-3">
                                                 <h6 class="font-small">اتاق اول</h6>
@@ -1508,10 +1508,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div id="room-item-2" class="room-item mq-991-w-100 px-3 d-none">
+                                        <div class="room-item mq-991-w-100 px-3 d-none">
                                             <div class="d-flex align-items-center justify-content-between mb-3">
                                                 <h6 class="font-small">اتاق دوم</h6>
-                                                <button id="remove-room-btn-2" class="remove-room-btn bg-transparent border-0"><i class="bi bi-trash fs-5"></i></button>
+                                                <button class="remove-room-btn bg-transparent border-0"><i class="bi bi-trash fs-5"></i></button>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mb-3">
                                                 <h6 class="font-small">بزرگسال<span class="text-grey"> (12+) </span></h6>
@@ -1530,10 +1530,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div id="room-item-3" class="room-item mq-991-w-100 px-3 d-none">
+                                        <div class="room-item mq-991-w-100 px-3 d-none">
                                             <div class="d-flex align-items-center justify-content-between mb-3">
                                                 <h6 class="font-small">اتاق سوم</h6>
-                                                <button id="remove-room-btn-3" class="remove-room-btn bg-transparent border-0"><i class="bi bi-trash fs-5"></i></button>
+                                                <button class="remove-room-btn bg-transparent border-0"><i class="bi bi-trash fs-5"></i></button>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mb-3">
                                                 <h6 class="font-small">بزرگسال<span class="text-grey"> (12+) </span></h6>
@@ -1552,10 +1552,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div id="room-item-4" class="room-item mq-991-w-100 px-3 d-none">
+                                        <div class="room-item mq-991-w-100 px-3 d-none">
                                             <div class="d-flex align-items-center justify-content-between mb-3">
                                                 <h6 class="font-small">اتاق چهارم</h6>
-                                                <button id="remove-room-btn-4" class="remove-room-btn bg-transparent border-0"><i class="bi bi-trash fs-5"></i></button>
+                                                <button class="remove-room-btn bg-transparent border-0"><i class="bi bi-trash fs-5"></i></button>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mb-3">
                                                 <h6 class="font-small">بزرگسال<span class="text-grey"> (12+) </span></h6>
@@ -1701,7 +1701,7 @@
                                 <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
                             </div>
                             <div class="w-25 mq-991-w-100">
-                                <div class="dropdown mb-2 w-100">
+                                <div class="dropdown position-static mb-2 w-100">
                                     <div class="intractive-input-component focused room position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" aria-expanded="false">
                                         <h6 class="font-smallx"><i class="bi bi-person"></i>مسافران/اتاق/کلاس کابین</h6>
                                         <h5 class="mb-0 intractive-input-component-inner-text-1">
@@ -1713,7 +1713,7 @@
                                             کودک
                                         </h5>
                                     </div>
-                                    <div class="bg-white py-0 overflow-hidden dropdown-menu shadow rounded-4 text-end">
+                                    <div class="bg-white py-0 overflow-hidden dropdown-menu shadow rounded-4 left-0 right-0 text-end">
                                         <div class="p-3 border-bottom">
                                             <h6 class="mb-0 intractive-input-component-inner-text-1-to-copy">
                                                 <span class="room-number room-number-1">1</span>
@@ -1724,7 +1724,7 @@
                                                 کودک
                                             </h6>
                                         </div>
-                                        <div class="p-3 d-flex flex-lg-row flex-column align-items-center room-item-holder">
+                                        <div class="p-3 room-item-holder d-grid gap-3">
                                             <div class="room-item mq-991-w-100 px-3">
                                                 <div class="d-flex align-items-center justify-content-between mb-3">
                                                     <h6 class="font-small">اتاق اول</h6>

@@ -69,8 +69,8 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .intractive-input-component:not(.passenger) > h6:not(.font-smallx) > i{font-size: 1.2rem !important;}
 .passenger-type-and-num {font-size: .8rem;}
 .bg-grey { background-color: rgba(0,0,0,.1);}
-.room-item {width: 20rem;}
-.room-item-holder > .room-item:not(:first-of-type) {border-right: 1px dashed #dee2e6;padding-right: 1rem;}
+.room-item-holder {grid-template-columns: repeat(2, 1fr) !important;}
+.room-item-holder > .room-item:not(:first-of-type, :nth-of-type(3)) {border-right: 1px dashed #dee2e6;padding-right: 1rem;}
 .bg-base {background-color: var(--primary-base);}
 .dropdown-menu {border: none !important;}
 .error-text {font-size: .8rem;color: red;}
@@ -251,6 +251,9 @@ header .dropdown-item:active {background-color: rgba(185, 185, 185, 1) !importan
     .remove-button {pointer-events: visible}
     .room-item-holder > .room-item {padding-top: 1rem;padding-bottom: 1rem;}
     .popular-city-btns-holder {grid-template-columns: repeat(2, 1fr);}
+    .room-item-holder {grid-template-columns: repeat(1, 1fr) !important;}
+    .room-item-holder > .room-item:not(:first-of-type, :nth-of-type(3)) {border-right: 1px dashed #dee2e6;padding-right: 1rem;}
+    .dropdown.position-static {position: relative !important;}
 
     .room-item-holder > .room-item:not(:first-of-type) {
         border-right: none;
