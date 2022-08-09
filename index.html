@@ -1652,6 +1652,7 @@
 <script src="assets/base/js/scripts.js"></script>
 <script>
     const intractiveInputComponentRoom = document.querySelectorAll('.intractive-input-component.room');
+    const intractiveInputComponentRoomDropdownMenu = document.querySelectorAll('.intractive-input-component.room ~ .dropdown-menu');
     const roomItem2 = document.getElementById('room-item-2');
     const roomItem3 = document.getElementById('room-item-3');
     const roomItem4 = document.getElementById('room-item-4');
@@ -1661,8 +1662,12 @@
     const kidActionsHolder = document.querySelectorAll('.kid-actions-holder > button');
     const adultActionsHolder = document.querySelectorAll('.adult-actions-holder > button');
     const roomNumberElement = document.querySelector('.room-number.room-number-1');
+    const intractiveInputComponentInnerText1 = document.querySelector('.intractive-input-component-inner-text-1');
+    const intractivInputComponentInnerText1ToCopy = document.querySelector('.intractive-input-component-inner-text-1-to-copy');
 
     intractiveInputComponentRoom.forEach(item => item.addEventListener('click', () => item.nextElementSibling.classList.toggle('show')))
+    intractiveInputComponentRoomDropdownMenu.forEach(item => item.addEventListener('click', () => intractiveInputComponentInnerText1.textContent = intractivInputComponentInnerText1ToCopy.textContent))
+
     addRoomBtn.forEach(item => {
         let num;
         item.addEventListener('click', () =>  {
