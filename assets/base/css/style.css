@@ -5,6 +5,7 @@
 :root {
     --primary-base: #dd9933;
     --pink: #ff5551;
+    --dark-blue: #023047
 }
 
 /*CSS RESET*/
@@ -31,6 +32,8 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .px-7rem {padding-right: 7rem;padding-left: 7rem;}
 .dropdown-menu.show {animation: dropdown-show .3s linear;}
 .inset-0 {inset: 0;}
+.bg-dark-blue {background-color: var(--dark-blue);}
+.dropdown-toggle::after {margin-right: 1rem;}
 .dropdown-item {transition: .3s;}
 .home-first-section > main {min-height: 570px;background: linear-gradient(180deg, rgba(0,0,0,.6), transparent);}
 .home-second-section {transform: translateY(-200px);}
@@ -105,6 +108,8 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .switch-btn.diffrent {left: calc(67% - 20px);}
 .advanced-top-side-holder ~ div > div:first-of-type {display: none !important;}
 .advanced-top-side-holder.checked-ok ~ div > div:first-of-type {display: flex !important;}
+.blog-holder {grid-template-columns: repeat(4, 1fr);}
+.transition {transition: .3s;}
 .signup-type-button {
     height: 50px;
     width: 25%;
@@ -232,8 +237,12 @@ header .dropdown-item:active {background-color: rgba(185, 185, 185, 1) !importan
 .submit-btn:hover, .submit-btn:active {background-color: var(--primary-base) !important;}
 .hover-text-pink:hover {color: var(--pink) !important;}
 .my-modal-holder .intractive-input-component:hover {border-color: black;color: black;}
+.hover-bg-pink:hover {background-color: var(--pink);}
+.hover-bg-pink:hover .bg-grey {background-color: rgba(25,256,256,.2);}
+.hover-text-white:hover {color: white !important;}
 
 /*Media Querys*/
+@media (max-width: 575px) {  .blog-holder {grid-template-columns: repeat(1, 1fr) !important;}  }
 @media (max-width: 991px) {
     .mq-991-w-100 {width: 100% !important;}
     .px-7rem {padding-right: 1rem;padding-left: 1rem;}
@@ -256,6 +265,7 @@ header .dropdown-item:active {background-color: rgba(185, 185, 185, 1) !importan
     .room-item-holder {grid-template-columns: repeat(1, 1fr) !important;}
     .room-item-holder > .room-item:not(:first-of-type, :nth-of-type(3)) {border-right: 1px dashed #dee2e6;padding-right: 1rem;}
     .dropdown.position-static {position: relative !important;}
+    .blog-holder {grid-template-columns: repeat(2, 1fr);}
 
     .room-item-holder > .room-item:not(:first-of-type) {
         border-right: none;
