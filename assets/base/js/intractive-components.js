@@ -22,9 +22,6 @@ const coniformBtn = document.querySelectorAll('.coniform-btn');
 const removeRoomBtn = document.querySelectorAll('.remove-room-btn');
 const kidActionsHolder = document.querySelectorAll('.kid-actions-holder > button');
 const adultActionsHolder = document.querySelectorAll('.adult-actions-holder > button');
-const roomNumberElement = document.querySelector('.room-number.room-number-1');
-const intractiveInputComponentInnerText1 = document.querySelector('.intractive-input-component-inner-text-1');
-const intractivInputComponentInnerText1ToCopy = document.querySelector('.intractive-input-component-inner-text-1-to-copy');
 
 // A Function That Creates List Of Items With Value Of Nothing (Null) Then For Each Given Element Of It, Then Converts Text Content Of
 // Each Item To Number Then Adds It To Created List. After That Adds All Numbers In Created Array To Gether And Shows It In numberElement
@@ -200,16 +197,27 @@ intractiveInputComponentModal.forEach(item => {
 intractiveInputComponentRoom.forEach(item => item.addEventListener('click', () => item.nextElementSibling.classList.toggle('show')))
 
 // Adding Event Listener Of Click On Each DropDown Of Init Room Component That Sets TextContent Of Inner Text OF Component To Title Of Drop Down
-intractiveInputComponentRoomDropdownMenu.forEach(item => item.addEventListener('click', () => intractiveInputComponentInnerText1.textContent = intractivInputComponentInnerText1ToCopy.textContent))
+intractiveInputComponentRoomDropdownMenu.forEach(item => item.addEventListener('click', () => {
+    const intractiveInputComponentInnerText = item.previousElementSibling.lastElementChild;
+    const intractivInputComponentInnerTextToCopy = item.firstElementChild.firstElementChild;
+
+    intractiveInputComponentInnerText.textContent = intractivInputComponentInnerTextToCopy.textContent
+}))
 
 // Adding Event Listener On Each Add Room Btn Which Listens To Click And For Example If roomItem2 ClassList Includes
 // 'd-none' Then Remove It And Set Number To Show To 2 And So On, Then Set TexContent Of Room Number Element Which Is Span IN Title OF Dropdown To 'num' Variable
 addRoomBtn.forEach(item => {
     let num;
     item.addEventListener('click', () =>  {
-        if (roomItem2.classList.contains('d-none')) {roomItem2.classList.remove('d-none');num = "2"}
-        else if (roomItem3.classList.contains('d-none')) {roomItem3.classList.remove('d-none');num = "3"}
-        else if (roomItem4.classList.contains('d-none')) {roomItem4.classList.remove('d-none');num = "4"}
+        const item2 = item.parentElement.previousElementSibling.firstElementChild.nextElementSibling
+        const item3 = item.parentElement.previousElementSibling.firstElementChild.nextElementSibling.nextElementSibling
+        const item4 = item.parentElement.previousElementSibling.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling
+        const roomNumberElement = item.parentElement.previousElementSibling.previousElementSibling.firstElementChild.firstElementChild
+
+        if (item2.classList.contains('d-none')) {item2.classList.remove('d-none');num = "2"}
+        else if (item3.classList.contains('d-none')) {item3.classList.remove('d-none');num = "3"}
+        else if (item4.classList.contains('d-none')) {item4.classList.remove('d-none');num = "4"}
+
         roomNumberElement.textContent = num;
     })
 })
@@ -243,8 +251,11 @@ coniformBtn.forEach(item => {item.addEventListener('click', () => item.parentEle
 
 // Adding Event Listener On Remove Button Which Removes 1 From Number Of Room In Title Then Adds Class Of 'd-none' To Created Room Then Removes
 // Class Of 'show' From DropDown
-removeRoomBtn.forEach(item => item.addEventListener('click', () => {
-    roomNumberElement.textContent = (Number(roomNumberElement.textContent) - 1);
-    item.parentElement.parentElement.classList.add('d-none')
-    intractiveInputComponentRoom.forEach(item => item.addEventListener('click', () => item.nextElementSibling.classList.toggle('show')))
-}))
+removeRoomBtn.forEach(item => {
+    const roomNumberElement = item.parentElement.parentElement.parentElement.previousElementSibling.firstElementChild.firstElementChild
+    item.addEventListener('click', () => {
+        roomNumberElement.textContent = (Number(roomNumberElement.textContent) - 1);
+        item.parentElement.parentElement.classList.add('d-none')
+        intractiveInputComponentRoom.forEach(item => item.addEventListener('click', () => item.nextElementSibling.classList.toggle('show')))
+    })
+})

@@ -59,14 +59,14 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .passenger-counter h6 > span{color: rgba(185, 185, 185, 1);}
 .my-bg-primary {background-color: rgb(81, 137, 246);}
 .my-bg-pink {background-color: rgb(213, 12, 106);}
-.font-small {font-size: .8rem;}
-.font-smallx {font-size: .6rem;}
+.font-small {font-size: .8rem !important;}
+.font-smallx {font-size: .6rem !important;}
 .switch-btn.animation {-webkit-animation:flip-scale-2-hor-top .5s linear both;animation:flip-scale-2-hor-top .5s linear both}
 .border-black {border: 1px solid rgba(0,0,0,.8);}
 .intractive-input-component.passenger > h6{font-size: .7rem !important;}
 .intractive-input-component.passenger > h6 > i{font-size: 1rem !important;}
-.intractive-input-component:not(.passenger) > h6{font-size: .9rem !important;}
-.intractive-input-component:not(.passenger) > h6 > i{font-size: 1.2rem !important;}
+.intractive-input-component:not(.passenger) > h6:not(.font-smallx){font-size: .9rem !important;}
+.intractive-input-component:not(.passenger) > h6:not(.font-smallx) > i{font-size: 1.2rem !important;}
 .passenger-type-and-num {font-size: .8rem;}
 .bg-grey { background-color: rgba(0,0,0,.1);}
 .room-item {width: 20rem;}
@@ -248,8 +248,16 @@ header .dropdown-item:active {background-color: rgba(185, 185, 185, 1) !importan
     .signup-type-button {width: 50%;}
     .more-ways-item:hover .remove-btn-holder{transform: translateX(0);}
     .switch-btn.diffrent {left: 10%;top: 20%;}
-
     .remove-button {pointer-events: visible}
+    .room-item-holder > .room-item {padding-top: 1rem;padding-bottom: 1rem;}
+    .popular-city-btns-holder {grid-template-columns: repeat(2, 1fr);}
+
+    .room-item-holder > .room-item:not(:first-of-type) {
+        border-right: none;
+        border-top: 1px dashed #dee2e6;
+        padding-right: 0;
+    }
+
     .remove-btn-holder {
         position: absolute;
         z-index: 1030;

@@ -1485,8 +1485,8 @@
                                             کودک
                                         </h6>
                                     </div>
-                                    <div class="p-3 d-flex align-items-center room-item-holder">
-                                        <div class="room-item px-3">
+                                    <div class="p-3 d-flex flex-lg-row flex-column align-items-center room-item-holder">
+                                        <div class="room-item mq-991-w-100 px-3">
                                             <div class="d-flex align-items-center justify-content-between mb-3">
                                                 <h6 class="font-small">اتاق اول</h6>
                                                 <button class="bg-transparent border-0"><i class="bi bi-trash fs-5"></i></button>
@@ -1508,7 +1508,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div id="room-item-2" class="room-item px-3 d-none">
+                                        <div id="room-item-2" class="room-item mq-991-w-100 px-3 d-none">
                                             <div class="d-flex align-items-center justify-content-between mb-3">
                                                 <h6 class="font-small">اتاق دوم</h6>
                                                 <button id="remove-room-btn-2" class="remove-room-btn bg-transparent border-0"><i class="bi bi-trash fs-5"></i></button>
@@ -1530,7 +1530,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div id="room-item-3" class="room-item px-3 d-none">
+                                        <div id="room-item-3" class="room-item mq-991-w-100 px-3 d-none">
                                             <div class="d-flex align-items-center justify-content-between mb-3">
                                                 <h6 class="font-small">اتاق سوم</h6>
                                                 <button id="remove-room-btn-3" class="remove-room-btn bg-transparent border-0"><i class="bi bi-trash fs-5"></i></button>
@@ -1552,7 +1552,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div id="room-item-4" class="room-item px-3 d-none">
+                                        <div id="room-item-4" class="room-item mq-991-w-100 px-3 d-none">
                                             <div class="d-flex align-items-center justify-content-between mb-3">
                                                 <h6 class="font-small">اتاق چهارم</h6>
                                                 <button id="remove-room-btn-4" class="remove-room-btn bg-transparent border-0"><i class="bi bi-trash fs-5"></i></button>
@@ -1587,7 +1587,246 @@
                         <button class="submit-btn mq-991-w-100 border-0 rounded-3 text-white ripple-btn w-25">جستجو</button>
                     </div>
                 </div>
-                <div class="bottom-page d-none" id="flight-and-hotel"><h1>flight + Hotel</h1></div>
+                <div class="bottom-page d-none" id="flight-and-hotel">
+                    <!--Top Side-->
+                    <div class="d-flex flex-wrap justify-content-end align-items-center gap-3 mb-4">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                            <label class="form-check-label font-small text-grey" for="flexSwitchCheckDefault">جستجوی پیشرفته</label>
+                        </div>
+                    </div>
+                    <!--Bottom Side That Changes-->
+                    <div>
+                        <!--Top Side-->
+                        <div class="d-flex flex-lg-row flex-column align-items-start gap-lg-2 gap-0 position-relative mb-lg-4 mb-0 top-side-flight">
+                            <div class="w-50 mq-991-w-100">
+                                <div class="dropdown mb-2">
+                                    <div class="intractive-input-component position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <h6>
+                                            <i class="bi bi-geo-alt"></i>
+                                            شهر یا فرودگاه مبدا
+                                        </h6>
+                                    </div>
+                                    <div class="bg-white dropdown-menu dropdown-menu-end shadow rounded-4 p-4 popular-city">
+                                        <h6 class="mb-5">شهر و فرودگاه های پرتردد</h6>
+                                        <div class="popular-city-btns-holder d-grid gap-3 position-relative">
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تهران</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>کیش</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>استانبول</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>دبی</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>مشهد</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>اهواز</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>انکارا</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>لندن</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تبریز</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>قشم</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تورنتو</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>ایروان</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>بندر عباس</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>شیراز</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>مسقط</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>پکن</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>رشت</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>اصفهان</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>نجف</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>باکو</button>
+                                            <div class="top-of-buttons-popular-citys w-100 h-100 position-absolute top-0"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                            </div>
+                            <!--Switch Button-->
+                            <button class="switch-btn rounded-circle position-absolute bg-white" type="button"><i class="bi bi-arrow-left-right"></i></button>
+                            <div class="w-50 mq-991-w-100">
+                                <div class="dropdown mb-2">
+                                    <div class="intractive-input-component position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <h6>
+                                            <i class="bi bi-geo-alt"></i>
+                                            شهر یا فرودگاه مبدا
+                                        </h6>
+                                    </div>
+                                    <div class="bg-white dropdown-menu dropdown-menu-end shadow rounded-4 p-4 popular-city">
+                                        <h6 class="mb-5">شهر و فرودگاه های پرتردد</h6>
+                                        <div class="popular-city-btns-holder d-grid gap-3 position-relative">
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تهران</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>کیش</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>استانبول</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>دبی</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>مشهد</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>اهواز</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>انکارا</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>لندن</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تبریز</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>قشم</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>تورنتو</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>ایروان</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>بندر عباس</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>شیراز</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>مسقط</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>پکن</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>رشت</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>اصفهان</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>نجف</button>
+                                            <button type="button" class="d-flex align-items-center bg-transparent border-0 popular-citys-btn"><span></span>باکو</button>
+                                            <div class="top-of-buttons-popular-citys w-100 h-100 position-absolute top-0"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                            </div>
+                        </div>
+                        <!--Bottom Side-->
+                        <div class="d-flex flex-lg-row flex-column align-items-start gap-2">
+                            <div class="w-25 mq-991-w-100">
+                                <div class="intractive-input-component mb-2 date position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                                    <h6>
+                                        <i class="bi bi-calendar4-week"></i>
+                                        تاریخ رفت
+                                    </h6>
+                                    <input type="text" class="bg-transparent border-0" readonly id="ten-date" required>
+                                </div>
+                                <!--Error Handling-->
+                                <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                            </div>
+                            <div class="w-25 mq-991-w-100">
+                                <div class="intractive-input-component mb-2 date position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                                    <h6>
+                                        <i class="bi bi-calendar4-week"></i>
+                                        تاریخ برگشت
+                                    </h6>
+                                    <input type="text" class="bg-transparent border-0" readonly id="eleven-date" required>
+                                </div>
+                                <!--Error Handling-->
+                                <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                            </div>
+                            <div class="w-25 mq-991-w-100">
+                                <div class="dropdown mb-2 w-100">
+                                    <div class="intractive-input-component focused room position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" aria-expanded="false">
+                                        <h6 class="font-smallx"><i class="bi bi-person"></i>مسافران/اتاق/کلاس کابین</h6>
+                                        <h5 class="mb-0 intractive-input-component-inner-text-1">
+                                            <span>1</span>
+                                            اتاق,
+                                            <span>7</span>
+                                            بزرگسال,
+                                            <span>0</span>
+                                            کودک
+                                        </h5>
+                                    </div>
+                                    <div class="bg-white py-0 overflow-hidden dropdown-menu shadow rounded-4 text-end">
+                                        <div class="p-3 border-bottom">
+                                            <h6 class="mb-0 intractive-input-component-inner-text-1-to-copy">
+                                                <span class="room-number room-number-1">1</span>
+                                                اتاق,
+                                                <span>1</span>
+                                                بزرگسال,
+                                                <span>0</span>
+                                                کودک
+                                            </h6>
+                                        </div>
+                                        <div class="p-3 d-flex flex-lg-row flex-column align-items-center room-item-holder">
+                                            <div class="room-item mq-991-w-100 px-3">
+                                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                                    <h6 class="font-small">اتاق اول</h6>
+                                                    <button class="bg-transparent border-0"><i class="bi bi-trash fs-5"></i></button>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                                    <h6 class="font-small">بزرگسال<span class="text-grey"> (12+) </span></h6>
+                                                    <div class="adult-actions-holder">
+                                                        <button class="plus-btn rounded-3 border-0 text-primary">+</button>
+                                                        <span class="ms-2 me-2 adult-number-hotel">1</span>
+                                                        <button class="minus-btn rounded-3 border-0 text-primary">-</button>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <h6 class="font-small">کودک<span class="text-grey"> (12-) </span></h6>
+                                                    <div class="kid-actions-holder">
+                                                        <button class="plus-btn rounded-3 border-0 text-primary">+</button>
+                                                        <span class="ms-2 me-2 kid-number-hotel">0</span>
+                                                        <button class="minus-btn rounded-3 border-0 text-primary">-</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="room-item mq-991-w-100 px-3 d-none">
+                                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                                    <h6 class="font-small">اتاق دوم</h6>
+                                                    <button class="remove-room-btn bg-transparent border-0"><i class="bi bi-trash fs-5"></i></button>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                                    <h6 class="font-small">بزرگسال<span class="text-grey"> (12+) </span></h6>
+                                                    <div class="adult-actions-holder">
+                                                        <button class="plus-btn rounded-3 border-0 text-primary">+</button>
+                                                        <span class="ms-2 me-2 adult-number-hotel">0</span>
+                                                        <button class="minus-btn rounded-3 border-0 text-primary">-</button>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <h6 class="font-small">کودک<span class="text-grey"> (12-) </span></h6>
+                                                    <div class="kid-actions-holder">
+                                                        <button class="plus-btn rounded-3 border-0 text-primary">+</button>
+                                                        <span class="ms-2 me-2 kid-number-hotel">0</span>
+                                                        <button class="minus-btn rounded-3 border-0 text-primary">-</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="room-item mq-991-w-100 px-3 d-none">
+                                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                                    <h6 class="font-small">اتاق سوم</h6>
+                                                    <button class="remove-room-btn bg-transparent border-0"><i class="bi bi-trash fs-5"></i></button>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                                    <h6 class="font-small">بزرگسال<span class="text-grey"> (12+) </span></h6>
+                                                    <div class="adult-actions-holder">
+                                                        <button class="plus-btn rounded-3 border-0 text-primary">+</button>
+                                                        <span class="ms-2 me-2 adult-number-hotel">0</span>
+                                                        <button class="minus-btn rounded-3 border-0 text-primary">-</button>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <h6 class="font-small">کودک<span class="text-grey"> (12-) </span></h6>
+                                                    <div class="kid-actions-holder">
+                                                        <button class="plus-btn rounded-3 border-0 text-primary">+</button>
+                                                        <span class="ms-2 me-2 kid-number-hotel">0</span>
+                                                        <button class="minus-btn rounded-3 border-0 text-primary">-</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="room-item mq-991-w-100 px-3 d-none">
+                                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                                    <h6 class="font-small">اتاق چهارم</h6>
+                                                    <button class="remove-room-btn bg-transparent border-0"><i class="bi bi-trash fs-5"></i></button>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                                    <h6 class="font-small">بزرگسال<span class="text-grey"> (12+) </span></h6>
+                                                    <div class="adult-actions-holder">
+                                                        <button class="plus-btn rounded-3 border-0 text-primary">+</button>
+                                                        <span class="ms-2 me-2 adult-number-hotel">0</span>
+                                                        <button class="minus-btn rounded-3 border-0 text-primary">-</button>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <h6 class="font-small">کودک<span class="text-grey"> (12-) </span></h6>
+                                                    <div class="kid-actions-holder">
+                                                        <button class="plus-btn rounded-3 border-0 text-primary">+</button>
+                                                        <span class="ms-2 me-2 kid-number-hotel">0</span>
+                                                        <button class="minus-btn rounded-3 border-0 text-primary">-</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-3 bg-grey d-flex align-items-center justify-content-between">
+                                            <button class="add-room-btn rounded-3 border-0 text-dark font-small px-3 py-2 bg-grey"><i class="bi bi-plus"></i>افزودن اتاق</button>
+                                            <button class="coniform-btn rounded-3 border-0 font-small text-white px-3 py-2 bg-base">تایید</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Error Handling-->
+                                <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                            </div>
+                            <button type="button" class="submit-btn border-0 rounded-3 text-white w-25 mq-991-w-100 ripple-btn">جستجو</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
