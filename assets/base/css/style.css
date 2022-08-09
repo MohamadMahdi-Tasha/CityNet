@@ -103,6 +103,8 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .dashed-border-bottom-div {border-bottom: 1px dashed grey;}
 .dashed-border-bottom-div:first-of-type ~ h6 {color: grey;}
 .switch-btn.diffrent {left: calc(67% - 20px);}
+.advanced-top-side-holder ~ div > div:first-of-type {display: none !important;}
+.advanced-top-side-holder.checked-ok ~ div > div:first-of-type {display: flex !important;}
 .signup-type-button {
     height: 50px;
     width: 25%;
