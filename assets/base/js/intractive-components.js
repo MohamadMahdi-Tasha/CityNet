@@ -12,6 +12,19 @@ const minusAndPlusButtons1 = document.querySelectorAll('.minus-and-plus-btn-1');
 const minusAndPlusButtons2 = document.querySelectorAll('.minus-and-plus-btn-2');
 const minusAndPlusButtons3 = document.querySelectorAll('.minus-and-plus-btn-3');
 const intractiveInputComponentModal = document.querySelectorAll('.intractive-input-component.my-modal-init');
+const intractiveInputComponentRoom = document.querySelectorAll('.intractive-input-component.room');
+const intractiveInputComponentRoomDropdownMenu = document.querySelectorAll('.intractive-input-component.room ~ .dropdown-menu');
+const roomItem2 = document.getElementById('room-item-2');
+const roomItem3 = document.getElementById('room-item-3');
+const roomItem4 = document.getElementById('room-item-4');
+const addRoomBtn = document.querySelectorAll('.add-room-btn');
+const coniformBtn = document.querySelectorAll('.coniform-btn');
+const removeRoomBtn = document.querySelectorAll('.remove-room-btn');
+const kidActionsHolder = document.querySelectorAll('.kid-actions-holder > button');
+const adultActionsHolder = document.querySelectorAll('.adult-actions-holder > button');
+const roomNumberElement = document.querySelector('.room-number.room-number-1');
+const intractiveInputComponentInnerText1 = document.querySelector('.intractive-input-component-inner-text-1');
+const intractivInputComponentInnerText1ToCopy = document.querySelector('.intractive-input-component-inner-text-1-to-copy');
 
 // A Function That Creates List Of Items With Value Of Nothing (Null) Then For Each Given Element Of It, Then Converts Text Content Of
 // Each Item To Number Then Adds It To Created List. After That Adds All Numbers In Created Array To Gether And Shows It In numberElement
@@ -182,3 +195,56 @@ intractiveInputComponentModal.forEach(item => {
     item.lastElementChild.addEventListener('focus', () => item.classList.add('focused'))
     item.lastElementChild.addEventListener('blur', () => {if (item.lastElementChild.value === "") {item.classList.remove('focused')}})
 })
+
+// Adding Event Listener On Each IntractiveInputComponent(Room) That Listens To Click And Toggles 'Show' ClassName In DropDown Init.
+intractiveInputComponentRoom.forEach(item => item.addEventListener('click', () => item.nextElementSibling.classList.toggle('show')))
+
+// Adding Event Listener Of Click On Each DropDown Of Init Room Component That Sets TextContent Of Inner Text OF Component To Title Of Drop Down
+intractiveInputComponentRoomDropdownMenu.forEach(item => item.addEventListener('click', () => intractiveInputComponentInnerText1.textContent = intractivInputComponentInnerText1ToCopy.textContent))
+
+// Adding Event Listener On Each Add Room Btn Which Listens To Click And For Example If roomItem2 ClassList Includes
+// 'd-none' Then Remove It And Set Number To Show To 2 And So On, Then Set TexContent Of Room Number Element Which Is Span IN Title OF Dropdown To 'num' Variable
+addRoomBtn.forEach(item => {
+    let num;
+    item.addEventListener('click', () =>  {
+        if (roomItem2.classList.contains('d-none')) {roomItem2.classList.remove('d-none');num = "2"}
+        else if (roomItem3.classList.contains('d-none')) {roomItem3.classList.remove('d-none');num = "3"}
+        else if (roomItem4.classList.contains('d-none')) {roomItem4.classList.remove('d-none');num = "4"}
+        roomNumberElement.textContent = num;
+    })
+})
+
+// A Function That Creates An Array Then Gets All Given Element By QuerySelectoAll Then Converts TextContent OF Them To Number From String
+// Then Pushes them To Created Array Then Returns Sum Of Them By Doing Array.Reduce
+function arraySum(elements) {
+    let array = [];
+    document.querySelectorAll(elements).forEach(item => array.push(Number(item.textContent)))
+    return array.reduce((partialSum, a) => partialSum + a, 0);
+}
+
+// Adding Event Listener On Each Button In Kid Actions Holder That Shows Sum Of Them In Given Element
+kidActionsHolder.forEach(item => {
+    item.addEventListener('click', () => {
+        const text = item.parentElement.parentElement.parentElement.parentElement.previousElementSibling.firstElementChild.lastElementChild;
+        text.textContent = arraySum('.kid-number-hotel')
+    })
+})
+
+// Adding Event Listener On Each Button In adultActionsHolder That Shows Sum Of Them In Given Element
+adultActionsHolder.forEach(item => {
+    item.addEventListener('click', () => {
+        const text = item.parentElement.parentElement.parentElement.parentElement.previousElementSibling.firstElementChild.firstElementChild.nextElementSibling;
+        text.textContent = arraySum('.adult-number-hotel')
+    })
+})
+
+// Adding Event Listener On Conform Button Which Removes 'show' Class From Dropdown
+coniformBtn.forEach(item => {item.addEventListener('click', () => item.parentElement.parentElement.classList.remove('show'))})
+
+// Adding Event Listener On Remove Button Which Removes 1 From Number Of Room In Title Then Adds Class Of 'd-none' To Created Room Then Removes
+// Class Of 'show' From DropDown
+removeRoomBtn.forEach(item => item.addEventListener('click', () => {
+    roomNumberElement.textContent = (Number(roomNumberElement.textContent) - 1);
+    item.parentElement.parentElement.classList.add('d-none')
+    intractiveInputComponentRoom.forEach(item => item.addEventListener('click', () => item.nextElementSibling.classList.toggle('show')))
+}))
