@@ -5,7 +5,8 @@
 :root {
     --primary-base: #dd9933;
     --pink: #ff5551;
-    --dark-blue: #023047
+    --dark-blue: #023047;
+    --blue: #0466c8;
 }
 
 /*CSS RESET*/
@@ -117,6 +118,8 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .intractive-input-component.textarea > textarea::-webkit-scrollbar {width: 10px;}
 .intractive-input-component.textarea > textarea::-webkit-scrollbar-thumb {background-color: var(--primary-base);border-radius: 50rem;}
 .intractive-input-component.textarea > textarea::-webkit-scrollbar-track {background-color: transparent;}
+.bg-blue {background-color: var(--blue);}
+.change-result-btn {background-color: rgba(256,256,256,.2);}
 
 .signup-type-button {
     height: 50px;
