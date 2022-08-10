@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="assets/plugins/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="assets/base/css/style.css">
     <link rel="stylesheet" href="assets/plugins/MCDatepicker/dist/mc-calendar.min.css" />
+    <link rel="stylesheet" href="assets/base/css/multy-range-slider.css">
     <!--Title Of Page-->
     <title>سیتی نت - پرواز</title>
 </head>
@@ -615,6 +616,197 @@
         </div>
     </div>
 </header>
+<!--First Section-->
+<section>
+    <!--Top Side-->
+    <header>
+        <div>
+            <h6>شهر یا فرودگاه مبدا</h6>
+            <h6>(THR) تهران</h6>
+        </div>
+        <i class="bi bi-arrow-left"></i>
+        <div>
+            <h6>شهر یا فرودگاه مقصد</h6>
+            <h6>(IFN) اصفهان</h6>
+        </div>
+        <div>
+            <h6>تاریخ رفت</h6>
+            <h6>Oct 05, 2022</h6>
+        </div>
+        <div>
+            <h6>تاریخ برگشت</h6>
+            <h6>--</h6>
+        </div>
+        <div>
+            <h6>مسافران/کلاس کابین</h6>
+            <h6>۱ مسافر ، اکونومی</h6>
+        </div>
+        <a href="index.html"><button>تغییر جستجو<i class="bi bi-arrow-clockwise"></i></button></a>
+    </header>
+    <!--Bottom Side-->
+    <main>
+        <!--Right Side-->
+        <aside>
+            <div>
+                <div>
+                    <h6>(THR) تهران</h6>
+                    <i class="bi bi-arrow-left-short"></i>
+                    <h6>(IFN) اصفهان</h6>
+                </div>
+                <div>
+                    <h6><i class="bi bi-chevron-right"></i>روز قبل</h6>
+                    <div>
+                        <h6>چهارشنبه 13 مهر</h6>
+                        <h6>Oct 5, 2022</h6>
+                    </div>
+                    <h6><i class="bi bi-chevron-left"></i>روز بعد</h6>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#flight-number" aria-expanded="true" aria-controls="collapseExample">جستجوی شماره پرواز</button>
+                <div class="collapse show" id="flight-number">
+                    <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                        <h6>تهران به اصفحان</h6>
+                        <input type="text" class="bg-transparent border-0 w-100" required>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#company" aria-expanded="true" aria-controls="collapseExample">هواپیمایی</button>
+                <div class="collapse show" id="company">
+                    <p>توجه ممکن است ایرلاین انتخابی در بین مسیر باشد.</p>
+                    <div>
+                        <input type="checkbox">
+                        <div>
+                            <h6>Iran Air</h6>
+                            <h6>از ۷,۳۹۴,۶۶۰ ریال</h6>
+                        </div>
+                        <img src="assets/base/img/flight/img-homa.png" alt="هما">
+                    </div>
+                    <div>
+                        <input type="checkbox">
+                        <div>
+                            <h6>Mahan Air</h6>
+                            <h6>از ۷,۵۴۸,۰۰۰ ریال</h6>
+                        </div>
+                        <img src="assets/base/img/flight/img-homa.png" alt="ماهان">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#flight-type" aria-expanded="true" aria-controls="collapseExample">هواپیمایی</button>
+                <div class="collapse show" id="flight-type"><h6>تمامی پروازها سیستمی می‌باشند</h6></div>
+            </div>
+            <div>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#number-of-stops" aria-expanded="true" aria-controls="collapseExample">تعداد توقف</button>
+                <div class="collapse show" id="number-of-stops">
+                    <h6>تهران به اصفهان</h6>
+                    <h6>تمامی پروازها بدون توقف می‌باشند</h6>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#air-ports" aria-expanded="true" aria-controls="collapseExample">فرودگاه‌ها</button>
+                <div class="collapse show" id="air-ports">
+                    <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                        <h6>جستجوی فرودگاه</h6>
+                        <input type="text" class="bg-transparent border-0 w-100" required>
+                    </div>
+                    <div>
+                        <div>
+                            <input id="chckbox-1" type="checkbox">
+                            <lable for="chckbox-1">Mehrabad Intl</lable>
+                        </div>
+                        <h6>THR</h6>
+                    </div>
+                    <div>
+                        <div>
+                            <input id="chckbox-2" type="checkbox">
+                            <lable for="chckbox-2">Shahid Beheshti Intl</lable>
+                        </div>
+                        <h6>IFN</h6>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#time" aria-expanded="false" aria-controls="collapseExample">ساعت پرواز</button>
+                <div class="collapse" id="time">
+                    <h6>تهران به اصفهان</h6>
+                    <div><i class="bi bi-brightness-high"></i><h6>00</h6></div>
+                    <div>
+                        <i class="bi bi-brightness-low"></i>
+                        <div class="container">
+                            <div class="multi-range"></div>
+                            <h6 class="text-center mt-5"><span class="start-hour"></span> - <span class="end-hour"></span></h6>
+                        </div>
+                    </div>
+                    <div><i class="bi bi-moon"></i><h6>24</h6></div>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#time-sit" aria-expanded="false" aria-controls="collapseExample">ساعت رسیدن</button>
+                <div class="collapse" id="time-sit">
+                    <p>پروازهایی که ساعت رسیدن ندارند، در انتهای نتایج نمایش داده می‌شوند.</p>
+                    <h6>تهران به اصفهان</h6>
+                    <div><i class="bi bi-brightness-high"></i><h6>00</h6></div>
+                    <div>
+                        <i class="bi bi-brightness-low"></i>
+                        <div class="container">
+                            <div class="multi-range"></div>
+                            <h6 class="text-center mt-5"><span class="start-hour"></span> - <span class="end-hour"></span></h6>
+                        </div>
+                    </div>
+                    <div><i class="bi bi-moon"></i><h6>24</h6></div>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#stop-time" aria-expanded="false" aria-controls="collapseExample">مدت زمان توقف</button>
+                <div class="collapse" id="stop-time"><h6>تمامی پروازها بدون توقف می‌باشند</h6></div>
+            </div>
+            <div>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#conc-time" aria-expanded="false" aria-controls="collapseExample">مدت زمان مسیر</button>
+                <div class="collapse" id="conc-time">
+                    <p>پروازهایی که ساعت رسیدن ندارند، در انتهای نتایج نمایش داده می‌شوند.</p>
+                    <h6>تهران به اصفهان</h6>
+                    <div><i class="bi bi-brightness-high"></i><h6>00</h6></div>
+                    <div>
+                        <i class="bi bi-brightness-low"></i>
+                        <div class="container">
+                            <div class="multi-range"></div>
+                            <h6 class="text-center mt-5"><span class="start-hour"></span> - <span class="end-hour"></span></h6>
+                        </div>
+                    </div>
+                    <div><i class="bi bi-moon"></i><h6>24</h6></div>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#price" aria-expanded="false" aria-controls="collapseExample">بازه قیمتی</button>
+                <div class="collapse" id="price">
+                    <div>
+                        <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                            <h6>از</h6>
+                            <input type="text" class="bg-transparent border-0 w-100" required>
+                        </div>
+                        <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                            <h6>تا</h6>
+                            <input type="text" class="bg-transparent border-0 w-100" required>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="multi-range"></div>
+                        <h6 class="text-center mt-5"><span class="start-hour"></span> - <span class="end-hour"></span></h6>
+                    </div>
+                    <div>
+                        <h6><span>۷,۳۹۴,۶۶۰</span>ریال</h6>
+                        <h6><span>۷,۵۴۸,۰۰۰</span>ریال</h6>
+                    </div>
+                    <button>اعمال</button>
+                </div>
+            </div>
+        </aside>
+        <!--Left Side-->
+        <main></main>
+    </main>
+</section>
 <!--Footer-->
 <footer class="d-flex justify-content-center border-top mq-991-bg-white">
     <main class="px-7rem py-4 container-xxl">
@@ -655,5 +847,6 @@
 <script src="assets/base/js/intractive-components.js"></script>
 <script src="assets/base/js/nav.js"></script>
 <script src="assets/base/js/modals.js"></script>
+<script src="assets/base/js/multy-range-slider.js"></script>
 </body>
 </html>
