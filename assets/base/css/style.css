@@ -120,6 +120,10 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .intractive-input-component.textarea > textarea::-webkit-scrollbar-track {background-color: transparent;}
 .bg-blue {background-color: var(--blue);}
 .change-result-btn {background-color: rgba(256,256,256,.2);}
+.accent-base {accent-color: var(--primary-base);}
+button > i::before {transition: .3s}
+button[aria-expanded="true"] > i::before {transform: rotate(180deg);}
+button:not([aria-expanded="true"]) {margin-bottom: 0 !important;}
 
 .signup-type-button {
     height: 50px;
