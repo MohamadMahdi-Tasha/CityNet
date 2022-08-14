@@ -124,6 +124,9 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 button > i::before {transition: .3s}
 button[aria-expanded="true"] > i::before {transform: rotate(180deg);}
 button:not([aria-expanded="true"]) {margin-bottom: 0 !important;}
+.flight-top-btn:not(.active) {background-color: transparent;color: grey;}
+.flight-top-btn.active {background-color: #e6e6e6;color: var(--blue);}
+.vertical-divider {background-color: lightgrey;width: 1px !important;}
 
 .signup-type-button {
     height: 50px;
