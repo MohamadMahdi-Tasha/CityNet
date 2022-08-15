@@ -147,6 +147,7 @@ button:not([aria-expanded="true"]) {margin-bottom: 0 !important;}
 .ticket-divider-img {margin-right: -5rem;margin-top: -.5rem;}
 .rounded-top-bl-3 {border-top-left-radius: .5rem;border-top-right-radius: .5rem;border-bottom-right-radius: .5rem;}
 .rounded-bottom-3 {border-bottom-left-radius: .5rem;border-bottom-right-radius: .5rem}
+.ticket-bottom-side-togglers > button[aria-expanded="true"] {color: var(--blue) !important;}
 
 .my-tooltip {
     position: absolute;
