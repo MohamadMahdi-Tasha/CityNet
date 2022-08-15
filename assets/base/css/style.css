@@ -148,6 +148,8 @@ button:not([aria-expanded="true"]) {margin-bottom: 0 !important;}
 .rounded-top-bl-3 {border-top-left-radius: .5rem;border-top-right-radius: .5rem;border-bottom-right-radius: .5rem;}
 .rounded-bottom-3 {border-bottom-left-radius: .5rem;border-bottom-right-radius: .5rem}
 .ticket-bottom-side-togglers > button[aria-expanded="true"] {color: var(--blue) !important;}
+.gtc-3 {grid-template-columns: repeat(3,1fr);}
+.gc-3 {grid-column: span 3}
 
 .my-tooltip {
     position: absolute;
@@ -299,7 +301,12 @@ header .dropdown-item:active {background-color: rgba(185, 185, 185, 1) !importan
 .ticket-details-top-btn.active:hover {background-color: rgba(0,0,0,.3) !important;}
 
 /*Media Querys*/
-@media (max-width: 575px) {  .blog-holder {grid-template-columns: repeat(1, 1fr) !important;}  }
+@media (max-width: 575px) {
+    .blog-holder {grid-template-columns: repeat(1, 1fr) !important;}
+    .gtc-3 {grid-template-columns: repeat(1, 1fr) !important;}
+    .gc-3 {grid-column: span 1}
+}
+
 @media (max-width: 991px) {
     .mq-991-w-100 {width: 100% !important;}
     .px-7rem {padding-right: 1rem;padding-left: 1rem;}
@@ -325,6 +332,15 @@ header .dropdown-item:active {background-color: rgba(185, 185, 185, 1) !importan
     .blog-holder {grid-template-columns: repeat(2, 1fr);}
     ol {list-style: none;padding: 0 !important;}
     .signup-bottom {grid-template-columns: repeat(1, 1fr);}
+    .top-side-of-main-flight {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 1040;
+        border-radius: 0 !important;
+        margin-bottom: 0 !important;
+        box-shadow: 0 0 30px rgba(0,0,0,.2);
+    }
 
     .room-item-holder > .room-item:not(:first-of-type) {
         border-right: none;

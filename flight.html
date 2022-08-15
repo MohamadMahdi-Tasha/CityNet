@@ -23,7 +23,7 @@
     <!--Title Of Page-->
     <title>سیتی نت - پرواز</title>
 </head>
-<body dir="rtl" class="home-body">
+<body dir="rtl">
 <!--Signup Modal-->
 <div data-opened="false" id="signup-modal" class="my-modal-holder fixed-top w-100 h-100 d-flex align-items-center justify-content-center">
     <!--Dark Bg Of It-->
@@ -618,34 +618,34 @@
 <!--First Section-->
 <section class="d-flex justify-content-center flex-column px-7rem py-4">
     <!--Top Side-->
-    <header class="container-xxl bg-blue rounded-3 d-flex gap-3 mb-3 justify-content-between align-items-center p-3 text-white">
+    <header class="container-xxl flight-page-top-side-blue bg-blue rounded-3 d-lg-flex d-grid gtc-3 gap-3 mb-3 justify-content-between  p-3 text-white">
         <div>
             <h6 class="fw-light font-small">شهر یا فرودگاه مبدا</h6>
-            <h6 class="fw-bold font-small">(THR) تهران</h6>
+            <h6 class="fw-bold font-small mb-0">(THR) تهران</h6>
         </div>
         <i class="bi bi-arrow-left"></i>
         <div>
             <h6 class="fw-light font-small">شهر یا فرودگاه مقصد</h6>
-            <h6 class="fw-bold font-small">(IFN) اصفهان</h6>
+            <h6 class="fw-bold font-small mb-0">(IFN) اصفهان</h6>
         </div>
         <div>
             <h6 class="fw-light font-small">تاریخ رفت</h6>
-            <h6 class="fw-bold font-small">Oct 05, 2022</h6>
+            <h6 class="fw-bold font-small mb-0">Oct 05, 2022</h6>
         </div>
         <div>
             <h6 class="fw-light font-small">تاریخ برگشت</h6>
-            <h6 class="fw-bold font-small">--</h6>
+            <h6 class="fw-bold font-small mb-0">--</h6>
         </div>
         <div>
             <h6 class="fw-light font-small">مسافران/کلاس کابین</h6>
-            <h6 class="fw-bold font-small">۱ مسافر ، اکونومی</h6>
+            <h6 class="fw-bold font-small mb-0">۱ مسافر ، اکونومی</h6>
         </div>
-        <a href="index.html"><button  class="d-flex justify-content-center align-items-center rounded-3 text-white change-result-btn ripple-btn border-0 px-4 py-3">تغییر جستجو<i class="bi bi-arrow-clockwise me-3"></i></button></a>
+        <a class="gc-3" href="index.html"><button  class="d-flex justify-content-center w-100 align-items-center rounded-3 text-white change-result-btn ripple-btn border-0 px-4 py-3">تغییر جستجو<i class="bi bi-arrow-clockwise me-3"></i></button></a>
     </header>
     <!--Bottom Side-->
-    <main class="container-xxl d-flex gap-3 p-0">
+    <main class="container-xxl flex-lg-row flex-column d-flex gap-3 p-0">
         <!--Right Side-->
-        <aside class="w-25 d-flex flex-column gap-3">
+        <aside class="w-25 d-lg-flex d-none flex-column gap-3">
             <div class="bg-white p-4 rounded-3">
                 <div class="d-flex justify-content-center align-items-center">
                     <h6 class="font-small">(THR) تهران</h6>
@@ -829,9 +829,9 @@
             </div>
         </aside>
         <!--Left Side-->
-        <main class="w-75">
+        <main class="w-75 mq-991-w-100">
             <!--Top Side-->
-            <div class="container-xxl bg-white rounded-3 d-flex gap-3 mb-3 justify-content-between align-items-center py-2 px-3">
+            <div class="container-xxl top-side-of-main-flight bg-white rounded-3 d-flex gap-3 mb-3 justify-content-between align-items-center py-2 px-3">
                 <!--Right Side-->
                 <div class="d-flex align-items-center">
                     <i class="bi bi-filter ms-3 fs-3 text-dark"></i>
@@ -840,20 +840,20 @@
                     <button class="flight-top-btn d-flex transition px-3 py-3 border-0 rounded-3 font-small justify-content-center align-items-center">ساعت حرکت</button>
                 </div>
                 <!--Left Side-->
-                <div class="d-flex align-items-center">
+                <div class="d-lg-flex d-none align-items-center">
                     <h6 class="text-grey font-small mb-0">۷۹ نتیجه</h6>
                     <div class="vertical-divider squar-size me-3"></div>
                     <button class='squar-size border-0 me-3 bg-transparent rounded-3 text-grey fs-5'><i class="bi bi-list"></i></button>
                 </div>
             </div>
             <!--Bottom Side-->
-            <ul class="list-unstyled">
+            <ul class="list-unstyled d-flex flex-column gap-3">
                 <li>
                     <div class="bg-white rounded-3 p-3">
                         <!--Top Side-->
-                        <div class="d-flex justify-content-between align-items-center bg-light-grey rounded-4 p-3 mb-3"   >
+                        <div class="d-flex gap-3 gap-lg-5 flex-lg-row flex-column justify-content-between align-items-center bg-light-grey rounded-4 p-3 mb-3"   >
                             <!--Right Side-->
-                            <div class="d-flex align-items-center w-50">
+                            <div class="d-flex mq-991-w-100 align-items-center justify-content-lg-start justify-content-between w-50">
                                 <img src="assets/base/img/flight/img-mahan.png" alt="Mahan Air" class="ms-4">
                                 <div class="text-center">
                                     <div class="d-flex mb-3 justify-content-between flex-wrap">
@@ -878,7 +878,7 @@
                                 </div>
                             </div>
                             <!--Left Side-->
-                            <div class="d-flex w-50 me-5">
+                            <div class="d-flex w-50 mq-991-w-100 me-5">
                                 <div class="text-start ms-2">
                                     <h6 class="fw-bold text-nowrap font-small">۱۱:۲۵</h6>
                                     <h6 class="font-small text-nowrap">Tehran (TEH)</h6>
@@ -895,9 +895,9 @@
                             </div>
                         </div>
                         <!--Bottom Side-->
-                        <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex flex-lg-row flex-column-reverse gap-lg-3 gap-5 justify-content-between align-items-center"s>
                             <!--right Side-->
-                            <div class="d-flex align-items-start ticket-bottom-side-togglers">
+                            <div class="d-flex mq-991-w-100 justify-content-between justify-content-lg-start align-items-start ticket-bottom-side-togglers">
                                 <button class="bg-transparent font-small border-0 d-flex justify-content-center align-items-center text-grey" type="button" data-bs-toggle="collapse" data-bs-target="#containing" aria-expanded="false">
                                     بار مجاز
                                     <i class="bi bi-chevron-down me-2"></i>
@@ -916,7 +916,7 @@
                                 </button>
                             </div>
                             <!--Left Side-->
-                            <div class="d-flex justify-content-end align-items-center w-50">
+                            <div class="d-flex mq-991-w-100 justify-content-lg-end justify-content-between align-items-center w-50">
                                 <div class="ms-3">
                                     <h6 class="text-grey font-small">قیمت هر بزرگسال</h6>
                                     <h6 class="text-blue font-small fw-bold mb-0">۱۲,۷۰۰,۰۰۰ ریال</h6>
