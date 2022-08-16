@@ -635,9 +635,9 @@
     </div>
     <!--Left Side-->
     <div class="w-75">
-      <form action="#">
-        <div>
-          <h6>مشخصات حساب کاربری</h6>
+      <form class="bg-white p-3 rounded-4 mb-4" action="#">
+        <h6 class="text-grey font-small mb-3">مشخصات حساب کاربری</h6>
+        <div class="d-flex flex-lg-row flex-column gap-3">
           <div class="w-50 mq-991-w-100">
             <div class="intractive-input-component focused mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
               <h6>نام</h6>
@@ -655,8 +655,8 @@
             <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
           </div>
         </div>
-        <div>
-          <h6>مشخصات حساب بانکی</h6>
+        <h6 class="text-grey font-small mb-3">مشخصات حساب بانکی</h6>
+        <div class="d-flex flex-lg-row flex-column gap-3">
           <div class="w-50 mq-991-w-100">
             <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
               <h6>شماره کارت</h6>
@@ -675,12 +675,14 @@
             <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
           </div>
         </div>
-        <button class="submit-btn ripple-btn border-0 rounded-4 text-white w-50">ثبت تغییرات</button>
+        <div class="justify-content-end d-flex">
+          <button class="submit-btn ripple-btn h-auto py-3 border-0 rounded-4 text-white w-25">ثبت تغییرات</button>
+        </div>
       </form>
-      <form action="#">
-        <h6>تغییر رمز ورود</h6>
-        <div>
-          <div class="mq-991-w-100">
+      <form class="bg-white p-3 rounded-4" action="#">
+        <h6 class="text-grey font-small mb-3">تغییر رمز ورود</h6>
+        <div class="row flex-lg-row flex-column g-3">
+          <div class="col mq-991-w-100">
             <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
               <h6>رمز ورود فعلی</h6>
               <input type="password" class="bg-transparent border-0 w-100" required>
@@ -688,7 +690,7 @@
             <!--Error Handling-->
             <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
           </div>
-          <div class="mq-991-w-100">
+          <div class="col mq-991-w-100">
             <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
               <h6>رمز ورود جدید</h6>
               <input type="password" class="bg-transparent border-0 w-100" required>
@@ -696,7 +698,7 @@
             <!--Error Handling-->
             <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
           </div>
-          <div class="mq-991-w-100">
+          <div class="col mq-991-w-100">
             <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
               <h6>تکرار رمز ورود جدید</h6>
               <input type="password" class="bg-transparent border-0 w-100" required>
@@ -705,7 +707,9 @@
             <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
           </div>
         </div>
-        <button class="submit-btn border-0 rounded-4 ripple-btn text-white w-50">تغییر رمز</button>
+        <div class="justify-content-end d-flex">
+          <button class="submit-btn ripple-btn h-auto py-3 border-0 rounded-4 text-white w-25">تغییر رمز</button>
+        </div>
       </form>
     </div>
   </main>
