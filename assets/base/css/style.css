@@ -137,6 +137,7 @@ button[data-bs-toggle="collapse"][aria-expanded="true"] i.bi-chevron-down::befor
 .vertical-divider {background-color: lightgrey;width: 1px !important;}
 .bg-light-grey {background-color: #f3f7fc;}
 .my-tooltip-toggle {position: relative;}
+input[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none;appearance: none;}
 .bb-dashed {border-bottom: 1px dashed black;}
 .rotate-270 {transform: rotate(270deg)}
 .ticket-details-top-btn {border: none;border-bottom: 2px solid;}
