@@ -22,7 +22,7 @@ body {
     overflow-x: hidden;
     background-color: #f5f6fa;
     font-size: .9rem !important;
-    font-family: IRANYekan, "Roboto Light", Tahoma, sans-serif !important;
+    font-family: IRANYekan, Tahoma, "Roboto Light", sans-serif !important;
 }
 
 /*Styles*/
@@ -30,7 +30,7 @@ header .dropdown-menu {width: 15rem;}
 header .dropdown-item h6 {font-size: .8rem;margin-bottom: 0;}
 button[data-bs-toggle="dropdown"].show > i:before{transform: rotate(180deg);}
 button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
-.text-darker-grey {color: #5b5b5b;}
+.text-darker-grey {color: #5b5b5b !important;}
 .w-40 {width: 40%;}
 .w-60 {width: 60%;}
 .text-blue {color: var(--blue);}
@@ -170,12 +170,22 @@ input[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none;appear
 .buy-ticket-left-side-first-item::-webkit-scrollbar-track {background-color: transparent;}
 .buy-ticket-left-side-first-item::-webkit-scrollbar-thumb {background-color: var(--primary-base);border-radius: 25px;}
 .ripple-btn.hot-pink .ripple {background-color: rgba(253, 62, 91, .5) !important;}
+.support-left-top-btn {width: 120px;height: 50px;z-index: 1;}
+.support-left-top-btn.active {color: var(--primary-base) !important;font-weight: bold;}
 
 .ticket-left-top-btn-border {
     height: 2px;
     width: 90px;
     background-color: var(--primary-base);
     transition: .3s;
+}
+
+.support-left-top-btn-border {
+    height: 2px;
+    width: 120px;
+    background-color: var(--primary-base);
+    transition: .3s;
+    z-index: 2;
 }
 
 .my-tooltip {
