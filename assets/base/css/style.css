@@ -47,6 +47,7 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .submit-btn {background-color: var(--primary-base) !important;height: 60px;}
 .footer-bottom-side h6, .footer-bottom-side a {font-size: .8rem;color: #9e9e9e !important;}
 .hover-text-pink {transition: .3s;}
+.intractive-input-component.focused {border-color: var(--primary-base) !important}
 .intractive-input-component.show > input, .intractive-input-component.focused > input{pointer-events: visible;}
 .intractive-input-component.show, .intractive-input-component.focused{border-width: 2px !important;}
 .intractive-input-component.show > h6 , .intractive-input-component.focused > h6{top: 0;transform: translateY(-50%);}
@@ -150,6 +151,8 @@ button:not([aria-expanded="true"]) {margin-bottom: 0 !important;}
 .ticket-bottom-side-togglers > button[aria-expanded="true"] {color: var(--blue) !important;}
 .gtc-3 {grid-template-columns: repeat(3,1fr);}
 .gc-3 {grid-column: span 3}
+.ripple-btn.grey {background-color: #d8d9de;}
+.ripple-btn.grey.ripple {background-color: #959597 !important;}
 
 .my-tooltip {
     position: absolute;
@@ -226,7 +229,7 @@ button:not([aria-expanded="true"]) {margin-bottom: 0 !important;}
 .intractive-input-component {
     border: 1px solid rgba(0,0,0,.8);
     border-radius: 10px;
-    height: 60px;
+    height: 50px;
     cursor: pointer;
 }
 
@@ -299,6 +302,7 @@ header .dropdown-item:active {background-color: rgba(185, 185, 185, 1) !importan
 .hover-text-white:hover {color: white !important;}
 .my-tooltip-toggle:hover > .my-tooltip{transform: translateY(-120%) scale(1);opacity: 1;}
 .ticket-details-top-btn.active:hover {background-color: rgba(0,0,0,.3) !important;}
+.ripple-btn.grey:hover {background-color: #bbbcc0 !important;}
 
 /*Media Querys*/
 @media (max-width: 575px) {

@@ -616,272 +616,274 @@
     </div>
 </header>
 <!--First Section-->
-<section class="px-7rem py-4">
-    <header><button><i class="bi bi-arrow-right"></i>بازگشت به نتایج</button></header>
-    <main>
-        <!--Right Side-->
-        <div>
-            <!--Top Side-->
-            <div>
-                <h6>مشخصات مسافران</h6>
-                <h6>
-                    <i class="bi bi-person"></i>
-                    <span>1</span>
-                    <span>بزرگسال</span>
-                </h6>
-            </div>
-            <!--Bottom Side-->
-            <div>
-                <div>
-                    <div>
-                        <h6>بزرگسال اول</h6>
-                        <button><i class="bi bi-plus"></i>انتخاب از لیست</button>
+<section class="px-7rem py-4 d-flex justify-content-center">
+    <div class="container-xxl">
+        <header class="mb-3"><a href="flight.html"><button class="ripple-btn font-small grey px-3 py-2 d-flex justify-content-center align-items-center border-0 rounded-3 text-dark"><i class="bi bi-arrow-right ms-3"></i>بازگشت به نتایج</button></a></header>
+        <main class="d-flex gap-3">
+            <!--Right Side-->
+            <div class="w-75">
+                <!--Top Side-->
+                <div class="bg-white p-4 rounded-3 mb-3">
+                    <div class="d-flex mb-3 border-bottom py-2 align-items-center justify-content-between">
+                        <h6 class="text-primary font-small">مشخصات مسافران</h6>
+                        <h6 class="text-grey font-small">
+                            <i class="bi bi-person"></i>
+                            <span>1</span>
+                            <span>بزرگسال</span>
+                        </h6>
                     </div>
-                    <form action="#">
-                        <div>
-                            <div>
-                                <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
-                                    <h6>نام انگلیسی</h6>
-                                    <input type="text" class="bg-transparent border-0 w-100" required>
-                                </div>
-                                <!--Error Handling-->
-                                <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
-                            </div>
-                            <div>
-                                <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
-                                    <h6>نام خانوادگی انگلیسی</h6>
-                                    <input type="text" class="bg-transparent border-0 w-100" required>
-                                </div>
-                                <!--Error Handling-->
-                                <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="dropdown">
-                                <div data-value="iran" data-bs-toggle="dropdown" class="intractive-input-component focused mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
-                                    <h6>ملیت</h6>
-                                    <h5 class="font-small mb-0">Iran</h5>
-                                </div>
-                                <ul class="dropdown-menu"><li><button type="button" class="dropdown-item" href="#">Iran</button></li></ul>
-                                <!--Error Handling-->
-                                <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
-                            </div>
-                            <div>
-                                <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
-                                    <h6>شماره ملی</h6>
-                                    <input type="number" class="bg-transparent border-0 w-100" required>
-                                </div>
-                                <!--Error Handling-->
-                                <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
-                            </div>
-                            <div>
-                                <div class="intractive-input-component mb-2 date position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
-                                    <h6>تاریخ تولد</h6>
-                                    <input type="text" class="bg-transparent border-0" readonly id="first-date" required>
-                                </div>
-                                <!--Error Handling-->
-                                <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="dropdown">
-                                <div data-value="اقا" data-bs-toggle="dropdown" class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button"><h6>جنسیت</h6></div>
-                                <ul class="dropdown-menu">
-                                    <li><button type="button" class="dropdown-item" href="#">خانم</button></li>
-                                    <li><button type="button" class="dropdown-item" href="#">اقا</button></li>
-                                </ul>
-                                <!--Error Handling-->
-                                <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
-                            </div>
-                            <div>
-                                <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
-                                    <h6>شماره گذرنامه</h6>
-                                    <input type="number" class="bg-transparent border-0 w-100" required>
-                                </div>
-                                <!--Error Handling-->
-                                <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
-                            </div>
-                            <div>
-                                <div class="intractive-input-component mb-2 date position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
-                                    <h6>تاریخ انقضا گذرنامه</h6>
-                                    <input type="text" class="bg-transparent border-0" readonly id="second-date" required>
-                                </div>
-                                <!--Error Handling-->
-                                <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div>
-                    <h6>مشخصات تماس خریدار</h6>
-                    <h6>موبایل و ایمیل زیر جهت ارسال بلیط/واچر و اطلاع‌رسانی‌های بعد از خرید می‌باشد.</h6>
                     <div>
-                        <div class="d-flex flex-lg-row flex-column align-items-center gap-3 mb-1">
-                            <div class="w-75 mq-991-w-100">
-                                <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
-                                    <h6>موبایل</h6>
-                                    <input type="tel" class="bg-transparent border-0 w-100" required>
-                                </div>
-                                <!--Error Handling-->
-                                <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
-                            </div>
-                            <div class="w-25 mq-991-w-100">
-                                <div class="intractive-input-component mb-2 disabled position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
-                                    <h6>0098</h6>
-                                    <input type="tel" class="bg-transparent border-0 w-100">
-                                </div>
-                                <!--Error Handling-->
-                                <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
-                            </div>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h6 class="text-grey">بزرگسال اول</h6>
+                            <button class="ripple-btn grey px-3 py-2 font-small d-flex justify-content-center align-items-center border-0 rounded-3 text-dark"><i class="bi bi-plus"></i>انتخاب از لیست</button>
                         </div>
-                        <div>
-                            <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
-                                <h6>ایمیل</h6>
-                                <input type="email" class="bg-transparent border-0 w-100" required>
+                        <form action="#">
+                            <div class="d-flex gap-4">
+                                <div class="w-50">
+                                    <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                                        <h6>نام انگلیسی</h6>
+                                        <input type="text" class="bg-transparent border-0 w-100" required>
+                                    </div>
+                                    <!--Error Handling-->
+                                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                                </div>
+                                <div class="w-50">
+                                    <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                                        <h6>نام خانوادگی انگلیسی</h6>
+                                        <input type="text" class="bg-transparent border-0 w-100" required>
+                                    </div>
+                                    <!--Error Handling-->
+                                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                                </div>
                             </div>
-                            <!--Error Handling-->
-                            <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
-                        </div>
+                            <div class="row">
+                                <div class="dropdown">
+                                    <div data-value="iran" data-bs-toggle="dropdown" class="intractive-input-component focused mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                                        <h6>ملیت</h6>
+                                        <h5 class="font-small mb-0">Iran</h5>
+                                    </div>
+                                    <ul class="dropdown-menu"><li><button type="button" class="dropdown-item" href="#">Iran</button></li></ul>
+                                    <!--Error Handling-->
+                                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                                </div>
+                                <div class="col">
+                                    <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                                        <h6>شماره ملی</h6>
+                                        <input type="number" class="bg-transparent border-0 w-100" required>
+                                    </div>
+                                    <!--Error Handling-->
+                                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                                </div>
+                                <div class="col">
+                                    <div class="intractive-input-component mb-2 date position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                                        <h6>تاریخ تولد</h6>
+                                        <input type="text" class="bg-transparent border-0" readonly id="first-date" required>
+                                    </div>
+                                    <!--Error Handling-->
+                                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="dropdown">
+                                    <div data-value="اقا" data-bs-toggle="dropdown" class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button"><h6>جنسیت</h6></div>
+                                    <ul class="dropdown-menu">
+                                        <li><button type="button" class="dropdown-item" href="#">خانم</button></li>
+                                        <li><button type="button" class="dropdown-item" href="#">اقا</button></li>
+                                    </ul>
+                                    <!--Error Handling-->
+                                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                                </div>
+                                <div class="col">
+                                    <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                                        <h6>شماره گذرنامه</h6>
+                                        <input type="number" class="bg-transparent border-0 w-100" required>
+                                    </div>
+                                    <!--Error Handling-->
+                                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                                </div>
+                                <div class="col">
+                                    <div class="intractive-input-component mb-2 date position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                                        <h6>تاریخ انقضا گذرنامه</h6>
+                                        <input type="text" class="bg-transparent border-0" readonly id="second-date" required>
+                                    </div>
+                                    <!--Error Handling-->
+                                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    <button><i class="bi bi-plus"></i>اضافه کردن موبایل یا ایمیل دوم</button>
+                </div>
+                <!--Bottom Side-->
+                <div class="bg-white p-4 rounded-3">
+                    <div>
+                        <h6  class="font-small mb-2">مشخصات تماس خریدار</h6>
+                        <h6  class="font-small text-grey mb-4">موبایل و ایمیل زیر جهت ارسال بلیط/واچر و اطلاع‌رسانی‌های بعد از خرید می‌باشد.</h6>
+                        <div class="d-flex align-items-start gap-2">
+                            <div class="d-flex w-50 flex-lg-row flex-column align-items-start gap-3 mb-1 ms-3">
+                                <div class="w-75 mq-991-w-100">
+                                    <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                                        <h6>موبایل</h6>
+                                        <input type="tel" class="bg-transparent border-0 w-100" required>
+                                    </div>
+                                    <!--Error Handling-->
+                                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                                </div>
+                                <div class="w-25 mq-991-w-100">
+                                    <div class="intractive-input-component mb-2 disabled position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                                        <h6 class="font-smallx">0098</h6>
+                                        <input type="tel" class="bg-transparent border-0 w-100">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-50">
+                                <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                                    <h6>ایمیل</h6>
+                                    <input type="email" class="bg-transparent border-0 w-100" required>
+                                </div>
+                                <!--Error Handling-->
+                                <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                            </div>
+                        </div>
+                        <button class="ripple-btn grey px-3 py-2 font-small d-flex justify-content-center align-items-center border-0 rounded-3 text-dark"><i class="bi bi-plus"></i>اضافه کردن موبایل یا ایمیل دوم</button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!--Left Side-->
-        <div>
+            <!--Left Side-->
             <div>
-                <h6>اطلاعات سفر</h6>
-                <h6>جزئیات و اطلاعات ضروری سفر در سه بخش زیر دسته‌بندی شده‌اند.</h6>
                 <div>
-                    <div></div>
-                    <button>جزییات پرواز</button>
-                    <button>قوانین</button>
-                    <button>مقدار بار</button>
-                </div>
-                <div>
-                    <div class="border rounded-3 overflow-hidden">
-                        <!--Top Side-->
-                        <div class="bg-grey d-flex justify-content-between p-3">
-                            <!--Right Side-->
-                            <div class="d-flex align-items-center">
-                                <h6 class="mb-0 text-black font-small ms-3">TEH<i class="bi bi-arrow-left-short"></i>IFH</h6>
-                                <div class="vertical-divider h-100"></div>
-                                <h6 class="mb-0 text-black font-small me-3">مسیر
-                                    <span>تهران</span>
-                                    <span>به</span>
-                                    <span>اصفهان</span>
-                                </h6>
-                            </div>
-                            <!--Left Side-->
-                            <div class="d-lg-block d-none"><h6 class="font-small mb-0 fw-bold">
-                                مدت مسیر :
-                                <span class="fw-normal">
+                    <h6>اطلاعات سفر</h6>
+                    <h6>جزئیات و اطلاعات ضروری سفر در سه بخش زیر دسته‌بندی شده‌اند.</h6>
+                    <div>
+                        <div></div>
+                        <button>جزییات پرواز</button>
+                        <button>قوانین</button>
+                        <button>مقدار بار</button>
+                    </div>
+                    <div>
+                        <div class="border rounded-3 overflow-hidden">
+                            <!--Top Side-->
+                            <div class="bg-grey d-flex justify-content-between p-3">
+                                <!--Right Side-->
+                                <div class="d-flex align-items-center">
+                                    <h6 class="mb-0 text-black font-small ms-3">TEH<i class="bi bi-arrow-left-short"></i>IFH</h6>
+                                    <div class="vertical-divider h-100"></div>
+                                    <h6 class="mb-0 text-black font-small me-3">مسیر
+                                        <span>تهران</span>
+                                        <span>به</span>
+                                        <span>اصفهان</span>
+                                    </h6>
+                                </div>
+                                <!--Left Side-->
+                                <div class="d-lg-block d-none"><h6 class="font-small mb-0 fw-bold">
+                                    مدت مسیر :
+                                    <span class="fw-normal">
                                                 <span>۱</span>
                                                 ساعت و
                                                 <span>۴۵</span>
                                                 دقیقه
                                             </span>
-                            </h6></div>
-                        </div>
-                        <!--Bottom Side-->
-                        <div class="p-3">
-                            <div class="d-flex flex-lg-row flex-column align-items-lg-center align-items-start mb-3">
-                                <i class="bi bi bi-calendar4-week ms-2 fs-6"></i>
-                                <h6 class="mb-0 font-small ms-3">زمان حرکت:<span class="me-3">۱۲:۰۰</span></h6>
-                                <h6 class="mb-0 font-small">
-                                    <span>پنجشنبه</span>
-                                    <span>۱۷</span>
-                                    <span>شهریور</span>
-                                    (
-                                    <span>September</span>
-                                    <span>8</span>
-                                    )
-                                </h6>
+                                </h6></div>
                             </div>
-                            <div class="row flex-lg-row flex-column gap-lg-0 gap-4 align-items-center">
-                                <div class="col">
-                                    <div class="d-flex align-items-center mt-3 mb-3">
-                                        <div>
-                                            <div class="d-flex ticket-divider-label top"><i class="bi bi-circle-fill ms-3"></i><h6 class="font-small">تهران (THR)</h6></div>
-                                            <div class="ticket-bottom-divider ms-3"></div>
-                                            <div class="d-flex ticket-divider-label bottom"><i class="bi bi-airplane rotate-270 ms-3"></i><h6 class="font-small">اصفهان (IFH)</h6></div>
-                                        </div>
-                                        <img class="ticket-divider-img" src="assets/base/img/flight/img-mahan.png" alt="Mahan Airlines">
-                                    </div>
+                            <!--Bottom Side-->
+                            <div class="p-3">
+                                <div class="d-flex flex-lg-row flex-column align-items-lg-center align-items-start mb-3">
+                                    <i class="bi bi bi-calendar4-week ms-2 fs-6"></i>
+                                    <h6 class="mb-0 font-small ms-3">زمان حرکت:<span class="me-3">۱۲:۰۰</span></h6>
+                                    <h6 class="mb-0 font-small">
+                                        <span>پنجشنبه</span>
+                                        <span>۱۷</span>
+                                        <span>شهریور</span>
+                                        (
+                                        <span>September</span>
+                                        <span>8</span>
+                                        )
+                                    </h6>
                                 </div>
-                                <div class="col">
-                                    <h6 class="font-small mb-3">هواپیمایی:<span class="me-2">Iran Mahan</span></h6>
-                                    <h6 class="font-small mb-3">مدل هواپیما:<span class="me-2">Boeing MD-82</span></h6>
-                                    <h6 class="font-small mb-3">بار مجاز:<span class="me-2">20KG</span></h6>
-                                    <h6 class="font-small mb-3">شماره پرواز:<span class="me-2">سیستمی / 996 B9</span></h6>
-                                    <h6 class="font-small mb-3">مدت پرواز:<span class="me-2">۱ ساعت و ۴۵ دقیقه</span></h6>
-                                    <h6 class="font-small mb-0">کلاس نرخی:<span class="me-2">Economy (Y462)</span></h6>
+                                <div class="row flex-lg-row flex-column gap-lg-0 gap-4 align-items-center">
+                                    <div class="col">
+                                        <div class="d-flex align-items-center mt-3 mb-3">
+                                            <div>
+                                                <div class="d-flex ticket-divider-label top"><i class="bi bi-circle-fill ms-3"></i><h6 class="font-small">تهران (THR)</h6></div>
+                                                <div class="ticket-bottom-divider ms-3"></div>
+                                                <div class="d-flex ticket-divider-label bottom"><i class="bi bi-airplane rotate-270 ms-3"></i><h6 class="font-small">اصفهان (IFH)</h6></div>
+                                            </div>
+                                            <img class="ticket-divider-img" src="assets/base/img/flight/img-mahan.png" alt="Mahan Airlines">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="font-small mb-3">هواپیمایی:<span class="me-2">Iran Mahan</span></h6>
+                                        <h6 class="font-small mb-3">مدل هواپیما:<span class="me-2">Boeing MD-82</span></h6>
+                                        <h6 class="font-small mb-3">بار مجاز:<span class="me-2">20KG</span></h6>
+                                        <h6 class="font-small mb-3">شماره پرواز:<span class="me-2">سیستمی / 996 B9</span></h6>
+                                        <h6 class="font-small mb-3">مدت پرواز:<span class="me-2">۱ ساعت و ۴۵ دقیقه</span></h6>
+                                        <h6 class="font-small mb-0">کلاس نرخی:<span class="me-2">Economy (Y462)</span></h6>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div>
-                <button type="button" data-bs-toggle="collapse" data-bs-target="#price-details" aria-expanded="true" aria-controls="collapseExample">
+                <div>
+                    <button type="button" data-bs-toggle="collapse" data-bs-target="#price-details" aria-expanded="true" aria-controls="collapseExample">
                     <span>
                         <h6>جزئیات قیمت</h6>
                         <h6>قیمت‌ها براساس ارز انتخابی شما محاسبه شده است.</h6>
                     </span>
-                    <i class="bi bi-chevron-down"></i>
-                </button>
-                <div class="collapse show">
-                    <button type="button" data-bs-toggle="collapse" data-bs-target="#first-pirson-detail" aria-expanded="true" aria-controls="collapseExample">
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                    <div class="collapse show">
+                        <button type="button" data-bs-toggle="collapse" data-bs-target="#first-pirson-detail" aria-expanded="true" aria-controls="collapseExample">
                         <span>
                             بزرگسال(x
                             <span>1</span>
                             )
                         </span>
-                        <span>
+                            <span>
                             <span>
                                 <span>۱۲,۸۰۰,۰۰۰</span>
                                 ریال
                             </span>
                             <i class="bi bi-chevron-down"></i>
                         </span>
-                    </button>
-                    <div class="collapse" id="first-pirson-detail">
-                        <ul>
-                            <li>
-                                <h6>قیمت پایه (x1)</h6>
-                                <h6>۱۱,۷۲۶,۰۰۰</h6>
-                            </li>
-                            <li>
-                                <h6>مالیات (x1)</h6>
-                                <h6>۱,۲۷۴,۰۰۰</h6>
-                            </li>
-                            <li>
-                                <h6>تخفیف (x1)</h6>
-                                <h6>0</h6>
-                            </li>
-                        </ul>
+                        </button>
+                        <div class="collapse" id="first-pirson-detail">
+                            <ul>
+                                <li>
+                                    <h6>قیمت پایه (x1)</h6>
+                                    <h6>۱۱,۷۲۶,۰۰۰</h6>
+                                </li>
+                                <li>
+                                    <h6>مالیات (x1)</h6>
+                                    <h6>۱,۲۷۴,۰۰۰</h6>
+                                </li>
+                                <li>
+                                    <h6>تخفیف (x1)</h6>
+                                    <h6>0</h6>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h6>قیمت کل</h6>
+                            <h6>
+                                <span>۱۲,۸۰۰,۰۰۰</span>
+                                ریال
+                            </h6>
+                        </div>
                     </div>
                     <div>
-                        <h6>قیمت کل</h6>
-                        <h6>
-                            <span>۱۲,۸۰۰,۰۰۰</span>
-                            ریال
-                        </h6>
+                        <div>
+                            <h6>مبلغ قابل پرداخت</h6>
+                            <h6>
+                                <span>۱۳,۰۰۰,۰۰۰</span>
+                                ریال
+                            </h6>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <div>
-                        <h6>مبلغ قابل پرداخت</h6>
-                        <h6>
-                            <span>۱۳,۰۰۰,۰۰۰</span>
-                            ریال
-                        </h6>
-                    </div>
-                </div>
+                <button>ادامه فرایند خرید</button>
             </div>
-            <button>ادامه فرایند خرید</button>
-        </div>
-    </main>
+        </main>
+    </div>
 </section>
 <!--Footer-->
 <footer class="d-flex justify-content-center border-top mq-991-bg-white">
