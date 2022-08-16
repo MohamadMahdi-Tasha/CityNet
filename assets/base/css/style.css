@@ -153,6 +153,16 @@ button:not([aria-expanded="true"]) {margin-bottom: 0 !important;}
 .gc-3 {grid-column: span 3}
 .ripple-btn.grey {background-color: #d8d9de;}
 .ripple-btn.grey.ripple {background-color: #959597 !important;}
+.ticket-left-top-btn {width: 90px;height: 50px;}
+.ticket-left-top-btn.active {color: var(--primary-base);}
+.ticket-left-top-btn:not(.active) {color: grey;}
+
+.ticket-left-top-btn-border {
+    height: 2px;
+    width: 90px;
+    background-color: var(--primary-base);
+    transition: .3s;
+}
 
 .my-tooltip {
     position: absolute;
