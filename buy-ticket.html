@@ -817,28 +817,26 @@
                     </div>
                 </div>
                 <div class="bg-white rounded-3 p-4 mb-3">
-                    <button class="bg-transparent py-3 d-flex w-100 justify-content-between flex-wrap bg-danger align-items-center border-0 text-end" type="button" data-bs-toggle="collapse" data-bs-target="#price-details" aria-expanded="true">
+                    <button class="bg-transparent w-100 d-flex align-items-center justify-content-between border-0 text-end" type="button" data-bs-toggle="collapse" data-bs-target="#price-details" aria-expanded="false" aria-controls="collapseExample">
                         <span>
                             <h6 class="font-small mb-2">جزئیات قیمت</h6>
                             <h6 class="font-small text-grey mb-0">قیمت‌ها براساس ارز انتخابی شما محاسبه شده است.</h6>
                         </span>
                         <i class="bi bi-chevron-down"></i>
                     </button>
-                    <div id="#price-details" class="collapse show mb-3">
-                        <button class="bg-transparent text-end  w-100 d-flex justify-content-between flex-wrap align-items-center py-4 border-0 font-small text-grey" type="button" data-bs-toggle="collapse" data-bs-target="#first-pirson-detail" aria-expanded="true" aria-controls="collapseExample">
-                            <span>
-                            بزرگسال
-                            <span class="me-2">(x<span>1</span>)</span>
-                        </span>
-                            <span>
-                            <span>
+                    <div class="collapse show" id="price-details">
+                        <button class="bg-transparent w-100 d-flex align-items-center justify-content-between border-0 text-end py-4" type="button" data-bs-toggle="collapse" data-bs-target="#idk" aria-expanded="false" aria-controls="collapseExample">
+                            <span class="font-small text-grey">
+                                بزرگسال
+                                <span class="me-2">(x<span>1</span>)</span>
+                            </span>
+                            <span class="font-small text-grey">
                                 <span>۱۲,۸۰۰,۰۰۰</span>
                                 ریال
+                                <i class="bi bi-chevron-down me-2"></i>
                             </span>
-                            <i class="bi bi-chevron-down me-2"></i>
-                        </span>
                         </button>
-                        <div class="collapse show" id="first-pirson-detail">
+                        <div class="collapse" id="idk">
                             <ul class="px-3 py-4 bg-grey rounded-3">
                                 <li class="d-flex justify-content-between flex-wrap align-items-center mb-3">
                                     <h6 class="font-small text-darker-grey">قیمت پایه (x1)</h6>
@@ -855,7 +853,7 @@
                             </ul>
                         </div>
                         <div class="bg-grey text-darker-grey d-flex justify-content-between flex-wrap align-items-center px-3 py-4 rounded-3 mb-3">
-                            <h6 class="mb-0 font-small">قیمت کل</h6>
+                            <h6 class="mb-0 font-small fw-bold">قیمت کل</h6>
                             <h6 class="mb-0 font-small fw-bold">
                                 <span>۱۲,۸۰۰,۰۰۰</span>
                                 ریال
@@ -864,7 +862,7 @@
                     </div>
                     <hr>
                     <div class="bg-light-green text-green d-flex justify-content-between flex-wrap align-items-center px-3 py-4 rounded-3 mb-3">
-                        <h6 class="mb-0 font-small">مبلغ قابل پرداخت</h6>
+                        <h6 class="mb-0 font-small fw-bold">مبلغ قابل پرداخت</h6>
                         <h6 class="mb-0 font-small fw-bold">
                             <span>۱۳,۰۰۰,۰۰۰</span>
                             ریال

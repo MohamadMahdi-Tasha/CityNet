@@ -51,6 +51,7 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .footer-bottom-side h6, .footer-bottom-side a {font-size: .8rem;color: #9e9e9e !important;}
 .hover-text-pink {transition: .3s;}
 .intractive-input-component.focused {border-color: var(--primary-base) !important}
+.intractive-input-component.focused > h6:first-of-type {color: var(--primary-base) !important}
 .intractive-input-component.show > input, .intractive-input-component.focused > input{pointer-events: visible;}
 .intractive-input-component.show, .intractive-input-component.focused{border-width: 2px !important;}
 .intractive-input-component.show > h6 , .intractive-input-component.focused > h6{top: 0;transform: translateY(-50%);}
@@ -129,9 +130,8 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .bg-blue {background-color: var(--blue);}
 .change-result-btn {background-color: rgba(256,256,256,.2);}
 .accent-base {accent-color: var(--primary-base);}
-button > i::before {transition: .3s}
-button[aria-expanded="true"] > i::before {transform: rotate(180deg);}
-button:not([aria-expanded="true"]) {margin-bottom: 0 !important;}
+button[data-bs-toggle="collapse"] i.bi-chevron-down::before {transition: .3s}
+button[data-bs-toggle="collapse"][aria-expanded="true"] i.bi-chevron-down::before {transform: rotate(180deg);}
 .flight-top-btn:not(.active) {background-color: transparent;color: grey;}
 .flight-top-btn.active {background-color: #f3f7fc;color: var(--blue);}
 .vertical-divider {background-color: lightgrey;width: 1px !important;}
