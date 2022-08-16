@@ -259,3 +259,7 @@ removeRoomBtn.forEach(item => {
         intractiveInputComponentRoom.forEach(item => item.addEventListener('click', () => item.nextElementSibling.classList.toggle('show')))
     })
 })
+
+// Getting All Input In Intractive-Input-Components That They Are Disabled And Adding TabIndex Of -1 To Make Them Unfocusable That
+// Prevents From Bug
+document.querySelectorAll('.intractive-input-component.disabled input').forEach(item => item.setAttribute('tabindex', '-1'))
