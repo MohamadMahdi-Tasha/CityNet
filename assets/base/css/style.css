@@ -5,6 +5,7 @@
 :root {
     --primary-base: #dd9933;
     --pink: #ff5551;
+    --hot-pink: #fd3e5b;
     --dark-blue: #023047;
     --blue: #0466c8;
 }
@@ -74,7 +75,9 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .my-bg-primary {background-color: rgb(81, 137, 246);}
 .my-bg-pink {background-color: rgb(213, 12, 106);}
 .font-small {font-size: .8rem !important;}
+.font-md {font-size: 1rem !important;}
 .font-smallx {font-size: .6rem !important;}
+.text-hot-pink {color: var(--hot-pink) !important;}
 .switch-btn.animation {-webkit-animation:flip-scale-2-hor-top .5s linear both;animation:flip-scale-2-hor-top .5s linear both}
 .border-black {border: 1px solid rgba(0,0,0,.8);}
 .intractive-input-component.passenger > h6{font-size: .7rem !important;}
@@ -138,6 +141,8 @@ button[data-bs-toggle="collapse"][aria-expanded="true"] i.bi-chevron-down::befor
 .bg-light-grey {background-color: #f3f7fc;}
 .my-tooltip-toggle {position: relative;}
 input[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none;appearance: none;}
+.profile-edit-right-side-item {height: 40px;}
+.profile-edit-right-side-item.active {color: var(--primary-base) !important;}
 .bb-dashed {border-bottom: 1px dashed black;}
 .rotate-270 {transform: rotate(270deg)}
 .ticket-details-top-btn {border: none;border-bottom: 2px solid;}
@@ -156,7 +161,7 @@ input[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none;appear
 .gtc-3 {grid-template-columns: repeat(3,1fr);}
 .gc-3 {grid-column: span 3}
 .ripple-btn.grey {background-color: #d8d9de;}
-.ripple-btn.grey.ripple {background-color: #959597 !important;}
+.ripple-btn.grey .ripple {background-color: #979797 !important;}
 .ticket-left-top-btn {width: 90px;height: 50px;}
 .ticket-left-top-btn.active {color: var(--primary-base);}
 .ticket-left-top-btn:not(.active) {color: grey;}
@@ -164,6 +169,7 @@ input[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none;appear
 .buy-ticket-left-side-first-item::-webkit-scrollbar {background-color: transparent;width: 10px;}
 .buy-ticket-left-side-first-item::-webkit-scrollbar-track {background-color: transparent;}
 .buy-ticket-left-side-first-item::-webkit-scrollbar-thumb {background-color: var(--primary-base);border-radius: 25px;}
+.ripple-btn.hot-pink .ripple {background-color: rgba(253, 62, 91, .5) !important;}
 
 .ticket-left-top-btn-border {
     height: 2px;
@@ -320,7 +326,8 @@ header .dropdown-item:active {background-color: rgba(185, 185, 185, 1) !importan
 .hover-text-white:hover {color: white !important;}
 .my-tooltip-toggle:hover > .my-tooltip{transform: translateY(-120%) scale(1);opacity: 1;}
 .ticket-details-top-btn.active:hover {background-color: rgba(0,0,0,.3) !important;}
-.ripple-btn.grey:hover {background-color: #bbbcc0 !important;}
+.ripple-btn.grey:hover {background-color: #e2e3e8 !important;}
+.ripple-btn.hot-pink:hover {background-color: rgba(253, 62, 91, .2) !important;}
 
 /*Media Querys*/
 @media (max-width: 575px) {
