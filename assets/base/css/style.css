@@ -29,6 +29,7 @@ header .dropdown-menu {width: 15rem;}
 header .dropdown-item h6 {font-size: .8rem;margin-bottom: 0;}
 button[data-bs-toggle="dropdown"].show > i:before{transform: rotate(180deg);}
 button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
+.text-darker-grey {color: #5b5b5b;}
 .text-blue {color: var(--blue);}
 .bg-light-blue {background-color: rgb(222, 237, 255);}
 .bg-light-green {background-color: rgb(206, 245, 236);}
@@ -156,6 +157,10 @@ button:not([aria-expanded="true"]) {margin-bottom: 0 !important;}
 .ticket-left-top-btn {width: 90px;height: 50px;}
 .ticket-left-top-btn.active {color: var(--primary-base);}
 .ticket-left-top-btn:not(.active) {color: grey;}
+.buy-ticket-left-side-first-item {height: 40rem;overflow-y: auto;}
+.buy-ticket-left-side-first-item::-webkit-scrollbar {background-color: transparent;width: 10px;}
+.buy-ticket-left-side-first-item::-webkit-scrollbar-track {background-color: transparent;}
+.buy-ticket-left-side-first-item::-webkit-scrollbar-thumb {background-color: var(--primary-base);border-radius: 25px;}
 
 .ticket-left-top-btn-border {
     height: 2px;
@@ -323,6 +328,7 @@ header .dropdown-item:active {background-color: rgba(185, 185, 185, 1) !importan
 
 @media (max-width: 991px) {
     .mq-991-w-100 {width: 100% !important;}
+    .buy-ticket-left-side-first-item {height: auto;}
     .px-7rem {padding-right: 1rem;padding-left: 1rem;}
     .home-body {background-image: url('../img/home/first-section.png');background-size: cover;background-position: center;}
     .home-first-section, .home-first-section > main {clip-path: none;min-height: auto;background-image: none;height: 180px;}

@@ -750,7 +750,7 @@
             </div>
             <!--Left Side-->
             <div>
-                <div class="bg-white rounded-3 p-4">
+                <div class="buy-ticket-left-side-first-item bg-white rounded-3 p-4 mb-3">
                     <h6 class="font-small mb-2">اطلاعات سفر</h6>
                     <h6 class="font-small text-grey mb-4">جزئیات و اطلاعات ضروری سفر در سه بخش زیر دسته‌بندی شده‌اند.</h6>
                     <div class="position-relative d-flex justify-content-between border-bottom mb-3">
@@ -762,13 +762,24 @@
                     <div>
                         <div class="border rounded-3 overflow-hidden">
                             <!--Top Side-->
-                            <div class="bg-grey d-flex p-3">
+                            <div class="bg-grey d-flex justify-content-between p-3">
                                 <!--Right Side-->
-                                <div class="d-flex align-items-center"><h6 class="mb-0 text-black font-small ms-3">TEH<i class="bi me-2 ms-2 bi-arrow-left-short"></i>IFH</h6></div>
+                                <div class="d-flex align-items-center">
+                                    <h6 class="mb-0 text-black font-small ms-3">TEH<i class="bi bi-arrow-left-short"></i>IFH</h6>
+                                </div>
+                                <div class="d-lg-block d-none"><h6 class="font-smallx mb-0 fw-bold">
+                                    مدت مسیر :
+                                    <span class="fw-normal ">
+                                                <span>۱</span>
+                                                ساعت و
+                                                <span>۴۵</span>
+                                                دقیقه
+                                            </span>
+                                </h6></div>
                             </div>
                             <!--Bottom Side-->
                             <div class="p-3">
-                                <div class="d-flex flex-lg-row flex-column align-items-lg-center align-items-start mb-3">
+                                <div class="d-flex flex-lg-row flex-column align-items-lg-center align-items-start mb-3 text-nowrap">
                                     <i class="bi bi bi-calendar4-week ms-2 fs-6"></i>
                                     <h6 class="mb-0 font-small ms-3">زمان حرکت:<span class="me-3">۱۲:۰۰</span></h6>
                                     <h6 class="mb-0 font-small">
@@ -805,64 +816,64 @@
                         </div>
                     </div>
                 </div>
-                <div>
-                    <button type="button" data-bs-toggle="collapse" data-bs-target="#price-details" aria-expanded="true" aria-controls="collapseExample">
-                    <span>
-                        <h6>جزئیات قیمت</h6>
-                        <h6>قیمت‌ها براساس ارز انتخابی شما محاسبه شده است.</h6>
-                    </span>
+                <div class="bg-white rounded-3 p-4 mb-3">
+                    <button class="bg-transparent py-3 d-flex w-100 justify-content-between bg-danger align-items-center border-0 text-end" type="button" data-bs-toggle="collapse" data-bs-target="#price-details" aria-expanded="true" aria-controls="collapseExample">
+                        <span>
+                            <h6 class="font-small mb-2">جزئیات قیمت</h6>
+                            <h6 class="font-small text-grey mb-0">قیمت‌ها براساس ارز انتخابی شما محاسبه شده است.</h6>
+                        </span>
                         <i class="bi bi-chevron-down"></i>
                     </button>
-                    <div class="collapse show">
-                        <button type="button" data-bs-toggle="collapse" data-bs-target="#first-pirson-detail" aria-expanded="true" aria-controls="collapseExample">
-                        <span>
-                            بزرگسال(x
-                            <span>1</span>
-                            )
+                    <div id="#price-details" class="collapse show mb-3">
+                        <button class="bg-transparent text-end  w-100 d-flex justify-content-between align-items-center py-4 border-0 font-small text-grey" type="button" data-bs-toggle="collapse" data-bs-target="#first-pirson-detail" aria-expanded="true" aria-controls="collapseExample">
+                            <span>
+                            بزرگسال
+                            <span class="me-2">(x<span>1</span>)</span>
                         </span>
                             <span>
                             <span>
                                 <span>۱۲,۸۰۰,۰۰۰</span>
                                 ریال
                             </span>
-                            <i class="bi bi-chevron-down"></i>
+                            <i class="bi bi-chevron-down me-2"></i>
                         </span>
                         </button>
-                        <div class="collapse" id="first-pirson-detail">
-                            <ul>
-                                <li>
-                                    <h6>قیمت پایه (x1)</h6>
-                                    <h6>۱۱,۷۲۶,۰۰۰</h6>
+                        <div class="collapse show" id="first-pirson-detail">
+                            <ul class="px-3 py-4 bg-grey rounded-3">
+                                <li class="d-flex justify-content-between align-items-center mb-3">
+                                    <h6 class="font-small text-darker-grey">قیمت پایه (x1)</h6>
+                                    <h6 class="font-small text-darker-grey fw-bold">۱۱,۷۲۶,۰۰۰</h6>
                                 </li>
-                                <li>
-                                    <h6>مالیات (x1)</h6>
-                                    <h6>۱,۲۷۴,۰۰۰</h6>
+                                <li class="d-flex justify-content-between align-items-center mb-3">
+                                    <h6 class="font-small text-darker-grey">مالیات (x1)</h6>
+                                    <h6 class="font-small text-darker-grey fw-bold">۱,۲۷۴,۰۰۰</h6>
                                 </li>
-                                <li>
-                                    <h6>تخفیف (x1)</h6>
-                                    <h6>0</h6>
+                                <li class="d-flex justify-content-between align-items-center">
+                                    <h6 class="font-small text-darker-grey">تخفیف (x1)</h6>
+                                    <h6 class="font-small text-darker-grey fw-bold">0</h6>
                                 </li>
                             </ul>
                         </div>
-                        <div>
-                            <h6>قیمت کل</h6>
-                            <h6>
+                        <div class="bg-grey text-darker-grey d-flex justify-content-between align-items-center px-3 py-4 rounded-3 mb-3">
+                            <h6 class="mb-0 font-small">قیمت کل</h6>
+                            <h6 class="mb-0 font-small fw-bold">
                                 <span>۱۲,۸۰۰,۰۰۰</span>
                                 ریال
                             </h6>
                         </div>
                     </div>
-                    <div>
-                        <div>
-                            <h6>مبلغ قابل پرداخت</h6>
-                            <h6>
-                                <span>۱۳,۰۰۰,۰۰۰</span>
-                                ریال
-                            </h6>
-                        </div>
+                    <hr>
+                    <div class="bg-light-green text-green d-flex justify-content-between align-items-center px-3 py-4 rounded-3 mb-3">
+                        <h6 class="mb-0 font-small">مبلغ قابل پرداخت</h6>
+                        <h6 class="mb-0 font-small fw-bold">
+                            <span>۱۳,۰۰۰,۰۰۰</span>
+                            ریال
+                        </h6>
                     </div>
                 </div>
-                <button>ادامه فرایند خرید</button>
+                <div class="d-flex justify-content-end align-items-center">
+                    <button class="submit-btn border-0 rounded-4 fw-bold ripple-btn w-50">ادامه فرایند خرید</button>
+                </div>
             </div>
         </main>
     </div>
