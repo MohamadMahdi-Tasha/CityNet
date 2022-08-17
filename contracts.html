@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="assets/plugins/bootstrap-icons/bootstrap-icons.css">
   <link rel="stylesheet" href="assets/plugins/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="assets/base/css/style.css">
+  <link rel="stylesheet" href="assets/plugins/MCDatepicker/dist/mc-calendar.min.css">
   <!--Title Of Page-->
   <title>سیتی نت - قرار داد ها</title>
 </head>
@@ -617,7 +618,167 @@
 <!--First Section-->
 <section class="px-7rem py-4 d-flex justify-content-center">
   <main class="container-xxl d-flex gap-3 align-items-start flex-lg-row flex-column">
-
+    <div>
+      <div>
+        <h6>گزارش قرارداد</h6>
+        <button><i class="bi bi-info-circle"></i>راهنمای گزارش</button>
+      </div>
+      <form action="#">
+        <div class="row">
+          <div class="col mq-991-w-100">
+            <div class="dropdown mb-2">
+              <div class="intractive-input-component focused position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <h6 class="font-smallx">گزارش بر اساس</h6>
+                <h5 class="font-small mb-0">تاریخ کنسلی</h5>
+              </div>
+              <ul class="bg-white dropdown-menu dropdown-menu-end shadow-lg w-100">
+                <li><h5 class="font-small mb-0">تاریخ قرارداد</h5></li>
+                <li><h5 class="font-small mb-0">تاریخ کنسلی</h5></li>
+              </ul>
+            </div>
+            <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+          </div>
+          <div class="col mq-991-w-100">
+            <div class="intractive-input-component mb-2 date position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+              <h6><i class="bi bi-calendar4-week"></i>از</h6>
+              <input type="text" class="bg-transparent border-0" readonly id="first-date" required>
+            </div>
+            <!--Error Handling-->
+            <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+          </div>
+          <div class="col mq-991-w-100">
+            <div class="intractive-input-component mb-2 disabled my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+              <h6>خریدار</h6>
+              <input type="text" class="bg-transparent border-0 w-100" required>
+            </div>
+            <!--Error Handling-->
+            <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+          </div>
+          <div class="col mq-991-w-100">
+            <div class="intractive-input-component mb-2 date position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+              <h6><i class="bi bi-calendar4-week"></i>تاریخ سفر از</h6>
+              <input type="text" class="bg-transparent border-0" readonly id="second-date" required>
+            </div>
+            <!--Error Handling-->
+            <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+          </div>
+          <div class="col mq-991-w-100">
+            <div class="intractive-input-component mb-2 date position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+              <h6><i class="bi bi-calendar4-week"></i>تاریخ سفر تا</h6>
+              <input type="text" class="bg-transparent border-0" readonly id="third-date" required>
+            </div>
+            <!--Error Handling-->
+            <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col mq-991-w-100">
+            <div class="intractive-input-component mb-2 date position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+              <h6><i class="bi bi-calendar4-week"></i>تا</h6>
+              <input type="text" class="bg-transparent border-0" readonly id="fourth-date" required>
+            </div>
+            <!--Error Handling-->
+            <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+          </div>
+          <div class="col mq-991-w-100">
+            <div class="dropdown mb-2">
+              <div class="intractive-input-component focused position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <h6 class="font-smallx">نوع سرویس</h6>
+                <h5 class="font-small mb-0">تور</h5>
+              </div>
+              <ul class="bg-white dropdown-menu dropdown-menu-end shadow-lg w-100">
+                <li><h5 class="font-small mb-0">پرواز</h5></li>
+                <li><h5 class="font-small mb-0">هتل</h5></li>
+                <li><h5 class="font-small mb-0">تور</h5></li>
+                <li><h5 class="font-small mb-0">CIP</h5></li>
+                <li><h5 class="font-small mb-0">همه</h5></li>
+              </ul>
+            </div>
+            <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+          </div>
+          <div class="col mq-991-w-100">
+            <div class="intractive-input-component disabled mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+              <h6>ثبت کننده</h6>
+              <input type="text" class="bg-transparent border-0 w-100" required>
+            </div>
+            <!--Error Handling-->
+            <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+          </div>
+          <div class="col mq-991-w-100">
+            <div class="dropdown mb-2">
+              <div class="intractive-input-component focused position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <h6 class="font-smallx">فیلتر بر اساس</h6>
+                <h5 class="font-small mb-0">شماره قراداد</h5>
+              </div>
+              <ul class="bg-white dropdown-menu dropdown-menu-end shadow-lg w-100">
+                <li><h5 class="font-small mb-0">رفرنس</h5></li>
+                <li><h5 class="font-small mb-0">شماره قرارداد</h5></li>
+                <li><h5 class="font-small mb-0">نام و نام خوانوادگی</h5></li>
+                <li><h5 class="font-small mb-0">شماره گذرنامه</h5></li>
+                <li><h5 class="font-small mb-0">شماره ملی</h5></li>
+                <li><h5 class="font-small mb-0">شماره بلیط / واچر</h5></li>
+                <li><h5 class="font-small mb-0">شناسه تامین کننده</h5></li>
+                <li><h5 class="font-small mb-0">ایرلاین</h5></li>
+                <li><h5 class="font-small mb-0">مقصد (IATA)</h5></li>
+                <li><h5 class="font-small mb-0">مبدا (IATA)</h5></li>
+                <li><h5 class="font-small mb-0">موبایل اضافه</h5></li>
+                <li><h5 class="font-small mb-0">ایمیل اضافه</h5></li>
+              </ul>
+            </div>
+            <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+          </div>
+          <div class="col mq-991-w-100">
+            <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+              <h6>خریدار</h6>
+              <i class="bi bi-search position-absolute left-0 ms-3 font-small"></i>
+              <input type="text" class="bg-transparent border-0 w-100 ms-4" required>
+            </div>
+            <!--Error Handling-->
+            <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col mq-991-w-100">
+            <div class="dropdown mb-2">
+              <div class="intractive-input-component focused position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <h6 class="font-smallx">وضعیت مالی</h6>
+                <h5 class="font-small mb-0">تسویه نشده</h5>
+              </div>
+              <ul class="bg-white dropdown-menu dropdown-menu-end shadow-lg w-100">
+                <li><h5 class="font-small mb-0">تسویه نشده</h5></li>
+                <li><h5 class="font-small mb-0">تسویه شده</h5></li>
+                <li><h5 class="font-small mb-0">همه</h5></li>
+              </ul>
+            </div>
+            <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+          </div>
+          <div class="col mq-991-w-100">
+            <div class="dropdown mb-2">
+              <div class="intractive-input-component focused position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <h6 class="font-smallx">وضعیت قرارداد</h6>
+                <h5 class="font-small mb-0">صادر نشده</h5>
+              </div>
+              <ul class="bg-white dropdown-menu dropdown-menu-end shadow-lg w-100">
+                <li><h5 class="font-small mb-0">صادر نشده</h5></li>
+                <li><h5 class="font-small mb-0">تکمیل شده</h5></li>
+                <li><h5 class="font-small mb-0">همه</h5></li>
+              </ul>
+            </div>
+            <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+          </div>
+          <div class="col mq-991-w-100">
+            <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+              <h6>معرف</h6>
+              <input type="text" class="bg-transparent border-0 w-100" required>
+            </div>
+            <!--Error Handling-->
+            <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+          </div>
+          <button class="col mq-991-w-100">دانلود<i class="bi bi-download"></i></button>
+          <button class="col mq-991-w-100">جستجو</button>
+        </div>
+      </form>
+    </div>
   </main>
 </section>
 <!--Footer-->
@@ -656,6 +817,8 @@
 <!--Js Linkings-->
 <noscript>لطفا جاوا اسکریپت مرورگر خود را فعال کنید.</noscript>
 <script src="assets/plugins/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="assets/plugins/MCDatepicker/dist/mc-calendar.min.js"></script>
+<script src="assets/base/js/scripts.js"></script>
 <script src="assets/base/js/ripple-btn.js"></script>
 <script src="assets/base/js/intractive-components.js"></script>
 <script src="assets/base/js/nav.js"></script>
