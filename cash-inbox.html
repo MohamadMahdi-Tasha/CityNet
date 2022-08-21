@@ -619,43 +619,43 @@
 <section class="px-7rem py-4 d-flex justify-content-center">
   <main class="container-xxl gap-3">
     <!--Top Side-->
-    <div>
-      <h6>صندوق</h6>
-      <h6>لطفا از صحت کاربر انتخواب شده اصمینان حاصل کنید و سپس تغییرات را اعمال نمایید</h6>
-      <table class="table">
+    <div class="bg-white rounded-3 p-3 mb-3">
+      <h6 class="text-dark">صندوق</h6>
+      <h6 class="mb-5 text-dark">لطفا از صحت کاربر انتخواب شده اصمینان حاصل کنید و سپس تغییرات را اعمال نمایید</h6>
+      <table class="table mb-5">
         <thead>
         <tr>
-          <th scope="col">نام کاربر</th>
-          <th scope="col">نام کاربری</th>
-          <th scope="col">موبایل</th>
-          <th scope="col">ایمیل</th>
+          <th class="border-bottom-0 text-grey py-3 fw-normal" scope="col">نام کاربر</th>
+          <th class="border-bottom-0 text-grey py-3 fw-normal" scope="col">نام کاربری</th>
+          <th class="border-bottom-0 text-grey py-3 fw-normal" scope="col">موبایل</th>
+          <th class="border-bottom-0 text-grey py-3 fw-normal" scope="col">ایمیل</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-          <th scope="col">نام کاربر</th>
-          <th scope="col">نام کاربری</th>
-          <th scope="col">موبایل</th>
-          <th scope="col">ایمیل</th>
+          <th class="border-bottom-0 text-grey py-3 fw-normal" scope="col">نام کاربر</th>
+          <th class="border-bottom-0 text-grey py-3 fw-normal" scope="col">نام کاربری</th>
+          <th class="border-bottom-0 text-grey py-3 fw-normal" scope="col">موبایل</th>
+          <th class="border-bottom-0 text-grey py-3 fw-normal" scope="col">ایمیل</th>
         </tr>
         </tbody>
       </table>
-      <div>
-        <h6>موجودی کیف پول ریال</h6>
-        <h6>IRR <span>169,132,318</span></h6>
+      <div class="bg-grey p-3 col-4 rounded-3 text-center">
+        <h6 class="text-darker-grey">موجودی کیف پول ریال</h6>
+        <h6 class="text-blue">IRR <span class="fw-bold">169,132,318</span></h6>
       </div>
     </div>
     <!--Bottom Side-->
-    <div>
-      <div>
+    <div class="bg-white rounded-3 p-3 mb-5">
+      <div class="d-flex justify-content-between align-items-center mb-5">
         <div>
-          <h6>تراکنش ها حساب</h6>
-          <h6>تارکنش های دریافت و پرداخت در زیر امده</h6>
+          <h6 class="text-dark">تراکنش ها حساب</h6>
+          <h6 class="text-grey">تارکنش های دریافت و پرداخت در زیر امده</h6>
         </div>
-        <button>Excel</button>
+        <button class="bg-grey text-dark p-2 fw-bold border-0 rounded-3 col-1">Excel</button>
       </div>
-      <div>
-        <div>
+      <div class="row gx-0 gap-3 mb-3">
+        <div class="col-2">
           <div class="intractive-input-component mb-2 date position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
             <h6><i class="bi bi-calendar4-week"></i>از تاریخ</h6>
             <input type="text" class="bg-transparent border-0" readonly id="first-date" required>
@@ -663,7 +663,7 @@
           <!--Error Handling-->
           <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
         </div>
-        <div>
+        <div class="col-2">
           <div class="intractive-input-component mb-2 date position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
             <h6><i class="bi bi-calendar4-week"></i>تا تاریخ</h6>
             <input type="text" class="bg-transparent border-0" readonly id="second-date" required>
@@ -671,46 +671,46 @@
           <!--Error Handling-->
           <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
         </div>
-        <button class="submit-btn">فیلتر</button>
+        <button class="col-2 submit-btn rounded-3 text-white border-0">فیلتر</button>
       </div>
       <table class="table">
         <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">ثبت کننده</th>
-          <th scope="col">شماره قرارداد</th>
-          <th scope="col">تاریخ ثبت</th>
-          <th scope="col">تاریخ عملیات</th>
-          <th scope="col">نوع حساب</th>
-          <th scope="col">نحوه عملیات</th>
-          <th scope="col">بدهکار</th>
-          <th scope="col">بستانکار</th>
-          <th scope="col">ارز</th>
-          <th scope="col">برابری ارز</th>
-          <th scope="col">شماره پیگری</th>
-          <th scope="col">شرح</th>
+        <tr class="text-grey">
+          <th class="fw-normal py-3" scope="col">#</th>
+          <th class="fw-normal py-3" scope="col">ثبت کننده</th>
+          <th class="fw-normal py-3" scope="col">شماره قرارداد</th>
+          <th class="fw-normal py-3" scope="col">تاریخ ثبت</th>
+          <th class="fw-normal py-3" scope="col">تاریخ عملیات</th>
+          <th class="fw-normal py-3" scope="col">نوع حساب</th>
+          <th class="fw-normal py-3" scope="col">نحوه عملیات</th>
+          <th class="fw-normal py-3" scope="col">بدهکار</th>
+          <th class="fw-normal py-3" scope="col">بستانکار</th>
+          <th class="fw-normal py-3" scope="col">ارز</th>
+          <th class="fw-normal py-3" scope="col">برابری ارز</th>
+          <th class="fw-normal py-3" scope="col">شماره پیگری</th>
+          <th class="fw-normal py-3" scope="col">شرح</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">ثبت کننده</th>
-          <th scope="col">شماره قرارداد</th>
-          <th scope="col">تاریخ ثبت</th>
-          <th scope="col">تاریخ عملیات</th>
-          <th scope="col">نوع حساب</th>
-          <th scope="col">نحوه عملیات</th>
-          <th scope="col">بدهکار</th>
-          <th scope="col">بستانکار</th>
-          <th scope="col">ارز</th>
-          <th scope="col">برابری ارز</th>
-          <th scope="col">شماره پیگری</th>
-          <th scope="col">شرح</th>
+        <tr class="text-grey">
+          <th class="fw-normal py-3" scope="col">#</th>
+          <th class="fw-normal py-3" scope="col">ثبت کننده</th>
+          <th class="fw-normal py-3" scope="col">شماره قرارداد</th>
+          <th class="fw-normal py-3" scope="col">تاریخ ثبت</th>
+          <th class="fw-normal py-3" scope="col">تاریخ عملیات</th>
+          <th class="fw-normal py-3" scope="col">نوع حساب</th>
+          <th class="fw-normal py-3" scope="col">نحوه عملیات</th>
+          <th class="fw-normal py-3" scope="col">بدهکار</th>
+          <th class="fw-normal py-3" scope="col">بستانکار</th>
+          <th class="fw-normal py-3" scope="col">ارز</th>
+          <th class="fw-normal py-3" scope="col">برابری ارز</th>
+          <th class="fw-normal py-3" scope="col">شماره پیگری</th>
+          <th class="fw-normal py-3" scope="col">شرح</th>
         </tr>
         </tbody>
       </table>
-      <div>
-        <div>
+      <div class="d-flex justify-content-end align-items-center">
+        <div class="col-2">
           <div class="dropdown mb-2">
             <div class="intractive-input-component focused position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               <h6 class="font-smallx">نمایش در صفحه</h6>
@@ -728,20 +728,22 @@
         </div>
       </div>
     </div>
-    <ul class="pagination">
-      <li class="page-item"><a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a></li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item"><a class="page-link" href="#">4</a></li>
-      <li class="page-item"><a class="page-link" href="#">5</a></li>
-      <li class="page-item disabled"><a class="page-link" href="#">...</a></li>
-      <li class="page-item"><a class="page-link" href="#">10</a></li>
-      <li class="page-item"><a class="page-link" href="#">11</a></li>
-      <li class="page-item"><a class="page-link" href="#">12</a></li>
-      <li class="page-item"><a class="page-link" href="#">13</a></li>
-      <li class="page-item"><a class="page-link" href="#"><i class="bi bi-chevron-left"></i></a></li>
-    </ul>
+    <div class="d-flex justify-content-center">
+      <ul class="pagination gap-3">
+        <li class="page-item"><a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a></li>
+        <li class="page-item"><a class="page-link active" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">4</a></li>
+        <li class="page-item"><a class="page-link" href="#">5</a></li>
+        <li class="page-item disabled"><a class="page-link" href="#">...</a></li>
+        <li class="page-item"><a class="page-link" href="#">10</a></li>
+        <li class="page-item"><a class="page-link" href="#">11</a></li>
+        <li class="page-item"><a class="page-link" href="#">12</a></li>
+        <li class="page-item"><a class="page-link" href="#">13</a></li>
+        <li class="page-item"><a class="page-link" href="#"><i class="bi bi-chevron-left"></i></a></li>
+      </ul>
+    </div>
   </main>
 </section>
 <!--Footer-->
