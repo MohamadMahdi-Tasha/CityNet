@@ -173,6 +173,7 @@ input[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none;appear
 .ripple-btn.hot-pink .ripple {background-color: rgba(253, 62, 91, .5) !important;}
 .support-left-top-btn {width: 120px;height: 50px;z-index: 1;}
 .support-left-top-btn.active {color: var(--primary-base) !important;font-weight: bold;}
+.br-5-hot-pink {border-right: 5px solid var(--hot-pink);}
 
 .ticket-left-top-btn-border {
     height: 2px;
