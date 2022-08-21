@@ -618,13 +618,13 @@
 <!--First Section-->
 <section class="px-7rem py-4 d-flex justify-content-center">
   <main class="container-xxl gap-3">
-    <div class="bg-white rounded-4 mb-3 p-4 container-xxl">
+    <div class="bg-white rounded-4 mb-3 p-4">
       <div class="d-flex justify-content-between align-items-center mb-3 mb-3">
         <h6 class="mb-0">گزارش قرارداد</h6>
         <button class="ripple-btn grey bg-transparent text-darker-grey rounded-3 d-flex align-items-center px-3 py-2 border-0"><i class="bi ms-2 bi-info-circle"></i>راهنمای گزارش</button>
       </div>
-      <form class="row" action="#">
-        <div class="row row-cols-2 col">
+      <form class="row flex-lg-row flex-column" action="#">
+        <div class="row gx-3 row-cols-2 col">
           <div class="col mq-991-w-100">
             <div class="dropdown mb-2">
               <div class="intractive-input-component focused position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -632,8 +632,8 @@
                 <h5 class="font-small mb-0">تاریخ کنسلی</h5>
               </div>
               <ul class="bg-white dropdown-menu dropdown-menu-end shadow-lg w-100">
-                <li><h5 class="font-small mb-0">تاریخ قرارداد</h5></li>
-                <li><h5 class="font-small mb-0">تاریخ کنسلی</h5></li>
+                <li><button class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">تاریخ قرارداد</button></li>
+                <li><button class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">تاریخ کنسلی</button></li>
               </ul>
             </div>
             <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
@@ -671,7 +671,7 @@
             <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
           </div>
         </div>
-        <div class="row row-cols-2 col">
+        <div class="row gx-3 row-cols-2 col">
           <div class="col mq-991-w-100">
             <div class="intractive-input-component mb-2 date position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
               <h6><i class="bi bi-calendar4-week"></i>تا</h6>
@@ -687,11 +687,11 @@
                 <h5 class="font-small mb-0">تور</h5>
               </div>
               <ul class="bg-white dropdown-menu dropdown-menu-end shadow-lg w-100">
-                <li><h5 class="font-small mb-0">پرواز</h5></li>
-                <li><h5 class="font-small mb-0">هتل</h5></li>
-                <li><h5 class="font-small mb-0">تور</h5></li>
-                <li><h5 class="font-small mb-0">CIP</h5></li>
-                <li><h5 class="font-small mb-0">همه</h5></li>
+                <li><button type="button" class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">پرواز</button></li>
+                <li><button type="button" class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">هتل</button></li>
+                <li><button type="button" class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">تور</button></li>
+                <li><button type="button" class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">CIP</button></li>
+                <li><button type="button" class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">همه</button></li>
               </ul>
             </div>
             <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
@@ -704,40 +704,42 @@
             <!--Error Handling-->
             <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
           </div>
-          <div class="col mq-991-w-100">
-            <div class="dropdown mb-2">
-              <div class="intractive-input-component focused position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <h6 class="font-smallx">فیلتر بر اساس</h6>
-                <h5 class="font-small mb-0">شماره قراداد</h5>
+          <div class="d-flex col-12">
+            <div class="col mq-991-w-100">
+              <div class="dropdown mb-2">
+                <div class="intractive-input-component rounded-left-0 focused position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <h6 class="font-smallx">فیلتر بر اساس</h6>
+                  <h5 class="font-small mb-0">شماره قراداد</h5>
+                </div>
+                <ul class="bg-white dropdown-menu dropdown-menu-end shadow-lg w-100">
+                  <li><button type="button" class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">رفرنس</button></li>
+                  <li><button type="button" class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">شماره قرارداد</button></li>
+                  <li><button type="button" class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">نام و نام خوانوادگی</button></li>
+                  <li><button type="button" class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">شماره گذرنامه</button></li>
+                  <li><button type="button" class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">شماره ملی</button></li>
+                  <li><button type="button" class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">شماره بلیط / واچر</button></li>
+                  <li><button type="button" class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">شناسه تامین کننده</button></li>
+                  <li><button type="button" class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">ایرلاین</button></li>
+                  <li><button type="button" class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">مقصد (IATA)</button></li>
+                  <li><button type="button" class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">مبدا (IATA)</button></li>
+                  <li><button type="button" class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">موبایل اضافه</button></li>
+                  <li><button type="button" class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">ایمیل اضافه</button></li>
+                </ul>
               </div>
-              <ul class="bg-white dropdown-menu dropdown-menu-end shadow-lg w-100">
-                <li><h5 class="font-small mb-0">رفرنس</h5></li>
-                <li><h5 class="font-small mb-0">شماره قرارداد</h5></li>
-                <li><h5 class="font-small mb-0">نام و نام خوانوادگی</h5></li>
-                <li><h5 class="font-small mb-0">شماره گذرنامه</h5></li>
-                <li><h5 class="font-small mb-0">شماره ملی</h5></li>
-                <li><h5 class="font-small mb-0">شماره بلیط / واچر</h5></li>
-                <li><h5 class="font-small mb-0">شناسه تامین کننده</h5></li>
-                <li><h5 class="font-small mb-0">ایرلاین</h5></li>
-                <li><h5 class="font-small mb-0">مقصد (IATA)</h5></li>
-                <li><h5 class="font-small mb-0">مبدا (IATA)</h5></li>
-                <li><h5 class="font-small mb-0">موبایل اضافه</h5></li>
-                <li><h5 class="font-small mb-0">ایمیل اضافه</h5></li>
-              </ul>
+              <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
             </div>
-            <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
-          </div>
-          <div class="col mq-991-w-100">
-            <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
-              <h6>خریدار</h6>
-              <i class="bi bi-search position-absolute left-0 ms-3 font-small"></i>
-              <input type="text" class="bg-transparent border-0 w-100 ms-4" required>
+            <div class="col mq-991-w-100">
+              <div class="intractive-input-component mb-2  rounded-right-0 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                <h6>خریدار</h6>
+                <i class="bi bi-search position-absolute left-0 ms-3 font-small"></i>
+                <input type="text" class="bg-transparent border-0 w-100 ms-4" required>
+              </div>
+              <!--Error Handling-->
+              <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
             </div>
-            <!--Error Handling-->
-            <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
           </div>
         </div>
-        <div class="row row-cols-2 col">
+        <div class="row gx-3 row-cols-2 col">
           <div class="col mq-991-w-100">
             <div class="dropdown mb-2">
               <div class="intractive-input-component focused position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -745,9 +747,9 @@
                 <h5 class="font-small mb-0">تصویه نشده</h5>
               </div>
               <ul class="bg-white dropdown-menu dropdown-menu-end shadow-lg w-100">
-                <li><h5 class="font-small mb-0">تصویه نشده</h5></li>
-                <li><h5 class="font-small mb-0">تصویه شده</h5></li>
-                <li><h5 class="font-small mb-0">همه</h5></li>
+                <li><button class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">تصویه نشده</button></li>
+                <li><button class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">تصویه شده</button></li>
+                <li><button class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">همه</button></li>
               </ul>
             </div>
             <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
@@ -759,9 +761,9 @@
                 <h5 class="font-small mb-0">صادر نشده</h5>
               </div>
               <ul class="bg-white dropdown-menu dropdown-menu-end shadow-lg w-100">
-                <li><h5 class="font-small mb-0">صادر نشده</h5></li>
-                <li><h5 class="font-small mb-0">کامل شده</h5></li>
-                <li><h5 class="font-small mb-0">همه</h5></li>
+                <li><button class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">صادر نشده</button></li>
+                <li><button class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">کامل شده</button></li>
+                <li><button class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">همه</button></li>
               </ul>
             </div>
             <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
@@ -774,37 +776,12 @@
             <!--Error Handling-->
             <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
           </div>
-          <div class="col mq-991-w-100">
-            <div class="dropdown mb-2">
-              <div class="intractive-input-component focused position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <h6 class="font-smallx">فیلتر بر اساس</h6>
-                <h5 class="font-small mb-0">شماره قراداد</h5>
-              </div>
-              <ul class="bg-white dropdown-menu dropdown-menu-end shadow-lg w-100">
-                <li><h5 class="font-small mb-0">رفرنس</h5></li>
-                <li><h5 class="font-small mb-0">شماره قرارداد</h5></li>
-                <li><h5 class="font-small mb-0">نام و نام خوانوادگی</h5></li>
-                <li><h5 class="font-small mb-0">شماره گذرنامه</h5></li>
-                <li><h5 class="font-small mb-0">شماره ملی</h5></li>
-                <li><h5 class="font-small mb-0">شماره بلیط / واچر</h5></li>
-                <li><h5 class="font-small mb-0">شناسه تامین کننده</h5></li>
-                <li><h5 class="font-small mb-0">ایرلاین</h5></li>
-                <li><h5 class="font-small mb-0">مقصد (IATA)</h5></li>
-                <li><h5 class="font-small mb-0">مبدا (IATA)</h5></li>
-                <li><h5 class="font-small mb-0">موبایل اضافه</h5></li>
-                <li><h5 class="font-small mb-0">ایمیل اضافه</h5></li>
-              </ul>
-            </div>
-            <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
-          </div>
-          <div class="col mq-991-w-100">
-            <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
-              <h6>خریدار</h6>
-              <i class="bi bi-search position-absolute left-0 ms-3 font-small"></i>
-              <input type="text" class="bg-transparent border-0 w-100 ms-4" required>
-            </div>
-            <!--Error Handling-->
-            <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+          <div class="d-flex gap-3 col-12">
+            <button type="button" class="col mq-991-w-100 h-intractive-comonent fw-bold bg-grey border-0 rounded-3 text-darker-grey fs-6 d-flex flex-wrap justify-content-between align-items-center">
+              <span>دانلود</span>
+              <i class="bi bi-download"></i>
+            </button>
+            <button type="submit" class="submit-btn col mq-991-w-100 fw-bold text-white rounded-3 border-0 mb-4 ripple-btn">جستجو</button>
           </div>
         </div>
       </form>
