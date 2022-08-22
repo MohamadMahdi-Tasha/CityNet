@@ -617,37 +617,37 @@
 <!--First Section-->
 <section class="px-7rem py-4 d-flex justify-content-center">
     <main class="container-xxl gap-3">
-        <button><i class="bi bi-arrow-right"></i>بازگشت به صفحه ورود اسامی</button>
-        <div>
-            <div>
-                <i class="bi bi-card-list"></i>
+        <button class="bg-grey text-darker-grey px-3 py-2 mb-5 rounded-3 border-0 ripple-btn grey d-flex justify-content-center align-items-center"><i class="bi bi-arrow-right ms-3"></i>بازگشت به صفحه ورود اسامی</button>
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <div class="d-flex">
+                <i class="bi bi-card-list text-dark fs-3 ms-3"></i>
                 <div>
-                    <h6>مشخصات خرید</h6>
-                    <h6>لطفا اطلاعات وارد شده را کنترل کرده و سپس از اطمینان از درستی انها برای پرداخت اقدام نمایید.</h6>
+                    <h6 class="text-dark font-small fw-bold">مشخصات خرید</h6>
+                    <h6 class="text-grey font-small">لطفا اطلاعات وارد شده را کنترل کرده و سپس از اطمینان از درستی انها برای پرداخت اقدام نمایید.</h6>
                 </div>
             </div>
-            <span>
+            <span class="bg-white text-dark rounded-3 px-3 py-2 fw-bold font-small">
                 شماره قرارداد:
                 <span>273981</span>
             </span>
         </div>
-        <div>
-            <div data-bs-toggle="collapse" data-bs-target="#flight-details" aria-expanded="true">
-                <div>
-                    <i class="bi bi-airplane rotate-270"></i>
-                    <h6>پرواز</h6>
+        <div class="bg-white rounded-3 overflow-hidden mb-5">
+            <div class="d-flex p-3 bg-blue justify-content-between align-items-center transition" role="button" data-bs-toggle="collapse" data-bs-target="#flight-details" aria-expanded="true">
+                <div class="d-flex align-items-center">
+                    <i class="bi bi-airplane rotate-minus-90 text-white fs-5 ms-3"></i>
+                    <h6 class="text-white fw-bold font-small mb-0">پرواز</h6>
                 </div>
-                <div>
-                    <h6>
+                <div class="d-flex align-items-center text-white">
+                    <h6 class="font-small ms-3 mb-0">
                         <span>THR</span>
-                        <i class="bi bi-airplane rotate-270"></i>
+                        <span class="rotate-minus-90 ms-2 me-2"><i class="bi bi-airplane text-white"></i></span>
                         <span>KIH</span>
                     </h6>
                     <i class="bi bi-chevron-down"></i>
                 </div>
             </div>
-            <div class="collapse show" id="flight-details">
-                <div>
+            <div class="collapse show p-3" id="flight-details">
+                <div class="mb-3">
                     <div class="border rounded-3 overflow-hidden">
                         <!--Top Side-->
                         <div class="bg-grey d-flex justify-content-between p-3">
@@ -712,124 +712,120 @@
                         </div>
                     </div>
                 </div>
-                <div>
-                    <div>
-                        <h6><i class="bi bi-clipboard"></i>قوانین</h6>
-                        <div>
+                <div class="row mb-3 gap-3">
+                    <div class="col">
+                        <h6 class="text-dark"><i class="ms-3 bi bi-clipboard"></i>قوانین</h6>
+                        <div class="border last-buy-rule-weight-cards overflow-hidden rounded-3">
                             <div>
                                 <div class="bg-grey d-flex">
                                     <button class="ticket-details-top-btn active px-5 d-flex justify-content-center align-items-center font-small ripple-btn text-dark py-3">TEH<i class="bi bi-arrow-left-short"></i>IFH</button>
                                 </div>
-                                <div>
-                                    <button data-bs-toggle="collapse" aria-expanded="true" data-bs-target="cancel-details">
+                                <div class="p-3">
+                                    <button aria-expanded="true" data-bs-target="#cancel-details" data-bs-toggle="collapse" class="d-flex font-small text-grey justify-content-between align-items-center col-12 border-0 bg-transparent">
                                         <span>جریمه کنسلی و قوانین (بزرگسال)</span>
                                         <i class="bi bi-chevron-down"></i>
                                     </button>
-                                    <div id="cancel-details">
-                                        <ul><li>جهت اطلاع از قوانین و مقررات استرداد این پرواز با پشتیبانی تماس حاصل فرمایید</li></ul>
+                                    <div class="collapse show mt-3" id="cancel-details">
+                                        <ul class="pe-3 font-small text-grey"><li>جهت اطلاع از قوانین و مقررات استرداد این پرواز با پشتیبانی تماس حاصل فرمایید</li></ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <h6><i class="bi bi-bag"></i>میزان بار</h6>
-                        <div>
+                    <div class="col">
+                        <h6 class="text-dark"><i class="ms-3 bi bi-bag"></i>میزان بار</h6>
+                        <div class="border last-buy-rule-weight-cards rounded-3 overflow-hidden">
                             <div>
                                 <div class="bg-grey d-flex">
                                     <button class="ticket-details-top-btn active px-5 d-flex justify-content-center align-items-center font-small ripple-btn text-dark py-3">TEH<i class="bi bi-arrow-left-short"></i>IFH</button>
                                 </div>
                                 <div>
-                                    <button data-bs-toggle="collapse" aria-expanded="true" data-bs-target="weight-details">
-                                        <span>جریمه کنسلی و قوانین (بزرگسال)</span>
-                                        <i class="bi bi-chevron-down"></i>
-                                    </button>
-                                    <div id="weight-details">
-                                        <table class="table mb-0">
-                                            <thead>
-                                            <tr class="row row-cols-2 row-cols-sm-4">
-                                                <th class="col text-center text-grey fw-normal font-small" scope="col">شماره پرواز</th>
-                                                <th class="col text-center text-grey fw-normal font-small" scope="col">بار بزرگسال</th>
-                                                <th class="col text-center text-grey fw-normal font-small" scope="col">بار کودک</th>
-                                                <th class="col text-center text-grey fw-normal font-small" scope="col">بار نوزاد</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr class="row row-cols-2 row-cols-sm-4">
-                                                <td class="col text-center text-grey font-small fw-normal" scope="row">2188</td>
-                                                <td class="col text-center text-grey font-small fw-normal">20KG</td>
-                                                <td class="col text-center text-grey font-small fw-normal">20KG</td>
-                                                <td class="col text-center text-grey font-small fw-normal">--</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                    <table class="table mb-0">
+                                        <thead>
+                                        <tr class="row row-cols-2 row-cols-sm-4">
+                                            <th class="col text-center text-grey fw-normal font-small" scope="col">شماره پرواز</th>
+                                            <th class="col text-center text-grey fw-normal font-small" scope="col">بار بزرگسال</th>
+                                            <th class="col text-center text-grey fw-normal font-small" scope="col">بار کودک</th>
+                                            <th class="col text-center text-grey fw-normal font-small" scope="col">بار نوزاد</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr class="row row-cols-2 row-cols-sm-4">
+                                            <td class="col text-center text-grey font-small fw-normal" scope="row">2188</td>
+                                            <td class="col text-center text-grey font-small fw-normal">20KG</td>
+                                            <td class="col text-center text-grey font-small fw-normal">20KG</td>
+                                            <td class="col text-center text-grey font-small fw-normal">--</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <h6><i class="bi bi-people"></i>مسافران</h6>
-                    <table class="table table-striped mb-0">
-                        <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">نام و نام خوانوادگی</th>
-                            <th scope="col">رده سنی</th>
-                            <th scope="col">جنسیت</th>
-                            <th scope="col">ملیت</th>
-                            <th scope="col">شماره ملی</th>
-                            <th scope="col">تاریخ تولد</th>
-                            <th scope="col">شماره گذرنامه</th>
-                            <th scope="col">تاریخ انقضای گذرنامه</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">نام و نام خوانوادگی</th>
-                            <th scope="col">رده سنی</th>
-                            <th scope="col">جنسیت</th>
-                            <th scope="col">ملیت</th>
-                            <th scope="col">شماره ملی</th>
-                            <th scope="col">تاریخ تولد</th>
-                            <th scope="col">شماره گذرنامه</th>
-                            <th scope="col">تاریخ انقضای گذرنامه</th>
-                        </tr>
-                        </tbody>
-                    </table>
+                <div class="mb-3">
+                    <h6 class="text-dark"><i class="bi bi-people ms-3"></i>مسافران</h6>
+                    <div class="rounded-3 border overflow-hidden">
+                        <table class="table table-striped mb-0">
+                            <tbody class="d-flex flex-lg-column flex-row">
+                            <tr class="row flex-nowrap flex-lg-row flex-column col-lg-12 col-6 p-0 m-0">
+                                <th class="font-small col-lg-1 col-12 text-grey fw-normal text-center" scope="col">#</th>
+                                <th class="font-small col-lg-1 col-12 text-grey fw-normal text-center" scope="col">نام و نام خوانوادگی</th>
+                                <th class="font-small col-lg-1 col-12 text-grey fw-normal text-center" scope="col">رده سنی</th>
+                                <th class="font-small col-lg-1 col-12 text-grey fw-normal text-center" scope="col">جنسیت</th>
+                                <th class="font-small col-lg-1 col-12 text-grey fw-normal text-center" scope="col">ملیت</th>
+                                <th class="font-small col-lg-1 col-12 text-grey fw-normal text-center" scope="col">شماره ملی</th>
+                                <th class="font-small col-lg-2 col-12 text-grey fw-normal text-center" scope="col">تاریخ تولد</th>
+                                <th class="font-small col-lg-2 col-12 text-grey fw-normal text-center" scope="col">شماره گذرنامه</th>
+                                <th class="font-small col-lg-2 col-12 text-grey fw-normal text-center" scope="col">تاریخ انقضای گذرنامه</th>
+                            </tr>
+                            <tr class="row flex-nowrap flex-lg-row flex-column col-lg-12 col-6 p-0 m-0">
+                                <th class="font-small col-lg-1 col-12 text-dark fw-normal text-center" scope="col">#</th>
+                                <th class="font-small col-lg-1 col-12 text-dark fw-normal text-center" scope="col">نام و نام خوانوادگی</th>
+                                <th class="font-small col-lg-1 col-12 text-dark fw-normal text-center" scope="col">رده سنی</th>
+                                <th class="font-small col-lg-1 col-12 text-dark fw-normal text-center" scope="col">جنسیت</th>
+                                <th class="font-small col-lg-1 col-12 text-dark fw-normal text-center" scope="col">ملیت</th>
+                                <th class="font-small col-lg-1 col-12 text-dark fw-normal text-center" scope="col">شماره ملی</th>
+                                <th class="font-small col-lg-2 col-12 text-dark fw-normal text-center" scope="col">تاریخ تولد</th>
+                                <th class="font-small col-lg-2 col-12 text-dark fw-normal text-center" scope="col">شماره گذرنامه</th>
+                                <th class="font-small col-lg-2 col-12 text-dark fw-normal text-center" scope="col">تاریخ انقضای گذرنامه</th>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div>
-                    <h6>
-                        <i class="bi bi-currency-dollar"></i>
+                    <h6 class="d-flex align-items-center text-dark">
+                        <span class="squar-around-dollor d-block d-flex justify-content-center align-items-center ms-3"><i class="bi bi-currency-dollar"></i></span>
                         جزییات قیمت
-                        <span>ریال</span>
+                        <span class="bg-light-green text-green px-3 py-1 rounded-2 me-3 font-small">ریال</span>
                     </h6>
-                    <table class="table table-striped mb-0">
-                        <tbody class="d-flex flex-lg-column flex-row">
-                        <tr class="row flex-lg-row flex-column col-lg-12 col-6 p-0 m-0">
-                            <th class="col-lg col-12 text-center text-grey font-small fw-normal" scope="col">#</th>
-                            <th class="col-lg col-12 text-center text-grey font-small fw-normal" scope="col">رده سنی</th>
-                            <th class="col-lg col-12 text-center text-grey font-small fw-normal" scope="col">قیمت پایه</th>
-                            <th class="col-lg col-12 text-center text-grey font-small fw-normal" scope="col">مالیات</th>
-                            <th class="col-lg col-12 text-center text-grey font-small fw-normal" scope="col">تخفیف</th>
-                            <th class="col-lg col-12 text-center text-grey font-small fw-normal" scope="col">تعداد</th>
-                            <th class="col-lg col-12 text-center text-grey font-small fw-normal" scope="col">جمع هر نفر</th>
-                            <th class="col-lg col-12 text-center text-grey font-small fw-normal" scope="col">جمع</th>
-                        </tr>
-                        <tr class="row flex-lg-row flex-column col-lg-12 col-6 p-0 m-0">
-                            <th class="col-lg col-12 text-center text-grey font-small fw-normal" scope="row">1</th>
-                            <td class="col-lg col-12 text-center text-grey font-small fw-normal">بزرگسال	</td>
-                            <td class="col-lg col-12 text-center text-grey font-small fw-normal">۱۱,۴۵۴,۰۰۰</td>
-                            <td class="col-lg col-12 text-center text-grey font-small fw-normal">۱,۲۴۶,۰۰۰</td>
-                            <td class="col-lg col-12 text-center text-grey font-small fw-normal">0</td>
-                            <td class="col-lg col-12 text-center text-grey font-small fw-normal">x1</td>
-                            <td class="col-lg col-12 text-center text-grey font-small fw-normal">۱۲,۷۰۰,۰۰۰</td>
-                            <td class="col-lg col-12 text-center text-grey font-small fw-normal">۱۲,۷۰۰,۰۰۰</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                    <div class="rounded-top-bl-3 overflow-hidden border">
+                        <table class="table table-striped mb-0">
+                            <tbody class="d-flex flex-lg-column flex-row">
+                            <tr class="row flex-lg-row flex-column col-lg-12 col-6 p-0 m-0">
+                                <th class="col-lg col-12 text-center text-grey font-small fw-normal" scope="col">#</th>
+                                <th class="col-lg col-12 text-center text-grey font-small fw-normal" scope="col">رده سنی</th>
+                                <th class="col-lg col-12 text-center text-grey font-small fw-normal" scope="col">قیمت پایه</th>
+                                <th class="col-lg col-12 text-center text-grey font-small fw-normal" scope="col">مالیات</th>
+                                <th class="col-lg col-12 text-center text-grey font-small fw-normal" scope="col">تخفیف</th>
+                                <th class="col-lg col-12 text-center text-grey font-small fw-normal" scope="col">تعداد</th>
+                                <th class="col-lg col-12 text-center text-grey font-small fw-normal" scope="col">جمع هر نفر</th>
+                                <th class="col-lg col-12 text-center text-grey font-small fw-normal" scope="col">جمع</th>
+                            </tr>
+                            <tr class="row flex-lg-row flex-column col-lg-12 col-6 p-0 m-0">
+                                <th class="col-lg col-12 text-center text-grey font-small fw-normal" scope="row">1</th>
+                                <td class="col-lg col-12 text-center text-grey font-small fw-normal">بزرگسال	</td>
+                                <td class="col-lg col-12 text-center text-grey font-small fw-normal">۱۱,۴۵۴,۰۰۰</td>
+                                <td class="col-lg col-12 text-center text-grey font-small fw-normal">۱,۲۴۶,۰۰۰</td>
+                                <td class="col-lg col-12 text-center text-grey font-small fw-normal">0</td>
+                                <td class="col-lg col-12 text-center text-grey font-small fw-normal">x1</td>
+                                <td class="col-lg col-12 text-center text-grey font-small fw-normal">۱۲,۷۰۰,۰۰۰</td>
+                                <td class="col-lg col-12 text-center text-grey font-small fw-normal">۱۲,۷۰۰,۰۰۰</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     <div class="d-flex justify-content-end">
                         <div class="bg-light-green px-4 rounded-bottom-3 py-2 d-flex">
                             <h6 class="fw-bold font-small ms-3 mb-0 text-green">جمع</h6>
@@ -842,104 +838,108 @@
                 </div>
             </div>
         </div>
-        <div>
-            <h6>
-                <i class="bi bi-currency-dollar"></i>
+        <div class="mb-3">
+            <h6 class="d-flex text-dark">
+                <span class="squar-around-dollor ms-3 d-flex justify-content-center align-items-center"><i class="bi bi-currency-dollar"></i></span>
                 صورت حساب
-                <span>ریال</span>
+                <span class="font-small text-green bg-light-green px-3 py-1 rounded-3 me-3">ریال</span>
             </h6>
-            <table class="table table-striped mb-0">
-                <tbody class="d-flex flex-lg-column flex-row">
-                <tr class="row flex-lg-row flex-column col-lg-12 col-6 p-0 m-0">
-                    <th class="col-lg col-12 text-center text-grey font-small fw-normal" scope="col">#</th>
-                    <th class="col-lg col-12 text-center text-grey font-small fw-normal" scope="col">شرح</th>
-                    <th class="col-lg col-12 text-center text-grey font-small fw-normal" scope="col">جمع</th>
-                </tr>
-                <tr class="row flex-lg-row flex-column col-lg-12 col-6 p-0 m-0">
-                    <th class="col-lg col-12 text-center text-grey font-small fw-normal" scope="col">#</th>
-                    <th class="col-lg col-12 text-center text-grey font-small fw-normal" scope="col">شرح</th>
-                    <th class="col-lg col-12 text-center text-grey font-small fw-normal" scope="col">جمع</th>
-                </tr>
-                </tbody>
-            </table>
+            <div class="rounded-top-bl-3 border overflow-hidden">
+                <table class="table table-striped mb-0 bg-white">
+                    <tbody class="d-flex flex-lg-column flex-row">
+                    <tr class="row flex-lg-row flex-column col-lg-12 col-6 p-0 m-0">
+                        <th class="col-lg-1 col-12 text-end text-grey font-small fw-normal" scope="col">#</th>
+                        <th class="col-lg-1 col-12 text-end text-grey font-small fw-normal" scope="col">شرح</th>
+                        <th class="col-lg-10 col-12 text-lg-start text-end text-grey font-small fw-normal" scope="col">جمع</th>
+                    </tr>
+                    <tr class="row flex-lg-row flex-column col-lg-12 col-6 p-0 m-0">
+                        <th class="col-lg-1 col-12 text-end text-grey font-small fw-normal" scope="col">#</th>
+                        <th class="col-lg-1 col-12 text-end text-grey font-small fw-normal" scope="col">شرح</th>
+                        <th class="col-lg-10 col-12 text-lg-start text-end text-grey font-small fw-normal" scope="col">جمع</th>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
             <div class="d-flex justify-content-end">
                 <div class="bg-success px-4 rounded-bottom-3 py-2 d-flex">
-                    <h6 class=" font-small ms-3 mb-0 text-white">جمع قابل پرداخت :</h6>
+                    <h6 class="font-small ms-3 mb-0 text-white">جمع قابل پرداخت :</h6>
                     <h6 class="text-white font-small mb-0 "><span>۱۲,۷۰۰,۰۰۰</span>ریال</h6>
                 </div>
             </div>
         </div>
-        <div>
-            <h6>
-                <i class="bi bi-envelope"></i>
+        <div class="mb-3">
+            <h6 class="text-dark">
+                <i class="bi bi-envelope ms-3"></i>
                 مشخصات تماس
-                <span>فقط اصلاع رسانی</span>
+                <span class="font-small text-green bg-light-green px-3 py-1 rounded-3 me-3">فقط اصلاع رسانی</span>
             </h6>
-            <table class="table">
-                <tbody>
-                <tr>
-                    <th>ایمیل</th>
-                    <th>موبایل</th>
-                </tr>
-                <tr>
-                    <th>--</th>
-                    <th>0098 - 1234567891</th>
-                </tr>
-                </tbody>
-            </table>
+            <div class="rounded-3 overflow-hidden border">
+                <table class="table bg-white mb-0">
+                    <tbody>
+                    <tr>
+                        <th class="border-bottom-0 fw-normal font-small text-grey">ایمیل</th>
+                        <th class="border-bottom-0 fw-normal font-small text-grey">موبایل</th>
+                    </tr>
+                    <tr>
+                        <th class="border-bottom-0 fw-normal font-small">--</th>
+                        <th class="border-bottom-0 fw-normal font-small">0098 - 1234567891</th>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div>
-            <h6>
-                <i class="bi bi-wallet"></i>
-                <span>
-                    <span>شیوه پرداخت</span>
-                    <span>استفاده همزمان از کیف پول و اعتبار در پرداخت امکان پذیر است.</span>
-                </span>
-            </h6>
-            <div>
+        <div class="mb-3">
+            <div class="d-flex">
+                <i class="bi bi-wallet fs-3 ms-3"></i>
                 <div>
-                    <div>
-                        <h6>کیف پول<i class="bi bi-info-circle"></i></h6>
+                    <h6 class="text-dark font-small fw-bold">شیوه پرداخت</h6>
+                    <h6 class="text-grey font-small ">استفاده همزمان از کیف پول و اعتبار در پرداخت امکان پذیر است.</h6>
+                </div>
+            </div>
+            <div class="row gap-3">
+                <div class="col p-0 overflow-hidden rounded-3 bg-white">
+                    <div class="last-buy-bottom-items-top bg-grey d-flex align-items-center justify-content-between p-3">
+                        <h6 class="font-small text-darker-grey mb-0">کیف پول<i class="bi bi-info-circle me-3"></i></h6>
                         <div class="form-check form-switch"><input class="form-check-input" checked type="checkbox" role="switch"></div>
                     </div>
-                    <div>
-                        <div>
-                            <h6>موجودی</h6>
-                            <h6>
+                    <div class="p-3">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h6 class="font-small mb-0 py-2">موجودی</h6>
+                            <h6 class="font-small mb-0 py-2">
                                 <span>169,123,189</span>
                                 ریال
                                 <i class="bi bi-arrow-clockwise"></i>
                             </h6>
                         </div>
-                        <div>
-                            <h6>کسر از کیف پول</h6>
-                            <h6>--</h6>
+                        <div class="d-flex align-items-center justify-content-between text-grey">
+                            <h6 class="font-small mb-0 py-2">کسر از کیف پول</h6>
+                            <h6 class="font-small mb-0 py-2">--</h6>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <div>
-                        <h6>اعتبار<i class="bi bi-info-circle"></i></h6>
+                <div class="col p-0 overflow-hidden rounded-3 bg-white">
+                    <div class="last-buy-bottom-items-top bg-grey d-flex align-items-center justify-content-between p-3">
+                        <h6 class="font-small text-darker-grey mb-0">اعتبار<i class="bi bi-info-circle me-3"></i></h6>
                         <div class="form-check form-switch"><input class="form-check-input" type="checkbox" role="switch"></div>
                     </div>
-                    <div>
-                        <div>
-                            <h6>موجودی</h6>
-                            <h6>
+                    <div class="p-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h6 class="py-2 mb-0 font-small">موجودی</h6>
+                            <h6 class="py-2 font-small">
                                 <span>0</span>
                                 ریال
                                 <i class="bi bi-arrow-clockwise"></i>
                             </h6>
                         </div>
-                        <div>
-                            <h6>کسر از کیف پول</h6>
-                            <h6>--</h6>
+                        <div class="d-flex justify-content-between align-items-center text-grey">
+                            <h6 class="py-2 mb-0 font-small">کسر از کیف پول</h6>
+                            <h6 class="py-2 font-small">--</h6>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <div><h6>انتخاب درگاه پرداخت اینترنتی<i class="bi bi-info-circle"></i></h6></div>
-                    <div>
+                <div class="col p-0 overflow-hidden rounded-3 bg-white">
+                    <div class="last-buy-bottom-items-top bg-grey d-flex align-items-center justify-content-between p-3"><h6 class="text-darker-grey font-small mb-0">انتخاب درگاه پرداخت اینترنتی<i class="bi bi-info-circle me-3 "></i></h6></div>
+                    <div class="p-3">
                         <div>
                             <div class="dropdown mb-2">
                                 <div class="intractive-input-component focused position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -960,9 +960,9 @@
                             </div>
                             <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
                         </div>
-                        <div>
-                            <h6>پرداخت از درگاه</h6>
-                            <h6>
+                        <div class="d-flex justify-content-between align-items-center text-diamond">
+                            <h6 class="font-small">پرداخت از درگاه</h6>
+                            <h6 class="font-small">
                                 <span>12,759,000</span>
                                 ریال
                                 <i class="bi bi-triangle rotate-180"></i>
