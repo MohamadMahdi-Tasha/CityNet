@@ -973,12 +973,12 @@
             </div>
         </div>
         <div class="d-flex justify-content-end align-items-center">
-            <input class="form-check-input squar-size-20 ms-3" type="checkbox" checked id="agree-all-rules">
+            <input class="form-check-input squar-size-20 ms-3" type="checkbox" id="agree-all-rules">
             <label for="agree-all-rules" class="font-small text-dark ms-5">
                 <a class="text-base" href="rules.html">قوانین و مقررات</a>
                 و مقاد قرارداد را مطالعه کرده و تاکیید میکنم
             </label>
-            <button class="submit-btn h-auto p-3 ripple-btn fw-normal rounded-3 border-0 text-white">ثبت نهایی و پرداخت</button>
+            <button id="rules-agree-submit-btn" class="submit-btn disable h-auto p-3 ripple-btn fw-normal rounded-3 border-0 text-white">ثبت نهایی و پرداخت</button>
         </div>
     </main>
 </section>
@@ -1022,5 +1022,15 @@
 <script src="assets/base/js/intractive-components.js"></script>
 <script src="assets/base/js/nav.js"></script>
 <script src="assets/base/js/modals.js"></script>
+<script>
+    // Variables
+    const agreeAllRulesInput = document.getElementById('agree-all-rules');
+    const rulesAgreeSubmitBtn = document.getElementById('rules-agree-submit-btn');
+
+    // Adding Event Listener Of Click On 'agreeAllRulesInput' That Checks If Its Checked Then Removes Class Of 'disable'
+    // From Submit Of This Page. Otherwise, Adds The Class To Submit Button
+    agreeAllRulesInput.onclick = () => (agreeAllRulesInput.checked)
+        ? rulesAgreeSubmitBtn.classList.remove('disable') : rulesAgreeSubmitBtn.classList.add('disable');
+</script>
 </body>
 </html>

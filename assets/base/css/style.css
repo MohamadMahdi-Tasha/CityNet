@@ -185,6 +185,8 @@ input[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none;appear
 .text-diamond {color: rgb(0, 200, 160);}
 .last-buy-bottom-items-top {height: 50px;}
 .squar-size-20 {width: 20px;height: 20px;}
+.submit-btn.disable, .submit-btn.disable:hover {background-color: lightgrey !important;color: #5b5b5b !important;}
+.submit-btn.disable.animate {animation: shake .5s linear}
 
 .squar-around-dollor {
     width: 20px;
@@ -353,6 +355,13 @@ input[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none;appear
 /*Animations*/
 @keyframes dropdown-show { from{opacity: 0;} to {opacity: 1;} }
 @keyframes ripple { to {transform: scale(4);opacity: 0;} }
+@keyframes shake {
+    0% {transform: translateX(0);}
+    25% {transform: translateX(10px);}
+    50% {transform: translateX(-10px);}
+    75% {transform: translateX(10px);}
+    100% {transform: translateX(0);}
+}
 
 /*Hover, Active, ...*/
 .header-link:hover:after {width: 100%;}

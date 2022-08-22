@@ -22,6 +22,7 @@ const coniformBtn = document.querySelectorAll('.coniform-btn');
 const removeRoomBtn = document.querySelectorAll('.remove-room-btn');
 const kidActionsHolder = document.querySelectorAll('.kid-actions-holder > button');
 const adultActionsHolder = document.querySelectorAll('.adult-actions-holder > button');
+const disabledSubmitBtn = document.querySelectorAll('.submit-btn.disable');
 
 // A Function That Creates List Of Items With Value Of Nothing (Null) Then For Each Given Element Of It, Then Converts Text Content Of
 // Each Item To Number Then Adds It To Created List. After That Adds All Numbers In Created Array To Gether And Shows It In numberElement
@@ -263,3 +264,10 @@ removeRoomBtn.forEach(item => {
 // Getting All Input In Intractive-Input-Components That They Are Disabled And Adding TabIndex Of -1 To Make Them Unfocusable That
 // Prevents From Bug
 document.querySelectorAll('.intractive-input-component.disabled input').forEach(item => item.setAttribute('tabindex', '-1'))
+
+// Adding Event Listner On Each Disabled Submit Buttons That Listenes To Click And Adds Class Of  'animate' To It And
+// Removes It On 'AnimationEnd' Event (When Animation Is End)
+disabledSubmitBtn.forEach(item => {
+    item.addEventListener('click', () => {item.classList.add('animate')})
+    item.addEventListener('animationend', () => {item.classList.remove('animate')})
+})
