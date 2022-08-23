@@ -2,6 +2,8 @@
 const addSecondMobileAndEmail = document.getElementById('add-second-mobile-and-email');
 const removeSecondMobileAndEmail = document.getElementById('remove-second-mobile-and-email');
 const secondMobileAndEmail = document.getElementById('second-mobile-and-email');
+const ticketLeftTopBtn = document.querySelectorAll('.ticket-left-top-btn');
+const ticketLeftTopBtnBorder = document.querySelector('.ticket-left-top-btn-border');
 
 const buyTicket = {
     submitBtn: document.getElementById('buy-ticket-submit-btn'),
@@ -89,4 +91,17 @@ addSecondMobileAndEmail.addEventListener('click', () => {
 removeSecondMobileAndEmail.addEventListener('click', () => {
     secondMobileAndEmail.classList.add('d-none')
     addSecondMobileAndEmail.classList.remove('d-none')
+})
+
+ticketLeftTopBtn.forEach(item => {
+    item.addEventListener('click', () => {
+        const activeLeftTopSideBtn = document.querySelector('.ticket-left-top-btn.active');
+        const rightOfItem = `${activeLeftTopSideBtn.getClientRects()[0].x}px`;
+
+        activeLeftTopSideBtn.classList.remove('active');
+        item.classList.add('active');
+
+        ticketLeftTopBtnBorder.style.left = rightOfItem;
+        console.log(rightOfItem)
+    })
 })
