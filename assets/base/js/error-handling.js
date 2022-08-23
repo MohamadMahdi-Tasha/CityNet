@@ -1,3 +1,8 @@
+// Variables
+const buyTicket = {
+    submitBtn: document.getElementById('buy-ticket-submit-btn'),
+}
+
 // A Function That Checks If Given Date Is Before Today And Returns True Or False
 const isDateBeforeToday = date => new Date(date.toDateString()) < new Date(new Date().toDateString());
 
@@ -8,3 +13,5 @@ function handleError(element, element2, element3, text) {
     element2.classList.add('show')
     element3.textContent = text
 }
+
+buyTicket.submitBtn.addEventListener('click', () => {})

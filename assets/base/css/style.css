@@ -64,6 +64,8 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .right-0 {right: 0;}
 .form-drop-downs {z-index: 100;width: auto !important;transform: translateY(1%);transition: .3s;opacity: 0;pointer-events: none}
 .intractive-input-component.errored {border-color: red !important;border-width: 2px !important}
+.intractive-input-component.focused-by-defualt > h6{top: 0;transform: translateY(-50%);}
+.intractive-input-component.focused-by-defualt.focused{border-color: var(--primary-base) !important}
 .top-of-buttons-popular-citys {background: linear-gradient(transparent, white);pointer-events: none;}
 .plus-btn {color: var(--primary-base);}
 .popular-city-btns-holder {grid-template-columns: repeat(4, 1fr);}

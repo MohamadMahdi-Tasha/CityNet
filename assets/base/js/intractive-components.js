@@ -23,6 +23,7 @@ const removeRoomBtn = document.querySelectorAll('.remove-room-btn');
 const kidActionsHolder = document.querySelectorAll('.kid-actions-holder > button');
 const adultActionsHolder = document.querySelectorAll('.adult-actions-holder > button');
 const disabledSubmitBtn = document.querySelectorAll('.submit-btn.disable');
+const dropdownComponents = document.querySelectorAll('.dropdown .intractive-input-component');
 
 // A Function That Creates List Of Items With Value Of Nothing (Null) Then For Each Given Element Of It, Then Converts Text Content Of
 // Each Item To Number Then Adds It To Created List. After That Adds All Numbers In Created Array To Gether And Shows It In numberElement
@@ -270,4 +271,14 @@ document.querySelectorAll('.intractive-input-component.disabled input').forEach(
 disabledSubmitBtn.forEach(item => {
     item.addEventListener('click', () => {item.classList.add('animate')})
     item.addEventListener('animationend', () => {item.classList.remove('animate')})
+})
+
+dropdownComponents.forEach(item => {
+    item.nextElementSibling.addEventListener('click', (event) => {
+        const selectedElement = event.target;
+        const elementToChange = item.lastElementChild;
+
+        item.setAttribute('data-value', selectedElement.textContent);
+        elementToChange.textContent = selectedElement.textContent;
+    })
 })
