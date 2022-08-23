@@ -51,9 +51,9 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .submit-btn {background-color: var(--primary-base) !important;height: 60px;font-weight: bold !important;}
 .footer-bottom-side h6, .footer-bottom-side a {font-size: .8rem;color: #9e9e9e !important;}
 .hover-text-pink {transition: .3s;}
-.intractive-input-component.focused {border-color: var(--primary-base) !important}
-.intractive-input-component.focused i {color: var(--primary-base) !important}
-.intractive-input-component.focused > h6:first-of-type, .intractive-input-component.focused h5 {color: var(--primary-base) !important}
+.my-modal-holder .intractive-input-component.focused {border-color: var(--primary-base) !important}
+.my-modal-holder .intractive-input-component.focused i {color: var(--primary-base) !important}
+.my-modal-holder .intractive-input-component.focused > h6:first-of-type, .intractive-input-component.focused h5 {color: var(--primary-base) !important}
 .intractive-input-component.show > input, .intractive-input-component.focused > input{pointer-events: visible;}
 .intractive-input-component.show, .intractive-input-component.focused{border-width: 2px !important;}
 .intractive-input-component.show > h6 , .intractive-input-component.focused > h6{top: 0;transform: translateY(-50%);}
