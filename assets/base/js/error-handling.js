@@ -8,6 +8,7 @@ const buyTicket = {
     sex: document.getElementById('sex'),
     passNumber: document.getElementById('pass-num'),
     expirationDatePass: document.getElementById('second-date'),
+    errorsCount: 0,
 }
 
 // A Function That Checks If String Is English
@@ -84,4 +85,10 @@ buyTicket.submitBtn.addEventListener('click', () => {
         )
     }
     else {handleSuccses(buyTicket.passNumber.parentElement, buyTicket.passNumber.parentElement.nextElementSibling)}
+
+    if (document.querySelectorAll('.intractive-input-component.errored').length === 0) {
+        const link = document.createElement('a');
+        link.href = 'buy-last-page.html';
+        link.click();
+    }
 })
