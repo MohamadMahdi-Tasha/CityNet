@@ -8,7 +8,6 @@ const buyTicket = {
     sex: document.getElementById('sex'),
     passNumber: document.getElementById('pass-num'),
     expirationDatePass: document.getElementById('second-date'),
-    errorsCount: 0,
 }
 
 // A Function That Checks If String Is English
