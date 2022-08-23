@@ -21,6 +21,15 @@ function handleError(element, element2, element3, text) {
     element3.textContent = text
 }
 
+// A Function That Checks If First Given Element ClassList Contains 'errored' Then Replace It With 'success' Otherwise
+// Add 'success' To First Element And Then Remove Class Of 'show' From Second Given Element
+function handleSuccses(element, element2) {
+    if (element.classList.contains('errored')) {element.classList.replace('errored','success');}
+    else {element.classList.add('success');}
+
+    element2.classList.remove('show')
+}
+
 buyTicket.submitBtn.addEventListener('click', () => {
     if (!isEnglish(buyTicket.name.value)) {
         handleError(buyTicket.name.parentElement,
@@ -29,13 +38,17 @@ buyTicket.submitBtn.addEventListener('click', () => {
             'لطفا فیلد را با زبان انگلیسی پر کنید'
         )
     }
-    if (!isEnglish(buyTicket.name.value)) {
+    else {handleSuccses(buyTicket.name.parentElement, buyTicket.name.parentElement.nextElementSibling)}
+
+    if (!isEnglish(buyTicket.lastName.value)) {
         handleError(buyTicket.lastName.parentElement,
             buyTicket.lastName.parentElement.nextElementSibling,
             buyTicket.lastName.parentElement.nextElementSibling.firstElementChild,
             'لطفا فیلد را با زبان انگلیسی پر کنید'
         )
     }
+    else {handleSuccses(buyTicket.lastName.parentElement, buyTicket.lastName.parentElement.nextElementSibling)}
+
     if (buyTicket.meliNumber.value.length !== 10) {
         handleError(buyTicket.meliNumber.parentElement,
             buyTicket.meliNumber.parentElement.nextElementSibling,
@@ -43,6 +56,8 @@ buyTicket.submitBtn.addEventListener('click', () => {
             'لطفا فیلد را با 10 رقم شماره ملی شخص پر کنید'
         )
     }
+    else {handleSuccses(buyTicket.meliNumber.parentElement, buyTicket.meliNumber.parentElement.nextElementSibling)}
+
     if (buyTicket.birthDate.value === '') {
         handleError(buyTicket.birthDate.parentElement,
             buyTicket.birthDate.parentElement.nextElementSibling,
@@ -50,6 +65,8 @@ buyTicket.submitBtn.addEventListener('click', () => {
             'لطفا فیلد را پر کنید'
         )
     }
+    else {handleSuccses(buyTicket.birthDate.parentElement, buyTicket.birthDate.parentElement.nextElementSibling)}
+
     if (buyTicket.expirationDatePass.value === '') {
         handleError(buyTicket.expirationDatePass.parentElement,
             buyTicket.expirationDatePass.parentElement.nextElementSibling,
@@ -57,6 +74,8 @@ buyTicket.submitBtn.addEventListener('click', () => {
             'لطفا فیلد را پر کنید'
         )
     }
+    else {handleSuccses(buyTicket.expirationDatePass.parentElement, buyTicket.expirationDatePass.parentElement.nextElementSibling)}
+
     if (buyTicket.passNumber.value.length !== 8) {
         handleError(buyTicket.passNumber.parentElement,
             buyTicket.passNumber.parentElement.nextElementSibling,
@@ -64,11 +83,5 @@ buyTicket.submitBtn.addEventListener('click', () => {
             'لطفا فیلد را با 8 رقم شماره پاسپورت شخص پر کنید'
         )
     }
-    if (new Date(buyTicket.birthDate.value) > new Date()) {
-        handleError(buyTicket.birthDate.parentElement,
-            buyTicket.birthDate.parentElement.nextElementSibling,
-            buyTicket.birthDate.parentElement.nextElementSibling.firstElementChild,
-            'لطفا تاریخ تولد را منطقی وارد کنید'
-        )
-    }
+    else {handleSuccses(buyTicket.passNumber.parentElement, buyTicket.passNumber.parentElement.nextElementSibling)}
 })
