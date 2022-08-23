@@ -33,3 +33,23 @@ addRouteBtn.forEach(item => {
 
 // Getting All Elements With Class Of form-check-input And Adding Event Listener That Listens To Click On Them That Toggles Class Of Checked To Grand Parent Of Clicked Item
 document.querySelectorAll('.form-check-input').forEach(item => item.addEventListener('click', () => item.parentElement.parentElement.classList.toggle('checked-ok')))
+
+// A Function That Checks If String Is English
+const isEnglish = string => /^[a-zA-Z]+$/.test(string);
+
+// A Function That Adds Class Of 'errored' To First Given Element And Class Of 'show' To Second Given Element And
+// Sets Content Of third Given Element To Given Text
+function handleError(element, element2, element3, text) {
+    element.classList.add('errored');
+    element2.classList.add('show')
+    element3.textContent = text
+}
+
+// A Function That Checks If First Given Element ClassList Contains 'errored' Then Replace It With 'success' Otherwise
+// Add 'success' To First Element And Then Remove Class Of 'show' From Second Given Element
+function handleSuccses(element, element2) {
+    if (element.classList.contains('errored')) {element.classList.replace('errored','success');}
+    else {element.classList.add('success');}
+
+    element2.classList.remove('show')
+}
