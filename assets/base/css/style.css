@@ -63,8 +63,11 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .today-btn, .calender-type-button {color: rgba(185, 185, 185, 1);}
 .right-0 {right: 0;}
 .form-drop-downs {z-index: 100;width: auto !important;transform: translateY(1%);transition: .3s;opacity: 0;pointer-events: none}
+.hidden {opacity: 0;pointer-events: none}
 .intractive-input-component.errored {border-color: red !important;border-width: 2px !important}
 .intractive-input-component.success {border-color: green !important;border-width: 2px !important}
+.w-h-intractive-comonent {width: 60px;}
+.bb-dashed-light-grey {border-bottom: 1px dashed lightgrey;}
 .intractive-input-component.focused-by-defualt > h6{top: 0;transform: translateY(-50%);}
 .intractive-input-component.focused-by-defualt.focused{border-color: var(--primary-base) !important}
 .top-of-buttons-popular-citys {background: linear-gradient(transparent, white);pointer-events: none;}

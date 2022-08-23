@@ -1,4 +1,8 @@
 // Variables
+const addSecondMobileAndEmail = document.getElementById('add-second-mobile-and-email');
+const removeSecondMobileAndEmail = document.getElementById('remove-second-mobile-and-email');
+const secondMobileAndEmail = document.getElementById('second-mobile-and-email');
+
 const buyTicket = {
     submitBtn: document.getElementById('buy-ticket-submit-btn'),
     name: document.getElementById('name'),
@@ -71,4 +75,18 @@ buyTicket.submitBtn.addEventListener('click', () => {
         link.href = 'buy-last-page.html';
         link.click();
     }
+})
+
+// Adding Event Listener On 'addSecondMobileAndEmail' That Listens to CLick And Removes 'd-none' Class Of
+// secondMobileAndEmail Element And Adds Class  Of 'd-none' Again To 'addSecondMobileAndEmail' Element
+addSecondMobileAndEmail.addEventListener('click', () => {
+    secondMobileAndEmail.classList.remove('d-none')
+    addSecondMobileAndEmail.classList.add('d-none')
+})
+
+// Adding Event Listener On 'addSecondMobileAndEmail' That Listens to CLick And Adds 'd-none' Class Of
+// secondMobileAndEmail Element And Removes  Class Of 'd-none' Again To 'addSecondMobileAndEmail' Element
+removeSecondMobileAndEmail.addEventListener('click', () => {
+    secondMobileAndEmail.classList.add('d-none')
+    addSecondMobileAndEmail.classList.remove('d-none')
 })
