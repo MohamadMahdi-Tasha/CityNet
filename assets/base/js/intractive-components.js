@@ -273,8 +273,8 @@ disabledSubmitBtn.forEach(item => {
     item.addEventListener('animationend', () => {item.classList.remove('animate')})
 })
 
-// Adding Event Listener On Each Drop Down Component That Listens To Click And Sets 'data-value' Attr Of Component To
-// Selected Drop Down That Apperas And Sets Text Content Of Last Child Of Component To Text Content Of Clicked Item
+// Adding Event Listener On Each Dropdown Component That Listens To Click And Sets 'data-value' Attr Of Component To
+// Selected Dropdown That Appears And Sets Text Content Of Last Child Of Component To Text Content Of Clicked Item
 dropdownComponents.forEach(item => {
     item.nextElementSibling.addEventListener('click', (event) => {
         const selectedElement = event.target;

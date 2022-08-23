@@ -638,45 +638,39 @@
                             <button class="ripple-btn grey px-3 py-2 font-small d-flex justify-content-center align-items-center border-0 rounded-3 text-dark"><i class="bi bi-plus"></i>انتخاب از لیست</button>
                         </div>
                         <form action="#">
-                            <div class="d-flex flex-lg-row flex-column gap-lg-4 gap-0">
-                                <div class="w-50 mq-991-w-100">
+                            <div class="row flex-lg-row flex-column gap-2 mb-3">
+                                <div class="col mq-991-w-100">
                                     <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
                                         <h6>نام انگلیسی</h6>
-                                        <input type="text" class="bg-transparent border-0 w-100" required>
+                                        <input id="name" type="text" class="bg-transparent border-0 w-100" required>
                                     </div>
                                     <!--Error Handling-->
                                     <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
                                 </div>
-                                <div class="w-50 mq-991-w-100">
+                                <div class="col mq-991-w-100">
                                     <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
                                         <h6>نام خانوادگی انگلیسی</h6>
-                                        <input type="text" class="bg-transparent border-0 w-100" required>
+                                        <input id="last-name" type="text" class="bg-transparent border-0 w-100" required>
                                     </div>
                                     <!--Error Handling-->
                                     <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
                                 </div>
                             </div>
-                            <div class="row flex-lg-row flex-column">
+                            <div class="row flex-lg-row flex-column mb-3">
                                 <div class="col-12 mq-991-w-100">
                                     <div class="dropdown mb-2">
                                         <div data-value="ایران" class="intractive-input-component focused-by-defualt position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             <h6 class="font-smallx">ملیت</h6>
                                             <h5 class="font-small mb-0">ایران</h5>
                                         </div>
-                                        <ul class="bg-white dropdown-menu dropdown-menu-end shadow-lg w-100">
-                                            <li><button type="button" class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">ایران</button></li>
-                                            <li><button type="button" class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">a</button></li>
-                                            <li><button type="button" class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">b</button></li>
-                                            <li><button type="button" class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">cc</button></li>
-                                            <li><button type="button" class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">d</button></li>
-                                        </ul>
+                                        <ul class="bg-white dropdown-menu dropdown-menu-end shadow-lg w-100"><li><button type="button" class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">ایران</button></li></ul>
                                     </div>
                                     <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
                                 </div>
                                 <div class="col">
                                     <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
                                         <h6>شماره ملی</h6>
-                                        <input type="number" class="bg-transparent border-0 w-100" required>
+                                        <input id="meli-number" type="number" class="bg-transparent border-0 w-100" required>
                                     </div>
                                     <!--Error Handling-->
                                     <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
@@ -690,20 +684,24 @@
                                     <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
                                 </div>
                             </div>
-                            <div class="row flex-lg-row flex-column">
-                                <div class="dropdown">
-                                    <div data-value="اقا" data-bs-toggle="dropdown" class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button"><h6>جنسیت</h6></div>
-                                    <ul class="dropdown-menu shadow-lg rounded-3 overflow-hidden col-12">
-                                        <li><button type="button" class="dropdown-item" href="#">خانم</button></li>
-                                        <li><button type="button" class="dropdown-item" href="#">اقا</button></li>
-                                    </ul>
-                                    <!--Error Handling-->
+                            <div class="row flex-lg-row flex-column mb-3">
+                                <div class="col-12 mq-991-w-100">
+                                    <div class="dropdown mb-2">
+                                        <div data-value="ایران" class="intractive-input-component focused-by-defualt position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <h6 class="font-smallx">جنسیت</h6>
+                                            <h5 class="font-small mb-0">اقا</h5>
+                                        </div>
+                                        <ul class="bg-white dropdown-menu dropdown-menu-end shadow-lg w-100">
+                                            <li><button type="button" class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">اقا</button></li>
+                                            <li><button type="button" class="font-small col-12 text-end bg-transparent border-0 px-3 py-2 mb-0">خانم</button></li>
+                                        </ul>
+                                    </div>
                                     <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
                                 </div>
                                 <div class="col">
                                     <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
                                         <h6>شماره گذرنامه</h6>
-                                        <input type="number" class="bg-transparent border-0 w-100" required>
+                                        <input id="pass-num" type="number" class="bg-transparent border-0 w-100" required>
                                     </div>
                                     <!--Error Handling-->
                                     <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
