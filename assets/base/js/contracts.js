@@ -19,6 +19,15 @@ contracts.submitBtn.addEventListener('click', () => {
             "لطفا فیلد را پر کنید"
         )
     }
+    if (contracts.az.value !== '' && new Date(contracts.az.value) > new Date()) {
+        handleError(
+            contracts.az.parentElement,
+            contracts.az.parentElement.nextElementSibling,
+            contracts.az.parentElement.nextElementSibling.firstElementChild,
+            "لطفا فیلد را منطقی پر کنید"
+        )
+    }
+
     if (contracts.tripDateAz.value === '') {
         handleError(
             contracts.tripDateAz.parentElement,
@@ -27,14 +36,15 @@ contracts.submitBtn.addEventListener('click', () => {
             "لطفا فیلد را پر کنید"
         )
     }
-    if (contracts.tripDateAz.value === '') {
+    if (contracts.tripDateAz.value !== '' && new Date(contracts.tripDateAz.value) > new Date()) {
         handleError(
             contracts.tripDateAz.parentElement,
             contracts.tripDateAz.parentElement.nextElementSibling,
             contracts.tripDateAz.parentElement.nextElementSibling.firstElementChild,
-            "لطفا فیلد را پر کنید"
+            "لطفا فیلد را منطقی پر کنید"
         )
     }
+
     if (contracts.tripDateTa.value === '') {
         handleError(
             contracts.tripDateTa.parentElement,
@@ -43,6 +53,15 @@ contracts.submitBtn.addEventListener('click', () => {
             "لطفا فیلد را پر کنید"
         )
     }
+    if (contracts.tripDateTa.value !== '' && new Date(contracts.tripDateTa.value) < new Date()) {
+        handleError(
+            contracts.tripDateTa.parentElement,
+            contracts.tripDateTa.parentElement.nextElementSibling,
+            contracts.tripDateTa.parentElement.nextElementSibling.firstElementChild,
+            "لطفا فیلد را منطقی پر کنید"
+        )
+    }
+
     if (contracts.ta.value === '') {
         handleError(
             contracts.ta.parentElement,
@@ -51,6 +70,15 @@ contracts.submitBtn.addEventListener('click', () => {
             "لطفا فیلد را پر کنید"
         )
     }
+    if (contracts.ta.value !== '' && new Date(contracts.ta.value) < new Date()) {
+        handleError(
+            contracts.ta.parentElement,
+            contracts.ta.parentElement.nextElementSibling,
+            contracts.ta.parentElement.nextElementSibling.firstElementChild,
+            "لطفا فیلد را منطقی پر کنید"
+        )
+    }
+
     if (contracts.buyer.value === '') {
         handleError(
             contracts.buyer.parentElement,
@@ -59,6 +87,15 @@ contracts.submitBtn.addEventListener('click', () => {
             "لطفا فیلد را پر کنید"
         )
     }
+    if (contracts.buyer.value !== '' && !isEnglish(contracts.buyer.value)) {
+        handleError(
+            contracts.buyer.parentElement,
+            contracts.buyer.parentElement.nextElementSibling,
+            contracts.buyer.parentElement.nextElementSibling.firstElementChild,
+            "لطفا فیلد را منطقی پر کنید"
+        )
+    }
+
     if (contracts.moaref.value === '') {
         handleError(
             contracts.moaref.parentElement,
