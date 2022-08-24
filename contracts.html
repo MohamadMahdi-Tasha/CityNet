@@ -617,13 +617,13 @@
 </header>
 <!--First Section-->
 <section class="px-7rem py-4 d-flex justify-content-center">
-  <main class="container-xxl gap-3">
+  <main class="container-xxl gap-3 p-0">
     <div class="bg-white rounded-4 mb-3 p-4">
       <div class="d-flex justify-content-between align-items-center mb-3 mb-3">
         <h6 class="mb-0">گزارش قرارداد</h6>
         <button class="ripple-btn grey bg-transparent text-darker-grey rounded-3 d-flex align-items-center px-3 py-2 border-0"><i class="bi ms-2 bi-info-circle"></i>راهنمای گزارش</button>
       </div>
-      <form class="row flex-lg-row flex-column" action="#">
+      <div class="row flex-lg-row flex-column">
         <div class="row gx-3 row-cols-2 col">
           <div class="col mq-991-w-100">
             <div class="dropdown mb-2">
@@ -682,7 +682,7 @@
           </div>
           <div class="col mq-991-w-100">
             <div class="dropdown mb-2">
-              <div class="intractive-input-component focused-by-defualt position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <div data-value="تور" class="intractive-input-component focused-by-defualt position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <h6 class="font-smallx">نوع سرویس</h6>
                 <h5 class="font-small mb-0">تور</h5>
               </div>
@@ -732,7 +732,7 @@
               <div class="intractive-input-component mb-2  rounded-right-0 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
                 <h6>خریدار</h6>
                 <i class="bi bi-search position-absolute left-0 ms-3 font-small"></i>
-                <input type="text" class="bg-transparent border-0 w-100 ms-4">
+                <input id="buyer" type="text" class="bg-transparent border-0 w-100 ms-4">
               </div>
               <!--Error Handling-->
               <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
@@ -742,7 +742,7 @@
         <div class="row gx-3 row-cols-2 col">
           <div class="col mq-991-w-100">
             <div class="dropdown mb-2">
-              <div class="intractive-input-component focused-by-defualt position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <div data-value="تصویه نشده" class="intractive-input-component focused-by-defualt position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <h6 class="font-smallx">وضعیت مالی</h6>
                 <h5 class="font-small mb-0">تصویه نشده</h5>
               </div>
@@ -756,7 +756,7 @@
           </div>
           <div class="col mq-991-w-100">
             <div class="dropdown mb-2">
-              <div class="intractive-input-component focused-by-defualt position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <div data-value="صادر نشده" class="intractive-input-component focused-by-defualt position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <h6 class="font-smallx">وضعیت قرارداد</h6>
                 <h5 class="font-small mb-0">صادر نشده</h5>
               </div>
@@ -771,7 +771,7 @@
           <div class="col-12 mq-991-w-100">
             <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
               <h6>معرف</h6>
-              <input type="text" class="bg-transparent border-0 w-100" required>
+              <input type="text" class="bg-transparent border-0 w-100" id="moaref">
             </div>
             <!--Error Handling-->
             <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
@@ -781,10 +781,10 @@
               <span>دانلود</span>
               <i class="bi bi-download"></i>
             </button>
-            <button type="submit" class="submit-btn col mq-991-w-100 fw-bold text-white rounded-3 border-0 mb-4 ripple-btn">جستجو</button>
+            <button id="submit-btn" type="submit" class="submit-btn col mq-991-w-100 fw-bold text-white rounded-3 border-0 mb-4 ripple-btn">جستجو</button>
           </div>
         </div>
-      </form>
+      </div>
     </div>
     <div class="bg-light-pink text-hot-pink text-center br-5-hot-pink p-3 rounded-3"><h6>محتوایی برای جستجوی شما پیدا نشد.</h6></div>
   </main>
@@ -831,5 +831,6 @@
 <script src="assets/base/js/intractive-components.js"></script>
 <script src="assets/base/js/nav.js"></script>
 <script src="assets/base/js/modals.js"></script>
+<script src="assets/base/js/contracts.js"></script>
 </body>
 </html>
