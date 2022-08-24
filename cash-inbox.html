@@ -617,7 +617,7 @@
 </header>
 <!--First Section-->
 <section class="px-7rem py-4 d-flex justify-content-center">
-  <main class="container-xxl gap-3">
+  <main class="container-xxl gap-3 p-0">
     <!--Top Side-->
     <div class="bg-white rounded-3 p-3 mb-3">
       <h6 class="text-dark">صندوق</h6>
@@ -639,8 +639,8 @@
         </tbody>
       </table>
       <div class="bg-grey p-3 col-lg-4 col-12 rounded-3 text-center">
-        <h6 class="text-darker-grey">موجودی کیف پول ریال</h6>
-        <h6 class="text-blue">IRR <span class="fw-bold">169,132,318</span></h6>
+        <h6 class="text-darker-grey mb-3">موجودی کیف پول ریال</h6>
+        <h6 class="text-blue mb-0">IRR <span class="fw-bold">169,132,318</span></h6>
       </div>
     </div>
     <!--Bottom Side-->
@@ -650,7 +650,7 @@
           <h6 class="text-dark">تراکنش ها حساب</h6>
           <h6 class="text-grey">تارکنش های دریافت و پرداخت در زیر امده</h6>
         </div>
-        <button class="bg-grey text-dark p-2 fw-bold border-0 rounded-3 col-lg-1 col-12">Excel</button>
+        <button class="bg-grey text-dark p-2 fw-bold border-0 rounded-3 col-lg-1 col-12 ripple-btn grey">Excel</button>
       </div>
       <div class="row gx-0 gap-lg-3 gap-0 mb-3">
         <div class="col-lg-2 col-12">
@@ -669,46 +669,44 @@
           <!--Error Handling-->
           <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
         </div>
-        <button class="col-lg-2 col-12 submit-btn rounded-3 text-white border-0">فیلتر</button>
+        <button class="col-lg-2 col-12 submit-btn rounded-3 text-white border-0 ripple-btn submit-btn">فیلتر</button>
       </div>
-      <table class="table">
+      <table class="table mb-5">
         <tbody class="d-flex flex-lg-column flex-row">
-        <tr class="text-grey row m-0">
-          <th class="fw-normal col-lg-1 col-12 py-3" scope="col">#</th>
-          <th class="fw-normal col-lg-1 col-12 py-3" scope="col">ثبت کننده</th>
-          <th class="fw-normal col-lg-1 col-12 py-3" scope="col">شماره قرارداد</th>
-          <th class="fw-normal col-lg-1 col-12 py-3" scope="col">تاریخ ثبت</th>
-          <th class="fw-normal col-lg-1 col-12 py-3" scope="col">تاریخ عملیات</th>
-          <th class="fw-normal col-lg-1 col-12 py-3" scope="col">نوع حساب</th>
-          <th class="fw-normal col-lg-1 col-12 py-3" scope="col">نحوه عملیات</th>
-          <th class="fw-normal col-lg-1 col-12 py-3" scope="col">بدهکار</th>
-          <th class="fw-normal col-lg-1 col-12 py-3" scope="col">بستانکار</th>
-          <th class="fw-normal col-lg-1 col-12 py-3" scope="col">ارز</th>
-          <th class="fw-normal col-lg-1 col-12 py-3" scope="col">برابری ارز</th>
-          <th class="fw-normal col-lg-1 col-12 py-3" scope="col">شماره پیگری</th>
-          <th class="fw-normal col-lg-1 col-12 py-3" scope="col">شرح</th>
+        <tr class="row flex-nowrap flex-lg-row flex-column col-lg-12 col-6 p-0 m-0">
+          <th class="font-small col-lg col-12 text-grey fw-normal text-center" scope="col">#</th>
+          <th class="font-small col-lg col-12 text-grey fw-normal text-center" scope="col">ثبت کننده</th>
+          <th class="font-small col-lg col-12 text-grey fw-normal text-center" scope="col">شماره قرارداد</th>
+          <th class="font-small col-lg col-12 text-grey fw-normal text-center" scope="col">تاریخ ثبت</th>
+          <th class="font-small col-lg col-12 text-grey fw-normal text-center" scope="col">تاریخ عملیات</th>
+          <th class="font-small col-lg col-12 text-grey fw-normal text-center" scope="col">نوع حساب</th>
+          <th class="font-small col-lg col-12 text-grey fw-normal text-center" scope="col">نحوه عملیات</th>
+          <th class="font-small col-lg col-12 text-grey fw-normal text-center" scope="col">بدهکار</th>
+          <th class="font-small col-lg col-12 text-grey fw-normal text-center" scope="col">ارز</th>
+          <th class="font-small col-lg col-12 text-grey fw-normal text-center" scope="col">برابری ارز</th>
+          <th class="font-small col-lg col-12 text-grey fw-normal text-center" scope="col">شماره پیگری</th>
+          <th class="font-small col-lg col-12 text-grey fw-normal text-center" scope="col">شرح</th>
         </tr>
-        <tr class="text-grey row m-0">
-          <th class="fw-normal col-lg-1 col-12 py-3" scope="col">#</th>
-          <th class="fw-normal col-lg-1 col-12 py-3" scope="col">ثبت کننده</th>
-          <th class="fw-normal col-lg-1 col-12 py-3" scope="col">شماره قرارداد</th>
-          <th class="fw-normal col-lg-1 col-12 py-3" scope="col">تاریخ ثبت</th>
-          <th class="fw-normal col-lg-1 col-12 py-3" scope="col">تاریخ عملیات</th>
-          <th class="fw-normal col-lg-1 col-12 py-3" scope="col">نوع حساب</th>
-          <th class="fw-normal col-lg-1 col-12 py-3" scope="col">نحوه عملیات</th>
-          <th class="fw-normal col-lg-1 col-12 py-3" scope="col">بدهکار</th>
-          <th class="fw-normal col-lg-1 col-12 py-3" scope="col">بستانکار</th>
-          <th class="fw-normal col-lg-1 col-12 py-3" scope="col">ارز</th>
-          <th class="fw-normal col-lg-1 col-12 py-3" scope="col">برابری ارز</th>
-          <th class="fw-normal col-lg-1 col-12 py-3" scope="col">شماره پیگری</th>
-          <th class="fw-normal col-lg-1 col-12 py-3" scope="col">شرح</th>
+        <tr class="row flex-nowrap flex-lg-row flex-column col-lg-12 col-6 p-0 m-0">
+          <th class="font-small col-lg col-12 text-grey fw-normal text-center" scope="col">#</th>
+          <th class="font-small col-lg col-12 text-grey fw-normal text-center" scope="col">ثبت کننده</th>
+          <th class="font-small col-lg col-12 text-grey fw-normal text-center" scope="col">شماره قرارداد</th>
+          <th class="font-small col-lg col-12 text-grey fw-normal text-center" scope="col">تاریخ ثبت</th>
+          <th class="font-small col-lg col-12 text-grey fw-normal text-center" scope="col">تاریخ عملیات</th>
+          <th class="font-small col-lg col-12 text-grey fw-normal text-center" scope="col">نوع حساب</th>
+          <th class="font-small col-lg col-12 text-grey fw-normal text-center" scope="col">نحوه عملیات</th>
+          <th class="font-small col-lg col-12 text-grey fw-normal text-center" scope="col">بدهکار</th>
+          <th class="font-small col-lg col-12 text-grey fw-normal text-center" scope="col">ارز</th>
+          <th class="font-small col-lg col-12 text-grey fw-normal text-center" scope="col">برابری ارز</th>
+          <th class="font-small col-lg col-12 text-grey fw-normal text-center" scope="col">شماره پیگری</th>
+          <th class="font-small col-lg col-12 text-grey fw-normal text-center" scope="col">شرح</th>
         </tr>
         </tbody>
       </table>
       <div class="d-flex justify-content-end align-items-center">
         <div class="col-lg-2 col-12">
           <div class="dropdown mb-2">
-            <div class="intractive-input-component focused position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="intractive-input-component focused-by-defualt position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               <h6 class="font-smallx">نمایش در صفحه</h6>
               <h5 class="font-small mb-0">20</h5>
             </div>
