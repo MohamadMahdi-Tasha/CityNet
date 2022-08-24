@@ -93,24 +93,28 @@ removeSecondMobileAndEmail.addEventListener('click', () => {
     addSecondMobileAndEmail.classList.remove('d-none')
 })
 
+// A Function That 
+function setRightAndTranslateXTopLeftBorder(right, translateX) {
+    ticketLeftTopBtnBorder.style.setProperty('right', right)
+    ticketLeftTopBtnBorder.style.setProperty('transform', `translateX(${translateX}%)`)
+}
+
+// Adding Event Listener On Each Top Side Left Buttons That Listens To Click And First Removes Class Of 'active' From 'ticket-left-top-contents',
+// 'ticket-left-top-btn' With Class Of 'active' Then Adds CLass Of Active To Clicke Button . Then Checks If TextContent Of Clicked Item Is 'قوانین'
+// If It Is Then Sets Right Property Of Border In Bg Of Them To Given Value And Sets TranlateX() Of It To Given Value Again And Shows Its
+
 ticketLeftTopBtn.forEach(item => {
     item.addEventListener('click', () => {
-        document.querySelectorAll('.ticket-left-top-btn.active').forEach(item => item.classList.remove('active'))
-        document.querySelector('.ticket-left-top-contents.active').classList.remove('active')
-        item.classList.add('active');
+        const target = item.getAttribute('data-target')
 
-        if (item.textContent === "قوانین") {
-            ticketLeftTopBtnBorder.style.setProperty('right', '33%')
-            ticketLeftTopBtnBorder.style.setProperty('transform', 'translateX(0)')
-            item.parentElement.nextElementSibling.firstElementChild.nextElementSibling.classList.add('active');
-        } else if (item.textContent === "مقدار بار") {
-            ticketLeftTopBtnBorder.style.setProperty('right', '100%')
-            ticketLeftTopBtnBorder.style.setProperty('transform', 'translateX(100%)')
-            item.parentElement.nextElementSibling.lastElementChild.classList.add('active');
-        } else if (item.textContent === "جزییات پرواز") {
-            ticketLeftTopBtnBorder.style.setProperty('right', '0')
-            ticketLeftTopBtnBorder.style.setProperty('transform', 'translateX(0 )')
-            item.parentElement.nextElementSibling.firstElementChild.classList.add('active');
-        }
+        document.querySelector('.ticket-left-top-btn.active').classList.remove('active')
+        document.querySelector('.ticket-left-top-contents.active').classList.remove('active')
+
+        item.classList.add('active');
+        document.getElementById(target).classList.add('active');
+
+        if (item.textContent === "قوانین") {setRightAndTranslateXTopLeftBorder('33%', 0)}
+        else if (item.textContent === "مقدار بار") {setRightAndTranslateXTopLeftBorder('100%', 100)}
+        else if (item.textContent === "جزییات پرواز") {setRightAndTranslateXTopLeftBorder('0', 0)}
     })
 })
