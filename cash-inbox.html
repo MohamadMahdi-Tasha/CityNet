@@ -785,6 +785,7 @@
 <script src="assets/plugins/sheet-js/xlsx.full.min.js"></script>
 <script>
   const downloadExcelButton = document.getElementById('download-excel');
+
   downloadExcelButton.addEventListener('click', () => {
     /* Create worksheet from HTML DOM TABLE */
     const File = XLSX.utils.table_to_book(document.getElementById("table-to-export"));
