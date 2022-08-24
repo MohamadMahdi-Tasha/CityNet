@@ -95,13 +95,22 @@ removeSecondMobileAndEmail.addEventListener('click', () => {
 
 ticketLeftTopBtn.forEach(item => {
     item.addEventListener('click', () => {
-        const activeLeftTopSideBtn = document.querySelector('.ticket-left-top-btn.active');
-        const rightOfItem = `${activeLeftTopSideBtn.getClientRects()[0].x}px`;
-
-        activeLeftTopSideBtn.classList.remove('active');
+        document.querySelectorAll('.ticket-left-top-btn.active').forEach(item => item.classList.remove('active'))
+        document.querySelector('.ticket-left-top-contents.active').classList.remove('active')
         item.classList.add('active');
 
-        ticketLeftTopBtnBorder.style.left = rightOfItem;
-        console.log(rightOfItem)
+        if (item.textContent === "قوانین") {
+            ticketLeftTopBtnBorder.style.setProperty('right', '33%')
+            ticketLeftTopBtnBorder.style.setProperty('transform', 'translateX(0)')
+            item.parentElement.nextElementSibling.firstElementChild.nextElementSibling.classList.add('active');
+        } else if (item.textContent === "مقدار بار") {
+            ticketLeftTopBtnBorder.style.setProperty('right', '100%')
+            ticketLeftTopBtnBorder.style.setProperty('transform', 'translateX(100%)')
+            item.parentElement.nextElementSibling.lastElementChild.classList.add('active');
+        } else if (item.textContent === "جزییات پرواز") {
+            ticketLeftTopBtnBorder.style.setProperty('right', '0')
+            ticketLeftTopBtnBorder.style.setProperty('transform', 'translateX(0 )')
+            item.parentElement.nextElementSibling.firstElementChild.classList.add('active');
+        }
     })
 })
