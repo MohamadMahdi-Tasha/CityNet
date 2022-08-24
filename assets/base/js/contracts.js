@@ -27,6 +27,7 @@ contracts.submitBtn.addEventListener('click', () => {
             "لطفا فیلد را منطقی پر کنید"
         )
     }
+    else if(contracts.az.value !== '' && new Date(contracts.az.value) < new Date())  {handleSuccses(contracts.az.parentElement, contracts.az.parentElement.nextElementSibling)}
 
     if (contracts.tripDateAz.value === '') {
         handleError(
@@ -44,6 +45,7 @@ contracts.submitBtn.addEventListener('click', () => {
             "لطفا فیلد را منطقی پر کنید"
         )
     }
+    else if(contracts.tripDateAz.value !== '' && new Date(contracts.tripDateAz.value) < new Date())  {handleSuccses(contracts.tripDateAz.parentElement, contracts.tripDateAz.parentElement.nextElementSibling)}
 
     if (contracts.tripDateTa.value === '') {
         handleError(
@@ -61,6 +63,7 @@ contracts.submitBtn.addEventListener('click', () => {
             "لطفا فیلد را منطقی پر کنید"
         )
     }
+    else if(contracts.tripDateTa.value !== '' && new Date(contracts.tripDateTa.value) < new Date())  {handleSuccses(contracts.tripDateTa.parentElement, contracts.tripDateTa.parentElement.nextElementSibling)}
 
     if (contracts.ta.value === '') {
         handleError(
@@ -78,6 +81,7 @@ contracts.submitBtn.addEventListener('click', () => {
             "لطفا فیلد را منطقی پر کنید"
         )
     }
+    else if(contracts.ta.value !== '' && new Date(contracts.ta.value) < new Date())  {handleSuccses(contracts.ta.parentElement, contracts.ta.parentElement.nextElementSibling)}
 
     if (contracts.buyer.value === '') {
         handleError(
@@ -95,6 +99,7 @@ contracts.submitBtn.addEventListener('click', () => {
             "لطفا فیلد را منطقی پر کنید"
         )
     }
+    if (contracts.buyer.value !== '' && isEnglish(contracts.buyer.value)) {handleSuccses(contracts.buyer.parentElement, contracts.buyer.parentElement.nextElementSibling)}
 
     if (contracts.moaref.value === '') {
         handleError(
@@ -112,4 +117,5 @@ contracts.submitBtn.addEventListener('click', () => {
             "لطفا فیلد را منطقی پر کنید"
         )
     }
+    if (contracts.moaref.value !== '' && isEnglish(contracts.moaref.value)) {handleSuccses(contracts.moaref.parentElement, contracts.moaref.parentElement.nextElementSibling)}
 })
