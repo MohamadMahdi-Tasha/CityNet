@@ -93,16 +93,17 @@ removeSecondMobileAndEmail.addEventListener('click', () => {
     addSecondMobileAndEmail.classList.remove('d-none')
 })
 
-// A Function That 
+// A Function That Gets Right Value And TranslateX Value As Parameter And Then Sets Property Of Right And TranslateX Of
+// Border In Background Of Top Side Left Buttons To Given  Parameter
 function setRightAndTranslateXTopLeftBorder(right, translateX) {
     ticketLeftTopBtnBorder.style.setProperty('right', right)
     ticketLeftTopBtnBorder.style.setProperty('transform', `translateX(${translateX}%)`)
 }
 
-// Adding Event Listener On Each Top Side Left Buttons That Listens To Click And First Removes Class Of 'active' From 'ticket-left-top-contents',
-// 'ticket-left-top-btn' With Class Of 'active' Then Adds CLass Of Active To Clicke Button . Then Checks If TextContent Of Clicked Item Is 'قوانین'
-// If It Is Then Sets Right Property Of Border In Bg Of Them To Given Value And Sets TranlateX() Of It To Given Value Again And Shows Its
-
+// Adding Event Listener On Each Top Side Left Buttons That Listens To Click And First Gets Value Of 'data-value' Attribute And Then
+// Removes 'active' Class Name From document.querySelector('.ticket-left-top-btn.active'), document.querySelector('.ticket-left-top-contents.active')
+// After That Adds Class Of 'active' To 'data-Target' Of Clicked Item And Clicked item. After That Checks If Text Content Of Element Is What Then Calls 'setRightAndTranslateXTopLeftBorder'
+// Function And Gives It Some Parameters.
 ticketLeftTopBtn.forEach(item => {
     item.addEventListener('click', () => {
         const target = item.getAttribute('data-target')
