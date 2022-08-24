@@ -52,7 +52,14 @@ buyTicket.submitBtn.addEventListener('click', () => {
             'لطفا فیلد را پر کنید'
         )
     }
-    else {handleSuccses(buyTicket.birthDate.parentElement, buyTicket.birthDate.parentElement.nextElementSibling)}
+    if (buyTicket.birthDate.value !== '' && new Date(buyTicket.birthDate.value) > new Date()) {
+        handleError(buyTicket.birthDate.parentElement,
+            buyTicket.birthDate.parentElement.nextElementSibling,
+            buyTicket.birthDate.parentElement.nextElementSibling.firstElementChild,
+            'لطفا فیلد را منطقی پر کنید'
+        )
+    }
+    else if (buyTicket.birthDate !== '' && new Date(buyTicket.birthDate.value) < new Date()) {handleSuccses(buyTicket.birthDate.parentElement, buyTicket.birthDate.parentElement.nextElementSibling)}
 
     if (buyTicket.expirationDatePass.value === '') {
         handleError(buyTicket.expirationDatePass.parentElement,
