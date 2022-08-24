@@ -99,7 +99,7 @@ contracts.submitBtn.addEventListener('click', () => {
             "لطفا فیلد را منطقی پر کنید"
         )
     }
-    if (contracts.buyer.value !== '' && isEnglish(contracts.buyer.value)) {handleSuccses(contracts.buyer.parentElement, contracts.buyer.parentElement.nextElementSibling)}
+    else if (contracts.buyer.value !== '' && isEnglish(contracts.buyer.value)) {handleSuccses(contracts.buyer.parentElement, contracts.buyer.parentElement.nextElementSibling)}
 
     if (contracts.moaref.value === '') {
         handleError(
@@ -117,5 +117,9 @@ contracts.submitBtn.addEventListener('click', () => {
             "لطفا فیلد را منطقی پر کنید"
         )
     }
-    if (contracts.moaref.value !== '' && isEnglish(contracts.moaref.value)) {handleSuccses(contracts.moaref.parentElement, contracts.moaref.parentElement.nextElementSibling)}
+    else if (contracts.moaref.value !== '' && isEnglish(contracts.moaref.value)) {handleSuccses(contracts.moaref.parentElement, contracts.moaref.parentElement.nextElementSibling)}
+
+    if (document.querySelectorAll('.intractive-input-component.errored').length === 0) {
+        // Do The Request
+    }
 })
