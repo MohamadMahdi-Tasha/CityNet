@@ -1796,14 +1796,16 @@
 <script src="assets/base/js/nav.js"></script>
 <script src="assets/base/js/modals.js"></script>
 <script>
+    // Variables
     let listOfFlightTicketsPrice = [];
     let listOfFlightTicketsTime = [];
     const flightTicketItems = document.querySelectorAll('.flight-ticket-item');
 
+    // A Function That Loops Through And Sorts Given Array Then Returns Array
     function sortArray(array) {
-        var temp = 0;
-        for (var i = 0; i < array.length; i++) {
-            for (var j = i; j < array.length; j++) {
+        let temp = 0;
+        for (let i = 0; i < array.length; i++) {
+            for (let j = i; j < array.length; j++) {
                 if (array[j] < array[i]) {
                     temp = array[j];
                     array[j] = array[i];
@@ -1814,6 +1816,7 @@
         return array;
     }
 
+    // Pushing Number And Time Of Each Flight Ticket Into 'listOfFlightTicketsPrice', 'listOfFlightTicketsTime' Arrays
     flightTicketItems.forEach(item => {
         const date = new Date();
         const priceOfTicket = Number(item.getAttribute('data-price'));
@@ -1822,9 +1825,6 @@
         listOfFlightTicketsPrice.push(priceOfTicket)
         listOfFlightTicketsTime.push(timeOfTicket)
     })
-
-    console.log(sortArray(listOfFlightTicketsPrice))
-    console.log(listOfFlightTicketsTime)
 </script>
 </body>
 </html>
