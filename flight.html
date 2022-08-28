@@ -847,7 +847,7 @@
             </div>
             <!--Bottom Side-->
             <ul class="list-unstyled d-flex flex-column gap-3" id="flight-tickets-holder">
-                <li class="flight-ticket-item" data-date="2022/9/8" data-time="01:15" data-price="12700000">
+                <li class="flight-ticket-item" data-date="Tue Aug 10 2019 12:30:21" data-price="12700000">
                     <div class="bg-white rounded-3 p-3">
                         <!--Top Side-->
                         <div class="d-flex gap-3 gap-lg-5 flex-lg-row flex-column justify-content-between align-items-center bg-light-grey rounded-4 p-3 mb-3"   >
@@ -1073,9 +1073,9 @@
                         </div>
                     </div>
                 </li>
-                <li class="flight-ticket-item" data-date="2022/9/8" data-time="10:45" data-price="15700000"><div class="bg-white rounded-3 p-3">15700000</div></li>
-                <li class="flight-ticket-item" data-date="2022/9/8" data-time="03:07" data-price="8700000"><div class="bg-white rounded-3 p-3">8700000</div></li>
-                <li class="flight-ticket-item" data-date="2022/9/8" data-time="18:10" data-price="19700000"><div class="bg-white rounded-3 p-3">19700000</div></li>
+                <li class="flight-ticket-item" data-date="Tue Aug 10 2022 12:30:21" data-price="15700000"><div class="bg-white rounded-3 p-3">15700000</div></li>
+                <li class="flight-ticket-item" data-date="Tue Aug 10 2003 12:30:21" data-price="8700000"><div class="bg-white rounded-3 p-3">8700000</div></li>
+                <li class="flight-ticket-item" data-date="Tue Aug 10 1945 12:30:21" data-price="19700000"><div class="bg-white rounded-3 p-3">19700000</div></li>
             </ul>
         </main>
     </main>
@@ -1125,20 +1125,28 @@
     let listOfTickets = [];
     const flightTicketItems = document.querySelectorAll('.flight-ticket-item');
     const flightTopBtn = document.querySelectorAll('.flight-top-btn');
+    const flightTicketsHolder = document.getElementById('flight-tickets-holder');
 
-    flightTicketItems.forEach(item => listOfTickets.push(item))
+    function showSortedListOfPrice() {
+        const sortedArray = listOfTickets.sort((a, b) => +a.getAttribute('data-price') - +b.getAttribute('data-price'));
+        sortedArray.forEach(item => flightTicketsHolder.appendChild(item))
+    }
+
+    window.addEventListener('load', () => {
+        flightTicketItems.forEach(item => listOfTickets.push(item));
+        showSortedListOfPrice();
+    })
+
     flightTopBtn.forEach(item => {
         item.addEventListener('click', () => {
             document.querySelector('.flight-top-btn.active').classList.remove('active');
             item.classList.add('active')
 
             if (item.textContent === "ارزان ترین قیمت") {
-                const sortedArray = listOfTickets.sort((a, b) => +a.getAttribute('data-price') - +b.getAttribute('data-price'));
-                sortedArray.forEach(itemsx => console.log(itemsx.getAttribute('data-price')))
+                showSortedListOfPrice()
             } else {
-                let listOfDates = [];
-                listOfTickets.forEach(items => listOfDates.push(new Date(`${items.getAttribute('data-date')} ${items.getAttribute('data-time')}`)))
-                console.log(listOfDates.sort((a,b) => ))
+                const sortedArray = listOfTickets.sort((a, b) => new Date(a.getAttribute("data-date")) - new Date(b.getAttribute("data-date")));
+                sortedArray.forEach(items => flightTicketsHolder.appendChild(items))
             }
         })
     })
