@@ -762,7 +762,7 @@
                                 </div>
                                 <div class="w-25 mq-991-w-100">
                                     <div class="dropdown mb-2 w-100">
-                                        <div class="intractive-input-component focused passenger position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" aria-expanded="false">
+                                        <div class="intractive-input-component focused-by-defualt passenger position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" aria-expanded="false">
                                             <h6><i class="bi bi-person"></i>مسافران کلاس کابین</h6>
                                             <h4 class="passenger-type-and-num mb-0">
                                                 <span class="passenger-number">1</span>
@@ -933,7 +933,7 @@
                                 </div>
                                 <div class="w-25 mq-991-w-100">
                                     <div class="dropdown mb-2 w-100">
-                                        <div class="intractive-input-component focused passenger position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" aria-expanded="false">
+                                        <div class="intractive-input-component focused-by-defualt passenger position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" aria-expanded="false">
                                             <h6><i class="bi bi-person"></i>مسافران کلاس کابین</h6>
                                             <h4 class="passenger-type-and-num mb-0">
                                                 <span class="passenger-number">1</span>
@@ -1331,7 +1331,7 @@
                                     <div class="w-50 mq-991-w-100 mb-lg-0 mb-3"><button class="intractive-input-component add-route-btn border-0 px-3 mq-991-w-100 py-2"><i class="bi text-grey bi-plus"></i>افزودن مسیر</button></div>
                                     <div class="w-50 mq-991-w-100">
                                         <div class="dropdown mb-2 w-100">
-                                            <div class="intractive-input-component focused passenger position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" aria-expanded="false">
+                                            <div class="intractive-input-component focused-by-defualt passenger position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" aria-expanded="false">
                                                 <h6><i class="bi bi-person"></i>مسافران کلاس کابین</h6>
                                                 <h4 class="passenger-type-and-num mb-0">
                                                     <span class="passenger-number">1</span>
@@ -1464,7 +1464,7 @@
                     <div class="d-flex flex-lg-row flex-column align-items-start gap-3 justify-content-end">
                         <div class="w-25 mq-991-w-100">
                             <div class="dropdown position-static mb-2 w-100">
-                                <div class="intractive-input-component focused room position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" aria-expanded="false">
+                                <div class="intractive-input-component focused-by-defualt room position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" aria-expanded="false">
                                     <h6 class="font-smallx"><i class="bi bi-person"></i>مسافران/اتاق/کلاس کابین</h6>
                                     <h5 class="mb-0 intractive-input-component-inner-text-1">
                                         <span>1</span>
@@ -1765,7 +1765,7 @@
                             </div>
                             <div class="w-25 mq-991-w-100">
                                 <div class="dropdown position-static mb-2 w-100">
-                                    <div class="intractive-input-component focused room position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" aria-expanded="false">
+                                    <div class="intractive-input-component focused-by-defualt room position-relative w-100 px-3 py-2 d-flex align-items-center" type="button" aria-expanded="false">
                                         <h6 class="font-smallx"><i class="bi bi-person"></i>مسافران/اتاق/کلاس کابین</h6>
                                         <h5 class="mb-0 intractive-input-component-inner-text-1">
                                             <span>1</span>
@@ -1927,6 +1927,9 @@
         </div>
     </main>
 </footer>
+
+<h1 id="asdasdadada"></h1>
+
 <!--Js Linkings-->
 <noscript>لطفا جاوا اسکریپت مرورگر خود را فعال کنید.</noscript>
 <script src="assets/plugins/bootstrap/bootstrap.bundle.min.js"></script>
@@ -1938,5 +1941,12 @@
 <script src="assets/base/js/modals.js"></script>
 <script src="assets/base/js/inner-pages.js"></script>
 <script src="assets/base/js/scripts.js"></script>
+<script>
+	fetch('assets/api/sync-api.json')
+			.then(data => data.json())
+			.then(data => {
+					console.log(data.item[0])
+			})
+</script>
 </body>
 </html>
