@@ -30,6 +30,7 @@ header .dropdown-menu {width: 15rem;}
 header .dropdown-item h6 {font-size: .8rem;margin-bottom: 0;}
 button[data-bs-toggle="dropdown"].show > i:before{transform: rotate(180deg);}
 button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
+.my-shadow {box-shadow: 0 30px 40px rgba(96,97,112,.05)!important}
 .text-darker-grey {color: #5b5b5b !important;}
 .w-40 {width: 40%;}
 .w-60 {width: 60%;}
