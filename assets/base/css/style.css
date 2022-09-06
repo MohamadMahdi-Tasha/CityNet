@@ -117,9 +117,13 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .my-modal::-moz-viewport-scroll {display: none;}
 .intractive-input-component.my-modal-init.focused {border-color: var(--primary-base) !important;}
 .intractive-input-component.my-modal-init.focused h6 {color: var(--primary-base) !important;}
-.my-modal-holder {transition: .3s}
-.my-modal-holder[data-opened="false"] {opacity: 0;pointer-events: none;}
-.my-modal-holder[data-opened="true"] {opacity: 1;pointer-events: visible;}
+.my-modal-holder, .my-bg-dark, .my-bg-dark ~ div {transition: .3s}
+.my-modal-holder[data-opened='true'] {pointer-events: visible !important}
+.my-modal-holder[data-opened='false'] {pointer-events: none !important}
+.my-modal-holder[data-opened='true'] > .my-bg-dark {opacity: 1;pointer-events: visible !important}
+.my-modal-holder[data-opened='false'] > .my-bg-dark {opacity: 0;pointer-events: none !important}
+.my-modal-holder[data-opened='true'] > .my-bg-dark ~ div {opacity: 1;scale: 1;pointer-events: visible !important}
+.my-modal-holder[data-opened='false'] > .my-bg-dark ~ div {opacity: 0;scale: 0;pointer-events: none !important}
 .my-modal-holder .intractive-input-component {border-color: grey;color: grey !important;}
 .signup-bottom {grid-template-columns: repeat(3, 1fr);}
 .signup-type-button.active {background-color: var(--primary-base);color: white;}
