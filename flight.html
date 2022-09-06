@@ -615,8 +615,8 @@
         </div>
     </div>
 </header>
-<!--First Section-->
-<section class="d-flex justify-content-center flex-column px-7rem py-4">
+<!--Only Section-->
+<section id="first-sect-of-flight" data-date="Wed Oct 05 2022" class="d-flex justify-content-center flex-column px-7rem py-4">
     <!--Top Side-->
     <header class="container-xxl flight-page-top-side-blue bg-blue rounded-3 d-lg-flex d-grid gtc-3 gap-3 mb-3 align-items-center justify-content-between  p-3 text-white">
         <div>
@@ -652,13 +652,18 @@
                     <i class="bi bi-arrow-left-short fs-4 me-2 ms-2"></i>
                     <h6 class="font-small">(IFN) اصفهان</h6>
                 </div>
-                <div class="d-flex  align-items-center justify-content-between mt-3 gap-3">
-                    <button class="d-flex align-items-center font-small border-0 bg-transparent"><i class="bi bi-chevron-right ms-1"></i>روز قبل</button>
+                <div class="d-flex align-items-center justify-content-between mt-3 gap-3">
+                    <button id="prev-day-toggler" class="d-flex align-items-center font-small border-0 bg-transparent"><i class="bi bi-chevron-right ms-1"></i>روز قبل</button>
                     <div>
                         <h6 class="font-small text-center text-grey">چهارشنبه 13 مهر</h6>
-                        <h6 class="font-small text-center text-grey">Oct 5, 2022</h6>
+                        <h6 class="font-small text-center text-grey">
+                            <span id="right-side-month-text">Oct</span>
+                            <span id="right-side-day-text">5</span>
+                            ,
+                            <span id="right-side-year-text">2022</span>
+                        </h6>
                     </div>
-                    <button class="d-flex align-items-center font-small border-0 bg-transparent">
+                    <button id="next-day-toggler" class="d-flex align-items-center font-small border-0 bg-transparent">
                         روز بعد
                         <i class="bi bi-chevron-left me-1"></i>
                     </button>
@@ -1133,10 +1138,41 @@
     const flightTicketItems = document.querySelectorAll('.flight-ticket-item');
     const flightTopBtn = document.querySelectorAll('.flight-top-btn');
     const flightTicketsHolder = document.getElementById('flight-tickets-holder');
+    const PrevDayToggler = document.getElementById('prev-day-toggler');
+    const NextDayToggler = document.getElementById('next-day-toggler');
+    const firstSectOfFlight = document.getElementById('first-sect-of-flight');
+    const currentSelectedDate = new Date(firstSectOfFlight.getAttribute('data-date'));
+    const rightSideMonthText = document.getElementById('right-side-month-text');
+    const rightSideDayText = document.getElementById('right-side-day-text');
+    const rightSideYearText = document.getElementById('right-side-year-text');
 
     function showSortedListOfPrice() {
         const sortedArray = listOfTickets.sort((a, b) => +a.getAttribute('data-price') - +b.getAttribute('data-price'));
         sortedArray.forEach(item => flightTicketsHolder.appendChild(item))
+    }
+
+    function showDate(date) {
+        const prevDateMonth = date.getMonth();
+        let monthText;
+
+        switch (Number(prevDateMonth)) {
+            case 1: monthText = 'Jan';break;
+            case 2: monthText = 'Feb';break;
+            case 3: monthText = 'Mar';break;
+            case 4: monthText = 'Apr';break;
+            case 5: monthText = 'May';break;
+            case 6: monthText = 'Jun';break;
+            case 7: monthText = 'Jul';break;
+            case 8: monthText = 'Aug';break;
+            case 9: monthText = 'Sep';break;
+            case 10: monthText = 'Oct';break;
+            case 11: monthText = 'Nov';break;
+            case 12: monthText = 'Dec';break;
+        }
+
+        rightSideMonthText.textContent = monthText;
+        rightSideDayText.textContent = date.getDate();
+        rightSideYearText.textContent = date.getFullYear();
     }
 
     window.addEventListener('load', () => {
@@ -1157,6 +1193,9 @@
             }
         })
     })
+
+    PrevDayToggler.addEventListener('click', () => {const prevDate = new Date(currentSelectedDate.setDate(currentSelectedDate.getDate() - 1));showDate(prevDate)})
+    NextDayToggler.addEventListener('click', () => {const nextDate = new Date(currentSelectedDate.setDate(currentSelectedDate.getDate() + 1));showDate(nextDate)})
 </script>
 </body>
 </html>
