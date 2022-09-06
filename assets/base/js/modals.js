@@ -80,6 +80,3 @@ modalsDarkBg.forEach(item => item.addEventListener('click', () => item.parentEle
 
 // Adding Event Listener On Modal Close Button That Listens To Click And Closes Its Holder Modal
 modalCloseBtn.forEach(item => item.addEventListener('click', () => item.parentElement.parentElement.parentElement.setAttribute('data-opened', 'false')))
-
-// Changing data-opened Value Of Loader Modal In Flight Page In 5 Seconds Of Loading (TODO:Change To When All Data Is Loaded When Working With Api)
-setInterval(() => loaderModal.setAttribute('data-opened', 'false'), 5000)

@@ -69,3 +69,6 @@ flightTopBtn.forEach(item => {
 // And Saves It In A Variable Then Calls 'showDate' Function And Gives It Saved Variable As Parameter
 PrevDayToggler.addEventListener('click', () => {const prevDate = new Date(currentSelectedDate.setDate(currentSelectedDate.getDate() - 1));showDate(prevDate)})
 NextDayToggler.addEventListener('click', () => {const nextDate = new Date(currentSelectedDate.setDate(currentSelectedDate.getDate() + 1));showDate(nextDate)})
+
+// Changing data-opened Value Of Loader Modal In Flight Page In 5 Seconds Of Loading (TODO:Change To When All Data Is Loaded When Working With Api)
+setInterval(() => loaderModal.setAttribute('data-opened', 'false'), 5000)
