@@ -3,7 +3,7 @@ const modalInnerPageToggler = document.querySelectorAll('.modal-inner-page-toggl
 const loginCodeSModal = document.getElementById('login-code-s-modal');
 const loginModalToggler = document.getElementById('login-modal-toggler');
 const loginModal = document.getElementById('login-modal');
-const modalsDarkBg = document.querySelectorAll('.my-modal-holder > .my-bg-dark');
+const modalsDarkBg = document.querySelectorAll('.my-modal-holder:not(#loader-modal) > .my-bg-dark');
 const modalCloseBtn = document.querySelectorAll('.my-modal-close-btn');
 const loginWSPasswordToggler = document.getElementById('login-w-s-password-toggler');
 const prevPageLoginBtn = document.querySelectorAll('.prev-page-login-btn');
@@ -13,6 +13,7 @@ const signupModal = document.getElementById('signup-modal');
 const signupInnerPageToggle = document.querySelectorAll('.signup-inner-page-toggle');
 const hamkarOnly = document.querySelector('.hamkar-only');
 const mobileLoginModalToggler = document.getElementById('mobile-login-modal-toggler');
+const loaderModal = document.getElementById('loader-modal');
 
 // Adding Event Listener On CSS Selector Of (.signup-type-button-holders > .signup-type-button:last-of-type) That Listens To Click And
 // Adds Class Of active To Last Of Type (signup-type-button) And Removes It From First Of Type And Also Removes class Of d-none From Hamkar Only Section.
@@ -79,3 +80,6 @@ modalsDarkBg.forEach(item => item.addEventListener('click', () => item.parentEle
 
 // Adding Event Listener On Modal Close Button That Listens To Click And Closes Its Holder Modal
 modalCloseBtn.forEach(item => item.addEventListener('click', () => item.parentElement.parentElement.parentElement.setAttribute('data-opened', 'false')))
+
+// Changing data-opened Value Of Loader Modal In Flight Page In 5 Seconds Of Loading (TODO:Change To When All Data Is Loaded When Working With Api)
+setInterval(() => loaderModal.setAttribute('data-opened', 'false'), 5000)
