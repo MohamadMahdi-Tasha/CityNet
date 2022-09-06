@@ -111,7 +111,7 @@ button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
 .my-bg-dark {background-color: rgba(0,0,0,.2);z-index: 1029;}
 .my-modal {z-index: 1030;width: 35rem;}
 .left-0 {left: 0;}
-.no-touch {pointer-events: none;}
+.no-touch {pointer-events: none !important;}
 .ripple-btn.base > .ripple {background-color: rgba(221, 153, 51, .5);}
 .my-modal::-webkit-scrollbar {display: none;}
 .my-modal::-moz-viewport-scroll {display: none;}
@@ -200,6 +200,8 @@ input[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none;appear
 .submit-btn.disable.animate {animation: shake .5s linear}
 .ticket-left-top-contents:not(.active) {display: none !important;}
 .ticket-left-top-contents.active {display: block !important;}
+.loader-holder > .loader {animation: loader-animation 1s ease-in-out infinite;}
+.loader-holder {height: 4px;background-color: rgba(4, 102, 200, .5);}
 
 .squar-around-dollor {
     width: 20px;
@@ -367,6 +369,7 @@ input[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none;appear
 /*Animations*/
 @keyframes dropdown-show { from{opacity: 0;} to {opacity: 1;} }
 @keyframes ripple { to {transform: scale(4);opacity: 0;} }
+@keyframes loader-animation { from {width: 100%;right: -100%;} to {width: 10%;right: 100%;} }
 @keyframes shake {
     0% {transform: translateX(0);}
     25% {transform: translateX(10px);}
