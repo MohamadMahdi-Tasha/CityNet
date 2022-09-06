@@ -1146,16 +1146,18 @@
     const rightSideDayText = document.getElementById('right-side-day-text');
     const rightSideYearText = document.getElementById('right-side-year-text');
 
+    // A Function That Sorts Items By 'date-price' Attritube
     function showSortedListOfPrice() {
         const sortedArray = listOfTickets.sort((a, b) => +a.getAttribute('data-price') - +b.getAttribute('data-price'));
         sortedArray.forEach(item => flightTicketsHolder.appendChild(item))
     }
 
+    // A Function That Sets Text Content Of Right Side Date Items (At The Top) To Given Date And Instead Of Month Number Shows Name Of Month In Text
     function showDate(date) {
-        const prevDateMonth = date.getMonth();
+        const month = date.getMonth();
         let monthText;
 
-        switch (Number(prevDateMonth)) {
+        switch (Number(month)) {
             case 1: monthText = 'Jan';break;
             case 2: monthText = 'Feb';break;
             case 3: monthText = 'Mar';break;
@@ -1175,11 +1177,15 @@
         rightSideYearText.textContent = date.getFullYear();
     }
 
+    // Adding Event Listener On Load Of Window That Sorts List Of Items By Price Of It.
     window.addEventListener('load', () => {
         flightTicketItems.forEach(item => listOfTickets.push(item));
         showSortedListOfPrice();
     })
 
+    // Adding Event Listener On Each Flight Top Buttons That Listens To CLick And Removes 'active' Class Name The Other active Button And Adds
+    // It To Clicked Button . Then Checks If Text Content OF Clicked Item is "ارزان ترین قیمت" . If It Is Then Calls 'showSortedListOfPrice' Function
+    //  Otherwise Sorts Items By 'data-date' Attr.
     flightTopBtn.forEach(item => {
         item.addEventListener('click', () => {
             document.querySelector('.flight-top-btn.active').classList.remove('active');
@@ -1194,6 +1200,8 @@
         })
     })
 
+    // Adding Event Listener On Prev And Next Day Toggles On Right Top Side Of Page That Sets Gets Selected Date And Goes For Day Before Or After (Based On Clicked Button)
+    // And Saves It In A Variable Then Calls 'showDate' Function And Gives It Saved Variable As Parameter
     PrevDayToggler.addEventListener('click', () => {const prevDate = new Date(currentSelectedDate.setDate(currentSelectedDate.getDate() - 1));showDate(prevDate)})
     NextDayToggler.addEventListener('click', () => {const nextDate = new Date(currentSelectedDate.setDate(currentSelectedDate.getDate() + 1));showDate(nextDate)})
 </script>
