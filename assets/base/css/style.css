@@ -204,11 +204,25 @@ input[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none;appear
 .loader-holder {height: 4px;background-color: rgba(4, 102, 200, .5);}
 .squar-size-small {width: 15px;height: 15px;}
 .logged-in-circle {transform: translateX(20%) translateY(-20%);font-size: 15px;}
+.button-skeleton {position: relative;overflow: hidden;}
 
 html.not-logged-in .login-modal-toggler {display: block !important;}
 html.not-logged-in .logged-in-button-header {display: none !important;}
 html.logged-in .logged-in-button-header {display: block !important;}
 html.logged-in .login-modal-toggler {display: none !important;}
+html:is(.not-logged-in, .logged-in) .button-skeleton {display: none !important;}
+.login-modal-toggler, .logged-in-button-header {display: none !important;}
+
+.button-skeleton:before {
+    content: '';
+    width: 10px;
+    height: 150%;
+    top: -10%;
+    transform: rotate(5deg);
+    background-color: rgba(256,256,256,.2);
+    position: absolute;
+    animation: skeleton-loading 1.5s infinite ease-in-out;
+}
 
 .squar-around-dollor {
     width: 20px;
@@ -376,6 +390,10 @@ html.logged-in .login-modal-toggler {display: none !important;}
 @keyframes dropdown-show { from{opacity: 0;} to {opacity: 1;} }
 @keyframes ripple { to {transform: scale(4);opacity: 0;} }
 @keyframes loader-animation { from {width: 100%;right: -100%;} to {width: 10%;right: 100%;} }
+@keyframes skeleton-loading {
+    from {right: -120%;}
+    to {right: 120%;}
+}
 @keyframes shake {
     0% {transform: translateX(0);}
     25% {transform: translateX(10px);}

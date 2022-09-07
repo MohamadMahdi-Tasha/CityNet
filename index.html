@@ -455,17 +455,6 @@
         </ul></li>
     </ul>
 </nav>
-<!--Loader Modal-->
-<div data-opened="true" id="loader-modal" class="my-modal-holder no-touch fixed-top w-100 h-100 d-flex align-items-center justify-content-center">
-    <!--Dark Bg Of It-->
-    <div class="my-bg-dark w-100 h-100 position-absolute top-0 left-0"></div>
-    <!--Content-->
-    <div class="bg-white my-modal w-auto rounded-3 shadow p-4 mq-991-w-100">
-        <h5 class="text-dark mb-3">لطفا منتظر بمانید!</h5>
-        <h6 class="text-dark font-small mb-3">سیستم در حال دریافت اطلاعات و نمایش نتایج میباشد.</h6>
-        <div class="loader-holder overflow-hidden position-relative rounded-pill"><div class="loader position-absolute top-0 h-100 bg-blue"></div></div>
-    </div>
-</div>
 <!--First Section-->
 <section class="home-first-section w-100 d-flex justify-content-center position-relative">
     <header class="container-xxl px-7rem py-4 position-absolute inset-0">
@@ -632,9 +621,10 @@
                         </li>
                     </ul>
                 </div>
-                <button id="login-modal-toggler" class="login-modal-toggler d-none login-btn d-lg-block ripple-btn border bg-transparent text-white px-4 py-2 rounded">ورود/ثبت نام</button>
+                <div class="button-skeleton rounded-3 d-flex justify-content-center border px-4 py-1 align-items-center"><div class="spinner-border text-white" role="status"></div></div>
+                <button id="login-modal-toggler" class="login-modal-toggler login-btn ripple-btn border bg-transparent text-white px-4 py-2 rounded">ورود/ثبت نام</button>
                 <div class="logged-in-button-header dropdown">
-                    <button id="logged-in-button-header" class="d-none justify-content-center align-items-center border-0 d-lg-flex ripple-btn bg-transparent text-white px-4 py-2 border rounded">
+                    <button id="logged-in-button-header" class="justify-content-center border align-items-center d-flex border-0 ripple-btn bg-transparent text-white px-4 py-2 border rounded">
                         <span class="position-relative ms-3">
                             <i class="bi bi-person d-flex fs-4"></i>
                             <span class="position-absolute logged-in-circle rounded-circle squar-size-small right-0 top-0 d-flex justify-content-center align-items-center bg-success"><i class="bi bi-check d-flex"></i></span>

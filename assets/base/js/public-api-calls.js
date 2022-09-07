@@ -16,6 +16,5 @@ fetch('https://www.newcash.me/api/v1/airfare-web/login', getReqSettings)
         (massage === "لم یتم العثور علی مستخدم برقم الهاتف هذا")
             ? document.querySelector('html').classList.add('not-logged-in')
             : document.querySelector('html').classList.add('logged-in');
-        loaderModal.setAttribute('data-opened', 'false')
     })
     .catch(error => console.log(error))
