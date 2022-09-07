@@ -28,8 +28,8 @@ body {
 /*Styles*/
 header .dropdown-menu {width: 15rem;}
 header .dropdown-item h6 {font-size: .8rem;margin-bottom: 0;}
-button[data-bs-toggle="dropdown"].show > i:before{transform: rotate(180deg);}
-button[data-bs-toggle="dropdown"] > i:before{transition: .3s}
+button[data-bs-toggle="dropdown"].show > i.bi-chevron-down:before{transform: rotate(180deg);}
+button[data-bs-toggle="dropdown"] > i.bi-chevron-down:before{transition: .3s}
 .my-shadow {box-shadow: 0 30px 40px rgba(96,97,112,.05)!important}
 .text-darker-grey {color: #5b5b5b !important;}
 .w-40 {width: 40%;}
@@ -202,6 +202,11 @@ input[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none;appear
 .ticket-left-top-contents.active {display: block !important;}
 .loader-holder > .loader {animation: loader-animation 1s ease-in-out infinite;}
 .loader-holder {height: 4px;background-color: rgba(4, 102, 200, .5);}
+.squar-size-small {width: 15px;height: 15px;}
+.logged-in-circle {transform: translateX(20%) translateY(-20%);font-size: 15px;}
+
+html.not-logged-in #login-modal-toggler {display: flex;}
+html.logged-in #login-modal-toggler {display: flex;}
 
 .squar-around-dollor {
     width: 20px;

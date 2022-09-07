@@ -450,7 +450,7 @@
 <section class="home-first-section w-100 d-flex justify-content-center position-relative">
     <header class="container-xxl px-7rem py-4 position-absolute inset-0">
         <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
-            <!--Left Side-->
+            <!--Right Side-->
             <ul class="list-unstyled d-flex align-items-center gap-0 gap-lg-4 mb-0">
                 <li class="d-block d-lg-none"><button id="nav-toggler" class="bg-transparent rounded-3 border-0 ripple-btn squar-size fs-6"><i class="bi bi-list"></i></button></li>
                 <li class="d-block d-lg-none"><button id="mobile-login-modal-toggler" class="bg-transparent rounded-3 border-0 ripple-btn squar-size fs-6"><i class="bi bi-person"></i></button></li>
@@ -535,7 +535,7 @@
                 <li class="d-none d-lg-block header-link position-relative"><a class="text-white my-fw-bold text-nowrap" href="#">درباره ما</a></li>
                 <li class="d-none d-lg-block header-link position-relative"><a class="text-white my-fw-bold text-nowrap" href="#">تماس با ما</a></li>
             </ul>
-            <!--Right Side-->
+            <!--Left Side-->
             <div class="d-flex gap-3 align-items-center">
                 <a href="#" class="d-lg-none d-block"><img src="assets/base/img/img-logo-typo.svg" alt="سیتی نت"></a>
                 <div class="d-none d-lg-block dropdown-center">
@@ -1937,5 +1937,18 @@
 <script src="assets/base/js/modals.js"></script>
 <script src="assets/base/js/inner-pages.js"></script>
 <script src="assets/base/js/scripts.js"></script>
+<script>
+    const settings = {"method": "GET", "headers": {"Accept": "application/json", "Content-Type": "application/json"},}
+
+    fetch('https://www.newcash.me/api/v1/airfare-web/login', settings)
+        .then(data => data.json())
+        .then(data => {
+            const massage = data.data.msg;
+            (massage === "لم یتم العثور علی مستخدم برقم الهاتف هذا")
+                ? document.querySelector('html').classList.add('not-logged-in')
+                : document.querySelector('html').classList.add('logged-in');
+        })
+        .catch(error => console.log(error))
+</script>
 </body>
 </html>
