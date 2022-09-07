@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "31727f94-da40-4469-acee-94eb49d22430",
+		"name": "Newcash Airfare Site Login",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "debug",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mobile\":\"9038099584\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.newcash.me/api/v1/airfare-web/login",
+					"protocol": "https",
+					"host": [
+						"www",
+						"newcash",
+						"me"
+					],
+					"path": [
+						"api",
+						"v1",
+						"airfare-web",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verify",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "debug",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mobile\":\"9038099584\",\r\n    \"verify_code\":\"3284\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.newcash.me/api/v1/airfare-web/verify",
+					"protocol": "https",
+					"host": [
+						"www",
+						"newcash",
+						"me"
+					],
+					"path": [
+						"api",
+						"v1",
+						"airfare-web",
+						"verify"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
