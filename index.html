@@ -613,6 +613,54 @@
                     </ul>
                 </div>
                 <button id="login-modal-toggler" class="d-none login-btn d-lg-block ripple-btn border bg-transparent text-white px-4 py-2 rounded">ورود/ثبت نام</button>
+                <div class="dropdown">
+                    <button data-bs-toggle="dropdown" class="d-none justify-content-center align-items-center border-0 d-lg-flex ripple-btn bg-transparent text-white px-4 py-2 border rounded">
+                        <span class="position-relative ms-3">
+                            <i class="bi bi-person d-flex fs-4"></i>
+                            <span class="position-absolute logged-in-circle rounded-circle squar-size-small right-0 top-0 d-flex justify-content-center align-items-center bg-success"><i class="bi bi-check d-flex"></i></span>
+                        </span>
+                        حساب کاربری
+                        <i class="bi bi-chevron-down me-3 d-flex"></i>
+                    </button>
+                    <div class="dropdown-menu p-0 m-0 rounded-3 overflow-hidden">
+                        <div>
+                            <h6>محمد مهدی تاشا</h6>
+                            <h6><span>01234567891</span>کاربر </h6>
+                        </div>
+                        <div>
+                            <h6>
+                                کیف پول
+                                (<span>IRR</span>)
+                                :
+                            </h6>
+                            <h6>
+                                <span>169,132,318</span>
+                                <span>ریال</span>
+                            </h6>
+                        </div>
+                        <hr>
+                        <ul>
+                            <li><a href="#"><button><i class="bi bi-person"></i>ویرایش مشخصات</button></a></li>
+                            <li><a href="#"><button><i class="bi bi-bell"></i>پشتیبانی</button></a></li>
+                            <li><a href="#"><button><i class="bi bi-wallet"></i>شارژ کیف پول</button></a></li>
+                            <li><a href="#"><button><i class="bi bi-ticket"></i>پیگیری,کنسل و استرداد</button></a></li>
+                            <li><button data-bs-target="#report-header-dropdown" data-bs-toggle="collapse" aria-expanded="false">
+                                <span>
+                                    <i class="bi bi-file-earmark-text"></i>
+                                    گزارش
+                                </span>
+                                <i class="bi bi-chevron-down"></i>
+                            </button></li>
+                            <li class="collapse" id="report-header-dropdown">
+                                <div>
+                                    <a href="#"><button><i class="bi bi-wallet"></i>شارژ کیف پول</button></a>
+                                    <a href="#"><button><i class="bi bi-ticket"></i>پیگیری,کنسل و استرداد</button></a>
+                                </div>
+                            </li>
+                            <li><a href="#"><button><i class="bi bi-box-arrow-right"></i>خروج</button></a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
