@@ -434,17 +434,6 @@
         </div>
     </div>
 </div>
-<!--Loader Modal-->
-<div data-opened="true" id="loader-modal" class="my-modal-holder no-touch fixed-top w-100 h-100 d-flex align-items-center justify-content-center">
-    <!--Dark Bg Of It-->
-    <div class="my-bg-dark w-100 h-100 position-absolute top-0 left-0"></div>
-    <!--Content-->
-    <div class="bg-white my-modal w-auto rounded-3 shadow p-4 mq-991-w-100">
-        <h5 class="text-dark mb-3">لطفا منتظر بمانید!</h5>
-        <h6 class="text-dark font-small mb-3">سیستم در حال دریافت اطلاعات و نمایش نتایج میباشد.</h6>
-        <div class="loader-holder overflow-hidden position-relative rounded-pill"><div class="loader position-absolute top-0 h-100 bg-blue"></div></div>
-    </div>
-</div>
 <!--Dark Bg Of Nav-->
 <div id="dark-bg-of-nav" class="position-fixed w-100 h-100 d-block d-lg-none" data-opened="false"></div>
 <!--nav-->
@@ -455,7 +444,7 @@
         <li class="mb-3"><a class="text-white hover-text-pink" href="blog.html">بلاگ</a></li>
         <li class="mb-3"><a class="text-white hover-text-pink" href="about-us.html">درباره ما</a></li>
         <li><a class="text-white hover-text-pink" href="contact-us.html">تماس با ما</a></li>
-        <li class="logged-in-button-header"><ul class="list-unstyled">
+        <li id="mobile-logged-in"><ul class="list-unstyled">
             <li><hr></li>
             <li class="mb-3"><a href="#" class="text-white hover-text-pink">ویرایش مشخصات</a></li>
             <li class="mb-3"><a href="#" class="text-white hover-text-pink">پشتیبانی</a></li>
@@ -467,12 +456,12 @@
     </ul>
 </nav>
 <!--Header Section-->
-<header class="container-xxl px-7rem py-4 bg-dark-blue inset-0">
-    <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+<header class="container-xxl px-7rem py-4 inset-0 bg-dark-blue">
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 position-relative">
         <!--Right Side-->
         <ul class="list-unstyled d-flex align-items-center gap-0 gap-lg-4 mb-0">
             <li class="d-block d-lg-none"><button id="nav-toggler" class="bg-transparent rounded-3 border-0 ripple-btn squar-size fs-6"><i class="bi bi-list"></i></button></li>
-            <li class="d-block d-lg-none"><button id="mobile-login-modal-toggler" class="login-modal-toggler bg-transparent rounded-3 border-0 ripple-btn squar-size fs-6"><i class="bi bi-person"></i></button></li>
+            <li class="d-block d-lg-none"><button id="mobile-login-modal-toggler" class="bg-transparent rounded-3 border-0 ripple-btn squar-size fs-6"><i class="bi bi-person"></i></button></li>
             <li class="d-block d-lg-none">
                 <div class="dropdown-center">
                     <button class="bg-transparent rounded-3 border-0 ripple-btn squar-size fs-6" data-bs-toggle="dropdown" aria-expanded="false">IRR</button>
@@ -631,9 +620,10 @@
                     </li>
                 </ul>
             </div>
-            <button id="login-modal-toggler" class="login-modal-toggler d-none login-btn d-lg-block ripple-btn border bg-transparent text-white px-4 py-2 rounded">ورود/ثبت نام</button>
+            <div class="button-skeleton rounded-3 justify-content-center border px-4 py-1 align-items-center"><div class="spinner-border text-white" role="status"></div></div>
+            <div class="login-modal-toggler"><button id="login-modal-toggler" class="login-btn ripple-btn border bg-transparent text-white px-4 py-2 rounded">ورود/ثبت نام</button></div>
             <div class="logged-in-button-header dropdown">
-                <button id="logged-in-button-header" class="d-none justify-content-center align-items-center border-0 d-lg-flex ripple-btn bg-transparent text-white px-4 py-2 border rounded">
+                <button id="logged-in-button-header" class="justify-content-center border align-items-center d-lg-flex d-flex border-0 ripple-btn bg-transparent text-white px-4 py-2 border rounded">
                         <span class="position-relative ms-3">
                             <i class="bi bi-person d-flex fs-4"></i>
                             <span class="position-absolute logged-in-circle rounded-circle squar-size-small right-0 top-0 d-flex justify-content-center align-items-center bg-success"><i class="bi bi-check d-flex"></i></span>
