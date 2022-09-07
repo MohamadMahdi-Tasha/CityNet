@@ -411,6 +411,13 @@ header .dropdown-item:active {background-color: rgba(185, 185, 185, 1) !importan
 }
 
 @media (max-width: 991px) {
+    .logged-in-button-header, .login-modal-toggler  {display:none !important;}
+    html.not-logged-in header #mobile-login-modal-toggler {display: block;}
+    html.logged-in header #mobile-login-modal-toggler {display: none;}
+    html.not-logged-in #mobile-logged-in {display: none;}
+    html.logged-in #mobile-logged-in {display: block;}
+    html:not(.logged-in, .not-logged-in) #mobile-logged-in, html:not(.logged-in, .not-logged-in) #mobile-login-modal-toggler {display: none !important;}
+
     .home-first-section {background-image: none;min-height: 50vh !important}
     .mq-991-w-100 {width: 100% !important;}
     .buy-ticket-left-side-first-item {height: auto;}
