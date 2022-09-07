@@ -205,9 +205,9 @@ input[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none;appear
 .squar-size-small {width: 15px;height: 15px;}
 .logged-in-circle {transform: translateX(20%) translateY(-20%);font-size: 15px;}
 
-html.not-logged-in .login-modal-toggler {display: flex !important;}
+html.not-logged-in .login-modal-toggler {display: block !important;}
 html.not-logged-in .logged-in-button-header {display: none !important;}
-html.logged-in .logged-in-button-header {display: flex !important;}
+html.logged-in .logged-in-button-header {display: block !important;}
 html.logged-in .login-modal-toggler {display: none !important;}
 
 .squar-around-dollor {
