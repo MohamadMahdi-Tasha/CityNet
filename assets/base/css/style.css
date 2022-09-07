@@ -445,6 +445,15 @@ header .dropdown-item:active {background-color: rgba(185, 185, 185, 1) !importan
     .signup-bottom {grid-template-columns: repeat(1, 1fr);}
     .intractive-input-component {height: 50px;}
 
+    .button-skeleton {
+        width: 100% !important;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        background-color: rgba(256,256,256,.4);backdrop-filter: blur(10px);
+    }
+
     .top-side-of-main-flight {
         position: fixed;
         bottom: 0;
