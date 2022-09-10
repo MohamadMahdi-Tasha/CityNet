@@ -126,7 +126,6 @@ verifyForm.addEventListener('submit', (event) => {
                 localStorage.setItem('logged-in-token', result.data.token);
                 verifyModal.setAttribute('data-opened', 'false');
                 document.body.style.overflowY = 'visible';
-                checkLoggedIn();
                 document.location.reload();
             }
         })
