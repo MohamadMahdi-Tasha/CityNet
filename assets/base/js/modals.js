@@ -86,5 +86,6 @@ window.addEventListener('keydown', (key) => {
     const clickedKey = key.key.toLowerCase();
     if (clickedKey === 'escape') {
         document.querySelectorAll('.my-modal-holder[data-opened="true"]').forEach(item => item.setAttribute('data-opened', 'false'))
+        document.body.style.overflowY = 'visible';
     }
 })
