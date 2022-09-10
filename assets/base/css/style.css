@@ -408,6 +408,8 @@ header .dropdown-item:active {background-color: rgba(185, 185, 185, 1) !importan
 }
 
 @media (max-width: 991px) {
+    .logged-in-button-header {display: none !important;}
+    .login-modal-toggler {display:none !important;}
     .home-first-section {background-image: none;min-height: 50vh !important}
     .mq-991-w-100 {width: 100% !important;}
     .buy-ticket-left-side-first-item {height: auto;}

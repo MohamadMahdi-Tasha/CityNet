@@ -5,6 +5,7 @@ const verifyForm = document.getElementById('verify-form');
 const numberInput = modalLoginMobilePage.firstElementChild.firstElementChild.firstElementChild.lastElementChild;
 const htmlElement = document.querySelector('html');
 const notLoggedInModalHolder = document.getElementById('not-logged-in-modal-holders');
+const mobileLoggedIn = document.getElementById('mobile-logged-in');
 
 // A Function That Checks If There Is logged-in-token In Local Storage. If There Is Then Sets Attribute Of 'data-logged-in' In Html Element
 // And Removes All Unnecessary Lines Of Code
@@ -13,9 +14,11 @@ function checkLoggedIn() {
         htmlElement.setAttribute('data-logged-in', 'true');
         notLoggedInModalHolder.remove()
         loginModalToggler.parentElement.remove()
+        mobileLoginModalToggler.remove()
     } else  {
         htmlElement.setAttribute('data-logged-in', 'false');
         loggedInButtonHeader.parentElement.remove()
+        mobileLoggedIn.remove()
     }
 }
 
