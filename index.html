@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fa" translate="no" data-logged-in="false">
+<html lang="fa" translate="no">
 <head>
     <!--A Meta Tag For Setting Character Set Of Page-->
     <meta charset="UTF-8">
@@ -25,7 +25,7 @@
 </head>
 <body dir="rtl" class="home-body">
 <!--Modals That They Show When User Is Not Logged In-->
-<div id="not-logged-in-modal-holders">
+<div id="not-logged-in-modal-holders" class="d-block">
     <!--Login Modal-->
     <div data-opened="false" id="login-modal" class="my-modal-holder fixed-top w-100 h-100 d-flex align-items-center justify-content-center">
         <!--Dark Bg Of It-->
@@ -277,7 +277,7 @@
                     </ul>
                 </div>
                 <div class="login-modal-toggler"><button id="login-modal-toggler" class="login-btn ripple-btn border bg-transparent text-white px-4 py-2 rounded">ورود/ثبت نام</button></div>
-                <div class="logged-in-button-header dropdown">
+                <div class="logged-in-button-header d-block dropdown">
                     <button id="logged-in-button-header" class="justify-content-center border align-items-center d-lg-flex d-flex border-0 ripple-btn bg-transparent text-white px-4 py-2 border rounded">
                         <span class="position-relative ms-3">
                             <i class="bi bi-person d-flex fs-4"></i>
