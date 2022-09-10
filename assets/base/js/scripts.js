@@ -57,7 +57,10 @@ function handleSuccses(element, element2) {
 }
 
 // Adding Event Listener On Logged In Button In Header That Opens It Drop Down
-loggedInButtonHeader.addEventListener('click', () => loggedInButtonHeader.nextElementSibling.classList.toggle('show'))
+loggedInButtonHeader.addEventListener('click', () => {
+    loggedInButtonHeader.nextElementSibling.classList.toggle('show')
+    loggedInButtonHeader.classList.toggle('show')
+})
 
 // Adding Event Listener On Input Of verifyCode Input In Verify Modal Which Checks If Length Of Entered Value Is More Than 4 .
 // If It Is Then Slices It With Value Of It Sliced By Index Of 0 Till 4

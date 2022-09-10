@@ -42,6 +42,8 @@ button[data-bs-toggle="dropdown"] > i.bi-chevron-down:before{transition: .3s}
 .my-fw-bold {font-family: IRANYekanBold, "Roboto Light", Tahoma, sans-serif !important;}
 .px-7rem {padding-right: 7rem;padding-left: 7rem;}
 .dropdown-menu.show {animation: dropdown-show .3s linear;}
+.dropdown button:first-of-type i.bi-chevron-down:before {transition: .3s}
+.dropdown button:first-of-type.show i.bi-chevron-down:before {transform: rotate(180deg)}
 .inset-0 {inset: 0;}
 .bg-dark-blue {background-color: var(--dark-blue);}
 .dropdown-toggle::after {margin-right: 1rem;}
