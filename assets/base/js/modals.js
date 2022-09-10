@@ -80,6 +80,8 @@ modalsDarkBg.forEach(item => item.addEventListener('click', () => {item.parentEl
 // Adding Event Listener On Modal Close Button That Listens To Click And Closes Its Holder Modal
 modalCloseBtn.forEach(item => item.addEventListener('click', () => {item.parentElement.parentElement.parentElement.setAttribute('data-opened', 'false');document.body.style.overflowY = 'visible'}))
 
+// Adding Event Listener Of 'Keydown' Which Is When A Key Is Pressed On Keyboard And Then It Just Checks If Clicked ITem Is 'esc' Key
+// If It Is Then Closes All Modal Holders That  Are Showing
 window.addEventListener('keydown', (key) => {
     const clickedKey = key.key.toLowerCase();
     if (clickedKey === 'escape') {
