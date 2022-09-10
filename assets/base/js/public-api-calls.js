@@ -102,6 +102,8 @@ verifyForm.addEventListener('submit', (event) => {
             } else {
                 handleSuccses(verifyCodeInput.parentElement, verifyCodeInput.parentElement.nextElementSibling)
                 localStorage.setItem('logged-in-token', result.data.token);
+                verifyModal.setAttribute('data-opened', 'false');
+                document.body.style.overflowY = 'visible'
             }
         })
         .catch(error => console.log('error', error));
@@ -110,7 +112,4 @@ verifyForm.addEventListener('submit', (event) => {
 verifyModal.setAttribute('data-opened', 'false');
 htmlElement.setAttribute('logged-in', 'true');
 
-if (localStorage.getItem('logged-in-token') !== null) {
-    verifyModal.setAttribute('data-opened', 'false');
-    htmlElement.setAttribute('logged-in', 'true');
-}
+if (localStorage.getItem('logged-in-token') !== null) {htmlElement.setAttribute('logged-in', 'true');}
