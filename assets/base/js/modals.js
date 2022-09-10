@@ -79,3 +79,10 @@ modalsDarkBg.forEach(item => item.addEventListener('click', () => {item.parentEl
 
 // Adding Event Listener On Modal Close Button That Listens To Click And Closes Its Holder Modal
 modalCloseBtn.forEach(item => item.addEventListener('click', () => {item.parentElement.parentElement.parentElement.setAttribute('data-opened', 'false');document.body.style.overflowY = 'visible'}))
+
+window.addEventListener('keydown', (key) => {
+    const clickedKey = key.key.toLowerCase();
+    if (clickedKey === 'escape') {
+        document.querySelectorAll('.my-modal-holder[data-opened="true"]').forEach(item => item.setAttribute('data-opened', 'false'))
+    }
+})
