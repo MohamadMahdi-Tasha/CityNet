@@ -8,12 +8,14 @@ const navCloseBtn = document.getElementById('nav-close-btn');
 function closeNav() {
     nav.setAttribute('data-opened', 'false')
     darkBgNav.setAttribute('data-opened', 'false')
+    document.body.style.overflowY = 'visible'
 }
 
 // Adding Event Listener On Nav Toggler That Listens To Click And Sets Value Of Attribute Of 'data-opened' In Nav And Its Dark Bg To 'true'
 navToggler.addEventListener('click', () => {
     nav.setAttribute('data-opened', 'true');
     darkBgNav.setAttribute('data-opened', 'true');
+    document.body.style.overflowY = 'hidden'
 })
 
 // Adding Event Listener On Dark Bg And Close Button In Nav That They Listen To Click And Calls  'closeNav' Function
