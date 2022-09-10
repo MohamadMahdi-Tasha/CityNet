@@ -6,10 +6,12 @@ const numberInput = modalLoginMobilePage.firstElementChild.firstElementChild.fir
 const htmlElement = document.querySelector('html');
 const notLoggedInModalHolder = document.getElementById('not-logged-in-modal-holders');
 const mobileLoggedIn = document.getElementById('mobile-logged-in');
+const headerLoader = document.querySelector('.header-loader');
 
 // A Function That Checks If There Is logged-in-token In Local Storage. If There Is Then Sets Attribute Of 'data-logged-in' In Html Element
 // And Removes All Unnecessary Lines Of Code
 function checkLoggedIn() {
+    headerLoader.remove()
     if (localStorage.getItem('logged-in-token') !== null) {
         htmlElement.setAttribute('data-logged-in', 'true');
         notLoggedInModalHolder.remove()

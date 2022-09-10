@@ -206,6 +206,7 @@ input[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none;appear
 .loader-holder {height: 4px;background-color: rgba(4, 102, 200, .5);}
 .squar-size-small {width: 15px;height: 15px;}
 .logged-in-circle {transform: translateX(20%) translateY(-20%);font-size: 15px;}
+.header-loader {backdrop-filter: blur(5px);background-color: rgba(256,256,256,.5);z-index: 5;}
 
 .squar-around-dollor {
     width: 20px;
