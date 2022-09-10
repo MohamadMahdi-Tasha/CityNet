@@ -20,7 +20,9 @@ modalCloseBtn.forEach(item => item.addEventListener('click', () => {item.parentE
 window.addEventListener('keydown', (key) => {
     const clickedKey = key.key.toLowerCase();
     if (clickedKey === 'escape') {
-        document.querySelectorAll('.my-modal-holder[data-opened="true"]').forEach(item => item.setAttribute('data-opened', 'false'))
-        document.body.style.overflowY = 'visible';
+        document.querySelectorAll('.my-modal-holder:not(#loader-modal, #verify-modal)[data-opened="true"]').forEach(item => {
+            item.setAttribute('data-opened', 'false')
+            document.body.style.overflowY = 'visible';
+        })
     }
 })
