@@ -63,13 +63,13 @@ verifyForm.addEventListener('submit', (event) => {
     // variables
     const myHeaders = new Headers();
     const dataToSend = JSON.stringify({"mobile": numberInput.value, "verify_code": verifyCodeInput.value});
+    const spinner = document.createElement('span');
     const requestOptions = {
         method: 'POST',
         headers: myHeaders,
         body: dataToSend,
         redirect: 'follow'
     };
-    const spinner = document.createElement('span');
 
     // Showing Spinner In Submit Button Of Form
     spinner.className = 'spinner-border text-white';
@@ -86,7 +86,6 @@ verifyForm.addEventListener('submit', (event) => {
         .then(response => response.json())
         .then(result => {
             const returnedToken = result.data.token;
-
             verifyForm.lastElementChild.textContent = 'ورود';
             spinner.remove();
 
@@ -101,6 +100,7 @@ verifyForm.addEventListener('submit', (event) => {
                 handleSuccses(verifyCodeInput.parentElement, verifyCodeInput.parentElement.nextElementSibling)
                 verifyModal.setAttribute('data-opened', 'false');
                 htmlElement.setAttribute('logged-in', 'true');
+                localStorage.setItem('logged-in-number', result.data.token);
             }
         })
         .catch(error => console.log('error', error));
