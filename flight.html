@@ -436,6 +436,17 @@
 </div>
 <!--Dark Bg Of Nav-->
 <div id="dark-bg-of-nav" class="position-fixed w-100 h-100 d-block d-lg-none" data-opened="false"></div>
+<!--Loader Modal-->
+<div data-opened="true" id="loader-modal" class="my-modal-holder no-touch fixed-top w-100 h-100 d-flex align-items-center justify-content-center">
+    <!--Dark Bg Of It-->
+    <div class="my-bg-dark w-100 h-100 position-absolute top-0 left-0"></div>
+    <!--Content-->
+    <div class="bg-white my-modal w-auto rounded-3 shadow p-4 mq-991-w-100">
+        <h5 class="text-dark mb-3">لطفا منتظر بمانید!</h5>
+        <h6 class="text-dark font-small mb-3">سیستم در حال دریافت اطلاعات و نمایش نتایج میباشد.</h6>
+        <div class="loader-holder overflow-hidden position-relative rounded-pill"><div class="loader position-absolute top-0 h-100 bg-blue"></div></div>
+    </div>
+</div>
 <!--nav-->
 <nav id="nav" class="position-fixed w-75 h-100 overflow-scroll p-3 d-block d-lg-none" data-opened="false">
     <ul class="list-unstyled">
