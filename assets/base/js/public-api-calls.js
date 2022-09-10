@@ -11,14 +11,11 @@ const notLoggedInModalHolder = document.getElementById('not-logged-in-modal-hold
 function checkLoggedIn() {
     if (localStorage.getItem('logged-in-token') !== null) {
         htmlElement.setAttribute('data-logged-in', 'true');
-        notLoggedInModalHolder.classList.add('d-none')
-        loginModalToggler.parentElement.classList.add('d-none')
-        loggedInButtonHeader.parentElement.classList.add('d-block')
+        notLoggedInModalHolder.remove()
+        loginModalToggler.parentElement.remove()
     } else  {
         htmlElement.setAttribute('data-logged-in', 'false');
-        notLoggedInModalHolder.classList.add('d-block')
-        loginModalToggler.parentElement.classList.add('d-block')
-        loggedInButtonHeader.parentElement.classList.add('d-none')
+        loggedInButtonHeader.parentElement.remove()
     }
 }
 
@@ -125,7 +122,7 @@ verifyForm.addEventListener('submit', (event) => {
                 verifyModal.setAttribute('data-opened', 'false');
                 document.body.style.overflowY = 'visible';
                 checkLoggedIn();
-                document.location.reload()
+                document.location.reload();
             }
         })
         .catch(error => console.log('error', error));
