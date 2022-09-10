@@ -71,8 +71,8 @@ loginSInnerPageToggle.forEach(item => item.addEventListener('click', () => showI
 modalInnerPageToggler.forEach(item => item.addEventListener('click', () => showInnerPage(item, document.querySelector('.modal-inner-page.current'))))
 
 // Adding Event Listener On Login Modal Togglers That Opens Login Modal
-loginModalToggler.addEventListener('click', () => {loginModal.setAttribute('data-opened', 'true');document.body.style.overflowY = 'hidden'})
-mobileLoginModalToggler.addEventListener('click', () => {loginModal.setAttribute('data-opened', 'true');document.body.style.overflowY = 'hidden'})
+loginModalToggler.addEventListener('click', () => {loginModal.setAttribute('data-opened', 'true');document.body.style.overflowY = 'hidden';numberInput.focus();})
+mobileLoginModalToggler.addEventListener('click', () => {loginModal.setAttribute('data-opened', 'true');document.body.style.overflowY = 'hidden';numberInput.focus();})
 
 // adding Event Listenr On Each Dark Bg Of Modals That Closes Init Modal
 modalsDarkBg.forEach(item => item.addEventListener('click', () => {item.parentElement.setAttribute('data-opened', 'false');document.body.style.overflowY = 'visible';}))

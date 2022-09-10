@@ -5,6 +5,7 @@ const verifyForm = document.getElementById('verify-form');
 const numberInput = modalLoginMobilePage.firstElementChild.firstElementChild.firstElementChild.lastElementChild;
 const htmlElement = document.querySelector('html');
 
+// Event Of Submit On Login Form
 modalLoginMobilePage.addEventListener('submit', (event) => {
   // Preventing From Defualt action Of Form
   event.preventDefault();
@@ -51,11 +52,13 @@ modalLoginMobilePage.addEventListener('submit', (event) => {
           handleSuccses(numberInput.parentElement, numberInput.parentElement.nextElementSibling)
           verifyModal.setAttribute('data-opened', 'true');
           loginModal.setAttribute('data-opened', 'false');
+            verifyCodeInput.focus();
         }
       })
       .catch(error => console.log('error', error));
 })
 
+// Event Of Submit On Verify Form
 verifyForm.addEventListener('submit', (event) => {
     // Preventing From Defualt action Of Form
     event.preventDefault();
@@ -98,10 +101,16 @@ verifyForm.addEventListener('submit', (event) => {
                 )
             } else {
                 handleSuccses(verifyCodeInput.parentElement, verifyCodeInput.parentElement.nextElementSibling)
-                verifyModal.setAttribute('data-opened', 'false');
-                htmlElement.setAttribute('logged-in', 'true');
-                localStorage.setItem('logged-in-number', result.data.token);
+                localStorage.setItem('logged-in-token', result.data.token);
             }
         })
         .catch(error => console.log('error', error));
 })
+
+verifyModal.setAttribute('data-opened', 'false');
+htmlElement.setAttribute('logged-in', 'true');
+
+if (localStorage.getItem('logged-in-token') !== null) {
+    verifyModal.setAttribute('data-opened', 'false');
+    htmlElement.setAttribute('logged-in', 'true');
+}
