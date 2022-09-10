@@ -24,6 +24,7 @@ const kidActionsHolder = document.querySelectorAll('.kid-actions-holder > button
 const adultActionsHolder = document.querySelectorAll('.adult-actions-holder > button');
 const disabledSubmitBtn = document.querySelectorAll('.submit-btn.disable');
 const dropdownComponents = document.querySelectorAll('.intractive-input-component.dropdown-comp');
+const telInputs = document.querySelectorAll('input[type="tel"]');
 
 // A Function That Creates List Of Items With Value Of Nothing (Null) Then For Each Given Element Of It, Then Converts Text Content Of
 // Each Item To Number Then Adds It To Created List. After That Adds All Numbers In Created Array To Gether And Shows It In numberElement
@@ -283,4 +284,10 @@ dropdownComponents.forEach(item => {
         item.setAttribute('data-value', selectedElement.textContent);
         elementToChange.textContent = selectedElement.textContent;
     })
+})
+
+// For Each Input With Type Of Tel Which Stand For Telephone Number That Sets Max And Min Character Length
+telInputs.forEach(item => {
+    item.setAttribute('maxlength', '10');
+    item.setAttribute('minlength', '10');
 })

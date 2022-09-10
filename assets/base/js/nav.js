@@ -11,7 +11,7 @@ function closeNav() {
     document.body.style.overflowY = 'visible'
 }
 
-// Adding Event Listener On Nav Toggler That Listens To Click And Sets Value Of Attribute Of 'data-opened' In Nav And Its Dark Bg To 'true'
+// Adding Event Listener On Nav Toggle That Listens To Click And Sets Value Of Attribute Of 'data-opened' In Nav And Its Dark Bg To 'true'
 navToggler.addEventListener('click', () => {
     nav.setAttribute('data-opened', 'true');
     darkBgNav.setAttribute('data-opened', 'true');

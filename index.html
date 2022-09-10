@@ -434,6 +434,35 @@
         </div>
     </div>
 </div>
+<!--verify Modal-->
+<div data-opened="false" id="verify-modal" class="my-modal-holder fixed-top w-100 h-100 d-flex align-items-center justify-content-center">
+    <!--Dark Bg Of It-->
+    <div class="my-bg-dark w-100 h-100 position-absolute top-0 left-0"></div>
+    <!--Content-->
+    <div class="bg-white my-modal rounded-3 shadow p-4 mq-991-w-100">
+        <!--Top Side-->
+        <div class="d-flex align-items-center justify-content-between">
+            <button type="button" class="bg-transparent opacity-0 no-touch"></button>
+            <h6 class="text-black fw-bold font-small">ورود</h6>
+            <button type="button" class="squar-size border-0 text-black rounded-3 my-modal-close-btn"><i class="bi bi-x"></i></button>
+        </div>
+        <h6 class="text-center text-grey mb-2 font-small">کد ارسال شده در واتساپ با را وارد کنید</h6>
+        <!--Middle Side That Changes-->
+        <form action="#" class="modal-inner-page current" id="verify-form">
+            <div class="d-flex flex-lg-row flex-column align-items-center gap-3 mb-1">
+                <div class="col-12">
+                    <div class="intractive-input-component mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
+                        <h6 class="mb-0">کد</h6>
+                        <input type="number" maxlength="4" minlength="4" class="bg-transparent border-0 w-100" required>
+                    </div>
+                    <!--Error Handling-->
+                    <div class="error-holder"><h6 class="mb-0 error-text">Error Handling Text</h6></div>
+                </div>
+            </div>
+            <button class="submit-btn w-100 rounded-3 border-0 ripple-btn fw-bold text-white mb-3" type="submit">ورود</button>
+        </form>
+    </div>
+</div>
 <!--Dark Bg Of Nav-->
 <div id="dark-bg-of-nav" class="position-fixed w-100 h-100 d-block d-lg-none" data-opened="false"></div>
 <!--nav-->
