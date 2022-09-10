@@ -21,3 +21,8 @@ navToggler.addEventListener('click', () => {
 // Adding Event Listener On Dark Bg And Close Button In Nav That They Listen To Click And Calls  'closeNav' Function
 darkBgNav.addEventListener('click', () => closeNav())
 navCloseBtn.addEventListener('click', () => closeNav())
+
+window.addEventListener('keydown', (key) => {
+    const clickedKey = key.key.toLowerCase();
+    if (clickedKey === 'escape') {closeNav()}
+})
