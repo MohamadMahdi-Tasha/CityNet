@@ -13,7 +13,6 @@ const signupModal = document.getElementById('signup-modal');
 const signupInnerPageToggle = document.querySelectorAll('.signup-inner-page-toggle');
 const hamkarOnly = document.querySelector('.hamkar-only');
 const mobileLoginModalToggler = document.getElementById('mobile-login-modal-toggler');
-const loaderModal = document.getElementById('loader-modal');
 
 // Adding Event Listener On CSS Selector Of (.signup-type-button-holders > .signup-type-button:last-of-type) That Listens To Click And
 // Adds Class Of active To Last Of Type (signup-type-button) And Removes It From First Of Type And Also Removes class Of d-none From Hamkar Only Section.
@@ -72,11 +71,11 @@ loginSInnerPageToggle.forEach(item => item.addEventListener('click', () => showI
 modalInnerPageToggler.forEach(item => item.addEventListener('click', () => showInnerPage(item, document.querySelector('.modal-inner-page.current'))))
 
 // Adding Event Listener On Login Modal Togglers That Opens Login Modal
-loginModalToggler.addEventListener('click', () => loginModal.setAttribute('data-opened', 'true'))
-mobileLoginModalToggler.addEventListener('click', () => loginModal.setAttribute('data-opened', 'true'))
+loginModalToggler.addEventListener('click', () => {loginModal.setAttribute('data-opened', 'true');document.body.style.overflowY = 'hidden'})
+mobileLoginModalToggler.addEventListener('click', () => {loginModal.setAttribute('data-opened', 'true');document.body.style.overflowY = 'hidden'})
 
 // adding Event Listenr On Each Dark Bg Of Modals That Closes Init Modal
-modalsDarkBg.forEach(item => item.addEventListener('click', () => item.parentElement.setAttribute('data-opened', 'false')))
+modalsDarkBg.forEach(item => item.addEventListener('click', () => {item.parentElement.setAttribute('data-opened', 'false');document.body.style.overflowY = 'visible';}))
 
 // Adding Event Listener On Modal Close Button That Listens To Click And Closes Its Holder Modal
-modalCloseBtn.forEach(item => item.addEventListener('click', () => item.parentElement.parentElement.parentElement.setAttribute('data-opened', 'false')))
+modalCloseBtn.forEach(item => item.addEventListener('click', () => {item.parentElement.parentElement.parentElement.setAttribute('data-opened', 'false');document.body.style.overflowY = 'visible'}))
