@@ -100,6 +100,21 @@
         <li><a class="text-white hover-text-pink" href="contact-us.html">تماس با ما</a></li>
         <li id="mobile-logged-in"><ul class="list-unstyled">
             <li><hr></li>
+            <li class="mb-3 bg-base rounded-3 p-3 text-white">
+                <h6 class="logged-in-name fw-bold mb-3"></h6>
+                <h6 class="mb-3">کاربر<span class="logged-in-number me-2">0XXXXXXXXXX</span></h6>
+                <div class="d-flex justify-content-between gap-3 flex-wrap">
+                    <h6 class="mb-0 text-white font-small text-nowrap">
+                        کیف پول
+                        (<span>IRR</span>)
+                        :
+                    </h6>
+                    <h6 class="mb-0 font-small text-nowrap">
+                        <span class="logged-in-wallet text-white fw-bold"></span>
+                        <span class="text-white">ریال</span>
+                    </h6>
+                </div>
+            </li>
             <li class="mb-3"><a href="#" class="text-white hover-text-pink">ویرایش مشخصات</a></li>
             <li class="mb-3"><a href="#" class="text-white hover-text-pink">پشتیبانی</a></li>
             <li class="mb-3"><a href="#" class="text-white hover-text-pink">شارژ کیف پول</a></li>
@@ -110,7 +125,7 @@
     </ul>
 </nav>
 <!--Header Section-->
-<header class="container-xxl px-7rem py-4 inset-0 bg-dark-blue">
+<header class="container-xxl px-7rem py-4 bg-dark-blue">
     <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 position-relative">
         <!--Loader-->
         <div class="position-absolute header-loader rounded-3 border top-0 left-0 col-lg-6 col-12 h-100 d-flex justify-content-center align-items-center"><span class="spinner-border text-white"></span></div>
@@ -276,8 +291,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="login-modal-toggler"><button id="login-modal-toggler" class="login-btn ripple-btn border bg-transparent text-white px-4 py-2 rounded">ورود/ثبت نام</button></div>
-            <div class="logged-in-button-header dropdown">
+            <div class="login-modal-toggler "><button id="login-modal-toggler" class="login-btn ripple-btn border bg-transparent text-white px-4 py-2 rounded">ورود/ثبت نام</button></div>
+            <div class="logged-in-button-header d-block dropdown">
                 <button id="logged-in-button-header" class="justify-content-center border align-items-center d-lg-flex d-flex border-0 ripple-btn bg-transparent text-white px-4 py-2 border rounded">
                         <span class="position-relative ms-3">
                             <i class="bi bi-person d-flex fs-4"></i>
@@ -288,17 +303,17 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-start shadow-lg p-0 m-0 rounded-3 overflow-hidden text-end">
                     <div class="px-3 py-2">
-                        <h6 class="fw-bold font-small">محمد مهدی تاشا</h6>
-                        <h6 class="text-grey mb-0 font-small">کاربر<span class="me-2">01234567891</span></h6>
+                        <h6 class="logged-in-name fw-bold font-small"></h6>
+                        <h6 class="text-grey mb-0 font-small">کاربر<span class="logged-in-number me-2">0XXXXXXXXXX</span></h6>
                     </div>
-                    <div class="p-3  bg-grey rounded-3 m-2 d-flex align-items-center gap-3 justify-content-center">
+                    <div class="p-3 bg-grey rounded-3 m-2 d-flex align-items-center gap-3 justify-content-center">
                         <h6 class="mb-0 text-darker-grey font-small text-nowrap">
                             کیف پول
                             (<span>IRR</span>)
                             :
                         </h6>
                         <h6 class="mb-0 font-small text-nowrap">
-                            <span class="text-base fw-bold">169,132,318</span>
+                            <span class="logged-in-wallet text-base fw-bold"></span>
                             <span class="text-grey">ریال</span>
                         </h6>
                     </div>
