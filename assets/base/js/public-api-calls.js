@@ -10,6 +10,8 @@ const headerLoader = document.querySelector('.header-loader');
 const loggedInNummber = document.querySelectorAll('.logged-in-number');
 const loggedInWallet = document.querySelectorAll('.logged-in-wallet');
 const loggedInName = document.querySelectorAll('.logged-in-name');
+const loggedInButtonHeader = document.getElementById('logged-in-button-header');
+const verifyCodeInput = document.getElementById('verify-code-input');
 
 // A Function That Checks If There Is logged-in-token In Local Storage. If There Is Then Sets Attribute Of 'data-logged-in' In Html Element
 // And Removes All Unnecessary Lines Of Code And Fetches User Account
@@ -159,4 +161,19 @@ verifyForm.addEventListener('submit', (event) => {
             }
         })
         .catch(error => console.log('error', error));
+})
+
+// Adding Event Listener On Logged In Button In Header That Opens It Drop Down
+loggedInButtonHeader.addEventListener('click', () => {
+    loggedInButtonHeader.nextElementSibling.classList.toggle('show')
+    loggedInButtonHeader.classList.toggle('show')
+})
+
+// Adding Event Listener On Input Of verifyCode Input In Verify Modal Which Checks If Length Of Entered Value Is More Than 4 .
+// If It Is Then Slices It With Value Of It Sliced By Index Of 0 Till 4
+verifyCodeInput.addEventListener('input', () => {
+    if(verifyCodeInput.value.length > 4) {
+        const lastEntredNumber = verifyCodeInput.value;
+        verifyCodeInput.value = lastEntredNumber.substring(0, 4)
+    }
 })

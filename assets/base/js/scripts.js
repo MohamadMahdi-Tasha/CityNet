@@ -18,8 +18,6 @@ const removeButtons = document.querySelectorAll('.remove-button.can-delete');
 const addRouteBtn = document.querySelectorAll('.add-route-btn');
 const moreWaysItem3 = document.getElementById('more-ways-item-3');
 const moreWaysItem4 = document.getElementById('more-ways-item-4');
-const loggedInButtonHeader = document.getElementById('logged-in-button-header');
-const verifyCodeInput = document.getElementById('verify-code-input');
 
 // Adding Event Listener On Each Remove Button That Can Replaces Class Name Of 'd-flex' To 'd-none';
 removeButtons.forEach(item => item.addEventListener('click', () => item.parentElement.parentElement.classList.replace('d-flex', 'd-none')))
@@ -55,18 +53,3 @@ function handleSuccses(element, element2) {
 
     element2.classList.remove('show')
 }
-
-// Adding Event Listener On Logged In Button In Header That Opens It Drop Down
-loggedInButtonHeader.addEventListener('click', () => {
-    loggedInButtonHeader.nextElementSibling.classList.toggle('show')
-    loggedInButtonHeader.classList.toggle('show')
-})
-
-// Adding Event Listener On Input Of verifyCode Input In Verify Modal Which Checks If Length Of Entered Value Is More Than 4 .
-// If It Is Then Slices It With Value Of It Sliced By Index Of 0 Till 4
-verifyCodeInput.addEventListener('input', () => {
-    if(verifyCodeInput.value.length > 4) {
-        const lastEntredNumber = verifyCodeInput.value;
-        verifyCodeInput.value = lastEntredNumber.substring(0, 4)
-    }
-})

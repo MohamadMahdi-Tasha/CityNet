@@ -105,18 +105,23 @@ button[data-bs-toggle="dropdown"] > i.bi-chevron-down:before{transition: .3s}
 .error-holder.show {opacity: 1;pointer-events: visible;}
 .squar-size {width: 40px;height: 40px;aspect-ratio: 1/1}
 #dark-bg-of-nav  {background-color: rgba(0,0,0,.2);z-index: 1029;}
+.bottom-side-items-toggler > i.bi-chevron-down:before {transition: .3s;}
+.bottom-side-items-toggler.show > i.bi-chevron-down:before {transform: rotate(180deg);}
+.bottom-side-items-toggler.show {color: var(--blue) !important;}
 #dark-bg-of-nav, #nav {transition: .3s}
 #nav::-webkit-scrollbar{display: none;}
 #nav::-moz-viewport-scroll {display: none;}
 #nav[data-opened='true'], #dark-bg-of-nav[data-opened='true'] {left: 0 !important;}
 #nav[data-opened='false'], #dark-bg-of-nav[data-opened='false'] {left: -100% !important;}
 .my-bg-dark {background-color: rgba(0,0,0,.2);z-index: 1029;}
-.my-modal {z-index: 1030;width: 35rem;}
+.my-modal {width: 35rem;z-index: 1060 !important;}
+.my-modal-holder {z-index: 1050 !important;}
 .left-0 {left: 0;}
 .no-touch {pointer-events: none !important;}
 .ripple-btn.base > .ripple {background-color: rgba(221, 153, 51, .5);}
 .my-modal::-webkit-scrollbar {display: none;}
 .my-modal::-moz-viewport-scroll {display: none;}
+.intractive-input-component > h6, .intractive-input-component > h5 {margin-bottom: 0 !important;}
 .intractive-input-component.my-modal-init.focused {border-color: var(--primary-base) !important;}
 .intractive-input-component.my-modal-init.focused h6 {color: var(--primary-base) !important;}
 .my-modal-holder, .my-bg-dark, .my-bg-dark ~ div {transition: .3s}
