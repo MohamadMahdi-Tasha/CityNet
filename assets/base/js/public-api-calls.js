@@ -41,6 +41,7 @@ function checkLoggedIn() {
                     if (returnedData.user.card_info.name === null) {item.remove()}
                     else {item.textContent = returnedData.user.card_info.name}
                 })
+
                 loggedInNummber.forEach(item => item.textContent = returnedData.user.mobile)
                 loggedInWallet.forEach(item => item.textContent = returnedData.user.wallet)
             })
