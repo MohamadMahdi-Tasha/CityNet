@@ -37,7 +37,10 @@ function checkLoggedIn() {
             .then(result => {
                 const returnedData = result.data;
 
-                loggedInName.forEach(item => item.textContent = returnedData.user.card_info.name)
+                loggedInName.forEach(item => {
+                    if (returnedData.user.card_info.name === null) {item.remove()}
+                    else {item.textContent = returnedData.user.card_info.name}
+                })
                 loggedInNummber.forEach(item => item.textContent = returnedData.user.mobile)
                 loggedInWallet.forEach(item => item.textContent = returnedData.user.wallet)
             })
