@@ -7,6 +7,9 @@ const htmlElement = document.querySelector('html');
 const notLoggedInModalHolder = document.getElementById('not-logged-in-modal-holders');
 const mobileLoggedIn = document.getElementById('mobile-logged-in');
 const headerLoader = document.querySelector('.header-loader');
+const loggedInNummber = document.getElementById('logged-in-number');
+const loggedInWallet = document.getElementById('logged-in-wallet');
+const loggedInName = document.getElementById('logged-in-name');
 
 // A Function That Checks If There Is logged-in-token In Local Storage. If There Is Then Sets Attribute Of 'data-logged-in' In Html Element
 // And Removes All Unnecessary Lines Of Code
@@ -17,6 +20,28 @@ function checkLoggedIn() {
         notLoggedInModalHolder.remove()
         loginModalToggler.parentElement.remove()
         mobileLoginModalToggler.remove()
+
+        const myHeaders = new Headers();
+        myHeaders.append("Accept", "application/json");
+        myHeaders.append("debug", "true");
+        myHeaders.append("Authorization", `Bearer ${localStorage.getItem('logged-in-token')}`);
+
+        const requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow'
+        };
+
+        fetch("https://www.newcash.me/api/v1/user/sync", requestOptions)
+            .then(response => response.json())
+            .then(result => {
+                const returnedData = result.data;
+
+                loggedInName.textContent = returnedData.user.card_info.name;
+                loggedInNummber.textContent = returnedData.user.mobile;
+                loggedInWallet.textContent = returnedData.user.wallet;
+            })
+            .catch(error => console.log('error', error));
     } else  {
         htmlElement.setAttribute('data-logged-in', 'false');
         loggedInButtonHeader.parentElement.remove()
