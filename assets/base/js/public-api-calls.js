@@ -7,12 +7,12 @@ const htmlElement = document.querySelector('html');
 const notLoggedInModalHolder = document.getElementById('not-logged-in-modal-holders');
 const mobileLoggedIn = document.getElementById('mobile-logged-in');
 const headerLoader = document.querySelector('.header-loader');
-const loggedInNummber = document.getElementById('logged-in-number');
-const loggedInWallet = document.getElementById('logged-in-wallet');
-const loggedInName = document.getElementById('logged-in-name');
+const loggedInNummber = document.querySelectorAll('.logged-in-number');
+const loggedInWallet = document.querySelectorAll('.logged-in-wallet');
+const loggedInName = document.querySelectorAll('.logged-in-name');
 
 // A Function That Checks If There Is logged-in-token In Local Storage. If There Is Then Sets Attribute Of 'data-logged-in' In Html Element
-// And Removes All Unnecessary Lines Of Code
+// And Removes All Unnecessary Lines Of Code And Fetches User Account
 function checkLoggedIn() {
     headerLoader.remove()
     if (localStorage.getItem('logged-in-token') !== null) {
@@ -37,9 +37,9 @@ function checkLoggedIn() {
             .then(result => {
                 const returnedData = result.data;
 
-                loggedInName.textContent = returnedData.user.card_info.name;
-                loggedInNummber.textContent = returnedData.user.mobile;
-                loggedInWallet.textContent = returnedData.user.wallet;
+                loggedInName.forEach(item => item.textContent = returnedData.user.card_info.name)
+                loggedInNummber.forEach(item => item.textContent = returnedData.user.mobile)
+                loggedInWallet.forEach(item => item.textContent = returnedData.user.wallet)
             })
             .catch(error => console.log('error', error));
     } else  {
