@@ -686,7 +686,7 @@
             nataiejNumber.textContent = returnedData.length;
 
             returnedData.forEach(item => {
-                const newTicket = new Tickets();
+                const newTicket = document.createElement('ticket-element');
                 newTicket.setAttribute('flag', item.airline_icon)
                 newTicket.setAttribute('plane', item.air_plane)
                 newTicket.setAttribute('fligh-number', item.flight_number)
@@ -700,13 +700,13 @@
                 newTicket.setAttribute('price-details-collapse', `${item.flight_number}-price-details-collapse`)
                 newTicket.setAttribute('adult-price', `${item.flight_number}`)
                 newTicket.setAttribute('capacity', item.price)
-                newTicket.setAttribute('mode', item.is_systemetic)
+                newTicket.setAttribute('mode', item.is_systemic)
                 flightTicketsHolder.appendChild(newTicket);
             })
         })
         .catch(error => console.log('error', error));
 
-    // {
+    // Returned Data {
     //     "start_time": "07:15:00",
     //     "arrival_time": "08:35:00",
     //     "capacity": 9,
