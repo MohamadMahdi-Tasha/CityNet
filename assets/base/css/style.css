@@ -88,6 +88,7 @@ button[data-bs-toggle="dropdown"] > i.bi-chevron-down:before{transition: .3s}
 .font-md {font-size: 1rem !important;}
 .font-smallx {font-size: .6rem !important;}
 .text-hot-pink {color: var(--hot-pink) !important;}
+.top-bottom-0 {top: 0;bottom: 0;}
 .switch-btn.animation {-webkit-animation:flip-scale-2-hor-top .5s linear both;animation:flip-scale-2-hor-top .5s linear both}
 .border-black {border: 1px solid rgba(0,0,0,.8);}
 .intractive-input-component.passenger > h6{font-size: .7rem !important;}
