@@ -700,7 +700,7 @@
                     newElement.setAttribute('rules-collapse', `${item.flight_number}-rules-collapse`)
                     newElement.setAttribute('details-collapse', `${item.flight_number}-details-collapse`)
                     newElement.setAttribute('price-details-collapse', `${item.flight_number}-price-details-collapse`)
-                    newElement.setAttribute('adult-price', `${item.price}`)
+                    newElement.setAttribute('adult-price', String(item.price).replace(/\B(?=(\d{3})+(?!\d))/g, ','))
                     newElement.setAttribute('capacity', item.capacity)
                     newElement.setAttribute('mode', item.is_systemetic)
                     flightTicketsHolder.appendChild(newElement)
@@ -708,16 +708,6 @@
             }
         })
         .catch(error => console.log('error', error));
-
-    // When Click On Buttons With Class OF 'bottom-side-items-toggler' Then It Toggles Class Of 'show' On Clicked Items And ITs Target
-    document.querySelectorAll('.bottom-side-items-toggler').forEach(item => {
-        item.addEventListener('click', () => {
-            const target = document.getElementById(item.getAttribute('data-target'));
-
-            target.classList.toggle('show')
-            item.classList.toggle('show')
-        })
-    })
 
     // Returned Data {
     //     "start_time": "07:15:00",

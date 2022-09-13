@@ -1,3 +1,10 @@
+// A Function That Toggles Class Of 'show' To Target And Itself
+function showTarget(item){
+    const target = document.getElementById(item.getAttribute('data-target'));
+    target.classList.toggle('show')
+    item.classList.toggle('show')
+}
+
 // Custom Element
 class Tickets extends HTMLElement {
     constructor() {super();}
@@ -53,19 +60,19 @@ class Tickets extends HTMLElement {
                         <div class="d-flex flex-lg-row flex-column-reverse gap-lg-3 gap-5 justify-content-between align-items-center">
                             <!--right Side-->
                             <div class="d-flex flex-wrap flex-lg-nowrap gap-3 mq-991-w-100 justify-content-between justify-content-lg-start align-items-start ticket-bottom-side-togglers">
-                                <button class="bg-white bottom-side-items-toggler text-nowrap font-small border-0 d-flex justify-content-center align-items-center text-grey" type="button" data-target="${this.getAttribute('weight-collapse')}">
+                                <button onclick="showTarget(this)" class="bg-white bottom-side-items-toggler text-nowrap font-small border-0 d-flex justify-content-center align-items-center text-grey" type="button" data-target="${this.getAttribute('weight-collapse')}">
                                     بار مجاز
                                     <i class="bi bi-chevron-down me-2"></i>
                                 </button>
-                                <button class="bg-white bottom-side-items-toggler text-nowrap font-small border-0 d-flex justify-content-center align-items-center text-grey" type="button" data-target="${this.getAttribute('rules-collapse')}">
+                                <button onclick="showTarget(this)" class="bg-white bottom-side-items-toggler text-nowrap font-small border-0 d-flex justify-content-center align-items-center text-grey" type="button" data-target="${this.getAttribute('rules-collapse')}">
                                     قوانین
                                     <i class="bi bi-chevron-down me-2"></i>
                                 </button>
-                                <button class="bg-white bottom-side-items-toggler text-nowrap font-small border-0 d-flex justify-content-center align-items-center text-grey" type="button" data-target="${this.getAttribute('details-collapse')}">
+                                <button onclick="showTarget(this)" class="bg-white bottom-side-items-toggler text-nowrap font-small border-0 d-flex justify-content-center align-items-center text-grey" type="button" data-target="${this.getAttribute('details-collapse')}">
                                     جزییات پرواز
                                     <i class="bi bi-chevron-down me-2"></i>
                                 </button>
-                                <button class="bg-white bottom-side-items-toggler text-nowrap font-small border-0 d-flex justify-content-center align-items-center text-grey" type="button" data-target="${this.getAttribute('price-details-collapse')}">
+                                <button onclick="showTarget(this)" class="bg-white bottom-side-items-toggler text-nowrap font-small border-0 d-flex justify-content-center align-items-center text-grey" type="button" data-target="${this.getAttribute('price-details-collapse')}">
                                     جزییات قیمت
                                     <i class="bi bi-chevron-down me-2"></i>
                                 </button>
