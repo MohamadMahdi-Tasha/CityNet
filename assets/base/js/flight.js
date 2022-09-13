@@ -10,6 +10,13 @@ const currentSelectedDate = new Date(firstSectOfFlight.getAttribute('data-date')
 const rightSideMonthText = document.getElementById('right-side-month-text');
 const rightSideDayText = document.getElementById('right-side-day-text');
 const rightSideYearText = document.getElementById('right-side-year-text');
+const loaderModal = document.getElementById('loader-modal')
+const nataiejNumber = document.getElementById('nataiej-number');
+const myHeaders = new Headers();
+const urlencoded = new URLSearchParams();
+
+// Removing Scroll Of Page In Load Of Page
+document.body.style.overflowY = 'hidden';
 
 // A Function That Sorts Items By 'date-price' Attritube
 function showSortedListOfPrice() {
@@ -69,3 +76,57 @@ flightTopBtn.forEach(item => {
 // And Saves It In A Variable Then Calls 'showDate' Function And Gives It Saved Variable As Parameter
 PrevDayToggler.addEventListener('click', () => {const prevDate = new Date(currentSelectedDate.setDate(currentSelectedDate.getDate() - 1));showDate(prevDate)})
 NextDayToggler.addEventListener('click', () => {const nextDate = new Date(currentSelectedDate.setDate(currentSelectedDate.getDate() + 1));showDate(nextDate)})
+
+// Setting Some Options For Fetch
+myHeaders.append("Accept", "application/json");
+myHeaders.append("debug", "true");
+myHeaders.append("Authorization", `Bearer ${localStorage.getItem('logged-in-token')}`);
+myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+urlencoded.append("date", firstSectOfFlight.getAttribute('data-date'));
+urlencoded.append("adult_count", "1");
+urlencoded.append("child_count", "0");
+urlencoded.append("infant_count", "0");
+urlencoded.append("from", "81");
+urlencoded.append("to", "82");
+
+const requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: urlencoded,
+    redirect: 'follow'
+};
+
+// Fetching Ticket Api
+fetch("https://www.newcash.me/api/v2/airfare/flights/search", requestOptions)
+    .then(response => response.json())
+    .then(result => {
+        loaderModal.setAttribute('data-opened', 'false');
+        if (result.message === "Unauthenticated.") {
+            loginModalToggler.click()
+        } else {
+            const returnedData = result.data.tickets;
+            document.body.style.overflowY = 'visible';
+            nataiejNumber.textContent = returnedData.length;
+
+            returnedData.forEach(item => {
+                const newElement = document.createElement('ticket-element');
+                newElement.setAttribute('flag', item.airline_icon)
+                newElement.setAttribute('plane', item.air_plane)
+                newElement.setAttribute('fligh-number', item.flight_number)
+                newElement.setAttribute('start-time', item.start_time.slice(0, 5))
+                newElement.setAttribute('start-place', item.from_airport)
+                newElement.setAttribute('end-time', item.arrival_time.slice(0, 5))
+                newElement.setAttribute('end-place', item.to_airport)
+                newElement.setAttribute('weight-collapse', `${item.flight_number}-weight-collapse`)
+                newElement.setAttribute('rules-collapse', `${item.flight_number}-rules-collapse`)
+                newElement.setAttribute('details-collapse', `${item.flight_number}-details-collapse`)
+                newElement.setAttribute('price-details-collapse', `${item.flight_number}-price-details-collapse`)
+                newElement.setAttribute('adult-price', String(item.price).replace(/\B(?=(\d{3})+(?!\d))/g, ','))
+                newElement.setAttribute('capacity', item.capacity)
+                newElement.setAttribute('mode', item.is_systemetic)
+                newElement.setAttribute('class', item.seat_class)
+                flightTicketsHolder.appendChild(newElement)
+            })
+        }
+    })
+    .catch(error => console.log('error', error));

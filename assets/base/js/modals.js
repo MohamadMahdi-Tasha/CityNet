@@ -21,8 +21,11 @@ window.addEventListener('keydown', (key) => {
     const clickedKey = key.key.toLowerCase();
     if (clickedKey === 'escape') {
         const openedModalHolder = document.querySelector('.my-modal-holder[data-opened="true"]');
-        if (!openedModalHolder.id === 'loader-modal' || !openedModalHolder.id === 'verify-modal' ) {
+        if (openedModalHolder.id === 'loader-modal' || openedModalHolder.id === 'verify-modal') {
             document.body.style.overflowY = 'hidden';
+            openedModalHolder.setAttribute('data-opened', 'true')
+        } else {
+            document.body.style.overflowY = 'visible';
             openedModalHolder.setAttribute('data-opened', 'false')
         }
     }
