@@ -5,6 +5,36 @@ function showTarget(item){
     item.classList.toggle('show')
 }
 
+// A Function That Checks Given Condition If Its Name Of A City Then Returns Name To Show
+function showCitysNameByCondition(condition){
+    let nameToShow;
+
+    switch (condition) {
+        case "Tehran":nameToShow = "تهران (THR)";break;
+        case "Kish Island":nameToShow = "کیش (KIH)";break;
+        case "Istanbul":nameToShow = "استانبول (IST)";break;
+        case "Dubai":nameToShow = "دبی (DXD)";break;
+        case "Mashhad":nameToShow = "مشهد (MHD)";break;
+        case "Ahvaz":nameToShow = "اهواز (AWZ)";break;
+        case "Ankara":nameToShow = "انکارا (ESB)";break;
+        case "London":nameToShow = "لندن (LHR)";break;
+        case "Tabriz":nameToShow = "تبریز (TBZ)";break;
+        case "Qeshm Island":nameToShow = "قشم (GSM)";break;
+        case "Torento":nameToShow = "تورنتو (YYZ)";break;
+        case "Yerevan":nameToShow = "ایروان (ENV)";break;
+        case "Bandar Abbas Abbas":nameToShow = "بندر عباس (BND)";break;
+        case "Shiraz":nameToShow = "شیراز (SYZ)";break;
+        case "Muscat":nameToShow = "مسقط (MCT)";break;
+        case "Beijing":nameToShow = "پکن (PEK)";break;
+        case "Rasht":nameToShow = "رشت (RAS)";break;
+        case "Isfahan":nameToShow = "اصفهان (IFN)";break;
+        case "Najaf":nameToShow = "نجف (NJF)";break;
+        case "Baku":nameToShow = "باکو (GYD)";break;
+    }
+
+    return nameToShow;
+}
+
 // Custom Element
 class Tickets extends HTMLElement {
     constructor() {super();}
@@ -16,9 +46,9 @@ class Tickets extends HTMLElement {
                         <div class="d-flex gap-3 gap-lg-5 flex-lg-row flex-column justify-content-between align-items-center bg-light-grey rounded-4 p-3 mb-3"   >
                             <!--Right Side-->
                             <div class="d-flex flex-lg-row flex-column mq-991-w-100 align-items-center justify-content-lg-start justify-content-between w-50 mq-991-w-100">
-                                <img src='${this.getAttribute("flag")}' alt="Mahan Air" class="ms-4 mq-991-w-100">
+                                <img src='${this.getAttribute("flag")}' class="ms-4 mq-991-w-100">
                                 <div class="text-center">
-                                    <div class="d-flex mb-3 justify-content-between flex-wrap">
+                                    <div class="d-flex mb-3 justify-content-between flex-wrap gap-3">
                                         <span class="bg-light-green text-green font-smallx px-2 p-1 rounded-2 text-nowrap">${(this.getAttribute('mode') === 'true') ? 'سیستمی' : 'استاندارد'}</span>
                                         <span class="bg-light-blue text-blue font-smallx px-2 p-1 rounded-2 text-nowrap"><span>${this.getAttribute('capacity')}</span> صندلی</span>
                                     </div>
@@ -35,7 +65,7 @@ class Tickets extends HTMLElement {
                                     </h6>
                                     <h6 class="my-tooltip-toggle">
                                         <span class="my-tooltip">کلاس نرخی</span>
-                                        <span class="text-nowrap text-grey font-small">Economy (1)</span>
+                                        <span class="text-nowrap text-grey font-small">${this.getAttribute('class')}</span>
                                     </h6>
                                 </div>
                             </div>
@@ -175,22 +205,29 @@ class Tickets extends HTMLElement {
                                             <div class="col">
                                                 <div class="d-flex align-items-center mt-3 mb-3">
                                                     <div>
-                                                        <div class="d-flex ticket-divider-label top"><i class="bi bi-circle-fill ms-3"></i><h6 class="font-small">تهران (THR)</h6></div>
+                                                        <div class="d-flex ticket-divider-label top"><i class="bi bi-circle-fill ms-3"></i><h6 class="font-small">
+                                                        ${showCitysNameByCondition(this.getAttribute('start-place'))}
+                                                        </h6></div>
                                                         <div class="ticket-bottom-divider ms-3"></div>
-                                                        <div class="d-flex ticket-divider-label bottom"><i class="bi bi-airplane rotate-270 ms-3"></i><h6 class="font-small">اصفهان (IFH)</h6></div>
+                                                        <div class="d-flex ticket-divider-label bottom"><i class="bi bi-airplane rotate-270 ms-3"></i><h6 class="font-small">${showCitysNameByCondition(this.getAttribute('end-place'))}</h6></div>
                                                     </div>
-                                                    <img class="ticket-divider-img" src="assets/base/img/flight/img-mahan.png" alt="Mahan Airlines">
+                                                    <img class="ticket-divider-img" src="${this.getAttribute('flag')}">
                                                 </div>
                                             </div>
                                             <div class="col">
-                                                <h6 class="font-small mb-3">هواپیمایی:<span class="me-2">Iran Mahan</span></h6>
-                                                <h6 class="font-small mb-3">مدل هواپیما:<span class="me-2">Boeing MD-82</span></h6>
+                                                <h6 class="font-small mb-3">هواپیمایی:<span class="me-2">${this.getAttribute('plane')}</span></h6>
                                                 <h6 class="font-small mb-0">بار مجاز:<span class="me-2">20KG</span></h6>
                                             </div>
                                             <div class="col">
-                                                <h6 class="font-small mb-3">شماره پرواز:<span class="me-2">سیستمی / 996 B9</span></h6>
-                                                <h6 class="font-small mb-3">مدت پرواز:<span class="me-2">۱ ساعت و ۴۵ دقیقه</span></h6>
-                                                <h6 class="font-small mb-0">کلاس نرخی:<span class="me-2">Economy (Y462)</span></h6>
+                                                <h6 class="font-small mb-3">شماره پرواز:<span class="me-2">${this.getAttribute('fligh-number')}</span></h6>
+                                                <h6 class="font-small mb-3">مدت پرواز:<span class="me-2">
+                                                    ${Number(this.getAttribute('end-time').slice(0,2)) - this.getAttribute('start-time').slice(0,2)}
+                                                    ساعت
+                                                    و
+                                                    ${Number(this.getAttribute('end-time').slice(3,5)) - this.getAttribute('start-time').slice(3,5)}
+                                                    دقیقه
+                                                    </span></h6>
+                                                <h6 class="font-small mb-0">کلاس نرخی:<span class="me-2">${this.getAttribute('class')}</span></h6>
                                             </div>
                                         </div>
                                     </div>

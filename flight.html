@@ -703,6 +703,7 @@
                     newElement.setAttribute('adult-price', String(item.price).replace(/\B(?=(\d{3})+(?!\d))/g, ','))
                     newElement.setAttribute('capacity', item.capacity)
                     newElement.setAttribute('mode', item.is_systemetic)
+                    newElement.setAttribute('class', item.seat_class)
                     flightTicketsHolder.appendChild(newElement)
                 })
             }
