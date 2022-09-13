@@ -356,7 +356,7 @@
     </div>
 </header>
 <!--Only Section-->
-<section id="first-sect-of-flight" data-date="Wed Oct 05 2022" class="d-flex justify-content-center flex-column px-7rem py-4">
+<section id="first-sect-of-flight" data-date="2022-10-06" class="d-flex justify-content-center flex-column px-7rem py-4">
     <!--Top Side-->
     <header class="container-xxl flight-page-top-side-blue bg-blue rounded-3 d-lg-flex d-grid gtc-3 gap-3 mb-3 align-items-center justify-content-between  p-3 text-white">
         <div>
@@ -661,7 +661,7 @@
     myHeaders.append("debug", "true");
     myHeaders.append("Authorization", `Bearer ${localStorage.getItem('logged-in-token')}`);
     myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
-    urlencoded.append("date", "2022-10-05");
+    urlencoded.append("date", firstSectOfFlight.getAttribute('data-date'));
     urlencoded.append("adult_count", "1");
     urlencoded.append("child_count", "0");
     urlencoded.append("infant_count", "0");
@@ -709,26 +709,6 @@
             }
         })
         .catch(error => console.log('error', error));
-
-    // Returned Data {
-    //     "start_time": "07:15:00",
-    //     "arrival_time": "08:35:00",
-    //     "capacity": 9,
-    //     "price": 990000,
-    //     "airline_title": "Qeshm Air",
-    //     "airline_icon": "https://newcash.me/flights_logos/Qeshm_Air.png",
-    //     "air_plane": "Fokker 100",
-    //     "seat_class": "Economy",
-    //     "is_systemic": true,
-    //     "flight_id": "a:9:{s:9:\"sessionId\";s:36:\"f4290665-752d-41d6-a36d-8528a42d324d\";s:13:\"combinationId\";i:0;s:16:\"recommendationId\";i:0;s:11:\"subsystemId\";i:72;s:13:\"subsystemName\";s:10:\"niraFlight\";s:12:\"flightNumber\";s:4:\"1321\";s:4:\"from\";s:3:\"MHD\";s:2:\"to\";s:3:\"THR\";s:4:\"date\";s:10:\"2022-10-05\";}",
-    //     "flight_number": "1321",
-    //     "flight_duration": "01:20",
-    //     "from_airport": "Mashhad",
-    //     "to_airport": "Tehran",
-    //     "child_price": null,
-    //     "infant_price": null,
-    //     "needs_captcha": 0
-    // }
 </script>
 </body>
 </html>

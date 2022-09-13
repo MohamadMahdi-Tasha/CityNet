@@ -1,3 +1,8 @@
+// Variables
+const monthNamesEn = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const monthNamesFa = ["فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "ابان", "اذر", "دی", "بهمن", "اسفند"];
+const dayNamesFa = ["شنبه", "یکشنبه", "دوشنبه", "سه شنبه", "چهار شنبه", "پنج شنبه", "جمعه"];
+
 // A Function That Toggles Class Of 'show' To Target And Itself
 function showTarget(item){
     const target = document.getElementById(item.getAttribute('data-target'));
@@ -179,9 +184,9 @@ class Tickets extends HTMLElement {
                                         <div class="d-lg-block d-none"><h6 class="font-small mb-0 fw-bold">
                                             مدت مسیر :
                                             <span class="fw-normal">
-                                                <span>۱</span>
+                                                ${Number(this.getAttribute('end-time').slice(0,2)) - this.getAttribute('start-time').slice(0,2)}
                                                 ساعت و
-                                                <span>۴۵</span>
+                                                ${Number(this.getAttribute('end-time').slice(3,5)) - this.getAttribute('start-time').slice(3,5)}
                                                 دقیقه
                                             </span>
                                         </h6></div>
@@ -190,14 +195,15 @@ class Tickets extends HTMLElement {
                                     <div class="p-3">
                                         <div class="d-flex flex-lg-row flex-column align-items-lg-center align-items-start mb-3">
                                             <i class="bi bi bi-calendar4-week ms-2 fs-6"></i>
-                                            <h6 class="mb-0 font-small ms-3">زمان حرکت:<span class="me-3">۱۲:۰۰</span></h6>
+                                            <h6 class="mb-0 font-small ms-3">زمان حرکت:<span class="me-3">${this.getAttribute('start-time')}</span></h6>
                                             <h6 class="mb-0 font-small">
-                                                <span>پنجشنبه</span>
-                                                <span>۱۷</span>
-                                                <span>شهریور</span>
+                                            ${new Date(firstSectOfFlight.getAttribute('data-date')).toLocaleDateString('fa-IR')}
+                                                <span>${dayNamesFa[new Date(firstSectOfFlight.getAttribute('data-date')).getDay()]}</span>
+                                                <span>${new Date(firstSectOfFlight.getAttribute('data-date')).toLocaleDateString('fa-IR').slice(7 ,9)}</span>
+                                                <span>${monthNamesFa[new Date(firstSectOfFlight.getAttribute('data-date')).getMonth()]}</span>
                                                 (
-                                                <span>September</span>
-                                                <span>8</span>
+                                                <span>${monthNamesEn[new Date(firstSectOfFlight.getAttribute('data-date')).getMonth()]}</span>
+                                                <span>${new Date(firstSectOfFlight.getAttribute('data-date')).getDate()}</span>
                                                 )
                                             </h6>
                                         </div>
