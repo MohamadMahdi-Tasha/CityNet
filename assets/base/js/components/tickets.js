@@ -1,6 +1,7 @@
+// Custom Element
 class Tickets extends HTMLElement {
-    constructor() {
-        super();
+    constructor() {super();}
+    connectedCallback() {
         this.innerHTML = `
             <li ${(this.getAttribute('hidden')) ? this.style.display = 'none' : this.style.display = 'block'} class="flight-ticket-item"">
                     <div class="bg-white rounded-3 p-3">
@@ -232,13 +233,5 @@ class Tickets extends HTMLElement {
     }
 }
 
+// Defining Custom Element
 window.customElements.define('ticket-element', Tickets);
-
-document.querySelectorAll('.bottom-side-items-toggler').forEach(item => {
-    item.addEventListener('click', () => {
-        const target = document.getElementById(item.getAttribute('data-target'));
-
-        target.classList.toggle('show')
-        item.classList.toggle('show')
-    })
-})

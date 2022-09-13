@@ -13,6 +13,23 @@ const loggedInName = document.querySelectorAll('.logged-in-name');
 const loggedInButtonHeader = document.getElementById('logged-in-button-header');
 const verifyCodeInput = document.getElementById('verify-code-input');
 
+// A Function That Adds Class Of 'errored' To First Given Element And Class Of 'show' To Second Given Element And
+// Sets Content Of third Given Element To Given Text
+function handleError(element, element2, element3, text) {
+    element.classList.add('errored');
+    element2.classList.add('show')
+    element3.textContent = text
+}
+
+// A Function That Checks If First Given Element ClassList Contains 'errored' Then Replace It With 'success' Otherwise
+// Add 'success' To First Element And Then Remove Class Of 'show' From Second Given Element
+function handleSuccses(element, element2) {
+    if (element.classList.contains('errored')) {element.classList.replace('errored','success');}
+    else {element.classList.add('success');}
+
+    element2.classList.remove('show')
+}
+
 // A Function That Checks If There Is logged-in-token In Local Storage. If There Is Then Sets Attribute Of 'data-logged-in' In Html Element
 // And Removes All Unnecessary Lines Of Code And Fetches User Account
 function checkLoggedIn() {
