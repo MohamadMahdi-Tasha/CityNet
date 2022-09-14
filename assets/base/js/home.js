@@ -78,6 +78,9 @@ oneWaySubmitBtn.addEventListener('click', () => {
             'startCity': returnCityName(startPlace.lastElementChild.firstElementChild.lastElementChild.textContent),
             'endCity': returnCityName(endPlace.lastElementChild.firstElementChild.lastElementChild.textContent),
             'flightDate': flightDate.value,
+            'adultNumber': Number(document.querySelector('.adult-number').textContent),
+            'kidNumber': Number(document.querySelector('.kid-number').textContent),
+            'newBornNumber': Number(document.querySelector('.new-born-number').textContent),
         }))
     }
 })

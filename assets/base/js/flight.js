@@ -89,7 +89,7 @@ else {monthToSet = `${flightDateToSet.getMonth() + 1}`}
 if (`${flightDateToSet.getDate()}`.length === 1) {dateToSet = `0${flightDateToSet.getDate()}`}
 else {dateToSet = `${flightDateToSet.getDate()}`}
 
-// Setting Attribute oF 'data-date' In First Section Of Flight Page To Given Data From Home Page 
+// Setting Attribute Of 'data-date' In First Section Of Flight Page To Given Data From Home Page
 firstSectOfFlight.setAttribute('data-date', `${flightDateToSet.getFullYear()}-${monthToSet}-${dateToSet}`)
 
 // Setting Some Options For Fetch
@@ -98,9 +98,9 @@ myHeaders.append("debug", "true");
 myHeaders.append("Authorization", `Bearer ${localStorage.getItem('logged-in-token')}`);
 myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 urlencoded.append("date", firstSectOfFlight.getAttribute('data-date'));
-urlencoded.append("adult_count", "1");
-urlencoded.append("child_count", "0");
-urlencoded.append("infant_count", "0");
+urlencoded.append("adult_count", dataTicket.adultNumber);
+urlencoded.append("child_count", dataTicket.kidNumber);
+urlencoded.append("infant_count", dataTicket.newBornNumber);
 urlencoded.append("from", "81");
 urlencoded.append("to", "82");
 
