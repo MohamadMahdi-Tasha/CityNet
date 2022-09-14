@@ -14,6 +14,11 @@ const loaderModal = document.getElementById('loader-modal')
 const nataiejNumber = document.getElementById('nataiej-number');
 const myHeaders = new Headers();
 const urlencoded = new URLSearchParams();
+const dataTicket = localStorage.getItem('data-ticket')
+const flightDate = JSON.parse(dataTicket).flightDate;
+const flightDateToSet = new Date(flightDate)
+let monthToSet;
+let dateToSet;
 
 // Removing Scroll Of Page In Load Of Page
 document.body.style.overflowY = 'hidden';
@@ -76,6 +81,16 @@ flightTopBtn.forEach(item => {
 // And Saves It In A Variable Then Calls 'showDate' Function And Gives It Saved Variable As Parameter
 PrevDayToggler.addEventListener('click', () => {const prevDate = new Date(currentSelectedDate.setDate(currentSelectedDate.getDate() - 1));showDate(prevDate)})
 NextDayToggler.addEventListener('click', () => {const nextDate = new Date(currentSelectedDate.setDate(currentSelectedDate.getDate() + 1));showDate(nextDate)})
+
+// Checking If Length Of Month And Date Returned From 'flightDateToSet' Variable Is 1. If It Is Then Set
+// First Char Of Them To 0 Other Wise Return Them In As Variable
+if (`${flightDateToSet.getMonth() + 1}`.length === 1) {monthToSet = `0${flightDateToSet.getMonth() + 1}`}
+else {monthToSet = `${flightDateToSet.getMonth() + 1}`}
+if (`${flightDateToSet.getDate()}`.length === 1) {dateToSet = `0${flightDateToSet.getDate()}`}
+else {dateToSet = `${flightDateToSet.getDate()}`}
+
+// Setting Attribute oF 'data-date' In First Section Of Flight Page To Given Data From Home Page 
+firstSectOfFlight.setAttribute('data-date', `${flightDateToSet.getFullYear()}-${monthToSet}-${dateToSet}`)
 
 // Setting Some Options For Fetch
 myHeaders.append("Accept", "application/json");

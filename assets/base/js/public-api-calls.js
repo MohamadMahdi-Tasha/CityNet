@@ -192,5 +192,7 @@ verifyCodeInput.addEventListener('input', () => {
     if(verifyCodeInput.value.length > 4) {
         const lastEntredNumber = verifyCodeInput.value;
         verifyCodeInput.value = lastEntredNumber.substring(0, 4)
+    } if (verifyCodeInput.value.length === 4) {
+        verifyCodeInput.parentElement.parentElement.parentElement.parentElement.lastElementChild.click();
     }
 })
