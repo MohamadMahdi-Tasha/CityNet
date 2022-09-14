@@ -98,9 +98,9 @@ myHeaders.append("debug", "true");
 myHeaders.append("Authorization", `Bearer ${localStorage.getItem('logged-in-token')}`);
 myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 urlencoded.append("date", firstSectOfFlight.getAttribute('data-date'));
-urlencoded.append("adult_count", dataTicket.adultNumber);
-urlencoded.append("child_count", dataTicket.kidNumber);
-urlencoded.append("infant_count", dataTicket.newBornNumber);
+urlencoded.append("adult_count", JSON.parse(dataTicket).adultNumber);
+urlencoded.append("child_count", JSON.parse(dataTicket).kidNumber);
+urlencoded.append("infant_count", JSON.parse(dataTicket).newBornNumber);
 urlencoded.append("from", "81");
 urlencoded.append("to", "82");
 

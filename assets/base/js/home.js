@@ -74,6 +74,9 @@ oneWaySubmitBtn.addEventListener('click', () => {
 
     // If There Is No Problem Then Set Local Storage Item
     if (document.querySelectorAll('.intractive-input-component.errored').length === 0) {
+        const newLink = document.createElement('a');
+        newLink.href = 'flight.html';
+
         localStorage.setItem('data-ticket', JSON.stringify({
             'startCity': returnCityName(startPlace.lastElementChild.firstElementChild.lastElementChild.textContent),
             'endCity': returnCityName(endPlace.lastElementChild.firstElementChild.lastElementChild.textContent),
@@ -82,5 +85,7 @@ oneWaySubmitBtn.addEventListener('click', () => {
             'kidNumber': Number(document.querySelector('.kid-number').textContent),
             'newBornNumber': Number(document.querySelector('.new-born-number').textContent),
         }))
+
+        newLink.click();
     }
 })
