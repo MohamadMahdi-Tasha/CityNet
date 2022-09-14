@@ -4,6 +4,35 @@ const startPlace = document.getElementById('start-place');
 const endPlace = document.getElementById('end-place');
 const flightDate = document.getElementById('first-date');
 
+// A Function That Checks Given Sign And Returns Citys Name
+function returnCityName(condition) {
+    let returnableCity;
+    switch (condition) {
+        case 'THR':returnableCity = "Tehran";break;
+        case 'KIH':returnableCity = "Kish";break;
+        case 'IST':returnableCity = "Istanbul";break;
+        case 'DXD':returnableCity = "Dubai";break;
+        case 'MHD':returnableCity = "Mashhad";break;
+        case 'AWZ':returnableCity = "Ahvaz";break;
+        case 'ESB':returnableCity = "Ankara";break;
+        case 'LHR':returnableCity = "London";break;
+        case 'TBZ':returnableCity = "Tabriz";break;
+        case 'GSM':returnableCity = "Qeshm";break;
+        case 'YYZ':returnableCity = "Torento";break;
+        case 'ENV':returnableCity = "Yerevan";break;
+        case 'BND':returnableCity = "Bandar Abbas";break;
+        case 'SYZ':returnableCity = "Shiraz";break;
+        case 'MCT':returnableCity = "Muscat";break;
+        case 'PEK':returnableCity = "Beijing";break;
+        case 'RAS':returnableCity = "Rasht";break;
+        case 'IFN':returnableCity = "Isfahan";break;
+        case 'NJF':returnableCity = "Najaf";break;
+        case 'GYD':returnableCity = "Baku";break;
+    }
+
+    return returnableCity
+}
+
 // Handled Errors
 oneWaySubmitBtn.addEventListener('click', () => {
     if (startPlace.lastElementChild.tagName.toLowerCase() !== 'div') {
@@ -42,4 +71,13 @@ oneWaySubmitBtn.addEventListener('click', () => {
         )
     }
     if (new Date(flightDate.value) > new Date()) {handleSuccses(flightDate.parentElement, flightDate.parentElement.nextElementSibling)}
+
+    // If There Is No Problem Then Set Local Storage Item
+    if (document.querySelectorAll('.intractive-input-component.errored').length === 0) {
+        localStorage.setItem('data-ticket', JSON.stringify({
+            'start-city': returnCityName(startPlace.lastElementChild.firstElementChild.lastElementChild.textContent),
+            'end-city': returnCityName(endPlace.lastElementChild.firstElementChild.lastElementChild.textContent),
+            'flight-date': flightDate.value,
+        }))
+    }
 })
