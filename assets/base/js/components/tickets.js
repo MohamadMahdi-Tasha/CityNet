@@ -45,7 +45,7 @@ class Tickets extends HTMLElement {
     constructor() {super();}
     connectedCallback() {
         this.innerHTML = `
-            <li ${(this.getAttribute('hidden')) ? this.style.display = 'none' : this.style.display = 'block'} class="flight-ticket-item"">
+            <li class="ticket-element" ${(this.getAttribute('hidden')) ? this.style.display = 'none' : this.style.display = 'block'} class="flight-ticket-item"">
                     <div class="bg-white rounded-3 p-3">
                         <!--Top Side-->
                         <div class="d-flex gap-3 gap-lg-5 flex-lg-row flex-column justify-content-between align-items-center bg-light-grey rounded-4 p-3 mb-3"   >
