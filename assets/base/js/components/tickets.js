@@ -51,7 +51,7 @@ class Tickets extends HTMLElement {
                         <div class="d-flex gap-3 gap-lg-5 flex-lg-row flex-column justify-content-between align-items-center bg-light-grey rounded-4 p-3 mb-3"   >
                             <!--Right Side-->
                             <div class="d-flex flex-lg-row flex-column mq-991-w-100 align-items-center justify-content-lg-start justify-content-between w-50 mq-991-w-100">
-                                <img src='${this.getAttribute("flag")}' class="ms-4 mq-991-w-100">
+                                <img width="50px" height="50px"  src='${this.getAttribute("flag")}' class="ms-4 mq-991-w-100">
                                 <div class="text-center">
                                     <div class="d-flex mb-3 justify-content-between flex-wrap gap-3">
                                         <span class="bg-light-green text-green font-smallx px-2 p-1 rounded-2 text-nowrap">${(this.getAttribute('mode') === 'true') ? 'سیستمی' : 'استاندارد'}</span>
@@ -172,12 +172,16 @@ class Tickets extends HTMLElement {
                                     <div class="bg-grey d-flex justify-content-between p-3">
                                         <!--Right Side-->
                                         <div class="d-flex align-items-center">
-                                            <h6 class="mb-0 text-black font-small ms-3">TEH<i class="bi bi-arrow-left-short"></i>IFH</h6>
+                                            <h6 class="mb-0 text-black font-small ms-3">
+                                            ${showCitysNameByCondition(this.getAttribute('start-place')).slice(1, 4)}
+                                            <i class="bi bi-arrow-left-short"></i>
+                                            ${showCitysNameByCondition(this.getAttribute('end-place')).slice(1, 4)}
+                                            </h6>
                                             <div class="vertical-divider h-100"></div>
                                             <h6 class="mb-0 text-black font-small me-3">مسیر
-                                                <span>تهران</span>
+                                                <span>${showCitysNameByCondition(this.getAttribute('start-place'))}</span>
                                                 <span>به</span>
-                                                <span>اصفهان</span>
+                                                <span>${showCitysNameByCondition(this.getAttribute('end-place'))}</span>
                                             </h6>
                                         </div>
                                         <!--Left Side-->
@@ -217,7 +221,7 @@ class Tickets extends HTMLElement {
                                                         <div class="ticket-bottom-divider ms-3"></div>
                                                         <div class="d-flex ticket-divider-label bottom"><i class="bi bi-airplane rotate-270 ms-3"></i><h6 class="font-small">${showCitysNameByCondition(this.getAttribute('end-place'))}</h6></div>
                                                     </div>
-                                                    <img class="ticket-divider-img" src="${this.getAttribute('flag')}">
+                                                    <img width="50px" height="50px" class="ticket-divider-img" src="${this.getAttribute('flag')}">
                                                 </div>
                                             </div>
                                             <div class="col">
