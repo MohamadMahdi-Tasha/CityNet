@@ -12,6 +12,7 @@ const loggedInWallet = document.querySelectorAll('.logged-in-wallet');
 const loggedInName = document.querySelectorAll('.logged-in-name');
 const loggedInButtonHeader = document.getElementById('logged-in-button-header');
 const verifyCodeInput = document.getElementById('verify-code-input');
+const exitButton = document.querySelector('.logged-in-button-header ul > li:last-of-type > button');
 
 // A Function That Adds Class Of 'errored' To First Given Element And Class Of 'show' To Second Given Element And
 // Sets Content Of third Given Element To Given Text
@@ -195,4 +196,10 @@ verifyCodeInput.addEventListener('input', () => {
     } if (verifyCodeInput.value.length === 4) {
         verifyCodeInput.parentElement.parentElement.parentElement.parentElement.lastElementChild.click();
     }
+})
+
+// Added Event Listener On Click Of Exit Button That Removes 'logged-in-token' From Local Storage And Reloads Page
+exitButton.addEventListener('click', () => {
+    localStorage.removeItem('logged-in-token');
+    document.location.reload();
 })
