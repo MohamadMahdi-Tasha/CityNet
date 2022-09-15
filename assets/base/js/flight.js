@@ -9,12 +9,8 @@ const nataiejNumber = document.getElementById('nataiej-number');
 const myHeaders = new Headers();
 const urlencoded = new URLSearchParams();
 const parsedTicket = JSON.parse(localStorage.getItem('data-ticket'))
-const flightDate = parsedTicket.flightDate;
-const flightDateToSet = new Date(flightDate)
-const rightsideDate = document.getElementById('right-side-date')
 const flightTopSideStartCity = document.getElementById('flight-top-side-start-city');
 const flightTopSideEndCity = document.getElementById('flight-top-side-end-city');
-const flightTopSideDate = document.getElementById('flight-top-side-date');
 const flightTopSidePassengersCount = document.getElementById('flight-top-side-passengers-count');
 const flightTopSidePassengers = document.getElementById('flight-top-side-passengers-class');
 const flightRightSideStartCity = document.getElementById('flight-right-side-start-city')
@@ -23,7 +19,6 @@ const rightSideSearchStartCity = document.getElementById('right-side-search-star
 const rightSideSearchEndCity = document.getElementById('right-side-search-end-city')
 const flightType = document.getElementById('flight-type')
 let monthToSet;
-let dateToSet;
 
 // Setting Some Options For Fetch
 myHeaders.append("Accept", "application/json");
@@ -116,16 +111,6 @@ function fetchTicket() {
         .catch(error => console.log('error', error));
 }
 
-// Checking If Length Of Month And Date Returned From 'flightDateToSet' Variable Is 1. If It Is Then Set
-// First Char Of Them To 0 Other Wise Return Them In As Variable
-if (`${flightDateToSet.getMonth() + 1}`.length === 1) {monthToSet = `0${flightDateToSet.getMonth() + 1}`}
-else {monthToSet = `${flightDateToSet.getMonth() + 1}`}
-if (`${flightDateToSet.getDate()}`.length === 1) {dateToSet = `0${flightDateToSet.getDate()}`}
-else {dateToSet = `${flightDateToSet.getDate()}`}
-
-// Setting Attribute Of 'data-date' In First Section Of Flight Page To Given Data From Home Page
-firstSectOfFlight.setAttribute('data-date', `${flightDateToSet.getFullYear()}-${monthToSet}-${dateToSet}`)
-
 // Removing Scroll Of Page In Load Of Page
 document.body.style.overflowY = 'hidden';
 
@@ -145,34 +130,7 @@ flightTopBtn.forEach(item => {
     })
 })
 
-PrevDayToggler.addEventListener('click', () => {
-    const currentSelectedDate = new Date(firstSectOfFlight.getAttribute('data-date'));
-    const dateToShow = `${currentSelectedDate.getFullYear()}-${currentSelectedDate.getMonth()}-${currentSelectedDate.getDate()}`
-
-    loaderModal.setAttribute('data-opened', 'true');
-    document.body.style.overflowY = 'hidden';
-    document.querySelectorAll('ticket-element').forEach(item => item.remove())
-
-    firstSectOfFlight.setAttribute('data-date', dateToShow)
-    rightsideDate.textContent = dateToShow;
-    flightTopSideDate.textContent = dateToShow;
-
-    fetchTicket()
-})
-
-NextDayToggler.addEventListener('click', () => {const nextDate = new Date(currentSelectedDate.setDate(currentSelectedDate.getDate() + 1));showDate(nextDate)})
-
 // Fetching Ticket Api
 fetchTicket()
 
 // Setting Some Text Contents For UX
-flightTopSideStartCity.textContent = showCitysNameByCondition(parsedTicket.startCity)
-flightTopSideEndCity.textContent = showCitysNameByCondition(parsedTicket.endCity)
-flightTopSideDate.textContent = firstSectOfFlight.getAttribute('data-date')
-flightTopSidePassengersCount.textContent = parsedTicket.adultNumber + parsedTicket.kidNumber + parsedTicket.newBornNumber
-flightTopSidePassengers.textContent = parsedTicket.passengerClass
-rightsideDate.textContent = firstSectOfFlight.getAttribute('data-date')
-flightRightSideStartCity.textContent = showCitysNameByCondition(parsedTicket.startCity)
-flightRightSideEndCity.textContent = showCitysNameByCondition(parsedTicket.endCity)
-rightSideSearchStartCity.textContent = showCitysNameByCondition(parsedTicket.startCity).slice(0, showCitysNameByCondition(parsedTicket.startCity).indexOf('('))
-rightSideSearchEndCity.textContent = showCitysNameByCondition(parsedTicket.endCity).slice(0, showCitysNameByCondition(parsedTicket.endCity).indexOf('('))
