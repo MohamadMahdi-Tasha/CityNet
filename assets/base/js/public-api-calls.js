@@ -12,7 +12,7 @@ const loggedInWallet = document.querySelectorAll('.logged-in-wallet');
 const loggedInName = document.querySelectorAll('.logged-in-name');
 const loggedInButtonHeader = document.getElementById('logged-in-button-header');
 const verifyCodeInput = document.getElementById('verify-code-input');
-const exitButton = document.querySelector('.logged-in-button-header ul > li:last-of-type button');
+const exitButton = document.querySelector('.exit-from-account');
 
 // A Function That Adds Class Of 'errored' To First Given Element And Class Of 'show' To Second Given Element And
 // Sets Content Of third Given Element To Given Text
