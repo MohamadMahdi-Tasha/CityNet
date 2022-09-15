@@ -1,4 +1,6 @@
 // Variables
+let monthToUse;
+let dayToUse;
 const flightTopBtn = document.querySelectorAll('.flight-top-btn');
 const flightTicketsHolder = document.getElementById('flight-tickets-holder');
 const PrevDayToggler = document.getElementById('prev-day-toggler');
@@ -6,9 +8,8 @@ const NextDayToggler = document.getElementById('next-day-toggler');
 const firstSectOfFlight = document.getElementById('first-sect-of-flight');
 const loaderModal = document.getElementById('loader-modal')
 const nataiejNumber = document.getElementById('nataiej-number');
-const myHeaders = new Headers();
-const urlencoded = new URLSearchParams();
 const parsedTicket = JSON.parse(localStorage.getItem('data-ticket'))
+const flightDate = new Date(parsedTicket.flightDate);
 const flightTopSideStartCity = document.getElementById('flight-top-side-start-city');
 const flightTopSideEndCity = document.getElementById('flight-top-side-end-city');
 const flightTopSidePassengersCount = document.getElementById('flight-top-side-passengers-count');
@@ -17,27 +18,16 @@ const flightRightSideStartCity = document.getElementById('flight-right-side-star
 const flightRightSideEndCity = document.getElementById('flight-right-side-end-city')
 const rightSideSearchStartCity = document.getElementById('right-side-search-start-city')
 const rightSideSearchEndCity = document.getElementById('right-side-search-end-city')
+const flightTopSideDate = document.getElementById('flight-top-side-date')
 const flightType = document.getElementById('flight-type')
-let monthToSet;
+const rightSideDate = document.getElementById('right-side-date');
 
-// Setting Some Options For Fetch
-myHeaders.append("Accept", "application/json");
-myHeaders.append("debug", "true");
-myHeaders.append("Authorization", `Bearer ${localStorage.getItem('logged-in-token')}`);
-myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
-urlencoded.append("date", firstSectOfFlight.getAttribute('data-date'));
-urlencoded.append("adult_count", parsedTicket.adultNumber);
-urlencoded.append("child_count", parsedTicket.kidNumber);
-urlencoded.append("infant_count", parsedTicket.newBornNumber);
-urlencoded.append("from", "81");
-urlencoded.append("to", "82");
+if (`${flightDate.getMonth() + 1}`.length === 1) {monthToUse = `0${flightDate.getMonth() + 1}`}
+else {monthToUse = `${flightDate.getMonth() + 1}`}
+if (`${flightDate.getDate()}`.length === 1) {dayToUse = `0${flightDate.getDate()}`}
+else {dayToUse = `${flightDate.getDate()}`}
 
-const requestOptions = {
-    method: 'POST',
-    headers: myHeaders,
-    body: urlencoded,
-    redirect: 'follow'
-};
+let dateToUse = `${flightDate.getFullYear()}-${monthToUse}-${dayToUse}`;
 
 // A Function That Checks If Every Ticket Is Systematic Or Standard Then Base On It Returns A Text Other Wise Shows Number Of Standard And Systematic Tickets
 function setRightSideFlightTypes() {
@@ -96,7 +86,31 @@ function newTicketElement(item) {
 }
 
 // A Function That Fetches Ticket Api
-function fetchTicket() {
+function fetchTicket(date) {
+    const myHeaders = new Headers();
+    const urlencoded = new URLSearchParams();
+
+    document.body.style.overflowY = 'hidden';
+    loaderModal.setAttribute('data-opened', 'true')
+    document.querySelectorAll('ticket-element').forEach(item => item.remove());
+
+    myHeaders.append("Accept", "application/json");
+    myHeaders.append("debug", "true");
+    myHeaders.append("Authorization", `Bearer ${localStorage.getItem('logged-in-token')}`);
+    myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+    urlencoded.append("date", date);
+    urlencoded.append("adult_count", parsedTicket.adultNumber);
+    urlencoded.append("child_count", parsedTicket.kidNumber);
+    urlencoded.append("infant_count", parsedTicket.newBornNumber);
+    urlencoded.append("from", "81");
+    urlencoded.append("to", "82");
+    const requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: urlencoded,
+        redirect: 'follow'
+    };
+
     fetch("https://www.newcash.me/api/v2/airfare/flights/search", requestOptions)
         .then(response => response.json())
         .then(result => {
@@ -110,9 +124,6 @@ function fetchTicket() {
         })
         .catch(error => console.log('error', error));
 }
-
-// Removing Scroll Of Page In Load Of Page
-document.body.style.overflowY = 'hidden';
 
 // Adding Event Listener On Each Flight Top Buttons That Listens To CLick And Removes 'active' Class Name The Other active Button And Adds
 // It To Clicked Button . Then Checks If Text Content OF Clicked Item is "ارزان ترین قیمت" . If It Is Then Calls 'showSortedListOfPrice' Function
@@ -130,7 +141,18 @@ flightTopBtn.forEach(item => {
     })
 })
 
-// Fetching Ticket Api
-fetchTicket()
+PrevDayToggler.addEventListener('click', () => {fetchTicket(dateToUse)})
+NextDayToggler.addEventListener('click', () => {fetchTicket(dateToUse)})
+window.addEventListener('load', () => {fetchTicket(dateToUse)})
 
 // Setting Some Text Contents For UX
+flightTopSideStartCity.textContent =  showCitysNameByCondition(parsedTicket.startCity)
+flightTopSideEndCity.textContent = showCitysNameByCondition(parsedTicket.endCity)
+flightTopSidePassengersCount.textContent = parsedTicket.adultNumber + parsedTicket.kidNumber + parsedTicket.newBornNumber
+flightTopSidePassengers.textContent = parsedTicket.passengerClass
+flightRightSideStartCity.textContent = showCitysNameByCondition(parsedTicket.startCity)
+flightRightSideEndCity.textContent = showCitysNameByCondition(parsedTicket.endCity)
+rightSideSearchStartCity.textContent = showCitysNameByCondition(parsedTicket.startCity).slice(0,parsedTicket.startCity.length)
+rightSideSearchEndCity.textContent = showCitysNameByCondition(parsedTicket.endCity).slice(0,parsedTicket.endCity.length)
+flightTopSideDate.textContent = dateToUse
+rightSideDate.textContent = dateToUse
