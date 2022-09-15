@@ -388,21 +388,13 @@
         <aside class="w-25 d-lg-flex d-none flex-column gap-3">
             <div class="bg-white my-shadow p-4 rounded-3">
                 <div class="d-flex justify-content-center align-items-center">
-                    <h6 class="font-small">(THR) تهران</h6>
+                    <h6 id="flight-right-side-start-city" class="font-small">(THR) تهران</h6>
                     <i class="bi bi-arrow-left-short fs-4 me-2 ms-2"></i>
-                    <h6 class="font-small">(IFN) اصفهان</h6>
+                    <h6 id="flight-right-side-end-city" class="font-small">(IFN) اصفهان</h6>
                 </div>
                 <div class="d-flex align-items-center justify-content-between mt-3 gap-3">
                     <button id="prev-day-toggler" class="d-flex align-items-center font-small border-0 bg-transparent"><i class="bi bi-chevron-right ms-1"></i>روز قبل</button>
-                    <div>
-                        <h6 class="font-small text-center text-grey">چهارشنبه 13 مهر</h6>
-                        <h6 class="font-small text-center text-grey">
-                            <span id="right-side-month-text">Oct</span>
-                            <span id="right-side-day-text">5</span>
-                            ,
-                            <span id="right-side-year-text">2022</span>
-                        </h6>
-                    </div>
+                    <div><h6 class="font-small text-center text-grey mb-0" id="right-side-date">Oct 5, 2022</h6></div>
                     <button id="next-day-toggler" class="d-flex align-items-center font-small border-0 bg-transparent">
                         روز بعد
                         <i class="bi bi-chevron-left me-1"></i>
@@ -416,7 +408,11 @@
                 </button>
                 <div class="collapse mt-3 show" id="flight-number">
                     <div class="intractive-input-component h-auto mb-2 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
-                        <h6>تهران به اصفهان</h6>
+                        <h6>
+                            <span id="right-side-search-start-city">تهران</span>
+                            به
+                            <span id="right-side-search-end-city">اصفهان</span>
+                        </h6>
                         <input type="text" class="bg-transparent border-0 w-100">
                     </div>
                 </div>
@@ -451,43 +447,7 @@
                     نوع پرواز
                     <i class="bi bi-chevron-down"></i>
                 </button>
-                <div class="collapse mt-3 show" id="flight-type"><h6 class="text-grey font-small text-center">تمامی پروازها سیستمی می‌باشند</h6></div>
-            </div>
-            <div class="bg-white my-shadow p-4 rounded-3">
-                <button class="bg-white border-0 text-grey w-100 d-flex justify-content-between align-items-center fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#number-of-stops" aria-expanded="true" aria-controls="collapseExample">
-                    تعداد توقف
-                    <i class="bi bi-chevron-down"></i>
-                </button>
-                <div class="collapse mt-3 show" id="number-of-stops">
-                    <h6 class="text-grey mb-2 font-small">تهران به اصفهان</h6>
-                    <h6 class="text-grey text-center font-small">تمامی پروازها بدون توقف می‌باشند</h6>
-                </div>
-            </div>
-            <div class="bg-white my-shadow p-4 rounded-3">
-                <button class="bg-white border-0 text-grey w-100 d-flex justify-content-between align-items-center fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#air-ports" aria-expanded="true" aria-controls="collapseExample">
-                    فرودگاه‌ها
-                    <i class="bi bi-chevron-down"></i>
-                </button>
-                <div class="collapse mt-3 show" id="air-ports">
-                    <div class="intractive-input-component h-auto mb-4 my-modal-init position-relative w-100 px-3 py-2 d-flex align-items-center" type="button">
-                        <h6>جستجوی فرودگاه</h6>
-                        <input type="text" class="bg-transparent border-0 w-100" required>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between mb-3">
-                        <div class="d-flex align-items-center">
-                            <input id="chckbox-1" type="checkbox" class="accent-base ms-3 font-small">
-                            <lable class="fw-light font-small text-grey" for="chckbox-1">Mehrabad Intl</lable>
-                        </div>
-                        <h6 class="fw-bold text-grey font-small">THR</h6>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <input id="chckbox-2" type="checkbox" class="accent-base ms-3 font-small">
-                            <lable class="fw-light font-small text-grey" for="chckbox-2">Shahid Beheshti Intl</lable>
-                        </div>
-                        <h6 class="fw-bold text-grey font-small">IFN</h6>
-                    </div>
-                </div>
+                <div class="collapse mt-3 show text-end" id="flight-type"></div>
             </div>
             <div class="bg-white my-shadow p-4 rounded-3">
                 <button class="bg-white border-0 text-grey w-100 d-flex justify-content-between align-items-center fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#time" aria-expanded="false" aria-controls="collapseExample">
@@ -589,8 +549,8 @@
                 <div class="d-flex align-items-center flex-lg-nowrap flex-wrap">
                     <i class="bi bi-filter ms-3 fs-3 text-dark"></i>
                     <h6 class="font-small ms-3 text-dark mb-0">ترتیب بر اساس</h6>
-                    <button class="flight-top-btn d-flex transition px-3 py-3 border-0 rounded-3 font-small justify-content-center align-items-center active">ارزان ترین قیمت</button>
-                    <button class="flight-top-btn d-flex transition px-3 py-3 border-0 rounded-3 font-small justify-content-center align-items-center">ساعت حرکت</button>
+                    <button class="flight-top-btn d-flex transition px-3 py-3 border-0 rounded-3 font-small justify-content-center align-items-center">ارزان ترین قیمت</button>
+                    <button class="flight-top-btn d-flex transition px-3 py-3 border-0 rounded-3 font-small justify-content-center align-items-center active">ساعت حرکت</button>
                 </div>
                 <!--Left Side-->
                 <div class="d-lg-flex d-none align-items-center">
@@ -651,20 +611,5 @@
 <script src="assets/base/js/public-api-calls.js"></script>
 <script src="assets/base/js/components/tickets.js"></script>
 <script src="assets/base/js/flight.js"></script>
-<script>
-    const flightTopSideStartCity = document.getElementById('flight-top-side-start-city');
-    const flightTopSideEndCity = document.getElementById('flight-top-side-end-city');
-    const flightTopSideDate = document.getElementById('flight-top-side-date');
-    const flightTopSidePassengersCount = document.getElementById('flight-top-side-passengers-count');
-    const flightTopSidePassengers = document.getElementById('flight-top-side-passengers');
-    const parsedTicket = JSON.parse(localStorage.getItem('data-ticket'))
-
-
-    flightTopSideStartCity.textContent = showCitysNameByCondition(parsedTicket.startCity)
-    flightTopSideEndCity.textContent = showCitysNameByCondition(parsedTicket.endCity)
-    flightTopSideDate.textContent = parsedTicket.flightDate
-    flightTopSidePassengersCount.textContent = parsedTicket.adultNumber + parsedTicket.kidNumber + parsedTicket.newBornNumber
-    flightTopSidePassengers.textContent = parsedTicket.passengerClass
-</script>
 </body>
 </html>

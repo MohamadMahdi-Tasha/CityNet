@@ -54,7 +54,7 @@ class Tickets extends HTMLElement {
                                 <img width="50px" height="50px"  src='${this.getAttribute("flag")}' class="ms-4 mq-991-w-100">
                                 <div class="text-center">
                                     <div class="d-flex mb-3 justify-content-between flex-wrap gap-3">
-                                        <span class="bg-light-green text-green font-smallx px-2 p-1 rounded-2 text-nowrap">${(this.getAttribute('mode') === 'true') ? 'سیستمی' : 'استاندارد'}</span>
+                                        <span class="${(this.getAttribute('mode') === 'true') ? 'bg-light-blue text-blue' : 'bg-light-green text-green'} font-smallx px-2 p-1 rounded-2 text-nowrap">${(this.getAttribute('mode') === 'true') ? 'سیستمی' : 'استاندارد'}</span>
                                         <span class="bg-light-blue text-blue font-smallx px-2 p-1 rounded-2 text-nowrap"><span>${this.getAttribute('capacity')}</span> صندلی</span>
                                     </div>
                                     <h6 class="text-nowrap text-grey font-small">

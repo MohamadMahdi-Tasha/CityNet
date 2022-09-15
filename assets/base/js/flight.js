@@ -1,64 +1,34 @@
 // Variables
 let listOfTickets = [];
-const flightTicketItems = document.querySelectorAll('.flight-ticket-item');
 const flightTopBtn = document.querySelectorAll('.flight-top-btn');
 const flightTicketsHolder = document.getElementById('flight-tickets-holder');
 const PrevDayToggler = document.getElementById('prev-day-toggler');
 const NextDayToggler = document.getElementById('next-day-toggler');
 const firstSectOfFlight = document.getElementById('first-sect-of-flight');
 const currentSelectedDate = new Date(firstSectOfFlight.getAttribute('data-date'));
-const rightSideMonthText = document.getElementById('right-side-month-text');
-const rightSideDayText = document.getElementById('right-side-day-text');
-const rightSideYearText = document.getElementById('right-side-year-text');
 const loaderModal = document.getElementById('loader-modal')
 const nataiejNumber = document.getElementById('nataiej-number');
 const myHeaders = new Headers();
 const urlencoded = new URLSearchParams();
-const dataTicket = localStorage.getItem('data-ticket')
-const flightDate = JSON.parse(dataTicket).flightDate;
+const parsedTicket = JSON.parse(localStorage.getItem('data-ticket'))
+const flightDate = parsedTicket.flightDate;
 const flightDateToSet = new Date(flightDate)
+const rightsideDate = document.getElementById('right-side-date')
+const flightTopSideStartCity = document.getElementById('flight-top-side-start-city');
+const flightTopSideEndCity = document.getElementById('flight-top-side-end-city');
+const flightTopSideDate = document.getElementById('flight-top-side-date');
+const flightTopSidePassengersCount = document.getElementById('flight-top-side-passengers-count');
+const flightTopSidePassengers = document.getElementById('flight-top-side-passengers-class');
+const flightRightSideStartCity = document.getElementById('flight-right-side-start-city')
+const flightRightSideEndCity = document.getElementById('flight-right-side-end-city')
+const rightSideSearchStartCity = document.getElementById('right-side-search-start-city')
+const rightSideSearchEndCity = document.getElementById('right-side-search-end-city')
+const flightType = document.getElementById('flight-type')
 let monthToSet;
 let dateToSet;
 
 // Removing Scroll Of Page In Load Of Page
 document.body.style.overflowY = 'hidden';
-
-// A Function That Sorts Items By 'date-price' Attritube
-function showSortedListOfPrice() {
-    const sortedArray = listOfTickets.sort((a, b) => +a.getAttribute('data-price') - +b.getAttribute('data-price'));
-    sortedArray.forEach(item => flightTicketsHolder.appendChild(item))
-}
-
-// A Function That Sets Text Content Of Right Side Date Items (At The Top) To Given Date And Instead Of Month Number Shows Name Of Month In Text
-function showDate(date) {
-    const month = date.getMonth();
-    let monthText;
-
-    switch (Number(month)) {
-        case 1: monthText = 'Jan';break;
-        case 2: monthText = 'Feb';break;
-        case 3: monthText = 'Mar';break;
-        case 4: monthText = 'Apr';break;
-        case 5: monthText = 'May';break;
-        case 6: monthText = 'Jun';break;
-        case 7: monthText = 'Jul';break;
-        case 8: monthText = 'Aug';break;
-        case 9: monthText = 'Sep';break;
-        case 10: monthText = 'Oct';break;
-        case 11: monthText = 'Nov';break;
-        case 12: monthText = 'Dec';break;
-    }
-
-    rightSideMonthText.textContent = monthText;
-    rightSideDayText.textContent = date.getDate();
-    rightSideYearText.textContent = date.getFullYear();
-}
-
-// Adding Event Listener On Load Of Window That Sorts List Of Items By Price Of It.
-window.addEventListener('load', () => {
-    flightTicketItems.forEach(item => listOfTickets.push(item));
-    showSortedListOfPrice();
-})
 
 // Adding Event Listener On Each Flight Top Buttons That Listens To CLick And Removes 'active' Class Name The Other active Button And Adds
 // It To Clicked Button . Then Checks If Text Content OF Clicked Item is "ارزان ترین قیمت" . If It Is Then Calls 'showSortedListOfPrice' Function
@@ -69,10 +39,9 @@ flightTopBtn.forEach(item => {
         item.classList.add('active')
 
         if (item.textContent === "ارزان ترین قیمت") {
-            showSortedListOfPrice()
+            alert(item.textContent)
         } else {
-            const sortedArray = listOfTickets.sort((a, b) => new Date(a.getAttribute("data-date")) - new Date(b.getAttribute("data-date")));
-            sortedArray.forEach(items => flightTicketsHolder.appendChild(items))
+            alert(item.textContent)
         }
     })
 })
@@ -97,9 +66,9 @@ myHeaders.append("debug", "true");
 myHeaders.append("Authorization", `Bearer ${localStorage.getItem('logged-in-token')}`);
 myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 urlencoded.append("date", firstSectOfFlight.getAttribute('data-date'));
-urlencoded.append("adult_count", JSON.parse(dataTicket).adultNumber);
-urlencoded.append("child_count", JSON.parse(dataTicket).kidNumber);
-urlencoded.append("infant_count", JSON.parse(dataTicket).newBornNumber);
+urlencoded.append("adult_count", parsedTicket.adultNumber);
+urlencoded.append("child_count", parsedTicket.kidNumber);
+urlencoded.append("infant_count", parsedTicket.newBornNumber);
 urlencoded.append("from", "81");
 urlencoded.append("to", "82");
 
@@ -139,8 +108,51 @@ fetch("https://www.newcash.me/api/v2/airfare/flights/search", requestOptions)
                 newElement.setAttribute('capacity', item.capacity)
                 newElement.setAttribute('mode', item.is_systemetic)
                 newElement.setAttribute('class', item.seat_class)
-                flightTicketsHolder.appendChild(newElement)
+                flightTicketsHolder.appendChild(newElement);
             })
+
+            if (document.querySelectorAll('ticket-element').length === document.querySelectorAll('ticket-element[mode="true"]').length) {
+                const newH6 = document.createElement('h6');
+                newH6.className = 'text-grey font-small';
+                newH6.textContent = 'تمامی پروازها سیستمی می‌باشند';
+                flightType.appendChild(newH6)
+            } else if (document.querySelectorAll('ticket-element').length === document.querySelectorAll('ticket-element[mode="undefined"]').length) {
+                const newH6 = document.createElement('h6');
+                newH6.className = 'text-grey font-small';
+                newH6.textContent = 'تمامی پروازها استاندارد می‌باشند';
+                flightType.appendChild(newH6)
+            } else {
+                const newH6_1 = document.createElement('h6');
+                const newH6_2 = document.createElement('h6');
+                const newSpan_1 = document.createElement('span');
+                const newSpan_2 = document.createElement('span');
+
+                newH6_1.className = 'text-grey font-small'
+                newH6_2.className = 'text-grey font-small'
+                newSpan_1.textContent = 'bg-light-green text-green badge'
+                newSpan_2.textContent = 'bg-light-blue text-blue badge'
+
+                newH6_1.textContent = 'استاندارد :';
+                newH6_2.textContent = 'سیستمی :';
+                newSpan_1.textContent = document.querySelectorAll('ticket-element[mode="undefined"]').length
+                newSpan_1.textContent = document.querySelectorAll('ticket-element[mode="true"]').length
+
+                newH6_1.appendChild(newSpan_1)
+                newH6_2.appendChild(newSpan_2)
+                flightType.appendChild(newH6_1)
+                flightType.appendChild(newH6_2)
+            }
         }
     })
     .catch(error => console.log('error', error));
+
+flightTopSideStartCity.textContent = showCitysNameByCondition(parsedTicket.startCity)
+flightTopSideEndCity.textContent = showCitysNameByCondition(parsedTicket.endCity)
+flightTopSideDate.textContent = parsedTicket.flightDate
+flightTopSidePassengersCount.textContent = parsedTicket.adultNumber + parsedTicket.kidNumber + parsedTicket.newBornNumber
+flightTopSidePassengers.textContent = parsedTicket.passengerClass
+rightsideDate.textContent = parsedTicket.flightDate
+flightRightSideStartCity.textContent = showCitysNameByCondition(parsedTicket.startCity)
+flightRightSideEndCity.textContent = showCitysNameByCondition(parsedTicket.endCity)
+rightSideSearchStartCity.textContent = showCitysNameByCondition(parsedTicket.startCity).slice(0, showCitysNameByCondition(parsedTicket.startCity).indexOf('('))
+rightSideSearchEndCity.textContent = showCitysNameByCondition(parsedTicket.endCity).slice(0, showCitysNameByCondition(parsedTicket.endCity).indexOf('('))
