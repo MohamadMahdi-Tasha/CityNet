@@ -4,7 +4,6 @@ const flightTicketsHolder = document.getElementById('flight-tickets-holder');
 const PrevDayToggler = document.getElementById('prev-day-toggler');
 const NextDayToggler = document.getElementById('next-day-toggler');
 const firstSectOfFlight = document.getElementById('first-sect-of-flight');
-const currentSelectedDate = new Date(firstSectOfFlight.getAttribute('data-date'));
 const loaderModal = document.getElementById('loader-modal')
 const nataiejNumber = document.getElementById('nataiej-number');
 const myHeaders = new Headers();
@@ -147,16 +146,16 @@ flightTopBtn.forEach(item => {
 })
 
 PrevDayToggler.addEventListener('click', () => {
-    const newDate = new Date(currentSelectedDate.setDate(currentSelectedDate.getDate() - 1))
+    const currentSelectedDate = new Date(firstSectOfFlight.getAttribute('data-date'));
+    const dateToShow = `${currentSelectedDate.getFullYear()}-${currentSelectedDate.getMonth()}-${currentSelectedDate.getDate()}`
 
     loaderModal.setAttribute('data-opened', 'true');
-
     document.body.style.overflowY = 'hidden';
     document.querySelectorAll('ticket-element').forEach(item => item.remove())
 
-    firstSectOfFlight.setAttribute('data-date', `${newDate.getFullYear()}-${monthToSet}-${dateToSet}`)
-    rightsideDate.textContent = `${newDate.getFullYear()}-${monthToSet}-${dateToSet}`
-    flightTopSideDate.textContent = `${newDate.getFullYear()}-${monthToSet}-${dateToSet}`
+    firstSectOfFlight.setAttribute('data-date', dateToShow)
+    rightsideDate.textContent = dateToShow;
+    flightTopSideDate.textContent = dateToShow;
 
     fetchTicket()
 })
