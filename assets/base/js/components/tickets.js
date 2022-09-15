@@ -51,7 +51,7 @@ class Tickets extends HTMLElement {
                         <div class="d-flex gap-3 gap-lg-5 flex-lg-row flex-column justify-content-between align-items-center bg-light-grey rounded-4 p-3 mb-3"   >
                             <!--Right Side-->
                             <div class="d-flex flex-lg-row flex-column mq-991-w-100 align-items-center justify-content-lg-start justify-content-between w-50 mq-991-w-100">
-                                <img width="50px" height="50px"  src='${this.getAttribute("flag")}' class="ms-4 mq-991-w-100">
+                                <img width="50px" height="50px"  src='${this.getAttribute("flag")}' class="ms-4 mq-991-w-100 mq-991-h-100">
                                 <div class="text-center">
                                     <div class="d-flex mb-3 justify-content-between flex-wrap gap-3">
                                         <span class="${(this.getAttribute('mode') === 'true') ? 'bg-light-blue text-blue' : 'bg-light-green text-green'} font-smallx px-2 p-1 rounded-2 text-nowrap">${(this.getAttribute('mode') === 'true') ? 'سیستمی' : 'استاندارد'}</span>
@@ -173,15 +173,15 @@ class Tickets extends HTMLElement {
                                         <!--Right Side-->
                                         <div class="d-flex align-items-center">
                                             <h6 class="mb-0 text-black font-small ms-3">
-                                            ${showCitysNameByCondition(this.getAttribute('start-place')).slice(1, 4)}
+                                            ${showCitysNameByCondition(this.getAttribute('start-place')).slice(0, showCitysNameByCondition(this.getAttribute('start-place')).indexOf('('))}
                                             <i class="bi bi-arrow-left-short"></i>
-                                            ${showCitysNameByCondition(this.getAttribute('end-place')).slice(1, 4)}
+                                            ${showCitysNameByCondition(this.getAttribute('end-place')).slice(0, showCitysNameByCondition(this.getAttribute('end-place')).indexOf('('))}
                                             </h6>
                                             <div class="vertical-divider h-100"></div>
                                             <h6 class="mb-0 text-black font-small me-3">مسیر
-                                                <span>${showCitysNameByCondition(this.getAttribute('start-place'))}</span>
+                                                <span>${showCitysNameByCondition(this.getAttribute('start-place')).slice(0, showCitysNameByCondition(this.getAttribute('start-place')).indexOf('('))}</span>
                                                 <span>به</span>
-                                                <span>${showCitysNameByCondition(this.getAttribute('end-place'))}</span>
+                                                <span>${showCitysNameByCondition(this.getAttribute('end-place')).slice(0, showCitysNameByCondition(this.getAttribute('end-place')).indexOf('('))}</span>
                                             </h6>
                                         </div>
                                         <!--Left Side-->
