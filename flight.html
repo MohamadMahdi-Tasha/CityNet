@@ -361,24 +361,24 @@
     <header class="container-xxl flight-page-top-side-blue bg-blue rounded-3 d-lg-flex d-grid gtc-3 gap-3 mb-3 align-items-center justify-content-between  p-3 text-white">
         <div>
             <h6 class="fw-light font-small">شهر یا فرودگاه مبدا</h6>
-            <h6 class="fw-bold font-small mb-0">(THR) تهران</h6>
+            <h6 class="fw-bold font-small mb-0" id="flight-top-side-start-city">(THR) تهران</h6>
         </div>
         <i class="bi bi-arrow-left"></i>
         <div>
             <h6 class="fw-light font-small">شهر یا فرودگاه مقصد</h6>
-            <h6 class="fw-bold font-small mb-0">(IFN) اصفهان</h6>
+            <h6 class="fw-bold font-small mb-0" id="flight-top-side-end-city">(IFN) اصفهان</h6>
         </div>
         <div>
             <h6 class="fw-light font-small">تاریخ رفت</h6>
-            <h6 class="fw-bold font-small mb-0">Oct 05, 2022</h6>
-        </div>
-        <div>
-            <h6 class="fw-light font-small">تاریخ برگشت</h6>
-            <h6 class="fw-bold font-small mb-0">--</h6>
+            <h6 class="fw-bold font-small mb-0" id="flight-top-side-date">Oct 05, 2022</h6>
         </div>
         <div>
             <h6 class="fw-light font-small">مسافران/کلاس کابین</h6>
-            <h6 class="fw-bold font-small mb-0">۱ مسافر ، اکونومی</h6>
+            <h6 class="fw-bold font-small mb-0">
+                <span id="flight-top-side-passengers-count">۱</span>
+                مسافر ،
+                <span id="flight-top-side-passengers-class">اکونومی</span>
+            </h6>
         </div>
         <a class="gc-3" href="index.html"><button  class="d-flex justify-content-center w-100 align-items-center rounded-3 text-white change-result-btn ripple-btn border-0 px-4 py-3">تغییر جستجو<i class="bi bi-arrow-clockwise me-3"></i></button></a>
     </header>
@@ -651,5 +651,20 @@
 <script src="assets/base/js/public-api-calls.js"></script>
 <script src="assets/base/js/components/tickets.js"></script>
 <script src="assets/base/js/flight.js"></script>
+<script>
+    const flightTopSideStartCity = document.getElementById('flight-top-side-start-city');
+    const flightTopSideEndCity = document.getElementById('flight-top-side-end-city');
+    const flightTopSideDate = document.getElementById('flight-top-side-date');
+    const flightTopSidePassengersCount = document.getElementById('flight-top-side-passengers-count');
+    const flightTopSidePassengers = document.getElementById('flight-top-side-passengers');
+    const parsedTicket = JSON.parse(localStorage.getItem('data-ticket'))
+
+
+    flightTopSideStartCity.textContent = showCitysNameByCondition(parsedTicket.startCity)
+    flightTopSideEndCity.textContent = showCitysNameByCondition(parsedTicket.endCity)
+    flightTopSideDate.textContent = parsedTicket.flightDate
+    flightTopSidePassengersCount.textContent = parsedTicket.adultNumber + parsedTicket.kidNumber + parsedTicket.newBornNumber
+    flightTopSidePassengers.textContent = parsedTicket.passengerClass
+</script>
 </body>
 </html>

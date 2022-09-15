@@ -77,7 +77,6 @@ flightTopBtn.forEach(item => {
     })
 })
 
-// Adding Event Listener On Prev And Next Day Toggles On Right Top Side Of Page That Sets Gets Selected Date And Goes For Day Before Or After (Based On Clicked Button)
 // And Saves It In A Variable Then Calls 'showDate' Function And Gives It Saved Variable As Parameter
 PrevDayToggler.addEventListener('click', () => {const prevDate = new Date(currentSelectedDate.setDate(currentSelectedDate.getDate() - 1));showDate(prevDate)})
 NextDayToggler.addEventListener('click', () => {const nextDate = new Date(currentSelectedDate.setDate(currentSelectedDate.getDate() + 1));showDate(nextDate)})

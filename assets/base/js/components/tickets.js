@@ -204,7 +204,7 @@ class Tickets extends HTMLElement {
                                             ${new Date(firstSectOfFlight.getAttribute('data-date')).toLocaleDateString('fa-IR')}
                                                 <span>${dayNamesFa[new Date(firstSectOfFlight.getAttribute('data-date')).getDay()]}</span>
                                                 <span>${new Date(firstSectOfFlight.getAttribute('data-date')).toLocaleDateString('fa-IR').slice(7 ,9)}</span>
-                                                <span>${monthNamesFa[new Date(firstSectOfFlight.getAttribute('data-date')).getMonth()]}</span>
+                                                <span>${monthNamesFa[new Date(firstSectOfFlight.getAttribute('data-date')).getMonth() - 1]}</span>
                                                 (
                                                 <span>${monthNamesEn[new Date(firstSectOfFlight.getAttribute('data-date')).getMonth()]}</span>
                                                 <span>${new Date(firstSectOfFlight.getAttribute('data-date')).getDate()}</span>

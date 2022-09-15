@@ -84,6 +84,7 @@ oneWaySubmitBtn.addEventListener('click', () => {
             'adultNumber': Number(document.querySelector('.adult-number').textContent),
             'kidNumber': Number(document.querySelector('.kid-number').textContent),
             'newBornNumber': Number(document.querySelector('.new-born-number').textContent),
+            'passengerClass': document.querySelector('.passenger-type').textContent
         }))
 
         newLink.click();
