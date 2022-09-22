@@ -29,6 +29,8 @@ fetch("https://www.newcash.me/api/v2/airfare/flights/search", requestOptions)
       loginModal.setAttribute("data-opened", "true");
       loaderModal.setAttribute("data-opened", "false");
       loginModal.querySelector('input[type="tel"]').focus();
+    } else {
+      // Do Something
     }
   })
   .catch((error) => console.log("error", error));
