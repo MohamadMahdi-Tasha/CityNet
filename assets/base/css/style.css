@@ -75,6 +75,11 @@ body {
     transform: rotate(180deg)
 }
 
+.intractive-buttons-with-border {
+    position: relative;
+}
+
+
 #mobile-nav:not([data-opened]),
 #mobile-nav:not([data-opened]) ~ #mobile-nav-bg {
     left: -100%;
@@ -151,10 +156,6 @@ body {
 .intractive-buttons-btn {
     width: 75px;
     height: 75px;
-}
-
-.intractive-buttons-with-border {
-    position: relative;
 }
 
 .intractive-buttons-border {
