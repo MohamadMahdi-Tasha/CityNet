@@ -23,6 +23,6 @@ togglers.forEach(item => {
 currencyChanger.forEach(item => {
     item.addEventListener('click', () => {
         const itemsCurrency  = item.getAttribute('data-item-currency');
-        htmlElement.setAttribute('data-currency', itemsCurrency)
+        htmlElement.setAttribute('data-currency', itemsCurrency);
     })
 })

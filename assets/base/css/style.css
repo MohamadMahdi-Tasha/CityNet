@@ -59,11 +59,11 @@ body {
     background: rgba(0, 0, 0, .2);
 }
 
-.my-drop-down-toggler > .bi-chevron-down:after {
+.my-drop-down-toggler > i.bi-chevron-down:before {
     transition: .3s;
 }
 
-.my-drop-down-holder > .my-drop-down-toggler > .bi-chevron-down:after {
+.my-drop-down-holder[data-opened] .my-drop-down-toggler > i.bi-chevron-down:before {
     transform: rotate(180deg)
 }
 
@@ -135,4 +135,8 @@ body {
 }
 
 /*Media Query's*/
-@media (min-width: 991px) {  #mobile-nav, #mobile-nav-bg {display: none;}  }
+@media (min-width: 991px) {
+    #mobile-nav, #mobile-nav-bg {
+        display: none;
+    }
+}
