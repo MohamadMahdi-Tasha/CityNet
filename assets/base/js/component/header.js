@@ -4,8 +4,8 @@ class Header extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
             <!--Top Side Header-->
-            <header class="d-flex justify-content-center align-items-center">
-                <div ${(this.getAttribute('not-home') !== null) ? "class='bg-blue header'" : "class='header d-flex bg-danger justify-content-between px-5 py-3 align-items-center container-xxl'"}>
+            <header ${(this.getAttribute('not-home') !== null) ? "class='bg-accent-darken4'" : null}>
+                <div class="d-flex justify-content-between px-5 py-3 align-items-center container-xxl">
                     <!--Right Side-->
                     <div class="d-flex align-items-center">
                         <img src="assets/base/img/img-logo-typo.svg" alt="سیتی نت" width="100px">
@@ -18,15 +18,19 @@ class Header extends HTMLElement {
                     </div>
                     <!--Left Side-->
                     <div class="d-flex gap-3">
-                        <button class="my-drop-down-toggler">
-                            <span id="currency-header-per">ریال</span>
-                            (<span id="currency-header-eng">IRR</span>)
-                        </button>
-                        <button>پیگیری خرید</button>
-                        <button>ورود/ثبت نام</button>
+                        <div class="my-drop-down-holder">
+                            <button class="my-drop-down-toggler ripple-button bg-transparent border-0 rounded-1 px-4 py-2 font-small text-white fw-bold">
+                                <span id="currency-header-per">ریال</span>
+                                (<span id="currency-header-eng">IRR</span>)
+                                <i  class="bi bi-chevron-down"></i>
+                            </button>
+                            <div class="my-drop-down">
+                            </div>
+                        </div>
+                        <button class="ripple-button bg-transparent border-0 rounded-1 px-4 py-2 font-small text-white fw-bold">پیگیری خرید</button>
+                        <button class="ripple-button bg-transparent border rounded-1 px-4 py-2 font-small text-white fw-bold">ورود/ثبت نام</button>
                     </div>
                 </div>
-</div>
             </header>
         `
     }
