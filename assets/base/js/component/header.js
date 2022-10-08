@@ -28,35 +28,35 @@ class Header extends HTMLElement {
                                 <i class="bi bi-chevron-down"></i>
                             </button>
                             <div class="my-drop-down">
-                                <button class="d-flex col-12 bg-transparent border-0 p-2 font-small justify-content-between align-items-center gap-2 flex-wrap ripple-button currency-changer" data-item-currency="IRR">
+                                <button class="d-flex col-12 bg-transparent border-0 p-2 font-small justify-content-between align-items-center gap-2 flex-wrap ripple-button currency-changer text-secondary-lighten1" data-item-currency="IRR">
                                     <span>
                                         <img src="assets/base/img/header/img-ir.svg" alt="ایران" width="20px" height="20px" class="rounded-2 ms-1">
                                         ریال
                                     </span>
                                     <span>(IRR)</span>
                                 </button>
-                                <button class="d-flex col-12 bg-transparent border-0 p-2 font-small justify-content-between align-items-center gap-2 flex-wrap ripple-button currency-changer" data-item-currency="USD">
+                                <button class="d-flex col-12 bg-transparent border-0 p-2 font-small justify-content-between align-items-center gap-2 flex-wrap ripple-button currency-changer text-secondary-lighten1" data-item-currency="USD">
                                     <span>
                                         <img src="assets/base/img/header/img-us.svg" alt="امریکا" width="20px" height="20px" class="rounded-2 ms-1">
                                         دلار
                                     </span>
                                     <span>(USD)</span>
                                 </button>
-                                <button class="d-flex col-12 bg-transparent border-0 p-2 font-small justify-content-between align-items-center gap-2 flex-wrap ripple-button currency-changer" data-item-currency="EUR">
+                                <button class="d-flex col-12 bg-transparent border-0 p-2 font-small justify-content-between align-items-center gap-2 flex-wrap ripple-button currency-changer text-secondary-lighten1" data-item-currency="EUR">
                                     <span>
                                         <img src="assets/base/img/header/img-eu.svg" alt="یورو" width="20px" height="20px" class="rounded-2 ms-1">
                                         یورو
                                     </span>
                                     <span>(EUR)</span>
                                 </button>
-                                <button class="d-flex col-12 bg-transparent border-0 p-2 font-small justify-content-between align-items-center gap-2 flex-wrap ripple-button currency-changer" data-item-currency="TRY">
+                                <button class="d-flex col-12 bg-transparent border-0 p-2 font-small justify-content-between align-items-center gap-2 flex-wrap ripple-button currency-changer text-secondary-lighten1" data-item-currency="TRY">
                                     <span>
                                         <img src="assets/base/img/header/img-tr.svg" alt="ترکیه" width="20px" height="20px" class="rounded-2 ms-1">
                                         لیر ترکیه
                                     </span>
                                     <span>(TRY)</span>
                                 </button>
-                                <button class="d-flex col-12 bg-transparent border-0 p-2 font-small justify-content-between align-items-center gap-2 flex-wrap ripple-button currency-changer" data-item-currency="IQD">
+                                <button class="d-flex col-12 bg-transparent border-0 p-2 font-small justify-content-between align-items-center gap-2 flex-wrap ripple-button currency-changer text-secondary-lighten1" data-item-currency="IQD">
                                     <span>
                                         <img src="assets/base/img/header/img-iq.svg" alt="عراق" width="20px" height="20px" class="rounded-2 ms-1">
                                         دینار عراق

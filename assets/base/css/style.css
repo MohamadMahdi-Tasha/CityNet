@@ -35,7 +35,7 @@ body {
 }
 
 .font-small {
-    font-size: 12px;
+    font-size: 13px;
 }
 
 .header-links {
@@ -57,6 +57,14 @@ body {
 
 .my-drop-down > .ripple-button .ripple-button--inner-span {
     background: rgba(0, 0, 0, .2);
+}
+
+.intractive-buttons-btn[active] {
+    color: var(--primary-base);
+}
+
+.intractive-buttons-btn.ripple-button .ripple-button--inner-span {
+    background-color: rgba(221, 153, 51, .2);
 }
 
 .my-drop-down-toggler > i.bi-chevron-down:before {
@@ -133,6 +141,29 @@ body {
     background-image: url('../img/home/img-first-section.png');
     background-size: cover;
     min-height: 90vh;
+}
+
+.home-second-section {
+    margin-top: -10rem;
+    padding: 0 10rem;
+}
+
+.intractive-buttons-btn {
+    width: 75px;
+    height: 75px;
+}
+
+.intractive-buttons-with-border {
+    position: relative;
+}
+
+.intractive-buttons-border {
+    position: absolute;
+    width: 75px;
+    height: 2px;
+    background-color: var(--primary-base);
+    bottom: 0;
+    transition: .3s;
 }
 
 /*Hover, Focus, ...*/
