@@ -165,7 +165,7 @@ a {
 }
 
 body {
-    font-family: iranyekan, Tahoma, "Roboto Light", sans-serif;
+    font-family: iranyekan, Tahoma, "Roboto Light", sans-serif !important;
     font-size: 18px;
     line-height: 1.8;
     scroll-behavior: smooth;
@@ -174,7 +174,25 @@ body {
 }
 
 /*Styles*/
+.font-small {font-size: 12px;}
+.header-links {position: relative;transition: .3s;}
+
+.header-links::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: .3s;
+    border-radius: 50rem;
+}
+
 
 /*Hover, Focus, ...*/
+.header-links:hover::after {
+    width: 100%;
+}
 
 /*Media Query's*/
