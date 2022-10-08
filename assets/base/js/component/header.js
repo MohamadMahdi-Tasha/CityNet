@@ -1,4 +1,4 @@
-// Custom Element
+// Custom Header
 class Header extends HTMLElement {
     constructor() {super();}
     connectedCallback() {
@@ -8,8 +8,9 @@ class Header extends HTMLElement {
                 <div class="d-flex justify-content-between px-5 py-3 align-items-center container-xxl">
                     <!--Right Side-->
                     <div class="d-flex align-items-center">
+                        <button data-target="#mobile-nav" class="toggler d-lg-none d-block border rounded-1 ripple-button bg-transparent text-white ms-3"><i class="bi bi-list"></i></button>
                         <img src="assets/base/img/img-logo-typo.svg" alt="سیتی نت" width="100px">
-                        <ul class="list-unstyled d-flex mb-0 gap-3">
+                        <ul class="list-unstyled mb-0 gap-3 d-lg-flex d-none">
                             <li><a class="text-white font-small header-links" href="index.html">صفحه اصلی</a></li>
                             <li><a class="text-white font-small header-links" href="blog.html">بلاگ</a></li>
                             <li><a class="text-white font-small header-links" href="about-us.html">درباره ما</a></li>
@@ -17,7 +18,7 @@ class Header extends HTMLElement {
                         </ul>
                     </div>
                     <!--Left Side-->
-                    <div class="d-flex gap-3">
+                    <div class="d-lg-flex d-none gap-3">
                         <div class="my-drop-down-holder">
                             <button class="my-drop-down-toggler ripple-button bg-transparent border-0 rounded-1 px-4 py-2 font-small text-white fw-bold">
                                 <span id="currency-header-per">ریال</span>
@@ -71,5 +72,5 @@ class Header extends HTMLElement {
     }
 }
 
-// Defining Custom Element
+// Defining Our Custom Header
 window.customElements.define('custom-header', Header);
