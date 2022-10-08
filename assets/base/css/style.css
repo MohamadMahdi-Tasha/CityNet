@@ -59,11 +59,11 @@ body {
     background: rgba(0, 0, 0, .2);
 }
 
-.my-drop-down-toggler > i.bi-chevron-down:after {
+.my-drop-down-toggler > .bi-chevron-down:after {
     transition: .3s;
 }
 
-.my-drop-down-holder > .my-drop-down-toggler > i.bi-chevron-down:after {
+.my-drop-down-holder > .my-drop-down-toggler > .bi-chevron-down:after {
     transform: rotate(180deg)
 }
 
@@ -120,11 +120,6 @@ body {
 }
 
 /*Hover, Focus, ...*/
-button.bg-transparent.border:hover {
-    background-color: white !important;
-    color: var(--primary-base) !important
-}
-
 .header-links:hover::after {
     width: 100%;
 }

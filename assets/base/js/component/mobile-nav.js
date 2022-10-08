@@ -7,7 +7,7 @@ class MobileNav extends HTMLElement {
             <nav id="mobile-nav" class="position-absolute bg-primary-base p-2 col-8 shadow">
                 <div class="mb-3 d-flex align-items-center justify-content-between">
                     <img src="assets/base/img/img-logo-typo.svg" alt="سیتی نت" width="100px">
-                    <button data-target="#mobile-nav" class="toggler border rounded-1 ripple-button bg-transparent text-white ms-3"><i class="bi bi-x"></i></button>
+                    <button data-target="#mobile-nav" class="toggler border rounded-1 ripple-button bg-transparent text-white"><i class="bi bi-x"></i></button>
                 </div>
                 <ul class="list-unstyled mb-0 p-0 gap-3 d-flex flex-column">
                     <li><a class="text-white font-small d-block header-links" href="index.html">صفحه اصلی</a></li>

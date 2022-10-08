@@ -7,14 +7,16 @@ class Header extends HTMLElement {
             <header ${(this.getAttribute('not-home') !== null) ? "class='bg-accent-darken4'" : null}>
                 <div class="d-flex justify-content-between px-lg-5 py-lg-3 px-2 py-2 align-items-center container-xxl">
                     <!--Right Side-->
-                    <div class="d-flex align-items-center">
-                        <button data-target="#mobile-nav" class="toggler d-lg-none d-block border rounded-1 ripple-button bg-transparent text-white ms-3"><i class="bi bi-list"></i></button>
+                    <div class="d-flex gap-3 flex-lg-row flex-row-reverse align-items-center justify-content-lg-start justify-content-between col-lg-auto col-12">
                         <img src="assets/base/img/img-logo-typo.svg" alt="سیتی نت" width="100px">
-                        <ul class="list-unstyled mb-0 gap-3 d-lg-flex d-none">
-                            <li><a class="text-white font-small header-links" href="index.html">صفحه اصلی</a></li>
-                            <li><a class="text-white font-small header-links" href="blog.html">بلاگ</a></li>
-                            <li><a class="text-white font-small header-links" href="about-us.html">درباره ما</a></li>
-                            <li><a class="text-white font-small header-links" href="contact-us.html">تماس با ما</a></li>
+                        <ul class="list-unstyled mb-0 gap-3 d-flex p-0">
+                            <li class="d-lg-none d-block"><button data-target="#mobile-nav" class="toggler border rounded-1 ripple-button bg-transparent text-white"><i class="bi bi-list"></i></button></li>
+                            <li class="d-lg-none d-block"><button class="border rounded-1 ripple-button bg-transparent text-white"><i class="bi bi-person"></i></button></li>
+                            <li class="d-lg-none d-block"><button class="border rounded-1 ripple-button bg-transparent text-white"><i class="bi bi-flag"></i></button></li>
+                            <li class="d-lg-block d-none"><a class="text-white font-small header-links" href="index.html">صفحه اصلی</a></li>
+                            <li class="d-lg-block d-none"><a class="text-white font-small header-links" href="blog.html">بلاگ</a></li>
+                            <li class="d-lg-block d-none"><a class="text-white font-small header-links" href="about-us.html">درباره ما</a></li>
+                            <li class="d-lg-block d-none"><a class="text-white font-small header-links" href="contact-us.html">تماس با ما</a></li>
                         </ul>
                     </div>
                     <!--Left Side-->
