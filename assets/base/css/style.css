@@ -129,6 +129,12 @@ body {
     transition: .4s;
 }
 
+.home-first-section {
+    background-image: url('../img/home/img-first-section.png');
+    background-size: cover;
+    min-height: 90vh;
+}
+
 /*Hover, Focus, ...*/
 .header-links:hover::after {
     width: 100%;
