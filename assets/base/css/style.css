@@ -67,8 +67,14 @@ body {
     transform: rotate(180deg)
 }
 
-.inset-0 {
-    inset: 0;
+#mobile-nav:not([data-opened]),
+#mobile-nav:not([data-opened]) ~ #mobile-nav-bg {
+    left: -100%;
+}
+
+#mobile-nav[data-opened],
+#mobile-nav[data-opened] ~ #mobile-nav-bg {
+    left: 0;
 }
 
 .my-drop-down-holder:not([data-opened]) > .my-drop-down {
@@ -111,12 +117,14 @@ body {
     left: 0;
     bottom: 0;
     top: 0;
+    transition: .3s;
 }
 
 #mobile-nav-bg {
     background: rgba(0, 0, 0, .3);
     backdrop-filter: blur(10px);
     z-index: 1;
+    transition: .3s;
 }
 
 /*Hover, Focus, ...*/

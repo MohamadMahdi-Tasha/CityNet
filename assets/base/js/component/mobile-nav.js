@@ -3,8 +3,7 @@ class MobileNav extends HTMLElement {
     constructor() {super();}
     connectedCallback() {
         this.innerHTML = `
-            <div id="mobile-nav-bg" class="position-absolute inset-0"></div>
-            <nav id="mobile-nav" class="position-absolute bg-primary-base p-2 col-8 shadow">
+            <nav ${(this.getAttribute('data-opened') !== null) ? 'data-opened' : null} id="mobile-nav" class="position-absolute bg-primary-base p-2 col-8 shadow">
                 <div class="mb-3 d-flex align-items-center justify-content-between">
                     <img src="assets/base/img/img-logo-typo.svg" alt="سیتی نت" width="100px">
                     <button data-target="#mobile-nav" class="toggler border rounded-1 ripple-button bg-transparent text-white"><i class="bi bi-x"></i></button>
@@ -16,6 +15,7 @@ class MobileNav extends HTMLElement {
                     <li><a class="text-white font-small d-block header-links" href="contact-us.html">تماس با ما</a></li>
                 </ul>
             </nav>
+            <div id="mobile-nav-bg" class="position-absolute h-100 col-12"></div>
         `
     }
 }
