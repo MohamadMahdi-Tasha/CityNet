@@ -164,6 +164,7 @@ body {
     background-color: var(--primary-base);
     bottom: 0;
     transition: .3s;
+    pointer-events: none;
 }
 
 /*Hover, Focus, ...*/
