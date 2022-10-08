@@ -67,6 +67,9 @@ body {
     transform: rotate(180deg)
 }
 
+.inset-0 {
+    inset: 0;
+}
 
 .my-drop-down-holder:not([data-opened]) > .my-drop-down {
     opacity: 0;
@@ -103,7 +106,25 @@ body {
     transition: .5s;
 }
 
+#mobile-nav {
+    z-index: 2;
+    left: 0;
+    bottom: 0;
+    top: 0;
+}
+
+#mobile-nav-bg {
+    background: rgba(0, 0, 0, .3);
+    backdrop-filter: blur(10px);
+    z-index: 1;
+}
+
 /*Hover, Focus, ...*/
+button.bg-transparent.border:hover {
+    background-color: white !important;
+    color: var(--primary-base) !important
+}
+
 .header-links:hover::after {
     width: 100%;
 }

@@ -5,7 +5,7 @@ class Header extends HTMLElement {
         this.innerHTML = `
             <!--Top Side Header-->
             <header ${(this.getAttribute('not-home') !== null) ? "class='bg-accent-darken4'" : null}>
-                <div class="d-flex justify-content-between px-5 py-3 align-items-center container-xxl">
+                <div class="d-flex justify-content-between px-lg-5 py-lg-3 px-2 py-2 align-items-center container-xxl">
                     <!--Right Side-->
                     <div class="d-flex align-items-center">
                         <button data-target="#mobile-nav" class="toggler d-lg-none d-block border rounded-1 ripple-button bg-transparent text-white ms-3"><i class="bi bi-list"></i></button>
