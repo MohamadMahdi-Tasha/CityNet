@@ -29,6 +29,10 @@ currencyChanger.forEach(item => {
     })
 })
 
+// Adding Event Listener On Each Interactive Button In Top Side Of Main Content In Second Section (Home Page) That Listens To Click.
+// It Gets Bounding Rect Of Clicked Items Parent Element And Items Itself And Then Counts Right Position Of Child And Parent And Reverses It
+// Next It Removes 'active' Attribute From intractive Button That Has It And Then Sets It True For Clicked Item And Then Sets Right Property
+// Of Border In Background.
 intractiveButtonsBtn.forEach(item => {
     item.addEventListener('click', () => {
         const bgBorder = item.parentElement.firstElementChild;
