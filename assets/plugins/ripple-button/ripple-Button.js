@@ -10,7 +10,7 @@ allRippleButtons.forEach(item => {
         const innerSpan = document.createElement("span");
 
         innerSpan.className = "ripple-button--inner-span";
-        innerSpan.style.left = `calc(${event.offsetX}px - 15%)`
+        innerSpan.style.left = `calc(${event.offsetX}px - 20%)`
         innerSpan.style.top = `calc(${event.offsetY}px - 50%)`
 
         item.appendChild(innerSpan);
