@@ -79,15 +79,27 @@ body {
     position: relative;
 }
 
+#mobile-nav {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
 
-#mobile-nav:not([data-opened]),
 #mobile-nav:not([data-opened]) ~ #mobile-nav-bg {
+    opacity: 0;
+    pointer-events: none
+}
+
+#mobile-nav[data-opened] ~ #mobile-nav-bg {
+    opacity: 1;
+    pointer-events: visible
+}
+
+#mobile-nav:not([data-opened]) {
     left: -100%;
     opacity: 0;
 }
 
-#mobile-nav[data-opened],
-#mobile-nav[data-opened] ~ #mobile-nav-bg {
+#mobile-nav[data-opened] {
     left: 0;
     opacity: 1;
 }
