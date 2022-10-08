@@ -79,6 +79,10 @@ body {
     position: relative;
 }
 
+input[type='radio']:checked:before {
+    outline: 1px solid var(--primary-base);
+}
+
 #mobile-nav {
     overflow-y: auto;
     overflow-x: hidden;
@@ -87,6 +91,36 @@ body {
 #mobile-nav:not([data-opened]) ~ #mobile-nav-bg {
     opacity: 0;
     pointer-events: none
+}
+
+input[type='radio'] {
+    position: relative;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+}
+
+input[type='radio']:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: .5px;
+    background-color: white;
+    border-radius: 100%;
+}
+
+input[type='radio']:checked:after {
+    background-color: var(--primary-base);
+    animation: radio-animation .2s linear;
+}
+
+input[type='radio']:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: white;
+    border-radius: 100%;
+    outline: 1px solid var(--darkGrey-lighten3);
 }
 
 #mobile-nav[data-opened] ~ #mobile-nav-bg {
@@ -183,6 +217,19 @@ body {
 /*Hover, Focus, ...*/
 .header-links:hover::after {
     width: 100%;
+}
+
+/*Animations*/
+@keyframes radio-animation {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /*Media Query's*/
