@@ -218,6 +218,29 @@ input[type='radio']:before {
     pointer-events: none;
 }
 
+.city-component {
+    position: relative;
+    border-radius: 5px;
+    border: 1px solid var(--black-darken3);
+}
+
+.city-component > input:first-of-type:focus ~ .my-components-placeholder {
+    top: 0;
+    transform: translateY(-50%) translateX(-10%);
+}
+
+.my-components-placeholder {
+    background-color: white;
+    padding-right: .5rem;
+    padding-left: .5rem;
+    font-size: 10px;
+    color: var(--black-lighten3);
+    position: absolute;
+    transition: .2s;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 /*Hover, Focus, ...*/
 .header-links:hover::after {
     width: 100%;

@@ -1,4 +1,4 @@
-// Custom Header
+// Mobile Nav
 class MobileNav extends HTMLElement {
     constructor() {super();}
     connectedCallback() {
@@ -20,5 +20,5 @@ class MobileNav extends HTMLElement {
     }
 }
 
-// Defining Our Custom Header
+// Defining Our Mobile Nav
 window.customElements.define('mobile-nav', MobileNav);
