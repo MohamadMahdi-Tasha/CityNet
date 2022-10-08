@@ -1,0 +1,16 @@
+/*Iran Yekan Font And Its Weights*/
+/*Bold*/
+@font-face {
+    font-family: iranyekan;
+    font-style: normal;
+    font-weight: 700;
+    src: url("font/iranyekanwebbold.woff");
+}
+
+/*Regular*/
+@font-face {
+    font-family: iranyekan;
+    font-style: normal;
+    font-weight: 400;
+    src: url("font/iranyekanwebregular.woff");
+}
