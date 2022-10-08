@@ -13,10 +13,10 @@ class Header extends HTMLElement {
                             <li class="d-lg-none d-block"><button data-target="mobile-nav" class="toggler border rounded-1 ripple-button bg-transparent text-white"><i class="bi bi-list"></i></button></li>
                             <li class="d-lg-none d-block"><button class="border rounded-1 ripple-button bg-transparent text-white"><i class="bi bi-person"></i></button></li>
                             <li class="d-lg-none d-block"><button class="border rounded-1 ripple-button bg-transparent text-white"><i class="bi bi-flag"></i></button></li>
-                            <li class="d-lg-block d-none"><a class="text-white font-small header-links" href="index.html">صفحه اصلی</a></li>
-                            <li class="d-lg-block d-none"><a class="text-white font-small header-links" href="blog.html">بلاگ</a></li>
-                            <li class="d-lg-block d-none"><a class="text-white font-small header-links" href="about-us.html">درباره ما</a></li>
-                            <li class="d-lg-block d-none"><a class="text-white font-small header-links" href="contact-us.html">تماس با ما</a></li>
+                            <li class="d-lg-block d-none"><a class="fw-bold text-white font-small header-links" href="index.html">صفحه اصلی</a></li>
+                            <li class="d-lg-block d-none"><a class="fw-bold text-white font-small header-links" href="blog.html">بلاگ</a></li>
+                            <li class="d-lg-block d-none"><a class="fw-bold text-white font-small header-links" href="about-us.html">درباره ما</a></li>
+                            <li class="d-lg-block d-none"><a class="fw-bold text-white font-small header-links" href="contact-us.html">تماس با ما</a></li>
                         </ul>
                     </div>
                     <!--Left Side-->
