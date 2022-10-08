@@ -10,7 +10,7 @@ class Header extends HTMLElement {
                     <div class="d-flex gap-3 flex-lg-row flex-row-reverse align-items-center justify-content-lg-start justify-content-between col-lg-auto col-12">
                         <img src="assets/base/img/img-logo-typo.svg" alt="سیتی نت" width="100px">
                         <ul class="list-unstyled mb-0 gap-3 d-flex p-0">
-                            <li class="d-lg-none d-block"><button data-target="#mobile-nav" class="toggler border rounded-1 ripple-button bg-transparent text-white"><i class="bi bi-list"></i></button></li>
+                            <li class="d-lg-none d-block"><button data-target="mobile-nav" class="toggler border rounded-1 ripple-button bg-transparent text-white"><i class="bi bi-list"></i></button></li>
                             <li class="d-lg-none d-block"><button class="border rounded-1 ripple-button bg-transparent text-white"><i class="bi bi-person"></i></button></li>
                             <li class="d-lg-none d-block"><button class="border rounded-1 ripple-button bg-transparent text-white"><i class="bi bi-flag"></i></button></li>
                             <li class="d-lg-block d-none"><a class="text-white font-small header-links" href="index.html">صفحه اصلی</a></li>
