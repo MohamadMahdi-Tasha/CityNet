@@ -73,4 +73,4 @@ class Header extends HTMLElement {
 }
 
 // Defining Our Custom Header
-window.customElements.define('Header', Header);
+window.customElements.define('custom-header', Header);

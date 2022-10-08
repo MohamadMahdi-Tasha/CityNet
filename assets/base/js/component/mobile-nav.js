@@ -4,11 +4,11 @@ class MobileNav extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
             <nav>
-            
+                <h1>asdasd</h1>
             </nav>
         `
     }
 }
 
 // Defining Our Custom Header
-window.customElements.define('MobileNav', MobileNav);
+window.customElements.define('mobile-nav', MobileNav);
