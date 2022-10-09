@@ -4,7 +4,7 @@ class intractiveComponent extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
             <div class="my-drop-down-holder">
-                <button data-selected-city="null" class="my-drop-down-toggler city intractive-component col-12 rounded-4 bg-white text-end p-3 position-relative">
+                <button data-selected-city="null" class="my-drop-down-toggler col-12 city intractive-component rounded-4 bg-white text-end p-3 position-relative">
                     <span class="my-placeholder position-absolute font-small">${this.getAttribute('placeholder')}</span>
                 </button>
                 <div class="my-drop-down col-12 p-3">

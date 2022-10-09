@@ -94,7 +94,7 @@ input[type='radio']:checked:before {
 }
 
 .intractive-component.focused .my-placeholder,
-.intractive-component.will-not-close .my-placeholder{
+.intractive-component.will-not-close .my-placeholder {
     top: 0;
 }
 
@@ -207,7 +207,7 @@ input[type='radio']:before {
 }
 
 .home-first-section {
-    background-image: url('../img/home/img-first-section.png');
+    background-image: url('../img/home/img-first-section-desktop.png');
     background-size: cover;
     min-height: 90vh;
 }
@@ -315,6 +315,21 @@ input[type='radio']:before {
 }
 
 @media (max-width: 991px) {
+    .home-second-section {
+        padding: .5rem;
+        margin-top: -60vh;
+    }
+
+    .home-first-section {
+        background-image: none;
+    }
+
+    body {
+        background-image: url("../img/home/img-first-section-mobile.png");
+        background-size: cover;
+        background-position: center;
+    }
+
     .city-component-white-overlay ~ ul {
         grid-template-columns: repeat(4, 1fr);
     }
