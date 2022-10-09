@@ -4,6 +4,7 @@ const togglers = document.querySelectorAll('.toggler');
 const currencyChanger = document.querySelectorAll('.currency-changer');
 const htmlElement = document.querySelector('html');
 const intractiveButtonsBtn = document.querySelectorAll('.intractive-buttons-btn');
+const intractiveComponents = document.querySelectorAll('.intractive-component');
 
 
 // Adding Event Listener On Each Drop Down Toggler That Toggles Attribute Of 'data-opened' To Clicked Items Parent Element
@@ -44,5 +45,11 @@ intractiveButtonsBtn.forEach(item => {
         activeButton.removeAttribute('active');
         item.setAttribute('active', 'true');
         bgBorder.style.right = `${rightToSet}px`
+    })
+})
+
+intractiveComponents.forEach(item => {
+    item.addEventListener('click', () => {
+        item.classList.toggle('focused')
     })
 })
