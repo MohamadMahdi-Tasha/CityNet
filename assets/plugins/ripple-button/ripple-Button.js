@@ -12,7 +12,7 @@ allRippleButtons.forEach(item => {
         innerSpan.className = "ripple-button--inner-span";
         innerSpan.style.left = `calc(${event.offsetX}px - 50%)`
         innerSpan.style.top = `calc(${event.offsetY}px - 50%)`
-        innerSpan.style.width = `${item.getBoundingClientRect().width}px`
+        innerSpan.style.width = `calc(${item.getBoundingClientRect().width}px - 0px)`
 
         item.appendChild(innerSpan);
 

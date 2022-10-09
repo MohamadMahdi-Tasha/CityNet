@@ -84,7 +84,7 @@ intractiveComponents.forEach(item => item.addEventListener('click', () => item.c
 cityComponentDropDownButton.forEach(item => {
     item.addEventListener('click', () => {
         const parentIntractiveComponent = item.parentElement.parentElement.parentElement.previousElementSibling;
+
         parentIntractiveComponent.setAttribute('data-selected-city', persianNameToAbbreviation(item.textContent))
-        alert(persianNameToAbbreviation(item.textContent))
     })
 })

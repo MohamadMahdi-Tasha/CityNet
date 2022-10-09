@@ -9,7 +9,7 @@
     position: absolute;
     aspect-ratio: 1/1;
     border-radius: 100%;
-    animation: ripple-button-inner-span 2s ease-out;
+    animation: ripple-button-inner-span 1s ease-out;
 }
 
 @keyframes ripple-button-inner-span {
