@@ -151,8 +151,10 @@ intractiveButtonsBtn.forEach(item => {
 // Adding Event Listener On Each intractiveComponent  That Listens To CLick And toggles Class Of 'focused' To Clicked Item
 intractiveComponents.forEach(item => item.addEventListener('click', () => item.classList.toggle('focused')))
 
+// Adding Event Listener On Each City Select Button Which Listens To Click
 cityComponentDropDownButton.forEach(item => {
     item.addEventListener('click', () => {
+        // Variables
         const parentIntractiveComponent = item.parentElement.parentElement.parentElement.parentElement.previousElementSibling;
         const contentsHolder = document.createElement('div');
         const abbrevationH6 = document.createElement('h6');
@@ -160,13 +162,17 @@ cityComponentDropDownButton.forEach(item => {
         const abbrevationH6title = document.createElement('span');
         const titleH6 = document.createElement('h6');
 
+        // Setting Text Contents Of Created Elements
         abbrevationH6title.textContent = persianNameToAbbreviation(item.textContent);
         titleH6.textContent = abbrevationToPersianName(persianNameToAbbreviation(item.textContent));
 
+        // Setting Class Names Of Created Elements
         contentsHolder.className  = 'd-flex selected-city align-items-center'
         abbrevationH6.className  = 'd-flex align-items-center text-white p-1 rounded-1 mb-0 ms-2 font-small'
         titleH6.className  = 'text-black-lighten3 mb-0 font-small'
 
+        // If Selected City Is Tehran Or Isfahan Then Set Icon To A House And Set Bg Color Of Its Holder To Pink Otherwise Show
+        // Airplane Icon And Bg Of Blue
         if (persianNameToAbbreviation(item.textContent) === "THR" || persianNameToAbbreviation(item.textContent) === "IFN") {
             abbrevationH6Icon.className = 'bi bi-house ms-1';
             abbrevationH6.classList.add('bg-pink');
@@ -175,11 +181,13 @@ cityComponentDropDownButton.forEach(item => {
             abbrevationH6.classList.add('bg-info-darken1');
         }
 
+        // Appending Parents To Their Children
         contentsHolder.appendChild(abbrevationH6)
         abbrevationH6.appendChild(abbrevationH6Icon)
         abbrevationH6.appendChild(abbrevationH6title)
         contentsHolder.appendChild(titleH6)
 
+        // If A City Is not Selected Append Content Holder To Component Otherwise Replace It With Selected City
         if (!parentIntractiveComponent.lastElementChild.classList.contains('selected-city')) {
             parentIntractiveComponent.appendChild(contentsHolder)
         } else {
@@ -187,8 +195,13 @@ cityComponentDropDownButton.forEach(item => {
             parentIntractiveComponent.appendChild(contentsHolder)
         }
 
+        // Clicking Component To Close DropDown
         parentIntractiveComponent.click();
+
+        // TO Prevent From Text Coming From Top To Bottom
         parentIntractiveComponent.classList.add('will-not-close');
+
+        // Setting Selected Data
         parentIntractiveComponent.setAttribute('data-selected-city', persianNameToAbbreviation(item.textContent))
     })
 })
