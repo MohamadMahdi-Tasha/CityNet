@@ -5,7 +5,37 @@ const currencyChanger = document.querySelectorAll('.currency-changer');
 const htmlElement = document.querySelector('html');
 const intractiveButtonsBtn = document.querySelectorAll('.intractive-buttons-btn');
 const intractiveComponents = document.querySelectorAll('.intractive-component');
+const cityComponentDropDownButton = document.querySelectorAll('.city-component-drop-down-button');
 
+// a that takes persian name of city and returns abbreviation of it
+function persianNameToAbbreviation(name) {
+    let nameToReturn;
+
+    switch (name){
+        case "تهران" : nameToReturn = "THR";break;
+        case "کیش" : nameToReturn = "KIH";break;
+        case "استانبول" : nameToReturn = "IST";break;
+        case "دبی" : nameToReturn = "DXB";break;
+        case "مشهد" : nameToReturn = "MHD";break;
+        case "اهواز" : nameToReturn = "AWZ";break;
+        case "انکارا" : nameToReturn = "ESB";break;
+        case "لندن" : nameToReturn = "LHR";break;
+        case "تبریز" : nameToReturn = "TBZ";break;
+        case "قشم" : nameToReturn = "GSM";break;
+        case "تورنتو" : nameToReturn = "YYZ";break;
+        case "ایروان" : nameToReturn = "EVN";break;
+        case "بندر عباس" : nameToReturn = "BND";break;
+        case "شیراز" : nameToReturn = "SYZ";break;
+        case "مسقط" : nameToReturn = "MCT";break;
+        case "پکن" : nameToReturn = "PEK";break;
+        case "رشت" : nameToReturn = "RAS";break;
+        case "اصفهان" : nameToReturn = "IFN";break;
+        case "نجف" : nameToReturn = "NJF";break;
+        case "باکو" : nameToReturn = "GYD";break;
+    }
+
+    return nameToReturn;
+}
 
 // Adding Event Listener On Each Drop Down Toggler That Toggles Attribute Of 'data-opened' To Clicked Items Parent Element
 dropDownToggler.forEach(item => item.addEventListener('click', () => item.parentElement.toggleAttribute('data-opened')))
@@ -50,3 +80,11 @@ intractiveButtonsBtn.forEach(item => {
 
 // Adding Event Listener On Each intractiveComponent  That Listens To CLick And toggles Class Of 'focused' To Clicked Item
 intractiveComponents.forEach(item => item.addEventListener('click', () => item.classList.toggle('focused')))
+
+cityComponentDropDownButton.forEach(item => {
+    item.addEventListener('click', () => {
+        const parentIntractiveComponent = item.parentElement.parentElement.parentElement.previousElementSibling;
+        parentIntractiveComponent.setAttribute('data-selected-city', persianNameToAbbreviation(item.textContent))
+        alert(persianNameToAbbreviation(item.textContent))
+    })
+})
