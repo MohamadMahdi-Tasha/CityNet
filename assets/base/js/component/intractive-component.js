@@ -8,7 +8,7 @@ class intractiveComponent extends HTMLElement {
                     <span class="my-placeholder position-absolute font-small">${this.getAttribute('placeholder')}</span>
                 </button>
                 <div class="my-drop-down col-12 p-3">
-                    <h6 class="text-grey-darken4 mb-4">شهر و فرودگاه های پرتردد</h6>
+                    <h6 class="text-black-lighten3 font-small mb-4">شهر و فرودگاه های پرتردد</h6>
                     <div class="position-relative">
                         <div class="city-component-white-overlay position-absolute"></div>
                         <ul class="list-unstyled p-0 m-0">

@@ -7,31 +7,101 @@ const intractiveButtonsBtn = document.querySelectorAll('.intractive-buttons-btn'
 const intractiveComponents = document.querySelectorAll('.intractive-component');
 const cityComponentDropDownButton = document.querySelectorAll('.city-component-drop-down-button');
 
-// a that takes persian name of city and returns abbreviation of it
+// a Function that takes persian name of city and returns abbreviation Text of it
 function persianNameToAbbreviation(name) {
     let nameToReturn;
 
-    switch (name){
-        case "تهران" : nameToReturn = "THR";break;
-        case "کیش" : nameToReturn = "KIH";break;
-        case "استانبول" : nameToReturn = "IST";break;
-        case "دبی" : nameToReturn = "DXB";break;
-        case "مشهد" : nameToReturn = "MHD";break;
-        case "اهواز" : nameToReturn = "AWZ";break;
-        case "انکارا" : nameToReturn = "ESB";break;
-        case "لندن" : nameToReturn = "LHR";break;
-        case "تبریز" : nameToReturn = "TBZ";break;
-        case "قشم" : nameToReturn = "GSM";break;
-        case "تورنتو" : nameToReturn = "YYZ";break;
-        case "ایروان" : nameToReturn = "EVN";break;
-        case "بندر عباس" : nameToReturn = "BND";break;
-        case "شیراز" : nameToReturn = "SYZ";break;
-        case "مسقط" : nameToReturn = "MCT";break;
-        case "پکن" : nameToReturn = "PEK";break;
-        case "رشت" : nameToReturn = "RAS";break;
-        case "اصفهان" : nameToReturn = "IFN";break;
-        case "نجف" : nameToReturn = "NJF";break;
-        case "باکو" : nameToReturn = "GYD";break;
+    switch (name) {
+        case "تهران" :
+            nameToReturn = "THR";
+            break;
+        case "کیش" :
+            nameToReturn = "KIH";
+            break;
+        case "استانبول" :
+            nameToReturn = "IST";
+            break;
+        case "دبی" :
+            nameToReturn = "DXB";
+            break;
+        case "مشهد" :
+            nameToReturn = "MHD";
+            break;
+        case "اهواز" :
+            nameToReturn = "AWZ";
+            break;
+        case "انکارا" :
+            nameToReturn = "ESB";
+            break;
+        case "لندن" :
+            nameToReturn = "LHR";
+            break;
+        case "تبریز" :
+            nameToReturn = "TBZ";
+            break;
+        case "قشم" :
+            nameToReturn = "GSM";
+            break;
+        case "تورنتو" :
+            nameToReturn = "YYZ";
+            break;
+        case "ایروان" :
+            nameToReturn = "EVN";
+            break;
+        case "بندر عباس" :
+            nameToReturn = "BND";
+            break;
+        case "شیراز" :
+            nameToReturn = "SYZ";
+            break;
+        case "مسقط" :
+            nameToReturn = "MCT";
+            break;
+        case "پکن" :
+            nameToReturn = "PEK";
+            break;
+        case "رشت" :
+            nameToReturn = "RAS";
+            break;
+        case "اصفهان" :
+            nameToReturn = "IFN";
+            break;
+        case "نجف" :
+            nameToReturn = "NJF";
+            break;
+        case "باکو" :
+            nameToReturn = "GYD";
+            break;
+    }
+
+    return nameToReturn;
+}
+
+// a Function that takes abbreviation name of city and returns persian Text of it
+function abbrevationToPersianName(name) {
+    let nameToReturn;
+
+    switch (name) {
+        case "THR" :nameToReturn = "تهران,ایران(Tehran)";break;
+        case "KIH" :nameToReturn = "کیش,ایران(Kish Island)";break;
+        case "IST" :nameToReturn = "استانبول,ترکیه(Istanbul)";break;
+        case "DXB" :nameToReturn = "دبی,عمارات متحده(Dubai)";break;
+        case "MHD" :nameToReturn = "مشهد,ایران(Mashhad)";break;
+        case "AWZ" :nameToReturn = "اهواز,ایران(Ahvaz)";break;
+        case "ESB" :nameToReturn = "انکارا,ترکیه(Ankara)";break;
+        case "LHR" :nameToReturn = "لندن,انگلستان(London)";break;
+        case "TBZ" :nameToReturn = "تبریز,ایران(Tabriz)";break;
+        case "GSM" :nameToReturn = "قشم,ایران(Qeshm)";break;
+        case "YYZ" :nameToReturn = "تورنتو,کانادا(Torento)";break;
+        case "EVN" :nameToReturn = "ایروان,ارمنستان(Yerevan)";break;
+        case "BND" :nameToReturn = "بندر عباس,ایران(Bandar-e-abbas)";break;
+        case "SYZ" :nameToReturn = "شیراز,ایران(Shiraz)";break;
+        case "MCT" :nameToReturn = "مسقط,قطر(Muscat)";break;
+        case "PEK" :nameToReturn = "پکن,چین(Beijing)";break;
+        case "RAS" :nameToReturn = "رشت,ایران(Rasht)";break;
+        case "IFN" :nameToReturn = "اصفهان,ایران(Isfahan)";break;
+        case "NJF" :nameToReturn = "نجف,عراق(Najaf)";break;
+        case "GYD" :nameToReturn = "باکو,اذربایجان(Baku)";break;
     }
 
     return nameToReturn;
@@ -55,7 +125,7 @@ togglers.forEach(item => {
 // To Value Of 'data-item-currency' Attribute Of Clicked Item
 currencyChanger.forEach(item => {
     item.addEventListener('click', () => {
-        const itemsCurrency  = item.getAttribute('data-item-currency');
+        const itemsCurrency = item.getAttribute('data-item-currency');
         htmlElement.setAttribute('data-currency', itemsCurrency);
     })
 })
@@ -83,8 +153,42 @@ intractiveComponents.forEach(item => item.addEventListener('click', () => item.c
 
 cityComponentDropDownButton.forEach(item => {
     item.addEventListener('click', () => {
-        const parentIntractiveComponent = item.parentElement.parentElement.parentElement.previousElementSibling;
+        const parentIntractiveComponent = item.parentElement.parentElement.parentElement.parentElement.previousElementSibling;
+        const contentsHolder = document.createElement('div');
+        const abbrevationH6 = document.createElement('h6');
+        const abbrevationH6Icon = document.createElement('i');
+        const abbrevationH6title = document.createElement('span');
+        const titleH6 = document.createElement('h6');
 
+        abbrevationH6title.textContent = persianNameToAbbreviation(item.textContent);
+        titleH6.textContent = abbrevationToPersianName(persianNameToAbbreviation(item.textContent));
+
+        contentsHolder.className  = 'd-flex selected-city align-items-center'
+        abbrevationH6.className  = 'd-flex align-items-center text-white p-1 rounded-1 mb-0 ms-2 font-small'
+        titleH6.className  = 'text-black-lighten3 mb-0 font-small'
+
+        if (persianNameToAbbreviation(item.textContent) === "THR" || persianNameToAbbreviation(item.textContent) === "IFN") {
+            abbrevationH6Icon.className = 'bi bi-house ms-1';
+            abbrevationH6.classList.add('bg-pink');
+        } else {
+            abbrevationH6Icon.className = 'bi bi-airplane ms-1';
+            abbrevationH6.classList.add('bg-info-darken1');
+        }
+
+        contentsHolder.appendChild(abbrevationH6)
+        abbrevationH6.appendChild(abbrevationH6Icon)
+        abbrevationH6.appendChild(abbrevationH6title)
+        contentsHolder.appendChild(titleH6)
+
+        if (!parentIntractiveComponent.lastElementChild.classList.contains('selected-city')) {
+            parentIntractiveComponent.appendChild(contentsHolder)
+        } else {
+            parentIntractiveComponent.lastElementChild.remove()
+            parentIntractiveComponent.appendChild(contentsHolder)
+        }
+
+        parentIntractiveComponent.click();
+        parentIntractiveComponent.classList.add('will-not-close');
         parentIntractiveComponent.setAttribute('data-selected-city', persianNameToAbbreviation(item.textContent))
     })
 })

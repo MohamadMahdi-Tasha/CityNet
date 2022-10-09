@@ -93,12 +93,18 @@ input[type='radio']:checked:before {
     pointer-events: none
 }
 
-.intractive-component.focused .my-placeholder {
+.intractive-component.focused .my-placeholder,
+.intractive-component.will-not-close .my-placeholder{
     top: 0;
 }
 
 .intractive-component.focused {
     border-color: black;
+}
+
+.home-second-section > main {
+    box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+    margin-bottom: 100vh;
 }
 
 input[type='radio'] {
@@ -227,7 +233,7 @@ input[type='radio']:before {
 }
 
 .city-component-drop-down-button .ripple-button--inner-span {
-    background-color: rgba(0,0,0,.2);
+    background-color: rgba(0, 0, 0, .2);
 }
 
 
@@ -244,7 +250,7 @@ input[type='radio']:before {
 
 .city-component-white-overlay {
     inset: 0;
-    background: linear-gradient(to bottom,transparent, white);
+    background: linear-gradient(to bottom, transparent, white);
     z-index: 2;
     pointer-events: none;
 }
@@ -267,9 +273,16 @@ input[type='radio']:before {
     height: 50px;
 }
 
+.selected-city {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .intractive-component .my-placeholder {
     transition: .3s;
     top: 50%;
+    color: var(--black-lighten3);
     transform: translateY(-50%);
     background-color: white;
     padding-right: 1rem;
