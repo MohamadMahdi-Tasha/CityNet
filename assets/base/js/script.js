@@ -48,8 +48,5 @@ intractiveButtonsBtn.forEach(item => {
     })
 })
 
-intractiveComponents.forEach(item => {
-    item.addEventListener('click', () => {
-        item.classList.toggle('focused')
-    })
-})
+// Adding Event Listener On Each intractiveComponent  That Listens To CLick And toggles Class Of 'focused' To Clicked Item
+intractiveComponents.forEach(item => item.addEventListener('click', () => item.classList.toggle('focused')))
