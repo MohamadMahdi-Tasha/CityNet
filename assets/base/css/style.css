@@ -93,6 +93,14 @@ input[type='radio']:checked:before {
     pointer-events: none
 }
 
+.intractive-component.focused .my-placeholder {
+    top: 0;
+}
+
+.intractive-component.focused {
+    border-color: black;
+}
+
 input[type='radio'] {
     position: relative;
     appearance: none;
@@ -199,7 +207,7 @@ input[type='radio']:before {
 }
 
 .home-second-section {
-    margin-top: -10rem;
+    margin-top: -20rem;
     padding: 0 10rem;
 }
 
@@ -218,27 +226,54 @@ input[type='radio']:before {
     pointer-events: none;
 }
 
-.city-component {
+.city-component-drop-down-button .ripple-button--inner-span {
+    background-color: rgba(0,0,0,.2);
+}
+
+
+.city-component-white-overlay ~ ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .5rem;
+}
+
+.city-component-drop-down-button {
     position: relative;
-    border-radius: 5px;
-    border: 1px solid var(--black-darken3);
+    padding-right: 20px;
 }
 
-.city-component > input:first-of-type:focus ~ .my-components-placeholder {
-    top: 0;
-    transform: translateY(-50%) translateX(-10%);
+.city-component-white-overlay {
+    inset: 0;
+    background: linear-gradient(to bottom,transparent, white);
+    z-index: 2;
+    pointer-events: none;
 }
 
-.my-components-placeholder {
-    background-color: white;
-    padding-right: .5rem;
-    padding-left: .5rem;
-    font-size: 10px;
-    color: var(--black-lighten3);
+.city-component-drop-down-button::before {
+    content: '';
     position: absolute;
-    transition: .2s;
+    right: 4px;
     top: 50%;
     transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: var(--primary-base);
+}
+
+.intractive-component {
+    border: 1px solid var(--black-lighten3);
+    transition: .3s;
+    height: 50px;
+}
+
+.intractive-component .my-placeholder {
+    transition: .3s;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    padding-right: 1rem;
+    padding-left: 1rem;
 }
 
 /*Hover, Focus, ...*/
@@ -263,5 +298,11 @@ input[type='radio']:before {
 @media (min-width: 991px) {
     #mobile-nav, #mobile-nav-bg {
         display: none;
+    }
+}
+
+@media (max-width: 991px) {
+    .city-component-white-overlay ~ ul {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
