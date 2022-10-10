@@ -55,9 +55,6 @@ body {
     pointer-events: none
 }
 
-.my-drop-down > .ripple-button .ripple-button--inner-span {
-    background: rgba(0, 0, 0, .2);
-}
 
 .intractive-buttons-btn[active] {
     color: var(--primary-base);
@@ -232,10 +229,10 @@ input[type='radio']:before {
     pointer-events: none;
 }
 
-.city-component-drop-down-button .ripple-button--inner-span {
+.city-component-drop-down-button .ripple-button--inner-span,
+.my-drop-down > .ripple-button .ripple-button--inner-span {
     background-color: rgba(0, 0, 0, .2);
 }
-
 
 .city-component-white-overlay ~ ul {
     display: grid;
@@ -267,6 +264,21 @@ input[type='radio']:before {
     background-color: var(--primary-base);
 }
 
+.switch-button {
+    width: 30px !important;
+    height: 30px !important;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 100%;
+    font-size: 10px;
+    background-color: white;
+    border: 1px solid var(--black-lighten3);
+    color: var(--black-lighten3);
+    position: absolute;
+    z-index: 2;
+}
+
 .intractive-component {
     border: 1px solid var(--black-lighten3);
     transition: .3s;
@@ -277,6 +289,7 @@ input[type='radio']:before {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    animation: selected-city-animation .3s linear;
 }
 
 .intractive-component .my-placeholder {
@@ -294,6 +307,14 @@ input[type='radio']:before {
     width: 100%;
 }
 
+.switch-button:hover {
+    background-color: var(--grey-lighten2);
+}
+
+.switch-button:active {
+    background-color: var(--grey-lighten1);
+}
+
 /*Animations*/
 @keyframes radio-animation {
     from {
@@ -304,6 +325,16 @@ input[type='radio']:before {
     to {
         opacity: 1;
         transform: scale(1);
+    }
+}
+
+@keyframes selected-city-animation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }
 
