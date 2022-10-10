@@ -220,11 +220,24 @@ switchButton.forEach(item => {
             const startCitysSelectedCityCopy = startCitysSelectedCity.cloneNode(true)
             const endCitysSelectedCityCopy = endCitysSelectedCity.cloneNode(true)
 
+            clicks ++;
+            if (window.innerWidth >= 991) {
+                if (clicks % 2 !== 0) {
+                    item.style.transform = 'translateX(-50%) rotateY(180deg)'
+                } else {
+                    item.style.transform = 'translateX(-50%) rotateY(0)'
+                }
+            } else {
+                if (clicks % 2 !== 0) {
+                    item.style.transform = 'translateY(-70%) rotateY(180deg)'
+                } else {
+                    item.style.transform = 'translateY(-70%) rotateY(0)'
+                }
+            }
+
             endCitysSelectedCity.replaceWith(startCitysSelectedCityCopy)
             startCitysSelectedCity.replaceWith(endCitysSelectedCityCopy)
 
-            clicks ++;
-            (clicks % 2 !== 0) ? item.style.transform = 'translateX(-50%) rotateY(180deg)' : item.style.transform = 'translateX(-50%) rotateY(0)'
         }
     })
 })

@@ -1,9 +1,10 @@
-// Custom Header
+// Interactive Components
 class intractiveComponent extends HTMLElement {
     constructor() {super();}
     connectedCallback() {
-        this.innerHTML = `
-            <div class="my-drop-down-holder">
+        if (this.getAttribute('type') === "city") {
+            this.innerHTML = `
+                <div class="my-drop-down-holder">
                 <button data-selected-city="null" class="my-drop-down-toggler col-12 city intractive-component rounded-4 bg-white text-end p-3 position-relative">
                     <span class="my-placeholder position-absolute font-small">${this.getAttribute('placeholder')}</span>
                 </button>
@@ -36,9 +37,13 @@ class intractiveComponent extends HTMLElement {
                     </div>
                 </div>
             </div>
-        `
+            `
+        } else if (this.getAttribute('type') === "calender"){
+            this.innerHTML = `
+            `
+        }
     }
 }
 
-// Defining Our Custom Header
+// Defining Our Intractive Components
 window.customElements.define('intractive-component', intractiveComponent);

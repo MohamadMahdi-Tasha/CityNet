@@ -20,6 +20,7 @@
     <link href="assets/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/plugins/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/plugins/ripple-button/riple-button.css">
+    <link rel="stylesheet" href="assets/base/css/persian-date-picker.css">
     <!--Title Of Page-->
     <title>سیتی‌نت</title>
 </head>
@@ -41,7 +42,7 @@
             </div>
         </div>
         <!--Middle Side-->
-        <form action="#" class="px-3 d-flex flex-wrap gap-3 mb-3">
+        <form action="#" class="d-flex flex-wrap gap-3 mb-3">
             <div class="d-flex align-items-center">
                 <input class="ms-2" checked name="ways" id="one-way-input" type="radio">
                 <label class="text-secondary-lighten3 font-small" for="one-way-input">یک طرفه</label>
@@ -56,11 +57,17 @@
             </div>
         </form>
         <!--Bottom Side-->
-        <div class="px-3 pb-3">
-            <div class="row gx-2 position-relative flex-lg-row flex-column">
-                <intractive-component class="col-6" placeholder="شهر یا فرودگاه مبدا"></intractive-component>
+        <div class="pb-3 d-flex flex-column gap-4">
+            <div class="row gx-2 gy-4 position-relative flex-lg-row flex-column">
+                <intractive-component type="city" class="col-lg-6 col-12" placeholder="شهر یا فرودگاه مبدا"></intractive-component>
                 <button class="switch-button"><i class="bi bi-arrow-left-right"></i></button>
-                <intractive-component class="col-6" placeholder="شهر یا فرودگاه مقصد"></intractive-component>
+                <intractive-component type="city" class="col-lg-6 col-12" placeholder="شهر یا فرودگاه مقصد"></intractive-component>
+            </div>
+            <div class="row gx-2 gy-4 position-relative flex-lg-row flex-column">
+                <intractive-component type="calender" class="col-lg-3 col-12" placeholder="تاریخ پرواز"></intractive-component>
+                <div id="app">
+                    <date-picker mode="single"></date-picker>
+                </div>
             </div>
         </div>
     </main>
@@ -68,10 +75,20 @@
 <!--Js Linkings-->
 <noscript>لطفا جاوااسکریپت مرورگر خود را فعال کنید</noscript>
 <script src="assets/plugins/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="assets/plugins/vue/vue.js"></script>
+<script src="assets/plugins/date-picker/datepicker.min.js"></script>
 <script src="assets/base/js/component/header.js"></script>
 <script src="assets/base/js/component/mobile-nav.js"></script>
 <script src="assets/base/js/component/intractive-component.js"></script>
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
 <script src="assets/base/js/script.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        components:{
+            datePicker
+        }
+    })
+</script>
 </body>
 </html>
