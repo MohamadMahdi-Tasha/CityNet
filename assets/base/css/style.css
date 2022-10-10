@@ -169,6 +169,7 @@ input[type='radio']:before {
     content: '';
     position: absolute;
     top: 100%;
+    transform: translateY(100%);
     right: 0;
     width: 0;
     height: 2px;
@@ -265,6 +266,7 @@ input[type='radio']:before {
 }
 
 .switch-button {
+    transform-origin: center !important;
     width: 30px !important;
     height: 30px !important;
     top: 15%;

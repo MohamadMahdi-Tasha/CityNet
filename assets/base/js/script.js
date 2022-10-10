@@ -6,6 +6,7 @@ const htmlElement = document.querySelector('html');
 const intractiveButtonsBtn = document.querySelectorAll('.intractive-buttons-btn');
 const intractiveComponents = document.querySelectorAll('.intractive-component');
 const cityComponentDropDownButton = document.querySelectorAll('.city-component-drop-down-button');
+const switchButton = document.querySelectorAll('.switch-button');
 
 // a Function that takes persian name of city and returns abbreviation Text of it
 function persianNameToAbbreviation(name) {
@@ -203,5 +204,27 @@ cityComponentDropDownButton.forEach(item => {
 
         // Setting Selected Data
         parentIntractiveComponent.setAttribute('data-selected-city', persianNameToAbbreviation(item.textContent))
+    })
+})
+
+// Adding Event Listener On Each Switch Button That Listens To CLick And Gets Previous And Next Sibling Of Clicked Item
+// Then Checks IF They Exist And If They Are Then Gets Clone Of Them And Replaces Cloned Elements With Orginal Ones And Rotates
+// Clicked Item
+switchButton.forEach(item => {
+    let clicks = 0;
+    item.addEventListener('click', () => {
+        const startCitysSelectedCity = item.previousElementSibling.querySelector('.selected-city')
+        const endCitysSelectedCity = item.nextElementSibling.querySelector('.selected-city')
+
+        if (startCitysSelectedCity !== null && endCitysSelectedCity !== null) {
+            const startCitysSelectedCityCopy = startCitysSelectedCity.cloneNode(true)
+            const endCitysSelectedCityCopy = endCitysSelectedCity.cloneNode(true)
+
+            endCitysSelectedCity.replaceWith(startCitysSelectedCityCopy)
+            startCitysSelectedCity.replaceWith(endCitysSelectedCityCopy)
+
+            clicks ++;
+            (clicks % 2 !== 0) ? item.style.transform = 'translateX(-50%) rotateY(180deg)' : item.style.transform = 'translateX(-50%) rotateY(0)'
+        }
     })
 })
