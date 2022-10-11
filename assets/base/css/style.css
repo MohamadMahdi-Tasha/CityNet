@@ -374,6 +374,6 @@ input[type='radio']:before {
     }
 
     .city-component-white-overlay ~ ul {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
