@@ -3,12 +3,13 @@ class intractiveComponent extends HTMLElement {
     constructor() {super();}
     connectedCallback() {
         if (this.getAttribute('type') === "city") {
-            this.innerHTML = `
-                <div class="my-drop-down-holder">
-                <button data-selected-city="null" class="my-drop-down-toggler col-12 city intractive-component rounded-4 bg-white text-end p-3 position-relative">
+            if (this.getAttribute('disabled') === null) {
+                this.innerHTML = `
+                    <div class="my-drop-down-holder">
+                        <button data-selected-city="null" class="my-drop-down-toggler col-12 city intractive-component rounded-4 bg-white text-end p-3 position-relative">
                     <span class="my-placeholder position-absolute font-small">${this.getAttribute('placeholder')}</span>
                 </button>
-                <div class="my-drop-down col-12 p-3">
+                        <div class="my-drop-down col-12 p-3">
                     <h6 class="text-black-lighten3 font-small mb-4">شهر و فرودگاه های پرتردد</h6>
                     <div class="position-relative">
                         <div class="city-component-white-overlay position-absolute"></div>
@@ -36,21 +37,40 @@ class intractiveComponent extends HTMLElement {
                         </ul>
                     </div>
                 </div>
-            </div>
-            `
+                    </div>
+                `
+            } else {
+                this.innerHTML = `
+                    <button class="col-12 city intractive-component disabled rounded-4 bg-white text-end p-3 position-relative">
+                        <span class="my-placeholder position-absolute font-small">${this.getAttribute('placeholder')}</span>
+                    </button>
+                `
+            }
         } else if (this.getAttribute('type') === "calender"){
-            this.innerHTML = `
-                <button class="my-drop-down-toggler col-12 calender intractive-component rounded-4 bg-white text-end p-3 position-relative">
-                    <span class="my-placeholder position-absolute font-small">
-                        <i class="bi bi-calendar4-week ms-2"></i>
-                        ${this.getAttribute('placeholder')}
-                    </span>
-                </button>
-                <div id="app">
-                    <date-picker @select="select" mode="single"></date-picker>
-                </div>
-            `
+            if (this.getAttribute('disabled') === null) {
+                this.innerHTML = `
+                    <button class="my-drop-down-toggler col-12 calender intractive-component rounded-4 bg-white text-end p-3 position-relative">
+                        <span class="my-placeholder position-absolute font-small">
+                            <i class="bi bi-calendar4-week ms-2"></i>
+                            ${this.getAttribute('placeholder')}
+                        </span>
+                    </button>
+                    <div id="app">
+                        <date-picker @select="select" mode="single"></date-picker>
+                    </div>
+                `
+            } else {
+                this.innerHTML = `
+                    <button class="col-12 city intractive-component disabled rounded-4 bg-white text-end p-3 position-relative">
+                        <span class="my-placeholder position-absolute font-small">
+                            <i class="bi bi-calendar4-week ms-2"></i>
+                            بدون بازگشت
+                        </span>
+                    </button>
+                `
+            }
         }
+
     }
 }
 

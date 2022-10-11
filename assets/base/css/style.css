@@ -305,6 +305,15 @@ input[type='radio']:before {
     padding-left: 1rem;
 }
 
+.intractive-component.disabled {
+    border-color: var(--grey-lighten1) !important;
+    pointer-events: none !important;
+}
+
+.intractive-component.disabled .my-placeholder {
+    color: var(--grey-lighten1);
+}
+
 /*Hover, Focus, ...*/
 .header-links:hover::after {
     width: 100%;
