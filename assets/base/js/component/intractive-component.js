@@ -48,6 +48,7 @@ class intractiveComponent extends HTMLElement {
             }
         } else if (this.getAttribute('type') === "calender"){
             if (this.getAttribute('disabled') === null) {
+                const randomDataPickerParentId = `data-picker-parent-number-${Math.ceil(Math.random() * 100)}`
                 this.innerHTML = `
                     <button class="my-drop-down-toggler col-12 calender intractive-component rounded-4 bg-white text-end p-3 position-relative">
                         <span class="my-placeholder position-absolute font-small">
@@ -55,10 +56,32 @@ class intractiveComponent extends HTMLElement {
                             ${this.getAttribute('placeholder')}
                         </span>
                     </button>
-                    <div id="app">
+                    <div id="${randomDataPickerParentId}">
                         <date-picker @select="select" mode="single"></date-picker>
                     </div>
                 `
+                // Defining New Vue Component For Calendar Component
+                new Vue({
+                    el:`#${randomDataPickerParentId}`,
+                    components: {datePicker},
+                    methods: {
+                        select(date) {
+                            const newH5 = document.createElement('h5');
+                            const calenderComponent = this.$el.previousElementSibling;
+
+                            calenderComponent.classList.add('will-not-close')
+                            newH5.className = 'font-small text-black-lighten3 selected-date mb-0';
+                            newH5.textContent = date.toString();
+
+                            if (calenderComponent.lastElementChild.classList.contains('selected-date')) {
+                                calenderComponent.lastElementChild.remove();
+                                calenderComponent.appendChild(newH5)
+                            } else {
+                                calenderComponent.appendChild(newH5)
+                            }
+                        },
+                    }
+                })
             } else {
                 this.innerHTML = `
                     <button class="col-12 city intractive-component disabled rounded-4 bg-white text-end p-3 position-relative">
@@ -76,26 +99,3 @@ class intractiveComponent extends HTMLElement {
 
 // Defining Our Intractive Components
 window.customElements.define('intractive-component', intractiveComponent);
-
-// Defining New Vue Component For Calendar Component
-new Vue({
-    el:'#app',
-    components: {datePicker},
-    methods: {
-        select(date) {
-            const newH5 = document.createElement('h5');
-            const calenderComponent = this.$el.previousElementSibling;
-
-            calenderComponent.classList.add('will-not-close')
-            newH5.className = 'font-small text-black-lighten3 selected-date mb-0';
-            newH5.textContent = date.toString();
-
-            if (calenderComponent.lastElementChild.classList.contains('selected-date')) {
-                calenderComponent.lastElementChild.remove();
-                calenderComponent.appendChild(newH5)
-            } else {
-                calenderComponent.appendChild(newH5)
-            }
-        },
-    }
-})
