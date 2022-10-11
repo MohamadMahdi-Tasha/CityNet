@@ -15,7 +15,7 @@ class MobileNav extends HTMLElement {
                     <li><a class="text-white font-small d-block header-links" href="contact-us.html">تماس با ما</a></li>
                 </ul>
             </nav>
-            <div id="mobile-nav-bg" class="position-absolute h-100 col-12 toggler" data-target="mobile-nav"></div>
+            <div id="mobile-nav-bg" class="position-fixed h-100 col-12 toggler" data-target="mobile-nav"></div>
         `
     }
 }
