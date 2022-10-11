@@ -79,28 +79,5 @@
 <script src="assets/base/js/component/intractive-component.js"></script>
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
 <script src="assets/base/js/script.js"></script>
-<script>
-    new Vue({
-        el:'#app',
-        components: {datePicker},
-        methods: {
-            select(date) {
-                const newH5 = document.createElement('h5');
-                const calenderComponent = this.$el.previousElementSibling;
-
-                calenderComponent.classList.add('will-not-close')
-                newH5.className = 'font-small text-black-lighten3 selected-date mb-0';
-                newH5.textContent = date.toString();
-
-                if (calenderComponent.lastElementChild.classList.contains('selected-date')) {
-                    calenderComponent.lastElementChild.remove();
-                    calenderComponent.appendChild(newH5)
-                } else {
-                    calenderComponent.appendChild(newH5)
-                }
-            },
-        }
-    })
-</script>
 </body>
 </html>

@@ -7,6 +7,7 @@ const intractiveButtonsBtn = document.querySelectorAll('.intractive-buttons-btn'
 const intractiveComponents = document.querySelectorAll('.intractive-component:not(.calender)');
 const cityComponentDropDownButton = document.querySelectorAll('.city-component-drop-down-button');
 const switchButton = document.querySelectorAll('.switch-button');
+const calenderComponents = document.querySelectorAll('.intractive-component.calender');
 
 // a Function that takes persian name of city and returns abbreviation Text of it
 function persianNameToAbbreviation(name) {
@@ -239,5 +240,18 @@ switchButton.forEach(item => {
             startCitysSelectedCity.replaceWith(endCitysSelectedCityCopy)
 
         }
+    })
+})
+
+// Adding Event Listener Of Click On Each Calender Component That Listenes To Click And
+// Focuses To Input In
+calenderComponents.forEach(item => {
+    item.addEventListener('click', () => {
+        const innerInput = item.nextElementSibling.querySelector('.pdp-input');
+
+        innerInput.addEventListener('focus', () => item.classList.add('focused'))
+        innerInput.addEventListener('blur', () => item.classList.remove('focused'))
+
+        innerInput.focus()
     })
 })

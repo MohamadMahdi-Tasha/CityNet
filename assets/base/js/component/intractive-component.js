@@ -57,19 +57,25 @@ class intractiveComponent extends HTMLElement {
 // Defining Our Intractive Components
 window.customElements.define('intractive-component', intractiveComponent);
 
-document.querySelectorAll('.intractive-component.calender').forEach(item => {
-    item.addEventListener('click', () => {
-        const innerInput = item.nextElementSibling.querySelector('.pdp-input');
+// Defining New Vue Component For Calendar Component
+new Vue({
+    el:'#app',
+    components: {datePicker},
+    methods: {
+        select(date) {
+            const newH5 = document.createElement('h5');
+            const calenderComponent = this.$el.previousElementSibling;
 
-        innerInput.addEventListener('focus', () => item.classList.add('focused'))
-        innerInput.addEventListener('blur', () => item.classList.remove('focused'))
+            calenderComponent.classList.add('will-not-close')
+            newH5.className = 'font-small text-black-lighten3 selected-date mb-0';
+            newH5.textContent = date.toString();
 
-        innerInput.focus()
-    })
-})
-
-document.querySelectorAll('.pdp-day:not(.disabled)').forEach(item => {
-    item.addEventListener('click', () => {
-        alert('asdasd')
-    })
+            if (calenderComponent.lastElementChild.classList.contains('selected-date')) {
+                calenderComponent.lastElementChild.remove();
+                calenderComponent.appendChild(newH5)
+            } else {
+                calenderComponent.appendChild(newH5)
+            }
+        },
+    }
 })
