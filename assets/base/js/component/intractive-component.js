@@ -40,6 +40,15 @@ class intractiveComponent extends HTMLElement {
             `
         } else if (this.getAttribute('type') === "calender"){
             this.innerHTML = `
+                <button class="my-drop-down-toggler col-12 calender intractive-component rounded-4 bg-white text-end p-3 position-relative">
+                    <span class="my-placeholder position-absolute font-small">
+                        <i class="bi bi-calendar4-week ms-2"></i>
+                        ${this.getAttribute('placeholder')}
+                    </span>
+                </button>
+                <div id="app">
+                    <date-picker @select="select" mode="single"></date-picker>
+                </div>
             `
         }
     }
@@ -47,3 +56,20 @@ class intractiveComponent extends HTMLElement {
 
 // Defining Our Intractive Components
 window.customElements.define('intractive-component', intractiveComponent);
+
+document.querySelectorAll('.intractive-component.calender').forEach(item => {
+    item.addEventListener('click', () => {
+        const innerInput = item.nextElementSibling.querySelector('.pdp-input');
+
+        innerInput.addEventListener('focus', () => item.classList.add('focused'))
+        innerInput.addEventListener('blur', () => item.classList.remove('focused'))
+
+        innerInput.focus()
+    })
+})
+
+document.querySelectorAll('.pdp-day:not(.disabled)').forEach(item => {
+    item.addEventListener('click', () => {
+        alert('asdasd')
+    })
+})

@@ -1,3 +1,31 @@
+
+.pdp-header .bottom {
+    border-bottom-color: var(--grey-lighten3) !important;
+}
+
+.pdp .pdp-picker .pdp-main .pdp-date .pdp-column .pdp-week .pdp-weekday {
+    color: var(--grey-base) !important;
+}
+
+.pdp .pdp-picker:after {
+    display: none !important;
+}
+
+.pdp-day.friday {
+    color: #e93c3c !important;
+}
+
+.pdp-footer {
+    border-top-color: var(--grey-lighten3) !important;
+}
+
+.pdp-days {
+    gap: 1rem !important;
+}
+.pdp .pdp-picker .pdp-footer .pdp-submit {
+    display: none !important;
+}
+
 .pdp .pdp-picker .pdp-header .bottom > div .pdp-month, .pdp .pdp-picker .pdp-header .bottom > div .pdp-year {
     color: #495057 !important;
     font-size: 12px !important;
@@ -13,44 +41,17 @@
     justify-content: center;
 }
 
-.pdp-date > .pdp-column:first-of-type {
-    border-left: 1px dashed var(--grey-lighten3) !important;
-}
-
-.pdp-header .bottom {
-    border-bottom-color: var(--grey-lighten3) !important;
-}
-
-.pdp .pdp-picker .pdp-main .pdp-date .pdp-column .pdp-week .pdp-weekday {
-    color: var(--grey-base) !important;
-}
-
-.pdp .pdp-picker:after {
-    display: none !important;
-}
-
 .pdp .pdp-picker {
     box-shadow: 0 0 30px rgba(0, 0, 0, .2) !important;
     border-radius: 20px !important;
     transition: .3s !important;
     animation: date-picker-animation .3s linear !important;
-}
-
-.pdp-day.friday {
-    color: #e93c3c !important;
-}
-
-.pdp-footer {
-    border-top-color: var(--grey-lighten3) !important;
+    margin-top: 0 !important;
 }
 
 .pdp .pdp-picker .pdp-main .pdp-date .pdp-column .pdp-days .pdp-day:not(.disabled, .start-range):hover, .pdp .pdp-picker .pdp-main .pdp-date .pdp-column .pdp-days .pdp-day.today {
     border: 1px solid #0466c8 !important;
     color: #0466c8;
-}
-
-.pdp-days {
-    gap: 1rem !important;
 }
 
 .pdp .pdp-picker .pdp-main .pdp-date .pdp-column .pdp-days .pdp-day.start-range, .pdp .pdp-picker .pdp-main .pdp-date .pdp-column .pdp-days .pdp-day.end-range {
@@ -79,15 +80,18 @@
     padding-right: 2rem !important;
 }
 
-.pdp .pdp-picker .pdp-footer .pdp-submit {
-    display: none !important;
-}
-
 .pdp .pdp-picker .pdp-main .pdp-date .pdp-column .pdp-days .pdp-day.tada {
     background-color: var(--green-base) !important;
     color: white !important;
     box-shadow: none !important;
     border: none !important;
+}
+
+.pdp-group {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
 }
 
 @keyframes date-picker-animation {

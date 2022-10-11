@@ -4,7 +4,7 @@ const togglers = document.querySelectorAll('.toggler');
 const currencyChanger = document.querySelectorAll('.currency-changer');
 const htmlElement = document.querySelector('html');
 const intractiveButtonsBtn = document.querySelectorAll('.intractive-buttons-btn');
-const intractiveComponents = document.querySelectorAll('.intractive-component');
+const intractiveComponents = document.querySelectorAll('.intractive-component:not(.calender)');
 const cityComponentDropDownButton = document.querySelectorAll('.city-component-drop-down-button');
 const switchButton = document.querySelectorAll('.switch-button');
 
