@@ -32,8 +32,8 @@
 .pdp .pdp-picker {
     box-shadow: 0 0 30px rgba(0, 0, 0, .2) !important;
     border-radius: 20px !important;
-    animation-duration: .3s !important;
     transition: .3s !important;
+    animation: date-picker-animation .3s linear !important;
 }
 
 .pdp-day.friday {
@@ -88,4 +88,16 @@
     color: white !important;
     box-shadow: none !important;
     border: none !important;
+}
+
+@keyframes date-picker-animation {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
