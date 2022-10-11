@@ -305,6 +305,14 @@ input[type='radio']:before {
     padding-left: 1rem;
 }
 
+.submit-button {
+    background-color: var(--primary-base);
+    color: white;
+    height: 50px;
+    border: none;
+    border-radius: 13px;
+}
+
 .intractive-component.disabled {
     border-color: var(--grey-lighten1) !important;
     pointer-events: none !important;
