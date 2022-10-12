@@ -109,6 +109,8 @@ input[type='radio']:checked:before {
     opacity: 0;
 }
 
+.my-modal-holder[data-opened] {pointer-events: visible !important;}
+.my-modal-holder:not([data-opened]) {pointer-events: none !important;}
 .my-modal-holder[data-opened] > .my-modal-bg {
     opacity: 1;
 }
