@@ -107,7 +107,7 @@ input[type='radio']:checked:before {
 
 .home-second-section > main {
     box-shadow: 0 0 30px rgba(0, 0, 0, .2);
-    margin-bottom: 200vh;
+    margin-bottom: 10rem;
 }
 
 input[type='radio'] {
