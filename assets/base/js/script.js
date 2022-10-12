@@ -9,6 +9,7 @@ const cityComponentDropDownButton = document.querySelectorAll('.city-component-d
 const switchButton = document.querySelectorAll('.switch-button');
 const calenderComponents = document.querySelectorAll('.intractive-component.calender');
 const plusMinusButton = document.querySelectorAll('.plus-minus-button');
+const passengerClassSelectButton = document.querySelectorAll('.passenger-class-select-button');
 
 // a Function that takes persian name of city and returns abbreviation Text of it
 function persianNameToAbbreviation(name) {
@@ -288,5 +289,20 @@ plusMinusButton.forEach(item => {
 
             numberElement.textContent = numberToShow;
         }
+    })
+})
+
+passengerClassSelectButton.forEach(item => {
+    item.addEventListener('click', () => {
+        const counterComponent = item.parentElement.parentElement.parentElement.parentElement.parentElement.previousElementSibling
+        const contentToChangeInDropDown = item.parentElement.parentElement.parentElement.previousElementSibling.firstElementChild
+        const contentToChangeInComponent = counterComponent.lastElementChild.lastElementChild.lastElementChild
+        const activeClassSelectButton = document.querySelector('.passenger-class-select-button.active');
+
+        counterComponent.setAttribute('data-passenger-class', item.textContent)
+        contentToChangeInDropDown.textContent = item.textContent
+        contentToChangeInComponent.textContent = item.textContent
+        activeClassSelectButton.classList.remove('active');
+        item.classList.add('active');
     })
 })

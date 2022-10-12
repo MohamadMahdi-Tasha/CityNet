@@ -148,7 +148,7 @@ class intractiveComponent extends HTMLElement {
                         <hr>
                         <div class="my-drop-down-holder">
                             <button class="border p-2 rounded-3 bg-white my-drop-down-toggler d-flex align-items-center justify-content-between col-12">
-                                اکونومی
+                                <span>اکونومی</span>
                                 <i class="bi bi-chevron-down"></i>
                             </button>
                             <div class="my-drop-down col-12">
