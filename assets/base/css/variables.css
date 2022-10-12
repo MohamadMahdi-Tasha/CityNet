@@ -430,3 +430,4 @@
 .text-grey-darken3 {color: var(--grey-darken3);}
 .text-grey-darken4 {color: var(--grey-darken4);}
 .text-pink {color: var(--pink);}
+.text-hover-pink:hover {color: var(--pink) !important;}

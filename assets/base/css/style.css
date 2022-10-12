@@ -26,7 +26,7 @@ body {
     line-height: 1.8;
     scroll-behavior: smooth;
     overflow-x: hidden;
-    background-color: #f5f6fa;
+    background-color: #f5f6fa !important;
 }
 
 /*Styles*/
@@ -353,6 +353,10 @@ input[type='radio']:before {
 
 .intractive-component.disabled .my-placeholder {
     color: var(--grey-lighten1);
+}
+
+.transition-3 {
+    transition: .3s;
 }
 
 /*Hover, Focus, ...*/
