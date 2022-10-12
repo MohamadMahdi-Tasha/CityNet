@@ -50,7 +50,7 @@ class intractiveComponent extends HTMLElement {
             if (this.getAttribute('disabled') === null) {
                 const randomDataPickerParentId = `data-picker-parent-number-${Math.ceil(Math.random() * 100)}`
                 this.innerHTML = `
-                    <button class="my-drop-down-toggler col-12 calender intractive-component rounded-4 bg-white text-end p-3 position-relative">
+                    <button data-date="null" class="my-drop-down-toggler col-12 calender intractive-component rounded-4 bg-white text-end p-3 position-relative">
                         <span class="my-placeholder position-absolute font-small">
                             <i class="bi bi-calendar4-week ms-2"></i>
                             ${this.getAttribute('placeholder')}
@@ -70,6 +70,7 @@ class intractiveComponent extends HTMLElement {
                             const calenderComponent = this.$el.previousElementSibling;
 
                             calenderComponent.classList.add('will-not-close')
+                            calenderComponent.setAttribute('data-date', date.toString())
                             newH6.className = 'font-small text-black-lighten3 selected-date mb-0';
                             newH6.textContent = date.toString();
 
