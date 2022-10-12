@@ -430,4 +430,8 @@ input[type='radio']:before {
     .city-component-white-overlay ~ ul {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    footer {
+        background-color: white;
+    }
 }
