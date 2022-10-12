@@ -294,7 +294,7 @@ plusMinusButton.forEach(item => {
 
 // Adding Event Listener Of Click On Each passengerClassSelectButton That Sets Attribute Of data-passenger-class In Component TO
 // Clicked Buttons Content And Sets Content Of Textes In DropDown And Component To Clicked Item Again Then Removes Class Of 'active'
-// From Element That Haves It And Adds It To Clicked Button
+// From Element That Haves It And Adds It To Clicked Button And Closes Drop Down
 passengerClassSelectButton.forEach(item => {
     item.addEventListener('click', () => {
         const counterComponent = item.parentElement.parentElement.parentElement.parentElement.parentElement.previousElementSibling
@@ -307,5 +307,6 @@ passengerClassSelectButton.forEach(item => {
         contentToChangeInComponent.textContent = item.textContent
         activeClassSelectButton.classList.remove('active');
         item.classList.add('active');
+        contentToChangeInDropDown.parentElement.parentElement.removeAttribute('data-opened')
     })
 })
