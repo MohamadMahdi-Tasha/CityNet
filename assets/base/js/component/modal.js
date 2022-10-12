@@ -23,4 +23,4 @@ class Modal extends HTMLElement {
 }
 
 // Defining Our Custom Footer
-window.customElements.define('modal', Modal);
+window.customElements.define('my-modal', Modal);
