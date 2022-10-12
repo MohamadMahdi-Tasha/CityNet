@@ -257,6 +257,8 @@ calenderComponents.forEach(item => {
     })
 })
 
+// Adding Event Listener On Each Plus And Minus Buttons That Listens TO Click And Sets Total Number Of Passengers And
+// Adds Or Removes On From Label Of Clicked Button Which Is Number
 plusMinusButton.forEach(item => {
     item.addEventListener('click', () => {
         const componentsInnerCountElement = item.parentElement.parentElement.parentElement.previousElementSibling.lastElementChild.lastElementChild.firstElementChild
