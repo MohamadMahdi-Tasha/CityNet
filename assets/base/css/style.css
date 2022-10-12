@@ -310,7 +310,6 @@ input[type='radio']:before {
     color: white;
     height: 50px;
     border: none;
-    border-radius: 13px;
 }
 
 .intractive-component.disabled {
