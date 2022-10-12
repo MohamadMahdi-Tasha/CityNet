@@ -110,6 +110,7 @@ input[type='radio']:checked:before {
     margin-bottom: 10rem;
 }
 
+
 input[type='radio'] {
     position: relative;
     appearance: none;
@@ -120,17 +121,37 @@ input[type='radio'] {
     justify-content: center;
 }
 
-.inset-0 {inset: 0;}
-.my-modal-holder {z-index: 2000;}
+.inset-0 {
+    inset: 0;
+}
+
+.intractive-component.input.focused {
+    border-color: var(--primary-base) !important;
+}
+
+.intractive-component.input.focused .my-placeholder {
+    color: var(--primary-base) !important;
+}
+
+.intractive-component.input.focused input:first-of-type {
+    color: var(--primary-base) !important;
+}
+
+.my-modal-holder {
+    z-index: 2000;
+}
+
 .my-modal-close-button {
     width: 25px;
     height: 25px;
 }
+
 .my-modal {
     z-index: 2002 !important;
 }
+
 .my-modal-bg {
-    background-color: rgba(0,0,0,.2);
+    background-color: rgba(0, 0, 0, .2);
     z-index: 2001 !important;
 }
 
@@ -447,5 +468,13 @@ input[type='radio']:before {
 
     footer {
         background-color: white;
+    }
+
+    .my-modal {
+        height: 100%;
+    }
+
+    .my-modal.rounded-3 {
+        border-radius: 0 !important;
     }
 }
