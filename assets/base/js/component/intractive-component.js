@@ -66,18 +66,18 @@ class intractiveComponent extends HTMLElement {
                     components: {datePicker},
                     methods: {
                         select(date) {
-                            const newH5 = document.createElement('h5');
+                            const newH6 = document.createElement('h6');
                             const calenderComponent = this.$el.previousElementSibling;
 
                             calenderComponent.classList.add('will-not-close')
-                            newH5.className = 'font-small text-black-lighten3 selected-date mb-0';
-                            newH5.textContent = date.toString();
+                            newH6.className = 'font-small text-black-lighten3 selected-date mb-0';
+                            newH6.textContent = date.toString();
 
                             if (calenderComponent.lastElementChild.classList.contains('selected-date')) {
                                 calenderComponent.lastElementChild.remove();
-                                calenderComponent.appendChild(newH5)
+                                calenderComponent.appendChild(newH6)
                             } else {
-                                calenderComponent.appendChild(newH5)
+                                calenderComponent.appendChild(newH6)
                             }
                         },
                     }
@@ -92,8 +92,79 @@ class intractiveComponent extends HTMLElement {
                     </button>
                 `
             }
+        } else if (this.getAttribute('type') === "passenger-count") {
+            this.innerHTML = `
+                <div class="my-drop-down-holder">
+                    <button data-passenger-count="1" data-passenger-class="اکونومی" class="my-drop-down-toggler will-not-close col-12 passenger-count intractive-component rounded-4 bg-white text-end p-3 position-relative">
+                        <span class="my-placeholder position-absolute font-small">مسافران/کلاس کابین</span>
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-person text-darkGrey-lighten2 ms-2"></i>
+                            <h6 class="mb-0 font-small text-darkGrey-lighten2">
+                                <span>1</span>
+                                مسافر,
+                                <span>اکونومی</span>
+                            </h6>
+                        </div>
+                    </button>
+                    <div class="my-drop-down col-12 p-3">
+                        <div class="d-flex mb-3 align-items-center justify-content-between">
+                            <h6 class="font-small mb-0">
+                                بزرگسال
+                                <span class="text-darkGrey-lighten2">(+12)</span> 
+                            </h6>
+                            <div class="d-flex align-items-center gap-2">
+                                <button class="plus-minus-button border-0 bg-grey-lighten3 rounded-3 text-primary-base">+</button>
+                                <span class="font-small">1</span>
+                                <button class="plus-minus-button border-0 bg-grey-lighten3 rounded-3 text-grey-darken1">-</button>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3 align-items-center justify-content-between">
+                            <h6 class="font-small mb-0">
+                                کودک
+                                <span class="text-darkGrey-lighten2">
+                                (
+                                2 تا
+                                12
+                                )
+                                </span> 
+                            </h6>
+                            <div class="d-flex align-items-center gap-2">
+                                <button class="plus-minus-button border-0 bg-grey-lighten3 rounded-3 text-primary-base">+</button>
+                                <span class="font-small">0</span>
+                                <button class="plus-minus-button border-0 bg-grey-lighten3 rounded-3 text-grey-darken1">-</button>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3 align-items-center justify-content-between">
+                            <h6 class="font-small mb-0">
+                                نوزاد
+                                <span class="text-darkGrey-lighten2">(-2)</span> 
+                            </h6>
+                            <div class="d-flex align-items-center gap-2">
+                                <button class="plus-minus-button border-0 bg-grey-lighten3 rounded-3 text-primary-base">+</button>
+                                <span class="font-small">0</span>
+                                <button class="plus-minus-button border-0 bg-grey-lighten3 rounded-3 text-grey-darken1">-</button>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="my-drop-down-holder">
+                            <button class="border p-2 rounded-3 bg-white my-drop-down-toggler d-flex align-items-center justify-content-between col-12">
+                                اکونومی
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div class="my-drop-down col-12">
+                                <ul class="col-12 p-0 m-0 list-unstyled">
+                                    <li class="col-12"><button class="p-2 active col-12 ripple-button passenger-class-select-button bg-transparent border-0 text-end">اکونومی</button></li>
+                                    <li class="col-12"><button class="p-2 col-12 ripple-button passenger-class-select-button bg-transparent border-0 text-end">بیزینس</button></li>
+                                    <li class="col-12"><button class="p-2 col-12 ripple-button passenger-class-select-button bg-transparent border-0 text-end">پریمیوم</button></li>
+                                    <li class="col-12"><button class="p-2 col-12 ripple-button passenger-class-select-button bg-transparent border-0 text-end">فرست</button></li>
+                                    <li class="col-12"><button class="p-2 col-12 ripple-button passenger-class-select-button bg-transparent border-0 text-end">همه کلاس ها</button></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `
         }
-
     }
 }
 

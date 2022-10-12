@@ -90,9 +90,15 @@ input[type='radio']:checked:before {
     pointer-events: none
 }
 
+.plus-minus-button {
+    width: 30px;
+    height: 30px;
+}
+
 .intractive-component.focused .my-placeholder,
 .intractive-component.will-not-close .my-placeholder {
     top: 0;
+    right: 10px;
 }
 
 .intractive-component.focused {
@@ -315,6 +321,34 @@ input[type='radio']:before {
 .intractive-component.disabled {
     border-color: var(--grey-lighten1) !important;
     pointer-events: none !important;
+}
+
+.my-drop-down .my-drop-down::-webkit-scrollbar {
+    background-color: var(--grey-lighten1);
+    width: 7px;
+    border-radius: 50rem;
+}
+
+.my-drop-down .my-drop-down::-webkit-scrollbar-thumb {
+    background-color: var(--grey-darken1);
+    border-radius: 50rem;
+}
+
+.passenger-class-select-button.active {
+    background-color: rgba(221, 153, 51, .2) !important;
+    color: var(--primary-base);
+}
+
+.passenger-class-select-button .ripple-button--inner-span {
+    background-color: rgba(221, 153, 51, .2) !important;
+}
+
+.my-drop-down .my-drop-down {
+    bottom: auto !important;
+    top: 0;
+    transform: translateY(-100%) !important;
+    height: 150px;
+    overflow-y: auto;
 }
 
 .intractive-component.disabled .my-placeholder {
