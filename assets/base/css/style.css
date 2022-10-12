@@ -101,6 +101,28 @@ input[type='radio']:checked:before {
     right: 10px;
 }
 
+.my-modal-bg, .my-modal {
+    transition: .3s;
+}
+
+.my-modal-holder:not([data-opened]) > .my-modal-bg {
+    opacity: 0;
+}
+
+.my-modal-holder[data-opened] > .my-modal-bg {
+    opacity: 1;
+}
+
+.my-modal-holder:not([data-opened]) > .my-modal {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.my-modal-holder[data-opened] > .my-modal {
+    opacity: 1;
+    transform: scale(1);
+}
+
 .right-0 {
     right: 0;
 }

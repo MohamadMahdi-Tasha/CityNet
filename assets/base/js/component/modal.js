@@ -4,12 +4,12 @@ class Modal extends HTMLElement {
     connectedCallback() {
         if (this.getAttribute('type') === 'log-in') {
             this.innerHTML = `
-                <div class="my-modal-holder position-fixed inset-0 d-flex justify-content-center align-items-center">
-                    <div class="my-modal-bg position-fixed inset-0"></div>
+                <div id="login-modal" class="my-modal-holder position-fixed inset-0 d-flex justify-content-center align-items-center">
+                    <div data-target="login-modal" class="toggler my-modal-bg position-fixed inset-0"></div>
                     <div class="my-modal bg-white shadow rounded-3 p-3 col-lg-auto col-12">
                         <div class="mb-2" dir="ltr">
                             <div class="d-flex align-items-center justify-content-between col-6">
-                                <button class="my-modal-close-button d-flex justify-content-center align-items-center bg-grey-lighten2 border-0 rounded-3"><i class="bi bi-x"></i></button>
+                                <button data-target="login-modal" class="toggler my-modal-close-button d-flex justify-content-center align-items-center bg-grey-lighten2 border-0 rounded-3"><i class="bi bi-x"></i></button>
                                 <h6 class="fw-bold text-black mb-0">ورود</h6>
                             </div>
                         </div>
