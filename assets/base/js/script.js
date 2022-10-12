@@ -8,6 +8,7 @@ const intractiveComponents = document.querySelectorAll('.intractive-component:no
 const cityComponentDropDownButton = document.querySelectorAll('.city-component-drop-down-button');
 const switchButton = document.querySelectorAll('.switch-button');
 const calenderComponents = document.querySelectorAll('.intractive-component.calender');
+const plusMinusButton = document.querySelectorAll('.plus-minus-button');
 
 // a Function that takes persian name of city and returns abbreviation Text of it
 function persianNameToAbbreviation(name) {
@@ -253,5 +254,37 @@ calenderComponents.forEach(item => {
         innerInput.addEventListener('blur', () => item.classList.remove('focused'))
 
         innerInput.focus()
+    })
+})
+
+plusMinusButton.forEach(item => {
+    item.addEventListener('click', () => {
+        const componentsInnerCountElement = item.parentElement.parentElement.parentElement.previousElementSibling.lastElementChild.lastElementChild.firstElementChild
+        const adultCountElement = item.parentElement.parentElement.parentElement.firstElementChild.lastElementChild.firstElementChild.nextElementSibling
+        const kidCountElement = item.parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.lastElementChild.firstElementChild.nextElementSibling
+        const newBornCountElement = item.parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.nextElementSibling.lastElementChild.firstElementChild.nextElementSibling
+        const totalPassengersCount = Number(adultCountElement.textContent) + Number(kidCountElement.textContent) + Number(newBornCountElement.textContent)
+
+        componentsInnerCountElement.textContent = totalPassengersCount;
+        componentsInnerCountElement.parentElement.parentElement.parentElement.setAttribute('data-passenger-count', totalPassengersCount);
+
+        if (item.textContent === "+") {
+            const numberElement = item.nextElementSibling;
+            let numberToShow = Number(numberElement.textContent);
+
+            if (numberToShow < 9) {numberToShow ++;}
+            numberElement.textContent = numberToShow;
+        } else {
+            const numberElement = item.previousElementSibling;
+            let numberToShow = Number(numberElement.textContent);
+
+            if (item.parentElement.parentElement.classList.contains('adult')) {
+                if (numberToShow > 1) {numberToShow --;}
+            } else {
+                if (numberToShow > 0) {numberToShow --;}
+            }
+
+            numberElement.textContent = numberToShow;
+        }
     })
 })

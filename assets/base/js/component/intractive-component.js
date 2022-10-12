@@ -107,7 +107,7 @@ class intractiveComponent extends HTMLElement {
                         </div>
                     </button>
                     <div class="my-drop-down col-12 p-3">
-                        <div class="d-flex mb-3 align-items-center justify-content-between">
+                        <div class="adult d-flex mb-3 align-items-center justify-content-between">
                             <h6 class="font-small mb-0">
                                 بزرگسال
                                 <span class="text-darkGrey-lighten2">(+12)</span> 
@@ -118,7 +118,7 @@ class intractiveComponent extends HTMLElement {
                                 <button class="plus-minus-button border-0 bg-grey-lighten3 rounded-3 text-grey-darken1">-</button>
                             </div>
                         </div>
-                        <div class="d-flex mb-3 align-items-center justify-content-between">
+                        <div class="kid d-flex mb-3 align-items-center justify-content-between">
                             <h6 class="font-small mb-0">
                                 کودک
                                 <span class="text-darkGrey-lighten2">
@@ -134,7 +134,7 @@ class intractiveComponent extends HTMLElement {
                                 <button class="plus-minus-button border-0 bg-grey-lighten3 rounded-3 text-grey-darken1">-</button>
                             </div>
                         </div>
-                        <div class="d-flex mb-3 align-items-center justify-content-between">
+                        <div class="new-born d-flex mb-3 align-items-center justify-content-between">
                             <h6 class="font-small mb-0">
                                 نوزاد
                                 <span class="text-darkGrey-lighten2">(-2)</span> 
