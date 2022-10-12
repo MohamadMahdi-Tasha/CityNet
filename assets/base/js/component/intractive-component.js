@@ -166,12 +166,20 @@ class intractiveComponent extends HTMLElement {
                 </div>
             `
         } else if (this.getAttribute('type') === "input") {
-            this.innerHTML = `
-                <div class="my-drop-down-toggler d-flex col-12 input intractive-component rounded-4 bg-white text-end p-3 position-relative">
+            if (this.getAttribute('disabled') === null) {
+                this.innerHTML = `
+                <div class="d-flex col-12 input intractive-component rounded-4 bg-white text-end p-3 position-relative">
                     <span class="my-placeholder position-absolute font-small">${this.getAttribute('placeholder')}</span>
                     <input class="col-12 bg-transparent h-100 border-0" type="${this.getAttribute('input-type')}" required>
                 </div>
             `
+            } else {
+                this.innerHTML = `
+                <div class="d-flex disabled col-12 intractive-component rounded-4 bg-white text-end p-3 position-relative">
+                    <span class="my-placeholder right-0 bg-transparent position-absolute font-small">0098</span>
+                </div>
+            `
+            }
         }
     }
 }

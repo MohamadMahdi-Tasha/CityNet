@@ -10,6 +10,7 @@ const switchButton = document.querySelectorAll('.switch-button');
 const calenderComponents = document.querySelectorAll('.intractive-component.calender');
 const plusMinusButton = document.querySelectorAll('.plus-minus-button');
 const passengerClassSelectButton = document.querySelectorAll('.passenger-class-select-button');
+const inputComponents = document.querySelectorAll('.intractive-component.input');
 
 // a Function that takes persian name of city and returns abbreviation Text of it
 function persianNameToAbbreviation(name) {
@@ -309,4 +310,10 @@ passengerClassSelectButton.forEach(item => {
         item.classList.add('active');
         contentToChangeInDropDown.parentElement.parentElement.removeAttribute('data-opened')
     })
+})
+
+inputComponents.forEach(item => {
+    item.addEventListener('click', () => item.lastElementChild.focus())
+    item.lastElementChild.addEventListener('focus', () => item.classList.add('focused'))
+    item.lastElementChild.addEventListener('blur', () => {if (item.lastElementChild.value === "") {item.classList.remove('focused')}})
 })
