@@ -350,15 +350,23 @@ input[type='radio']:before {
     width: 30px !important;
     height: 30px !important;
     top: 15%;
-    left: 50%;
     transform: translateX(-50%);
     border-radius: 100%;
     font-size: 10px;
     background-color: white;
     border: 1px solid var(--black-lighten3);
     color: var(--black-lighten3);
+    left: 50%;
     position: absolute;
     z-index: 2;
+}
+
+.switch-button.more-ways {
+    left: 66.5%;
+}
+
+.switch-button:not(.more-ways) {
+    left: 50%;
 }
 
 .intractive-component {
@@ -476,7 +484,7 @@ input[type='radio']:before {
 }
 
 @media (max-width: 991px) {
-    .switch-button {
+    .switch-button.more-ways, .switch-button:not(.more-ways) {
         left: 10%;
         top: 50%;
         transform: translateY(-70%);
