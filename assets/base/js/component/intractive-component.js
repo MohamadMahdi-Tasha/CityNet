@@ -152,9 +152,9 @@ class intractiveComponent extends HTMLElement {
                                 <span>اکونومی</span>
                                 <i class="bi bi-chevron-down"></i>
                             </button>
-                            <div class="my-drop-down col-12">
+                            <div class="my-drop-down init-drop-down col-12">
                                 <ul class="col-12 p-0 m-0 list-unstyled">
-                                    <li class="col-12"><button class="p-2 active col-12 ripple-button passenger-class-select-button bg-transparent border-0 text-end">اکونومی</button></li>
+                                    <li class="col-12"><button class="p-2 font-small active col-12 ripple-button passenger-class-select-button bg-transparent border-0 text-end">اکونومی</button></li>
                                     <li class="col-12"><button class="p-2 font-small col-12 ripple-button passenger-class-select-button bg-transparent border-0 text-end">بیزینس</button></li>
                                     <li class="col-12"><button class="p-2 font-small col-12 ripple-button passenger-class-select-button bg-transparent border-0 text-end">پریمیوم</button></li>
                                     <li class="col-12"><button class="p-2 font-small col-12 ripple-button passenger-class-select-button bg-transparent border-0 text-end">فرست</button></li>
