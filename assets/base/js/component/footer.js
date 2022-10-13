@@ -16,14 +16,14 @@ class Footer extends HTMLElement {
                             </ul>
                         </div>
                         <div class="d-flex gap-3">
-                            <div class="rounded-3 bg-white p-3"><img width="75px" src="assets/base/img/footer/img-nerkhebilit.png" alt="نرخ بیلیط"></div>
-                            <div class="rounded-3 bg-white p-3"><img width="75px" src="assets/base/img/footer/img-havapeymaei-keshvari.png" alt="هواپیمایی کشوری"></div>
-                            <div class="rounded-3 bg-white p-3"><img width="75px" src="assets/base/img/footer/img-hoghoghe-mosafer.png" alt="حقوق مسافر"></div>
+                            <div class="rounded-3 bg-white p-3"><img width="75px" height="75px" src="assets/base/img/footer/img-nerkhebilit.png" alt="نرخ بیلیط"></div>
+                            <div class="rounded-3 bg-white p-3"><img width="75px" height="75px" src="assets/base/img/footer/img-havapeymaei-keshvari.png" alt="هواپیمایی کشوری"></div>
+                            <div class="rounded-3 bg-white p-3"><img width="75px" height="75px" src="assets/base/img/footer/img-hoghoghe-mosafer.png" alt="حقوق مسافر"></div>
                         </div>
                     </div>
                     <div class="d-flex flex-lg-row flex-column align-items-center justify-content-between">
-                        <h6  class="text-grey-darken1 text-lg-start text-center font-small">تمامی حقوق متعلق به سیتی نت میباشد.</h6>
-                        <h6  class="text-grey-darken1 text-lg-start text-center font-small">
+                        <h6 class="text-grey-darken1 text-lg-start text-center font-small">تمامی حقوق متعلق به سیتی نت میباشد.</h6>
+                        <h6 class="text-grey-darken1 text-lg-start text-center font-small">
                          <a class="transition-3 text-grey-darken1 text-hover-pink" href="#">طراحی سایت آژانس مسافرتی</a>
                          توسط سیتی نت
                         </h6>
