@@ -13,6 +13,7 @@ const passengerClassSelectButton = document.querySelectorAll('.passenger-class-s
 const inputComponents = document.querySelectorAll('.intractive-component.input');
 const persianName = document.getElementById('currency-header-per');
 const englishName = document.getElementById('currency-header-eng');
+const waysToggler = document.querySelectorAll('.ways-toggler');
 
 // a Function that takes persian name of city and returns abbreviation Text of it
 function persianNameToAbbreviation(name) {
@@ -347,4 +348,17 @@ inputComponents.forEach(item => {
 window.addEventListener('load', () => {
     if (localStorage.getItem('selected-currency') === null) {localStorage.setItem('selected-currency', 'IRR')}
     showCurrency();
+})
+
+// Adding Event Listener Of Click On Each Way Toggler Button That Removes Attribute Of 'active' From Element That Haves It And Sets It To
+// Target Of Clicked Item
+waysToggler.forEach(item => {
+    item.addEventListener('click', () => {
+        const target = item.getAttribute('data-target');
+        const targetElement = document.getElementById(target);
+        const activeInnerPage = document.querySelector('.ways-inner-page[active]');
+
+        activeInnerPage.removeAttribute('active');
+        targetElement.setAttribute('active', 'true')
+    })
 })

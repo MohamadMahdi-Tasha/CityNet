@@ -265,6 +265,10 @@ input[type='radio']:before {
     transition: .5s;
 }
 
+.ways-inner-page:not([active]) {
+    display: none;
+}
+
 #mobile-nav {
     z-index: 1999;
     left: 0;
