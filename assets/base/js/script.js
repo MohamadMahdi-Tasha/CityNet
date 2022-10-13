@@ -133,7 +133,11 @@ function showCurrency() {
 }
 
 // Adding Event Listener On Each Drop Down Toggler That Toggles Attribute Of 'data-opened' To Clicked Items Parent Element
-dropDownToggler.forEach(item => item.addEventListener('click', () => item.parentElement.toggleAttribute('data-opened')))
+dropDownToggler.forEach(item => item.addEventListener('click', () => {
+    const openedDropDown = document.querySelector('.my-drop-down-holder[data-opened]');
+    item.parentElement.toggleAttribute('data-opened');
+    openedDropDown.removeAttribute('data-opened')
+}))
 
 // Adding Event Listener On Each Item With Class Of 'toggler' Item That Listens To CLick And Gets Target Element Of It By Its Attribute
 // And Toggles Attribute Of 'data-opened' To It
