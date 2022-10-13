@@ -28,7 +28,7 @@ class Header extends HTMLElement {
                                 <i class="d-lg-block d-none bi bi-chevron-down me-2"></i>
                                 <i class="d-lg-none d-block bi bi-flag"></i>
                             </button>
-                            <div class="my-drop-down">
+                            <div class="my-drop-down auto-size">
                                 <button class="d-flex col-12 bg-transparent border-0 p-2 font-small justify-content-between align-items-center gap-2 flex-wrap ripple-button currency-changer text-secondary-lighten1" data-item-currency="IRR">
                                     <span>
                                         <img src="assets/base/img/header/img-ir.svg" alt="ایران" width="20px" height="20px" class="rounded-2 ms-1">
