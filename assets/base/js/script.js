@@ -342,5 +342,8 @@ inputComponents.forEach(item => {
     item.lastElementChild.addEventListener('blur', () => {if (item.lastElementChild.value === "") {item.classList.remove('focused')}})
 })
 
-// Adding Event Listener On Load Of Page That Calls  showCurrency Function
-window.addEventListener('load', showCurrency)
+// Adding Event Listener On Load Of Page That Checks If selected-currency Exists In Local Storage. If Its Not sets It TO IRR And Calls  showCurrency Function
+window.addEventListener('load', () => {
+    if (localStorage.getItem('selected-currency') === null) {localStorage.setItem('selected-currency', 'IRR')}
+    showCurrency();
+})
