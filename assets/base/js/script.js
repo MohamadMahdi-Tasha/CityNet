@@ -11,6 +11,8 @@ const calenderComponents = document.querySelectorAll('.intractive-component.cale
 const plusMinusButton = document.querySelectorAll('.plus-minus-button');
 const passengerClassSelectButton = document.querySelectorAll('.passenger-class-select-button');
 const inputComponents = document.querySelectorAll('.intractive-component.input');
+const persianName = document.getElementById('currency-header-per');
+const englishName = document.getElementById('currency-header-eng');
 
 // a Function that takes persian name of city and returns abbreviation Text of it
 function persianNameToAbbreviation(name) {
@@ -112,6 +114,23 @@ function abbrevationToPersianName(name) {
     return nameToReturn;
 }
 
+// a Function That Gets 'selected-currency' From Local Storage And Checks Shows The Name Of Selected Currncys In English And Persian
+function showCurrency() {
+    const selectedCurrency = localStorage.getItem('selected-currency');
+    let persianNameToShow;
+
+    switch (selectedCurrency) {
+        case "IRR":persianNameToShow = "ریال";break;
+        case "USD":persianNameToShow = "دلار";break;
+        case "EUR":persianNameToShow = "یورو";break;
+        case "TRY":persianNameToShow = "لیر";break;
+        case "IQD":persianNameToShow = "دینار";break;
+    }
+
+    englishName.textContent = selectedCurrency;
+    persianName.textContent = persianNameToShow;
+}
+
 // Adding Event Listener On Each Drop Down Toggler That Toggles Attribute Of 'data-opened' To Clicked Items Parent Element
 dropDownToggler.forEach(item => item.addEventListener('click', () => item.parentElement.toggleAttribute('data-opened')))
 
@@ -131,7 +150,10 @@ togglers.forEach(item => {
 currencyChanger.forEach(item => {
     item.addEventListener('click', () => {
         const itemsCurrency = item.getAttribute('data-item-currency');
+
         htmlElement.setAttribute('data-currency', itemsCurrency);
+        localStorage.setItem('selected-currency', itemsCurrency);
+        showCurrency()
     })
 })
 
@@ -312,8 +334,13 @@ passengerClassSelectButton.forEach(item => {
     })
 })
 
+// Adding Event Listener Of CLick On All inputComponents Components That Focuses On Clicked Items Last Child And Adds Event Listener On It For When
+// Its Focused Add Class Of 'focused' To Its Parent Element And When Blured(Not Focused) If Input Is Empty Remove The Added Class Name
 inputComponents.forEach(item => {
     item.addEventListener('click', () => item.lastElementChild.focus())
     item.lastElementChild.addEventListener('focus', () => item.classList.add('focused'))
     item.lastElementChild.addEventListener('blur', () => {if (item.lastElementChild.value === "") {item.classList.remove('focused')}})
 })
+
+// Adding Event Listener On Load Of Page That Calls  showCurrency Function
+window.addEventListener('load', showCurrency)

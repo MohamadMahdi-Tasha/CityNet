@@ -21,9 +21,9 @@ class Header extends HTMLElement {
                         <button data-target="mobile-nav" class="toggler d-lg-none d-block ripple-button bg-transparent border-0 rounded-1 px-2 py-1 font-small text-white fw-bold"><i class="bg bi-list"></i></button>
                         <div class="my-drop-down-holder">
                             <button class="my-drop-down-toggler d-flex ripple-button bg-transparent border-0 rounded-1 px-lg-4 py-lg-2 px-2 py-1 font-small text-white fw-bold">
-                                <span class="d-lg-block d-none" id="currency-header-per">ریال</span>
+                                <span class="d-lg-block d-none" id="currency-header-per"></span>
                                 <span class="d-lg-block d-none me-2">(</span>
-                                <span class="d-lg-block d-none" id="currency-header-eng">IRR</span>
+                                <span class="d-lg-block d-none" id="currency-header-eng"></span>
                                 <span class="d-lg-block d-none">)</span>
                                 <i class="d-lg-block d-none bi bi-chevron-down me-2"></i>
                                 <i class="d-lg-none d-block bi bi-flag"></i>
@@ -32,35 +32,35 @@ class Header extends HTMLElement {
                                 <button class="d-flex col-12 bg-transparent border-0 p-2 font-small justify-content-between align-items-center gap-2 flex-wrap ripple-button currency-changer text-secondary-lighten1" data-item-currency="IRR">
                                     <span>
                                         <img src="assets/base/img/header/img-ir.svg" alt="ایران" width="20px" height="20px" class="rounded-2 ms-1">
-                                        ریال
+                                        <span>ریال</span>
                                     </span>
                                     <span>(IRR)</span>
                                 </button>
                                 <button class="d-flex col-12 bg-transparent border-0 p-2 font-small justify-content-between align-items-center gap-2 flex-wrap ripple-button currency-changer text-secondary-lighten1" data-item-currency="USD">
                                     <span>
                                         <img src="assets/base/img/header/img-us.svg" alt="امریکا" width="20px" height="20px" class="rounded-2 ms-1">
-                                        دلار
+                                        <span>دلار</span>
                                     </span>
                                     <span>(USD)</span>
                                 </button>
                                 <button class="d-flex col-12 bg-transparent border-0 p-2 font-small justify-content-between align-items-center gap-2 flex-wrap ripple-button currency-changer text-secondary-lighten1" data-item-currency="EUR">
                                     <span>
                                         <img src="assets/base/img/header/img-eu.svg" alt="یورو" width="20px" height="20px" class="rounded-2 ms-1">
-                                        یورو
+                                        <span>یورو</span>
                                     </span>
                                     <span>(EUR)</span>
                                 </button>
                                 <button class="d-flex col-12 bg-transparent border-0 p-2 font-small justify-content-between align-items-center gap-2 flex-wrap ripple-button currency-changer text-secondary-lighten1" data-item-currency="TRY">
                                     <span>
                                         <img src="assets/base/img/header/img-tr.svg" alt="ترکیه" width="20px" height="20px" class="rounded-2 ms-1">
-                                        لیر ترکیه
+                                        <span>لیر ترکیه</span>
                                     </span>
                                     <span>(TRY)</span>
                                 </button>
                                 <button class="d-flex col-12 bg-transparent border-0 p-2 font-small justify-content-between align-items-center gap-2 flex-wrap ripple-button currency-changer text-secondary-lighten1" data-item-currency="IQD">
                                     <span>
                                         <img src="assets/base/img/header/img-iq.svg" alt="عراق" width="20px" height="20px" class="rounded-2 ms-1">
-                                        دینار عراق
+                                        <span>دینار عراق</span>
                                     </span>
                                     <span>(IQD)</span>
                                 </button>
