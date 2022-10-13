@@ -153,7 +153,8 @@ currencyChanger.forEach(item => {
 
         htmlElement.setAttribute('data-currency', itemsCurrency);
         localStorage.setItem('selected-currency', itemsCurrency);
-        showCurrency()
+        item.parentElement.parentElement.removeAttribute('data-opened')
+        showCurrency();
     })
 })
 
