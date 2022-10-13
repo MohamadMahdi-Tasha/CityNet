@@ -193,7 +193,9 @@ input[type='radio'] {
     z-index: 2001 !important;
 }
 
+input[type='radio'] {pointer-events: visible !important;}
 input[type='radio']:after {
+    pointer-events: none !important;
     content: '';
     position: absolute;
     width: 8px;
@@ -209,6 +211,7 @@ input[type='radio']:checked:after {
 
 input[type='radio']:before {
     content: '';
+    pointer-events: none !important;
     position: absolute;
     width: 13px;
     height: 13px;
