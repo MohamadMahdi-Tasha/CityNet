@@ -47,11 +47,11 @@ body {
     position: relative;
 }
 
-.my-drop-down:not(.init-drop-down) {
+.my-drop-down:not(.init-drop-down, .auto-size) {
     width: 25rem !important;
 }
 
-.my-drop-down:not(.init-drop-down).auto-size > button {
+.my-drop-down.auto-size > button {
     width: 12rem;
 }
 
