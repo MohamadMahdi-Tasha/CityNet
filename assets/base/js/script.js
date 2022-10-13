@@ -350,6 +350,15 @@ window.addEventListener('load', () => {
     showCurrency();
 })
 
+// Closing Login Modal On Escape Key
+window.addEventListener('keydown', (event) => {
+    const clickedKey = event.key.toLowerCase()
+    if (clickedKey === 'escape') {
+        const loginModal = document.getElementById('login-modal');
+        if (loginModal.getAttribute('data-opened') !== null) {loginModal.removeAttribute('data-opened')}
+    }
+})
+
 // Adding Event Listener Of Click On Each Way Toggler Button That Removes Attribute Of 'active' From Element That Haves It And Sets It To
 // Target Of Clicked Item
 waysToggler.forEach(item => {
