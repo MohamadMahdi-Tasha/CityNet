@@ -15,6 +15,9 @@ const persianName = document.getElementById('currency-header-per');
 const englishName = document.getElementById('currency-header-eng');
 const waysToggler = document.querySelectorAll('.ways-toggler');
 const addRouteBtn = document.querySelector('.add-route-btn');
+const routeCloseButtons = document.querySelectorAll('.route-close-button');
+const thirdRoute = document.getElementById('third-route');
+const fourthRoute = document.getElementById('fourth-route');
 
 // a Function that takes persian name of city and returns abbreviation Text of it
 function persianNameToAbbreviation(name) {
@@ -378,12 +381,19 @@ waysToggler.forEach(item => {
 })
 
 addRouteBtn.addEventListener('click', () => {
-    const thirdRoute = document.getElementById('third-route');
-    const fourthRoute = document.getElementById('fourth-route');
-
     if (thirdRoute.classList.contains('d-none')) {
         thirdRoute.classList.replace('d-none', 'row')
     } else if (fourthRoute.classList.contains('d-none')) {
         fourthRoute.classList.replace('d-none', 'row')
     }
+})
+
+routeCloseButtons.forEach(item => {
+    item.addEventListener('click', () => {
+        if (fourthRoute.classList.contains('row')) {
+            fourthRoute.classList.replace('row', 'd-none')
+        } else if (thirdRoute.classList.contains('row')) {
+            thirdRoute.classList.replace('row', 'd-none')
+        }
+    })
 })
