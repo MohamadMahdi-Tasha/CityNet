@@ -177,7 +177,7 @@ input[type='radio'] {
 
 .loader-holder {
     height: 4px;
-    background-color: var(--info-lighten5);
+    background-color: var(--info-lighten2);
     border-radius: 20rem;
     overflow: hidden;
     position: relative;
@@ -188,7 +188,7 @@ input[type='radio'] {
     top: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--info-base);
+    background-color: var(--info-darken1-base);
     animation: loader-modal-animation infinite ease-in-out 1s;
 }
 

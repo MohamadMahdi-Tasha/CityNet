@@ -26,7 +26,7 @@ class Modal extends HTMLElement {
             `
         } else if (this.getAttribute('type') === 'loader') {
             this.innerHTML = `
-                <div  id="loader-modal" class="my-modal-holder position-fixed inset-0 d-flex justify-content-center align-items-center">
+                <div id="loader-modal" class="my-modal-holder position-fixed inset-0 d-flex justify-content-center align-items-center">
                     <div class="my-modal-bg position-fixed inset-0"></div>
                     <div class="my-modal bg-white shadow rounded-3 p-3 col-lg-auto col-12">
                         <h5 class="text-grey-darken2">لطفا منتظر بمانید!</h5>
@@ -34,6 +34,15 @@ class Modal extends HTMLElement {
                         <div class="loader-holder"><div class="loader"></div></div>
                     </div>
                 </div> 
+            `
+        } else if (this.getAttribute('type') === 'city') {
+            this.innerHTML = `
+                <div id="flight-select-modal" class="my-modal-holder position-fixed inset-0 d-flex justify-content-center align-items-center">
+                    <div data-target="flight-select-modal" class="toggler my-modal-bg position-fixed inset-0"></div>
+                    <div class="my-modal bg-white shadow rounded-3 p-3 col-lg-9 col-12">
+                        <flight-component></flight-component>
+                    </div>
+                </div>   
             `
         }
     }
