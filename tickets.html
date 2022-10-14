@@ -81,7 +81,125 @@
             </button>
         </header>
         <main>
-            <aside></aside>
+            <aside>
+                <div>
+                    <div>
+                        <h6>
+                            (<span>THR</span>)
+                            <span>تهران</span>
+                        </h6>
+                        <i class="bi bi-arrow-left"></i>
+                        <h6>
+                            (<span>MHD</span>)
+                            <span>مشهد</span>
+                        </h6>
+                    </div>
+                </div>
+                <div>
+                    <button><i class="bi bi-chevron-right"></i>روز قبل</button>
+                    <div>
+                        <h6>
+                            <span>دوشنبه</span>
+                            <span>31</span>
+                            <span>مرداد</span>
+                        </h6>
+                        <h6>
+                            <span>Aug</span>
+                            <span>22</span>
+                            ,
+                            <span>2022</span>
+                        </h6>
+                    </div>
+                    <button><i class="bi bi-chevron-left"></i>روز بعد</button>
+                </div>
+                <div data-opened class="my-collapse-holder">
+                    <button class="my-collapse-toggler">جستجوی شماره پرواز<i class="bi bi-chevron-down"></i></button>
+                    <div class="my-collapse">
+                        <intractive-component type="input" input-type="text" placeholder="تهران به مشهد"></intractive-component>
+                    </div>
+                </div>
+                <div data-opened class="my-collapse-holder">
+                    <button class="my-collapse-toggler">هواپیمایی<i class="bi bi-chevron-down"></i></button>
+                    <div class="my-collapse">
+                        <div><p>توجه:ممکن است ایرلاین انتخوابی در بین مسیر باشد.</p></div>
+<!--                        <div class="selected-airlines-tag-holder"></div>-->
+                        <div>
+                            <div>
+                                <span>
+                                <input type="checkbox">
+                                <label>Sepehran Airlines</label>
+                            </span>
+                                <h6>
+                                    از
+                                    <span>9,989,180</span>
+                                    ریال
+                                </h6>
+                            </div>
+                            <img src="assets/base/img/img-logo.png" alt="Logo">
+                        </div>
+                    </div>
+                </div>
+                <div data-opened class="my-collapse-holder">
+                    <button class="my-collapse-toggler">نوع پرواز<i class="bi bi-chevron-down"></i></button>
+                    <div class="my-collapse">
+                        <div>
+                            <span>
+                            <input type="checkbox">
+                            <label>
+                                سیستمی
+                                (<span>6</span>)
+                            </label>
+                        </span>
+                            <h6>
+                                از
+                                <span>9,989,180</span>
+                                ریال
+                            </h6>
+                        </div>
+                        <div>
+                            <span>
+                            <input type="checkbox">
+                            <label>
+                                چارتری
+                                (<span>7</span>)
+                            </label>
+                        </span>
+                            <h6>
+                                از
+                                <span>10,431,180</span>
+                                ریال
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+                <div data-opened class="my-collapse-holder">
+                    <button class="my-collapse-toggler">تعداد توقف<i class="bi bi-chevron-down"></i></button>
+                    <div class="my-collapse">
+                        <h6>تهران به مشهد</h6>
+                        <h6>تمامی پرواز ها بدون توقف میباشند</h6>
+                    </div>
+                </div>
+                <div data-opened class="my-collapse-holder">
+                    <button class="my-collapse-toggler">فرودگاه ها<i class="bi bi-chevron-down"></i></button>
+                    <div class="my-collapse">
+                        <intractive-component type="input" input-type="text" placeholder="جستجو فرودگاه"></intractive-component>
+                        <div>
+                            <span>
+                                <input type="checkbox">
+                                <label>Mehrabad Intl</label>
+                            </span>
+                            <h6>THR</h6>
+                        </div>
+                        <div>
+                            <span>
+                                <input type="checkbox">
+                                <label>Shahid Hashemi Nejad</label>
+                            </span>
+                            <h6>MHD</h6>
+                        </div>
+                    </div>
+                </div>
+            </aside>
             <main></main>
         </main>
     </main>
