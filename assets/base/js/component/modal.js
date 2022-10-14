@@ -26,7 +26,7 @@ class Modal extends HTMLElement {
             `
         } else if (this.getAttribute('type') === 'loader') {
             this.innerHTML = `
-                <div data-opened id="loader-modal" class="my-modal-holder position-fixed inset-0 d-flex justify-content-center align-items-center">
+                <div  id="loader-modal" class="my-modal-holder position-fixed inset-0 d-flex justify-content-center align-items-center">
                     <div class="my-modal-bg position-fixed inset-0"></div>
                     <div class="my-modal bg-white shadow rounded-3 p-3 col-lg-auto col-12">
                         <h5 class="text-grey-darken2">لطفا منتظر بمانید!</h5>
