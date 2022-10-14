@@ -380,6 +380,8 @@ waysToggler.forEach(item => {
     })
 })
 
+// Adding Event Listener On Each Add Route Button That Checks if Third Route Element Contains 'd-none' In Its ClassList.
+// If It Is Then Replace It With 'row'. else if Fourth Route Contains 'd-none' In Its Class List Then Replace It With 'row' To Make Them Visible
 addRouteBtn.addEventListener('click', () => {
     if (thirdRoute.classList.contains('d-none')) {
         thirdRoute.classList.replace('d-none', 'row')
@@ -388,6 +390,8 @@ addRouteBtn.addEventListener('click', () => {
     }
 })
 
+// Adding Event Listener On Each Route Close Button That Checks if Fourth Route Element Contains 'row' In Its ClassList.
+// If It Is Then Replace It With 'd-none'. else if Third Route Contains 'row' In Its Class List Then Replace It With 'd-none' To Make Them Disappear
 routeCloseButtons.forEach(item => {
     item.addEventListener('click', () => {
         if (fourthRoute.classList.contains('row')) {
