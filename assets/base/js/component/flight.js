@@ -48,36 +48,36 @@ class flight extends HTMLElement {
         </div>
         <div class="ways-inner-page" id="more-way">
             <div class="pb-3 d-flex flex-column gap-4">
-                <div class="row gx-2 gy-4 flex-nowrap position-relative flex-lg-row flex-column">
-                    <button class="col-1  bg-grey-lighten1 border-0 rounded-3 ripple-button"><i class="bi bi-x"></i></button>
+                <div id="first-route" class="row gx-2 gy-4 flex-nowrap position-relative flex-lg-row flex-column">
+                    <button class="col-1 route-close-button bg-grey-lighten1 border-0 rounded-3 ripple-button"><i class="bi bi-x"></i></button>
                     <intractive-component type="city" class="col-lg-3 col-12" placeholder="مبدا اول"></intractive-component>
                     <button class="switch-button more-ways"><i class="bi bi-arrow-left-right"></i></button>
                     <intractive-component type="city" class="col-lg-4 col-12" placeholder="مقصد اول"></intractive-component>
                     <intractive-component type="calender" class="col-lg-4 col-12" placeholder="تاریخ پرواز"></intractive-component>
                 </div>
-                <div class="row gx-2 gy-4 flex-nowrap position-relative flex-lg-row flex-column">
-                    <button class="col-1  bg-grey-lighten1 border-0 rounded-3 ripple-button"><i class="bi bi-x"></i></button>
+                <div id="second-route" class="row gx-2 gy-4 flex-nowrap position-relative flex-lg-row flex-column">
+                    <button class="col-1 route-close-button bg-grey-lighten1 border-0 rounded-3 ripple-button"><i class="bi bi-x"></i></button>
                     <intractive-component type="city" class="col-lg-3 col-12" placeholder="مبدا دوم"></intractive-component>
                     <button class="switch-button more-ways"><i class="bi bi-arrow-left-right"></i></button>
                     <intractive-component type="city" class="col-lg-4 col-12" placeholder="مقصد دوم"></intractive-component>
                     <intractive-component type="calender" class="col-lg-4 col-12" placeholder="تاریخ پرواز"></intractive-component>
                 </div>
-                <div class="row gx-2 gy-4 flex-nowrap position-relative flex-lg-row flex-column">
-                    <button class="col-1  bg-grey-lighten1 border-0 rounded-3 ripple-button"><i class="bi bi-x"></i></button>
+                <div id="third-route" class="d-none gx-2 gy-4 flex-nowrap position-relative flex-lg-row flex-column">
+                    <button class="col-1 route-close-button bg-grey-lighten1 border-0 rounded-3 ripple-button"><i class="bi bi-x"></i></button>
                     <intractive-component type="city" class="col-lg-3 col-12" placeholder="مبدا سوم"></intractive-component>
                     <button class="switch-button more-ways"><i class="bi bi-arrow-left-right"></i></button>
                     <intractive-component type="city" class="col-lg-4 col-12" placeholder="مقصد سوم"></intractive-component>
                     <intractive-component type="calender" class="col-lg-4 col-12" placeholder="تاریخ پرواز"></intractive-component>
                 </div>
-                <div class="row gx-2 gy-4 flex-nowrap position-relative flex-lg-row flex-column">
-                    <button class="col-1  bg-grey-lighten1 border-0 rounded-3 ripple-button"><i class="bi bi-x"></i></button>
+                <div id="fourth-route" class="d-none gx-2 gy-4 flex-nowrap position-relative flex-lg-row flex-column">
+                    <button class="col-1 route-close-button bg-grey-lighten1 border-0 rounded-3 ripple-button"><i class="bi bi-x"></i></button>
                     <intractive-component type="city" class="col-lg-3 col-12" placeholder="مبدا چهارم"></intractive-component>
                     <button class="switch-button more-ways"><i class="bi bi-arrow-left-right"></i></button>
                     <intractive-component type="city" class="col-lg-4 col-12" placeholder="مقصد چهارم"></intractive-component>
                     <intractive-component type="calender" class="col-lg-4 col-12" placeholder="تاریخ پرواز"></intractive-component>
                 </div>
                 <div class="row gx-2 gy-4 flex-nowrap flex-lg-row flex-column">
-                    <button class="col-lg-4 col-12 border-0 ripple-button bg-grey-lighten1 text-black font-small rounded-3">
+                    <button class="add-route-btn col-lg-4 col-12 border-0 ripple-button bg-grey-lighten1 text-black font-small rounded-3">
                         <span class="text-grey-darken1 ms-1">+</span>
                         افزودن مسیر
                     </button>
