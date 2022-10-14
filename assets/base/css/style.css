@@ -175,6 +175,23 @@ input[type='radio'] {
     color: var(--primary-base) !important;
 }
 
+.loader-holder {
+    height: 4px;
+    background-color: var(--info-lighten5);
+    border-radius: 20rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.loader-holder > .loader {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--info-base);
+    animation: loader-modal-animation infinite ease-in-out 1s;
+}
+
 .my-modal-holder {
     z-index: 2000;
 }
@@ -480,6 +497,22 @@ input[type='radio']:before {
 
     to {
         opacity: 1;
+    }
+}
+
+@keyframes loader-modal-animation {
+    0% {
+        width: 0;
+        right: 0;
+    }
+
+    50% {
+        width: 40%;
+    }
+
+    100% {
+        width: 100%;
+        right: 100%;
     }
 }
 
