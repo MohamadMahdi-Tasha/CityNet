@@ -13,11 +13,6 @@ const passengerClassSelectButton = document.querySelectorAll('.passenger-class-s
 const inputComponents = document.querySelectorAll('.intractive-component.input');
 const persianName = document.getElementById('currency-header-per');
 const englishName = document.getElementById('currency-header-eng');
-const waysToggler = document.querySelectorAll('.ways-toggler');
-const addRouteBtn = document.querySelector('.add-route-btn');
-const routeCloseButtons = document.querySelectorAll('.route-close-button');
-const thirdRoute = document.getElementById('third-route');
-const fourthRoute = document.getElementById('fourth-route');
 
 // a Function that takes persian name of city and returns abbreviation Text of it
 function persianNameToAbbreviation(name) {
@@ -365,39 +360,4 @@ window.addEventListener('keydown', (event) => {
         const loginModal = document.getElementById('login-modal');
         if (loginModal.getAttribute('data-opened') !== null) {loginModal.removeAttribute('data-opened')}
     }
-})
-
-// Adding Event Listener Of Click On Each Way Toggler Button That Removes Attribute Of 'active' From Element That Haves It And Sets It To
-// Target Of Clicked Item
-waysToggler.forEach(item => {
-    item.addEventListener('click', () => {
-        const target = item.getAttribute('data-target');
-        const targetElement = document.getElementById(target);
-        const activeInnerPage = document.querySelector('.ways-inner-page[active]');
-
-        activeInnerPage.removeAttribute('active');
-        targetElement.setAttribute('active', 'true')
-    })
-})
-
-// Adding Event Listener On Each Add Route Button That Checks if Third Route Element Contains 'd-none' In Its ClassList.
-// If It Is Then Replace It With 'row'. else if Fourth Route Contains 'd-none' In Its Class List Then Replace It With 'row' To Make Them Visible
-addRouteBtn.addEventListener('click', () => {
-    if (thirdRoute.classList.contains('d-none')) {
-        thirdRoute.classList.replace('d-none', 'row')
-    } else if (fourthRoute.classList.contains('d-none')) {
-        fourthRoute.classList.replace('d-none', 'row')
-    }
-})
-
-// Adding Event Listener On Each Route Close Button That Checks if Fourth Route Element Contains 'row' In Its ClassList.
-// If It Is Then Replace It With 'd-none'. else if Third Route Contains 'row' In Its Class List Then Replace It With 'd-none' To Make Them Disappear
-routeCloseButtons.forEach(item => {
-    item.addEventListener('click', () => {
-        if (fourthRoute.classList.contains('row')) {
-            fourthRoute.classList.replace('row', 'd-none')
-        } else if (thirdRoute.classList.contains('row')) {
-            thirdRoute.classList.replace('row', 'd-none')
-        }
-    })
 })

@@ -2,20 +2,6 @@ class flight extends HTMLElement {
     constructor() {super();}
     connectedCallback() {
         this.innerHTML = `
-        <form action="#" class="d-flex flex-wrap gap-3 mb-3">
-            <div class="d-flex align-items-center">
-                <input class="ways-toggler ms-2" data-target="one-way" checked name="ways" id="one-way-input" type="radio">
-                <label class="text-secondary-lighten3 font-small" for="one-way-input">یک طرفه</label>
-            </div>
-            <div class="d-flex align-items-center">
-                <input class="ways-toggler ms-2" data-target="two-way" name="ways" id="two-way-input" type="radio">
-                <label class="text-secondary-lighten3 font-small" for="two-way-input">رفت و برگشت</label>
-            </div>
-            <div class="d-flex align-items-center">
-                <input class="ways-toggler ms-2" data-target="more-way" name="ways" id="more-way-input" type="radio">
-                <label class="text-secondary-lighten3 font-small" for="more-way-input">چند مسیره</label>
-            </div>
-        </form>
         <div class="ways-inner-page" active id="one-way">
             <div class="pb-3 d-flex flex-column gap-4">
                 <div class="row gx-2 gy-4 position-relative flex-lg-row flex-column">
