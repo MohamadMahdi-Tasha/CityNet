@@ -303,10 +303,6 @@ input[type='radio']:before {
     transition: .5s;
 }
 
-.ways-inner-page:not([active]) {
-    display: none;
-}
-
 #mobile-nav {
     z-index: 1999;
     left: 0;
@@ -399,14 +395,6 @@ input[type='radio']:before {
     z-index: 2;
 }
 
-.switch-button.more-ways {
-    left: 66.5%;
-}
-
-.switch-button:not(.more-ways) {
-    left: 50%;
-}
-
 .intractive-component {
     border: 1px solid var(--black-lighten3);
     transition: .3s;
@@ -478,6 +466,10 @@ input[type='radio']:before {
     transition: .3s;
 }
 
+input[type="checkbox"] {
+    accent-color: var(--primary-base);
+}
+
 /*Hover, Focus, ...*/
 .header-links:hover::after {
     width: 100%;
@@ -538,7 +530,7 @@ input[type='radio']:before {
 }
 
 @media (max-width: 991px) {
-    .switch-button.more-ways, .switch-button:not(.more-ways) {
+    .switch-button {
         left: 10%;
         top: 50%;
         transform: translateY(-70%);

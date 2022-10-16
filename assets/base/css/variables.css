@@ -143,6 +143,7 @@
     --grey-darken4: #3d4144;
     --pink: rgb(213, 12, 106);
     --darkest-blue: #023047;
+    --light-range: #fff1e1;
 }
 
 /*Styles*/
@@ -289,6 +290,7 @@
 .bg-grey-darken4 {background-color: var(--grey-darken4);}
 .bg-pink {background-color: var(--pink);}
 .bg-darkest-blue {background-color: var(--darkest-blue);}
+.bg-light-orange {background-color: var(--light-range);}
 
 .text-anchor-base {color: var(--anchor-base);}
 .text-primary-base {color: var(--primary-base);}
