@@ -175,6 +175,20 @@ input[type='radio'] {
     color: var(--primary-base) !important;
 }
 
+.my-collapse-holder,
+.my-collapse-holder .my-collapse-toggler > i.bi-chevron-down::before{
+    transition: .3s;
+}
+
+.my-collapse-holder[data-opened] .my-collapse-toggler > i.bi-chevron-down{
+    transform: rotate(180deg);
+}
+
+.my-collapse-holder:not([data-opened]) {
+    height: 50px;
+    overflow: hidden;
+}
+
 .loader-holder {
     height: 4px;
     background-color: var(--info-lighten2);
