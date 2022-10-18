@@ -363,4 +363,15 @@ window.addEventListener('keydown', (event) => {
     }
 })
 
+// Adding Event Listener Of Click On Each Collapse Toggler That Toggles Attribute Of 'data-opened' To Its Parent Element
 myCollapseToggler.forEach(item =>  item.addEventListener('click', () => item.parentElement.toggleAttribute('data-opened')))
+
+// Setting Slider Range
+$( function() {
+    $( `.slider-range` ).slider({
+        range: true,
+        min: 0,
+        max: 24,
+        values: [ 0, 24 ],
+    });
+} );

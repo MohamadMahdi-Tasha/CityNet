@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="assets/plugins/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/plugins/ripple-button/riple-button.css">
     <link rel="stylesheet" href="assets/base/css/persian-date-picker.css">
+    <link rel="stylesheet" href="assets/plugins/jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" href="assets/base/css/multiple-slider.css">
     <!--Title Of Page-->
     <title>تیکت ها - سیتی‌نت</title>
 </head>
@@ -217,10 +219,102 @@
                         </div>
                     </div>
                 </div>
+                <div class="my-collapse-holder bg-white rounded-3">
+                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">ساعت پرواز<i class="bi bi-chevron-down"></i></button>
+                    <div class="my-collapse p-3 rounded-3">
+                        <h6>
+                            <span>استانبول</span>
+                            به
+                            <span>انکارار</span>
+                        </h6>
+                        <div class="d-flex">
+                            <h6 class="d-block">
+                                <i class="bi bi-moon"></i>
+                                24
+                            </h6>
+                            <div class="slider-range"></div>
+                            <h6 class="d-block">
+                                <i class="bi bi-brightness-alt-high"></i>
+                                00
+                            </h6>
+                        </div>
+                        <h6>از ساعت ۰۰ تا ۲۴</h6>
+                    </div>
+                </div>
+                <div class="my-collapse-holder bg-white rounded-3">
+                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">ساعت رسیدن<i class="bi bi-chevron-down"></i></button>
+                    <div class="my-collapse p-3 rounded-3">
+                        <div class="rounded-2 bg-light-orange p-2 mb-3"><p class="text-warning-base font-small mb-0">پروازهایی که ساعت رسیدن ندارند، در انتهای نتایج نمایش داده می‌شوند.</p></div>
+                        <h6>
+                            <span>استانبول</span>
+                            به
+                            <span>انکارار</span>
+                        </h6>
+                        <div class="d-flex">
+                            <h6 class="d-block">
+                                <i class="bi bi-moon"></i>
+                                24
+                            </h6>
+                            <div class="slider-range"></div>
+                            <h6 class="d-block">
+                                <i class="bi bi-brightness-alt-high"></i>
+                                00
+                            </h6>
+                        </div>
+                        <h6>از ساعت ۰۰ تا ۲۴</h6>
+                    </div>
+                </div>
+                <div class="my-collapse-holder bg-white rounded-3">
+                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">مدت رمان توقف<i class="bi bi-chevron-down"></i></button>
+                    <div class="my-collapse p-3 rounded-3">
+                        <h6>تمامی پروازها بدون توقف می‌باشند</h6>
+                    </div>
+                </div>
+                <div class="my-collapse-holder bg-white rounded-3">
+                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">مدت زمان پرواز<i class="bi bi-chevron-down"></i></button>
+                    <div class="rounded-2 bg-light-orange p-2 mb-3"><p class="text-warning-base font-small mb-0">پروازهایی که ساعت رسیدن ندارند، در انتهای نتایج نمایش داده می‌شوند.</p></div>
+                    <div class="my-collapse p-3 rounded-3">
+                        <h6>
+                            <span>استانبول</span>
+                            به
+                            <span>انکارار</span>
+                        </h6>
+                        <div class="d-flex">
+                            <h6 class="d-block">
+                                <i class="bi bi-moon"></i>
+                                02
+                            </h6>
+                            <div class="slider-range"></div>
+                            <h6 class="d-block">
+                                <i class="bi bi-brightness-alt-high"></i>
+                                01
+                            </h6>
+                        </div>
+                        <h6>۰۱ تا ۰۲ ساعت</h6>
+                    </div>
+                </div>
+                <div class="my-collapse-holder bg-white rounded-3">
+                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">بازه قیمتی<i class="bi bi-chevron-down"></i></button>
+                    <div class="my-collapse p-3 rounded-3">
+                        <div>
+                            <intractive-component type="input" input-type="number" placeholder="از"></intractive-component>
+                            <intractive-component type="input" input-type="number" placeholder="تا"></intractive-component>
+                        </div>
+                        <div class="slider-range"></div>
+                        <div>
+                            <h6>
+                                <span>۱۱,۲۹۷,۹۹۰</span>
+                                ریال
+                            </h6>
+                            <h6>
+                                <span>۱۲,۲۹۸,۹۷۰</span>
+                                ریال
+                            </h6>
+                        </div>
+                    </div>
+                </div>
             </aside>
-            <main class="col-8">
-                <h1>MMD</h1>
-            </main>
+            <main class="col-8"></main>
         </main>
     </main>
 </section>
@@ -231,13 +325,15 @@
 <script src="assets/plugins/bootstrap/bootstrap.bundle.min.js"></script>
 <script src="assets/plugins/vue/vue.js"></script>
 <script src="assets/plugins/date-picker/datepicker.min.js"></script>
+<script src="assets/plugins/jquery/jquery-3.6.0.js"></script>
+<script src="assets/plugins/jquery-ui/jquery-ui.js"></script>
+<script src="assets/plugins/ripple-button/ripple-Button.js"></script>
 <script src="assets/base/js/component/header.js"></script>
 <script src="assets/base/js/component/mobile-nav.js"></script>
 <script src="assets/base/js/component/intractive-component.js"></script>
 <script src="assets/base/js/component/footer.js"></script>
 <script src="assets/base/js/component/modal.js"></script>
 <script src="assets/base/js/component/flight.js"></script>
-<script src="assets/plugins/ripple-button/ripple-Button.js"></script>
 <script src="assets/base/js/script.js"></script>
 </body>
 </html>

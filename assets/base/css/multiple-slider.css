@@ -1,0 +1,20 @@
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+    background-color: var(--primary-base);
+    border-radius: 100%;
+    width: 15px;
+    height: 15px;
+    border: none !important;
+}
+
+.ui-slider-horizontal {
+    height: 5px;
+}
+
+.ui-slider-horizontal .ui-slider-range {
+    background-color: var(--primary-base);
+}
+
+.ui-widget.ui-widget-content {
+    border: none !important;
+    background-color: var(--grey-lighten3);
+}
