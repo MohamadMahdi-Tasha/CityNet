@@ -360,8 +360,8 @@ window.addEventListener('load', () => {
 window.addEventListener('keydown', (event) => {
     const clickedKey = event.key.toLowerCase()
     if (clickedKey === 'escape') {
-        const loginModal = document.getElementById('login-modal');
-        if (loginModal.getAttribute('data-opened') !== null) {loginModal.removeAttribute('data-opened')}
+        const openModal = document.querySelector('.my-modal-holder[data-opened]:not(#loader-modal):first-of-type');
+        openModal.removeAttribute('data-opened');
     }
 })
 
