@@ -40,6 +40,7 @@ class Modal extends HTMLElement {
                 <div id="flight-select-modal" class="my-modal-holder position-fixed inset-0 d-flex justify-content-center align-items-center">
                     <div data-target="flight-select-modal" class="toggler my-modal-bg position-fixed inset-0"></div>
                     <div class="my-modal bg-white shadow rounded-3 p-3 col-lg-9 col-12">
+                        <button data-target="flight-select-modal" class="toggler my-modal-close-button d-lg-none d-flex justify-content-center align-items-center mb-3 bg-grey-lighten2 border-0 rounded-3"><i class="bi bi-x"></i></button>
                         <flight-component></flight-component>
                     </div>
                 </div>   

@@ -378,5 +378,5 @@ $( function() {
     });
 } );
 
-ticketPageAsideMobileTopSideToggle.addEventListener('click', () => ticketPageAside.classList.toggle('top'))
+ticketPageAsideMobileTopSideToggle.addEventListener('mousedown', () => ticketPageAside.classList.toggle('top'))
 window.onscroll = () => (window.scrollY !== 0) ? ticketPageAside.classList.add('scrolled') : ticketPageAside.classList.remove('scrolled');
