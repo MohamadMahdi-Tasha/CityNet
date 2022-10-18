@@ -489,6 +489,10 @@ input[type="checkbox"] {
     top: 100%;
 }
 
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {-webkit-appearance: none;}
+input[type='number'] {-moz-appearance: textfield;}
+
 /*Hover, Focus, ...*/
 .header-links:hover::after {
     width: 100%;
@@ -593,7 +597,7 @@ input[type="checkbox"] {
         border-radius: 20px;
     }
 
-    footer {
+    .home-body footer {
         background-color: white;
     }
 
