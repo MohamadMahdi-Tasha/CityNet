@@ -7,8 +7,9 @@
 .ripple-button > .ripple-button--inner-span {
     pointer-events: none;
     position: absolute;
-    aspect-ratio: 1/1;
     border-radius: 100%;
+    width: 100px;
+    height: 100px;
     animation: ripple-button-inner-span 1s ease-out;
 }
 
