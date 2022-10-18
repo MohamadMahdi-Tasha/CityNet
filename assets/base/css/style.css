@@ -553,7 +553,7 @@ input[type="checkbox"] {
         background-image: none;
     }
 
-    body {
+    .home-body {
         background-image: url("../img/home/img-first-section-mobile.png");
         background-size: cover;
         background-position: center;
