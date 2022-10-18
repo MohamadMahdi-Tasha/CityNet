@@ -14,6 +14,8 @@ const inputComponents = document.querySelectorAll('.intractive-component.input')
 const persianName = document.getElementById('currency-header-per');
 const englishName = document.getElementById('currency-header-eng');
 const myCollapseToggler = document.querySelectorAll('.my-collapse-toggler');
+const ticketPageAsideMobileTopSideToggle = document.querySelector('.ticket-page-aside-mobile-top-side-toggle');
+const ticketPageAside = document.querySelector('.ticket-page-aside');
 
 // a Function that takes persian name of city and returns abbreviation Text of it
 function persianNameToAbbreviation(name) {
@@ -375,3 +377,6 @@ $( function() {
         values: [ 0, 24 ],
     });
 } );
+
+ticketPageAsideMobileTopSideToggle.addEventListener('click', () => ticketPageAside.classList.toggle('top'))
+window.onscroll = () => (window.scrollY !== 0) ? ticketPageAside.classList.add('scrolled') : ticketPageAside.classList.remove('scrolled');
