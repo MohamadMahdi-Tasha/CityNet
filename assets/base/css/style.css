@@ -582,7 +582,7 @@ input[type='number'] {-moz-appearance: textfield;}
     }
 
 
-    .ticket-page-aside > div {
+    .ticket-page-aside > div:not(:first-of-type) {
         box-shadow: 0 0 30px rgba(0,0,0,.2);
     }
 
