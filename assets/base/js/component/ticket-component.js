@@ -137,12 +137,105 @@ class TicketComponent extends HTMLElement {
                                     <span>${this.getAttribute('end-location-en')}</span>
                                 </h6>
                             </div>
+                            <div>
+                                <h6>مدت مسیر :</h6>
+                                <h6>
+                                    <span>${this.getAttribute('route-duration-hour')}</span>
+                                    ساعت  و
+                                    <span>${this.getAttribute('route-duration-minute')}</span>
+                                    دقیقه
+                                </h6>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <h6>
+                                    <i class="bi bi-calendar4-week"></i>
+                                    زمان حرکت :
+                                    <span>${this.getAttribute('start-time')}</span>
+                                </h6>
+                                <h6>
+                                    ${this.getAttribute('start-date-fa')}
+                                    (${this.getAttribute('start-date-en')})
+                                </h6>
+                            </div>
+                            <div>
+                                <div>
+                                    <h6>
+                                        <i class="bi bi-circle-fill"></i>
+                                        ${this.getAttribute('start-location')}
+                                    </h6>
+                                    <div>
+                                        <div class="divider-vertical-dashed"></div>
+                                        <img src="${this.getAttribute('icon-src')}" alt="${this.getAttribute('name')}">
+                                    </div>
+                                    <h6>
+                                        <i class="bi bi-airplane rotate-270"></i>
+                                        ${this.getAttribute('end-location')}
+                                    </h6>
+                                </div>
+                                <div>
+                                    <h6>هواپیمایی :<span>${this.getAttribute('name')}</span></h6>
+                                    <h6>مدل هواپیما :<span>${this.getAttribute('plane-model')}</span></h6>
+                                    <h6>بار مجاز :<span>15 KG</span></h6>
+                                </div>
+                                <div>
+                                    <h6>شماره پرواز :<span>${this.getAttribute('flight-number')}/${(this.getAttribute('systemic') !== null) ? 'سیستمی' : 'چارتری'}</span></h6>
+                                    <h6>
+                                        مدت پرواز :
+                                        <span>${this.getAttribute('route-duration-hour')}</span>
+                                        ساعت و
+                                        <span>${this.getAttribute('route-duration-minute')}</span>
+                                        دقیقه
+                                    </h6>
+                                    <h6>کلاس نرخی :<span>${this.getAttribute('mode')}</span></h6>
+                                </div>
+                            </div>
+                            <div>
+                                <h6>
+                                    <i class="bi bi-calendar4-week"></i>
+                                    زمان رسیدن :
+                                    <span>${this.getAttribute('end-time')}</span>
+                                </h6>
+                                <h6>
+                                    ${this.getAttribute('end-date-fa')}
+                                    (${this.getAttribute('end-date-en')})
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">رده سنی</th>
+                                        <th scope="col">قیمت پایه</th>
+                                        <th scope="col">مالیات</th>
+                                        <th scope="col">تخفیف</th>
+                                        <th scope="col">تعداد</th>
+                                        <th scope="col">مبلغ هر نفر</th>
+                                        <th scope="col">جمع</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>بزرگسال</td>
+                                        <td>5,836,060</td>
+                                        <td>5,994,000</td>
+                                        <td>500,000</td>
+                                        <td>x1</td>
+                                        <td>${this.getAttribute('price')}</td>
+                                        <td>${this.getAttribute('price')}</td>
+                                    </tr>
+                                </tbody>
+                        </table>
+                        <div>
+                            <h6>جمع</h6>
                             <h6>
-                                مدت مسیر  :
-                                <span>${this.getAttribute('route-duration-hour')}</span>
-                                ساعت  و
-                                <span>${this.getAttribute('route-duration-minute')}</span>
-                                دقیقه
+                                ${this.getAttribute('price')}
+                                ریال
                             </h6>
                         </div>
                     </div>
