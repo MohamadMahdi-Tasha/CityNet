@@ -144,6 +144,8 @@
     --pink: rgb(213, 12, 106);
     --darkest-blue: #023047;
     --light-range: #fff1e1;
+    --light-green: #cef5ec;
+    --light-blue: #deedff;
 }
 
 /*Styles*/
@@ -293,7 +295,7 @@
 .bg-light-orange {background-color: var(--light-range);}
 
 .text-anchor-base {color: var(--anchor-base);}
-.text-primary-base {color: var(--primary-base);}
+.text-primary-base {color: var(--primary-base) !important;}
 .text-primary-lighten5 {color: var(--primary-lighten5);}
 .text-primary-lighten4 {color: var(--primary-lighten4);}
 .text-primary-lighten3 {color: var(--primary-lighten3);}
@@ -435,3 +437,5 @@
 .text-grey-darken4 {color: var(--grey-darken4);}
 .text-pink {color: var(--pink);}
 .text-hover-pink:hover {color: var(--pink) !important;}
+.bg-green-light {background-color: var(--light-green);}
+.bg-blue-light {background-color: var(--light-blue);}
