@@ -3,8 +3,8 @@ class TicketComponent extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
             <div class="bg-white p-3 rounded-3">
-                <div class="bg-grey-lighten3 mb-3 rounded-4 p-3 d-flex align-items-center justify-content-between">
-                    <div class="d-flex align-items-center gap-4">
+                <div class="bg-grey-lighten3 mb-3 rounded-4 p-3 d-flex flex-lg-row flex-column align-items-center justify-content-between">
+                    <div class="d-flex flex-lg-row flex-column align-items-center gap-4">
                         <img width="70px" height="70px" src="${this.getAttribute('icon-src')}" alt="${this.getAttribute('name')}">
                         <div>
                             <div class="d-flex align-items-center mb-2 gap-2 px-3">
@@ -31,7 +31,7 @@ class TicketComponent extends HTMLElement {
                             </div>
                         </div>
                     </div>
-                    <div class="d-flex align-items-center col-6">
+                    <div class="d-flex justify-content-lg-start justify-content-between align-items-center col-lg-6 col-12">
                         <div>
                             <h6 class="fw-bold text-grey-darken3 text-start">${this.getAttribute('start-time')}</h6>
                             <h6 class="font-small text-grey-darken3 mb-0 text-start">${this.getAttribute('start-location')}</h6>
@@ -47,23 +47,23 @@ class TicketComponent extends HTMLElement {
                         </div>
                     </div>
                 </div>
-                <div class="d-flex align-items-center justify-content-between mb-3">
-                    <div>
+                <div class="d-flex flex-lg-row flex-column gap-3 align-items-center justify-content-between mb-3">
+                    <div class="d-flex justify-content-lg-start justify-content-between col-lg-auto col-12">
                         <button data-accardion-target="weight-${this.getAttribute('flight-number')}" class="bg-transparent font-small border-0 ticket-component-bottom-accardion-toggler">بار مجاز<i class="bi bi-chevron-down me-2"></i></button>
                         <button data-accardion-target="rules-${this.getAttribute('flight-number')}" class="bg-transparent font-small border-0 ticket-component-bottom-accardion-toggler">قوانین<i class="bi bi-chevron-down me-2"></i></button>
                         <button data-accardion-target="details-${this.getAttribute('flight-number')}" class="bg-transparent font-small border-0 ticket-component-bottom-accardion-toggler">جزییات<i class="bi bi-chevron-down me-2"></i></button>
                         <button data-accardion-target="price-${this.getAttribute('flight-number')}" class="bg-transparent font-small border-0 ticket-component-bottom-accardion-toggler">قیمت<i class="bi bi-chevron-down me-2"></i></button>
                     </div>
-                    <div>
-                        <div class="d-flex gap-3 align-items-center">
-                            <div>
-                                <h6 class="text-grey-darken1 font-small text-center">قیمت هر بزرگسال</h6>
+                    <div class="col-lg-auto col-12">
+                        <div class="d-flex flex-lg-row flex-column-reverse gap-3 align-items-center">
+                            <div class="d-lg-block d-flex justify-content-between align-items-center col-lg-auto col-12">
+                                <h6 class="text-grey-darken1 font-small text-center mb-lg-2 mb-0">قیمت هر بزرگسال</h6>
                                 <h6 class="text-info-darken1 text-center mb-0">
                                     <span class="fw-bold">${this.getAttribute('price')}</span>
                                     ریال
                                 </h6>
                             </div>
-                            <button class="rounded-4 px-5 submit-button ripple-button">جستجو</button>
+                            <button class="rounded-4 px-5 col-lg-auto col-12 submit-button ripple-button">جستجو</button>
                         </div>
                     </div>
                 </div>
@@ -78,20 +78,20 @@ class TicketComponent extends HTMLElement {
                                     </button>
                                 </div>
                         <div class="bg-white rounded-bottom border pt-4">
-                            <table class="table mb-0">
-                                <thead>
-                                    <tr>
+                            <table class="table mb-0 d-lg-table d-flex">
+                                <thead class="col-lg-auto col-6">
+                                    <tr class="d-lg-table-row d-flex flex-column col-lg-auto col-12">
                                         <th class="font-small text-grey-darken3 text-center fw-normal" scope="col">شماره پرواز</th>
                                         <th class="font-small text-grey-darken3 text-center fw-normal" scope="col">بار بزرگسال</th>
                                         <th class="font-small text-grey-darken3 text-center fw-normal" scope="col">بار کودک</th>
-                                        <th class="font-small text-grey-darken3 text-center fw-normal" scope="col">بار نوزاد</th>
+                                        <th class="font-small bb-lg-none text-grey-darken3 text-center fw-normal" scope="col">بار نوزاد</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="border-bottom-0 font-small text-grey-darken3 text-center">2660</td>
-                                        <td class="border-bottom-0 font-small text-grey-darken3 text-center">15KG</td>
-                                        <td class="border-bottom-0 font-small text-grey-darken3 text-center">15KG</td>
+                                <tbody class="col-lg-auto col-6">
+                                    <tr class="d-lg-table-row d-flex flex-column col-lg-auto col-12">
+                                        <td class="border-bottom-0 bb-lg font-small text-grey-darken3 text-center">2660</td>
+                                        <td class="border-bottom-0 bb-lg font-small text-grey-darken3 text-center">15KG</td>
+                                        <td class="border-bottom-0 bb-lg font-small text-grey-darken3 text-center">15KG</td>
                                         <td class="border-bottom-0 font-small text-grey-darken3 text-center">--</td>
                                     </tr>
                                 </tbody>
@@ -168,7 +168,7 @@ class TicketComponent extends HTMLElement {
                                     (${this.getAttribute('start-date-en')})
                                 </h6>
                             </div>
-                            <div class="d-flex gap-3 align-items-center justify-content-between mb-3">
+                            <div class="d-flex flex-lg-row col-lg-auto col-12 flex-column gap-3 align-items-lg-center align-items-start justify-content-lg-between justify-content-start mb-3">
                                 <div>
                                     <h6 class="font-small mb-0">
                                         <i class="bi bi-circle-fill"></i>
@@ -215,28 +215,28 @@ class TicketComponent extends HTMLElement {
                     </div>
                     <div>
                         <div class="rounded-tr-tl-br overflow-hidden border">
-                            <table class="table mb-0">
-                                <thead class="bg-grey-lighten3">
-                                    <tr>
-                                        <th class="border-bottom-0 font-small text-grey-darken3 text-center" scope="col">#</th>
-                                        <th class="border-bottom-0 font-small text-grey-darken3 text-center" scope="col">رده سنی</th>
-                                        <th class="border-bottom-0 font-small text-grey-darken3 text-center" scope="col">قیمت پایه</th>
-                                        <th class="border-bottom-0 font-small text-grey-darken3 text-center" scope="col">مالیات</th>
-                                        <th class="border-bottom-0 font-small text-grey-darken3 text-center" scope="col">تخفیف</th>
-                                        <th class="border-bottom-0 font-small text-grey-darken3 text-center" scope="col">تعداد</th>
-                                        <th class="border-bottom-0 font-small text-grey-darken3 text-center" scope="col">مبلغ هر نفر</th>
-                                        <th class="border-bottom-0 font-small text-grey-darken3 text-center" scope="col">جمع</th>
+                            <table class="table mb-0 d-lg-table d-flex">
+                                <thead class="bg-grey-lighten3 col-lg-auto col-6">
+                                    <tr class="d-lg-table-row d-flex flex-column  col-lg-auto col-12">
+                                        <th class="font-small text-grey-darken3 text-center" scope="col">#</th>
+                                        <th class="font-small text-grey-darken3 text-center" scope="col">رده سنی</th>
+                                        <th class="font-small text-grey-darken3 text-center" scope="col">قیمت پایه</th>
+                                        <th class="font-small text-grey-darken3 text-center" scope="col">مالیات</th>
+                                        <th class="font-small text-grey-darken3 text-center" scope="col">تخفیف</th>
+                                        <th class="font-small text-grey-darken3 text-center" scope="col">تعداد</th>
+                                        <th class="font-small text-grey-darken3 text-center" scope="col">مبلغ هر نفر</th>
+                                        <th class="bb-lg-none font-small text-grey-darken3 text-center" scope="col">جمع</th>
                                     </tr>
                                 </thead>
-                                <tbody class="bg-white">
-                                    <tr>
-                                        <td class="border-bottom-0 font-small text-grey-darken3 text-center">1</td>
-                                        <td class="border-bottom-0 font-small text-grey-darken3 text-center">بزرگسال</td>
-                                        <td class="border-bottom-0 font-small text-grey-darken3 text-center">5,836,060</td>
-                                        <td class="border-bottom-0 font-small text-grey-darken3 text-center">5,994,000</td>
-                                        <td class="border-bottom-0 font-small text-grey-darken3 text-center">500,000</td>
-                                        <td class="border-bottom-0 font-small text-grey-darken3 text-center">x1</td>
-                                        <td class="border-bottom-0 font-small text-grey-darken3 text-center">${this.getAttribute('price')}</td>
+                                <tbody class="bg-white col-lg-auto col-6">
+                                    <tr class="d-lg-table-row d-flex flex-column  col-lg-auto col-12">
+                                        <td class="border-bottom-0 bb-lg font-small text-grey-darken3 text-center">1</td>
+                                        <td class="border-bottom-0 bb-lg font-small text-grey-darken3 text-center">بزرگسال</td>
+                                        <td class="border-bottom-0 bb-lg font-small text-grey-darken3 text-center">5,836,060</td>
+                                        <td class="border-bottom-0 bb-lg font-small text-grey-darken3 text-center">5,994,000</td>
+                                        <td class="border-bottom-0 bb-lg font-small text-grey-darken3 text-center">500,000</td>
+                                        <td class="border-bottom-0 bb-lg font-small text-grey-darken3 text-center">x1</td>
+                                        <td class="border-bottom-0 bb-lg font-small text-grey-darken3 text-center">${this.getAttribute('price')}</td>
                                         <td class="border-bottom-0 font-small text-grey-darken3 text-center">${this.getAttribute('price')}</td>
                                     </tr>
                                 </tbody>

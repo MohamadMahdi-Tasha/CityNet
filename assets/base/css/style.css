@@ -727,4 +727,12 @@ input[type='number'] {
     .my-modal {
         overflow: auto;
     }
+
+    .bb-lg-none {
+        border-bottom: none !important;
+    }
+
+    .bb-lg.border-bottom-0, .bb-lg {
+        border-bottom: 1px solid #dee2e6 !important;
+    }
 }
