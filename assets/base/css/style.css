@@ -489,6 +489,23 @@ input[type="checkbox"] {
     top: 100%;
 }
 
+.flight-filter-button:not([active]) {
+    background-color: transparent;
+    color: var(--grey-darken3);
+}
+
+.divider-vertical {
+    border-right: 1px solid var(--grey-lighten2);
+    height: 20px;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.flight-filter-button[active] {
+    background-color: var(--grey-lighten3);
+    color: var(--info-darken1-base);
+}
+
 input[type='number']::-webkit-inner-spin-button,
 input[type='number']::-webkit-outer-spin-button {-webkit-appearance: none;}
 input[type='number'] {-moz-appearance: textfield;}
