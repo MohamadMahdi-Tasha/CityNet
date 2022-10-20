@@ -121,6 +121,31 @@ class TicketComponent extends HTMLElement {
                             </div>
                         </div>
                     </div>
+                    <div>
+                        <div>
+                            <div>
+                                <h6>
+                                    <span>${this.getAttribute('start-loaction-abbr')}</span>
+                                    <i class="bi bi-arrow-left"></i>
+                                    <span>${this.getAttribute('end-loaction-abbr')}</span>
+                                </h6>
+                                <div class="divider-vertival"></div>
+                                <h6>
+                                    مسیر
+                                    <span>${this.getAttribute('start-location-en')}</span>
+                                    به
+                                    <span>${this.getAttribute('end-location-en')}</span>
+                                </h6>
+                            </div>
+                            <h6>
+                                مدت مسیر  :
+                                <span>${this.getAttribute('route-duration-hour')}</span>
+                                ساعت  و
+                                <span>${this.getAttribute('route-duration-minute')}</span>
+                                دقیقه
+                            </h6>
+                        </div>
+                    </div>
                 </div>
             </div>
         `
