@@ -154,11 +154,11 @@ class intractiveComponent extends HTMLElement {
                             </button>
                             <div class="my-drop-down init-drop-down col-12">
                                 <ul class="col-12 p-0 m-0 list-unstyled">
-                                    <li class="col-12"><button class="p-2 font-small active col-12 ripple-button passenger-class-select-button bg-transparent border-0 text-end">اکونومی</button></li>
-                                    <li class="col-12"><button class="p-2 font-small col-12 ripple-button passenger-class-select-button bg-transparent border-0 text-end">بیزینس</button></li>
-                                    <li class="col-12"><button class="p-2 font-small col-12 ripple-button passenger-class-select-button bg-transparent border-0 text-end">پریمیوم</button></li>
-                                    <li class="col-12"><button class="p-2 font-small col-12 ripple-button passenger-class-select-button bg-transparent border-0 text-end">فرست</button></li>
-                                    <li class="col-12"><button class="p-2 font-small col-12 ripple-button passenger-class-select-button bg-transparent border-0 text-end">همه کلاس ها</button></li>
+                                    <li class="col-12"><button class="p-2 font-small text-grey-darken1 active col-12 ripple-button passenger-class-select-button bg-transparent border-0 text-end">اکونومی</button></li>
+                                    <li class="col-12"><button class="p-2 font-small text-grey-darken1 col-12 ripple-button passenger-class-select-button bg-transparent border-0 text-end">بیزینس</button></li>
+                                    <li class="col-12"><button class="p-2 font-small text-grey-darken1 col-12 ripple-button passenger-class-select-button bg-transparent border-0 text-end">پریمیوم</button></li>
+                                    <li class="col-12"><button class="p-2 font-small text-grey-darken1 col-12 ripple-button passenger-class-select-button bg-transparent border-0 text-end">فرست</button></li>
+                                    <li class="col-12"><button class="p-2 font-small text-grey-darken1 col-12 ripple-button passenger-class-select-button bg-transparent border-0 text-end">همه کلاس ها</button></li>
                                 </ul>
                             </div>
                         </div>
@@ -180,6 +180,19 @@ class intractiveComponent extends HTMLElement {
                 </div>
             `
             }
+        } else if (this.getAttribute('type') === "dropdown") {
+            this.innerHTML = `
+                <div class="my-drop-down-holder">
+                    <button data-selected-dropDown="${this.firstElementChild.firstElementChild.textContent}" class="my-drop-down-toggler will-not-close col-12 dropdown-component intractive-component rounded-4 bg-white text-end p-3 position-relative">
+                        <span class="my-placeholder position-absolute font-small">${this.getAttribute('placeholder')}</span>
+                        <h6>${this.firstElementChild.firstElementChild.textContent}</h6>
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                    <div ${(this.getAttribute('padding') !== null) ? 'class="my-drop-down p-3"' : 'class="my-drop-down"'}>
+                        ${this.innerHTML}
+                    </div>
+                </div>
+            `
         }
     }
 }

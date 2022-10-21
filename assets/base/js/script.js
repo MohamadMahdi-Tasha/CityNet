@@ -17,6 +17,7 @@ const myCollapseToggler = document.querySelectorAll('.my-collapse-toggler');
 const ticketPageAsideMobileTopSideToggle = document.querySelector('.ticket-page-aside-mobile-top-side-toggle');
 const ticketPageAside = document.querySelector('.ticket-page-aside');
 const ticketComponentBottomAccardionToggler = document.querySelectorAll('.ticket-component-bottom-accardion-toggler');
+const buyTicketDropDownButton = document.querySelectorAll('.buy-ticket-drop-down-button');
 
 // a Function that takes persian name of city and returns abbreviation Text of it
 function persianNameToAbbreviation(name) {
@@ -379,19 +380,29 @@ $( function() {
     });
 } );
 
-ticketPageAsideMobileTopSideToggle.addEventListener('mousedown', () => ticketPageAside.classList.toggle('top'))
-window.onscroll = () => (window.scrollY !== 0) ? ticketPageAside.classList.add('scrolled') : ticketPageAside.classList.remove('scrolled');
+// ticketPageAsideMobileTopSideToggle.addEventListener('mousedown', () => ticketPageAside.classList.toggle('top'))
+// window.onscroll = () => (window.scrollY !== 0) ? ticketPageAside.classList.add('scrolled') : ticketPageAside.classList.remove('scrolled');
 
-ticketComponentBottomAccardionToggler.forEach(item => {
+// ticketComponentBottomAccardionToggler.forEach(item => {
+//     item.addEventListener('click', () => {
+//         const target = item.getAttribute('data-accardion-target');
+//         const targetElement = document.getElementById(target);
+//         const openedAccardionItem = document.querySelector('.ticket-component-bottom-accardion[data-opened]');
+//         const openedAccardionToggler = document.querySelector('.ticket-component-bottom-accardion-toggler[data-opened]');
+//
+//         item.toggleAttribute('data-opened');
+//         targetElement.toggleAttribute('data-opened');
+//         openedAccardionItem.removeAttribute('data-opened');
+//         openedAccardionToggler.removeAttribute('data-opened');
+//     })
+// })
+
+buyTicketDropDownButton.forEach(item => {
     item.addEventListener('click', () => {
-        const target = item.getAttribute('data-accardion-target');
-        const targetElement = document.getElementById(target);
-        const openedAccardionItem = document.querySelector('.ticket-component-bottom-accardion[data-opened]');
-        const openedAccardionToggler = document.querySelector('.ticket-component-bottom-accardion-toggler[data-opened]');
+        const parentOfGrandParentOfCllickedItem = item.parentElement.parentElement.parentElement
 
-        item.toggleAttribute('data-opened');
-        targetElement.toggleAttribute('data-opened');
-        openedAccardionItem.removeAttribute('data-opened');
-        openedAccardionToggler.removeAttribute('data-opened');
+        parentOfGrandParentOfCllickedItem.parentElement.removeAttribute('data-opened');
+        parentOfGrandParentOfCllickedItem.previousElementSibling.setAttribute('data-selected-dropdown', item.textContent)
+        parentOfGrandParentOfCllickedItem.previousElementSibling.firstElementChild.nextElementSibling.textContent = item.textContent
     })
 })

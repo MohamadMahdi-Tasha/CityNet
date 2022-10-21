@@ -107,10 +107,6 @@ body {
     background-color: rgba(0, 0, 0, .2) !important;
 }
 
-.paragraph-holder::-webkit-scrollbar {
-
-}
-
 .paragraph-holder {
     height: 200px;
     overflow: auto;
@@ -487,7 +483,8 @@ input[type='radio']:before {
 }
 
 .my-drop-down .my-drop-down::-webkit-scrollbar,
-.paragraph-holder::-webkit-scrollbar {
+.paragraph-holder::-webkit-scrollbar,
+.dropdown-component-ul::-webkit-scrollbar  {
     background-color: var(--grey-lighten1);
     width: 7px;
     border-radius: 50rem;
@@ -508,10 +505,23 @@ input[type='radio']:before {
     border-right: 1px dashed black;
 }
 
+.dropdown-component .bi-chevron-down {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .my-drop-down .my-drop-down::-webkit-scrollbar-thumb,
-.paragraph-holder::-webkit-scrollbar-thumb {
+.paragraph-holder::-webkit-scrollbar-thumb,
+.dropdown-component-ul::-webkit-scrollbar-thumb{
     background-color: var(--grey-darken1);
     border-radius: 50rem;
+}
+
+.dropdown-component .my-drop-down {
+    height: 10px;
+    overflow: hidden;
 }
 
 .passenger-class-select-button.active {
@@ -519,8 +529,14 @@ input[type='radio']:before {
     color: var(--primary-base);
 }
 
-.passenger-class-select-button .ripple-button--inner-span {
+.passenger-class-select-button .ripple-button--inner-span,
+.buy-ticket-drop-down-button .ripple-button--inner-span{
     background-color: rgba(221, 153, 51, .2) !important;
+}
+
+.dropdown-component-ul {
+    height: 200px;
+    overflow: auto;
 }
 
 .my-drop-down .my-drop-down {
