@@ -67,6 +67,9 @@ body {
     width: 150px;
 }
 
+.intractive-buttons-border.ticket-buy,
+.intractive-buttons-btn.ticket-buy{width: 100px;}
+
 .intractive-buttons-btn.ticket-component[active],
 .intractive-buttons-btn.ticket-component:not([active]) {
     width: 150px;
