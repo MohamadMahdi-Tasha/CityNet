@@ -20,14 +20,13 @@
     <link href="assets/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/plugins/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/plugins/ripple-button/riple-button.css">
+    <link rel="stylesheet" href="assets/base/css/persian-date-picker.css">
     <!--Title Of Page-->
     <title>خرید - سیتی‌نت</title>
 </head>
 <body dir="rtl">
 <!--Login In Modal-->
 <my-modal type="log-in"></my-modal>
-<!--Login In Modal-->
-<my-modal type="loader"></my-modal>
 <!--flight select modal-->
 <my-modal type="city"></my-modal>
 <!--Mobile Nav-->
@@ -37,7 +36,27 @@
 <!--First Section-->
 <section class="justify-content-center">
     <main class="container-xxl px-lg-5 py-lg-3 px-2 py-2">
-
+        <header><button><i class="bi bi-arrow-right"></i>بازگشت به نتایچ</button></header>
+        <main>
+            <div>
+                <div>
+                    <div>
+                        <h6>بزرگسال اول</h6>
+                        <button><i class="bi bi-plus"></i>انتخاب از لیست</button>
+                    </div>
+                    <div>
+                        <intractive-component type="input" input-type="text" placeholder="نام انگلیسی"></intractive-component>
+                        <intractive-component type="input" input-type="text" placeholder="نام خانوادگی انگلیسی"></intractive-component>
+                        <intractive-component type="dropdown" placeholder="ملیت"></intractive-component>
+                        <intractive-component type="input" input-type="number" placeholder="شماره ملی"></intractive-component>
+                        <intractive-component type="calender" placeholder="تاریخ تولد"></intractive-component>
+                        <intractive-component type="dropdown" placeholder="جنسیت"></intractive-component>
+                        <intractive-component type="input" input-type="number" placeholder="شماره گذرنامه"></intractive-component>
+                        <intractive-component type="calender" placeholder="تاریخ انقضای گذرنامه"></intractive-component>
+                    </div>
+                </div>
+            </div>
+        </main>
     </main>
 </section>
 <!--Footer-->
@@ -45,6 +64,8 @@
 <!--Js Linkings-->
 <noscript>لطفا جاوااسکریپت مرورگر خود را فعال کنید</noscript>
 <script src="assets/plugins/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="assets/plugins/vue/vue.js"></script>
+<script src="assets/plugins/date-picker/datepicker.min.js"></script>
 <script src="assets/base/js/component/header.js"></script>
 <script src="assets/base/js/component/mobile-nav.js"></script>
 <script src="assets/base/js/component/intractive-component.js"></script>
