@@ -67,8 +67,14 @@ body {
     width: 150px;
 }
 
+.intractive-buttons-btn.ticket-buy {
+    height: 50px;
+}
+
 .intractive-buttons-border.ticket-buy,
-.intractive-buttons-btn.ticket-buy{width: 100px;}
+.intractive-buttons-btn.ticket-buy {
+    width: 100px;
+}
 
 .intractive-buttons-btn.ticket-component[active],
 .intractive-buttons-btn.ticket-component:not([active]) {
@@ -107,7 +113,7 @@ body {
 }
 
 .intractive-buttons-btn.ticket-component.ripple-button .ripple-button--inner-span,
-.bg-grey-lighten2 .ripple-button--inner-span{
+.bg-grey-lighten2 .ripple-button--inner-span {
     background-color: rgba(0, 0, 0, .2) !important;
 }
 
@@ -488,7 +494,7 @@ input[type='radio']:before {
 
 .my-drop-down .my-drop-down::-webkit-scrollbar,
 .paragraph-holder::-webkit-scrollbar,
-.dropdown-component-ul::-webkit-scrollbar  {
+.dropdown-component-ul::-webkit-scrollbar {
     background-color: var(--grey-lighten1);
     width: 7px;
     border-radius: 50rem;
@@ -518,7 +524,7 @@ input[type='radio']:before {
 
 .my-drop-down .my-drop-down::-webkit-scrollbar-thumb,
 .paragraph-holder::-webkit-scrollbar-thumb,
-.dropdown-component-ul::-webkit-scrollbar-thumb{
+.dropdown-component-ul::-webkit-scrollbar-thumb {
     background-color: var(--grey-darken1);
     border-radius: 50rem;
 }
@@ -529,13 +535,13 @@ input[type='radio']:before {
 }
 
 .passenger-class-select-button,
-.buy-ticket-drop-down-button.active{
+.buy-ticket-drop-down-button.active {
     background-color: rgba(221, 153, 51, .2) !important;
     color: var(--primary-base);
 }
 
 .passenger-class-select-button .ripple-button--inner-span,
-.buy-ticket-drop-down-button .ripple-button--inner-span{
+.buy-ticket-drop-down-button .ripple-button--inner-span {
     background-color: rgba(221, 153, 51, .2) !important;
 }
 
