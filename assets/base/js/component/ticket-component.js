@@ -63,7 +63,9 @@ class TicketComponent extends HTMLElement {
                                     ریال
                                 </h6>
                             </div>
-                            <button class="rounded-4 px-5 col-lg-auto col-12 submit-button ripple-button">جستجو</button>
+                            <a href="ticket-buy.html">
+                                <button class="rounded-4 px-5 col-lg-auto col-12 submit-button ripple-button">جستجو</button>
+                            </a>
                         </div>
                     </div>
                 </div>

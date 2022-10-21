@@ -103,7 +103,8 @@ body {
     color: var(--primary-base);
 }
 
-.intractive-buttons-btn.ticket-component.ripple-button .ripple-button--inner-span {
+.intractive-buttons-btn.ticket-component.ripple-button .ripple-button--inner-span,
+.bg-grey-lighten2 .ripple-button--inner-span{
     background-color: rgba(0, 0, 0, .2) !important;
 }
 
