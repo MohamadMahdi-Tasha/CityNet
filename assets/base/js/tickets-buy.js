@@ -3,10 +3,13 @@ const buyTicketDropDownButton = document.querySelectorAll('.buy-ticket-drop-down
 
 buyTicketDropDownButton.forEach(item => {
     item.addEventListener('click', () => {
-        const parentOfGrandParentOfCllickedItem = item.parentElement.parentElement.parentElement
+        const parentOfGrandParentOfClickedItem = item.parentElement.parentElement.parentElement
+        const buyTicketDropDownButtonActive = document.querySelector('.buy-ticket-drop-down-button.active');
 
-        parentOfGrandParentOfCllickedItem.parentElement.removeAttribute('data-opened');
-        parentOfGrandParentOfCllickedItem.previousElementSibling.setAttribute('data-selected-dropdown', item.textContent)
-        parentOfGrandParentOfCllickedItem.previousElementSibling.firstElementChild.nextElementSibling.textContent = item.textContent
+        parentOfGrandParentOfClickedItem.parentElement.removeAttribute('data-opened');
+        parentOfGrandParentOfClickedItem.previousElementSibling.setAttribute('data-selected-dropdown', item.textContent)
+        parentOfGrandParentOfClickedItem.previousElementSibling.firstElementChild.nextElementSibling.textContent = item.textContent
+        buyTicketDropDownButtonActive.classList.remove('active');
+        item.classList.add('active');
     })
 })

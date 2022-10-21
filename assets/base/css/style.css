@@ -525,7 +525,8 @@ input[type='radio']:before {
     overflow: hidden;
 }
 
-.passenger-class-select-button.active {
+.passenger-class-select-button,
+.buy-ticket-drop-down-button.active{
     background-color: rgba(221, 153, 51, .2) !important;
     color: var(--primary-base);
 }
