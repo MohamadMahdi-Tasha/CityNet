@@ -3,7 +3,7 @@ class Footer extends HTMLElement {
     constructor() {super();}
     connectedCallback() {
         this.innerHTML = `
-            <footer class="d-flex justify-content-center">
+            <footer class="d-flex justify-content-center border-top">
                 <div class="container-xxl px-lg-5 py-lg-3 px-2 py-2">
                     <div class="d-flex flex-lg-row flex-column align-items-center justify-content-between mb-4">
                         <div>
