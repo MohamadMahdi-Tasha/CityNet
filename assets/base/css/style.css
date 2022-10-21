@@ -67,7 +67,8 @@ body {
     width: 150px;
 }
 
-.intractive-buttons-btn.ticket-component[active] {
+.intractive-buttons-btn.ticket-component[active],
+.intractive-buttons-btn.ticket-component:not([active]){
     width: 150px;
     height: 50px;
     color: black;
