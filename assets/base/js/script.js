@@ -13,11 +13,6 @@ const passengerClassSelectButton = document.querySelectorAll('.passenger-class-s
 const inputComponents = document.querySelectorAll('.intractive-component.input');
 const persianName = document.getElementById('currency-header-per');
 const englishName = document.getElementById('currency-header-eng');
-const myCollapseToggler = document.querySelectorAll('.my-collapse-toggler');
-const ticketPageAsideMobileTopSideToggle = document.querySelector('.ticket-page-aside-mobile-top-side-toggle');
-const ticketPageAside = document.querySelector('.ticket-page-aside');
-const ticketComponentBottomAccardionToggler = document.querySelectorAll('.ticket-component-bottom-accardion-toggler');
-const buyTicketDropDownButton = document.querySelectorAll('.buy-ticket-drop-down-button');
 
 // a Function that takes persian name of city and returns abbreviation Text of it
 function persianNameToAbbreviation(name) {
@@ -365,44 +360,4 @@ window.addEventListener('keydown', (event) => {
         const openModal = document.querySelector('.my-modal-holder[data-opened]:not(#loader-modal):first-of-type');
         openModal.removeAttribute('data-opened');
     }
-})
-
-// Adding Event Listener Of Click On Each Collapse Toggler That Toggles Attribute Of 'data-opened' To Its Parent Element
-myCollapseToggler.forEach(item =>  item.addEventListener('click', () => item.parentElement.toggleAttribute('data-opened')))
-
-// Setting Slider Range
-$( function() {
-    $( `.slider-range` ).slider({
-        range: true,
-        min: 0,
-        max: 24,
-        values: [ 0, 24 ],
-    });
-} );
-
-// ticketPageAsideMobileTopSideToggle.addEventListener('mousedown', () => ticketPageAside.classList.toggle('top'))
-// window.onscroll = () => (window.scrollY !== 0) ? ticketPageAside.classList.add('scrolled') : ticketPageAside.classList.remove('scrolled');
-
-// ticketComponentBottomAccardionToggler.forEach(item => {
-//     item.addEventListener('click', () => {
-//         const target = item.getAttribute('data-accardion-target');
-//         const targetElement = document.getElementById(target);
-//         const openedAccardionItem = document.querySelector('.ticket-component-bottom-accardion[data-opened]');
-//         const openedAccardionToggler = document.querySelector('.ticket-component-bottom-accardion-toggler[data-opened]');
-//
-//         item.toggleAttribute('data-opened');
-//         targetElement.toggleAttribute('data-opened');
-//         openedAccardionItem.removeAttribute('data-opened');
-//         openedAccardionToggler.removeAttribute('data-opened');
-//     })
-// })
-
-buyTicketDropDownButton.forEach(item => {
-    item.addEventListener('click', () => {
-        const parentOfGrandParentOfCllickedItem = item.parentElement.parentElement.parentElement
-
-        parentOfGrandParentOfCllickedItem.parentElement.removeAttribute('data-opened');
-        parentOfGrandParentOfCllickedItem.previousElementSibling.setAttribute('data-selected-dropdown', item.textContent)
-        parentOfGrandParentOfCllickedItem.previousElementSibling.firstElementChild.nextElementSibling.textContent = item.textContent
-    })
 })
