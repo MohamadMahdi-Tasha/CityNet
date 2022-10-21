@@ -67,6 +67,9 @@ body {
     width: 150px;
 }
 
+.buy-ticket-left-side-inner-tabs:not([active]) {display: none;}
+.buy-ticket-left-side-inner-tabs[active] {display: block;}
+
 .intractive-buttons-btn.ticket-buy {
     height: 50px;
 }
