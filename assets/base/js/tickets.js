@@ -1,5 +1,4 @@
 // Variables
-const myCollapseToggler = document.querySelectorAll('.my-collapse-toggler');
 const ticketPageAsideMobileTopSideToggle = document.querySelector('.ticket-page-aside-mobile-top-side-toggle');
 const ticketPageAside = document.querySelector('.ticket-page-aside');
 const ticketComponentBottomAccardionToggler = document.querySelectorAll('.ticket-component-bottom-accardion-toggler');
@@ -30,6 +29,3 @@ $( function() {
         values: [ 0, 24 ],
     });
 } );
-
-// Adding Event Listener Of Click On Each Collapse Toggler That Toggles Attribute Of 'data-opened' To Its Parent Element
-myCollapseToggler.forEach(item =>  item.addEventListener('click', () => item.parentElement.toggleAttribute('data-opened')))

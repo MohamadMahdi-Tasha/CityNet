@@ -13,6 +13,7 @@ const passengerClassSelectButton = document.querySelectorAll('.passenger-class-s
 const inputComponents = document.querySelectorAll('.intractive-component.input');
 const persianName = document.getElementById('currency-header-per');
 const englishName = document.getElementById('currency-header-eng');
+const myCollapseToggler = document.querySelectorAll('.my-collapse-toggler');
 
 // a Function that takes persian name of city and returns abbreviation Text of it
 function persianNameToAbbreviation(name) {
@@ -363,3 +364,6 @@ window.addEventListener('keydown', (event) => {
         openModal.removeAttribute('data-opened');
     }
 })
+
+// Adding Event Listener Of Click On Each Collapse Toggler That Toggles Attribute Of 'data-opened' To Its Parent Element
+myCollapseToggler.forEach(item =>  item.addEventListener('click', () => item.parentElement.toggleAttribute('data-opened')))

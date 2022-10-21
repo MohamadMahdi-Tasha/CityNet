@@ -283,17 +283,169 @@
                     <button class="font-small border-0 rounded-3 px-3 py-2 bg-grey-lighten2 ripple-button"><i class="bi bi-plus"></i>افزودن موبایل یا ایمیل دوم</button>
                 </div>
             </div>
-            <div class="col-lg-5 col-12">
+            <div class="col-lg-5 col-12 d-flex flex-column gap-3">
                 <div class="bg-white p-3 rounded-3">
                     <h6 class="font-small">اطلاعات سفر</h6>
                     <h6 class="font-small text-grey-darken1 mb-3">جزییات و اسلاعات ضروری سفر در سه بخش زیر دسته بندی شده اند.</h6>
-                    <div class="intractive-buttons-with-border justify-content-around d-flex border-bottom">
+                    <div class="intractive-buttons-with-border justify-content-around d-flex border-bottom mb-3">
                         <div style="right: 5.7%;" class="intractive-buttons-border ticket-buy"></div>
-                        <button id="flight-detail-btn" active class="intractive-buttons-btn ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">جزییات پرواز</button>
-                        <button id="flight-rules-btn" class="intractive-buttons-btn ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">قوانین</button>
-                        <button id="flight-weight-btn" class="intractive-buttons-btn ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">مقدار بار</button>
+                        <button data-target="flight-detail" active class="intractive-buttons-btn ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">جزییات پرواز</button>
+                        <button data-target="flight-rules" class="intractive-buttons-btn ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">قوانین</button>
+                        <button data-target="flight-weight" class="intractive-buttons-btn ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">مقدار بار</button>
+                    </div>
+                    <div id="flight-detail">
+                        <div>
+                            <h6>
+                                <span>THR</span>
+                                <i class="bi bi-arrow-left"></i>
+                                <span>MHD</span>
+                            </h6>
+                            <h6>
+                                مدت مسیر :
+                                <span>1</span>
+                                ساعت
+                                <span>30</span>
+                                دقیقه
+                            </h6>
+                        </div>
+                        <div>
+                            <div>
+                                <h6>
+                                    زمان حرکت:
+                                    <span>05:54</span>
+                                </h6>
+                                <h6>
+                                    <span>دوشنبه 31 مرداد</span>
+                                    (<span>August 22</span>)
+                                </h6>
+                            </div>
+                            <div>
+                                <div>
+                                    <h6><i class="bi bi-c-circle-fill"></i><span>تهران  (THR)</span></h6>
+                                    <div>
+                                        <div class="divider-vertical-dashed h-100 me-1 ms-2"></div>
+                                        <img src="assets/base/img/img-logo.png" alt="سیتی نت">
+                                    </div>
+                                    <h6><i class="bi bi-airplane rotate-270"></i><span>مشهد  (MHD)</span></h6>
+                                </div>
+                                <div>
+                                    <h6>هواپیمایی:<span>Sepehran Airlines</span></h6>
+                                    <h6>شماره پرواز:<span>سیستمی</span>/<span>4340</span></h6>
+                                    <h6>مدل هواپیما:<span>Boeing 737</span></h6>
+                                    <h6>مدت پرواز:<span>1</span>ساعت و<span>30</span>دقیقه</h6>
+                                    <h6>باز مجاز:<span>20</span>KG</h6>
+                                    <h6>کلاس نرخی:<span>Economy</span></h6>
+                                </div>
+                            </div>
+                            <div>
+                                <h6>
+                                    زمان رسیدن:
+                                    <span>07:15</span>
+                                </h6>
+                                <h6>
+                                    <span>دوشنبه 31 مرداد</span>
+                                    (<span>August 22</span>)
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="flight-rules">
+                        <div class="intractive-buttons-with-border d-flex">
+                            <div style="right: 0;" class="intractive-buttons-border ticket-component bg-black"></div>
+                            <button active class="intractive-buttons-btn ticket-component d-flex align-items-center justify-content-around text-secondary-lighten1 border-0 bg-transparent ripple-button ">TO<i class="bi bi-arrow-left"></i></button>
+                        </div>
+                        <div class="bg-white border rounded-bottom my-collapse-holder">
+                            <button class="my-collapse-toggler ripple-button bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3 text-grey-darken3">
+                                جریمه کنسلی و قوانین (بزرگسال)
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div class="my-collapse p-3">
+                                <div class="paragraph-holder">
+                                    <p class="font-small text-grey-darken3">CANCELLATION PENALTY</p>
+                                    <p class="font-small text-grey-darken3">TICKET IS NOT REFUNDABLE IN CASE OF CANCEL/REFUND.</p>
+                                    <ul>
+                                        <li>
+                                            <p class="font-small text-grey-darken3">CHANGE POLICY <br> TICKET IS CHANGABLE WITH PENALY IN CASE OF CHANGE DATE.</p>
+                                            <p class="font-small text-grey-darken3">NO SHOW POLICY <br> CHANGE/CANCELLATION NOT PERMITED.</p>
+                                            <p class="font-small text-grey-darken3">Not Refundable Service Charge: IRR 4,000,000 Per Passenger.</p>
+                                            <p class="font-small text-grey-darken3">Admin Fee For Change: IRR 4,000,000 Per Passenger.</p>
+                                            <p class="font-small text-grey-darken3">Refund process will take up to 7 Working Days.</p>
+                                            <p class="font-small text-grey-darken3">You can check covid19 limitations on below link:</p>
+                                            <a class="font-small text-primary-base" href="#">IATA Travel Centre</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="flight-weight">
+                        <div class="intractive-buttons-with-border d-flex">
+                            <div style="right: 0;" class="intractive-buttons-border ticket-component bg-black"></div>
+                            <button active class="intractive-buttons-btn ticket-component d-flex align-items-center justify-content-around text-secondary-lighten1 border-0 bg-transparent ripple-button ">TO<i class="bi bi-arrow-left"></i></button>
+                        </div>
+                        <div class="bg-white rounded-bottom border pt-4">
+                            <table class="table mb-0 d-lg-table d-flex">
+                                <thead class="col-lg-auto col-6">
+                                <tr class="d-lg-table-row d-flex flex-column col-lg-auto col-12">
+                                    <th class="font-small text-grey-darken3 text-center fw-normal" scope="col">شماره پرواز</th>
+                                    <th class="font-small text-grey-darken3 text-center fw-normal" scope="col">بار بزرگسال</th>
+                                    <th class="font-small text-grey-darken3 text-center fw-normal" scope="col">بار کودک</th>
+                                    <th class="font-small bb-lg-none text-grey-darken3 text-center fw-normal" scope="col">بار نوزاد</th>
+                                </tr>
+                                </thead>
+                                <tbody class="col-lg-auto col-6">
+                                <tr class="d-lg-table-row d-flex flex-column col-lg-auto col-12">
+                                    <td class="border-bottom-0 bb-lg font-small text-grey-darken3 text-center">2660</td>
+                                    <td class="border-bottom-0 bb-lg font-small text-grey-darken3 text-center">15KG</td>
+                                    <td class="border-bottom-0 bb-lg font-small text-grey-darken3 text-center">15KG</td>
+                                    <td class="border-bottom-0 font-small text-grey-darken3 text-center">--</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
+                <div class="bg-white p-3 rounded-3">
+                    <div data-opened class="my-collapse-holder bg-white rounded-3 border-bottom">
+                        <button class="my-collapse-toggler ripple-button">
+                            <div>
+                                <h6>جزییات قیمت</h6>
+                                <h6>قیمت ها بر اساس ارز انتخوابی شما محاصبه شده است.</h6>
+                            </div>
+                            <i class="bi bi bi-chevron-down"></i>
+                        </button>
+                        <div class="my-collapse">
+                            <div data-opened class="my-collapse-holder bg-white rounded-3">
+                                <button class="my-collapse-toggler">
+                                    <span>
+                                        بزرگسال
+                                        (x<span>1</span>)
+                                    </span>
+                                    <span>
+                                        <span>11,330,060</span>
+                                        ریال
+                                        <i class="bi bi-chevron-down"></i>
+                                    </span>
+                                </button>
+                                <div class="my-collapse">
+                                    <h6>قیمت کل</h6>
+                                    <h6>
+                                        <span>11,330,060</span>
+                                        ریال
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h6>مبلغ قابل پرداخت</h6>
+                        <h6>
+                            <span>11,330,060</span>
+                            ریال
+                        </h6>
+                    </div>
+                </div>
+                <div><button>ادامه خرید</button></div>
             </div>
         </main>
     </main>

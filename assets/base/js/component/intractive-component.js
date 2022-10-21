@@ -170,7 +170,7 @@ class intractiveComponent extends HTMLElement {
                 this.innerHTML = `
                 <div class="d-flex col-12 input intractive-component rounded-4 bg-white text-end p-3 position-relative">
                     <span class="my-placeholder position-absolute font-small">${this.getAttribute('placeholder')}</span>
-                    <input class="col-12 bg-transparent h-100 border-0" type="${this.getAttribute('input-type')}" required>
+                    <input class="col-12 bg-transparent h-100 border-0 font-small" type="${this.getAttribute('input-type')}" required>
                 </div>
             `
             } else {
@@ -185,7 +185,7 @@ class intractiveComponent extends HTMLElement {
                 <div class="my-drop-down-holder">
                     <button data-selected-dropDown="${this.firstElementChild.firstElementChild.textContent}" class="my-drop-down-toggler will-not-close col-12 dropdown-component intractive-component rounded-4 bg-white text-end p-3 position-relative">
                         <span class="my-placeholder position-absolute font-small">${this.getAttribute('placeholder')}</span>
-                        <h6>${this.firstElementChild.firstElementChild.textContent}</h6>
+                        <h6 class="font-small">${this.firstElementChild.firstElementChild.textContent}</h6>
                         <i class="bi bi-chevron-down"></i>
                     </button>
                     <div ${(this.getAttribute('padding') !== null) ? 'class="my-drop-down p-3"' : 'class="my-drop-down"'}>
