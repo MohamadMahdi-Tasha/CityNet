@@ -47,7 +47,7 @@ class TicketComponent extends HTMLElement {
                         </div>
                     </div>
                 </div>
-                <div class="d-flex flex-lg-row flex-column gap-3 align-items-center justify-content-between mb-3">
+                <div class="d-flex flex-lg-row flex-column gap-3 align-items-center justify-content-between">
                     <div class="d-flex justify-content-lg-start justify-content-between col-lg-auto col-12">
                         <button data-accardion-target="weight-${this.getAttribute('flight-number')}" class="bg-transparent font-small border-0 ticket-component-bottom-accardion-toggler">بار مجاز<i class="bi bi-chevron-down me-2"></i></button>
                         <button data-accardion-target="rules-${this.getAttribute('flight-number')}" class="bg-transparent font-small border-0 ticket-component-bottom-accardion-toggler">قوانین<i class="bi bi-chevron-down me-2"></i></button>
@@ -68,7 +68,7 @@ class TicketComponent extends HTMLElement {
                     </div>
                 </div>
                 <div class="d-flex flex-column gap-3">
-                    <div id="weight-${this.getAttribute('flight-number')}" class="bg-grey-lighten3 rounded">
+                    <div id="weight-${this.getAttribute('flight-number')}" class="mt-3 ticket-component-bottom-accardion bg-grey-lighten3 rounded">
                             <div class="intractive-buttons-with-border d-flex">
                                 <div style="right: 0;" class="intractive-buttons-border ticket-component bg-black"></div>
                                     <button active class="intractive-buttons-btn ticket-component d-flex align-items-center justify-content-around text-secondary-lighten1 border-0 bg-transparent ripple-button ">
@@ -98,7 +98,7 @@ class TicketComponent extends HTMLElement {
                             </table>
                        </div>
                     </div>
-                    <div class="bg-grey-lighten3 rounded">
+                    <div id="rules-${this.getAttribute('flight-number')}" class="mt-3 ticket-component-bottom-accardion bg-grey-lighten3 rounded">
                         <div class="intractive-buttons-with-border d-flex">
                             <div style="right: 0;" class="intractive-buttons-border ticket-component bg-black"></div>
                             <button active class="intractive-buttons-btn ticket-component d-flex align-items-center justify-content-around text-secondary-lighten1 border-0 bg-transparent ripple-button ">
@@ -130,7 +130,7 @@ class TicketComponent extends HTMLElement {
                             </div>
                         </div>
                     </div>
-                    <div class="bg-grey-lighten3 rounded">
+                    <div id="details-${this.getAttribute('flight-number')}" class="mt-3 ticket-component-bottom-accardion bg-grey-lighten3 rounded">
                         <div class="p-3 d-flex justify-content-between align-items-center">
                             <div class="d-flex align-items-center">
                                 <h6 class="mb-0 font-small">
@@ -213,7 +213,7 @@ class TicketComponent extends HTMLElement {
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div class="ticket-component-bottom-accardion mt-3" id="price-${this.getAttribute('flight-number')}">
                         <div class="rounded-tr-tl-br overflow-hidden border">
                             <table class="table mb-0 d-lg-table d-flex">
                                 <thead class="bg-grey-lighten3 col-lg-auto col-6">

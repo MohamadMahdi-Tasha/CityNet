@@ -68,10 +68,35 @@ body {
 }
 
 .intractive-buttons-btn.ticket-component[active],
-.intractive-buttons-btn.ticket-component:not([active]){
+.intractive-buttons-btn.ticket-component:not([active]) {
     width: 150px;
     height: 50px;
     color: black;
+}
+
+.ticket-component-bottom-accardion-toggler .bi-chevron-down::before, .ticket-component-bottom-accardion-toggler {
+    transition: .3s
+}
+
+.ticket-component-bottom-accardion-toggler[data-opened] .bi-chevron-down::before {
+    transform: rotate(180deg)
+}
+
+.ticket-component-bottom-accardion-toggler[data-opened] {
+    color: var(--info-darken1-base) !important;
+}
+
+.ticket-component-bottom-accardion {
+    transition: .3s;
+}
+
+.ticket-component-bottom-accardion:not([data-opened]) {
+    display: none;
+}
+
+
+.ticket-component-bottom-accardion[data-opened] {
+    display: block;
 }
 
 .intractive-buttons-btn[active] {
