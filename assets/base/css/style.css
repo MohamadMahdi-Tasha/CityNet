@@ -129,11 +129,11 @@ body {
     background-color: rgba(221, 153, 51, .2);
 }
 
-.my-drop-down-toggler > i.bi-chevron-down:before {
+.my-drop-down-toggler .bi-chevron-down:before {
     transition: .3s;
 }
 
-.my-drop-down-holder[data-opened] .my-drop-down-toggler > i.bi-chevron-down:before {
+.my-drop-down-holder[data-opened] .my-drop-down-toggler .bi-chevron-down:before {
     transform: rotate(180deg)
 }
 
