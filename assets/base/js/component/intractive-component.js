@@ -6,7 +6,7 @@ class intractiveComponent extends HTMLElement {
             if (this.getAttribute('disabled') === null) {
                 this.innerHTML = `
                     <div class="my-drop-down-holder">
-                        <button data-selected-city="null" class="my-drop-down-toggler col-12 city intractive-component rounded-4 bg-white text-end p-3 position-relative">
+                        <button data-selected-city="null" class="my-drop-down-toggler col-12 city intractive-component bg-white text-end p-3 position-relative">
                     <span class="my-placeholder position-absolute font-small">${this.getAttribute('placeholder')}</span>
                 </button>
                         <div class="my-drop-down col-12 p-3">
@@ -41,7 +41,7 @@ class intractiveComponent extends HTMLElement {
                 `
             } else {
                 this.innerHTML = `
-                    <button class="col-12 city intractive-component disabled rounded-4 bg-white text-end p-3 position-relative">
+                    <button class="col-12 city intractive-component disabled bg-white text-end p-3 position-relative">
                         <span class="my-placeholder position-absolute font-small">${this.getAttribute('placeholder')}</span>
                     </button>
                 `
@@ -50,7 +50,7 @@ class intractiveComponent extends HTMLElement {
             if (this.getAttribute('disabled') === null) {
                 const randomDataPickerParentId = `data-picker-parent-number-${Math.ceil(Math.random() * 100)}`
                 this.innerHTML = `
-                    <button data-date="null" class="my-drop-down-toggler col-12 calender intractive-component rounded-4 bg-white text-end p-3 position-relative">
+                    <button data-date="null" class="my-drop-down-toggler col-12 calender intractive-component bg-white text-end p-3 position-relative">
                         <span class="my-placeholder position-absolute font-small">
                             <i class="bi bi-calendar4-week ms-2"></i>
                             ${this.getAttribute('placeholder')}
@@ -85,7 +85,7 @@ class intractiveComponent extends HTMLElement {
                 })
             } else {
                 this.innerHTML = `
-                    <button class="col-12 city intractive-component disabled rounded-4 bg-white text-end p-3 position-relative">
+                    <button class="col-12 city intractive-component disabled bg-white text-end p-3 position-relative">
                         <span class="my-placeholder position-absolute font-small">
                             <i class="bi bi-calendar4-week ms-2"></i>
                             بدون بازگشت
@@ -96,7 +96,7 @@ class intractiveComponent extends HTMLElement {
         } else if (this.getAttribute('type') === "passenger-count") {
             this.innerHTML = `
                 <div class="my-drop-down-holder">
-                    <button data-passenger-count="1" data-passenger-class="اکونومی" class="my-drop-down-toggler will-not-close col-12 passenger-count intractive-component rounded-4 bg-white text-end p-3 position-relative">
+                    <button data-passenger-count="1" data-passenger-class="اکونومی" class="my-drop-down-toggler will-not-close col-12 passenger-count intractive-component bg-white text-end p-3 position-relative">
                         <span class="my-placeholder position-absolute font-small">مسافران/کلاس کابین</span>
                         <div class="d-flex align-items-center">
                             <i class="bi bi-person text-darkGrey-lighten2 ms-2"></i>
@@ -168,14 +168,14 @@ class intractiveComponent extends HTMLElement {
         } else if (this.getAttribute('type') === "input") {
             if (this.getAttribute('disabled') === null) {
                 this.innerHTML = `
-                <div class="d-flex col-12 input intractive-component rounded-4 bg-white text-end p-3 position-relative">
+                <div class="d-flex col-12 input intractive-component bg-white text-end p-3 position-relative">
                     <span class="my-placeholder position-absolute font-small">${this.getAttribute('placeholder')}</span>
                     <input class="col-12 bg-transparent h-100 border-0 font-small" type="${this.getAttribute('input-type')}" required>
                 </div>
             `
             } else {
                 this.innerHTML = `
-                <div class="d-flex disabled col-12 intractive-component rounded-4 bg-white text-end p-3 position-relative">
+                <div class="d-flex disabled col-12 intractive-component bg-white text-end p-3 position-relative">
                     <span class="my-placeholder right-0 bg-transparent position-absolute font-small">0098</span>
                 </div>
             `
@@ -183,10 +183,10 @@ class intractiveComponent extends HTMLElement {
         } else if (this.getAttribute('type') === "dropdown") {
             this.innerHTML = `
                 <div class="my-drop-down-holder">
-                    <button data-selected-dropDown="${this.firstElementChild.firstElementChild.textContent}" class="my-drop-down-toggler will-not-close col-12 dropdown-component intractive-component rounded-4 bg-white text-end p-3 position-relative">
+                    <button data-rounded="${this.getAttribute('rounded')}" data-selected-dropDown="${this.firstElementChild.firstElementChild.textContent}" class="my-drop-down-toggler will-not-close col-12 dropdown-component intractive-component bg-white text-end p-3 position-relative">
                         <span class="my-placeholder position-absolute font-small">${this.getAttribute('placeholder')}</span>
+                        <i class="bi bi-chevron-down icon-left"></i>
                         <h6 class="font-small">${this.firstElementChild.firstElementChild.textContent}</h6>
-                        <i class="bi bi-chevron-down"></i>
                     </button>
                     <div ${(this.getAttribute('padding') !== null) ? 'class="my-drop-down p-3"' : 'class="my-drop-down"'}>
                         ${this.innerHTML}
@@ -195,9 +195,9 @@ class intractiveComponent extends HTMLElement {
             `
         } else if (this.getAttribute('type') === "search") {
             this.innerHTML = `
-                <div class="d-flex col-12 input intractive-component rounded-4 bg-white text-end p-3 position-relative">
+                <div data-rounded="${this.getAttribute('rounded')}" class="d-flex col-12 input intractive-component bg-white text-end p-3 position-relative">
                     <span class="my-placeholder position-absolute font-small">متن جستجو</span>
-                    <i class="bi bi-search position-absolute search-icon"></i>
+                    <i class="bi bi-search position-absolute icon-left"></i>
                     <input class="col-11 bg-transparent h-100 border-0 font-small" type="text" required>
                 </div>
             `

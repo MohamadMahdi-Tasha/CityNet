@@ -12,7 +12,6 @@ img {
 }
 
 button {
-    cursor: pointer;
     transition: .3s
 }
 
@@ -35,6 +34,18 @@ body {
 /*Styles*/
 .ripple-button--inner-span {
     background: rgba(256, 256, 256, .2);
+}
+
+.intractive-component:not([data-rounded='no-rounded-left'], [data-rounded='no-rounded-right']) {
+    border-radius: 1rem;
+}
+
+.intractive-component[data-rounded='no-rounded-left'] {
+    border-radius: 0 1rem 1rem 0;
+}
+
+.intractive-component[data-rounded='no-rounded-right'] {
+    border-radius: 1rem 0 0 1rem;
 }
 
 .font-small {
@@ -67,8 +78,13 @@ body {
     width: 150px;
 }
 
-.buy-ticket-left-side-inner-tabs:not([active]) {display: none;}
-.buy-ticket-left-side-inner-tabs[active] {display: block;}
+.buy-ticket-left-side-inner-tabs:not([active]) {
+    display: none;
+}
+
+.buy-ticket-left-side-inner-tabs[active] {
+    display: block;
+}
 
 .intractive-buttons-btn.ticket-buy {
     height: 50px;
@@ -145,7 +161,8 @@ body {
     display: none;
 }
 
-.search-icon {
+.icon-left {
+    position: absolute;
     left: 10px;
     top: 50%;
     transform: translateY(-50%);
@@ -424,7 +441,8 @@ input[type='radio']:before {
 .city-component-drop-down-button .ripple-button--inner-span,
 .my-drop-down > .ripple-button .ripple-button--inner-span,
 .ripple-button.flight-prev-next-day .ripple-button--inner-span,
-.my-collapse-toggler.ripple-button .ripple-button--inner-span {
+.my-collapse-toggler.ripple-button .ripple-button--inner-span,
+.inner-ripple-black .ripple-button--inner-span {
     background-color: rgba(0, 0, 0, .2);
 }
 
@@ -472,6 +490,10 @@ input[type='radio']:before {
     left: 50%;
     position: absolute;
     z-index: 2;
+}
+
+.h-intractive-components {
+    height: 50px;
 }
 
 .intractive-component {
@@ -530,13 +552,6 @@ input[type='radio']:before {
 
 .divider-vertical-dashed {
     border-right: 1px dashed black;
-}
-
-.dropdown-component .bi-chevron-down {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 .my-drop-down .my-drop-down::-webkit-scrollbar-thumb,
@@ -803,5 +818,9 @@ input[type='number'] {
 
     .bb-lg.border-bottom-0, .bb-lg {
         border-bottom: 1px solid #dee2e6 !important;
+    }
+
+    .intractive-component {
+        border-radius: 1rem !important;
     }
 }

@@ -36,61 +36,65 @@
 <!--First Section-->
 <section class="justify-content-center">
     <main class="container-xxl px-lg-5 py-lg-3 px-2 py-2">
-        <header>
-            <div>
-                <h6>گزارش قرارداد</h6>
-                <button><i class="bi bi-info-circle"></i>راهنمای گزارش</button>
+        <header class="bg-white rounded-3 p-3">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h6 class="mb-0">گزارش قرارداد</h6>
+                <button class="bg-transparent px-3 py-2 ripple-button border-0 inner-ripple-black rounded-3"><i class="bi bi-info-circle ms-3"></i>راهنمای گزارش</button>
             </div>
-            <div>
-                <div>
-                    <intractive-component type="dropdown" placeholder="گزارش بر اساس">
+            <div class="row flex-lg-row flex-column">
+                <div class="row flex-lg-row flex-column col gx-3 gy-3">
+                    <intractive-component class="col-lg-6 col-12" type="dropdown" placeholder="گزارش بر اساس">
                         <ul class="list-unstyled m-0 p-0 dropdown-component-ul">
                             <li><button class="active ripple-button font-small text-grey-darken1 buy-ticket-drop-down-button col-12 bg-transparent border-0 p-2 text-end">تاریخ قرارداد</button></li>
                             <li><button class="ripple-button font-small text-grey-darken1 buy-ticket-drop-down-button col-12 bg-transparent border-0 p-2 text-end">تاریخ قرارداد</button></li>
                         </ul>
                     </intractive-component>
-                    <intractive-component type="calender" placeholder="از"></intractive-component>
-                    <intractive-component type="dropdown" placeholder="خریدار">
+                    <intractive-component class="col-lg-6 col-12" type="calender" placeholder="از"></intractive-component>
+                    <intractive-component class="col-12" type="dropdown" placeholder="خریدار">
                         <ul class="list-unstyled m-0 p-0 dropdown-component-ul">
                             <li><button class="active ripple-button font-small text-grey-darken1 buy-ticket-drop-down-button col-12 bg-transparent border-0 p-2 text-end">شما</button></li>
                         </ul>
                     </intractive-component>
-                    <intractive-component type="calender" placeholder="تاریخ سفر از"></intractive-component>
-                    <intractive-component type="calender" placeholder="تاریخ سفر تا"></intractive-component>
+                    <intractive-component class="col-lg-6 col-12" type="calender" placeholder="تاریخ سفر از"></intractive-component>
+                    <intractive-component class="col-lg-6 col-12" type="calender" placeholder="تاریخ سفر تا"></intractive-component>
                 </div>
-                <div>
-                    <intractive-component type="calender" placeholder="تا"></intractive-component>
-                    <intractive-component type="dropdown" placeholder="نوع سرویس">
+                <div class="row flex-lg-row flex-column col gx-3 gy-3">
+                    <intractive-component class="col-lg-6 col-12" type="calender" placeholder="تا"></intractive-component>
+                    <intractive-component class="col-lg-6 col-12" type="dropdown" placeholder="نوع سرویس">
                         <ul class="list-unstyled m-0 p-0 dropdown-component-ul">
                             <li><button class="active ripple-button font-small text-grey-darken1 buy-ticket-drop-down-button col-12 bg-transparent border-0 p-2 text-end">همه</button></li>
                             <li><button class="ripple-button font-small text-grey-darken1 buy-ticket-drop-down-button col-12 bg-transparent border-0 p-2 text-end">همه</button></li>
                         </ul>
                     </intractive-component>
-                    <intractive-component type="input" input-type="text" placeholder="ثبت کننده"></intractive-component>
-                    <intractive-component no-rounded-left type="dropdown" placeholder="فیلتر بر اساس">
-                        <ul class="list-unstyled m-0 p-0 dropdown-component-ul">
-                            <li><button class="active ripple-button font-small text-grey-darken1 buy-ticket-drop-down-button col-12 bg-transparent border-0 p-2 text-end">رفرنس</button></li>
-                            <li><button class="ripple-button font-small text-grey-darken1 buy-ticket-drop-down-button col-12 bg-transparent border-0 p-2 text-end">رفرنس</button></li>
-                        </ul>
-                    </intractive-component>
-                    <intractive-component no-rounded-right type="search"></intractive-component>
+                    <intractive-component class="col-12" type="input" input-type="text" placeholder="ثبت کننده"></intractive-component>
+                    <div class="d-flex col-12 flex-lg-row flex-column gap-lg-0 gap-3">
+                        <intractive-component class="col-lg-6 col-12" rounded="no-rounded-left" type="dropdown" placeholder="فیلتر بر اساس">
+                            <ul class="list-unstyled m-0 p-0 dropdown-component-ul">
+                                <li><button class="active ripple-button font-small text-grey-darken1 buy-ticket-drop-down-button col-12 bg-transparent border-0 p-2 text-end">رفرنس</button></li>
+                                <li><button class="ripple-button font-small text-grey-darken1 buy-ticket-drop-down-button col-12 bg-transparent border-0 p-2 text-end">رفرنس</button></li>
+                            </ul>
+                        </intractive-component>
+                        <intractive-component class="col-lg-6 col-12" rounded="no-rounded-right" type="search"></intractive-component>
+                    </div>
                 </div>
-                <div>
-                    <intractive-component type="dropdown" placeholder="وضعیت مالی">
+                <div class="row flex-lg-row flex-column col gx-3 gy-3">
+                    <intractive-component class="col-lg-6 col-12" type="dropdown" placeholder="وضعیت مالی">
                         <ul class="list-unstyled m-0 p-0 dropdown-component-ul">
                             <li><button class="active ripple-button font-small text-grey-darken1 buy-ticket-drop-down-button col-12 bg-transparent border-0 p-2 text-end">همه</button></li>
                             <li><button class="ripple-button font-small text-grey-darken1 buy-ticket-drop-down-button col-12 bg-transparent border-0 p-2 text-end">همه</button></li>
                         </ul>
                     </intractive-component>
-                    <intractive-component type="dropdown" placeholder="وضعیت قرارداد">
+                    <intractive-component class="col-lg-6 col-12" type="dropdown" placeholder="وضعیت قرارداد">
                         <ul class="list-unstyled m-0 p-0 dropdown-component-ul">
                             <li><button class="active ripple-button font-small text-grey-darken1 buy-ticket-drop-down-button col-12 bg-transparent border-0 p-2 text-end">همه</button></li>
                             <li><button class="ripple-button font-small text-grey-darken1 buy-ticket-drop-down-button col-12 bg-transparent border-0 p-2 text-end">همه</button></li>
                         </ul>
                     </intractive-component>
-                    <intractive-component type="input" input-type="text" placeholder="معرف"></intractive-component>
-                    <button>دانلود<i class="bi bi-download"></i></button>
-                    <button>جستجو</button>
+                    <intractive-component class="col-12" type="input" input-type="text" placeholder="معرف"></intractive-component>
+                    <div class="row flex-lg-row flex-column gap-3 flex-nowrap align-items-stretch mt-3 ps-lg-3 ps-0 pe-3">
+                        <button class="col-lg-6 col-12 h-intractive-components d-flex border-0 bg-grey-lighten3 font-small text-grey-darken1 ripple-button inner-ripple-black justify-content-around rounded-4 align-items-center">دانلود<i class="bi bi-download"></i></button>
+                        <button class="col-lg-6 col-12 submit-button rounded-4 ripple-button">جستجو</button>
+                    </div>
                 </div>
             </div>
         </header>
