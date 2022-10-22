@@ -492,6 +492,10 @@ input[type='radio']:before {
     z-index: 2;
 }
 
+.nothing-found.bg-error-lighten4 {
+    border-right: 10px solid var(--error-darken2);
+}
+
 .h-intractive-components {
     height: 50px;
 }
