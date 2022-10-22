@@ -163,7 +163,11 @@ currencyChanger.forEach(item => {
     })
 })
 
-window.addEventListener('resize', () => document.querySelector('.intractive-buttons-btn[active]').click())
+window.addEventListener('resize', () => {
+    if (document.querySelector('.intractive-buttons-btn[active]')) {
+        document.querySelector('.intractive-buttons-btn[active]').click()
+    }
+})
 
 // Adding Event Listener On Each Interactive Button In Top Side Of Main Content In Second Section (Home Page) That Listens To Click.
 // It Gets Bounding Rect Of Clicked Items Parent Element And Items Itself And Then Counts Right Position Of Child And Parent And Reverses It
