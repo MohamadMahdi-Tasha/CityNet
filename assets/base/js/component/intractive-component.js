@@ -193,6 +193,14 @@ class intractiveComponent extends HTMLElement {
                     </div>
                 </div>
             `
+        } else if (this.getAttribute('type') === "search") {
+            this.innerHTML = `
+                <div class="d-flex col-12 input intractive-component rounded-4 bg-white text-end p-3 position-relative">
+                    <span class="my-placeholder position-absolute font-small">متن جستجو</span>
+                    <i class="bi bi-search position-absolute search-icon"></i>
+                    <input class="col-11 bg-transparent h-100 border-0 font-small" type="text" required>
+                </div>
+            `
         }
     }
 }

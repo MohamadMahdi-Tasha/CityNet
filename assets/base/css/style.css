@@ -141,6 +141,20 @@ body {
     position: relative;
 }
 
+.intractive-component.search input::-webkit-search-decoration {
+    display: none;
+}
+
+.search-icon {
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+[type='search'] {
+    -webkit-appearance: none !important;
+}
+
 input[type='radio']:checked:before {
     outline: 1px solid var(--primary-base);
 }
