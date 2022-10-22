@@ -5,7 +5,7 @@ const intractiveButtonsBtnTicketBuy = document.querySelectorAll('.intractive-but
 buyTicketDropDownButton.forEach(item => {
     item.addEventListener('click', () => {
         const parentOfGrandParentOfClickedItem = item.parentElement.parentElement.parentElement
-        const buyTicketDropDownButtonActive = document.querySelector('.buy-ticket-drop-down-button.active');
+        const buyTicketDropDownButtonActive = parentOfGrandParentOfClickedItem.querySelector('.buy-ticket-drop-down-button.active');
 
         parentOfGrandParentOfClickedItem.parentElement.removeAttribute('data-opened');
         parentOfGrandParentOfClickedItem.previousElementSibling.setAttribute('data-selected-dropdown', item.textContent)
