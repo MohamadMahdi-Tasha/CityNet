@@ -185,7 +185,7 @@ class intractiveComponent extends HTMLElement {
                 <div class="my-drop-down-holder">
                     <button data-rounded="${this.getAttribute('rounded')}" data-selected-dropDown="${this.firstElementChild.firstElementChild.textContent}" class="my-drop-down-toggler will-not-close col-12 dropdown-component intractive-component bg-white text-end p-3 position-relative">
                         <span class="my-placeholder position-absolute font-small">${this.getAttribute('placeholder')}</span>
-                        <h6 class="font-small">${this.firstElementChild.firstElementChild.textContent}</h6>
+                        <h6 class="font-small">${this.querySelector('.dropdown-component-ul button.active').textContent}</h6>
                         <i class="bi bi-chevron-down icon-left"></i>
                     </button>
                     <div class="my-drop-down ${(this.getAttribute('padding') !== null) ? 'p-3' : ''} ${(this.getAttribute('drop-down-position') === 'left') ? 'left' : ''}">
