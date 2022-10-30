@@ -136,7 +136,6 @@ function showCurrency() {
 dropDownToggler.forEach(item => item.addEventListener('click', () => {
     const openedDropDown = document.querySelector('.my-drop-down-holder[data-opened]');
     item.parentElement.toggleAttribute('data-opened');
-
     if (openedDropDown !== null) {openedDropDown.removeAttribute('data-opened')}
 }))
 
