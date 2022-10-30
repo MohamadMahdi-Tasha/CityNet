@@ -132,7 +132,7 @@ body {
 }
 
 .intractive-buttons-btn.ticket-component.ripple-button .ripple-button--inner-span,
-.bg-grey-lighten2 .ripple-button--inner-span {
+.bg-grey-lighten2.ripple-button .ripple-button--inner-span{
     background-color: rgba(0, 0, 0, .2) !important;
 }
 
@@ -513,6 +513,46 @@ input[type='radio']:before {
     animation: selected-city-animation .3s linear;
 }
 
+.my-little-spans {
+    padding: .25rem 1rem;
+    font-size: 13px;
+    border-radius: .5rem;
+    margin-right: 1rem;
+}
+
+.my-little-spans.succses {
+    background-color: var(--light-green);
+    color: var(--green-base);
+}
+
+.ripple-button.primary {
+    background-color: transparent;
+    color: var(--primary-base);
+}
+
+.ripple-button.error {
+    background-color: var(--error-lighten5);
+    color: var(--error-base);
+}
+
+.ripple-button.info {
+    background-color: var(--light-blue);
+    color: var(--info-base);
+}
+
+.ripple-button.error .ripple-button--inner-span {
+    background-color: rgba(255, 82, 82, .2);
+}
+
+.ripple-button.info .ripple-button--inner-span {
+    background-color: rgba(33, 150, 243, .2);
+}
+
+.squar-size {
+    width: 25px;
+    height: 25px;
+}
+
 .intractive-component .my-placeholder {
     transition: .3s;
     top: 50%;
@@ -582,7 +622,8 @@ input[type='radio']:before {
 }
 
 .passenger-class-select-button .ripple-button--inner-span,
-.buy-ticket-drop-down-button .ripple-button--inner-span {
+.buy-ticket-drop-down-button .ripple-button--inner-span,
+.ripple-button.primary > .ripple-button--inner-span {
     background-color: rgba(221, 153, 51, .2) !important;
 }
 

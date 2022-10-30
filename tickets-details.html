@@ -116,58 +116,43 @@
         <!--If There Is Nothing-->
         <!-- <main class="bg-error-lighten4 p-3 rounded-3 nothing-found"><h6 class="text-center text-error-darken2 mb-0 font-small fw-bold">موردی یافت نشد</h6></main>-->
 
-        <main>
-            <ul>
-                <li>نام خریدار</li>
-                <li>نام کاربری</li>
-                <li>شماره قرارداد<i class="bi bi-arrow-up"></i></li>
-                <li>تاریخ ثبت<i class="bi bi-arrow-up"></i></li>
-                <li>زمان<i class="bi bi-arrow-up"></i></li>
-                <li>مبلغ قرارداد<i class="bi bi-arrow-up"></i></li>
-                <li>قرارداد</li>
-                <li>وضعیت</li>
+        <main class="rounded-3 bg-white overflow-hidden">
+            <ul class="list-unstyled m-0 p-0 row bg-black-lighten1">
+                <li class="p-3 text-white font-small col">نام خریدار</li>
+                <li class="p-3 text-white font-small col">نام کاربری</li>
+                <li class="p-3 text-white font-small col">شماره قرارداد<i class="bi bi-arrow-up"></i></li>
+                <li class="p-3 text-white font-small col">تاریخ ثبت<i class="bi bi-arrow-up"></i></li>
+                <li class="p-3 text-white font-small col">زمان<i class="bi bi-arrow-up"></i></li>
+                <li class="p-3 text-white font-small col">مبلغ قرارداد<i class="bi bi-arrow-up"></i></li>
+                <li class="p-3 text-white font-small col">قرارداد</li>
+                <li class="p-3 text-white font-small col">وضعیت</li>
             </ul>
             <div>
-                <button>
-                    <span>1</span>
-                    <span>2</span>
-                    <span><span>00989380880634</span><i class="bi bi-phone"></i></span>
-                    <span>273901</span>
-                    <span>
-                        <span>
-                            <span>1401</span>
-                            /
-                            <span>05</span>
-                            /
-                            <span>25</span>
-                        </span>
-                        <span>
-                            <span>2022</span>
-                            -
-                            <span>08</span>
-                            -
-                            <span>16</span>
-                        </span>
-                    </span>
-                    <span><i class="bi bi-printer"></i></span>
-                    <span>تکمیل شده</span>
-                    <i class="bi bi-chevron-down"></i>
+                <button class="row col-12 m-0 p-0 border-bottom border-top border-0">
+                    <span class="col p-3 font-small">1</span>
+                    <span class="col p-3 font-small">2</span>
+                    <span class="col p-3 font-small">3</span>
+                    <span class="col p-3 font-small">4</span>
+                    <span class="col p-3 font-small">5</span>
+                    <span class="col p-3 font-small">6</span>
+                    <span class="col p-3 font-small">7</span>
+                    <span class="col p-3 font-small ms-5">8</span>
                 </button>
-                <div>
-                    <div>
-                        <div>
-                            <h6><i class="bi bi-airplane rotate-270"></i>نوع سرویس پرواز<span>فعال</span></h6>
-                            <div>
-                                <button>
+                <div class="p-3">
+                    <div class="border rounded-3 p-3">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h6 class="mb-0 font-small text-grey-darken3"><i class="bi bi-airplane text-grey-darken1 rotate-270 ms-1"></i>نوع سرویس پرواز<span class="my-little-spans no-circle succses">فعال</span></h6>
+                            <div class="d-flex gap-3">
+                                <button class="px-3 py-2 font-small border-0 rounded-3 ripple-button primary">
                                     جزییات سرویس
                                     <i class="bi bi-chevron-down"></i>
                                 </button>
-                                <button>درخواست کنسل (افلاین)</button>
-                                <button>فایل PDF</button>
+                                <button class="px-3 py-2 font-small border-0 rounded-3 ripple-button error">درخواست کنسل (افلاین)</button>
+                                <button class="px-3 py-2 font-small border-0 rounded-3 ripple-button info">فایل PDF</button>
                             </div>
                         </div>
-                        <div class="overflow-hidden rounded">
-                            <div class="p-3 d-flex justify-content-between align-items-center border rounded-top">
+                        <div class="overflow-hidden mb-3 rounded">
+                            <div class="p-3 d-flex justify-content-between align-items-center border border-bottom-0 bg-grey-lighten3 rounded-top">
                                 <div class="d-flex align-items-center">
                                     <h6 class="mb-0 font-small">
                                         <span>${this.getAttribute('start-loaction-abbr')}</span>
@@ -250,46 +235,46 @@
                             </div>
                         </div>
                         <div class="overflow-hidden rounded border">
-                            <table class="table mb-0 d-lg-table d-flex">
+                            <table class="table mb-0 d-lg-table d-flex mb-5">
                                 <thead class="bg-grey-lighten3 col-lg-auto col-6">
-                                <tr class="d-lg-table-row d-flex flex-column  col-lg-auto col-12">
-                                    <th class="font-small text-grey-darken3 text-center" scope="col">#</th>
-                                    <th class="font-small text-grey-darken3 text-center" scope="col">نام و نام خانوادگی</th>
-                                    <th class="font-small text-grey-darken3 text-center" scope="col">رده سنی</th>
-                                    <th class="font-small text-grey-darken3 text-center" scope="col">شماره ملی</th>
-                                    <th class="font-small text-grey-darken3 text-center" scope="col">شماره گذرنامه</th>
-                                    <th class="font-small text-grey-darken3 text-center" scope="col">شماره بلیط</th>
-                                    <th class="font-small text-grey-darken3 text-center" scope="col">رفرنس</th>
-                                    <th class="font-small text-grey-darken3 text-center" scope="col">قیمت</th>
-                                    <th class="font-small text-grey-darken3 text-center" scope="col">غملیات</th>
-                                    <th class="font-small text-grey-darken3 text-center" scope="col">چاپ</th>
-                                    <th class="font-small text-grey-darken3 text-center" scope="col">وضعیت</th>
+                                <tr class="d-lg-table-row d-flex flex-column  col-lg-auto col-12 bg-grey-lighten3">
+                                    <th class="font-small border-bottom-0 p-3 text-grey-darken1 text-center" scope="col">#</th>
+                                    <th class="font-small border-bottom-0 p-3 text-grey-darken1 text-center" scope="col">نام و نام خانوادگی</th>
+                                    <th class="font-small border-bottom-0 p-3 text-grey-darken1 text-center" scope="col">رده سنی</th>
+                                    <th class="font-small border-bottom-0 p-3 text-grey-darken1 text-center" scope="col">شماره ملی</th>
+                                    <th class="font-small border-bottom-0 p-3 text-grey-darken1 text-center" scope="col">شماره گذرنامه</th>
+                                    <th class="font-small border-bottom-0 p-3 text-grey-darken1 text-center" scope="col">شماره بلیط</th>
+                                    <th class="font-small border-bottom-0 p-3 text-grey-darken1 text-center" scope="col">رفرنس</th>
+                                    <th class="font-small border-bottom-0 p-3 text-grey-darken1 text-center" scope="col">قیمت</th>
+                                    <th class="font-small border-bottom-0 p-3 text-grey-darken1 text-center" scope="col">غملیات</th>
+                                    <th class="font-small border-bottom-0 p-3 text-grey-darken1 text-center" scope="col">چاپ</th>
+                                    <th class="font-small border-bottom-0 p-3 text-grey-darken1 text-center" scope="col">وضعیت</th>
                                 </tr>
                                 </thead>
                                 <tbody class="bg-white col-lg-auto col-6">
                                 <tr class="d-lg-table-row d-flex flex-column  col-lg-auto col-12">
-                                    <td class="font-small text-grey-darken3 text-center">#</td>
-                                    <td class="font-small text-grey-darken3 text-center">نام و نام خانوادگی</td>
-                                    <td class="font-small text-grey-darken3 text-center">بزرگسال</td>
-                                    <td class="font-small text-grey-darken3 text-center">--</td>
-                                    <td class="font-small text-grey-darken3 text-center">PO12123123</td>
-                                    <td class="font-small text-grey-darken3 text-center">12123123</td>
-                                    <td class="font-small text-grey-darken3 text-center">07S5UV21</td>
-                                    <td class="font-small text-grey-darken3 text-center"><button><i class="bi bi-chevron-up"></i></button></td>
-                                    <td class="font-small text-grey-darken3 text-center"><button>...</button></td>
-                                    <td class="font-small text-grey-darken3 text-center"><button><i class="bi bi-printer"></i></button></td>
-                                    <td class="font-small text-grey-darken3 text-center">تکمیل شده</td>
+                                    <td class="font-small border-bottom-0 p-3 text-grey-darken3 text-center">#</td>
+                                    <td class="font-small border-bottom-0 p-3 text-grey-darken3 text-center">نام و نام خانوادگی</td>
+                                    <td class="font-small border-bottom-0 p-3 text-grey-darken3 text-center">بزرگسال</td>
+                                    <td class="font-small border-bottom-0 p-3 text-grey-darken3 text-center">--</td>
+                                    <td class="font-small border-bottom-0 p-3 text-grey-darken3 text-center">PO12123123</td>
+                                    <td class="font-small border-bottom-0 p-3 text-grey-darken3 text-center">12123123</td>
+                                    <td class="font-small border-bottom-0 p-3 text-grey-darken3 text-center">07S5UV21</td>
+                                    <td class="font-small border-bottom-0 p-3 text-grey-darken3 text-center"><button class="bg-grey-lighten3 inner-ripple-black ripple-button border-0 rounded-3 font-small squar-size d-flex justify-content-center align-items-center"><i class="bi bi-chevron-up"></i></button></td>
+                                    <td class="font-small border-bottom-0 p-3 text-grey-darken3 text-center"><button class="bg-grey-lighten3 inner-ripple-black ripple-button border-0 rounded-3 font-small squar-size d-flex justify-content-center align-items-center">...</button></td>
+                                    <td class="font-small border-bottom-0 p-3 text-grey-darken3 text-center"><button class="bg-transparent inner-ripple-black ripple-button border-0 rounded-3 font-small squar-size d-flex justify-content-center align-items-center"><i class="bi bi-printer"></i></button></td>
+                                    <td class="font-small border-bottom-0 p-3 text-grey-darken3 text-center">تکمیل شده</td>
                                 </tr>
                                 </tbody>
                             </table>
-                            <div>
-                                <h6>قیمت پایه<span>33,430,000</span></h6>
-                                <h6>مالیات<span>50,000</span></h6>
-                                <h6>جریمه کنسلی<span>0</span></h6>
-                                <h6>سرویس مازاد<span>0</span></h6>
-                                <h6>تخفیف مازاد<span>0</span></h6>
-                                <h6>جریمه مازاد<span>0</span></h6>
-                                <h6>جمع<span>33,380,000</span></h6>
+                            <div class="d-flex justify-content-around">
+                                <h6 class="d-flex flex-column font-small text-center mb-0">قیمت پایه<span class="mt-2 mb-3">33,430,000</span></h6>
+                                <h6 class="d-flex flex-column font-small text-center mb-0">مالیات<span class="mt-2 mb-3">50,000</span></h6>
+                                <h6 class="d-flex flex-column font-small text-center mb-0">جریمه کنسلی<span class="mt-2 mb-3">0</span></h6>
+                                <h6 class="d-flex flex-column font-small text-center mb-0">سرویس مازاد<span class="mt-2 mb-3">0</span></h6>
+                                <h6 class="d-flex flex-column font-small text-center mb-0">تخفیف مازاد<span class="mt-2 mb-3">0</span></h6>
+                                <h6 class="d-flex flex-column font-small text-center mb-0">جریمه مازاد<span class="mt-2 mb-3">0</span></h6>
+                                <h6 class="d-flex flex-column font-small text-center mb-0">جمع<span class="mt-2 mb-3">33,380,000</span></h6>
                             </div>
                         </div>
                     </div>
