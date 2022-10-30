@@ -14,6 +14,7 @@ const inputComponents = document.querySelectorAll('.intractive-component.input')
 const persianName = document.getElementById('currency-header-per');
 const englishName = document.getElementById('currency-header-eng');
 const myCollapseToggler = document.querySelectorAll('.my-collapse-toggler');
+const ticketDetailsDropDownButton = document.querySelectorAll('.buy-ticket-drop-down-button');
 
 // a Function that takes persian name of city and returns abbreviation Text of it
 function persianNameToAbbreviation(name) {
@@ -371,3 +372,17 @@ window.addEventListener('keydown', (event) => {
 
 // Adding Event Listener Of Click On Each Collapse Toggler That Toggles Attribute Of 'data-opened' To Its Parent Element
 myCollapseToggler.forEach(item =>  item.addEventListener('click', () => item.parentElement.toggleAttribute('data-opened')))
+
+
+ticketDetailsDropDownButton.forEach(item => {
+    item.addEventListener('click', () => {
+        const parentOfGrandParentOfClickedItem = item.parentElement.parentElement.parentElement
+        const buyTicketDropDownButtonActive = parentOfGrandParentOfClickedItem.querySelector('.buy-ticket-drop-down-button.active');
+
+        parentOfGrandParentOfClickedItem.parentElement.removeAttribute('data-opened');
+        parentOfGrandParentOfClickedItem.previousElementSibling.setAttribute('data-selected-dropdown', item.textContent)
+        parentOfGrandParentOfClickedItem.previousElementSibling.firstElementChild.nextElementSibling.textContent = item.textContent
+        buyTicketDropDownButtonActive.classList.remove('active');
+        item.classList.add('active');
+    })
+})
