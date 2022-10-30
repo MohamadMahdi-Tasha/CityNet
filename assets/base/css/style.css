@@ -535,6 +535,11 @@ input[type='radio']:before {
     pointer-events: none !important;
 }
 
+.my-drop-down.left {
+    right: auto;
+    left: 0;
+}
+
 .my-drop-down .my-drop-down::-webkit-scrollbar,
 .paragraph-holder::-webkit-scrollbar,
 .dropdown-component-ul::-webkit-scrollbar {

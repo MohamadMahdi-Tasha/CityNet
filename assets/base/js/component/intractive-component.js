@@ -188,7 +188,7 @@ class intractiveComponent extends HTMLElement {
                         <h6 class="font-small">${this.firstElementChild.firstElementChild.textContent}</h6>
                         <i class="bi bi-chevron-down icon-left"></i>
                     </button>
-                    <div ${(this.getAttribute('padding') !== null) ? 'class="my-drop-down p-3"' : 'class="my-drop-down"'}>
+                    <div class="my-drop-down ${(this.getAttribute('padding') !== null) ? 'p-3' : ''} ${(this.getAttribute('drop-down-position') === 'left') ? 'left' : ''}">
                         ${this.innerHTML}
                     </div>
                 </div>
