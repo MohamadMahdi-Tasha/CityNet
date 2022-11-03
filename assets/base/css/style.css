@@ -141,6 +141,18 @@ body {
     overflow: auto;
 }
 
+.table-bottom-item-toggler {
+    height: 60px;
+}
+
+.table-bottom-item-holder:not([data-opened]) {
+    height: 60px;
+}
+
+.table-bottom-item-holder[data-opened] {
+    height: auto;
+}
+
 .intractive-buttons-btn.ripple-button:not(.ticket-component) .ripple-button--inner-span {
     background-color: rgba(221, 153, 51, .2);
 }
