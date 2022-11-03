@@ -492,7 +492,8 @@ input[type='radio']:before {
     pointer-events: none;
 }
 
-.coniform-modal-middle-holder {
+.coniform-modal-middle-holder,
+.select-person-table-holder{
     height: 250px;
     overflow: auto;
 }
@@ -600,6 +601,14 @@ input[type='radio']:before {
     border-radius: 100%;
 }
 
+.vertical-align {
+    vertical-align: middle;
+}
+
+.table.no-border th ,.table.no-border td{
+    border-bottom: none;
+}
+
 .my-little-spans {
     padding: .25rem 1.5rem .25rem 1rem;
     font-size: 13px;
@@ -668,10 +677,21 @@ input[type='radio']:before {
     left: 0;
 }
 
+.select-person-table-holder::-webkit-scrollbar-thumb {
+    background-color: var(--primary-base);
+    border-radius: 50rem;
+}
+
+.select-person-table-holder::-webkit-scrollbar {
+    background-color: transparent;
+    width: 7px;
+    border-radius: 50rem;
+}
+
 .my-drop-down .my-drop-down::-webkit-scrollbar,
 .paragraph-holder::-webkit-scrollbar,
 .dropdown-component-ul::-webkit-scrollbar,
-.coniform-modal-middle-holder::-webkit-scrollbar {
+.coniform-modal-middle-holder::-webkit-scrollbar{
     background-color: var(--grey-lighten1);
     width: 7px;
     border-radius: 50rem;

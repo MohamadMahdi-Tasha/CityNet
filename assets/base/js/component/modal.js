@@ -82,48 +82,189 @@ class Modal extends HTMLElement {
             `
         } else if (this.getAttribute('type') === 'select-person') {
             this.innerHTML = `
-                <div data-opened id="buy-ticket-coniform-modal" class="my-modal-holder position-fixed inset-0 d-flex justify-content-center align-items-center">
-                    <div data-target="buy-ticket-coniform-modal" class="toggler my-modal-bg position-fixed inset-0"></div>
+                <div data-opened id="select-person-modal" class="my-modal-holder position-fixed inset-0 d-flex justify-content-center align-items-center">
+                    <div data-target="select-person-modal" class="toggler my-modal-bg position-fixed inset-0"></div>
                     <div class="my-modal bg-white shadow rounded-3 p-3 col-lg-9 col-12">
-                        <div>
-                            <h6>لیست مسافران سابق</h6>
-                            <button data-target="buy-ticket-coniform-modal" class="toggler my-modal-close-button d-flex justify-content-center align-items-center bg-grey-lighten2 border-0 rounded-3"><i class="bi bi-x"></i></button>
+                        <div class="d-flex align-items-start justify-content-between mb-3">
+                            <h6 class="font-small text-grey-darken1 mb-0">لیست مسافران سابق</h6>
+                            <button data-target="select-person-modal" class="toggler my-modal-close-button d-flex justify-content-center align-items-center bg-grey-lighten2 border-0 rounded-3"><i class="bi bi-x"></i></button>
                         </div>
                         <intractive-component type="search"></intractive-component>
-                        <div>
-                            <table class="table">
+                        <div class="mt-3 select-person-table-holder">
+                            <table class="table no-border">
                               <thead>
-                                <tr>
-                                  <th scope="col">#</th>
-                                  <th scope="col">جنسیت</th>
-                                  <th scope="col">نام انگلیسی</th>
-                                  <th scope="col">نام خانوادگی انگلیسی</th>
-                                  <th scope="col">ملیت</th>
-                                  <th scope="col">شماره ملی</th>
-                                  <th scope="col">تاریخ تولد</th>
-                                  <th scope="col">شماره گذرنامه</th>
-                                  <th scope="col">تاریخ انقضای گذرنامه</th>
-                                  <th scope="col"> </th>
+                                <tr class="bg-grey-lighten3">
+                                  <th class="font-small text-grey-darken1 bg-transparent" scope="col">#</th>
+                                  <th class="font-small text-grey-darken1 bg-transparent" scope="col">جنسیت</th>
+                                  <th class="font-small text-grey-darken1 bg-transparent" scope="col">نام انگلیسی</th>
+                                  <th class="font-small text-grey-darken1 bg-transparent" scope="col">نام خانوادگی انگلیسی</th>
+                                  <th class="font-small text-grey-darken1 bg-transparent" scope="col">ملیت</th>
+                                  <th class="font-small text-grey-darken1 bg-transparent" scope="col">شماره ملی</th>
+                                  <th class="font-small text-grey-darken1 bg-transparent" scope="col">تاریخ تولد</th>
+                                  <th class="font-small text-grey-darken1 bg-transparent" scope="col">شماره گذرنامه</th>
+                                  <th class="font-small text-grey-darken1 bg-transparent" scope="col">تاریخ انقضای گذرنامه</th>
+                                  <th class="font-small text-grey-darken1 bg-transparent" scope="col"> </th>
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr>
-                                  <th scope="row">1</th>
-                                  <td>male</td>
-                                  <td>HAMID</td>
-                                  <td>ALINEJAD</td>
-                                  <td>IQ</td>
-                                  <td>--</td>
-                                  <td>1995/04/24</td>
-                                  <td>--</td>
-                                  <td/>2027/07/07</td>
-                                  <td/><button>انتخاب</button></td>
+                                <tr >
+                                  <th class="font-small vertical-align text-center text-grey-darken3" scope="row"><div>1</div></th>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>male</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>HAMID</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>ALINEJAD</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>IQ</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>--</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>1995/04/24</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>--</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>2027/07/07</div></td>
+                                  <td><button class="submit-button rounded-4 ripple-button font-small col-12">انتخاب</button></td>
+                                </tr>
+                                <tr >
+                                  <th class="font-small vertical-align text-center text-grey-darken3" scope="row"><div>1</div></th>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>male</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>HAMID</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>ALINEJAD</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>IQ</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>--</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>1995/04/24</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>--</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>2027/07/07</div></td>
+                                  <td><button class="submit-button rounded-4 ripple-button font-small col-12">انتخاب</button></td>
+                                </tr>
+                                <tr >
+                                  <th class="font-small vertical-align text-center text-grey-darken3" scope="row"><div>1</div></th>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>male</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>HAMID</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>ALINEJAD</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>IQ</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>--</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>1995/04/24</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>--</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>2027/07/07</div></td>
+                                  <td><button class="submit-button rounded-4 ripple-button font-small col-12">انتخاب</button></td>
+                                </tr>
+                                <tr >
+                                  <th class="font-small vertical-align text-center text-grey-darken3" scope="row"><div>1</div></th>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>male</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>HAMID</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>ALINEJAD</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>IQ</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>--</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>1995/04/24</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>--</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>2027/07/07</div></td>
+                                  <td><button class="submit-button rounded-4 ripple-button font-small col-12">انتخاب</button></td>
+                                </tr><tr >
+                                  <th class="font-small vertical-align text-center text-grey-darken3" scope="row"><div>1</div></th>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>male</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>HAMID</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>ALINEJAD</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>IQ</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>--</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>1995/04/24</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>--</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>2027/07/07</div></td>
+                                  <td><button class="submit-button rounded-4 ripple-button font-small col-12">انتخاب</button></td>
+                                </tr>
+                                <tr >
+                                  <th class="font-small vertical-align text-center text-grey-darken3" scope="row"><div>1</div></th>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>male</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>HAMID</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>ALINEJAD</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>IQ</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>--</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>1995/04/24</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>--</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>2027/07/07</div></td>
+                                  <td><button class="submit-button rounded-4 ripple-button font-small col-12">انتخاب</button></td>
+                                </tr>
+                                <tr >
+                                  <th class="font-small vertical-align text-center text-grey-darken3" scope="row"><div>1</div></th>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>male</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>HAMID</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>ALINEJAD</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>IQ</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>--</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>1995/04/24</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>--</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>2027/07/07</div></td>
+                                  <td><button class="submit-button rounded-4 ripple-button font-small col-12">انتخاب</button></td>
+                                </tr>
+                                <tr >
+                                  <th class="font-small vertical-align text-center text-grey-darken3" scope="row"><div>1</div></th>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>male</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>HAMID</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>ALINEJAD</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>IQ</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>--</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>1995/04/24</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>--</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>2027/07/07</div></td>
+                                  <td><button class="submit-button rounded-4 ripple-button font-small col-12">انتخاب</button></td>
+                                </tr><tr >
+                                  <th class="font-small vertical-align text-center text-grey-darken3" scope="row"><div>1</div></th>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>male</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>HAMID</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>ALINEJAD</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>IQ</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>--</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>1995/04/24</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>--</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>2027/07/07</div></td>
+                                  <td><button class="submit-button rounded-4 ripple-button font-small col-12">انتخاب</button></td>
+                                </tr>
+                                <tr >
+                                  <th class="font-small vertical-align text-center text-grey-darken3" scope="row"><div>1</div></th>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>male</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>HAMID</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>ALINEJAD</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>IQ</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>--</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>1995/04/24</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>--</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>2027/07/07</div></td>
+                                  <td><button class="submit-button rounded-4 ripple-button font-small col-12">انتخاب</button></td>
+                                </tr>
+                                <tr >
+                                  <th class="font-small vertical-align text-center text-grey-darken3" scope="row"><div>1</div></th>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>male</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>HAMID</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>ALINEJAD</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>IQ</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>--</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>1995/04/24</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>--</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>2027/07/07</div></td>
+                                  <td><button class="submit-button rounded-4 ripple-button font-small col-12">انتخاب</button></td>
+                                </tr><tr >
+                                  <th class="font-small vertical-align text-center text-grey-darken3" scope="row"><div>1</div></th>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>male</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>HAMID</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>ALINEJAD</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>IQ</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>--</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>1995/04/24</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>--</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>2027/07/07</div></td>
+                                  <td><button class="submit-button rounded-4 ripple-button font-small col-12">انتخاب</button></td>
+                                </tr>
+                                <tr >
+                                  <th class="font-small vertical-align text-center text-grey-darken3" scope="row"><div>1</div></th>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>male</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>HAMID</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>ALINEJAD</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>IQ</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>--</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>1995/04/24</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>--</div></td>
+                                  <td class="font-small vertical-align text-center text-grey-darken3"><div>2027/07/07</div></td>
+                                  <td><button class="submit-button rounded-4 ripple-button font-small col-12">انتخاب</button></td>
                                 </tr>
                               </tbody>
                             </table>
                         </div>
-                        <div>
-                            <h6>
+                        <div class="d-flex gap-3 align-items-center pt-3 border-top">
+                            <h6 class="font-small mb-0 text-grey-darken1">
                                 ردیف
                                 <span>1</span>
                                 تا
@@ -131,8 +272,8 @@ class Modal extends HTMLElement {
                                 از
                                 <span>308</span>
                             </h6>
-                            <button><i class="bi bi-chevron-right"></i></button>
-                            <button><i class="bi bi-chevron-left"></i></button>
+                            <button class="select-person-next-prev-page-btn bg-transparent border-0 rounded-3 font-small ripple-button inner-ripple-black squar-size" disabled><i class="bi bi-chevron-right"></i></button>
+                            <button class="select-person-next-prev-page-btn bg-transparent border-0 rounded-3 font-small ripple-button inner-ripple-black squar-size"><i class="bi bi-chevron-left"></i></button>
                         </div>
                     </div>
                 </div>   
