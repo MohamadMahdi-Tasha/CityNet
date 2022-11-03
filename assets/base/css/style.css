@@ -491,6 +491,22 @@ input[type='radio']:before {
     pointer-events: none;
 }
 
+.coniform-modal-middle-holder {
+    height: 250px;
+    overflow: auto;
+}
+
+.primary-submit-button .ripple-button--inner-span {
+    background-color: rgba(221, 153, 51, .2);
+}
+
+.primary-submit-button {
+    border: none;
+    color: var(--primary-base);
+    background-color: rgb(255, 242, 227);
+    font-size: 13px;
+}
+
 .city-component-drop-down-button .ripple-button--inner-span,
 .my-drop-down > .ripple-button .ripple-button--inner-span,
 .ripple-button.flight-prev-next-day .ripple-button--inner-span,
@@ -635,7 +651,8 @@ input[type='radio']:before {
 
 .my-drop-down .my-drop-down::-webkit-scrollbar,
 .paragraph-holder::-webkit-scrollbar,
-.dropdown-component-ul::-webkit-scrollbar {
+.dropdown-component-ul::-webkit-scrollbar,
+.coniform-modal-middle-holder::-webkit-scrollbar {
     background-color: var(--grey-lighten1);
     width: 7px;
     border-radius: 50rem;
@@ -658,7 +675,8 @@ input[type='radio']:before {
 
 .my-drop-down .my-drop-down::-webkit-scrollbar-thumb,
 .paragraph-holder::-webkit-scrollbar-thumb,
-.dropdown-component-ul::-webkit-scrollbar-thumb {
+.dropdown-component-ul::-webkit-scrollbar-thumb,
+.coniform-modal-middle-holder::-webkit-scrollbar-thumb{
     background-color: var(--grey-darken1);
     border-radius: 50rem;
 }
