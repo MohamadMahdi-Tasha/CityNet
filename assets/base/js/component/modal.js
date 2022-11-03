@@ -62,7 +62,7 @@ class Modal extends HTMLElement {
                         <div class="coniform-modal-middle-holder">
                             <div id="flight-passengers-in-modal"></div>
                             <div id="flight-detail-in-modal">
-                                <flight-details type="details"></flight-details>
+                                <flight-details small icon-src="assets/base/img/img-logo.png" name="sepehran Airlines" systemic number-of-sits="9" flight-number="IS 4340" mode="economy" start-time="05:45" start-location="تهران (THR)" start-location-en="Tehran" start-location-fa="تهران" end-time="07:15" end-location="مشهد (MHD)" end-location-en="Mashhad" end-location-fa="مشهد" price="11,330,060" start-loaction-abbr="THR" end-loaction-abbr="MHD" route-duration-hour="1" route-duration-minute="5" start-date="2022-11-10" start-date-en="10 november" start-date-fa="پنجشنبه 19 ابان" end-date-en="10 november" end-date-fa="پنجشنبه 19 ابان" plane-model="IS 4340" type="details"></flight-details>
                             </div>
                             <div id="flight-rules-in-modal"></div>
                             <div id="flight-weight-in-modal"></div>
