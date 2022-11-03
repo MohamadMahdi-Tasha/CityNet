@@ -136,6 +136,47 @@ body {
     background-color: rgba(0, 0, 0, .2) !important;
 }
 
+tbody tr:last-of-type * {
+    border-bottom: none !important;
+}
+
+.my-paggination-holder > button[active] {
+    background-color: var(--primary-base);
+    color: white;
+}
+
+.my-paggination-holder > button {
+    box-shadow: 0 0 30px rgba(0,0,0,.2);
+    width: 30px;
+    height: 30px;
+    border-radius: .5rem;
+    font-size: 13px;
+    border: 1px solid;
+}
+.my-paggination-holder > button {
+    background-color: var(--primary-base);
+    color: white;
+    border-color: var(--primary-base);
+}
+
+.my-paggination-holder > button:not([active]):hover {
+    border-color: var(--primary-base);
+    color: var(--primary-base);
+}
+
+.my-paggination-holder > button:not([active]) {
+    background-color: white;
+    color: var(--grey-darken1);
+    border-color: white;
+}
+
+.my-paggination-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
 .paragraph-holder {
     height: 200px;
     overflow: auto;
