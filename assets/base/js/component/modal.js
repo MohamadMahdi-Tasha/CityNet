@@ -46,7 +46,7 @@ class Modal extends HTMLElement {
             `
         } else if (this.getAttribute('type') === 'buy-ticket-coniform') {
             this.innerHTML = `
-                <div data-opened id="buy-ticket-coniform-modal" class="my-modal-holder position-fixed inset-0 d-flex justify-content-center align-items-center">
+                <div id="buy-ticket-coniform-modal" class="my-modal-holder position-fixed inset-0 d-flex justify-content-center align-items-center">
                     <div data-target="buy-ticket-coniform-modal" class="toggler my-modal-bg position-fixed inset-0"></div>
                     <div class="my-modal bg-white shadow rounded-3 p-3 col-lg-9 col-12">
                         <button data-target="buy-ticket-coniform-modal" class="toggler my-modal-close-button d-lg-none d-flex justify-content-center align-items-center mb-3 bg-grey-lighten2 border-0 rounded-3"><i class="bi bi-x"></i></button>
@@ -76,6 +76,63 @@ class Modal extends HTMLElement {
                         <div class="d-flex flex-lg-row flex-column gap-3 justify-content-end border-top pt-3">
                             <button class="rounded-4 col-lg-2 col-12 primary-submit-button ripple-button">ویرایش مشخصات</button>
                             <button class="rounded-4 col-lg-2 col-12 submit-button ripple-button">تایید و ادامه</button>
+                        </div>
+                    </div>
+                </div>   
+            `
+        } else if (this.getAttribute('type') === 'select-person') {
+            this.innerHTML = `
+                <div data-opened id="buy-ticket-coniform-modal" class="my-modal-holder position-fixed inset-0 d-flex justify-content-center align-items-center">
+                    <div data-target="buy-ticket-coniform-modal" class="toggler my-modal-bg position-fixed inset-0"></div>
+                    <div class="my-modal bg-white shadow rounded-3 p-3 col-lg-9 col-12">
+                        <div>
+                            <h6>لیست مسافران سابق</h6>
+                            <button data-target="buy-ticket-coniform-modal" class="toggler my-modal-close-button d-flex justify-content-center align-items-center bg-grey-lighten2 border-0 rounded-3"><i class="bi bi-x"></i></button>
+                        </div>
+                        <intractive-component type="search"></intractive-component>
+                        <div>
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th scope="col">#</th>
+                                  <th scope="col">جنسیت</th>
+                                  <th scope="col">نام انگلیسی</th>
+                                  <th scope="col">نام خانوادگی انگلیسی</th>
+                                  <th scope="col">ملیت</th>
+                                  <th scope="col">شماره ملی</th>
+                                  <th scope="col">تاریخ تولد</th>
+                                  <th scope="col">شماره گذرنامه</th>
+                                  <th scope="col">تاریخ انقضای گذرنامه</th>
+                                  <th scope="col"> </th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th scope="row">1</th>
+                                  <td>male</td>
+                                  <td>HAMID</td>
+                                  <td>ALINEJAD</td>
+                                  <td>IQ</td>
+                                  <td>--</td>
+                                  <td>1995/04/24</td>
+                                  <td>--</td>
+                                  <td/>2027/07/07</td>
+                                  <td/><button>انتخاب</button></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                        </div>
+                        <div>
+                            <h6>
+                                ردیف
+                                <span>1</span>
+                                تا
+                                <span>15</span>
+                                از
+                                <span>308</span>
+                            </h6>
+                            <button><i class="bi bi-chevron-right"></i></button>
+                            <button><i class="bi bi-chevron-left"></i></button>
                         </div>
                     </div>
                 </div>   
