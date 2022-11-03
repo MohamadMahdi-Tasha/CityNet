@@ -669,7 +669,7 @@ input[type='radio']:before {
 }
 
 .passenger-class-select-button,
-.buy-ticket-drop-down-button.active {
+.buy-ticket-drop-down-button[active] {
     background-color: rgba(221, 153, 51, .2) !important;
     color: var(--primary-base);
 }

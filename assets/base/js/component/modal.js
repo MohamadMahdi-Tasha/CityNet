@@ -45,6 +45,34 @@ class Modal extends HTMLElement {
                     </div>
                 </div>   
             `
+        } else if (this.getAttribute('type') === 'buy-ticket-coniform') {
+            this.innerHTML = `
+                <div data-opened id="buy-ticket-coniform-modal" class="my-modal-holder position-fixed inset-0 d-flex justify-content-center align-items-center">
+                    <div data-target="buy-ticket-coniform-modal" class="toggler my-modal-bg position-fixed inset-0"></div>
+                    <div class="my-modal bg-white shadow rounded-3 p-3 col-lg-9 col-12">
+                        <button data-target="buy-ticket-coniform-modal" class="toggler my-modal-close-button d-lg-none d-flex justify-content-center align-items-center mb-3 bg-grey-lighten2 border-0 rounded-3"><i class="bi bi-x"></i></button>
+                        <h6>بررسی مشخصات خرید</h6>
+                        <h6>لطفا کلیه مشخصات زیر را بررسی و سپس تایید نمایید.</h6>
+                        <div class="intractive-buttons-with-border justify-content-start d-flex border-bottom mb-3">
+                            <div style="right: 0;" class="intractive-buttons-border ticket-buy"></div>
+                            <button active data-target="flight-passengers-in-modal" class="intractive-buttons-btn ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">مسافران</button>
+                            <button data-target="flight-detail-in-modal" class="intractive-buttons-btn ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">جزییات پرواز</button>
+                            <button data-target="flight-rules-in-modal" class="intractive-buttons-btn ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">قوانین</button>
+                            <button data-target="flight-weight-in-modal" class="intractive-buttons-btn ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">مقدار بار</button>
+                        </div>
+                        <div class="coniform-modal-middle-holder">
+                            <div id="flight-passengers-in-modal"></div>
+                            <div id="flight-detail-in-modal"></div>
+                            <div id="flight-rules-in-modal"></div>
+                            <div id="flight-weight-in-modal"></div>
+                        </div>
+                        <div>
+                            <button>ویرایش مشخصات</button>
+                            <button>تایید و ادامه</button>
+                        </div>
+                    </div>
+                </div>   
+            `
         }
     }
 }
