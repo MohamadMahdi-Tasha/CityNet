@@ -67,9 +67,9 @@ class Modal extends HTMLElement {
                             <div id="flight-rules-in-modal"></div>
                             <div id="flight-weight-in-modal"></div>
                         </div>
-                        <div class="d-flex gap-3 justify-content-end border-top pt-3">
-                            <button class="rounded-4 col-2 primary-submit-button ripple-button">ویرایش مشخصات</button>
-                            <button class="rounded-4 col-2 submit-button ripple-button">تایید و ادامه</button>
+                        <div class="d-flex flex-lg-row flex-column gap-3 justify-content-end border-top pt-3">
+                            <button class="rounded-4 col-lg-2 col-12 primary-submit-button ripple-button">ویرایش مشخصات</button>
+                            <button class="rounded-4 col-lg-2 col-12 submit-button ripple-button">تایید و ادامه</button>
                         </div>
                     </div>
                 </div>   

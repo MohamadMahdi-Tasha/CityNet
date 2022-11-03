@@ -505,6 +505,7 @@ input[type='radio']:before {
     color: var(--primary-base);
     background-color: rgb(255, 242, 227);
     font-size: 13px;
+    height: 50px;
 }
 
 .city-component-drop-down-button .ripple-button--inner-span,
