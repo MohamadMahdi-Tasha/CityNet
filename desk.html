@@ -37,25 +37,25 @@
         <header class="bg-white rounded-3 p-3">
             <h6>صندوق</h6>
             <h6 class="font-small mb-3">لطفا از صحت کاربر انتخواب شده اصمینان حاصل کنید و سپس تغییرات را اغمال کنید.</h6>
-            <table class="table mb-3">
-                <thead>
-                <tr>
-                    <th class="border-bottom-0 font-small text-grey-darken1" scope="col">نام کاربری</th>
-                    <th class="border-bottom-0 font-small text-grey-darken1" scope="col">نام کاربر</th>
-                    <th class="border-bottom-0 font-small text-grey-darken1" scope="col">موبایل</th>
-                    <th class="border-bottom-0 font-small text-grey-darken1" scope="col">ایمیل</th>
+            <table class="table mb-3 d-lg-table d-flex">
+                <thead class="col-lg-auto col-6">
+                <tr class="d-lg-table-row d-flex flex-column">
+                    <th class="border-bottom-0 font-small text-grey-darken1 text-center bb-lg" scope="col">نام کاربری</th>
+                    <th class="border-bottom-0 font-small text-grey-darken1 text-center bb-lg" scope="col">نام کاربر</th>
+                    <th class="border-bottom-0 font-small text-grey-darken1 text-center bb-lg" scope="col">موبایل</th>
+                    <th class="border-bottom-0 font-small text-grey-darken1 text-center bb-lg" scope="col">ایمیل</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <th class="border-bottom-0 font-small text-grey-darken3" scope="row">1</th>
-                    <td class="border-bottom-0 font-small text-grey-darken3">2</td>
-                    <td class="border-bottom-0 font-small text-grey-darken3">3</td>
-                    <td class="border-bottom-0 font-small text-grey-darken3">4</td>
+                <tbody class="col-lg-auto col-6">
+                <tr class="d-lg-table-row d-flex flex-column">
+                    <th class="border-bottom-0 font-small text-grey-darken3 text-center bb-lg" scope="row">1</th>
+                    <td class="border-bottom-0 font-small text-grey-darken3 text-center bb-lg">2</td>
+                    <td class="border-bottom-0 font-small text-grey-darken3 text-center bb-lg">3</td>
+                    <td class="border-bottom-0 font-small text-grey-darken3 text-center bb-lg">4</td>
                 </tr>
                 </tbody>
             </table>
-            <div class="bg-grey-lighten3 p-4 rounded-3 col-3">
+            <div class="bg-grey-lighten3 p-4 rounded-3 col-lg-3 col-12">
                 <h6 class="text-center font-small text-grey-darken1">موجودی کیف پول ریال</h6>
                 <h6 class="text-center font-small mb-0 text-info-darken1">
                     <span class="fw-bold">169,1432,3181</span>
@@ -65,54 +65,56 @@
         </header>
         <main>
             <div class="bg-white rounded-3 p-3 mb-3">
-                <div class="d-flex justify-content-between align-items-center mb-5">
+                <div class="d-flex flex-lg-row  flex-column justify-content-between align-items-lg-center align-items-start gap-3 mb-5">
                     <div>
                         <h6 class="font-small text-grey-darken4">تراکنش های حساب</h6>
                         <h6 class="font-small mb-0 text-grey-darken1">تراکنش های دریافت و پرداخت در زیر آمده است.</h6>
                     </div>
-                    <button class="ripple-button inner-ripple-black bg-grey-lighten3 rounded-3 p-2 border-0 col-1">Excel</button>
+                    <button class="ripple-button inner-ripple-black bg-grey-lighten3 rounded-3 p-lg-2 p-4 border-0 col-lg-1 col-12">Excel</button>
                 </div>
-                <div class="d-flex gap-3 mb-4">
-                    <intractive-component class="col-2" type="calender" placeholder="از تاریخ"></intractive-component>
-                    <intractive-component class="col-2" type="calender" placeholder="تا تاریخ"></intractive-component>
-                    <button class="submit-button rounded-4 ripple-button col-2">جستجو</button>
+                <div class="d-flex flex-lg-row flex-column gap-3 mb-4">
+                    <intractive-component class="col-lg-2 col-12" type="calender" placeholder="از تاریخ"></intractive-component>
+                    <intractive-component class="col-lg-2 col-12" type="calender" placeholder="تا تاریخ"></intractive-component>
+                    <button class="submit-button rounded-4 ripple-button col-lg-2 col-12">جستجو</button>
                 </div>
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th class="font-small text-grey-darken3 text-center" scope="col">#</th>
-                        <th class="font-small text-grey-darken3 text-center" scope="col">قبت کننده</th>
-                        <th class="font-small text-grey-darken3 text-center" scope="col">شماره قراداد</th>
-                        <th class="font-small text-grey-darken3 text-center" scope="col">ناریخ ثبت</th>
-                        <th class="font-small text-grey-darken3 text-center" scope="col">ناریخ عملبات</th>
-                        <th class="font-small text-grey-darken3 text-center" scope="col">ناریخ نوع حساب</th>
-                        <th class="font-small text-grey-darken3 text-center" scope="col">بدهکار</th>
-                        <th class="font-small text-grey-darken3 text-center" scope="col">بستانکار</th>
-                        <th class="font-small text-grey-darken3 text-center" scope="col">ارز</th>
-                        <th class="font-small text-grey-darken3 text-center" scope="col">برابری ارز</th>
-                        <th class="font-small text-grey-darken3 text-center" scope="col">شماره پیگیری</th>
-                        <th class="font-small text-grey-darken3 text-center" scope="col">شرح</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th class="font-small text-grey-darken3 text-center" scope="row">1</th>
-                        <td class="font-small text-grey-darken3 text-center">2</td>
-                        <td class="font-small text-grey-darken3 text-center">3</td>
-                        <td class="font-small text-grey-darken3 text-center">4</td>
-                        <td class="font-small text-grey-darken3 text-center">5</td>
-                        <td class="font-small text-grey-darken3 text-center">6</td>
-                        <td class="font-small text-grey-darken3 text-center">7</td>
-                        <td class="font-small text-grey-darken3 text-center">8</td>
-                        <td class="font-small text-grey-darken3 text-center">9</td>
-                        <td class="font-small text-grey-darken3 text-center">10</td>
-                        <td class="font-small text-grey-darken3 text-center">11</td>
-                        <td class="font-small text-grey-darken3 text-center">12</td>
-                    </tr>
-                    </tbody>
-                </table>
+                <div class="overflow-auto mb-3">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th class="font-small text-grey-darken3 text-center" scope="col">#</th>
+                            <th class="font-small text-grey-darken3 text-center" scope="col">قبت کننده</th>
+                            <th class="font-small text-grey-darken3 text-center" scope="col">شماره قراداد</th>
+                            <th class="font-small text-grey-darken3 text-center" scope="col">ناریخ ثبت</th>
+                            <th class="font-small text-grey-darken3 text-center" scope="col">ناریخ عملبات</th>
+                            <th class="font-small text-grey-darken3 text-center" scope="col">ناریخ نوع حساب</th>
+                            <th class="font-small text-grey-darken3 text-center" scope="col">بدهکار</th>
+                            <th class="font-small text-grey-darken3 text-center" scope="col">بستانکار</th>
+                            <th class="font-small text-grey-darken3 text-center" scope="col">ارز</th>
+                            <th class="font-small text-grey-darken3 text-center" scope="col">برابری ارز</th>
+                            <th class="font-small text-grey-darken3 text-center" scope="col">شماره پیگیری</th>
+                            <th class="font-small text-grey-darken3 text-center" scope="col">شرح</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th class="font-small text-grey-darken3 text-center" scope="row">1</th>
+                            <td class="font-small text-grey-darken3 text-center">2</td>
+                            <td class="font-small text-grey-darken3 text-center">3</td>
+                            <td class="font-small text-grey-darken3 text-center">4</td>
+                            <td class="font-small text-grey-darken3 text-center">5</td>
+                            <td class="font-small text-grey-darken3 text-center">6</td>
+                            <td class="font-small text-grey-darken3 text-center">7</td>
+                            <td class="font-small text-grey-darken3 text-center">8</td>
+                            <td class="font-small text-grey-darken3 text-center">9</td>
+                            <td class="font-small text-grey-darken3 text-center">10</td>
+                            <td class="font-small text-grey-darken3 text-center">11</td>
+                            <td class="font-small text-grey-darken3 text-center">12</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <div class="d-flex justify-content-end">
-                    <intractive-component class="col-3" type="dropdown" placeholder="نماایش در صفحه" drop-down-position="left">
+                    <intractive-component class="col-lg-3 col-12" type="dropdown" placeholder="نماایش در صفحه" drop-down-position="left">
                         <ul class="list-unstyled m-0 p-0 dropdown-component-ul">
                             <li><button class="ripple-button font-small text-grey-darken1 buy-ticket-drop-down-button col-12 bg-transparent border-0 p-2 text-end">10</button></li>
                             <li><button class="active ripple-button font-small text-grey-darken1 buy-ticket-drop-down-button col-12 bg-transparent border-0 p-2 text-end">20</button></li>
@@ -127,12 +129,12 @@
                 <button><i class="bi bi-chevron-right"></i></button>
                 <button active>1</button>
                 <button>2</button>
-                <button>3</button>
-                <button>4</button>
-                <button>5</button>
+                <button class="d-lg-block d-none">3</button>
+                <button class="d-lg-block d-none">4</button>
+                <button class="d-lg-block d-none">5</button>
                 <div>...</div>
-                <button>10</button>
-                <button>11</button>
+                <button class="d-lg-block d-none">10</button>
+                <button class="d-lg-block d-none">11</button>
                 <button>12</button>
                 <button>13</button>
                 <button><i class="bi bi-chevron-left"></i></button>
