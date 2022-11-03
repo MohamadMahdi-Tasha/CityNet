@@ -1,4 +1,3 @@
-// Custom Footer
 class Modal extends HTMLElement {
     constructor() {super();}
     connectedCallback() {
@@ -62,7 +61,9 @@ class Modal extends HTMLElement {
                         </div>
                         <div class="coniform-modal-middle-holder">
                             <div id="flight-passengers-in-modal"></div>
-                            <div id="flight-detail-in-modal"></div>
+                            <div id="flight-detail-in-modal">
+                                <flight-details type="details"></flight-details>
+                            </div>
                             <div id="flight-rules-in-modal"></div>
                             <div id="flight-weight-in-modal"></div>
                         </div>
@@ -77,5 +78,4 @@ class Modal extends HTMLElement {
     }
 }
 
-// Defining Our Custom Footer
 window.customElements.define('my-modal', Modal);

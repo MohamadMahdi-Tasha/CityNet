@@ -1,4 +1,3 @@
-// Custom Header
 class Header extends HTMLElement {
     constructor() {super();}
     connectedCallback() {
@@ -78,5 +77,4 @@ class Header extends HTMLElement {
     }
 }
 
-// Defining Our Custom Header
 window.customElements.define('custom-header', Header);

@@ -1,4 +1,3 @@
-// Interactive Components
 class intractiveComponent extends HTMLElement {
     constructor() {super();}
     connectedCallback() {
@@ -205,5 +204,4 @@ class intractiveComponent extends HTMLElement {
     }
 }
 
-// Defining Our Intractive Components
 window.customElements.define('intractive-component', intractiveComponent);

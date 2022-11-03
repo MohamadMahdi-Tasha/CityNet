@@ -1,4 +1,3 @@
-// Custom Footer
 class Footer extends HTMLElement {
     constructor() {super();}
     connectedCallback() {
@@ -34,5 +33,4 @@ class Footer extends HTMLElement {
     }
 }
 
-// Defining Our Custom Footer
 window.customElements.define('custom-footer', Footer);

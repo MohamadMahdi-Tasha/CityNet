@@ -21,5 +21,4 @@ class flight extends HTMLElement {
     }
 }
 
-// Defining Our Flight Component
 window.customElements.define('flight-component', flight);
