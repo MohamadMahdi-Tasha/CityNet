@@ -151,6 +151,37 @@ class flightDetails extends HTMLElement {
                     </div>
                 `
             }
+        } else if (this.getAttribute('type') === "weight") {
+            this.innerHTML = `
+                <div class="rounded-tr-tl-br overflow-hidden border">
+                                    <table class="table mb-0 d-lg-table d-flex">
+                                        <thead class="bg-grey-lighten3 col-lg-auto col-6">
+                                            <tr class="d-lg-table-row d-flex flex-column  col-lg-auto col-12">
+                                                <th class="font-small text-grey-darken3 text-center" scope="col">#</th>
+                                                <th class="font-small text-grey-darken3 text-center" scope="col">رده سنی</th>
+                                                <th class="font-small text-grey-darken3 text-center" scope="col">قیمت پایه</th>
+                                                <th class="font-small text-grey-darken3 text-center" scope="col">مالیات</th>
+                                                <th class="font-small text-grey-darken3 text-center" scope="col">تخفیف</th>
+                                                <th class="font-small text-grey-darken3 text-center" scope="col">تعداد</th>
+                                                <th class="font-small text-grey-darken3 text-center" scope="col">مبلغ هر نفر</th>
+                                                <th class="bb-lg-none font-small text-grey-darken3 text-center" scope="col">جمع</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="bg-white col-lg-auto col-6">
+                                            <tr class="d-lg-table-row d-flex flex-column  col-lg-auto col-12">
+                                                <td class="border-bottom-0 bb-lg font-small text-grey-darken3 text-center">1</td>
+                                                <td class="border-bottom-0 bb-lg font-small text-grey-darken3 text-center">بزرگسال</td>
+                                                <td class="border-bottom-0 bb-lg font-small text-grey-darken3 text-center">5,836,060</td>
+                                                <td class="border-bottom-0 bb-lg font-small text-grey-darken3 text-center">5,994,000</td>
+                                                <td class="border-bottom-0 bb-lg font-small text-grey-darken3 text-center">500,000</td>
+                                                <td class="border-bottom-0 bb-lg font-small text-grey-darken3 text-center">x1</td>
+                                                <td class="border-bottom-0 bb-lg font-small text-grey-darken3 text-center">${this.getAttribute('price')}</td>
+                                                <td class="border-bottom-0 font-small text-grey-darken3 text-center">${this.getAttribute('price')}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+            `
         }
     }
 }
