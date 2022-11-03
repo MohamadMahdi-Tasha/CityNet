@@ -182,6 +182,39 @@ class flightDetails extends HTMLElement {
                                     </table>
                             </div>
             `
+        } else if (this.getAttribute('type') === "rules") {
+            this.innerHTML = `
+                <div class="intractive-buttons-with-border d-flex">
+                            <div style="right: 0;" class="intractive-buttons-border ticket-component bg-black"></div>
+                            <button active class="intractive-buttons-btn ticket-component d-flex align-items-center justify-content-around text-secondary-lighten1 border-0 bg-transparent ripple-button ">
+                                TO
+                                <i class="bi bi-arrow-left"></i>
+                            </button>
+                        </div>
+                        <div class="bg-white border rounded-bottom  my-collapse-holder">
+                            <button class="my-collapse-toggler ripple-button bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3 text-grey-darken3">
+                                جریمه کنسلی و قوانین (بزرگسال)
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div class="my-collapse p-3">
+                                <div class="paragraph-holder">
+                                    <p class="font-small text-grey-darken3">CANCELLATION PENALTY</p>
+                                    <p class="font-small text-grey-darken3">TICKET IS NOT REFUNDABLE IN CASE OF CANCEL/REFUND.</p>
+                                    <ul>
+                                        <li>
+                                            <p class="font-small text-grey-darken3">CHANGE POLICY <br> TICKET IS CHANGABLE WITH PENALY IN CASE OF CHANGE DATE.</p>
+                                            <p class="font-small text-grey-darken3">NO SHOW POLICY <br> CHANGE/CANCELLATION NOT PERMITED.</p>
+                                            <p class="font-small text-grey-darken3">Not Refundable Service Charge: IRR 4,000,000 Per Passenger.</p>
+                                            <p class="font-small text-grey-darken3">Admin Fee For Change: IRR 4,000,000 Per Passenger.</p>
+                                            <p class="font-small text-grey-darken3">Refund process will take up to 7 Working Days.</p>
+                                            <p class="font-small text-grey-darken3">You can check covid19 limitations on below link:</p>
+                                            <a class="font-small text-primary-base" href="#">IATA Travel Centre</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+            `
         }
     }
 }
