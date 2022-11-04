@@ -82,7 +82,7 @@ class Modal extends HTMLElement {
             `
         } else if (this.getAttribute('type') === 'select-person') {
             this.innerHTML = `
-                <div data-opened id="select-person-modal" class="my-modal-holder position-fixed inset-0 d-flex justify-content-center align-items-center">
+                <div id="select-person-modal" class="my-modal-holder position-fixed inset-0 d-flex justify-content-center align-items-center">
                     <div data-target="select-person-modal" class="toggler my-modal-bg position-fixed inset-0"></div>
                     <div class="my-modal bg-white shadow rounded-3 p-3 col-lg-9 col-12">
                         <div class="d-flex align-items-start justify-content-between mb-3">
