@@ -154,29 +154,37 @@ class flightDetails extends HTMLElement {
         } else if (this.getAttribute('type') === "price") {
             this.innerHTML = `
                 <div class="rounded-tr-tl-br overflow-hidden border">
-                                    <table class="table mb-0 d-lg-table d-flex">
-                                        <thead class="bg-grey-lighten3 col-lg-auto col-6">
+                                    <div class="intractive-buttons-with-border d-flex bg-grey-lighten3">
+                            <div style="right: 0;" class="intractive-buttons-border ticket-component bg-black"></div>
+                            <button active class="intractive-buttons-btn ticket-component d-flex align-items-center justify-content-around text-secondary-lighten1 border-0 bg-transparent ripple-button ">
+                                <span>${this.getAttribute('start-loaction-abbr')}</span>
+                                <i class="bi bi-arrow-left"></i>
+                                <span>${this.getAttribute('end-loaction-abbr')}</span>
+                            </button>
+                    </div>
+                                    <table class="table mb-0 d-lg-table d-flex border-top bg-white">
+                                        <thead class="col-lg-auto col-6">
                                             <tr class="d-lg-table-row d-flex flex-column  col-lg-auto col-12">
-                                                <th class="font-small text-grey-darken3 text-center" scope="col">#</th>
-                                                <th class="font-small text-grey-darken3 text-center" scope="col">رده سنی</th>
-                                                <th class="font-small text-grey-darken3 text-center" scope="col">قیمت پایه</th>
-                                                <th class="font-small text-grey-darken3 text-center" scope="col">مالیات</th>
-                                                <th class="font-small text-grey-darken3 text-center" scope="col">تخفیف</th>
-                                                <th class="font-small text-grey-darken3 text-center" scope="col">تعداد</th>
-                                                <th class="font-small text-grey-darken3 text-center" scope="col">مبلغ هر نفر</th>
-                                                <th class="bb-lg-none font-small text-grey-darken3 text-center" scope="col">جمع</th>
+                                                <th class="font-small p-3 border-bottom-0 bb-lg text-grey-darken3 text-center" scope="col">#</th>
+                                                <th class="font-small p-3 border-bottom-0 bb-lg text-grey-darken3 text-center" scope="col">رده سنی</th>
+                                                <th class="font-small p-3 border-bottom-0 bb-lg text-grey-darken3 text-center" scope="col">قیمت پایه</th>
+                                                <th class="font-small p-3 border-bottom-0 bb-lg text-grey-darken3 text-center" scope="col">مالیات</th>
+                                                <th class="font-small p-3 border-bottom-0 bb-lg text-grey-darken3 text-center" scope="col">تخفیف</th>
+                                                <th class="font-small p-3 border-bottom-0 bb-lg text-grey-darken3 text-center" scope="col">تعداد</th>
+                                                <th class="font-small p-3 border-bottom-0 bb-lg text-grey-darken3 text-center" scope="col">مبلغ هر نفر</th>
+                                                <th class="bb-lg-none p-3 border-bottom-0 bb-lg font-small text-grey-darken3 text-center" scope="col">جمع</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="bg-white col-lg-auto col-6">
+                                        <tbody class="col-lg-auto col-6">
                                             <tr class="d-lg-table-row d-flex flex-column  col-lg-auto col-12">
-                                                <td class="border-bottom-0 bb-lg font-small text-grey-darken3 text-center">1</td>
-                                                <td class="border-bottom-0 bb-lg font-small text-grey-darken3 text-center">بزرگسال</td>
-                                                <td class="border-bottom-0 bb-lg font-small text-grey-darken3 text-center">5,836,060</td>
-                                                <td class="border-bottom-0 bb-lg font-small text-grey-darken3 text-center">5,994,000</td>
-                                                <td class="border-bottom-0 bb-lg font-small text-grey-darken3 text-center">500,000</td>
-                                                <td class="border-bottom-0 bb-lg font-small text-grey-darken3 text-center">x1</td>
-                                                <td class="border-bottom-0 bb-lg font-small text-grey-darken3 text-center">${this.getAttribute('price')}</td>
-                                                <td class="border-bottom-0 font-small text-grey-darken3 text-center">${this.getAttribute('price')}</td>
+                                                <td class="border-bottom-0 p-3 bb-lg font-small text-grey-darken3 text-center">1</td>
+                                                <td class="border-bottom-0 p-3 bb-lg font-small text-grey-darken3 text-center">بزرگسال</td>
+                                                <td class="border-bottom-0 p-3 bb-lg font-small text-grey-darken3 text-center">5,836,060</td>
+                                                <td class="border-bottom-0 p-3 bb-lg font-small text-grey-darken3 text-center">5,994,000</td>
+                                                <td class="border-bottom-0 p-3 bb-lg font-small text-grey-darken3 text-center">500,000</td>
+                                                <td class="border-bottom-0 p-3 bb-lg font-small text-grey-darken3 text-center">x1</td>
+                                                <td class="border-bottom-0 p-3 bb-lg font-small text-grey-darken3 text-center">${this.getAttribute('price')}</td>
+                                                <td class="border-bottom-0 p-3 font-small text-grey-darken3 text-center">${this.getAttribute('price')}</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -184,40 +192,42 @@ class flightDetails extends HTMLElement {
             `
         } else if (this.getAttribute('type') === "rules") {
             this.innerHTML = `
-                <div class="intractive-buttons-with-border d-flex bg-grey-lighten3 rounded-top">
+                <div class="rounded border overflow-hidden">
+                    <div class="intractive-buttons-with-border d-flex bg-grey-lighten3">
                             <div style="right: 0;" class="intractive-buttons-border ticket-component bg-black"></div>
                             <button active class="intractive-buttons-btn ticket-component d-flex align-items-center justify-content-around text-secondary-lighten1 border-0 bg-transparent ripple-button ">
                                 TO
                                 <i class="bi bi-arrow-left"></i>
                             </button>
-                        </div>
-                        <div class="bg-white border rounded-bottom  my-collapse-holder">
-                            <button class="my-collapse-toggler ripple-button bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3 text-grey-darken3">
-                                جریمه کنسلی و قوانین (بزرگسال)
-                                <i class="bi bi-chevron-down"></i>
-                            </button>
-                            <div class="my-collapse p-3">
-                                <div class="paragraph-holder">
-                                    <p class="font-small text-grey-darken3">CANCELLATION PENALTY</p>
-                                    <p class="font-small text-grey-darken3">TICKET IS NOT REFUNDABLE IN CASE OF CANCEL/REFUND.</p>
-                                    <ul>
-                                        <li>
-                                            <p class="font-small text-grey-darken3">CHANGE POLICY <br> TICKET IS CHANGABLE WITH PENALY IN CASE OF CHANGE DATE.</p>
-                                            <p class="font-small text-grey-darken3">NO SHOW POLICY <br> CHANGE/CANCELLATION NOT PERMITED.</p>
-                                            <p class="font-small text-grey-darken3">Not Refundable Service Charge: IRR 4,000,000 Per Passenger.</p>
-                                            <p class="font-small text-grey-darken3">Admin Fee For Change: IRR 4,000,000 Per Passenger.</p>
-                                            <p class="font-small text-grey-darken3">Refund process will take up to 7 Working Days.</p>
-                                            <p class="font-small text-grey-darken3">You can check covid19 limitations on below link:</p>
-                                            <a class="font-small text-primary-base" href="#">IATA Travel Centre</a>
-                                        </li>
-                                    </ul>
-                                </div>
+                    </div>
+                    <div class="bg-white border-top my-collapse-holder">
+                        <button class="my-collapse-toggler ripple-button bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3 text-grey-darken3">
+                            جریمه کنسلی و قوانین (بزرگسال)
+                            <i class="bi bi-chevron-down"></i>
+                        </button>
+                        <div class="my-collapse p-3">
+                            <div class="paragraph-holder">
+                                <p class="font-small text-grey-darken3">CANCELLATION PENALTY</p>
+                                <p class="font-small text-grey-darken3">TICKET IS NOT REFUNDABLE IN CASE OF CANCEL/REFUND.</p>
+                                <ul>
+                                    <li>
+                                        <p class="font-small text-grey-darken3">CHANGE POLICY <br> TICKET IS CHANGABLE WITH PENALY IN CASE OF CHANGE DATE.</p>
+                                        <p class="font-small text-grey-darken3">NO SHOW POLICY <br> CHANGE/CANCELLATION NOT PERMITED.</p>
+                                        <p class="font-small text-grey-darken3">Not Refundable Service Charge: IRR 4,000,000 Per Passenger.</p>
+                                        <p class="font-small text-grey-darken3">Admin Fee For Change: IRR 4,000,000 Per Passenger.</p>
+                                        <p class="font-small text-grey-darken3">Refund process will take up to 7 Working Days.</p>
+                                        <p class="font-small text-grey-darken3">You can check covid19 limitations on below link:</p>
+                                        <a class="font-small text-primary-base" href="#">IATA Travel Centre</a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
+                    </div>
+                </div> 
             `
         } else if (this.getAttribute('type') === "weight") {
             this.innerHTML = `
-               <div class="rounded overflow-hidden">
+               <div class="rounded border overflow-hidden">
                     <div class="intractive-buttons-with-border d-flex bg-grey-lighten3">
                             <div style="right: 0;" class="intractive-buttons-border ticket-component bg-black"></div>
                             <button active class="intractive-buttons-btn ticket-component d-flex align-items-center justify-content-around text-secondary-lighten1 border-0 bg-transparent ripple-button ">
@@ -226,21 +236,21 @@ class flightDetails extends HTMLElement {
                                 <span>${this.getAttribute('end-loaction-abbr')}</span>
                             </button>
                     </div>
-                    <table class="table border mb-0 bg-white">
-                      <thead>
-                        <tr>
-                          <th class="p-3 font-small text-grey-darken1" scope="col">شماره پرواز</th>
-                          <th class="p-3 font-small text-grey-darken1" scope="col">بار بزرگسال</th>
-                          <th class="p-3 font-small text-grey-darken1" scope="col">بار کودک</th>
-                          <th class="p-3 font-small text-grey-darken1" scope="col">بار نوزاد</th>
+                    <table class="table mb-0 bg-white border-top d-lg-table d-flex">
+                      <thead class="col-lg-auto col-6">
+                        <tr class="d-lg-table-row d-flex flex-column">
+                          <th class="p-3 border-bottom-0 text-lg-end text-center bb-lg font-small text-grey-darken1" scope="col">شماره پرواز</th>
+                          <th class="p-3 border-bottom-0 text-lg-end text-center bb-lg font-small text-grey-darken1" scope="col">بار بزرگسال</th>
+                          <th class="p-3 border-bottom-0 text-lg-end text-center bb-lg font-small text-grey-darken1" scope="col">بار کودک</th>
+                          <th class="p-3 border-bottom-0 text-lg-end text-center bb-lg font-small text-grey-darken1" scope="col">بار نوزاد</th>
                         </tr>
                       </thead>
-                      <tbody>
-                        <tr>
-                          <th class="p-3 font-small text-grey-darken1" scope="row">${this.getAttribute('flight-number')}</th>
-                          <td class="p-3 font-small text-grey-darken1">15KG</td>
-                          <td class="p-3 font-small text-grey-darken1">15KG</td>
-                          <td class="p-3 font-small text-grey-darken1">--</td>
+                      <tbody class="col-lg-auto col-6">
+                        <tr class="d-lg-table-row d-flex flex-column">
+                          <th class="p-3 border-bottom-0 text-lg-end text-center bb-lg font-small text-grey-darken1" scope="row">${this.getAttribute('flight-number')}</th>
+                          <td class="p-3 border-bottom-0 text-lg-end text-center bb-lg font-small text-grey-darken1">15KG</td>
+                          <td class="p-3 border-bottom-0 text-lg-end text-center bb-lg font-small text-grey-darken1">15KG</td>
+                          <td class="p-3 border-bottom-0 text-lg-end text-center bb-lg font-small text-grey-darken1">--</td>
                         </tr>
                       </tbody>
                     </table> 
