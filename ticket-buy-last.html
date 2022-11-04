@@ -34,11 +34,48 @@
 <!--First Section-->
 <section class="justify-content-center">
     <main class="container-xxl px-lg-5 py-lg-3 px-2 py-2">
-        <header class="mb-3">
-
-        </header>
-        <main class="d-flex flex-lg-row flex-column gap-3">
-
+        <header class="mb-3"><a href="ticket-buy.html"><button class="font-small border-0 rounded-3 px-3 py-2 text-grey-darken1 bg-grey-lighten2 ripple-button"><i class="bi ms-2 bi-arrow-right"></i>بازگشت به صفحه ورود اسامی</button></a></header>
+        <main class="d-flex flex-column gap-3">
+            <div>
+                <div>
+                    <i class="bi bi-card-list"></i>
+                    <div>
+                        <h6>مشخصات پرواز</h6>
+                        <h6>لطفا اصلاعات وارد شده را کنترل کرده و پس از اطمینان از درستی انها برای پرداهت اقدام نمایید.</h6>
+                    </div>
+                </div>
+                <h6>
+                    شماره قرارداد:
+                    <span>279836</span>
+                </h6>
+            </div>
+            <div data-opened class="my-collapse-holder bg-white rounded-3">
+                <button class="my-collapse-toggler ripple-button rounded-3 border-0 col-12 d-flex bg-info-darken2 text-white justify-content-between align-items-center font-small p-3">
+                    <span>
+                        <i class="bi bi-airplane rotate-270 ms-2"></i>
+                        پرواز
+                    </span>
+                    <span>
+                        <span>THR</span>
+                        <i class="bi bi-airplane rotate-270 ms-2"></i>
+                        <span>KIH</span>
+                        <i class="bi bi-chevron-down me-3"></i>
+                    </span>
+                </button>
+                <div class="my-collapse p-3 rounded-3 d-flex flex-column gap-3">
+                    <flight-details icon-src="assets/base/img/img-logo.png" name="sepehran Airlines" systemic number-of-sits="9" flight-number="IS 4340" mode="economy" start-time="05:45" start-location="تهران (THR)" start-location-en="Tehran" start-location-fa="تهران" end-time="07:15" end-location="مشهد (MHD)" end-location-en="Mashhad" end-location-fa="مشهد" price="11,330,060" start-loaction-abbr="THR" end-loaction-abbr="MHD" route-duration-hour="1" route-duration-minute="5" start-date="2022-11-10" start-date-en="10 november" start-date-fa="پنجشنبه 19 ابان" end-date-en="10 november" end-date-fa="پنجشنبه 19 ابان" plane-model="IS 4340" type="details"></flight-details>
+                    <div class="d-flex gap-3">
+                        <div>
+                            <h6><i class="bi bi-clipboard ms-2"></i>قوانین</h6>
+                            <flight-details type="rules"></flight-details>
+                        </div>
+                        <div>
+                            <h6><i class="bi bi-bag ms-2"></i>مقدار بار</h6>
+                            <flight-details type="weight"></flight-details>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
     </main>
 </section>

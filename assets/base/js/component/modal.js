@@ -46,7 +46,7 @@ class Modal extends HTMLElement {
             `
         } else if (this.getAttribute('type') === 'buy-ticket-coniform') {
             this.innerHTML = `
-                <div id="buy-ticket-coniform-modal" class="my-modal-holder position-fixed inset-0 d-flex justify-content-center align-items-center">
+                <div data-opened id="buy-ticket-coniform-modal" class="my-modal-holder position-fixed inset-0 d-flex justify-content-center align-items-center">
                     <div data-target="buy-ticket-coniform-modal" class="toggler my-modal-bg position-fixed inset-0"></div>
                     <div class="my-modal bg-white shadow rounded-3 p-3 col-lg-9 col-12">
                         <button data-target="buy-ticket-coniform-modal" class="toggler my-modal-close-button d-lg-none d-flex justify-content-center align-items-center mb-3 bg-grey-lighten2 border-0 rounded-3"><i class="bi bi-x"></i></button>
@@ -70,7 +70,7 @@ class Modal extends HTMLElement {
                                 <flight-details type="rules"></flight-details>
                             </div>
                             <div id="flight-weight-in-modal">
-                                <flight-details type="weight" price="11,350,000"></flight-details>
+                                <flight-details type="weight" flight-number="13456865" start-loaction-abbr="MHD" end-loaction-abbr="THR"></flight-details>
                             </div>
                         </div>
                         <div class="d-flex flex-lg-row flex-column gap-3 justify-content-end border-top pt-3">

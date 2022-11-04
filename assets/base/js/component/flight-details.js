@@ -151,7 +151,7 @@ class flightDetails extends HTMLElement {
                     </div>
                 `
             }
-        } else if (this.getAttribute('type') === "weight") {
+        } else if (this.getAttribute('type') === "price") {
             this.innerHTML = `
                 <div class="rounded-tr-tl-br overflow-hidden border">
                                     <table class="table mb-0 d-lg-table d-flex">
@@ -184,7 +184,7 @@ class flightDetails extends HTMLElement {
             `
         } else if (this.getAttribute('type') === "rules") {
             this.innerHTML = `
-                <div class="intractive-buttons-with-border d-flex">
+                <div class="intractive-buttons-with-border d-flex bg-grey-lighten3 rounded-top">
                             <div style="right: 0;" class="intractive-buttons-border ticket-component bg-black"></div>
                             <button active class="intractive-buttons-btn ticket-component d-flex align-items-center justify-content-around text-secondary-lighten1 border-0 bg-transparent ripple-button ">
                                 TO
@@ -215,8 +215,39 @@ class flightDetails extends HTMLElement {
                             </div>
                         </div>
             `
+        } else if (this.getAttribute('type') === "weight") {
+            this.innerHTML = `
+               <div class="rounded overflow-hidden">
+                    <div class="intractive-buttons-with-border d-flex bg-grey-lighten3">
+                            <div style="right: 0;" class="intractive-buttons-border ticket-component bg-black"></div>
+                            <button active class="intractive-buttons-btn ticket-component d-flex align-items-center justify-content-around text-secondary-lighten1 border-0 bg-transparent ripple-button ">
+                                <span>${this.getAttribute('start-loaction-abbr')}</span>
+                                <i class="bi bi-arrow-left"></i>
+                                <span>${this.getAttribute('end-loaction-abbr')}</span>
+                            </button>
+                    </div>
+                    <table class="table border">
+                      <thead>
+                        <tr>
+                          <th class="p-3 font-small text-grey-darken1" scope="col">شماره پرواز</th>
+                          <th class="p-3 font-small text-grey-darken1" scope="col">بار بزرگسال</th>
+                          <th class="p-3 font-small text-grey-darken1" scope="col">بار کودک</th>
+                          <th class="p-3 font-small text-grey-darken1" scope="col">بار نوزاد</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th class="p-3 font-small text-grey-darken1" scope="row">${this.getAttribute('flight-number')}</th>
+                          <td class="p-3 font-small text-grey-darken1">15KG</td>
+                          <td class="p-3 font-small text-grey-darken1">15KG</td>
+                          <td class="p-3 font-small text-grey-darken1">--</td>
+                        </tr>
+                      </tbody>
+                    </table> 
+               </div>
+            `
         }
     }
 }
 
-window.customElements.define('flight-details', flightDetails);
+window.customElements.define(   'flight-details', flightDetails);
