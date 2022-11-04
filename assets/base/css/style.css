@@ -492,6 +492,10 @@ input[type='radio']:before {
     pointer-events: none;
 }
 
+.ticket-buy-last-rules > div:first-of-type{
+    height: 155px;
+}
+
 .coniform-modal-middle-holder,
 .select-person-table-holder{
     height: 250px;
