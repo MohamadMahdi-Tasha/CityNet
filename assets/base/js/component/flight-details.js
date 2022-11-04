@@ -226,7 +226,7 @@ class flightDetails extends HTMLElement {
                                 <span>${this.getAttribute('end-loaction-abbr')}</span>
                             </button>
                     </div>
-                    <table class="table border">
+                    <table class="table border mb-0 bg-white">
                       <thead>
                         <tr>
                           <th class="p-3 font-small text-grey-darken1" scope="col">شماره پرواز</th>
