@@ -778,12 +778,12 @@ input[type='number'] {
 }
 
 /*Realated To Js*/
-.my-drop-down[data-opened] {
+.my-drop-down-holder[data-opened] .my-drop-down {
     opacity: 1;
     transform: translateY(0);
 }
 
-.my-drop-down:not([data-opened]) {
+.my-drop-down-holder:not([data-opened]) .my-drop-down {
     opacity: 0;
     transform: translateY(-10px);
 }

@@ -155,9 +155,10 @@
     const dropDownsTogglers  = document.querySelectorAll('.my-drop-down-toggler');
 
     dropDownsTogglers.forEach(toggler => {
-        toggler.addEventListener('click', () => {
-            toggler.nextElementSibling.toggleAttribute('data-opened')
-        })
+        const buttonsInClickedDropDown = toggler.nextElementSibling.querySelectorAll('button:not(.my-drop-down-toggler)');
+
+        toggler.addEventListener('click', () => toggler.parentElement.toggleAttribute('data-opened'))
+        buttonsInClickedDropDown.forEach(button => button.addEventListener('click', () => button.parentElement.parentElement.removeAttribute('data-opened')))
     })
 </script>
 </body>
