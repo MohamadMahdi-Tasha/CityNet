@@ -32,7 +32,7 @@
     <main class="container-xxl px-lg-5 py-lg-3 px-2 py-2">
         <header class="mb-3"><a href="ticket-buy.html"><button class="font-small border-0 rounded-3 px-3 py-2 text-grey-darken1 bg-grey-lighten2 ripple-button"><i class="bi ms-2 bi-arrow-right"></i>بازگشت به صفحه ورود اسامی</button></a></header>
         <main class="d-flex flex-column gap-3">
-            <div class="d-flex align-items-start justify-content-between">
+            <div class="d-flex flex-lg-row flex-column gap-3 align-items-start justify-content-between">
                 <div class="d-flex align-items-center">
                     <i class="bi bi-card-list ms-2"></i>
                     <div>
@@ -40,7 +40,7 @@
                         <h6 class="font-small mb-0 text-grey-darken1">لطفا اصلاعات وارد شده را کنترل کرده و پس از اطمینان از درستی انها برای پرداهت اقدام نمایید.</h6>
                     </div>
                 </div>
-                <h6 class="bg-white rounded-3 px-3 py-2 font-small mb-0">
+                <h6 class="bg-white rounded-3 px-3 py-lg-2 py-3 font-small mb-0 col-lg-auto col-12 text-lg-end text-center">
                     شماره قرارداد:
                     <span>279836</span>
                 </h6>
@@ -60,19 +60,19 @@
                 </button>
                 <div class="my-collapse p-3 rounded-3 d-flex flex-column gap-4">
                     <flight-details icon-src="assets/base/img/img-logo.png" name="sepehran Airlines" systemic number-of-sits="9" flight-number="IS 4340" mode="economy" start-time="05:45" start-location="تهران (THR)" start-location-en="Tehran" start-location-fa="تهران" end-time="07:15" end-location="مشهد (MHD)" end-location-en="Mashhad" end-location-fa="مشهد" price="11,330,060" start-loaction-abbr="THR" end-loaction-abbr="MHD" route-duration-hour="1" route-duration-minute="5" start-date="2022-11-10" start-date-en="10 november" start-date-fa="پنجشنبه 19 ابان" end-date-en="10 november" end-date-fa="پنجشنبه 19 ابان" plane-model="IS 4340" type="details"></flight-details>
-                    <div class="row gx-3 gy-3">
-                        <div class="col-6">
+                    <div class="row flex-lg-row flex-column gx-3 gy-3">
+                        <div class="col-lg-6 col-12">
                             <h6 class="font-small mb-3"><i class="bi bi-clipboard ms-2"></i>قوانین</h6>
                             <flight-details class="ticket-buy-last-rules" type="rules"></flight-details>
                         </div>
-                        <div class="col-6">
+                        <div class="col-lg-6 col-12">
                             <h6 class="font-small mb-3"><i class="bi bi-bag ms-2"></i>مقدار بار</h6>
                             <flight-details flight-number="123123" type="weight"></flight-details>
                         </div>
                     </div>
                     <div>
                         <h6 class="font-small mb-3"><i class="bi bi-person ms-2"></i>مسافران</h6>
-                        <div class="rounded overflow-hidden border">
+                        <div class="rounded border overflow-auto bg-green-base">
                             <table class="table mb-0">
                                 <thead class="bg-grey-lighten3">
                                 <tr>
@@ -110,33 +110,33 @@
                             <span class="my-little-spans succses no-circle px-3">ریال</span>
                         </h6>
                         <div class="rounded-tr-tl-br border overflow-hidden">
-                            <table class="table mb-0">
-                                <thead class="bg-grey-lighten3">
-                                <tr>
-                                    <th class="border-bottom-0 bb-lg font-small p-3" scope="col">#</th>
-                                    <th class="border-bottom-0 bb-lg font-small p-3" scope="col">رده سنی</th>
-                                    <th class="border-bottom-0 bb-lg font-small p-3" scope="col">قیمت پایه</th>
-                                    <th class="border-bottom-0 bb-lg font-small p-3" scope="col">مالیات</th>
-                                    <th class="border-bottom-0 bb-lg font-small p-3" scope="col">تخفیف</th>
-                                    <th class="border-bottom-0 bb-lg font-small p-3" scope="col">تعداد</th>
-                                    <th class="border-bottom-0 bb-lg font-small p-3" scope="col">جمع</th>
+                            <table class="table mb-0 d-lg-table d-flex">
+                                <thead class="bg-grey-lighten3 col-lg-auto col-6">
+                                <tr class="d-lg-table-row d-flex flex-column">
+                                    <th class="border-bottom-0 bb-lg font-small p-3 col-lg-auto col-12 text-lg-end text-center" scope="col">#</th>
+                                    <th class="border-bottom-0 bb-lg font-small p-3 col-lg-auto col-12 text-lg-end text-center" scope="col">رده سنی</th>
+                                    <th class="border-bottom-0 bb-lg font-small p-3 col-lg-auto col-12 text-lg-end text-center" scope="col">قیمت پایه</th>
+                                    <th class="border-bottom-0 bb-lg font-small p-3 col-lg-auto col-12 text-lg-end text-center" scope="col">مالیات</th>
+                                    <th class="border-bottom-0 bb-lg font-small p-3 col-lg-auto col-12 text-lg-end text-center" scope="col">تخفیف</th>
+                                    <th class="border-bottom-0 bb-lg font-small p-3 col-lg-auto col-12 text-lg-end text-center" scope="col">تعداد</th>
+                                    <th class="border-bottom-0 bb-lg font-small p-3 col-lg-auto col-12 text-lg-end text-center" scope="col">جمع</th>
                                 </tr>
                                 </thead>
-                                <tbody class="bg-white">
-                                <tr>
-                                    <th class="border-bottom-0 bb-lg font-small p-3" scope="row">#</th>
-                                    <td class="border-bottom-0 bb-lg font-small p-3">رده سنی</td>
-                                    <td class="border-bottom-0 bb-lg font-small p-3">قیمت پایه</td>
-                                    <td class="border-bottom-0 bb-lg font-small p-3">مالیات</td>
-                                    <td class="border-bottom-0 bb-lg font-small p-3">تخفیف</td>
-                                    <td class="border-bottom-0 bb-lg font-small p-3">تعداد</td>
-                                    <td class="border-bottom-0 bb-lg font-small p-3">جمع</td>
+                                <tbody class="bg-white col-lg-auto col-6">
+                                <tr class="d-lg-table-row d-flex flex-column">
+                                    <th class="border-bottom-0 bb-lg font-small p-3 col-lg-auto col-12 text-lg-end text-center" scope="row">#</th>
+                                    <td class="border-bottom-0 bb-lg font-small p-3 col-lg-auto col-12 text-lg-end text-center">رده سنی</td>
+                                    <td class="border-bottom-0 bb-lg font-small p-3 col-lg-auto col-12 text-lg-end text-center">قیمت پایه</td>
+                                    <td class="border-bottom-0 bb-lg font-small p-3 col-lg-auto col-12 text-lg-end text-center">مالیات</td>
+                                    <td class="border-bottom-0 bb-lg font-small p-3 col-lg-auto col-12 text-lg-end text-center">تخفیف</td>
+                                    <td class="border-bottom-0 bb-lg font-small p-3 col-lg-auto col-12 text-lg-end text-center">تعداد</td>
+                                    <td class="border-bottom-0 bb-lg font-small p-3 col-lg-auto col-12 text-lg-end text-center">جمع</td>
                                 </tr>
                                 </tbody>
                             </table>
                         </div>
                         <div class="d-flex justify-content-end">
-                            <div class="bg-green-light d-flex justify-content-between align-items-center rounded-bottom p-2 col-2">
+                            <div class="bg-green-light d-flex justify-content-between align-items-center rounded-bottom p-2 col-lg-2 col-8">
                                 <h6 class="font-small text-green-base mb-0">جمع</h6>
                                 <h6 class="font-small text-green-base mb-0">
                                     <span>12,795,000</span>
@@ -180,7 +180,7 @@
                     </table>
                 </div>
                 <div class="d-flex justify-content-end">
-                    <div class="bg-green-base d-flex justify-content-between shadow align-items-center rounded-bottom p-2 col-2">
+                    <div class="bg-green-base d-flex justify-content-between shadow align-items-center rounded-bottom p-2 col-lg-2 col-8">
                         <h6 class="font-small text-white mb-0">جمع</h6>
                         <h6 class="font-small text-white mb-0">
                             <span>12,795,000</span>
@@ -219,7 +219,7 @@
                         <h6 class="font-small mb-0 text-grey-darken1">استفاده همزمان از کیف پول و اعتبار در پرداخت امکان پذیر است.</h6>
                     </div>
                 </div>
-                <div class="d-flex gap-3">
+                <div class="d-flex  flex-lg-row flex-column gap-3">
                     <div class="col shadow bg-white rounded-3">
                         <div class="bg-grey-lighten3 p-3 d-flex justify-content-between align-items-center">
                             <h6 class="mb-0">
@@ -285,14 +285,14 @@
                     </div>
                 </div>
             </div>
-            <div class="d-flex justify-content-end">
+            <div class="d-flex flex-lg-row flex-column justify-content-end">
                 <div>
                     <input type="checkbox" name="accept-rules" id="accept-rules">
                     <label for="accept-rules" class="font-small text-grey-darken1">
                         <a class="text-primary-base" href="#">قوانین و مقررات</a>
                         و مفاد قرار داد را مطالعه کرده و تایید میکنم.
                     </label>
-                    <button class="submit-button px-5 ripple-button rounded-3 me-3" disabled>ثبت نهایی و پرداخت</button>
+                    <button class="submit-button px-5 col-lg-auto col-12 ripple-button rounded-3 me-lg-3 me-0 mt-lg-0 mt-3" disabled>ثبت نهایی و پرداخت</button>
                 </div>
             </div>
         </main>
