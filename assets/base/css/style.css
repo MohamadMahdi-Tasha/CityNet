@@ -777,6 +777,18 @@ input[type='number'] {
     background-color: var(--grey-lighten1);
 }
 
+/*Realated To Js*/
+.my-drop-down[data-opened] {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.my-drop-down:not([data-opened]) {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+
 /*Animations*/
 @keyframes radio-animation {
     from {

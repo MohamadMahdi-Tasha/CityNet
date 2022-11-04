@@ -25,10 +25,6 @@
     <title>صندوق - سیتی‌نت</title>
 </head>
 <body dir="rtl">
-<!--Login In Modal-->
-<my-modal type="log-in"></my-modal>
-<!--Mobile Nav-->
-<mobile-nav></mobile-nav>
 <!--Top Side Header-->
 <custom-header not-home></custom-header>
 <!--First Section-->
@@ -155,5 +151,14 @@
 <script src="assets/base/js/component/footer.js"></script>
 <script src="assets/base/js/component/modal.js"></script>
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
+<script>
+    const dropDownsTogglers  = document.querySelectorAll('.my-drop-down-toggler');
+
+    dropDownsTogglers.forEach(toggler => {
+        toggler.addEventListener('click', () => {
+            toggler.nextElementSibling.toggleAttribute('data-opened')
+        })
+    })
+</script>
 </body>
 </html>
