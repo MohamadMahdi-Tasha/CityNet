@@ -152,13 +152,66 @@
 <script src="assets/base/js/component/modal.js"></script>
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
 <script>
+    // Use Attrs When Setting Data
+
+    // Variables
     const dropDownsTogglers  = document.querySelectorAll('.my-drop-down-toggler');
+    const currencyChangerButtons = document.querySelectorAll('.currency-changer');
+    const htmlElement = document.querySelector('html');
+    const currencyHeaderPersian = document.getElementById('currency-header-per');
+    const currencyHeaderEnglish = document.getElementById('currency-header-en');
 
+    // Functions
+    function persianNameByEnAbbrevation(englishAbrevation) {
+        let stringToReturn;
+
+        switch (englishAbrevation) {
+            case "IRR":stringToReturn = "ریال";break;
+            case "USD":stringToReturn = "دلار";break;
+            case "EUR":stringToReturn = "یورو";break;
+            case "TRY":stringToReturn = "لیر ترکیه";break;
+            case "IQD":stringToReturn = "دینار عراق";break;
+        }
+
+        return stringToReturn;
+    }
+
+    // Event Listeners
     dropDownsTogglers.forEach(toggler => {
-        const buttonsInClickedDropDown = toggler.nextElementSibling.querySelectorAll('button:not(.my-drop-down-toggler)');
+        const dropDown = toggler.nextElementSibling;
+        const dropDownHolderOfToggler = toggler.parentElement;
+        const buttonsInClickedDropDown = dropDown.querySelectorAll('button:not(.my-drop-down-toggler)');
 
-        toggler.addEventListener('click', () => toggler.parentElement.toggleAttribute('data-opened'))
-        buttonsInClickedDropDown.forEach(button => button.addEventListener('click', () => button.parentElement.parentElement.removeAttribute('data-opened')))
+        toggler.addEventListener('click', () => dropDownHolderOfToggler.toggleAttribute('data-opened'))
+        buttonsInClickedDropDown.forEach(button => button.addEventListener('click', () => {
+            const dropDownHolderOfButton = button.parentElement.parentElement;
+            dropDownHolderOfButton.removeAttribute('data-opened')
+        }))
+    })
+
+    currencyChangerButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const valueToBeSetByButton = button.getAttribute('data-item-currency');
+
+            htmlElement.setAttribute('data-currency', valueToBeSetByButton);
+            localStorage.setItem('selected-currency', valueToBeSetByButton);
+
+            currencyHeaderPersian.textContent = persianNameByEnAbbrevation(valueToBeSetByButton);
+            currencyHeaderEnglish.textContent = valueToBeSetByButton;
+        })
+    })
+
+    window.addEventListener('load', () => {
+        const currencyToSelectInLocalStoarge = localStorage.getItem('selected-currency');
+
+        if (currencyToSelectInLocalStoarge !== null) {
+            currencyHeaderPersian.textContent = persianNameByEnAbbrevation(currencyToSelectInLocalStoarge);
+            currencyHeaderEnglish.textContent = currencyToSelectInLocalStoarge;
+        } else {
+            localStorage.setItem('selected-currency', 'IRR');
+            currencyHeaderPersian.textContent = persianNameByEnAbbrevation(currencyToSelectInLocalStoarge);
+            currencyHeaderEnglish.textContent = currencyToSelectInLocalStoarge;
+        }
     })
 </script>
 </body>

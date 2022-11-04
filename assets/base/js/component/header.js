@@ -22,7 +22,7 @@ class Header extends HTMLElement {
                             <button class="my-drop-down-toggler d-flex ripple-button bg-transparent border-0 rounded-1 px-lg-4 py-lg-2 px-2 py-1 font-small text-white fw-bold">
                                 <span class="d-lg-block d-none" id="currency-header-per"></span>
                                 <span class="d-lg-block d-none me-2">(</span>
-                                <span class="d-lg-block d-none" id="currency-header-eng"></span>
+                                <span class="d-lg-block d-none" id="currency-header-en"></span>
                                 <span class="d-lg-block d-none">)</span>
                                 <i class="d-lg-block d-none bi bi-chevron-down me-2"></i>
                                 <i class="d-lg-none d-block bi bi-flag"></i>
