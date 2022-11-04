@@ -127,6 +127,10 @@ tbody tr:last-of-type * {
     overflow: auto;
 }
 
+.intractive-buttons-btn.ticket-component {
+    width: 150px;
+}
+
 .table-bottom-item-toggler {
     height: 60px;
 }
@@ -355,8 +359,18 @@ input[type='radio']:before {
     pointer-events: none;
 }
 
+.ticket-buy-last-rules .paragraph-holder {
+    height: auto;
+}
+
 .ticket-buy-last-rules > div:first-of-type{
-    height: 155px;
+    height: 180px;
+    overflow: scroll;
+}
+
+.ticket-buy-last-rules .my-collapse-holder {
+    height: 110px;
+    overflow: auto;
 }
 
 .coniform-modal-middle-holder,
@@ -559,7 +573,8 @@ input[type='radio']:before {
 .my-drop-down .my-drop-down::-webkit-scrollbar,
 .paragraph-holder::-webkit-scrollbar,
 .dropdown-component-ul::-webkit-scrollbar,
-.coniform-modal-middle-holder::-webkit-scrollbar{
+.coniform-modal-middle-holder::-webkit-scrollbar,
+.ticket-buy-last-rules .my-collapse-holder::-webkit-scrollbar {
     background-color: var(--grey-lighten1);
     width: 7px;
     border-radius: 50rem;
@@ -567,6 +582,55 @@ input[type='radio']:before {
 
 .ticket-component-details-accardion-main-side {
     height: 150px !important;
+}
+
+.my-checkbox[disabled] {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.my-checkbox {
+    position: relative;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+}
+
+.my-checkbox::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 10px;
+    transform: translateY(-50%) translateX(100%);
+    transition: .3s;
+    border-radius: 50rem;
+    top: 50%;
+    right: 0;
+    z-index: 1;
+    background-color: var(--grey-lighten1);
+}
+
+.my-checkbox::before {
+    content: '';
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    top: 50%;
+    right: 0;
+    transition: .3s;
+    transform: translateY(-50%) translateX(50%);
+    border-radius: 100%;
+    z-index: 2;
+}
+
+.my-checkbox:checked::before {
+    background-color: var(--grey-darken3);
+    transform: translateY(-50%) translateX(220%);
+}
+
+.my-checkbox:not(:checked)::before {
+    background-color: var(--grey-darken1);
+    transform: translateY(-50%) translateX(50%);
 }
 
 .rounded-tr-tl-br {
@@ -583,7 +647,8 @@ input[type='radio']:before {
 .my-drop-down .my-drop-down::-webkit-scrollbar-thumb,
 .paragraph-holder::-webkit-scrollbar-thumb,
 .dropdown-component-ul::-webkit-scrollbar-thumb,
-.coniform-modal-middle-holder::-webkit-scrollbar-thumb {
+.coniform-modal-middle-holder::-webkit-scrollbar-thumb,
+.ticket-buy-last-rules .my-collapse-holder::-webkit-scrollbar-thumb{
     background-color: var(--grey-darken1);
     border-radius: 50rem;
 }
