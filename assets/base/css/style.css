@@ -788,6 +788,9 @@ input[type='number'] {
     transform: translateY(-10px);
 }
 
+.my-modal-holder {
+    animation: radio-animation .5s;
+}
 
 /*Animations*/
 @keyframes radio-animation {
