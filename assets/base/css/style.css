@@ -589,6 +589,12 @@ input[type='radio']:before {
     opacity: 0.8;
 }
 
+.submit-button[disabled] {
+    pointer-events: none;
+    background-color: var(--grey-lighten2);
+    color: var(--grey-darken2);
+}
+
 .my-checkbox {
     position: relative;
     width: 0;
