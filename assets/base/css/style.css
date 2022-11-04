@@ -78,14 +78,6 @@ body {
     width: 150px;
 }
 
-.buy-ticket-left-side-inner-tabs:not([active]) {
-    display: none;
-}
-
-.buy-ticket-left-side-inner-tabs[active] {
-    display: block;
-}
-
 .intractive-buttons-btn.ticket-buy {
     height: 50px;
 }
@@ -95,40 +87,8 @@ body {
     width: 100px;
 }
 
-.intractive-buttons-btn.ticket-component[active],
-.intractive-buttons-btn.ticket-component:not([active]) {
-    width: 150px;
-    height: 50px;
-    color: black;
-}
-
 .ticket-component-bottom-accardion-toggler .bi-chevron-down::before, .ticket-component-bottom-accardion-toggler {
     transition: .3s
-}
-
-.ticket-component-bottom-accardion-toggler[data-opened] .bi-chevron-down::before {
-    transform: rotate(180deg)
-}
-
-.ticket-component-bottom-accardion-toggler[data-opened] {
-    color: var(--info-darken1-base) !important;
-}
-
-.ticket-component-bottom-accardion {
-    transition: .3s;
-}
-
-.ticket-component-bottom-accardion:not([data-opened]) {
-    display: none;
-}
-
-
-.ticket-component-bottom-accardion[data-opened] {
-    display: block;
-}
-
-.intractive-buttons-btn[active] {
-    color: var(--primary-base);
 }
 
 .intractive-buttons-btn.ticket-component.ripple-button .ripple-button--inner-span,
@@ -138,11 +98,6 @@ body {
 
 tbody tr:last-of-type * {
     border-bottom: none !important;
-}
-
-.my-paggination-holder > button[active] {
-    background-color: var(--primary-base);
-    color: white;
 }
 
 .my-paggination-holder > button {
@@ -160,17 +115,6 @@ tbody tr:last-of-type * {
     border-color: var(--primary-base);
 }
 
-.my-paggination-holder > button:not([active]):hover {
-    border-color: var(--primary-base);
-    color: var(--primary-base);
-}
-
-.my-paggination-holder > button:not([active]) {
-    background-color: white;
-    color: var(--grey-darken1);
-    border-color: white;
-}
-
 .my-paggination-holder {
     display: flex;
     justify-content: center;
@@ -186,25 +130,12 @@ tbody tr:last-of-type * {
 .table-bottom-item-toggler {
     height: 60px;
 }
-
-.table-bottom-item-holder:not([data-opened]) {
-    height: 60px;
-}
-
-.table-bottom-item-holder[data-opened] {
-    height: auto;
-}
-
 .intractive-buttons-btn.ripple-button:not(.ticket-component) .ripple-button--inner-span {
     background-color: rgba(221, 153, 51, .2);
 }
 
 .my-drop-down-toggler .bi-chevron-down:before {
     transition: .3s;
-}
-
-.my-drop-down-holder[data-opened] .my-drop-down-toggler .bi-chevron-down:before {
-    transform: rotate(180deg)
 }
 
 .intractive-buttons-with-border {
@@ -235,11 +166,6 @@ input[type='radio']:checked:before {
     overflow-x: hidden;
 }
 
-#mobile-nav:not([data-opened]) ~ #mobile-nav-bg {
-    opacity: 0;
-    pointer-events: none
-}
-
 .plus-minus-button {
     width: 30px;
     height: 30px;
@@ -253,32 +179,6 @@ input[type='radio']:checked:before {
 
 .my-modal-bg, .my-modal {
     transition: .3s;
-}
-
-.my-modal-holder:not([data-opened]) > .my-modal-bg {
-    opacity: 0;
-}
-
-.my-modal-holder[data-opened] {
-    pointer-events: visible !important;
-}
-
-.my-modal-holder:not([data-opened]) {
-    pointer-events: none !important;
-}
-
-.my-modal-holder[data-opened] > .my-modal-bg {
-    opacity: 1;
-}
-
-.my-modal-holder:not([data-opened]) > .my-modal {
-    opacity: 0;
-    transform: scale(0);
-}
-
-.my-modal-holder[data-opened] > .my-modal {
-    opacity: 1;
-    transform: scale(1);
 }
 
 .right-0 {
@@ -323,15 +223,6 @@ input[type='radio'] {
 
 .my-collapse-holder {
     transition: .3s;
-}
-
-.my-collapse-holder[data-opened] {
-    height: auto;
-}
-
-.my-collapse-holder:not([data-opened]) {
-    height: 50px;
-    overflow: hidden;
 }
 
 .loader-holder {
@@ -397,34 +288,6 @@ input[type='radio']:before {
     background-color: white;
     border-radius: 100%;
     outline: 1px solid var(--darkGrey-lighten3);
-}
-
-#mobile-nav[data-opened] ~ #mobile-nav-bg {
-    opacity: 1;
-    pointer-events: visible
-}
-
-#mobile-nav:not([data-opened]) {
-    left: -100%;
-    opacity: 0;
-}
-
-#mobile-nav[data-opened] {
-    left: 0;
-    opacity: 1;
-}
-
-.my-drop-down-holder:not([data-opened]) > .my-drop-down {
-    opacity: 0;
-    transform: translateY(-10px);
-    pointer-events: none;
-}
-
-.my-drop-down-holder[data-opened] > .my-drop-down {
-    opacity: 1;
-    transform: translateY(0px);
-    pointer-events: visible;
-    z-index: 2000;
 }
 
 .header-links::after {
@@ -730,8 +593,7 @@ input[type='radio']:before {
     overflow: hidden;
 }
 
-.passenger-class-select-button,
-.buy-ticket-drop-down-button[active] {
+.passenger-class-select-button {
     background-color: rgba(221, 153, 51, .2) !important;
     color: var(--primary-base);
 }
@@ -781,11 +643,6 @@ input[type="checkbox"] {
     top: 100%;
 }
 
-.flight-filter-button:not([active]) {
-    background-color: transparent;
-    color: var(--grey-darken3);
-}
-
 .divider-vertical {
     border-right: 1px solid var(--grey-lighten2);
     height: 20px;
@@ -825,23 +682,6 @@ i.rotate-270::before {
 
 .ticket-component-bottom-accardion-toggler > i.bi-chevron-down {
     transition: .3s;
-}
-
-.ticket-component-bottom-accardion-toggler[active] > i.bi-chevron-down::before {
-    transform: rotate(180deg)
-}
-
-.ticket-component-bottom-accardion-toggler:not([active]) {
-    color: var(--grey-darken3);
-}
-
-.ticket-component-bottom-accardion-toggler[active] {
-    color: var(--info-darken1-base);
-}
-
-.flight-filter-button[active] {
-    background-color: var(--grey-lighten3);
-    color: var(--info-darken1-base);
 }
 
 input[type='number']::-webkit-inner-spin-button,
