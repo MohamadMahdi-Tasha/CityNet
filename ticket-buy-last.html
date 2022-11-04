@@ -25,10 +25,6 @@
     <title>خرید نهایی - سیتی‌نت</title>
 </head>
 <body dir="rtl">
-<!--Login In Modal-->
-<my-modal type="log-in"></my-modal>
-<!--Mobile Nav-->
-<mobile-nav></mobile-nav>
 <!--Top Side Header-->
 <custom-header not-home></custom-header>
 <!--First Section-->
@@ -74,8 +70,210 @@
                             <flight-details flight-number="123123" type="weight"></flight-details>
                         </div>
                     </div>
-                    <h6><i class="bi bi-person"></i>مسافران</h6>
-
+                    <div>
+                        <h6><i class="bi bi-person"></i>مسافران</h6>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">نام و نام خوانوادگی</th>
+                                <th scope="col">رده سنی</th>
+                                <th scope="col">جنسیت</th>
+                                <th scope="col">ملیت</th>
+                                <th scope="col">شماره ملی</th>
+                                <th scope="col">تاریخ تولد</th>
+                                <th scope="col">شماره گذرنامه</th>
+                                <th scope="col">تاریخ انقضای گذرنامه</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">#</th>
+                                <td>نام و نام خوانوادگی</td>
+                                <td>رده سنی</td>
+                                <td>جنسیت</td>
+                                <td>ملیت</td>
+                                <td>شماره ملی</td>
+                                <td>تاریخ تولد</td>
+                                <td>شماره گذرنامه</td>
+                                <td>تاریخ انقضای گذرنامه</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <h6>
+                            <i class="bi bi-currency-dollar"></i>
+                            جزییات قیمت
+                            <span>ریال</span>
+                        </h6>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">رده سنی</th>
+                                <th scope="col">قیمت پایه</th>
+                                <th scope="col">مالیات</th>
+                                <th scope="col">تخفیف</th>
+                                <th scope="col">تعداد</th>
+                                <th scope="col">جمع</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">#</th>
+                                <td>رده سنی</td>
+                                <td>قیمت پایه</td>
+                                <td>مالیات</td>
+                                <td>تخفیف</td>
+                                <td>تعداد</td>
+                                <td>جمع</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div>
+                            <div>
+                                <h6>جمع</h6>
+                                <h6>
+                                    <span>12,795,000</span>
+                                    ریال
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h6><i class="bi bi-currency-dollar"></i>جزییات قیمت<span>ریال</span></h6>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">شرح</th>
+                        <th scope="col">جمع</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>
+                            <span>پرواز</span>
+                            <span>وب سرویس</span>
+                            <span>Tehran</span>
+                            To
+                            <span>Kish Island</span>
+                        </td>
+                        <td>
+                            <span>12,795,000</span>
+                            ریال
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div>
+                    <div>
+                        <h6>جمع</h6>
+                        <h6>
+                            <span>12,795,000</span>
+                            ریال
+                        </h6>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h6><i class="bi bi-envelope"></i>مشخصات تماس<span>فقط اطلاع رسانی</span></h6>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">ایمیل</th>
+                        <th scope="col">موبایل</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">--</th>
+                        <td>0098-0000000000</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <div>
+                    <i class="bi bi-wallet2"></i>
+                    <div>
+                        <h6>شیوه پرداخت</h6>
+                        <h6>استفاده همزمان از کیف پول و اعتبار در پرداخت امکان پذیر است.</h6>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div>
+                            <h6>
+                                کیف پول
+                                <i class="bi bi-info-circle"></i>
+                            </h6>
+                            <input type="checkbox" name="checkbox-1" id="checkbox-1" class="my-checkbox">
+                        </div>
+                        <div>
+                            <h6>موجودی</h6>
+                            <div>
+                                <h6><span>169,132,318</span>ریال</h6>
+                                <button><i class="bi bi-arrow-clockwise"></i></button>
+                            </div>
+                        </div>
+                        <div>
+                            <h6>کسر از کیف پول</h6>
+                            <h6>--</h6>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <h6>
+                                اعتبار
+                                <i class="bi bi-info-circle"></i>
+                            </h6>
+                            <input disabled type="checkbox" name="checkbox-1" id="checkbox-1" class="my-checkbox">
+                        </div>
+                        <div>
+                            <h6>موجودی</h6>
+                            <div>
+                                <h6><span>0</span>ریال</h6>
+                                <button><i class="bi bi-arrow-clockwise"></i></button>
+                            </div>
+                        </div>
+                        <div>
+                            <h6>کسر از کیف پول</h6>
+                            <h6>--</h6>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <h6>
+                                انتخواب درگاه پرداخت اینترنتی
+                                <i class="bi bi-info-circle"></i>
+                            </h6>
+                        </div>
+                        <intractive-component type="dropdown" placeholder="درگاه پرداخت">
+                            <ul class="list-unstyled m-0 p-0 dropdown-component-ul">
+                                <li><button class="active ripple-button font-small text-grey-darken1 buy-ticket-drop-down-button col-12 bg-transparent border-0 p-2 text-end">درگاه بانک ملت</button></li>
+                            </ul>
+                        </intractive-component>
+                        <div>
+                            <h6>پرداخت از درگاه</h6>
+                            <h6>
+                                <span>12,795,000</span>
+                                ریال
+                                <i class="bi bi-gem"></i>
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <input type="checkbox" name="accept-rules" id="accept-rules">
+                    <label for="accept-rules"><a href="#">قوانین و مقررات</a>و مفاد قرار داد را مطالعه کرده و تایید میکنم.</label>
+                    <button>ثبت نهایی و پرداخت</button>
                 </div>
             </div>
         </main>
