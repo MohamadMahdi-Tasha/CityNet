@@ -94,8 +94,6 @@
     pointer-events: none;
 }
 
-.pdp .pdp-picker .pdp-select-year li:not(.disabled):hover, .pdp .pdp-picker :is(.pdp-select-year, .pdp-select-month) li:not(.disabled, .selected):hover {border-color: var(--primary-base) !important;color: var(--primary-base);}
-.pdp-select-year li.selected {background: var(--primary-base) !important;}
 @keyframes date-picker-animation {
     from {
         opacity: 0;
