@@ -159,7 +159,9 @@
 <script>
     // Variables
     const calenderIntractiveComponent = document.querySelectorAll('.intractive-component.calender');
+    const excelButtons = document.querySelectorAll('.excel-btn');
 
+    // Component.js
     calenderIntractiveComponent.forEach(component => {
         const contentOfClickedComponent = component.nextElementSibling;
         const inputOfClickedComponentInItsContents = contentOfClickedComponent.querySelector('.pdp-input');
@@ -167,6 +169,17 @@
         component.addEventListener('click', () => inputOfClickedComponentInItsContents.focus())
         inputOfClickedComponentInItsContents.addEventListener('focus', () => component.classList.add('focused'))
         inputOfClickedComponentInItsContents.addEventListener('blur', () => component.classList.remove('focused'))
+    })
+
+    // Public.js
+    excelButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const excelTarget = button.getAttribute('data-exel-target');
+            const excelTargetElement = document.getElementById(excelTarget);
+            const excel = XLSX.utils.table_to_book(excelTargetElement);
+
+            XLSX.writeFile(excel, `${excelTarget}-CityNet.xlsx`);
+        })
     })
 </script>
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
