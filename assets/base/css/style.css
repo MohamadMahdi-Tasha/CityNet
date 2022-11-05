@@ -134,6 +134,7 @@ tbody tr:last-of-type * {
 .table-bottom-item-toggler {
     height: 60px;
 }
+
 .intractive-buttons-btn.ripple-button:not(.ticket-component) .ripple-button--inner-span {
     background-color: rgba(221, 153, 51, .2);
 }
@@ -363,7 +364,7 @@ input[type='radio']:before {
     height: auto;
 }
 
-.ticket-buy-last-rules > div:first-of-type{
+.ticket-buy-last-rules > div:first-of-type {
     height: 180px;
     overflow: scroll;
 }
@@ -374,7 +375,7 @@ input[type='radio']:before {
 }
 
 .coniform-modal-middle-holder,
-.select-person-table-holder{
+.select-person-table-holder {
     height: 250px;
     overflow: auto;
     padding-left: 1rem;
@@ -487,7 +488,7 @@ input[type='radio']:before {
     vertical-align: middle;
 }
 
-.table.no-border th ,.table.no-border td{
+.table.no-border th, .table.no-border td {
     border-bottom: none;
 }
 
@@ -654,7 +655,7 @@ input[type='radio']:before {
 .paragraph-holder::-webkit-scrollbar-thumb,
 .dropdown-component-ul::-webkit-scrollbar-thumb,
 .coniform-modal-middle-holder::-webkit-scrollbar-thumb,
-.ticket-buy-last-rules .my-collapse-holder::-webkit-scrollbar-thumb{
+.ticket-buy-last-rules .my-collapse-holder::-webkit-scrollbar-thumb {
     background-color: var(--grey-darken1);
     border-radius: 50rem;
 }
@@ -778,19 +779,15 @@ input[type='number'] {
 }
 
 /*Realated To Js*/
-.my-drop-down-holder[data-opened] .my-drop-down {
-    opacity: 1;
-    transform: translateY(0);
-}
+.my-drop-down-holder[data-opened] .my-drop-down {opacity: 1;transform: translateY(0);}
+.my-drop-down-holder:not([data-opened]) .my-drop-down {opacity: 0;transform: translateY(-10px);}
 
-.my-drop-down-holder:not([data-opened]) .my-drop-down {
-    opacity: 0;
-    transform: translateY(-10px);
-}
-
-.my-modal-holder {
-    animation: radio-animation .5s;
-}
+.my-modal-holder[data-opened] {pointer-events: visible;}
+.my-modal-holder:not([data-opened]) {pointer-events: none;}
+.my-modal-holder[data-opened] > .my-modal-bg {opacity: 1;}
+.my-modal-holder:not([data-opened]) > .my-modal-bg {opacity: 0;}
+.my-modal-holder[data-opened] > .my-modal {scale: 1;opacity: 1;}
+.my-modal-holder:not([data-opened]) > .my-modal {scale: 0;opacity: 0;}
 
 /*Animations*/
 @keyframes radio-animation {

@@ -27,6 +27,10 @@
 <body dir="rtl">
 <!--Top Side Header-->
 <custom-header not-home></custom-header>
+
+<!--Modals-->
+<my-modal type="log-in"></my-modal>
+
 <!--First Section-->
 <section class="justify-content-center">
     <main class="container-xxl px-lg-5 py-lg-3 px-2 py-2 d-flex flex-column gap-3">
@@ -149,8 +153,8 @@
 <script src="assets/base/js/component/mobile-nav.js"></script>
 <script src="assets/base/js/component/intractive-component.js"></script>
 <script src="assets/base/js/component/footer.js"></script>
-<script src="assets/base/js/component/modal.js"></script>
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
+<script src="assets/base/js/component/modal.js"></script>
 <script>
     // Use Attrs When Setting Data
 
@@ -160,8 +164,7 @@
     const htmlElement = document.querySelector('html');
     const currencyHeaderPersian = document.getElementById('currency-header-per');
     const currencyHeaderEnglish = document.getElementById('currency-header-en');
-    const modalTogglers = document.querySelectorAll('.modal-toggler');
-    const bodyElement = document.body;
+    const togglers = document.querySelectorAll('.toggler');
 
     // Functions
     function persianNameByEnAbbrevation(englishAbrevation) {
@@ -191,6 +194,7 @@
             currencyHeaderEnglish.textContent = currencyToSelectInLocalStoarge;
         }
     })
+
     dropDownsTogglers.forEach(toggler => {
         const dropDown = toggler.nextElementSibling;
         const dropDownHolderOfToggler = toggler.parentElement;
@@ -213,14 +217,12 @@
             currencyHeaderEnglish.textContent = valueToBeSetByButton;
         })
     })
-    modalTogglers.forEach(toggler => {
-        toggler.addEventListener('click', () => {
-            const typeOfModalToShow = toggler.getAttribute('data-modal-type');
-            const newModal = document.createElement('my-modal');
+    togglers.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const targetOfClickedToggle = toggle.getAttribute('data-target');
+            const targetElementOfClickedToggle = document.getElementById(targetOfClickedToggle);
 
-            newModal.setAttribute('type', typeOfModalToShow)
-            bodyElement.append(newModal)
-            bodyElement.classList.add('overflow-hidden')
+            targetElementOfClickedToggle.toggleAttribute('data-opened')
         })
     })
 </script>

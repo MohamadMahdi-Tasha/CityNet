@@ -66,7 +66,7 @@ class Header extends HTMLElement {
                             </div>
                         </div>
                         <button class="d-lg-block d-none ripple-button bg-transparent border-0 rounded-1 px-4 py-2 font-small text-white fw-bold">پیگیری خرید</button>
-                        <button data-modal-type="log-in" class="modal-toggler ripple-button bg-transparent border rounded-1 px-lg-4 py-lg-2 px-2 py-1 font-small text-white fw-bold">
+                        <button data-target="login-modal" class="toggler ripple-button bg-transparent border rounded-1 px-lg-4 py-lg-2 px-2 py-1 font-small text-white fw-bold">
                             <span class="d-lg-block d-none">ورود/ثبت نام</span>
                             <i class="bi bi-person d-lg-none d-block"></i>
                         </button>
