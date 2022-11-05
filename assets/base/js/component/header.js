@@ -3,7 +3,7 @@ class Header extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
             <!--Top Side Header-->
-            <header ${(this.getAttribute('not-home') !== null) ? "class='bg-darkest-blue'" : ''}>
+            <header ${(this.getAttribute('not-home') !== null) ? "class='bg-darkest-blue my-header'" : 'my-header'}>
                 <div class="d-flex flex-lg-row flex-row-reverse justify-content-between px-lg-5 py-lg-3 px-2 py-2 align-items-center container-xxl">
                     <!--Right Side-->
                     <div class="d-flex gap-3 align-items-center">

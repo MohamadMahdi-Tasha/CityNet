@@ -306,6 +306,7 @@ input[type='radio']:before {
     position: absolute;
     top: 100%;
     right: 0;
+    z-index: 2;
     background-color: white;
     border-radius: 10px;
     overflow: hidden;
@@ -326,6 +327,7 @@ input[type='radio']:before {
     backdrop-filter: blur(10px);
     z-index: 1;
     transition: .4s;
+    top: 0;
 }
 
 .home-first-section {
@@ -783,6 +785,11 @@ input[type='number'] {
 .my-modal-holder[data-opened] > .my-modal {scale: 1;opacity: 1;}
 .my-modal-holder:not([data-opened]) > .my-modal {scale: 0;opacity: 0;}
 .intractive-component.focused .my-placeholder, .intractive-component.will-not-close .my-placeholder {top: 0;right: 10px;}
+#mobile-nav[data-opened] {left: 0;}
+#mobile-nav[data-opened] ~ #mobile-nav-bg {opacity: 1 !important;pointer-events: visible}
+#mobile-nav:not([data-opened]) ~ #mobile-nav-bg {opacity: 0 !important;pointer-events: none}
+#mobile-nav:not([data-opened]) {left: -100%;}
+
 /*Animations*/
 @keyframes radio-animation {
     from {
