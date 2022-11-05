@@ -160,6 +160,7 @@
     // Variables
     const calenderIntractiveComponent = document.querySelectorAll('.intractive-component.calender');
     const excelButtons = document.querySelectorAll('.excel-btn');
+    const dropDownButtonsInIntractiveComponents = document.querySelectorAll('.intractive-component.dropdown ~ .my-drop-down button');
 
     // Component.js
     calenderIntractiveComponent.forEach(component => {
@@ -169,6 +170,18 @@
         component.addEventListener('click', () => inputOfClickedComponentInItsContents.focus())
         inputOfClickedComponentInItsContents.addEventListener('focus', () => component.classList.add('focused'))
         inputOfClickedComponentInItsContents.addEventListener('blur', () => component.classList.remove('focused'))
+    })
+    dropDownButtonsInIntractiveComponents.forEach(button => {
+        button.addEventListener('click', () => {
+            const parentOfGrandParentOfClickedButton = button.parentElement.parentElement.parentElement;
+            const dropDownComponent = parentOfGrandParentOfClickedButton.previousElementSibling;
+            const dropDownParentOfClickedItem = parentOfGrandParentOfClickedButton.parentElement;
+            const valueOfDropDownComponentToShow = dropDownComponent.querySelector('h6');
+
+            dropDownComponent.setAttribute('data-value', button.textContent)
+            valueOfDropDownComponentToShow.textContent = button.textContent;
+            dropDownParentOfClickedItem.removeAttribute('data-opened');
+        })
     })
 
     // Public.js

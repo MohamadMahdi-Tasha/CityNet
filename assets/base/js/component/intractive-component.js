@@ -182,7 +182,7 @@ class intractiveComponent extends HTMLElement {
         } else if (this.getAttribute('type') === "dropdown") {
             this.innerHTML = `
                 <div class="my-drop-down-holder">
-                    <button data-rounded="${this.getAttribute('rounded')}" data-selected-dropDown="${this.firstElementChild.firstElementChild.textContent}" class="my-drop-down-toggler will-not-close col-12 dropdown-component intractive-component bg-white text-end p-3 position-relative">
+                    <button data-value="${this.querySelector('.dropdown-component-ul button.active').textContent}" data-rounded="${this.getAttribute('rounded')}" data-selected-dropDown="${this.firstElementChild.firstElementChild.textContent}" class="my-drop-down-toggler will-not-close col-12 dropdown intractive-component bg-white text-end p-3 position-relative">
                         <span class="my-placeholder position-absolute font-small">${this.getAttribute('placeholder')}</span>
                         <h6 class="font-small">${this.querySelector('.dropdown-component-ul button.active').textContent}</h6>
                         <i class="bi bi-chevron-down icon-left"></i>
@@ -194,7 +194,7 @@ class intractiveComponent extends HTMLElement {
             `
         } else if (this.getAttribute('type') === "search") {
             this.innerHTML = `
-                <div data-rounded="${this.getAttribute('rounded')}" class="d-flex col-12 input intractive-component bg-white text-end p-3 position-relative">
+                <div data-rounded="${this.getAttribute('rounded')}" class="d-flex col-12 search intractive-component bg-white text-end p-3 position-relative">
                     <span class="my-placeholder position-absolute font-small">متن جستجو</span>
                     <i class="bi bi-search position-absolute icon-left"></i>
                     <input class="col-11 bg-transparent h-100 border-0 font-small" type="text" required>
