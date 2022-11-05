@@ -70,7 +70,7 @@
                         <h6 class="font-small text-grey-darken4">تراکنش های حساب</h6>
                         <h6 class="font-small mb-0 text-grey-darken1">تراکنش های دریافت و پرداخت در زیر آمده است.</h6>
                     </div>
-                    <button class="ripple-button inner-ripple-black bg-grey-lighten3 rounded-3 p-lg-2 p-4 border-0 col-lg-1 col-12">Excel</button>
+                    <button data-exel-target="desk-page-table" class="ripple-button excel-btn inner-ripple-black bg-grey-lighten3 rounded-3 p-lg-2 p-4 border-0 col-lg-1 col-12">Excel</button>
                 </div>
                 <div class="d-flex flex-lg-row flex-column gap-3 mb-4">
                     <intractive-component class="col-lg-2 col-12" type="calender" placeholder="از تاریخ"></intractive-component>
@@ -78,7 +78,7 @@
                     <button class="submit-button rounded-4 ripple-button col-lg-2 col-12">جستجو</button>
                 </div>
                 <div class="overflow-auto mb-3">
-                    <table class="table">
+                    <table id="desk-page-table" class="table">
                         <thead>
                         <tr>
                             <th class="font-small text-grey-darken3 text-center" scope="col">#</th>
@@ -148,12 +148,12 @@
 <noscript>لطفا جاوااسکریپت مرورگر خود را فعال کنید</noscript>
 <script src="assets/plugins/bootstrap/bootstrap.bundle.min.js"></script>
 <script src="assets/plugins/vue/vue.js"></script>
+<script src="assets/plugins/sheet-js/xlsx.core.min.js"></script>
 <script src="assets/plugins/date-picker/datepicker.min.js"></script>
 <script src="assets/base/js/component/header.js"></script>
 <script src="assets/base/js/component/mobile-nav.js"></script>
 <script src="assets/base/js/component/intractive-component.js"></script>
 <script src="assets/base/js/component/footer.js"></script>
-<script src="assets/plugins/ripple-button/ripple-Button.js"></script>
 <script src="assets/base/js/component/modal.js"></script>
 <script src="assets/base/js/public-scripts.js"></script>
 <script>
@@ -169,5 +169,6 @@
         inputOfClickedComponentInItsContents.addEventListener('blur', () => component.classList.remove('focused'))
     })
 </script>
+<script src="assets/plugins/ripple-button/ripple-Button.js"></script>
 </body>
 </html>
