@@ -69,7 +69,7 @@ class intractiveComponent extends HTMLElement {
                             const calenderComponent = this.$el.previousElementSibling;
 
                             calenderComponent.classList.add('will-not-close')
-                            calenderComponent.setAttribute('data-date', date.toString())
+                            calenderComponent.setAttribute('data-date', new Date(date.toString()))
                             newH6.className = 'font-small text-black-lighten3 selected-date mb-0';
                             newH6.textContent = date.toString();
 

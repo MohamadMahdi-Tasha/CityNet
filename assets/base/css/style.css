@@ -176,12 +176,6 @@ input[type='radio']:checked:before {
     height: 30px;
 }
 
-.intractive-component.focused .my-placeholder,
-.intractive-component.will-not-close .my-placeholder {
-    top: 0;
-    right: 10px;
-}
-
 .my-modal-bg, .my-modal {
     transition: .3s;
 }
@@ -779,8 +773,8 @@ input[type='number'] {
 }
 
 /*Realated To Js*/
-.my-drop-down-holder[data-opened] .my-drop-down {opacity: 1;transform: translateY(0);}
-.my-drop-down-holder:not([data-opened]) .my-drop-down {opacity: 0;transform: translateY(-10px);}
+.my-drop-down-holder[data-opened] .my-drop-down {opacity: 1;transform: translateY(0);pointer-events: visible}
+.my-drop-down-holder:not([data-opened]) .my-drop-down {opacity: 0;transform: translateY(-10px);pointer-events: none}
 
 .my-modal-holder[data-opened] {pointer-events: visible;}
 .my-modal-holder:not([data-opened]) {pointer-events: none;}
@@ -788,7 +782,7 @@ input[type='number'] {
 .my-modal-holder:not([data-opened]) > .my-modal-bg {opacity: 0;}
 .my-modal-holder[data-opened] > .my-modal {scale: 1;opacity: 1;}
 .my-modal-holder:not([data-opened]) > .my-modal {scale: 0;opacity: 0;}
-
+.intractive-component.focused .my-placeholder, .intractive-component.will-not-close .my-placeholder {top: 0;right: 10px;}
 /*Animations*/
 @keyframes radio-animation {
     from {

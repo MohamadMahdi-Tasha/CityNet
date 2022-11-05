@@ -156,5 +156,18 @@
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
 <script src="assets/base/js/component/modal.js"></script>
 <script src="assets/base/js/public-scripts.js"></script>
+<script>
+    // Variables
+    const calenderIntractiveComponent = document.querySelectorAll('.intractive-component.calender');
+
+    calenderIntractiveComponent.forEach(component => {
+        const contentOfClickedComponent = component.nextElementSibling;
+        const inputOfClickedComponentInItsContents = contentOfClickedComponent.querySelector('.pdp-input');
+
+        component.addEventListener('click', () => inputOfClickedComponentInItsContents.focus())
+        inputOfClickedComponentInItsContents.addEventListener('focus', () => component.classList.add('focused'))
+        inputOfClickedComponentInItsContents.addEventListener('blur', () => component.classList.remove('focused'))
+    })
+</script>
 </body>
 </html>
