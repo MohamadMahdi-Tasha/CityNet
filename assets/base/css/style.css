@@ -100,7 +100,7 @@ tbody tr:last-of-type * {
     border-bottom: none !important;
 }
 
-.my-paggination-holder > button {
+.my-paggination > button {
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     width: 30px;
     height: 30px;
@@ -109,19 +109,19 @@ tbody tr:last-of-type * {
     border: 1px solid;
 }
 
-.my-paggination-holder > button[active] {
+.my-paggination > button.active {
     background-color: var(--primary-base);
     color: white;
     border-color: var(--primary-base);
 }
 
-.my-paggination-holder > button:not([active]) {
+.my-paggination > button:not(.active) {
     background-color: white;
     color: var(--primary-base);
     border-color: var(--grey-lighten1);
 }
 
-.my-paggination-holder {
+.my-paggination {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -780,7 +780,7 @@ input[type='number'] {
     background-color: var(--grey-lighten1);
 }
 
-.my-paggination-holder > button:not([active]):hover {border-color: var(--primary-base);}
+.my-paggination > button:not([active]):hover {border-color: var(--primary-base);}
 
 /*Realated To Js*/
 .my-drop-down-holder[data-opened] .my-drop-down {opacity: 1;transform: translateY(0);pointer-events: visible}
