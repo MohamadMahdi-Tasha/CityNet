@@ -283,13 +283,9 @@
 <script src="assets/base/js/component/modal.js"></script>
 <script src="assets/base/js/public-scripts.js"></script>
 <script>
-    // Variables
-    const calenderIntractiveComponent = document.querySelectorAll('.intractive-component.calender');
-    const excelButtons = document.querySelectorAll('.excel-btn');
-    const dropDownButtonsInIntractiveComponents = document.querySelectorAll('.intractive-component.dropdown ~ .my-drop-down button');
-    const buttonsInPagginations = document.querySelectorAll('.my-paggination > button:not(.next-prev-pagination-btn)');
-
     // Component.js
+    const calenderIntractiveComponent = document.querySelectorAll('.intractive-component.calender');
+    const dropDownButtonsInIntractiveComponents = document.querySelectorAll('.intractive-component.dropdown ~ .my-drop-down button');
     calenderIntractiveComponent.forEach(component => {
         const contentOfClickedComponent = component.nextElementSibling;
         const inputOfClickedComponentInItsContents = contentOfClickedComponent.querySelector('.pdp-input');
@@ -311,24 +307,6 @@
         })
     })
 
-    // Public.js
-    excelButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const excelTarget = button.getAttribute('data-exel-target');
-            const excelTargetElement = document.getElementById(excelTarget);
-            const excel = XLSX.utils.table_to_book(excelTargetElement);
-
-            XLSX.writeFile(excel, `${excelTarget}-CityNet.xlsx`);
-        })
-    })
-    buttonsInPagginations.forEach(item => {
-        item.addEventListener('click', () => {
-            const activeButtonsInPagginations = document.querySelector('.my-paggination > button.active');
-
-            activeButtonsInPagginations.classList.remove('active');
-            item.classList.add('active')
-        })
-    })
 </script>
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
 </body>

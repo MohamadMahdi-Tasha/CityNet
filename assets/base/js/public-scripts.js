@@ -6,6 +6,8 @@ const htmlElement = document.querySelector('html');
 const currencyHeaderPersian = document.getElementById('currency-header-per');
 const currencyHeaderEnglish = document.getElementById('currency-header-en');
 const togglers = document.querySelectorAll('.toggler');
+const excelButtons = document.querySelectorAll('.excel-btn');
+const buttonsInPagginations = document.querySelectorAll('.my-paggination > button:not(.next-prev-pagination-btn)');
 
 // Functions
 // A Function That Takes English Abbreviation Of Currency And Returns Persian Name Of It
@@ -73,5 +75,27 @@ togglers.forEach(toggle => {
         const targetElementOfClickedToggle = document.getElementById(targetOfClickedToggle);
 
         targetElementOfClickedToggle.toggleAttribute('data-opened')
+    })
+})
+
+// Adding Event Listener On Each Excel Button That Gets Target Element Of Clicked Element And Requests To Download Excel (.xlsx) File Of Target
+excelButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const excelTarget = button.getAttribute('data-exel-target');
+        const excelTargetElement = document.getElementById(excelTarget);
+        const excel = XLSX.utils.table_to_book(excelTargetElement);
+
+        XLSX.writeFile(excel, `${excelTarget}-CityNet.xlsx`);
+    })
+})
+
+// Adding Event Listener On Each Button In Pagination That Removes Class Of Active From The Paggination Button That Haves It And Adds It
+// To Clicked Item
+buttonsInPagginations.forEach(item => {
+    item.addEventListener('click', () => {
+        const activeButtonsInPagginations = document.querySelector('.my-paggination > button.active');
+
+        activeButtonsInPagginations.classList.remove('active');
+        item.classList.add('active')
     })
 })
