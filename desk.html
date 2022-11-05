@@ -282,32 +282,7 @@
 <script src="assets/base/js/component/footer.js"></script>
 <script src="assets/base/js/component/modal.js"></script>
 <script src="assets/base/js/public-scripts.js"></script>
-<script>
-    // Component.js
-    const calenderIntractiveComponent = document.querySelectorAll('.intractive-component.calender');
-    const dropDownButtonsInIntractiveComponents = document.querySelectorAll('.intractive-component.dropdown ~ .my-drop-down button');
-    calenderIntractiveComponent.forEach(component => {
-        const contentOfClickedComponent = component.nextElementSibling;
-        const inputOfClickedComponentInItsContents = contentOfClickedComponent.querySelector('.pdp-input');
-
-        component.addEventListener('click', () => inputOfClickedComponentInItsContents.focus())
-        inputOfClickedComponentInItsContents.addEventListener('focus', () => component.classList.add('focused'))
-        inputOfClickedComponentInItsContents.addEventListener('blur', () => component.classList.remove('focused'))
-    })
-    dropDownButtonsInIntractiveComponents.forEach(button => {
-        button.addEventListener('click', () => {
-            const parentOfGrandParentOfClickedButton = button.parentElement.parentElement.parentElement;
-            const dropDownComponent = parentOfGrandParentOfClickedButton.previousElementSibling;
-            const dropDownParentOfClickedItem = parentOfGrandParentOfClickedButton.parentElement;
-            const valueOfDropDownComponentToShow = dropDownComponent.querySelector('h6');
-
-            dropDownComponent.setAttribute('data-value', button.textContent)
-            valueOfDropDownComponentToShow.textContent = button.textContent;
-            dropDownParentOfClickedItem.removeAttribute('data-opened');
-        })
-    })
-
-</script>
+<script src="assets/base/js/intractive-components.js"></script>
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
 </body>
 </html>
