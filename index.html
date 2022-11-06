@@ -71,6 +71,38 @@
             component.classList.toggle('focused')
         })
     })
+
+    cityComponentDropDownButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const grandparentOfGrandparentOfClickedButton = button.parentElement.parentElement.parentElement.parentElement
+            const dropDownHolderOfClickedButton = grandparentOfGrandparentOfClickedButton.parentElement;
+            const componentOfClickedButton = grandparentOfGrandparentOfClickedButton.previousElementSibling;
+            switch (button.textContent) {
+                case "تهران":brandToShow = "THR";nameToShow = "تهران, ایران (Tehran)";isPrimary = true;break;
+                case "کیش":brandToShow = "KIH";nameToShow = "کیش, ایران (Kish Island)";break;
+                case "استانبول":brandToShow = "IST";nameToShow = "استانبول, ترکیه (Istanbul)";break;
+                case "دبی":brandToShow = "DXD";nameToShow = "دبی, عمارات (Dubai)";break;
+                case "مشهد":brandToShow = "MHD";nameToShow = "مشهد, ایران (Mashhad)";break;
+                case "اهواز":brandToShow = "AWZ";nameToShow = "اهواز, ایران (Ahvaz)";break;
+                case "انکارا":brandToShow = "ESB";nameToShow = "انکارا, ترکیه (Ankara)";break;
+                case "لندن":brandToShow = "LHR";nameToShow = "لندن, بریتانیا (London)";break;
+                case "تبریز":brandToShow = "TBZ";nameToShow = "تبریز, ایران (Tabriz)";break;
+                case "قشم":brandToShow = "GSM";nameToShow = "قشم, ایران (Qeshm Island)";break;
+                case "تورنتو":brandToShow = "YYZ";nameToShow = "تورنتو, کانادا (Torento)";break;
+                case "ایروان":brandToShow = "ENV";nameToShow = "ایروان, ارمنستان (Yerevan)";break;
+                case "بندر عباس":brandToShow = "BND";nameToShow = "بندر عباس, ایران (Bandar Abbas)";break;
+                case "شیراز":brandToShow = "SYZ";nameToShow = "شیراز, ایران (Shiraz)";break;
+                case "مسقط":brandToShow = "MCT";nameToShow = "مسقط, عمان (Muscat)";break;
+                case "پکن":brandToShow = "PEK";nameToShow = "پکن, چین (Beijing)";break;
+                case "رشت":brandToShow = "RAS";nameToShow = "رشت, ایران (Rasht)";break;
+                case "اصفهان":brandToShow = "IFN";nameToShow = "اصفهان, ایران (Isfahan)";isPrimary = true;break;
+                case "نجف":brandToShow = "NJF";nameToShow = "نجف, عراق (Najaf)";break;
+                case "باکو":brandToShow = "GYD";nameToShow = "باکو, اذربایجان (Baku)";break;
+            }
+            dropDownHolderOfClickedButton.removeAttribute('data-opened')
+            // componentOfClickedButton.classList.remove('focused')
+        })
+    })
 </script>
 </body>
 </html>
