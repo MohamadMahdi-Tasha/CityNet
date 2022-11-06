@@ -273,14 +273,20 @@
                     </div>
                 </div>
                 <div class="bg-white rounded-3 p-3">
-                    <h6 class="text-grey-darken3 fw-bold">مشخصات تماس خریدار</h6>
-                    <h6 class="font-small text-grey-darken1 mb-3">موبایل و ایمیل زیر جهت  خرید بلیط/واچر و اطلاع رسانی های یعد از خرید میباشد</h6>
-                    <div class="row flex-lg-row flex-column gx-3 gy-3 mb-3">
-                        <intractive-component class="col-lg-4 col-12" type="input" input-type="tel" placeholder="موبایل"></intractive-component>
-                        <intractive-component class="col-lg-3 col-12" disabled type="input"></intractive-component>
-                        <intractive-component class="col-lg-5 col-12" type="input" input-type="email" placeholder="ایمیل"></intractive-component>
+                    <div>
+                        <h6 class="text-grey-darken3 fw-bold">مشخصات تماس خریدار</h6>
+                        <h6 class="font-small text-grey-darken1 mb-3">موبایل و ایمیل زیر جهت  خرید بلیط/واچر و اطلاع رسانی های یعد از خرید میباشد</h6>
+                        <div class="row flex-lg-row flex-column gx-3 gy-3 mb-3">
+                            <intractive-component class="col-lg-4 col-12" type="input" input-type="tel" placeholder="موبایل"></intractive-component>
+                            <intractive-component class="col-lg-3 col-12" disabled type="input"></intractive-component>
+                            <intractive-component class="col-lg-5 col-12" type="input" input-type="email" placeholder="ایمیل"></intractive-component>
+                        </div>
+                        <button id="add-second-phone-email-btn" class="font-small border-0 rounded-3 px-3 py-2 bg-grey-lighten2 ripple-button"><i class="bi bi-plus"></i>افزودن موبایل یا ایمیل دوم</button>
                     </div>
-                    <button class="font-small border-0 rounded-3 px-3 py-2 bg-grey-lighten2 ripple-button"><i class="bi bi-plus"></i>افزودن موبایل یا ایمیل دوم</button>
+                    <div id="second-phone-email" class="d-none">
+                        <button id="second-phone-email-remove-btn">second-phone-email-remove-btn</button>
+                        <h1>Second Phone Email</h1>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-5 col-12 d-flex flex-column gap-3">
@@ -368,6 +374,10 @@
 <script>
     // this page only
     const selectPersonFromListBtn = document.getElementById('select-person-from-list-btn');
+    const addSecondPhoneEmailButton = document.getElementById('add-second-phone-email-btn');
+    const secondPhoneEmail = document.getElementById('second-phone-email');
+    const addSecondPhoneEmailRemoveButton = document.getElementById('second-phone-email-remove-btn');
+
     selectPersonFromListBtn.addEventListener('click', () => {
         if (htmlElement.getAttribute('data-logged-in') === 'false') {
             const loginModal = document.getElementById('login-modal');
@@ -376,6 +386,16 @@
             const selectPersonModal = document.getElementById('select-person-modal');
             selectPersonModal.toggleAttribute('data-opened')
         }
+    })
+
+    addSecondPhoneEmailButton.addEventListener('click', () => {
+        secondPhoneEmail.classList.remove('d-none')
+        addSecondPhoneEmailButton.classList.add('d-none');
+    })
+
+    addSecondPhoneEmailRemoveButton.addEventListener('click', () => {
+        secondPhoneEmail.classList.add('d-none')
+        addSecondPhoneEmailButton.classList.remove('d-none');
     })
 
     // intractive-components.js
