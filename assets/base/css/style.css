@@ -802,6 +802,8 @@ input[type='number'] {
 #mobile-nav:not([data-opened]) ~ #mobile-nav-bg {opacity: 0 !important;pointer-events: none}
 #mobile-nav:not([data-opened]) {left: -100%;}
 .passenger-class-select-button.active, .buy-ticket-drop-down-button.active {background-color: rgba(221, 153, 51, .2) !important;}
+.buy-ticket-left-side-inner-tabs.active {display: block;}
+.buy-ticket-left-side-inner-tabs:not(.active) {display: none;}
 
 /*Animations*/
 @keyframes radio-animation {

@@ -311,12 +311,12 @@
                     <h6 class="font-small">اطلاعات سفر</h6>
                     <h6 class="font-small text-grey-darken1 mb-3">جزییات و اسلاعات ضروری سفر در سه بخش زیر دسته بندی شده اند.</h6>
                     <div class="intractive-buttons-with-border justify-content-around d-flex border-bottom mb-3">
-                        <div style="right: 5.7%;" class="intractive-buttons-border ticket-buy"></div>
-                        <button active data-target="flight-detail" class="intractive-buttons-btn ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">جزییات پرواز</button>
-                        <button data-target="flight-rules" class="intractive-buttons-btn ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">قوانین</button>
-                        <button data-target="flight-weight" class="intractive-buttons-btn ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">مقدار بار</button>
+                        <div class="intractive-buttons-border ticket-buy mmd"></div>
+                        <button data-target="flight-detail" class="intractive-buttons-btn mmd active ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">جزییات پرواز</button>
+                        <button data-target="flight-rules" class="intractive-buttons-btn mmd ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">قوانین</button>
+                        <button data-target="flight-weight" class="intractive-buttons-btn mmd ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">مقدار بار</button>
                     </div>
-                    <div class="buy-ticket-left-side-inner-tabs bg-grey-lighten3 rounded" active id="flight-detail">
+                    <div class="buy-ticket-left-side-inner-tabs bg-grey-lighten3 rounded active" id="flight-detail">
                         <flight-details small icon-src="assets/base/img/img-logo.png" name="sepehran Airlines" systemic number-of-sits="9" flight-number="IS 4340" mode="economy" start-time="05:45" start-location="تهران (THR)" start-location-en="Tehran" start-location-fa="تهران" end-time="07:15" end-location="مشهد (MHD)" end-location-en="Mashhad" end-location-fa="مشهد" price="11,330,060" start-loaction-abbr="THR" end-loaction-abbr="MHD" route-duration-hour="1" route-duration-minute="5" start-date="2022-11-10" start-date-en="10 november" start-date-fa="پنجشنبه 19 ابان" end-date-en="10 november" end-date-fa="پنجشنبه 19 ابان" plane-model="IS 4340" type="details"></flight-details>
                     </div>
                     <div class="buy-ticket-left-side-inner-tabs bg-grey-lighten3 rounded" id="flight-rules">
@@ -424,6 +424,16 @@
         component.addEventListener('click', () => inputInComponent.focus())
         inputInComponent.addEventListener('focus', () => component.classList.add('focused'))
         inputInComponent.addEventListener('blur', () => {if (inputInComponent.value === '') {component.classList.remove('focused')}})
+    })
+
+    // public
+    const intractiveButtonsBtn = document.querySelectorAll('.intractive-buttons-btn');
+    const intractiveButtonsBorder = document.querySelector('.intractive-buttons-border.mmd');
+    const activeIntractiveButton = document.querySelector('.intractive-buttons-btn.mmd.active');
+    const rectOfActiveIntractiveButton = activeIntractiveButton.getClientRects()[0];
+
+    window.addEventListener('load', () => {
+        intractiveButtonsBorder.style.right = `${rectOfActiveIntractiveButton.right}px`;
     })
 </script>
 </body>
