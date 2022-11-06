@@ -45,7 +45,7 @@
 <!--Footer-->
 <custom-footer></custom-footer>
 
-<selected-city></selected-city>
+<selected-city primary brand="THR" title="تهران,ایران (Tehran)"></selected-city>
 
 <!--Js Linkings-->
 <noscript>لطفا جاوااسکریپت مرورگر خود را فعال کنید</noscript>
@@ -77,6 +77,7 @@
             const grandparentOfGrandparentOfClickedButton = button.parentElement.parentElement.parentElement.parentElement
             const dropDownHolderOfClickedButton = grandparentOfGrandparentOfClickedButton.parentElement;
             const componentOfClickedButton = grandparentOfGrandparentOfClickedButton.previousElementSibling;
+
             switch (button.textContent) {
                 case "تهران":brandToShow = "THR";nameToShow = "تهران, ایران (Tehran)";isPrimary = true;break;
                 case "کیش":brandToShow = "KIH";nameToShow = "کیش, ایران (Kish Island)";break;
@@ -99,6 +100,7 @@
                 case "نجف":brandToShow = "NJF";nameToShow = "نجف, عراق (Najaf)";break;
                 case "باکو":brandToShow = "GYD";nameToShow = "باکو, اذربایجان (Baku)";break;
             }
+
             dropDownHolderOfClickedButton.removeAttribute('data-opened')
             // componentOfClickedButton.classList.remove('focused')
         })
