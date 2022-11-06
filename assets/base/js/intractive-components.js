@@ -19,17 +19,20 @@ calenderIntractiveComponent.forEach(component => {
 
 // Adding Event Listener Of Click To Each Button In DropDown Intractive Component That Sets Attribute Of 'data-value' In Component To
 // Text Content Of Clicked Button And Sets Content Of In Component To Text Content Of Clicked Button Again And Removes Attribute Of 'data-opened'
-// From DropDown Holder
+// From DropDown Holder And Adds Class Of 'active' To Clicked Button And Removes It From Element That Haves It In DropDown
 dropDownButtonsInIntractiveComponents.forEach(button => {
     button.addEventListener('click', () => {
         const parentOfGrandParentOfClickedButton = button.parentElement.parentElement.parentElement;
         const dropDownComponent = parentOfGrandParentOfClickedButton.previousElementSibling;
         const dropDownParentOfClickedItem = parentOfGrandParentOfClickedButton.parentElement;
         const valueOfDropDownComponentToShow = dropDownComponent.querySelector('h6');
+        const activeButtonInDropDown = parentOfGrandParentOfClickedButton.querySelector('.my-drop-down button.active')
 
         dropDownComponent.setAttribute('data-value', button.textContent)
         valueOfDropDownComponentToShow.textContent = button.textContent;
         dropDownParentOfClickedItem.removeAttribute('data-opened');
+        button.classList.add('active');
+        activeButtonInDropDown.classList.remove('active');
     })
 })
 
