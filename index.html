@@ -62,6 +62,7 @@
 <script>
     const cityComponentDropDownButtons = document.querySelectorAll('.city-component-drop-down-button');
     const intractiveComponents = document.querySelectorAll('.intractive-component:not(.calender, .dropdown)');
+    const plusMinusButton = document.querySelectorAll('.plus-minus-button');
 
     intractiveComponents.forEach(component => {
         component.addEventListener('click', () => {
@@ -116,6 +117,18 @@
 
             dropDownHolderOfClickedButton.removeAttribute('data-opened')
             componentOfClickedButton.classList.replace('focused', 'will-not-close')
+        })
+    })
+
+    plusMinusButton.forEach(button => {
+        button.addEventListener('click', () => {
+            const numberTarget = button.parentElement.firstElementChild.nextElementSibling;
+
+            if (button.textContent === '+') {
+
+            } else {
+
+            }
         })
     })
 </script>
