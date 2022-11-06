@@ -122,18 +122,21 @@ plusMinusButton.forEach(button => {
 })
 
 // Adding Event Listener On Each Class Select Button In  Passenger Select Component That Closes DropDown And Then Sets Text Content Of
-// Text In Component And DropDown Toggler To Text Content Of Selected Button And Also Sets Attribute Of  'data-passenger-class' Of Component
-// To Text Content Of Selected Button
+// Text In Component And DropDown Toggler To Text Content Of Selected Button And Also Sets Attribute Of 'data-passenger-class' Of Component
+// To Text Content Of Selected Button And Adds Class Of 'active' To Clicked Button And Removes It From Button That Haves It
 passengerClassSelectButton.forEach(button => {
     button.addEventListener('click', () => {
         const holderOfDropDownOfClickedButton = button.parentElement.parentElement.parentElement.parentElement;
         const selectedClassInInnerDropDown = holderOfDropDownOfClickedButton.querySelector('.selected-class-inner-drop-down')
         const componentOfClickedButton = holderOfDropDownOfClickedButton.parentElement.previousElementSibling;
         const classTextElementInComponent = componentOfClickedButton.querySelector('.passengers-class');
+        const activeButton = document.querySelector('.passenger-class-select-button.active');
 
         holderOfDropDownOfClickedButton.removeAttribute('data-opened')
         selectedClassInInnerDropDown.textContent = button.textContent;
         classTextElementInComponent.textContent = button.textContent;
         componentOfClickedButton.setAttribute('data-passenger-class', button.textContent)
+        button.classList.add('active');
+        activeButton.classList.remove('active')
     })
 })
