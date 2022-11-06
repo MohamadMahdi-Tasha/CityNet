@@ -797,6 +797,7 @@ input[type='number'] {
 #mobile-nav[data-opened] ~ #mobile-nav-bg {opacity: 1 !important;pointer-events: visible}
 #mobile-nav:not([data-opened]) ~ #mobile-nav-bg {opacity: 0 !important;pointer-events: none}
 #mobile-nav:not([data-opened]) {left: -100%;}
+.passenger-class-select-button.active {background-color: rgba(221, 153, 51, .2) !important;}
 
 /*Animations*/
 @keyframes radio-animation {

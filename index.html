@@ -63,6 +63,7 @@
     const cityComponentDropDownButtons = document.querySelectorAll('.city-component-drop-down-button');
     const intractiveComponents = document.querySelectorAll('.intractive-component:not(.calender, .dropdown)');
     const plusMinusButton = document.querySelectorAll('.plus-minus-button');
+    const passengerClassSelectButton = document.querySelectorAll('.passenger-class-select-button');
 
     intractiveComponents.forEach(component => {
         component.addEventListener('click', () => {
@@ -138,6 +139,19 @@
             allCalculatedNumbersInComponentOfClickedButton.forEach(number => arrayOfCalculatedNumbers.push(Number(number.textContent)))
             componentOfClickedButton.setAttribute('data-passenger-count', arrayOfCalculatedNumbers.reduce((a, b) => a + b))
             passengersCountInComponentOfCLickedItem.textContent = arrayOfCalculatedNumbers.reduce((a, b) => a + b)
+        })
+    })
+    passengerClassSelectButton.forEach(button => {
+        button.addEventListener('click', () => {
+            const holderOfDropDownOfClickedButton = button.parentElement.parentElement.parentElement.parentElement;
+            const selectedClassInInnerDropDown = holderOfDropDownOfClickedButton.querySelector('.selected-class-inner-drop-down')
+            const componentOfClickedButton = holderOfDropDownOfClickedButton.parentElement.previousElementSibling;
+            const classTextElementInComponent = componentOfClickedButton.querySelector('.passengers-class');
+
+            holderOfDropDownOfClickedButton.removeAttribute('data-opened')
+            selectedClassInInnerDropDown.textContent = button.textContent;
+            classTextElementInComponent.textContent = button.textContent;
+            componentOfClickedButton.setAttribute('data-passenger-class', button.textContent)
         })
     })
 </script>
