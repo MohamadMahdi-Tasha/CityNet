@@ -44,8 +44,6 @@
 </section>
 <!--Footer-->
 <custom-footer></custom-footer>
-<selected-city primary brand="THR" title="تهران,ایران (Tehran)"></selected-city>
-<selected-city  brand="THR" title="تهران,ایران (Tehran)"></selected-city>
 <!--Js Linkings-->
 <noscript>لطفا جاوااسکریپت مرورگر خود را فعال کنید</noscript>
 <script src="assets/plugins/bootstrap/bootstrap.bundle.min.js"></script>
@@ -77,6 +75,11 @@
             const dropDownHolderOfClickedButton = grandparentOfGrandparentOfClickedButton.parentElement;
             const componentOfClickedButton = grandparentOfGrandparentOfClickedButton.previousElementSibling;
 
+            const createdSelectedCityElement = document.createElement('selected-city');
+            let brandToShow;
+            let nameToShow;
+            let isPrimary;
+
             switch (button.textContent) {
                 case "تهران":brandToShow = "THR";nameToShow = "تهران, ایران (Tehran)";isPrimary = true;break;
                 case "کیش":brandToShow = "KIH";nameToShow = "کیش, ایران (Kish Island)";break;
@@ -100,8 +103,19 @@
                 case "باکو":brandToShow = "GYD";nameToShow = "باکو, اذربایجان (Baku)";break;
             }
 
+            createdSelectedCityElement.setAttribute('brand', brandToShow)
+            createdSelectedCityElement.setAttribute('title', nameToShow)
+            if (isPrimary) {createdSelectedCityElement.setAttribute('primary', 'true')}
+
+            if (componentOfClickedButton.lastElementChild.tagName.toLowerCase() === 'selected-city') {
+                componentOfClickedButton.lastElementChild.remove()
+                componentOfClickedButton.appendChild(createdSelectedCityElement);
+            } else {
+                componentOfClickedButton.appendChild(createdSelectedCityElement);
+            }
+
             dropDownHolderOfClickedButton.removeAttribute('data-opened')
-            // componentOfClickedButton.classList.remove('focused')
+            componentOfClickedButton.classList.replace('focused', 'will-not-close')
         })
     })
 </script>
