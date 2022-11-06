@@ -366,8 +366,8 @@
 <script src="assets/base/js/intractive-components.js"></script>
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
 <script>
+    // this page only
     const selectPersonFromListBtn = document.getElementById('select-person-from-list-btn');
-
     selectPersonFromListBtn.addEventListener('click', () => {
         if (htmlElement.getAttribute('data-logged-in') === 'false') {
             const loginModal = document.getElementById('login-modal');
@@ -376,6 +376,17 @@
             const selectPersonModal = document.getElementById('select-person-modal');
             selectPersonModal.toggleAttribute('data-opened')
         }
+    })
+
+    // intractive-components.js
+    const inputIntractiveComponent = document.querySelectorAll('.intractive-component.input');
+
+    inputIntractiveComponent.forEach(component => {
+        const inputInComponent = component.querySelector('input');
+
+        component.addEventListener('click', () => inputInComponent.focus())
+        inputInComponent.addEventListener('focus', () => component.classList.add('focused'))
+        inputInComponent.addEventListener('blur', () => {if (inputInComponent.value === '') {component.classList.remove('focused')}})
     })
 </script>
 </body>
