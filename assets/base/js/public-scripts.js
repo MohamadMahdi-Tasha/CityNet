@@ -25,7 +25,8 @@ function persianNameByEnAbbrevationCurrency(englishAbrevation) {
     return stringToReturn;
 }
 
-// Event Listeners Adding Event Listener Of Load To Window That Checks If Selected Currency Is Included (selected-currency : Name Of Setted Currency) If It Is Then Set It In Header
+// Event Listeners
+// Adding Event Listener Of Load To Window That Checks If Selected Currency Is Included (selected-currency : Name Of Setted Currency) If It Is Then Set It In Header
 // Otherwise Create One In Local Storage And Set It
 window.addEventListener('load', () => {
     const currencyToSelectInLocalStoarge = localStorage.getItem('selected-currency');

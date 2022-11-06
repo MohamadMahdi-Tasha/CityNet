@@ -25,9 +25,7 @@
     <title>سیتی‌نت</title>
 </head>
 <body dir="rtl" class="home-body">
-<!--Login In Modal-->
 <my-modal type="log-in"></my-modal>
-<!--Mobile Nav-->
 <mobile-nav></mobile-nav>
 <!--First Section-->
 <section class="home-first-section"><custom-header></custom-header></section>
@@ -46,6 +44,9 @@
 </section>
 <!--Footer-->
 <custom-footer></custom-footer>
+
+<selected-city></selected-city>
+
 <!--Js Linkings-->
 <noscript>لطفا جاوااسکریپت مرورگر خود را فعال کنید</noscript>
 <script src="assets/plugins/bootstrap/bootstrap.bundle.min.js"></script>
@@ -57,8 +58,19 @@
 <script src="assets/base/js/component/footer.js"></script>
 <script src="assets/base/js/component/modal.js"></script>
 <script src="assets/base/js/component/flight.js"></script>
+<script src="assets/base/js/component/selected-city.js"></script>
 <script src="assets/base/js/public-scripts.js"></script>
 <script src="assets/base/js/intractive-components.js"></script>
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
+<script>
+    const cityComponentDropDownButtons = document.querySelectorAll('.city-component-drop-down-button');
+    const intractiveComponents = document.querySelectorAll('.intractive-component:not(.calender, .dropdown)');
+
+    intractiveComponents.forEach(component => {
+        component.addEventListener('click', () => {
+            component.classList.toggle('focused')
+        })
+    })
+</script>
 </body>
 </html>
