@@ -42,12 +42,22 @@ window.addEventListener('load', () => {
 })
 
 // Added Event Listener Of Keydown Which Is When Keyboard Key Is Pressed That Checks If Clicked Key Was Escape Key.
-// If It Is Then Close Opened Modal By Removing 'data-opened' Attribute From The Modal
+// If It Is Then Close Opened Modal And Drop Down By Removing 'data-opened' Attribute From Them
 window.addEventListener('keydown', (event) => {
     const clickedKey = event.key.toLowerCase();
     if (clickedKey === 'escape') {
-        const openedModal = document.querySelector('.my-modal-holder[data-opened]');
-        openedModal.removeAttribute('data-opened')
+        const openedModals = document.querySelectorAll('.my-modal-holder[data-opened]');
+        const openedDropDowns = document.querySelectorAll('.my-drop-down-holder[data-opened]')
+
+        openedModals.forEach(modal =>  modal.removeAttribute('data-opened'))
+        openedDropDowns.forEach(dropdown => {
+            if (dropdown.parentElement.tagName.toLowerCase() !== 'intractive-component') {
+                dropdown.removeAttribute('data-opened')
+            } else {
+                dropdown.removeAttribute('data-opened');
+                dropdown.firstElementChild.classList.remove('focused')
+            }
+        })
     }
 })
 
