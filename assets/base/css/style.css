@@ -649,6 +649,10 @@ input[type='radio']:before {
     border-bottom-right-radius: var(--radius);
 }
 
+.divider-dashed.bc-grey-lighten-2 {
+    border-color: var(--grey-lighten2);
+}
+
 .divider-vertical-dashed {
     border-right: 1px dashed black;
 }
