@@ -69,7 +69,6 @@
             component.classList.toggle('focused')
         })
     })
-
     cityComponentDropDownButtons.forEach(button => {
         button.addEventListener('click', () => {
             const grandparentOfGrandparentOfClickedButton = button.parentElement.parentElement.parentElement.parentElement
@@ -120,16 +119,25 @@
             componentOfClickedButton.setAttribute('data-selected-city', brandToShow)
         })
     })
-
     plusMinusButton.forEach(button => {
         button.addEventListener('click', () => {
+            const parentOfGrandParentOfClickedButton = button.parentElement.parentElement.parentElement
             const numberTarget = button.parentElement.firstElementChild.nextElementSibling;
+            const componentOfClickedButton = parentOfGrandParentOfClickedButton.previousElementSibling
+            const convertedToNumberValueOfTarget = Number(numberTarget.textContent)
+            const allCalculatedNumbersInComponentOfClickedButton = parentOfGrandParentOfClickedButton.querySelectorAll('.calculated-numbers');
+            const arrayOfCalculatedNumbers = [];
+            const passengersCountInComponentOfCLickedItem = componentOfClickedButton.querySelector('.passengers-count');
 
             if (button.textContent === '+') {
-
+                if (convertedToNumberValueOfTarget < 9) {numberTarget.textContent =  convertedToNumberValueOfTarget + 1;}
             } else {
-
+                if (convertedToNumberValueOfTarget > 0) {numberTarget.textContent =  convertedToNumberValueOfTarget - 1;}
             }
+
+            allCalculatedNumbersInComponentOfClickedButton.forEach(number => arrayOfCalculatedNumbers.push(Number(number.textContent)))
+            componentOfClickedButton.setAttribute('data-passenger-count', arrayOfCalculatedNumbers.reduce((a, b) => a + b))
+            passengersCountInComponentOfCLickedItem.textContent = arrayOfCalculatedNumbers.reduce((a, b) => a + b)
         })
     })
 </script>

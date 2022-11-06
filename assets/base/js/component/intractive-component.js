@@ -100,9 +100,9 @@ class intractiveComponent extends HTMLElement {
                         <div class="d-flex align-items-center">
                             <i class="bi bi-person text-darkGrey-lighten2 ms-2"></i>
                             <h6 class="mb-0 font-small text-darkGrey-lighten2">
-                                <span>1</span>
+                                <span class="passengers-count">1</span>
                                 مسافر,
-                                <span>اکونومی</span>
+                                <span class="passengers-class">اکونومی</span>
                             </h6>
                         </div>
                     </button>
@@ -114,7 +114,7 @@ class intractiveComponent extends HTMLElement {
                             </h6>
                             <div class="d-flex align-items-center gap-2">
                                 <button class="plus-minus-button border-0 bg-grey-lighten3 rounded-3 text-primary-base">+</button>
-                                <span class="font-small">1</span>
+                                <span class="font-small calculated-numbers">1</span>
                                 <button class="plus-minus-button border-0 bg-grey-lighten3 rounded-3 text-grey-darken1">-</button>
                             </div>
                         </div>
@@ -130,7 +130,7 @@ class intractiveComponent extends HTMLElement {
                             </h6>
                             <div class="d-flex align-items-center gap-2">
                                 <button class="plus-minus-button border-0 bg-grey-lighten3 rounded-3 text-primary-base">+</button>
-                                <span class="font-small">0</span>
+                                <span class="font-small calculated-numbers">0</span>
                                 <button class="plus-minus-button border-0 bg-grey-lighten3 rounded-3 text-grey-darken1">-</button>
                             </div>
                         </div>
@@ -141,7 +141,7 @@ class intractiveComponent extends HTMLElement {
                             </h6>
                             <div class="d-flex align-items-center gap-2">
                                 <button class="plus-minus-button border-0 bg-grey-lighten3 rounded-3 text-primary-base">+</button>
-                                <span class="font-small">0</span>
+                                <span class="font-small calculated-numbers">0</span>
                                 <button class="plus-minus-button border-0 bg-grey-lighten3 rounded-3 text-grey-darken1">-</button>
                             </div>
                         </div>
