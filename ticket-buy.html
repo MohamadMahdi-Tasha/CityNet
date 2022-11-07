@@ -311,10 +311,10 @@
                     <h6 class="font-small">اطلاعات سفر</h6>
                     <h6 class="font-small text-grey-darken1 mb-3">جزییات و اسلاعات ضروری سفر در سه بخش زیر دسته بندی شده اند.</h6>
                     <div class="intractive-buttons-with-border justify-content-around d-flex border-bottom mb-3">
-                        <div class="intractive-buttons-border ticket-buy mmd"></div>
-                        <button data-target="flight-detail" class="intractive-buttons-btn mmd active ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">جزییات پرواز</button>
-                        <button data-target="flight-rules" class="intractive-buttons-btn mmd ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">قوانین</button>
-                        <button data-target="flight-weight" class="intractive-buttons-btn mmd ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">مقدار بار</button>
+                        <div id="ticket-buy-left-top-side-border" class="intractive-buttons-border ticket-buy"></div>
+                        <button data-border-traget="ticket-buy-left-top-side-border" data-target="flight-detail" class="intractive-buttons-btn active ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">جزییات پرواز</button>
+                        <button data-border-traget="ticket-buy-left-top-side-border" data-target="flight-rules" class="intractive-buttons-btn ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">قوانین</button>
+                        <button data-border-traget="ticket-buy-left-top-side-border" data-target="flight-weight" class="intractive-buttons-btn ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">مقدار بار</button>
                     </div>
                     <div class="buy-ticket-left-side-inner-tabs bg-grey-lighten3 rounded active" id="flight-detail">
                         <flight-details small icon-src="assets/base/img/img-logo.png" name="sepehran Airlines" systemic number-of-sits="9" flight-number="IS 4340" mode="economy" start-time="05:45" start-location="تهران (THR)" start-location-en="Tehran" start-location-fa="تهران" end-time="07:15" end-location="مشهد (MHD)" end-location-en="Mashhad" end-location-fa="مشهد" price="11,330,060" start-loaction-abbr="THR" end-loaction-abbr="MHD" route-duration-hour="1" route-duration-minute="5" start-date="2022-11-10" start-date-en="10 november" start-date-fa="پنجشنبه 19 ابان" end-date-en="10 november" end-date-fa="پنجشنبه 19 ابان" plane-model="IS 4340" type="details"></flight-details>
@@ -427,13 +427,22 @@
     })
 
     // public
-    const intractiveButtonsBtn = document.querySelectorAll('.intractive-buttons-btn');
-    const intractiveButtonsBorder = document.querySelector('.intractive-buttons-border.mmd');
-    const activeIntractiveButton = document.querySelector('.intractive-buttons-btn.mmd.active');
-    const rectOfActiveIntractiveButton = activeIntractiveButton.getClientRects()[0];
+    const intractiveButtons = document.querySelectorAll('.intractive-buttons-btn');
 
-    window.addEventListener('load', () => {
-        intractiveButtonsBorder.style.right = `${rectOfActiveIntractiveButton.right}px`;
+    intractiveButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const borderToDoChangesOnIt = button.getAttribute('data-border-traget');
+            const borderToDoChangesOnItElement = document.getElementById(borderToDoChangesOnIt);
+            const parentOfClickedButton = button.parentElement;
+            const rightPosOfClickedButton = button.getBoundingClientRect().right;
+            const rightPosOfParentOfClickedButton = parentOfClickedButton.getBoundingClientRect().right;
+            const relativePosOfClickedButton = rightPosOfParentOfClickedButton - rightPosOfClickedButton;
+            const activeIntractiveButtons = parentOfClickedButton.querySelector('.intractive-buttons-btn.active');
+
+            borderToDoChangesOnItElement.style.right = `${relativePosOfClickedButton}px`
+            activeIntractiveButtons.classList.remove('active');
+            button.classList.add('active');
+        })
     })
 </script>
 </body>

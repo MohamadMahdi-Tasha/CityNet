@@ -804,6 +804,7 @@ input[type='number'] {
 .passenger-class-select-button.active, .buy-ticket-drop-down-button.active {background-color: rgba(221, 153, 51, .2) !important;}
 .buy-ticket-left-side-inner-tabs.active {display: block;}
 .buy-ticket-left-side-inner-tabs:not(.active) {display: none;}
+.intractive-buttons-btn.active {color: var(--primary-base);}
 
 /*Animations*/
 @keyframes radio-animation {
