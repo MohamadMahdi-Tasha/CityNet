@@ -311,7 +311,7 @@
                     <h6 class="font-small">اطلاعات سفر</h6>
                     <h6 class="font-small text-grey-darken1 mb-3">جزییات و اسلاعات ضروری سفر در سه بخش زیر دسته بندی شده اند.</h6>
                     <div class="intractive-buttons-with-border justify-content-around d-flex border-bottom mb-3">
-                        <div class="intractive-buttons-border ticket-buy"></div>
+                        <div class="intractive-buttons-border ticket-buy" style="right: 5.7%;"></div>
                         <button data-target="flight-detail" class="intractive-buttons-btn active ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">جزییات پرواز</button>
                         <button data-target="flight-rules" class="intractive-buttons-btn ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">قوانین</button>
                         <button data-target="flight-weight" class="intractive-buttons-btn ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">مقدار بار</button>
@@ -428,6 +428,7 @@
 
     // public
     const intractiveButtons = document.querySelectorAll('.intractive-buttons-btn');
+    const intractiveButtonsBorders = document.querySelectorAll('.intractive-buttons-border');
 
     intractiveButtons.forEach(button => {
         button.addEventListener('click', () => {

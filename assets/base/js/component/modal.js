@@ -54,7 +54,7 @@ class Modal extends HTMLElement {
                         <h6 class="font-small text-grey-darken1 mb-3">لطفا کلیه مشخصات زیر را بررسی و سپس تایید نمایید.</h6>
                         <div class="intractive-buttons-with-border justify-content-start d-flex border-bottom mb-3">
                             <div style="right: 0;" class="intractive-buttons-border ticket-buy"></div>
-                            <button active data-target="flight-passengers-in-modal" class="intractive-buttons-btn ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">مسافران</button>
+                            <button data-target="flight-passengers-in-modal" class="active intractive-buttons-btn ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">مسافران</button>
                             <button data-target="flight-detail-in-modal" class="intractive-buttons-btn ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">جزییات پرواز</button>
                             <button data-target="flight-rules-in-modal" class="intractive-buttons-btn ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">قوانین</button>
                             <button data-target="flight-weight-in-modal" class="intractive-buttons-btn ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">مقدار بار</button>

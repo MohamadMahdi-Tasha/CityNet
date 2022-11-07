@@ -156,7 +156,7 @@ class flightDetails extends HTMLElement {
                 <div class="rounded-tr-tl-br overflow-hidden border">
                                     <div class="intractive-buttons-with-border d-flex bg-grey-lighten3">
                             <div style="right: 0;" class="intractive-buttons-border ticket-component bg-black"></div>
-                            <button active class="intractive-buttons-btn ticket-component d-flex align-items-center justify-content-around text-secondary-lighten1 border-0 bg-transparent ripple-button ">
+                            <button class="active intractive-buttons-btn ticket-component d-flex align-items-center justify-content-around text-secondary-lighten1 border-0 bg-transparent ripple-button ">
                                 <span>${this.getAttribute('start-loaction-abbr')}</span>
                                 <i class="bi bi-arrow-left"></i>
                                 <span>${this.getAttribute('end-loaction-abbr')}</span>
@@ -195,7 +195,7 @@ class flightDetails extends HTMLElement {
                 <div class="rounded border overflow-hidden">
                     <div class="intractive-buttons-with-border d-flex bg-grey-lighten3">
                             <div style="right: 0;" class="intractive-buttons-border ticket-component bg-black"></div>
-                            <button active class="intractive-buttons-btn ticket-component d-flex align-items-center justify-content-around text-secondary-lighten1 border-0 bg-transparent ripple-button ">
+                            <button class="active intractive-buttons-btn ticket-component d-flex align-items-center justify-content-around text-secondary-lighten1 border-0 bg-transparent ripple-button ">
                                 TO
                                 <i class="bi bi-arrow-left"></i>
                             </button>
@@ -230,7 +230,7 @@ class flightDetails extends HTMLElement {
                <div class="rounded border overflow-hidden">
                     <div class="intractive-buttons-with-border d-flex bg-grey-lighten3">
                             <div style="right: 0;" class="intractive-buttons-border ticket-component bg-black"></div>
-                            <button active class="intractive-buttons-btn ticket-component d-flex align-items-center justify-content-around text-secondary-lighten1 border-0 bg-transparent ripple-button ">
+                            <button class="active intractive-buttons-btn ticket-component d-flex align-items-center justify-content-around text-secondary-lighten1 border-0 bg-transparent ripple-button ">
                                 <span>${this.getAttribute('start-loaction-abbr')}</span>
                                 <i class="bi bi-arrow-left"></i>
                                 <span>${this.getAttribute('end-loaction-abbr')}</span>
