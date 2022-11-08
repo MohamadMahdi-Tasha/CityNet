@@ -429,6 +429,7 @@
     const intractiveButtons = document.querySelectorAll('.intractive-buttons-btn');
     const intractiveButtonsBorder = document.querySelectorAll('.intractive-buttons-border');
     const innerPageTogglers = document.querySelectorAll('.inner-page-toggler');
+    const collapseToggler = document.querySelectorAll('.my-collapse-toggler');
 
     intractiveButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -463,6 +464,7 @@
             targetPageOfClickedButtonElement.classList.add('active')
         })
     })
+    collapseToggler.forEach(toggler => toggler.addEventListener('click', () => toggler.parentElement.toggleAttribute('data-opened')))
 </script>
 </body>
 </html>

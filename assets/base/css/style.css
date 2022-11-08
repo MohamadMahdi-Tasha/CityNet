@@ -784,7 +784,13 @@ input[type='number'] {
     background-color: var(--grey-lighten1);
 }
 
-.my-paggination > button:not([active]):hover {border-color: var(--primary-base);}
+.my-paggination > button:not([active]):hover {
+    border-color: var(--primary-base);
+}
+
+.my-collapse-toggler {
+    height: 50px;
+}
 
 /*Realated To Js*/
 .my-drop-down-holder[data-opened] .my-drop-down {opacity: 1;transform: translateY(0);pointer-events: visible}
@@ -805,6 +811,8 @@ input[type='number'] {
 .inner-page.active {display: block;}
 .inner-page:not(.active) {display: none;}
 .intractive-buttons-btn:not(.text-secondary-lighten1).active {color: var(--primary-base);}
+.my-collapse-holder[data-opened] {height: auto;}
+.my-collapse-holder:not([data-opened]) {height: 50px;}
 
 /*Animations*/
 @keyframes radio-animation {
