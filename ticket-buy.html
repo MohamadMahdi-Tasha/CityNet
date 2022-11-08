@@ -428,7 +428,7 @@
 
     // public
     const intractiveButtons = document.querySelectorAll('.intractive-buttons-btn');
-    const intractiveButtonsBorders = document.querySelectorAll('.intractive-buttons-border');
+    const intractiveButtonsBorder = document.querySelectorAll('.intractive-buttons-border');
 
     intractiveButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -443,6 +443,15 @@
             activeIntractiveButtons.classList.remove('active');
             button.classList.add('active');
         })
+    })
+    intractiveButtonsBorder.forEach(border => {
+        const parentOfBorder = border.parentElement;
+        const activeButtonInParentOfBorder = parentOfBorder.querySelector('.intractive-buttons-btn.active')
+        const rightPositionOfActiveButton = activeButtonInParentOfBorder.getBoundingClientRect().right;
+        const rightPositionOfParentOfBorder = parentOfBorder.getBoundingClientRect().right;
+        const relativePositionOfParentAndActiveButton = rightPositionOfParentOfBorder - rightPositionOfActiveButton;
+
+        border.style.right = `${relativePositionOfParentAndActiveButton}px`
     })
 </script>
 </body>
