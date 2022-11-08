@@ -312,17 +312,17 @@
                     <h6 class="font-small text-grey-darken1 mb-3">جزییات و اسلاعات ضروری سفر در سه بخش زیر دسته بندی شده اند.</h6>
                     <div class="intractive-buttons-with-border justify-content-around d-flex border-bottom mb-3">
                         <div class="intractive-buttons-border ticket-buy" style="right: 5.7%;"></div>
-                        <button data-target="flight-detail" class="intractive-buttons-btn active ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">جزییات پرواز</button>
-                        <button data-target="flight-rules" class="intractive-buttons-btn ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">قوانین</button>
-                        <button data-target="flight-weight" class="intractive-buttons-btn ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">مقدار بار</button>
+                        <button data-target-page="flight-detail" class="intractive-buttons-btn inner-page-toggler active ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">جزییات پرواز</button>
+                        <button data-target-page="flight-rules" class="intractive-buttons-btn inner-page-toggler ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">قوانین</button>
+                        <button data-target-page="flight-weight" class="intractive-buttons-btn inner-page-toggler ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">مقدار بار</button>
                     </div>
-                    <div class="buy-ticket-left-side-inner-tabs bg-grey-lighten3 rounded active" id="flight-detail">
+                    <div class="inner-page bg-grey-lighten3 rounded active" id="flight-detail">
                         <flight-details small icon-src="assets/base/img/img-logo.png" name="sepehran Airlines" systemic number-of-sits="9" flight-number="IS 4340" mode="economy" start-time="05:45" start-location="تهران (THR)" start-location-en="Tehran" start-location-fa="تهران" end-time="07:15" end-location="مشهد (MHD)" end-location-en="Mashhad" end-location-fa="مشهد" price="11,330,060" start-loaction-abbr="THR" end-loaction-abbr="MHD" route-duration-hour="1" route-duration-minute="5" start-date="2022-11-10" start-date-en="10 november" start-date-fa="پنجشنبه 19 ابان" end-date-en="10 november" end-date-fa="پنجشنبه 19 ابان" plane-model="IS 4340" type="details"></flight-details>
                     </div>
-                    <div class="buy-ticket-left-side-inner-tabs bg-grey-lighten3 rounded" id="flight-rules">
+                    <div class="inner-page bg-grey-lighten3 rounded" id="flight-rules">
                         <flight-details type="rules"></flight-details>
                     </div>
-                    <div class="buy-ticket-left-side-inner-tabs bg-grey-lighten3 rounded" id="flight-weight">
+                    <div class="inner-page bg-grey-lighten3 rounded" id="flight-weight">
                         <flight-details type="weight"></flight-details>
                     </div>
                 </div>
@@ -404,12 +404,10 @@
             selectPersonModal.toggleAttribute('data-opened')
         }
     })
-
     addSecondPhoneEmailButton.addEventListener('click', () => {
         secondPhoneEmail.classList.remove('d-none')
         addSecondPhoneEmailButton.classList.add('d-none');
     })
-
     addSecondPhoneEmailRemoveButton.addEventListener('click', () => {
         secondPhoneEmail.classList.add('d-none')
         addSecondPhoneEmailButton.classList.remove('d-none');
@@ -429,6 +427,7 @@
     // public
     const intractiveButtons = document.querySelectorAll('.intractive-buttons-btn');
     const intractiveButtonsBorder = document.querySelectorAll('.intractive-buttons-border');
+    const innerPageTogglers = document.querySelectorAll('.inner-page-toggler');
 
     intractiveButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -452,6 +451,16 @@
         const relativePositionOfParentAndActiveButton = rightPositionOfParentOfBorder - rightPositionOfActiveButton;
 
         border.style.right = `${relativePositionOfParentAndActiveButton}px`
+    })
+    innerPageTogglers.forEach(toggler => {
+        toggler.addEventListener('click', () => {
+            const targetPageOfClickedButton = toggler.getAttribute('data-target-page');
+            const targetPageOfClickedButtonElement = document.getElementById(targetPageOfClickedButton);
+            const activeInnerPage = document.querySelector('.inner-page.active');
+
+            activeInnerPage.classList.remove('active');
+            targetPageOfClickedButtonElement.classList.add('active')
+        })
     })
 </script>
 </body>
