@@ -323,7 +323,7 @@
                         <flight-details type="rules"></flight-details>
                     </div>
                     <div class="inner-page bg-grey-lighten3 rounded" id="flight-weight">
-                        <flight-details type="weight"></flight-details>
+                        <flight-details start-loaction-abbr="THR" end-loaction-abbr="MHD" type="weight"></flight-details>
                     </div>
                 </div>
                 <div class="bg-white p-3 rounded-3">
@@ -387,84 +387,7 @@
 <script src="assets/base/js/component/flight-details.js"></script>
 <script src="assets/base/js/public-scripts.js"></script>
 <script src="assets/base/js/intractive-components.js"></script>
+<script src="assets/base/js/pages/ticket-buy.js"></script>
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
-<script>
-    // this page only
-    const selectPersonFromListBtn = document.getElementById('select-person-from-list-btn');
-    const addSecondPhoneEmailButton = document.getElementById('add-second-phone-email-btn');
-    const secondPhoneEmail = document.getElementById('second-phone-email');
-    const addSecondPhoneEmailRemoveButton = document.getElementById('second-phone-email-remove-btn');
-
-    selectPersonFromListBtn.addEventListener('click', () => {
-        if (htmlElement.getAttribute('data-logged-in') === 'false') {
-            const loginModal = document.getElementById('login-modal');
-            loginModal.toggleAttribute('data-opened')
-        } else {
-            const selectPersonModal = document.getElementById('select-person-modal');
-            selectPersonModal.toggleAttribute('data-opened')
-        }
-    })
-    addSecondPhoneEmailButton.addEventListener('click', () => {
-        secondPhoneEmail.classList.remove('d-none')
-        addSecondPhoneEmailButton.classList.add('d-none');
-    })
-    addSecondPhoneEmailRemoveButton.addEventListener('click', () => {
-        secondPhoneEmail.classList.add('d-none')
-        addSecondPhoneEmailButton.classList.remove('d-none');
-    })
-
-    // intractive-components.js
-    const inputIntractiveComponent = document.querySelectorAll('.intractive-component.input');
-
-    inputIntractiveComponent.forEach(component => {
-        const inputInComponent = component.querySelector('input');
-
-        component.addEventListener('click', () => inputInComponent.focus())
-        inputInComponent.addEventListener('focus', () => component.classList.add('focused'))
-        inputInComponent.addEventListener('input', () => component.setAttribute('data-value', inputInComponent.value))
-        inputInComponent.addEventListener('blur', () => {if (inputInComponent.value === '') {component.classList.remove('focused')}})
-    })
-
-    // public
-    const intractiveButtons = document.querySelectorAll('.intractive-buttons-btn');
-    const intractiveButtonsBorder = document.querySelectorAll('.intractive-buttons-border');
-    const innerPageTogglers = document.querySelectorAll('.inner-page-toggler');
-    const collapseToggler = document.querySelectorAll('.my-collapse-toggler');
-
-    intractiveButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const parentOfClickedButton = button.parentElement;
-            const borderToChange = parentOfClickedButton.querySelector('.intractive-buttons-border');
-            const activeIntractiveButtons = parentOfClickedButton.querySelector('.intractive-buttons-btn.active');
-            const rightPosOfParentOfClickedButton = parentOfClickedButton.getBoundingClientRect().right;
-            const rightPosOfClickedButton = button.getBoundingClientRect().right;
-            const reltivePositionToUse = rightPosOfParentOfClickedButton - rightPosOfClickedButton;
-
-            borderToChange.style.right = `${reltivePositionToUse}px`
-            activeIntractiveButtons.classList.remove('active');
-            button.classList.add('active');
-        })
-    })
-    intractiveButtonsBorder.forEach(border => {
-        const parentOfBorder = border.parentElement;
-        const activeButtonInParentOfBorder = parentOfBorder.querySelector('.intractive-buttons-btn.active')
-        const rightPositionOfActiveButton = activeButtonInParentOfBorder.getBoundingClientRect().right;
-        const rightPositionOfParentOfBorder = parentOfBorder.getBoundingClientRect().right;
-        const relativePositionOfParentAndActiveButton = rightPositionOfParentOfBorder - rightPositionOfActiveButton;
-
-        border.style.right = `${relativePositionOfParentAndActiveButton}px`
-    })
-    innerPageTogglers.forEach(toggler => {
-        toggler.addEventListener('click', () => {
-            const targetPageOfClickedButton = toggler.getAttribute('data-target-page');
-            const targetPageOfClickedButtonElement = document.getElementById(targetPageOfClickedButton);
-            const activeInnerPage = document.querySelector('.inner-page.active');
-
-            activeInnerPage.classList.remove('active');
-            targetPageOfClickedButtonElement.classList.add('active')
-        })
-    })
-    collapseToggler.forEach(toggler => toggler.addEventListener('click', () => toggler.parentElement.toggleAttribute('data-opened')))
-</script>
 </body>
 </html>

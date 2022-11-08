@@ -5,6 +5,7 @@ const cityComponentDropDownButtons = document.querySelectorAll('.city-component-
 const intractiveComponents = document.querySelectorAll('.intractive-component:not(.calender, .dropdown)');
 const plusMinusButton = document.querySelectorAll('.plus-minus-button');
 const passengerClassSelectButton = document.querySelectorAll('.passenger-class-select-button');
+const inputIntractiveComponent = document.querySelectorAll('.intractive-component.input');
 
 // Adding Event Listener On Each Calendar Interactive Component That Focus To Input Init And Adds Event Listener Of 'focus' And 'blur' To It
 // That Adds Or Removes Class Name Of 'focused' From It
@@ -142,4 +143,13 @@ passengerClassSelectButton.forEach(button => {
         button.classList.add('active');
         activeButton.classList.remove('active')
     })
+})
+
+inputIntractiveComponent.forEach(component => {
+    const inputInComponent = component.querySelector('input');
+
+    component.addEventListener('click', () => inputInComponent.focus())
+    inputInComponent.addEventListener('focus', () => component.classList.add('focused'))
+    inputInComponent.addEventListener('input', () => component.setAttribute('data-value', inputInComponent.value))
+    inputInComponent.addEventListener('blur', () => {if (inputInComponent.value === '') {component.classList.remove('focused')}})
 })

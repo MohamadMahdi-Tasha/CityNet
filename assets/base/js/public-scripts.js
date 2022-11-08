@@ -1,4 +1,3 @@
-// Use Attrs When Setting Data
 // Variables
 const dropDownsTogglers  = document.querySelectorAll('.my-drop-down-toggler');
 const currencyChangerButtons = document.querySelectorAll('.currency-changer');
@@ -8,6 +7,10 @@ const currencyHeaderEnglish = document.getElementById('currency-header-en');
 const togglers = document.querySelectorAll('.toggler');
 const excelButtons = document.querySelectorAll('.excel-btn');
 const buttonsInPagginations = document.querySelectorAll('.my-paggination > button:not(.next-prev-pagination-btn)');
+const intractiveButtons = document.querySelectorAll('.intractive-buttons-btn');
+const intractiveButtonsBorder = document.querySelectorAll('.intractive-buttons-border');
+const innerPageTogglers = document.querySelectorAll('.inner-page-toggler');
+const collapseToggler = document.querySelectorAll('.my-collapse-toggler');
 
 // Functions
 // A Function That Takes English Abbreviation Of Currency And Returns Persian Name Of It
@@ -120,3 +123,41 @@ buttonsInPagginations.forEach(item => {
         item.classList.add('active')
     })
 })
+
+intractiveButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const parentOfClickedButton = button.parentElement;
+        const borderToChange = parentOfClickedButton.querySelector('.intractive-buttons-border');
+        const activeIntractiveButtons = parentOfClickedButton.querySelector('.intractive-buttons-btn.active');
+        const rightPosOfParentOfClickedButton = parentOfClickedButton.getBoundingClientRect().right;
+        const rightPosOfClickedButton = button.getBoundingClientRect().right;
+        const reltivePositionToUse = rightPosOfParentOfClickedButton - rightPosOfClickedButton;
+
+        borderToChange.style.right = `${reltivePositionToUse}px`
+        activeIntractiveButtons.classList.remove('active');
+        button.classList.add('active');
+    })
+})
+
+intractiveButtonsBorder.forEach(border => {
+    const parentOfBorder = border.parentElement;
+    const activeButtonInParentOfBorder = parentOfBorder.querySelector('.intractive-buttons-btn.active')
+    const rightPositionOfActiveButton = activeButtonInParentOfBorder.getBoundingClientRect().right;
+    const rightPositionOfParentOfBorder = parentOfBorder.getBoundingClientRect().right;
+    const relativePositionOfParentAndActiveButton = rightPositionOfParentOfBorder - rightPositionOfActiveButton;
+
+    border.style.right = `${relativePositionOfParentAndActiveButton}px`
+})
+
+innerPageTogglers.forEach(toggler => {
+    toggler.addEventListener('click', () => {
+        const targetPageOfClickedButton = toggler.getAttribute('data-target-page');
+        const targetPageOfClickedButtonElement = document.getElementById(targetPageOfClickedButton);
+        const activeInnerPage = document.querySelector('.inner-page.active');
+
+        activeInnerPage.classList.remove('active');
+        targetPageOfClickedButtonElement.classList.add('active')
+    })
+})
+
+collapseToggler.forEach(toggler => toggler.addEventListener('click', () => toggler.parentElement.toggleAttribute('data-opened')))
