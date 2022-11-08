@@ -812,7 +812,7 @@ input[type='number'] {
 .inner-page:not(.active) {display: none;}
 .intractive-buttons-btn:not(.text-secondary-lighten1).active {color: var(--primary-base);}
 .my-collapse-holder[data-opened] {height: auto;}
-.my-collapse-holder:not([data-opened]) {height: 50px;}
+.my-collapse-holder:not([data-opened]) {height: 50px;overflow: hidden;}
 
 /*Animations*/
 @keyframes radio-animation {
