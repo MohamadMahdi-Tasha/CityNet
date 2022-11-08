@@ -167,7 +167,7 @@ class intractiveComponent extends HTMLElement {
         } else if (this.getAttribute('type') === "input") {
             if (this.getAttribute('disabled') === null) {
                 this.innerHTML = `
-                <div class="d-flex col-12 input intractive-component bg-white text-end p-3 position-relative">
+                <div data-value="null" class="d-flex col-12 input intractive-component bg-white text-end p-3 position-relative">
                     <span class="my-placeholder position-absolute font-small">${this.getAttribute('placeholder')}</span>
                     <input class="col-12 bg-transparent h-100 border-0 font-small" type="${this.getAttribute('input-type')}" required>
                 </div>
