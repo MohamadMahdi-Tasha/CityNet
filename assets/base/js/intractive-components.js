@@ -145,6 +145,9 @@ passengerClassSelectButton.forEach(button => {
     })
 })
 
+// Adding Event Listener On Each Input Intractive Component That Listenes To Click And Focuses To Inner Input Of It And Adds Event Listener On
+// Inner Input Of It That Adds Class Of 'focused' To Component And Then Adds Event Listener Input On Inner Input That Setts Attribute Of 'data-value' Of Component
+// To Value Typed In Inner Input And After That Adds Event Listener Of Blur On Inner Input That Removes Class Of 'focused' If Value Of Inner Input Is Empty
 inputIntractiveComponent.forEach(component => {
     const inputInComponent = component.querySelector('input');
 
