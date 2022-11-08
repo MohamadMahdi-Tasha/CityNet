@@ -124,6 +124,8 @@ buttonsInPagginations.forEach(item => {
     })
 })
 
+// Adding Event Listener On Each Intractive Button That Listenes To Click And Sets Right Style Of Border To Relative Right Position Of
+// Parent OF Clicked Button And ITs Parent And Removes Class Of 'active' From Sibling Button That Haves It And Adds Class 'active' To Clicked Button
 intractiveButtons.forEach(button => {
     button.addEventListener('click', () => {
         const parentOfClickedButton = button.parentElement;
@@ -139,6 +141,7 @@ intractiveButtons.forEach(button => {
     })
 })
 
+// Setting Right Position Of Each Border Of Intractive Buttons To Relative Position Of Inner Button That Is Active And Its Parent
 intractiveButtonsBorder.forEach(border => {
     const parentOfBorder = border.parentElement;
     const activeButtonInParentOfBorder = parentOfBorder.querySelector('.intractive-buttons-btn.active')
@@ -149,6 +152,8 @@ intractiveButtonsBorder.forEach(border => {
     border.style.right = `${relativePositionOfParentAndActiveButton}px`
 })
 
+// Adding Event Listener Of Click To Each Inner Page Togglers That Removes Class Of 'active' From Inner Page That Haves It And Class Of 'active'
+// To Target Inner Page Of Clicked Button
 innerPageTogglers.forEach(toggler => {
     toggler.addEventListener('click', () => {
         const targetPageOfClickedButton = toggler.getAttribute('data-target-page');
@@ -160,4 +165,5 @@ innerPageTogglers.forEach(toggler => {
     })
 })
 
+// Adding Event Listener On Each Collapse Toggler That Toggles Attribute Of 'data-opened' To Its Parent Element
 collapseToggler.forEach(toggler => toggler.addEventListener('click', () => toggler.parentElement.toggleAttribute('data-opened')))
