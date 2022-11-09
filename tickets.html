@@ -1,5 +1,12 @@
 <!doctype html>
-<html lang="fa" data-currency="IRR" data-logged-in="false">
+<html lang="fa"
+      data-currency="IRR"
+      data-logged-in="false"
+      data-start-place="(THR) تهران"
+      data-end-place="(MHD) مشهد"
+      data-flight-date="Aug 22 , 2022"
+      data-passenger-count="1"
+      data-passengers-class="اکونومی">
 <head>
     <!--A Meta Tag For Setting Character Set Of Page-->
     <meta charset="UTF-8">
@@ -43,27 +50,16 @@
         <header class="bg-blue-base mb-3 rounded-3 p-3 d-flex flex-lg-row flex-column gap-3 justify-content-between align-items-center">
             <div class="col-lg-auto col-12">
                 <h6 class="text-white font-small">شهر یا فرودگاه مبدا</h6>
-                <h6 class="text-white font-small mb-0 fw-bold">
-                    (<span>THR</span>)
-                    <span>تهران</span>
-                </h6>
+                <h6 id="start-place-top-side" class="text-white font-small mb-0 fw-bold"></h6>
             </div>
             <i class="d-lg-block d-none bi text-white bi-arrow-left"></i>
             <div class="col-lg-auto col-12">
                 <h6 class="text-white font-small">شهر یا فرودگاه مقصد</h6>
-                <h6 class="text-white font-small mb-0 fw-bold">
-                    (<span>MHD</span>)
-                    <span>مشهد</span>
-                </h6>
+                <h6 id="end-place-top-side" class="text-white font-small mb-0 fw-bold"></h6>
             </div>
             <div class="col-lg-auto col-12">
                 <h6 class="text-white font-small">تاریخ رفت</h6>
-                <h6 class="text-white font-small mb-0 fw-bold">
-                    <span>Aug</span>
-                    <span>22</span>
-                    ,
-                    <span>2022</span>
-                </h6>
+                <h6 id="flight-date-top-side" class="text-white font-small mb-0 fw-bold"></h6>
             </div>
             <div class="col-lg-auto col-12">
                 <h6 class="text-white font-small">برگشت</h6>
@@ -72,9 +68,9 @@
             <div class="col-lg-auto col-12">
                 <h6 class="text-white font-small">مسافران/کلاس کابین</h6>
                 <h6 class="text-white font-small mb-0 fw-bold">
-                    <span>1</span>
+                    <span id="passenger-count-top-side"></span>
                     مسافر,
-                    <span>اکونومی</span>
+                    <span id="passenger-class-top-side"></span>
                 </h6>
             </div>
             <button data-target="flight-select-modal" class="ripple-button bg-blue-lighten1 col-lg-auto col-12 border-0 p-3 text-white rounded-3 font-small toggler">
@@ -89,15 +85,9 @@
                 </div>
                 <div class="bg-white p-3 rounded-3">
                     <div class="d-flex align-items-center justify-content-evenly mb-3">
-                        <h6 class="mb-0 font-small fw-bold">
-                            (<span>THR</span>)
-                            <span>تهران</span>
-                        </h6>
+                        <h6 class="mb-0 font-small fw-bold"></h6>
                         <i class="bi bi-arrow-left"></i>
-                        <h6 class="mb-0 font-small fw-bold">
-                            (<span>MHD</span>)
-                            <span>مشهد</span>
-                        </h6>
+                        <h6 class="mb-0 font-small fw-bold"></h6>
                     </div>
                     <div class="d-flex align-items-center justify-content-evenly">
                         <button class="border-0 font-small ripple-button bg-transparent flight-prev-next-day px-2 py-1 rounded-3"><i class="bi bi-chevron-right ms-1"></i>روز قبل</button>
@@ -354,6 +344,7 @@
 </section>
 <!--Footer-->
 <custom-footer></custom-footer>
+<!--Script Parts-->
 <noscript>لطفا جاوااسکریپت مرورگر خود را فعال کنید</noscript>
 <script src="assets/plugins/bootstrap/bootstrap.bundle.min.js"></script>
 <script src="assets/base/js/component/ticket-component.js"></script>
@@ -366,5 +357,24 @@
 <script src="assets/base/js/public-scripts.js"></script>
 <script src="assets/base/js/intractive-components.js"></script>
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
+<script>
+    const passengerCountTopSide = document.getElementById('passenger-count-top-side');
+    const passengerClassTopSide = document.getElementById('passenger-class-top-side');
+    const startPlaceTopSide = document.getElementById('start-place-top-side');
+    const endPlaceTopSide = document.getElementById('end-place-top-side');
+    const flightDateTopSide = document.getElementById('flight-date-top-side');
+
+    const dataFromHtmlElementStartPlace = htmlElement.getAttribute('data-start-place')
+    const dataFromHtmlElementEndPlace = htmlElement.getAttribute('data-end-place')
+    const dataFromHtmlElementFlightDate = htmlElement.getAttribute('data-flight-date')
+    const dataFromHtmlElementPassengerCount = htmlElement.getAttribute('data-passenger-count')
+    const dataFromHtmlElementPassengerClass = htmlElement.getAttribute('data-passengers-class')
+
+    passengerCountTopSide.textContent = dataFromHtmlElementPassengerCount;
+    passengerClassTopSide.textContent = dataFromHtmlElementPassengerClass;
+    startPlaceTopSide.textContent = dataFromHtmlElementStartPlace;
+    endPlaceTopSide.textContent = dataFromHtmlElementEndPlace;
+    flightDateTopSide.textContent = dataFromHtmlElementFlightDate;
+</script>
 </body>
 </html>
