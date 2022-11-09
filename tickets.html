@@ -364,6 +364,7 @@
     const flightDateTopSide = document.getElementById('flight-date-top-side');
     const flightFilterButtons = document.querySelectorAll('.flight-filter-button');
     const ticketComponentBottomAccardionTogglers = document.querySelectorAll('.ticket-component-bottom-accardion-toggler');
+    const ticketPageAsideMobileTopSideToggle = document.querySelector('.ticket-page-aside-mobile-top-side-toggle');
 
     const dataFromHtmlElementStartPlace = htmlElement.getAttribute('data-start-place')
     const dataFromHtmlElementEndPlace = htmlElement.getAttribute('data-end-place')
@@ -404,6 +405,9 @@
             openedToggler.removeAttribute('data-opened');
             openedAccardion.removeAttribute('data-opened');
         })
+    })
+    ticketPageAsideMobileTopSideToggle.addEventListener('mousedown', () => {
+
     })
 </script>
 </body>

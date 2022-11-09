@@ -2,7 +2,7 @@ class TicketComponent extends HTMLElement {
     constructor() {super();}
     connectedCallback() {
         this.innerHTML = `
-            <div class="bg-white p-3 rounded-3">
+            <div class="bg-white p-3 rounded-3 ticket-component">
                 <div class="bg-grey-lighten3 mb-3 rounded-4 p-3 d-flex flex-lg-row flex-column align-items-center justify-content-between">
                     <div class="d-flex flex-lg-row flex-column align-items-center gap-4">
                         <img width="70px" height="70px" src="${this.getAttribute('icon-src')}" alt="${this.getAttribute('name')}">
@@ -63,8 +63,8 @@ class TicketComponent extends HTMLElement {
                                     ریال
                                 </h6>
                             </div>
-                            <a href="ticket-buy.html">
-                                <button class="rounded-4 px-5 col-lg-auto col-12 submit-button ripple-button">جستجو</button>
+                            <a href="ticket-buy.html" class="col-lg-auto col-12">
+                                <button class="rounded-4 px-5 submit-button col-12 ripple-button">جستجو</button>
                             </a>
                         </div>
                     </div>
