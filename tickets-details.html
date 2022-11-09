@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fa" data-currency="IRR" data-logged-in="false">
+<html lang="fa" data-currency="IRR" data-logged-in="false" data-haves-result="false ">
 <head>
     <!--A Meta Tag For Setting Character Set Of Page-->
     <meta charset="UTF-8">
@@ -113,9 +113,10 @@
         </header>
 
         <!--If There Is Nothing-->
-        <!-- <main class="bg-error-lighten4 p-3 rounded-3 nothing-found"><h6 class="text-center text-error-darken2 mb-0 font-small fw-bold">موردی یافت نشد</h6></main>-->
+         <main id="nothing-found-main" class="bg-error-lighten4 p-3 rounded-3 nothing-found"><h6 class="text-center text-error-darken2 mb-0 font-small fw-bold">موردی یافت نشد</h6></main>
 
-        <main class="rounded-3 bg-white overflow-hidden">
+        <!--If There Is Something-->
+        <main id="results" class="rounded-3 bg-white overflow-hidden">
             <ul class="list-unstyled row row-cols-lg-auto justify-content-around row-cols-4 m-0 p-0 bg-black-lighten1">
                 <li class="p-3 col text-white font-small text-lg-end text-center">نام خریدار</li>
                 <li class="p-3 col text-white font-small text-lg-end text-center">نام کاربری</li>
@@ -218,5 +219,18 @@
 <script src="assets/base/js/public-scripts.js"></script>
 <script src="assets/base/js/intractive-components.js"></script>
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
+<script>
+    const dataHavesResultAttributOfHtmlElement = htmlElement.getAttribute('data-haves-result');
+    const nothingFoundMainElement = document.getElementById('nothing-found-main');
+    const resultsElement = document.getElementById('results');
+
+    if (dataHavesResultAttributOfHtmlElement === 'true') {
+        nothingFoundMainElement.classList.add('d-none');
+        resultsElement.classList.add('d-block');
+    } else {
+        nothingFoundMainElement.classList.add('d-block');
+        resultsElement.classList.add('d-none');
+    }
+</script>
 </body>
 </html>
