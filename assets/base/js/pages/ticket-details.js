@@ -6,6 +6,8 @@ const tableBottomItemTogglers = document.querySelectorAll('.table-bottom-item-to
 const detailsShowButtons = document.querySelectorAll('.details-show-btn');
 const showPriceDetailsButton = document.querySelectorAll('.show-price-details-btn');
 
+// If Attribute Of 'data-haves-result' From Html Element Returnes 'True' Then Remove Nothing Found Element And Add 'd-block' Class To
+// Result Element OtherWise Do Reverse
 if (dataHavesResultAttributOfHtmlElement === 'true') {
     nothingFoundMainElement.remove()
     resultsElement.classList.add('d-block');
@@ -13,6 +15,9 @@ if (dataHavesResultAttributOfHtmlElement === 'true') {
     nothingFoundMainElement.classList.add('d-block');
     resultsElement.remove();
 }
+
+// Adding Event Listener On Each Table Bottom Items That Listenes To Click And Toggles Attribute Of 'data-opened' To Parent Of Clicked
+// Toggler And Removes It From Opened Table Bottom Item Tha Haves IT
 tableBottomItemTogglers.forEach(toggler => {
     toggler.addEventListener('click' ,() => {
         const holder = toggler.parentElement;
@@ -22,6 +27,9 @@ tableBottomItemTogglers.forEach(toggler => {
         openedTableBottomItemHolder.removeAttribute('data-opened')
     })
 })
+
+// Adding event Listener On Each Show Details Button That Listenes To Click And Toggles 'data-opened' Attribute To 'detailsHolderInParentOfGrandParentOfClickedButton'
+// And Also Clicked Button
 detailsShowButtons.forEach(button => {
     button.addEventListener('click', () => {
         const parentOfGrandParentOfClickedButton = button.parentElement.parentElement.parentElement;
@@ -31,6 +39,9 @@ detailsShowButtons.forEach(button => {
         button.toggleAttribute('data-opened')
     })
 })
+
+// Adding Event Listener On Each Show Price Details Button That Listenes To Click And Toggles 'data-opened' Attribute To Clicked Button And
+// 'priceDetailsSection' Element
 showPriceDetailsButton.forEach(button => {
     button.addEventListener('click' , () => {
         const priceDetailsSection = button.parentElement.parentElement.parentElement.parentElement.nextElementSibling;
