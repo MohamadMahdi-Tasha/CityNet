@@ -4,9 +4,11 @@
       data-logged-in="false"
       data-start-place="(THR) تهران"
       data-end-place="(MHD) مشهد"
-      data-flight-date="Aug 22 , 2022"
+      data-flight-date-en="Aug 22 , 2022"
       data-passenger-count="1"
-      data-passengers-class="اکونومی">
+      data-passengers-class="اکونومی"
+      data-flight-date-fa="دوشنبه 31 مرداد"
+>
 <head>
     <!--A Meta Tag For Setting Character Set Of Page-->
     <meta charset="UTF-8">
@@ -369,7 +371,7 @@
 
     const dataFromHtmlElementStartPlace = htmlElement.getAttribute('data-start-place')
     const dataFromHtmlElementEndPlace = htmlElement.getAttribute('data-end-place')
-    const dataFromHtmlElementFlightDate = htmlElement.getAttribute('data-flight-date')
+    const dataFromHtmlElementFlightDate = htmlElement.getAttribute('data-flight-date-en')
     const dataFromHtmlElementPassengerCount = htmlElement.getAttribute('data-passenger-count')
     const dataFromHtmlElementPassengerClass = htmlElement.getAttribute('data-passengers-class')
 
@@ -379,6 +381,19 @@
     endPlaceTopSide.textContent = dataFromHtmlElementEndPlace;
     flightDateTopSide.textContent = dataFromHtmlElementFlightDate;
 
+    window.addEventListener('scroll', () => {
+        if (window.innerWidth <= 991) {
+            if (window.scrollY !== 0) {
+                if (ticketPageAside.classList.contains('showing')) {
+                    ticketPageAside.classList.replace('showing', 'scrolled')
+                } else {
+                    ticketPageAside.classList.add('scrolled')
+                }
+            } else {
+                ticketPageAside.classList.remove('scrolled')
+            }
+        }
+    })
     flightFilterButtons.forEach(button => {
         button.addEventListener('click', () => {
             const ticketComponentList = document.getElementById('ticket-component-list');
@@ -408,19 +423,6 @@
         })
     })
     ticketPageAsideMobileTopSideToggle.addEventListener('mousedown', () => ticketPageAside.classList.toggle('showing'))
-    window.addEventListener('scroll', () => {
-        if (window.innerWidth <= 991) {
-            if (window.scrollY !== 0) {
-                if (ticketPageAside.classList.contains('showing')) {
-                    ticketPageAside.classList.replace('showing', 'scrolled')
-                } else {
-                    ticketPageAside.classList.add('scrolled')
-                }
-            } else {
-                ticketPageAside.classList.remove('scrolled')
-            }
-        }
-    })
 </script>
 </body>
 </html>
