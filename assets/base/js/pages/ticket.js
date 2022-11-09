@@ -77,3 +77,11 @@ ticketComponentBottomAccardionTogglers.forEach(toggler => {
 
 // Adding Event Listener On 'ticketPageAsideMobileTopSideToggle' That Listenes To Mouse Down Event That Toggles  Class Of 'showing' To Aside Eement Of Page
 ticketPageAsideMobileTopSideToggle.addEventListener('mousedown', () => ticketPageAside.classList.toggle('showing'))
+
+// Setting Multiple Range Slider
+$(".slider-range").slider({
+    range: true,
+    min: 0,
+    max: 24,
+    values: [0, 24],
+});
