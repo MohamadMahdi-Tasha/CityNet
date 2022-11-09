@@ -116,7 +116,7 @@
          <main id="nothing-found-main" class="bg-error-lighten4 p-3 rounded-3 nothing-found"><h6 class="text-center text-error-darken2 mb-0 font-small fw-bold">موردی یافت نشد</h6></main>
 
         <!--If There Is Something-->
-        <main id="results" class="rounded-3 bg-white overflow-hidden">
+        <main id="results" class="rounded-3 bg-white overflow-hidden border">
             <ul class="list-unstyled row row-cols-lg-auto justify-content-around row-cols-4 m-0 p-0 bg-black-lighten1">
                 <li class="p-3 col text-white font-small text-lg-end text-center">نام خریدار</li>
                 <li class="p-3 col text-white font-small text-lg-end text-center">نام کاربری</li>
@@ -127,7 +127,7 @@
                 <li class="p-3 col text-white font-small text-lg-end text-center">قرارداد</li>
                 <li class="p-3 col text-white font-small text-lg-end text-center">وضعیت</li>
             </ul>
-            <div>
+            <div class="table-bottom-items-holder">
                 <div data-opened class="table-bottom-item-holder">
                     <button class="table-bottom-item-toggler ripple-button bg-grey-lighten3 inner-ripple-black col-12 row row-cols-lg-auto justify-content-around row-cols-4 m-0 p-0 border-bottom border-top border-0">
                         <span class="p-3 font-small text-lg-end text-center col">1</span>
@@ -140,11 +140,11 @@
                         <span class="p-3 font-small text-lg-end text-center col">8</span>
                     </button>
                     <div class="p-3 table-bottom-item">
-                        <div class="border rounded-3 p-3">
-                            <div class="d-flex justify-content-between align-items-center mb-3 gap-3 flex-wrap">
+                        <div class="border rounded-3 p-3 d-flex flex-column gap-3">
+                            <div class="d-flex justify-content-between align-items-center gap-3 flex-wrap">
                                 <h6 class="mb-0 font-small text-grey-darken3"><i class="bi bi-airplane text-grey-darken1 rotate-270 ms-1"></i>نوع سرویس پرواز<span class="my-little-spans no-circle succses">فعال</span></h6>
                                 <div class="d-flex gap-3">
-                                    <button class="px-3 py-2 font-small border-0 rounded-3 ripple-button primary">
+                                    <button class="px-3 py-2 font-small border-0 rounded-3 ripple-button primary details-show-btn">
                                         جزییات سرویس
                                         <i class="bi bi-chevron-down"></i>
                                     </button>
@@ -152,7 +152,7 @@
                                     <button class="px-3 py-2 font-small border-0 rounded-3 ripple-button info">فایل PDF</button>
                                 </div>
                             </div>
-                            <flight-details icon-src="assets/base/img/img-logo.png" name="sepehran Airlines" systemic number-of-sits="9" flight-number="IS 4340" mode="economy" start-time="05:45" start-location="تهران (THR)" start-location-en="Tehran" start-location-fa="تهران" end-time="07:15" end-location="مشهد (MHD)" end-location-en="Mashhad" end-location-fa="مشهد" price="11,330,060" start-loaction-abbr="THR" end-loaction-abbr="MHD" route-duration-hour="1" route-duration-minute="5" start-date="2022-11-10" start-date-en="10 november" start-date-fa="پنجشنبه 19 ابان" end-date-en="10 november" end-date-fa="پنجشنبه 19 ابان" plane-model="IS 4340" type="details"></flight-details>
+                            <div class="details-holder"><flight-details icon-src="assets/base/img/img-logo.png" name="sepehran Airlines" systemic number-of-sits="9" flight-number="IS 4340" mode="economy" start-time="05:45" start-location="تهران (THR)" start-location-en="Tehran" start-location-fa="تهران" end-time="07:15" end-location="مشهد (MHD)" end-location-en="Mashhad" end-location-fa="مشهد" price="11,330,060" start-loaction-abbr="THR" end-loaction-abbr="MHD" route-duration-hour="1" route-duration-minute="5" start-date="2022-11-10" start-date-en="10 november" start-date-fa="پنجشنبه 19 ابان" end-date-en="10 november" end-date-fa="پنجشنبه 19 ابان" plane-model="IS 4340" type="details"></flight-details></div>
                             <div class="overflow-hidden rounded border">
                                 <table class="table mb-0 d-lg-table d-flex mb-5">
                                     <thead class="bg-grey-lighten3 col-lg-auto col-6">
@@ -223,6 +223,8 @@
     const dataHavesResultAttributOfHtmlElement = htmlElement.getAttribute('data-haves-result');
     const nothingFoundMainElement = document.getElementById('nothing-found-main');
     const resultsElement = document.getElementById('results');
+    const tableBottomItemTogglers = document.querySelectorAll('.table-bottom-item-toggler');
+    const detailsShowButtons = document.querySelectorAll('.details-show-btn');
 
     if (dataHavesResultAttributOfHtmlElement === 'true') {
         nothingFoundMainElement.remove()
@@ -231,6 +233,21 @@
         nothingFoundMainElement.classList.add('d-block');
         resultsElement.remove();
     }
+    tableBottomItemTogglers.forEach(toggler => {
+        toggler.addEventListener('click' ,() => {
+            const holder = toggler.parentElement;
+            const openedTableBottomItemHolder = document.querySelector('.table-bottom-item-holder[data-opened]')
+
+            holder.toggleAttribute('data-opened');
+            openedTableBottomItemHolder.removeAttribute('data-opened')
+        })
+    })
+    detailsShowButtons.forEach(button => {
+        const parentOfGrandParentOfClickedButton = button.parentElement.parentElement.parentElement;
+        const detailsHolderInParentOfGrandParentOfClickedButton = parentOfGrandParentOfClickedButton.querySelector('.details-holder');
+
+        detailsHolderInParentOfGrandParentOfClickedButton.toggleAttribute('data-opened');
+    })
 </script>
 </body>
 </html>
