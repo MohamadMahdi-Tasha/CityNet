@@ -310,16 +310,8 @@
 <script src="assets/base/js/component/modal.js"></script>
 <script src="assets/base/js/component/flight-details.js"></script>
 <script src="assets/base/js/public-scripts.js"></script>
+<script src="assets/base/js/pages/ticket-buy-last.js"></script>
 <script src="assets/base/js/intractive-components.js"></script>
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
-<script>
-    // Variables
-    const acceptRulesInput = document.getElementById('accept-rules');
-    const submitButton = document.getElementById('submit-btn');
-
-    // Adding Event Listener On Accept Rules Input That Listenes To Click And Checks If Its Checked Then Remove Attribute Of 'disabled' From
-    // Submit Button Otherwise Toggle The Attribute On It
-    acceptRulesInput.addEventListener('click', () => (acceptRulesInput.check) ? submitButton.removeAttribute('disabled') : submitButton.toggleAttribute('disabled'))
-</script>
 </body>
 </html>
