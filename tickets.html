@@ -316,7 +316,7 @@
                     <div class="d-flex gap-3 align-items-center">
                         <i class="bi bi-filter text-grey-darken3"></i>
                         <h6 class="mb-0 font-small text-grey-darken3">ترتیب بر اساس</h6>
-                        <button class="flight-filter-button p-3 font-small border-0 rounded-3" active>ارزان ترین قیمت</button>
+                        <button class="flight-filter-button active p-3 font-small border-0 rounded-3">ارزان ترین قیمت</button>
                         <button class="flight-filter-button p-3 font-small border-0 rounded-3">ساعت حرکت</button>
                     </div>
                     <div class="d-flex align-items-center">
@@ -328,7 +328,7 @@
                         <button class="bg-transparent border-0 text-grey-darken1"><i class="bi bi-list"></i></button>
                     </div>
                 </header>
-                <ul class="list-unstyled p-0 ms-lg-3 ms-0 d-flex flex-column gap-3">
+                <ul class="list-unstyled p-0 ms-lg-3 ms-0 d-flex flex-column gap-3" id="ticket-component-list" data-filter="cheapest">
                     <li>
                         <ticket-component icon-src="assets/base/img/img-logo.png" name="sepehran Airlines" systemic number-of-sits="9" flight-number="IS 4340" mode="economy" start-time="05:45" start-location="تهران (THR)" start-location-en="Tehran" start-location-fa="تهران" end-time="07:15" end-location="مشهد (MHD)" end-location-en="Mashhad" end-location-fa="مشهد" price="11,330,060" start-loaction-abbr="THR" end-loaction-abbr="MHD" route-duration-hour="1" route-duration-minute="5" start-date="2022-11-10" start-date-en="10 november" start-date-fa="پنجشنبه 19 ابان" end-date-en="10 november" end-date-fa="پنجشنبه 19 ابان" plane-model="IS 4340"></ticket-component>
                     </li>
@@ -342,6 +342,8 @@
 <!--Script Parts-->
 <noscript>لطفا جاوااسکریپت مرورگر خود را فعال کنید</noscript>
 <script src="assets/plugins/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="assets/plugins/vue/vue.js"></script>
+<script src="assets/plugins/date-picker/datepicker.min.js"></script>
 <script src="assets/base/js/component/ticket-component.js"></script>
 <script src="assets/base/js/component/header.js"></script>
 <script src="assets/base/js/component/mobile-nav.js"></script>
@@ -359,6 +361,7 @@
     const startPlaceTopSide = document.getElementById('start-place-top-side');
     const endPlaceTopSide = document.getElementById('end-place-top-side');
     const flightDateTopSide = document.getElementById('flight-date-top-side');
+    const flightFilterButtons = document.querySelectorAll('.flight-filter-button');
 
     const dataFromHtmlElementStartPlace = htmlElement.getAttribute('data-start-place')
     const dataFromHtmlElementEndPlace = htmlElement.getAttribute('data-end-place')
@@ -371,6 +374,22 @@
     startPlaceTopSide.textContent = dataFromHtmlElementStartPlace;
     endPlaceTopSide.textContent = dataFromHtmlElementEndPlace;
     flightDateTopSide.textContent = dataFromHtmlElementFlightDate;
+
+    flightFilterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const ticketComponentList = document.getElementById('ticket-component-list');
+            const activeFilterButton = document.querySelector('.flight-filter-button.active');
+
+            activeFilterButton.classList.remove('active');
+            button.classList.add('active');
+
+            if (button.textContent === "ارزان ترین قیمت") {
+                ticketComponentList.setAttribute('data-filter', 'cheapest');
+            } else {
+                ticketComponentList.setAttribute('data-filter', 'time');
+            }
+        })
+    })
 </script>
 </body>
 </html>

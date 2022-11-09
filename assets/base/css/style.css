@@ -813,6 +813,8 @@ input[type='number'] {
 .intractive-buttons-btn:not(.text-secondary-lighten1).active {color: var(--primary-base);}
 .my-collapse-holder[data-opened] {height: auto;}
 .my-collapse-holder:not([data-opened]) {height: 50px;overflow: hidden;}
+.flight-filter-button.active {background-color: var(--grey-lighten3);color: var(--info-darken1-base);}
+.flight-filter-button:not(.active) {background-color: transparent;color: var(--grey-darken2);}
 
 /*Animations*/
 @keyframes radio-animation {
