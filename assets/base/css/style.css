@@ -808,12 +808,14 @@ input[type='number'] {
 .ticket-component-bottom-accardion-toggler[data-opened] {color: var(--info-darken1-base);}
 .ticket-page-aside.scrolled {top: 100%;}
 .ticket-page-aside.showing {top: 0;border-radius: 0;overflow: auto;}
-:is(.ticket-component-bottom-accardion-toggler[data-opened],.details-show-btn[data-opened], .my-drop-down-toggler[data-opened].my-collapse-toggler[data-opened]) .bi-chevron-down::before{transform: rotate(180deg);}
+:is(.ticket-component-bottom-accardion-toggler[data-opened],.details-show-btn[data-opened],.show-price-details-btn[data-opened], .my-drop-down-toggler[data-opened].my-collapse-toggler[data-opened]) .bi-chevron-down::before{transform: rotate(180deg);}
 .table-bottom-item-holder:not([data-opened]) {height: 50px;overflow: hidden;}
 .table-bottom-item-holder[data-opened] {height: auto;}
 .details-holder[data-opened] {display: block;}
 .details-holder:not([data-opened]) {display: none;}
 .table-bottom-item-toggler {height: 50px;}
+.price-details[data-opened] {display: flex;}
+.price-details:not([data-opened]) {display: none !important;}
 
 /*Animations*/
 @keyframes radio-animation {
