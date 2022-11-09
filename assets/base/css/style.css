@@ -87,10 +87,6 @@ body {
     width: 100px;
 }
 
-.ticket-component-bottom-accardion-toggler .bi-chevron-down::before, .ticket-component-bottom-accardion-toggler {
-    transition: .3s
-}
-
 .intractive-buttons-btn.ticket-component.ripple-button .ripple-button--inner-span,
 .bg-grey-lighten2.ripple-button .ripple-button--inner-span {
     background-color: rgba(0, 0, 0, .2) !important;
@@ -143,10 +139,6 @@ tbody tr:last-of-type * {
 
 .intractive-buttons-btn.ripple-button:not(.ticket-component) .ripple-button--inner-span {
     background-color: rgba(221, 153, 51, .2);
-}
-
-.my-drop-down-toggler .bi-chevron-down:before {
-    transition: .3s;
 }
 
 .intractive-buttons-with-border {
@@ -758,10 +750,6 @@ i.rotate-270::before {
     border-bottom: 1px dashed var(--grey-darken3);
 }
 
-.ticket-component-bottom-accardion-toggler > i.bi-chevron-down {
-    transition: .3s;
-}
-
 input[type='number']::-webkit-inner-spin-button,
 input[type='number']::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -792,10 +780,13 @@ input[type='number'] {
     height: 50px;
 }
 
+.bi.bi-chevron-down::before {
+    transition: .3s;
+}
+
 /*Realated To Js*/
 .my-drop-down-holder[data-opened] .my-drop-down {opacity: 1;transform: translateY(0);pointer-events: visible}
 .my-drop-down-holder:not([data-opened]) .my-drop-down {opacity: 0;transform: translateY(-10px);pointer-events: none}
-
 .my-modal-holder[data-opened] {pointer-events: visible;}
 .my-modal-holder:not([data-opened]) {pointer-events: none;}
 .my-modal-holder[data-opened] > .my-modal-bg {opacity: 1;}
@@ -815,6 +806,17 @@ input[type='number'] {
 .my-collapse-holder:not([data-opened]) {height: 50px;overflow: hidden;}
 .flight-filter-button.active {background-color: var(--grey-lighten3);color: var(--info-darken1-base);}
 .flight-filter-button:not(.active) {background-color: transparent;color: var(--grey-darken2);}
+.ticket-component-bottom-accardion[data-opened] {display: block;}
+.ticket-component-bottom-accardion:not([data-opened]) {display: none;}
+.ticket-component-bottom-accardion-toggler[data-opened] {color: var(--info-darken1-base);}
+
+:is(
+    .ticket-component-bottom-accardion-toggler[data-opened],
+    .my-drop-down-toggler[data-opened],
+    .my-collapse-toggler[data-opened]
+) .bi-chevron-down::before{
+    transform: rotate(180deg);
+}
 
 /*Animations*/
 @keyframes radio-animation {

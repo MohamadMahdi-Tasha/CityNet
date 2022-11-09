@@ -71,7 +71,11 @@ dropDownsTogglers.forEach(toggler => {
     const dropDownHolderOfToggler = toggler.parentElement;
     const buttonsInClickedDropDown = dropDown.querySelectorAll('button:not(.my-drop-down-toggler)');
 
-    toggler.addEventListener('click', () => dropDownHolderOfToggler.toggleAttribute('data-opened'))
+    toggler.addEventListener('click', () => {
+        dropDownHolderOfToggler.toggleAttribute('data-opened')
+        toggler.toggleAttribute('data-opened');
+    })
+
     buttonsInClickedDropDown.forEach(button => button.addEventListener('click', () => {
         const dropDownHolderOfButton = button.parentElement.parentElement;
         dropDownHolderOfButton.removeAttribute('data-opened')
@@ -166,4 +170,7 @@ innerPageTogglers.forEach(toggler => {
 })
 
 // Adding Event Listener On Each Collapse Toggler That Toggles Attribute Of 'data-opened' To Its Parent Element
-collapseToggler.forEach(toggler => toggler.addEventListener('click', () => toggler.parentElement.toggleAttribute('data-opened')))
+collapseToggler.forEach(toggler => toggler.addEventListener('click', () => {
+    toggler.parentElement.toggleAttribute('data-opened')
+    toggler.toggleAttribute('data-opened')
+}))
