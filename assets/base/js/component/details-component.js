@@ -58,11 +58,11 @@ class detailComponent extends HTMLElement {
                                             <div class="my-drop-down-holder">
                                                 <button class="my-drop-down-toggler bg-grey-lighten3 inner-ripple-black ripple-button border-0 rounded-3 font-small squar-size d-flex justify-content-center align-items-center">...</button>
                                                 <div class="my-drop-down left top auto-size d-flex flex-column">
-                                                    <button class="ripple-button col-12 border-0 inner-ripple-black p-3 text-grey-darken1 font-small bg-transparent text-end">فلان</button>
-                                                    <button class="ripple-button col-12 border-0 inner-ripple-black p-3 text-grey-darken1 font-small bg-transparent text-end">فلان</button>
-                                                    <button class="ripple-button col-12 border-0 inner-ripple-black p-3 text-grey-darken1 font-small bg-transparent text-end">فلان</button>
-                                                    <button class="ripple-button col-12 border-0 inner-ripple-black p-3 text-grey-darken1 font-small bg-transparent text-end">فلان</button>
-                                                    <button class="ripple-button col-12 border-0 inner-ripple-black p-3 text-grey-darken1 font-small bg-transparent text-end">فلان</button>
+                                                    <button class="ripple-button col-12 border-0 inner-ripple-black p-2 text-grey-darken1 font-small bg-transparent text-end">فلان</button>
+                                                    <button class="ripple-button col-12 border-0 inner-ripple-black p-2 text-grey-darken1 font-small bg-transparent text-end">فلان</button>
+                                                    <button class="ripple-button col-12 border-0 inner-ripple-black p-2 text-grey-darken1 font-small bg-transparent text-end">فلان</button>
+                                                    <button class="ripple-button col-12 border-0 inner-ripple-black p-2 text-grey-darken1 font-small bg-transparent text-end">فلان</button>
+                                                    <button class="ripple-button col-12 border-0 inner-ripple-black p-2 text-grey-darken1 font-small bg-transparent text-end">فلان</button>
                                                 </div>
                                             </div>
                                         </td>
