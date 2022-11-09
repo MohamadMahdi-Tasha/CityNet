@@ -365,6 +365,7 @@
     const flightFilterButtons = document.querySelectorAll('.flight-filter-button');
     const ticketComponentBottomAccardionTogglers = document.querySelectorAll('.ticket-component-bottom-accardion-toggler');
     const ticketPageAsideMobileTopSideToggle = document.querySelector('.ticket-page-aside-mobile-top-side-toggle');
+    const ticketPageAside = document.querySelector('.ticket-page-aside');
 
     const dataFromHtmlElementStartPlace = htmlElement.getAttribute('data-start-place')
     const dataFromHtmlElementEndPlace = htmlElement.getAttribute('data-end-place')
@@ -406,8 +407,20 @@
             openedAccardion.removeAttribute('data-opened');
         })
     })
-    ticketPageAsideMobileTopSideToggle.addEventListener('mousedown', () => {
-
+    ticketPageAsideMobileTopSideToggle.addEventListener('mousedown', () => ticketPageAside.classList.toggle('showing'))
+    window.addEventListener('scroll', () => {
+        if (window.innerWidth <= 991) {
+            if (window.scrollY !== 0) {
+                if (ticketPageAside.classList.contains('showing')) {
+                    ticketPageAside.classList.replace('showing', 'scrolled')
+                } else {
+                    ticketPageAside.classList.add('scrolled')
+                }
+            } else {
+                ticketPageAside.classList.remove('scrolled')
+                ticketPageAside.classList.remove('showing')
+            }
+        }
     })
 </script>
 </body>

@@ -807,15 +807,8 @@ input[type='number'] {
 .ticket-component-bottom-accardion:not([data-opened]) {display: none;}
 .ticket-component-bottom-accardion-toggler[data-opened] {color: var(--info-darken1-base);}
 .ticket-page-aside.scrolled {top: 100%;}
-.ticket-page-aside.showing {top: 0;border-radius: 0;}
-
-:is(
-    .ticket-component-bottom-accardion-toggler[data-opened],
-    .my-drop-down-toggler[data-opened],
-    .my-collapse-toggler[data-opened]
-) .bi-chevron-down::before{
-    transform: rotate(180deg);
-}
+.ticket-page-aside.showing {top: 0;border-radius: 0;overflow: auto;}
+:is(.ticket-component-bottom-accardion-toggler[data-opened],.my-drop-down-toggler[data-opened].my-collapse-toggler[data-opened]) .bi-chevron-down::before{transform: rotate(180deg);}
 
 /*Animations*/
 @keyframes radio-animation {
