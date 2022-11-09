@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fa" data-currency="IRR" data-logged-in="false" data-haves-result="false ">
+<html lang="fa" data-currency="IRR" data-logged-in="false" data-haves-result="true">
 <head>
     <!--A Meta Tag For Setting Character Set Of Page-->
     <meta charset="UTF-8">
@@ -225,11 +225,11 @@
     const resultsElement = document.getElementById('results');
 
     if (dataHavesResultAttributOfHtmlElement === 'true') {
-        nothingFoundMainElement.classList.add('d-none');
+        nothingFoundMainElement.remove()
         resultsElement.classList.add('d-block');
     } else {
         nothingFoundMainElement.classList.add('d-block');
-        resultsElement.classList.add('d-none');
+        resultsElement.remove();
     }
 </script>
 </body>
