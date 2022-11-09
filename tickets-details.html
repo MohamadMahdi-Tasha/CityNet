@@ -243,10 +243,13 @@
         })
     })
     detailsShowButtons.forEach(button => {
-        const parentOfGrandParentOfClickedButton = button.parentElement.parentElement.parentElement;
-        const detailsHolderInParentOfGrandParentOfClickedButton = parentOfGrandParentOfClickedButton.querySelector('.details-holder');
+        button.addEventListener('click', () => {
+            const parentOfGrandParentOfClickedButton = button.parentElement.parentElement.parentElement;
+            const detailsHolderInParentOfGrandParentOfClickedButton = parentOfGrandParentOfClickedButton.querySelector('.details-holder');
 
-        detailsHolderInParentOfGrandParentOfClickedButton.toggleAttribute('data-opened');
+            detailsHolderInParentOfGrandParentOfClickedButton.toggleAttribute('data-opened');
+            button.toggleAttribute('data-opened')
+        })
     })
 </script>
 </body>
