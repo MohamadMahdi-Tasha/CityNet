@@ -811,7 +811,11 @@ input[type='number'] {
 :is(.ticket-component-bottom-accardion-toggler[data-opened],.my-drop-down-toggler[data-opened].my-collapse-toggler[data-opened]) .bi-chevron-down::before{transform: rotate(180deg);}
 .table-bottom-item-holder:not([data-opened]) {height: 50px;overflow: hidden;}
 .table-bottom-item-holder[data-opened] {height: auto;}
-.detailsHolderInParentOfGrandParentOfClickedButton[]
+.details-holder[data-opened] {display: block;}
+.details-holder:not([data-opened]) {display: none;}
+.table-bottom-item-toggler {
+    height: 50px;
+}
 
 /*Animations*/
 @keyframes radio-animation {
