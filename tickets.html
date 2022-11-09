@@ -34,17 +34,12 @@
     <title>تیکت ها - سیتی‌نت</title>
 </head>
 <body dir="rtl">
-<!--Login In Modal-->
 <my-modal type="log-in"></my-modal>
-<!--Login In Modal-->
 <my-modal type="loader"></my-modal>
-<!--flight select modal-->
 <my-modal type="city"></my-modal>
-<!--Mobile Nav-->
+<my-modal type="flight"></my-modal>
 <mobile-nav></mobile-nav>
-<!--Top Side Header-->
 <custom-header not-home></custom-header>
-<!--First Section-->
 <section class="justify-content-center">
     <main class="container-xxl px-lg-5 py-lg-3 px-2 py-2">
         <header class="bg-blue-base mb-3 rounded-3 p-3 d-flex flex-lg-row flex-column gap-3 justify-content-between align-items-center">
@@ -73,7 +68,7 @@
                     <span id="passenger-class-top-side"></span>
                 </h6>
             </div>
-            <button data-target="flight-select-modal" class="ripple-button bg-blue-lighten1 col-lg-auto col-12 border-0 p-3 text-white rounded-3 font-small toggler">
+            <button data-target="flight-select-modal" class="toggler ripple-button bg-blue-lighten1 col-lg-auto col-12 border-0 p-3 text-white rounded-3 font-small toggler">
                 تغییر جستجو
                 <i class="bi me-2 bi-arrow-clockwise"></i>
             </button>
@@ -356,6 +351,7 @@
 <script src="assets/base/js/component/flight-details.js"></script>
 <script src="assets/base/js/public-scripts.js"></script>
 <script src="assets/base/js/intractive-components.js"></script>
+<script src="assets/base/js/component/flight.js"></script>
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
 <script>
     const passengerCountTopSide = document.getElementById('passenger-count-top-side');
