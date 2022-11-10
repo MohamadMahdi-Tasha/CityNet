@@ -360,7 +360,7 @@ input[type='radio']:before {
     overflow: scroll;
 }
 
-.ticket-buy-last-rules .my-collapse-holder {
+.ticket-buy-last-rules .my-collapse-holder[data-opened] {
     height: 110px;
     overflow: auto;
 }
@@ -785,6 +785,8 @@ input[type='number'] {
 .bi.bi-chevron-down::before {
     transition: .3s;
 }
+
+.ticket-buy-last-rules
 
 /*Realated To Js*/
 .my-drop-down-holder[data-opened] .my-drop-down {opacity: 1;transform: translateY(0);pointer-events: visible}
