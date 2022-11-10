@@ -15,15 +15,15 @@ class detailComponent extends HTMLElement {
                     </button>
                     <div class="p-3 table-bottom-item">
                         <div class="border rounded-3 p-3 d-flex flex-column gap-3">
-                            <div class="d-flex justify-content-between align-items-center gap-3 flex-wrap">
+                            <div class="d-flex flex-lg-row flex-column justify-content-between align-items-lg-center align-items-start gap-3 flex-wrap">
                                 <h6 class="mb-0 font-small text-grey-darken3"><i class="bi bi-airplane text-grey-darken1 rotate-270 ms-1"></i>نوع سرویس پرواز<span class="my-little-spans no-circle succses">فعال</span></h6>
-                                <div class="d-flex gap-3">
-                                    <button class="px-3 py-2 font-small border-0 rounded-3 ripple-button primary details-show-btn">
+                                <div class="d-flex flex-lg-row flex-column gap-3 col-lg-auto col-12">
+                                    <button class="px-3 col-lg-auto col-12 py-2 font-small border-0 rounded-3 ripple-button primary details-show-btn">
                                         جزییات سرویس
                                         <i class="bi bi-chevron-down"></i>
                                     </button>
-                                    <button class="px-3 py-2 font-small border-0 rounded-3 ripple-button error">درخواست کنسل (افلاین)</button>
-                                    <button class="px-3 py-2 font-small border-0 rounded-3 ripple-button info">فایل PDF</button>
+                                    <button class="px-3 col-lg-auto col-12 py-2 font-small border-0 rounded-3 ripple-button error">درخواست کنسل (افلاین)</button>
+                                    <button class="px-3 col-lg-auto col-12 py-2 font-small border-0 rounded-3 ripple-button info">فایل PDF</button>
                                 </div>
                             </div>
                             <div class="details-holder" data-opened><flight-details icon-src="assets/base/img/img-logo.png" name="sepehran Airlines" systemic number-of-sits="9" flight-number="IS 4340" mode="economy" start-time="05:45" start-location="تهران (THR)" start-location-en="Tehran" start-location-fa="تهران" end-time="07:15" end-location="مشهد (MHD)" end-location-en="Mashhad" end-location-fa="مشهد" price="11,330,060" start-loaction-abbr="THR" end-loaction-abbr="MHD" route-duration-hour="1" route-duration-minute="5" start-date="2022-11-10" start-date-en="10 november" start-date-fa="پنجشنبه 19 ابان" end-date-en="10 november" end-date-fa="پنجشنبه 19 ابان" plane-model="IS 4340" type="details"></flight-details></div>
