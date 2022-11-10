@@ -11,6 +11,7 @@ const intractiveButtons = document.querySelectorAll('.intractive-buttons-btn');
 const intractiveButtonsBorder = document.querySelectorAll('.intractive-buttons-border');
 const innerPageTogglers = document.querySelectorAll('.inner-page-toggler');
 const collapseToggler = document.querySelectorAll('.my-collapse-toggler');
+const switchButton = document.querySelectorAll('.switch-button');
 
 // Functions
 // A Function That Takes English Abbreviation Of Currency And Returns Persian Name Of It
@@ -174,3 +175,33 @@ collapseToggler.forEach(toggler => toggler.addEventListener('click', () => {
     toggler.parentElement.toggleAttribute('data-opened')
     toggler.toggleAttribute('data-opened')
 }))
+
+// Adding Event Listener On Each Switch Button That Listens To Click And Checks If Tag Name Of Last Child Of Previous And Next Select City Components
+// Are 'selected-city' Which Is Custom Element Then It Toggles Class Of 'rotated' To Clicked Button Then Replaces Last Child And Attribute Of 'data-selected-city' Of Previous And
+// Next Last Child Together
+switchButton.forEach(button => {
+    button.addEventListener('click', () => {
+        const previousCityIntractiveComponent = button.previousElementSibling.firstElementChild.firstElementChild;
+        const nextCityIntractiveComponent = button.nextElementSibling.firstElementChild.firstElementChild;
+        const lastChildOfPreviousCityIntractiveComponent = previousCityIntractiveComponent.lastElementChild;
+        const lastChildOfNextCityIntractiveComponent = nextCityIntractiveComponent.lastElementChild;
+        const tagNameOfLastChildOfPreviousCityIntractiveComponent = lastChildOfPreviousCityIntractiveComponent.tagName;
+        const tagNameOfLastChildOfNextCityIntractiveComponent = lastChildOfNextCityIntractiveComponent.tagName;
+
+        if (
+            tagNameOfLastChildOfPreviousCityIntractiveComponent.toLowerCase() === 'selected-city' &&
+            tagNameOfLastChildOfNextCityIntractiveComponent.toLowerCase() === 'selected-city'
+        ) {
+            const cloneOfLastChildOfPreviousCityIntractiveComponent = lastChildOfPreviousCityIntractiveComponent.cloneNode(true)
+            const cloneOfLastChildOfNextCityIntractiveComponent = lastChildOfNextCityIntractiveComponent.cloneNode(true)
+            const selectedCityOfPreviousCityIntractiveComponent = previousCityIntractiveComponent.getAttribute('data-selected-city');
+            const selectedCityOfNextCityIntractiveComponent = nextCityIntractiveComponent.getAttribute('data-selected-city');
+
+            button.classList.toggle('rotated')
+            lastChildOfNextCityIntractiveComponent.replaceWith(cloneOfLastChildOfPreviousCityIntractiveComponent)
+            lastChildOfPreviousCityIntractiveComponent.replaceWith(cloneOfLastChildOfNextCityIntractiveComponent)
+            previousCityIntractiveComponent.setAttribute('data-selected-city', selectedCityOfNextCityIntractiveComponent)
+            nextCityIntractiveComponent.setAttribute('data-selected-city', selectedCityOfPreviousCityIntractiveComponent)
+        }
+    })
+})
