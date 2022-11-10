@@ -39,8 +39,8 @@ window.addEventListener('load', () => {
         currencyHeaderEnglish.textContent = currencyToSelectInLocalStoarge;
     } else {
         localStorage.setItem('selected-currency', 'IRR');
-        currencyHeaderPersian.textContent = persianNameByEnAbbrevationCurrency(currencyToSelectInLocalStoarge);
-        currencyHeaderEnglish.textContent = currencyToSelectInLocalStoarge;
+        currencyHeaderPersian.textContent = persianNameByEnAbbrevationCurrency(localStorage.getItem('selected-currency'));
+        currencyHeaderEnglish.textContent = localStorage.getItem('selected-currency');
     }
 })
 
