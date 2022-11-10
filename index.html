@@ -104,7 +104,7 @@
                 newSpinner.remove()
 
                 if (result.data.msg === thereIsNoNumberLikeThisInSystemText) {
-                    alert('error')
+                    setErrorOnIntractiveComponent(telIntractiveComponentHolder, 'شماره ای با این اعداد در سیستم پیدا نشد.')
                 } else if (result.data.result === 'success') {
                     alert('succses')
                 }
@@ -113,6 +113,13 @@
             })
             .catch(error => console.log('error', error));
     })
+
+    function setErrorOnIntractiveComponent(intractiveComponent, title) {
+        intractiveComponent.setAttribute('error', 'true');
+        intractiveComponent.setAttribute('error-title', title);
+        intractiveComponent.firstElementChild.classList.replace('focused', 'errored')
+        intractiveComponent.firstElementChild.classList.add('will-not-close')
+    }
 </script>
 </body>
 </html>

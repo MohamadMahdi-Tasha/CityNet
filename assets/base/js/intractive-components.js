@@ -2,7 +2,7 @@
 const calenderIntractiveComponent = document.querySelectorAll('.intractive-component.calender');
 const dropDownButtonsInIntractiveComponents = document.querySelectorAll('.intractive-component.dropdown ~ .my-drop-down button');
 const cityComponentDropDownButtons = document.querySelectorAll('.city-component-drop-down-button');
-const intractiveComponents = document.querySelectorAll('.intractive-component:not(.calender, .dropdown)');
+const intractiveComponents = document.querySelectorAll('.intractive-component:not(.calender, .dropdown, .errored)');
 const plusMinusButton = document.querySelectorAll('.plus-minus-button');
 const passengerClassSelectButton = document.querySelectorAll('.passenger-class-select-button');
 const inputIntractiveComponent = document.querySelectorAll('.intractive-component.input');

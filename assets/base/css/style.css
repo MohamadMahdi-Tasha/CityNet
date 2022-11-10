@@ -73,6 +73,24 @@ body {
     pointer-events: none
 }
 
+.intractive-component ~ .error-holder {
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s;
+    margin-top: 1rem;
+    color: red;
+}
+
+.intractive-component.errored {
+    border-color: red !important;
+    color: red !important;
+}
+
+.intractive-component.errored ~ .error-holder {
+    opacity: 1;
+    pointer-events: visible;
+
+}
 
 .intractive-buttons-border.ticket-component {
     width: 150px;
