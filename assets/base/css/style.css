@@ -950,4 +950,12 @@ input[type='number'] {
     .my-collapse-holder:not([data-opened]) {
         height: 70px;
     }
+
+    td .my-little-spans {
+        margin-right: 0;
+    }
+
+    .my-little-spans:not(.no-circle)::before {
+        display: none;
+    }
 }
