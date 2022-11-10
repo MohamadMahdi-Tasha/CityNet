@@ -5,7 +5,7 @@ class flightDetails extends HTMLElement {
             if (this.getAttribute('small') === null) {
                 this.innerHTML = `
                         <div">
-                            <div class="p-3 d-flex justify-content-between align-items-center border border-bottom-0 bg-grey-lighten3 rounded-top">
+                            <div class="p-3 d-flex flex-lg-row flex-column gap-3 justify-content-between align-items-lg-center align-items-start border border-bottom-0 bg-grey-lighten3 rounded-top">
                                 <div class="d-flex align-items-center">
                                     <h6 class="mb-0 font-small">
                                         <span>${this.getAttribute('start-loaction-abbr')}</span>
@@ -31,7 +31,7 @@ class flightDetails extends HTMLElement {
                                 </div>
                         </div>
                         <div class="bg-white p-3 border rounded-bottom ">
-                            <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="d-flex flex-lg-row flex-column align-items-lg-center align-items-start gap-3 mb-3">
                                 <h6 class="mb-0 font-small fw-bold">
                                     <i class="bi bi-calendar4-week"></i>
                                     زمان حرکت :
@@ -74,7 +74,7 @@ class flightDetails extends HTMLElement {
                                     <h6 class="font-small text-grey-darken4 mb-0">کلاس نرخی :<span>${this.getAttribute('mode')}</span></h6>
                                 </div>
                             </div>
-                            <div class="d-flex align-items-center gap-3">
+                            <div class="d-flex flex-lg-row flex-column align-items-lg-center align-items-start gap-3">
                                 <h6 class="mb-0 font-small fw-bold">
                                     <i class="bi bi-calendar4-week"></i>
                                     زمان رسیدن :
