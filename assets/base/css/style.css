@@ -944,4 +944,8 @@ input[type='number'] {
     .intractive-component {
         border-radius: 1rem !important;
     }
+
+    .my-collapse-holder:not([data-opened]) {
+        height: 70px;
+    }
 }
