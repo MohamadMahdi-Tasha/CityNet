@@ -13,9 +13,9 @@ class Modal extends HTMLElement {
                             </div>
                         </div>
                         <h6 class="text-grey-lighten1 mb-4 font-small text-center">لطفا شماره موبایل خود را وارد کنید</h6>
-                        <form action="#">
+                        <form action="#" id="login-form">
                             <div class="row gx-2 gy-2 mb-3">
-                                <intractive-component class="col-lg-9 col-12" type="input" input-type="tel" placeholder="موبایل"></intractive-component>
+                                <intractive-component id="mobile-number-input-login-modal" class="col-lg-9 col-12" type="input" input-type="tel" placeholder="موبایل"></intractive-component>
                                 <intractive-component class="col-lg-3 col-12" disabled type="input" input-type="tel"></intractive-component>
                             </div>
                             <button type="submit" class="rounded-4 col-12 submit-button ripple-button">ورود</button>

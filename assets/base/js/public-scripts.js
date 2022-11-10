@@ -104,6 +104,10 @@ togglers.forEach(toggle => {
         const targetElementOfClickedToggle = document.getElementById(targetOfClickedToggle);
 
         targetElementOfClickedToggle.toggleAttribute('data-opened')
+        if (targetElementOfClickedToggle.parentElement.tagName.toLowerCase() === 'my-modal') {
+            const firstInputInModal = targetElementOfClickedToggle.querySelector('input:first-of-type');
+            firstInputInModal.focus();
+        }
     })
 })
 

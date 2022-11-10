@@ -61,5 +61,58 @@
 <script src="assets/base/js/public-scripts.js"></script>
 <script src="assets/base/js/intractive-components.js"></script>
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
+<script>
+    const loginForm = document.getElementById('login-form');
+
+    loginForm.addEventListener('submit', (event) => {
+        event.preventDefault()
+
+        const telIntractiveComponent = loginForm.firstElementChild.firstElementChild.firstElementChild;
+        const telIntractiveComponentHolder = loginForm.firstElementChild.firstElementChild;
+        const valueOfTelIntractiveComponent = telIntractiveComponent.getAttribute('data-value');
+        const submitButton = loginForm.querySelector('button[type=submit]')
+        const newSpinner = document.createElement('span');
+        const headersToSend = new Headers();
+        let numberToSend;
+
+        (valueOfTelIntractiveComponent[0] === '0')
+            ? numberToSend = valueOfTelIntractiveComponent.slice(1, valueOfTelIntractiveComponent.length)
+            : numberToSend = valueOfTelIntractiveComponent
+
+        newSpinner.className = 'spinner-border text-white'
+        submitButton.textContent = '';
+        submitButton.appendChild(newSpinner);
+
+        const dataToSend = JSON.stringify({"mobile": numberToSend});
+        headersToSend.append("Accept", "application/json");
+        headersToSend.append("debug", "true");
+        headersToSend.append("Content-Type", "application/json");
+
+        const optionsToSend = {
+            method: 'POST',
+            headers: headersToSend,
+            body: dataToSend,
+            redirect: 'follow'
+        };
+
+        fetch("https://www.newcash.me/api/v1/airfare-web/login", optionsToSend)
+            .then(response => response.json())
+            .then(result => {
+                const thereIsNoNumberLikeThisInSystemText = "لم یتم العثور علی مستخدم برقم الهاتف هذا";
+
+                submitButton.textContent = 'ورود';
+                newSpinner.remove()
+
+                if (result.data.msg === thereIsNoNumberLikeThisInSystemText) {
+                    alert('error')
+                } else if (result.data.result === 'success') {
+                    alert('succses')
+                }
+
+                console.log(result)
+            })
+            .catch(error => console.log('error', error));
+    })
+</script>
 </body>
 </html>
