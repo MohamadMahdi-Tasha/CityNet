@@ -61,5 +61,33 @@
 <script src="assets/base/js/public-scripts.js"></script>
 <script src="assets/base/js/intractive-components.js"></script>
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
+<script>
+    const loginForm = document.getElementById('login-form');
+
+    loginForm.addEventListener('submit', () => {
+        const headersOfDataToSend = new Headers();
+        const dataToSend = JSON.stringify({"mobile": "9038099584"});
+
+        headersOfDataToSend.append("Accept", "application/json");
+        headersOfDataToSend.append("debug", "true");
+        headersOfDataToSend.append("Content-Type", "application/json");
+
+        const optionsToSend = {
+            method: 'GET',
+            headers: headersOfDataToSend,
+            body: dataToSend,
+            redirect: 'follow'
+        };
+
+        fetch("https://www.newcash.me/api/v1/airfare-web/login", optionsToSend)
+            .then(response => response.json())
+            .then(result => {
+                console.log(result)
+            })
+            .catch(error => {
+                console.log('error', error)
+            });
+    })
+</script>
 </body>
 </html>
