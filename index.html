@@ -27,6 +27,7 @@
 <body dir="rtl" class="home-body">
 <!--Modals-->
 <my-modal type="log-in"></my-modal>
+<my-modal type="login-code"></my-modal>
 <!--Mobile Nav-->
 <mobile-nav></mobile-nav>
 <!--Main Section-->
@@ -65,7 +66,7 @@
     const loginForm = document.getElementById('login-form');
     const submitButtonOfLoginForm = document.getElementById('login-submit-btn')
     const phoneNumberComponent = document.getElementById('mobile-number-input-login-modal').firstElementChild;
-    const codeModal = document.getElementById('code-modal');
+    const codeModal = document.getElementById('login-code-modal');
     const loginModal = document.getElementById('login-modal');
 
     loginForm.addEventListener('submit', (event) => {

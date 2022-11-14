@@ -23,6 +23,20 @@ class Modal extends HTMLElement {
                     </div>
                 </div>   
             `
+        } else if(this.getAttribute('type') === 'login-code') {
+            this.innerHTML = `
+                <div id="login-code-modal" data-opened class="my-modal-holder position-fixed inset-0 d-flex justify-content-center align-items-center">
+                    <div class="my-modal-bg position-fixed inset-0"></div>
+                    <div class="my-modal bg-white shadow rounded-3 p-3 col-lg-5 col-12">
+                        <h6 class="fw-bold text-black text-center mb-3">کد</h6>
+                        <h6 class="text-grey-lighten1 mb-4 font-small text-center">لطفا کد ارسال شده به واتساپ شماره را وارد کنید</h6>
+                        <form action="#" id="login-code-form" class="d-flex flex-column gap-3">
+                            <intractive-component id="mobile-number-input-code-modal" type="input" input-type="number" placeholder="کد"></intractive-component>
+                            <button id="login-code-submit-btn" type="submit" class="rounded-4 col-12 submit-button ripple-button">ورود</button>
+                        </form>
+                    </div>
+                </div>   
+            `
         } else if (this.getAttribute('type') === 'loader') {
             this.innerHTML = `
                 <div data-opened id="loader-modal" class="my-modal-holder position-fixed inset-0 d-flex justify-content-center align-items-center">
