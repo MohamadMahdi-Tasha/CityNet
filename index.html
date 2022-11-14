@@ -63,10 +63,18 @@
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
 <script>
     const loginForm = document.getElementById('login-form');
+    const submitButtonOfLoginForm = loginForm.querySelector('button[type="submit"]');
 
     loginForm.addEventListener('submit', () => {
         const headersOfDataToSend = new Headers();
         const dataToSend = JSON.stringify({"mobile": "9038099584"});
+
+        const innerSpinner = document.createElement('span');
+        innerSpinner.className = 'spinner-border text-white'
+        innerSpinner.setAttribute('role', 'status');
+
+        submitButtonOfLoginForm.textContent = '';
+        submitButtonOfLoginForm.appendChild(innerSpinner)
 
         headersOfDataToSend.append("Accept", "application/json");
         headersOfDataToSend.append("debug", "true");
@@ -82,7 +90,8 @@
         fetch("https://www.newcash.me/api/v1/airfare-web/login", optionsToSend)
             .then(response => response.json())
             .then(result => {
-                console.log(result)
+                submitButtonOfLoginForm.textContent = 'ورود';
+                innerSpinner.remove();
             })
             .catch(error => {
                 console.log('error', error)
