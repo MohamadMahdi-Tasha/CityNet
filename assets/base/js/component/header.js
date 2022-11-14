@@ -105,7 +105,7 @@ class Header extends HTMLElement {
                                             <button class="my-collapse-toggler buttons-in-logged-in-dropdown-header ripple-button text-end bg-transparent border-0 font-small inner-ripple-black ps-2 pe-4 py-2"><i class="bi bi-file-earmark ms-3"></i>گزارش</button>                                        
                                         </div>
                                     </li>
-                                    <li><button class="buttons-in-logged-in-dropdown-header exit-account-btn ripple-button text-end bg-transparent border-0 font-small px-2 py-2 text-pink"><i class="bi bi-person ms-3"></i>خروج</button></li>
+                                    <li><button class="buttons-in-logged-in-dropdown-header exit-account ripple-button text-end bg-transparent border-0 font-small px-2 py-2 text-pink"><i class="bi bi-person ms-3"></i>خروج</button></li>
                                 </ul>
                             </div>
                         </div>
