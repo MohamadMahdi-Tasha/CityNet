@@ -45,7 +45,6 @@
         <flight-component></flight-component>
     </main>
 </section>
-<intractive-component class="errored" type="input" input-type="number" placeholder="کد"></intractive-component>
 <!--Footer-->
 <custom-footer></custom-footer>
 <!--Js Linkings-->
@@ -66,7 +65,17 @@
 <script>
     // Pubic Api Calls
     const loginForm = document.getElementById('login-form');
+    const loginCodeForm = document.getElementById('login-code-form');
 
+    function numberToSend(number) {
+        let numberToSend;
+
+        (number[0] === '0')
+            ? numberToSend = number.slice(1, number.length)
+            : numberToSend = number
+
+        return numberToSend;
+    }
     loginForm.addEventListener('submit', (event) => {
         event.preventDefault();
 
@@ -76,14 +85,9 @@
         const submitButtonOfLoginForm = document.getElementById('login-submit-btn')
         const codeModal = document.getElementById('login-code-modal');
         const loginModal = document.getElementById('login-modal');
-        let numberToSend;
-
-        (valueOfPhoneNumberComponent[0] === '0')
-            ? numberToSend = valueOfPhoneNumberComponent.slice(1, valueOfPhoneNumberComponent.length)
-            : numberToSend = valueOfPhoneNumberComponent
 
         const headersOfDataToSend = new Headers();
-        const dataToSend = JSON.stringify({"mobile": numberToSend});
+        const dataToSend = JSON.stringify({"mobile": numberToSend(valueOfPhoneNumberComponent)});
 
         const innerSpinner = document.createElement('span');
         innerSpinner.className = 'spinner-border text-white'
@@ -121,6 +125,48 @@
                 console.log(result)
             })
             .catch(error => {console.log('error', error)});
+    })
+    loginCodeForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const loginCodeSubmitButton = document.getElementById('login-code-submit-btn')
+        const phoneNumberComponent = document.getElementById('mobile-number-input-login-modal').firstElementChild;
+        const valueOfPhoneNumberComponent = phoneNumberComponent.getAttribute('data-value');
+        const mobileNumberInputCodeModal = document.getElementById('mobile-number-input-code-modal').firstElementChild;
+        const valueOfMobileNumberInputCodeModal = mobileNumberInputCodeModal.getAttribute('data-value');
+
+        const headersOfDataToSend = new Headers();
+        headersOfDataToSend.append("Accept", "application/json");
+        headersOfDataToSend.append("debug", "true");
+        headersOfDataToSend.append("Content-Type", "application/json");
+
+        const innerSpinner = document.createElement('span');
+        innerSpinner.className = 'spinner-border text-white'
+        innerSpinner.setAttribute('role', 'status');
+
+        loginCodeSubmitButton.textContent = '';
+        loginCodeSubmitButton.appendChild(innerSpinner);
+
+        const dataToSend = JSON.stringify({"mobile": numberToSend(valueOfPhoneNumberComponent), "verify_code": valueOfMobileNumberInputCodeModal});
+
+        const optionsToSend = {
+            method: 'POST',
+            headers: headersOfDataToSend,
+            body: dataToSend,
+            redirect: 'follow'
+        };
+
+        fetch("https://www.newcash.me/api/v1/airfare-web/verify", optionsToSend)
+            .then(response => response.json())
+            .then(result => {
+                loginCodeSubmitButton.textContent = 'ورود';
+                innerSpinner.remove();
+
+                localStorage.setItem('logged-in', 'true');
+                localStorage.setItem('login-token', result.data.token);
+                document.location.reload();
+            })
+            .catch(error => console.log('error', error));
     })
 
     // intractive components
