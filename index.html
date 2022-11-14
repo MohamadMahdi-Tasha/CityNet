@@ -67,7 +67,7 @@
     const loginForm = document.getElementById('login-form');
     const loginCodeForm = document.getElementById('login-code-form');
 
-    function numberToSend(number) {
+    function returnNumberToSend(number) {
         let numberToSend;
 
         (number[0] === '0')
@@ -87,7 +87,7 @@
         const loginModal = document.getElementById('login-modal');
 
         const headersOfDataToSend = new Headers();
-        const dataToSend = JSON.stringify({"mobile": numberToSend(valueOfPhoneNumberComponent)});
+        const dataToSend = JSON.stringify({"mobile": returnNumberToSend(valueOfPhoneNumberComponent)});
 
         const innerSpinner = document.createElement('span');
         innerSpinner.className = 'spinner-border text-white'
@@ -147,7 +147,7 @@
         loginCodeSubmitButton.textContent = '';
         loginCodeSubmitButton.appendChild(innerSpinner);
 
-        const dataToSend = JSON.stringify({"mobile": numberToSend(valueOfPhoneNumberComponent), "verify_code": valueOfMobileNumberInputCodeModal});
+        const dataToSend = JSON.stringify({"mobile": returnNumberToSend(valueOfPhoneNumberComponent), "verify_code": valueOfMobileNumberInputCodeModal});
 
         const optionsToSend = {
             method: 'POST',
@@ -167,6 +167,14 @@
                 document.location.reload();
             })
             .catch(error => console.log('error', error));
+    })
+
+    window.addEventListener('load', () => {
+        const loggedInLocalStoargeItem = localStorage.getItem('logged-in');
+
+        if (loggedInLocalStoargeItem !== null) {
+            htmlElement.setAttribute('data-logged-in', 'true');
+        }
     })
 
     // intractive components
