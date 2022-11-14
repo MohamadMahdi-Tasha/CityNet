@@ -8,7 +8,6 @@ class intractiveComponent extends HTMLElement {
                         <button data-selected-city="null" class="my-drop-down-toggler col-12 city intractive-component bg-white text-end p-3 position-relative">
                     <span class="my-placeholder position-absolute font-small">${this.getAttribute('placeholder')}</span>
                 </button>
-                <div class="error-holder text-error-darken2 mt-3"><h6 class="mb-0"></h6></div>
                         <div class="my-drop-down col-12 p-3">
                     <h6 class="text-black-lighten3 font-small mb-4">شهر و فرودگاه های پرتردد</h6>
                     <div class="position-relative">
@@ -56,7 +55,6 @@ class intractiveComponent extends HTMLElement {
                             ${this.getAttribute('placeholder')}
                         </span>
                     </button>
-                    <div class="error-holder text-error-darken2 mt-3"><h6 class="mb-0"></h6></div>
                     <div id="${randomDataPickerParentId}">
                         <date-picker @select="select" mode="single"></date-picker>
                     </div>
@@ -108,7 +106,6 @@ class intractiveComponent extends HTMLElement {
                             </h6>
                         </div>
                     </button>
-                    <div class="error-holder text-error-darken2 mt-3"><h6 class="mb-0"></h6></div>
                     <div class="my-drop-down col-12 p-3">
                         <div class="adult d-flex mb-3 align-items-center justify-content-between">
                             <h6 class="font-small mb-0">
@@ -174,7 +171,7 @@ class intractiveComponent extends HTMLElement {
                     <span class="my-placeholder position-absolute font-small">${this.getAttribute('placeholder')}</span>
                     <input class="col-12 bg-transparent h-100 border-0 font-small" type="${this.getAttribute('input-type')}" required>
                 </div>
-                <div class="error-holder text-error-darken2 mt-3"><h6 class="mb-0"></h6></div>
+                <div class="error-holder text-error-darken2 mt-2"><h6 class="mb-0"></h6></div>
             `
             } else {
                 this.innerHTML = `
@@ -191,7 +188,6 @@ class intractiveComponent extends HTMLElement {
                         <h6 class="font-small">${this.querySelector('.dropdown-component-ul button.active').textContent}</h6>
                         <i class="bi bi-chevron-down icon-left"></i>
                     </button>
-                    <div class="error-holder text-error-darken2 mt-3"><h6 class="mb-0"></h6></div>
                     <div class="my-drop-down ${(this.getAttribute('padding') !== null) ? 'p-3' : ''} ${(this.getAttribute('drop-down-position') === 'left') ? 'left' : ''}">
                         ${this.innerHTML}
                     </div>
@@ -204,7 +200,6 @@ class intractiveComponent extends HTMLElement {
                     <i class="bi bi-search position-absolute icon-left"></i>
                     <input class="col-11 bg-transparent h-100 border-0 font-small" type="text" required>
                 </div>
-                <div class="error-holder text-error-darken2 mt-3"><h6 class="mb-0"></h6></div>
             `
         }
     }

@@ -110,23 +110,22 @@
                 submitButtonOfLoginForm.textContent = 'ورود';
                 innerSpinner.remove();
 
-                if (result.msg === thereIsNoUseWithThisNumberArabic) {
-                    alert('fail')
-                    setErrorOnComponent(phoneNumberComponent);
+                if (result.data.msg === thereIsNoUseWithThisNumberArabic) {
+                    setErrorOnComponent(phoneNumberComponent, 'ممد');
                 } else if (result.data.result === "success") {
-                    alert('success')
                     loginModal.removeAttribute('data-opened');
                     codeModal.setAttribute('data-opened', 'true');
                 }
+
+                console.log(result)
             })
-            .catch(error => {
-                console.log('error', error)
-            });
+            .catch(error => {console.log('error', error)});
     })
 
     // intractive components
-    function setErrorOnComponent(component) {
+    function setErrorOnComponent(component, errorText) {
         component.classList.add('errored')
+        component.nextElementSibling.firstElementChild.textContent = errorText
     }
 </script>
 </body>

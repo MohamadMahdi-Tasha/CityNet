@@ -979,4 +979,8 @@ input[type='number'] {
     .my-little-spans:not(.no-circle)::before {
         display: none;
     }
+
+    .mq-w-100:is(.w-25, .w-50, .w-75) {
+        width: 100% !important;
+    }
 }
