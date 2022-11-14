@@ -70,11 +70,12 @@
     loginForm.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        const submitButtonOfLoginForm = document.getElementById('login-submit-btn')
         const phoneNumberComponent = document.getElementById('mobile-number-input-login-modal').firstElementChild;
+        const valueOfPhoneNumberComponent = phoneNumberComponent.getAttribute('data-value');
+
+        const submitButtonOfLoginForm = document.getElementById('login-submit-btn')
         const codeModal = document.getElementById('login-code-modal');
         const loginModal = document.getElementById('login-modal');
-        const valueOfPhoneNumberComponent = phoneNumberComponent.getAttribute('data-value');
         let numberToSend;
 
         (valueOfPhoneNumberComponent[0] === '0')
@@ -111,7 +112,7 @@
                 innerSpinner.remove();
 
                 if (result.data.msg === thereIsNoUseWithThisNumberArabic) {
-                    setErrorOnComponent(phoneNumberComponent, 'ممد');
+                    setErrorOnComponent(phoneNumberComponent, 'همچین شماره ای در سیستم ثبت نشده!');
                 } else if (result.data.result === "success") {
                     loginModal.removeAttribute('data-opened');
                     codeModal.setAttribute('data-opened', 'true');
