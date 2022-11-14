@@ -70,9 +70,9 @@ class Header extends HTMLElement {
                             <span class="d-lg-block d-none">ورود/ثبت نام</span>
                             <i class="bi bi-person d-lg-none d-block"></i>
                         </button>
-                        <div class="my-drop-down-holder">
-                            <button class="my-drop-down-toggler logged-in-only-item ripple-button bg-transparent border rounded-1 px-lg-4 py-lg-2 px-2 py-1 font-small text-white fw-bold">
-                                <i class="bi bi-check-circle-fill"></i>
+                        <div class="my-drop-down-holder d-lg-block d-none logged-in-only-item">
+                            <button class="my-drop-down-toggler ripple-button bg-transparent border rounded-1 px-lg-4 py-lg-2 px-2 py-1 font-small text-white fw-bold">
+                                <i class="bi bi-check-circle-fill check-circle-icon-custome"></i>
                                 <i class="bi bi-person ms-2"></i>
                                 حساب کاربری
                                 <i class="bi bi-chevron-down me-2"></i>
@@ -105,7 +105,7 @@ class Header extends HTMLElement {
                                             <button class="my-collapse-toggler buttons-in-logged-in-dropdown-header ripple-button text-end bg-transparent border-0 font-small inner-ripple-black ps-2 pe-4 py-2"><i class="bi bi-file-earmark ms-3"></i>گزارش</button>                                        
                                         </div>
                                     </li>
-                                    <li><button class="buttons-in-logged-in-dropdown-header ripple-button text-end bg-transparent border-0 font-small px-2 py-2 text-pink"><i class="bi bi-person ms-3"></i>خروج</button></li>
+                                    <li><button class="buttons-in-logged-in-dropdown-header exit-account-btn ripple-button text-end bg-transparent border-0 font-small px-2 py-2 text-pink"><i class="bi bi-person ms-3"></i>خروج</button></li>
                                 </ul>
                             </div>
                         </div>
