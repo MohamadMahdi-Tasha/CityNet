@@ -65,6 +65,8 @@
     const loginForm = document.getElementById('login-form');
     const submitButtonOfLoginForm = document.getElementById('login-submit-btn')
     const phoneNumberComponent = document.getElementById('mobile-number-input-login-modal').firstElementChild;
+    const codeModal = document.getElementById('code-modal');
+    const loginModal = document.getElementById('login-modal');
 
     loginForm.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -75,7 +77,7 @@
         (valueOfPhoneNumberComponent[0] === '0')
             ? numberToSend = valueOfPhoneNumberComponent.slice(1, valueOfPhoneNumberComponent.length)
             : numberToSend = valueOfPhoneNumberComponent
-        
+
         const headersOfDataToSend = new Headers();
         const dataToSend = JSON.stringify({"mobile": numberToSend});
 
@@ -100,13 +102,21 @@
         fetch("https://www.newcash.me/api/v1/airfare-web/login", optionsToSend)
             .then(response => response.json())
             .then(result => {
+                const thereIsNoUseWithThisNumberArabic = 'لم یتم العثور علی مستخدم برقم الهاتف هذا';
+
                 submitButtonOfLoginForm.textContent = 'ورود';
                 innerSpinner.remove();
 
-                console.log(result)
+                if (result.msg === thereIsNoUseWithThisNumberArabic) {
+                    alert('fail')
 
-                // {"data": {"result": "success"}}
-                // {"msg": "لم یتم العثور علی مستخدم برقم الهاتف هذا"}
+
+                } else if (result.data.result === "success") {
+                    alert('success')
+
+                    loginModal.setAttribute('data-opened', 'false');
+                    codeModal.setAttribute('data-opened', 'true');
+                }
             })
             .catch(error => {
                 console.log('error', error)
