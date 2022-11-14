@@ -171,9 +171,15 @@
 
     window.addEventListener('load', () => {
         const loggedInLocalStoargeItem = localStorage.getItem('logged-in');
+        const loggedOutOnlyItems = document.querySelectorAll('.logged-out-only-item');
+        const loggedInOnlyItems = document.querySelectorAll('.logged-in-only-item');
 
         if (loggedInLocalStoargeItem !== null) {
             htmlElement.setAttribute('data-logged-in', 'true');
+            loggedOutOnlyItems.forEach(item =>  item.remove())
+        } else {
+            htmlElement.setAttribute('data-logged-in', 'false');
+            loggedInOnlyItems.forEach(item =>  item.remove())
         }
     })
 
