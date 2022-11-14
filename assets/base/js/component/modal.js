@@ -18,7 +18,7 @@ class Modal extends HTMLElement {
                                 <intractive-component id="mobile-number-input-login-modal" class="col-lg-9 col-12" type="input" input-type="tel" placeholder="موبایل"></intractive-component>
                                 <intractive-component class="col-lg-3 col-12" disabled type="input" input-type="tel"></intractive-component>
                             </div>
-                            <button type="submit" class="rounded-4 col-12 submit-button ripple-button">ورود</button>
+                            <button id="login-submit-btn" type="submit" class="rounded-4 col-12 submit-button ripple-button">ورود</button>
                         </form>
                     </div>
                 </div>   

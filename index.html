@@ -63,11 +63,21 @@
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
 <script>
     const loginForm = document.getElementById('login-form');
-    const submitButtonOfLoginForm = loginForm.querySelector('button[type="submit"]');
+    const submitButtonOfLoginForm = document.getElementById('login-submit-btn')
+    const phoneNumberComponent = document.getElementById('mobile-number-input-login-modal').firstElementChild;
 
-    loginForm.addEventListener('submit', () => {
+    loginForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        let numberToSend;
+        const valueOfPhoneNumberComponent = phoneNumberComponent.getAttribute('data-value');
+
+        (valueOfPhoneNumberComponent[0] === '0')
+            ? numberToSend = valueOfPhoneNumberComponent.slice(1, valueOfPhoneNumberComponent.length)
+            : numberToSend = valueOfPhoneNumberComponent
+        
         const headersOfDataToSend = new Headers();
-        const dataToSend = JSON.stringify({"mobile": "9038099584"});
+        const dataToSend = JSON.stringify({"mobile": numberToSend});
 
         const innerSpinner = document.createElement('span');
         innerSpinner.className = 'spinner-border text-white'
@@ -81,7 +91,7 @@
         headersOfDataToSend.append("Content-Type", "application/json");
 
         const optionsToSend = {
-            method: 'GET',
+            method: 'POST',
             headers: headersOfDataToSend,
             body: dataToSend,
             redirect: 'follow'
@@ -92,6 +102,11 @@
             .then(result => {
                 submitButtonOfLoginForm.textContent = 'ورود';
                 innerSpinner.remove();
+
+                console.log(result)
+
+                // {"data": {"result": "success"}}
+                // {"msg": "لم یتم العثور علی مستخدم برقم الهاتف هذا"}
             })
             .catch(error => {
                 console.log('error', error)
