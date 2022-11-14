@@ -13,6 +13,25 @@ class MobileNav extends HTMLElement {
                     <li><a class="text-white font-small d-block header-links" href="about-us.html">درباره ما</a></li>
                     <li><a class="text-white font-small d-block header-links" href="contact-us.html">تماس با ما</a></li>
                 </ul>
+                <div class="logged-in-only-item">
+                    <hr class="text-white">
+                    <h6>محمد مهدی تاشا</h6>
+                    <h6>کاربر:<span>09000000000</span></h6>
+                    <div>
+                        <h6>کیف پول (<span>IRR</span>)</h6>
+                        <h6>ریال <span class="text-primary-base">169,142,318</span></h6>
+                    </div>
+                    <ul>
+                        <li><a class="text-white font-small d-block header-links">ویرایش مشخصات</a></li>
+                        <li><a class="text-white font-small d-block header-links">پشتیبانی</a></li>
+                        <li><a class="text-white font-small d-block header-links">شارژ کیف پول</a></li>
+                        <li><a class="text-white font-small d-block header-links">پیگیری,کمسل و استرداد</a></li>
+                        <li><a class="text-white font-small d-block header-links">گزارش</a></li>
+                        <li><a class="text-white font-small d-block header-links">گزارش</a></li>
+                        <li><a class="text-white font-small d-block header-links">گزارش</a></li>
+                        <li><a class="text-white font-small d-block header-links">خروج</a></li>
+                    </ul>
+                </div>
             </nav>
             <div id="mobile-nav-bg" class="position-fixed h-100 col-12 toggler" data-target="mobile-nav"></div>
         `
