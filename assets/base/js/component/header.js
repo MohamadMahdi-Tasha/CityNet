@@ -70,34 +70,42 @@ class Header extends HTMLElement {
                             <span class="d-lg-block d-none">ورود/ثبت نام</span>
                             <i class="bi bi-person d-lg-none d-block"></i>
                         </button>
-                        <div>
-                            <button>
+                        <div class="my-drop-down-holder">
+                            <button class="my-drop-down-toggler logged-in-only-item ripple-button bg-transparent border rounded-1 px-lg-4 py-lg-2 px-2 py-1 font-small text-white fw-bold">
                                 <i class="bi bi-check-circle-fill"></i>
                                 <i class="bi bi-person ms-2"></i>
                                 حساب کاربری
-                                <i class="bi bi-chevron-down"></i>
+                                <i class="bi bi-chevron-down me-2"></i>
                             </button>
-                            <div class="my-drop-down auto-size">
-                                <h6>مخمد مهدی تاشا</h6>
-                                <h6>کاربر:<span>09000000000</span></h6>
-                                <div>
-                                    <h6>کیف پول (<span>IRR</span>)</h6>
-                                    <h6>ریال <span>169,142,318</span></h6>
+                            <div class="my-drop-down auto-size left">
+                                <div class="px-3 py-2">
+                                    <h6 class="font-small fw-bold">مخمد مهدی تاشا</h6>
+                                    <h6 class="font-small-xl text-grey-darken1">کاربر:<span>09000000000</span></h6>
+                                    <div class="d-flex justify-content-between gap-2 p-3 rounded-3 bg-grey-lighten3">
+                                        <h6 class="font-small text-grey-darken1 mb-0">کیف پول (<span>IRR</span>)</h6>
+                                        <h6 class="font-small text-grey-lighten1 mb-0">ریال <span class="text-primary-base">169,142,318</span></h6>
+                                    </div>
                                 </div>
-                                <hr>
-                                <ul>
-                                    <li><a href="#"><button><i class="bi bi-person"></i>ویرایش مشخصات</button></a></li>
-                                    <li><a href="#"><button><i class="bi bi-person"></i>پشتیبانی</button></a></li>
-                                    <li><a href="#"><button><i class="bi bi-person"></i>شارژ کیف پول</button></a></li>
-                                    <li><a href="#"><button><i class="bi bi-person"></i>پیگیری,کنسل و استرداد</button></a></li>
-                                    <li class="my-collapse-holder">
-                                        <button class="my-collapse-toggler"><i class="bi bi-person"></i>گزارش</button>
+                                <hr class="m-0">
+                                <ul class="list-unstyled p-0 m-0">
+                                    <li><a class="d-block" href="#"><button class="buttons-in-logged-in-dropdown-header ripple-button text-end bg-transparent border-0 font-small inner-ripple-black px-2 py-2"><i class="bi bi-person  ms-3"></i>ویرایش مشخصات</button></a></li>
+                                    <li><a class="d-block" href="#"><button class="buttons-in-logged-in-dropdown-header ripple-button text-end bg-transparent border-0 font-small inner-ripple-black px-2 py-2"><i class="bi bi-bell  ms-3"></i>پشتیبانی</button></a></li>
+                                    <li><a class="d-block" href="#"><button class="buttons-in-logged-in-dropdown-header ripple-button text-end bg-transparent border-0 font-small inner-ripple-black px-2 py-2"><i class="bi bi-wallet  ms-3"></i>شارژ کیف پول</button></a></li>
+                                    <li><a class="d-block" href="#"><button class="buttons-in-logged-in-dropdown-header ripple-button text-end bg-transparent border-0 font-small inner-ripple-black px-2 py-2"><i class="bi bi-ticket  ms-3"></i>پیگیری,کنسل و استرداد</button></a></li>
+                                    <li class="my-collapse-holder logged-in-dropdown-header">
+                                        <button class="my-collapse-toggler d-flex justify-content-between align-items-center buttons-in-logged-in-dropdown-header ripple-button text-end bg-transparent border-0 font-small inner-ripple-black px-2 py-2">
+                                            <span>
+                                                <i class="bi bi-file-earmark ms-3"></i>
+                                                گزارش
+                                            </span>
+                                            <i class="bi bi-chevron-down"></i>
+                                        </button>
                                         <div class="my-collapse">
-                                            <button class="my-collapse-toggler"><i class="bi bi-paper"></i>گزارش</button>
-                                            <button class="my-collapse-toggler"><i class="bi bi-paper"></i>گزارش</button>                                        
+                                            <button class="my-collapse-toggler buttons-in-logged-in-dropdown-header ripple-button text-end bg-transparent border-0 font-small inner-ripple-black ps-2 pe-4 py-2"><i class="bi bi-file-earmark ms-3"></i>گزارش</button>
+                                            <button class="my-collapse-toggler buttons-in-logged-in-dropdown-header ripple-button text-end bg-transparent border-0 font-small inner-ripple-black ps-2 pe-4 py-2"><i class="bi bi-file-earmark ms-3"></i>گزارش</button>                                        
                                         </div>
                                     </li>
-                                    <li><button><i class="bi bi-person"></i>خروج</button></li>
+                                    <li><button class="buttons-in-logged-in-dropdown-header ripple-button text-end bg-transparent border-0 font-small px-2 py-2 text-pink"><i class="bi bi-person ms-3"></i>خروج</button></li>
                                 </ul>
                             </div>
                         </div>

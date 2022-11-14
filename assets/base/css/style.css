@@ -48,6 +48,15 @@ body {
     border-radius: 1rem 0 0 1rem;
 }
 
+.buttons-in-logged-in-dropdown-header {
+    width: 20rem;
+    height: 35px !important;
+}
+
+.font-small-xl {
+    font-size: 9px;
+}
+
 .font-small {
     font-size: 13px;
 }
@@ -100,6 +109,10 @@ body {
 .intractive-buttons-border.ticket-buy,
 .intractive-buttons-btn.ticket-buy {
     width: 100px;
+}
+
+button.text-pink.ripple-button .ripple-button--inner-span {
+    background-color: rgba(213, 12, 106, .2);
 }
 
 .intractive-buttons-btn.ticket-component.ripple-button .ripple-button--inner-span,
@@ -744,6 +757,7 @@ input[type="checkbox"] {
     margin-left: 1rem;
 }
 
+
 .hover-drop-down-holder {
     position: relative;
 }
@@ -751,6 +765,14 @@ input[type="checkbox"] {
 .hover-drop-down-toggler:hover ~ .hover-drop-down {
     transform: translateY(-110%) translateX(50%) scale(1);
     opacity: 1;
+}
+
+.logged-in-only-item .bi-check-circle-fill {
+    color: var(--green-base);
+    font-size: 10px;
+    position: absolute;
+    right: 21px;
+    top: 5px;
 }
 
 .hover-drop-down {
@@ -845,6 +867,7 @@ input[type='number'] {
 .table-bottom-item-toggler {height: 50px;}
 .price-details[data-opened] {display: flex;}
 .price-details:not([data-opened]) {display: none !important;}
+.my-collapse-holder.logged-in-dropdown-header:not([data-opened]) {height: 35px;}
 
 /*Animations*/
 @keyframes radio-animation {
