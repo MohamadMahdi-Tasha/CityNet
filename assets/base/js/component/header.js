@@ -66,10 +66,41 @@ class Header extends HTMLElement {
                             </div>
                         </div>
                         <button class="d-lg-block d-none ripple-button bg-transparent border-0 rounded-1 px-4 py-2 font-small text-white fw-bold">پیگیری خرید</button>
-                        <button data-target="login-modal" class="toggler ripple-button bg-transparent border rounded-1 px-lg-4 py-lg-2 px-2 py-1 font-small text-white fw-bold">
+                        <button data-target="login-modal" class="logged-out-only-item toggler ripple-button bg-transparent border rounded-1 px-lg-4 py-lg-2 px-2 py-1 font-small text-white fw-bold">
                             <span class="d-lg-block d-none">ورود/ثبت نام</span>
                             <i class="bi bi-person d-lg-none d-block"></i>
                         </button>
+                        <div>
+                            <button>
+                                <i class="bi bi-check-circle-fill"></i>
+                                <i class="bi bi-person ms-2"></i>
+                                حساب کاربری
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                            <div class="my-drop-down auto-size">
+                                <h6>مخمد مهدی تاشا</h6>
+                                <h6>کاربر:<span>09000000000</span></h6>
+                                <div>
+                                    <h6>کیف پول (<span>IRR</span>)</h6>
+                                    <h6>ریال <span>169,142,318</span></h6>
+                                </div>
+                                <hr>
+                                <ul>
+                                    <li><a href="#"><button><i class="bi bi-person"></i>ویرایش مشخصات</button></a></li>
+                                    <li><a href="#"><button><i class="bi bi-person"></i>پشتیبانی</button></a></li>
+                                    <li><a href="#"><button><i class="bi bi-person"></i>شارژ کیف پول</button></a></li>
+                                    <li><a href="#"><button><i class="bi bi-person"></i>پیگیری,کنسل و استرداد</button></a></li>
+                                    <li class="my-collapse-holder">
+                                        <button class="my-collapse-toggler"><i class="bi bi-person"></i>گزارش</button>
+                                        <div class="my-collapse">
+                                            <button class="my-collapse-toggler"><i class="bi bi-paper"></i>گزارش</button>
+                                            <button class="my-collapse-toggler"><i class="bi bi-paper"></i>گزارش</button>                                        
+                                        </div>
+                                    </li>
+                                    <li><button><i class="bi bi-person"></i>خروج</button></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </header>
