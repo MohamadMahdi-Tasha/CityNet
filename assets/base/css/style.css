@@ -81,6 +81,22 @@ body {
     height: 50px;
 }
 
+.intractive-component ~ .error-holder {
+    display: none;
+}
+
+.intractive-component.errored, .intractive-component.errored {
+    border-color: var(--error-darken2);
+}
+
+.intractive-component.errored ~ .error-holder {
+    display: block;
+}
+
+.intractive-component.errored .my-placeholder {
+    color: var(--error-darken2);
+}
+
 .intractive-buttons-border.ticket-buy,
 .intractive-buttons-btn.ticket-buy {
     width: 100px;
@@ -338,6 +354,10 @@ input[type='radio']:before {
 .intractive-buttons-btn {
     width: 75px;
     height: 75px;
+}
+
+.intractive-component {
+    cursor: pointer;
 }
 
 .intractive-buttons-border {

@@ -45,6 +45,7 @@
         <flight-component></flight-component>
     </main>
 </section>
+<intractive-component class="errored" type="input" input-type="number" placeholder="کد"></intractive-component>
 <!--Footer-->
 <custom-footer></custom-footer>
 <!--Js Linkings-->
@@ -63,17 +64,18 @@
 <script src="assets/base/js/intractive-components.js"></script>
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
 <script>
+    // Pubic Api Calls
     const loginForm = document.getElementById('login-form');
-    const submitButtonOfLoginForm = document.getElementById('login-submit-btn')
-    const phoneNumberComponent = document.getElementById('mobile-number-input-login-modal').firstElementChild;
-    const codeModal = document.getElementById('login-code-modal');
-    const loginModal = document.getElementById('login-modal');
 
     loginForm.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        let numberToSend;
+        const submitButtonOfLoginForm = document.getElementById('login-submit-btn')
+        const phoneNumberComponent = document.getElementById('mobile-number-input-login-modal').firstElementChild;
+        const codeModal = document.getElementById('login-code-modal');
+        const loginModal = document.getElementById('login-modal');
         const valueOfPhoneNumberComponent = phoneNumberComponent.getAttribute('data-value');
+        let numberToSend;
 
         (valueOfPhoneNumberComponent[0] === '0')
             ? numberToSend = valueOfPhoneNumberComponent.slice(1, valueOfPhoneNumberComponent.length)
@@ -110,8 +112,7 @@
 
                 if (result.msg === thereIsNoUseWithThisNumberArabic) {
                     alert('fail')
-
-
+                    setErrorOnComponent(phoneNumberComponent);
                 } else if (result.data.result === "success") {
                     alert('success')
                     loginModal.removeAttribute('data-opened');
@@ -122,6 +123,11 @@
                 console.log('error', error)
             });
     })
+
+    // intractive components
+    function setErrorOnComponent(component) {
+        component.classList.add('errored')
+    }
 </script>
 </body>
 </html>
