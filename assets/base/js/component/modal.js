@@ -25,7 +25,7 @@ class Modal extends HTMLElement {
             `
         } else if(this.getAttribute('type') === 'login-code') {
             this.innerHTML = `
-                <div id="login-code-modal" data-opened class="my-modal-holder position-fixed inset-0 d-flex justify-content-center align-items-center">
+                <div id="login-code-modal" class="my-modal-holder position-fixed inset-0 d-flex justify-content-center align-items-center">
                     <div class="my-modal-bg position-fixed inset-0"></div>
                     <div class="my-modal bg-white shadow rounded-3 p-3 col-lg-5 col-12">
                         <h6 class="fw-bold text-black text-center mb-3">کد</h6>

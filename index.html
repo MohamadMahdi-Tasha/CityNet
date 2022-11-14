@@ -114,8 +114,7 @@
 
                 } else if (result.data.result === "success") {
                     alert('success')
-
-                    loginModal.setAttribute('data-opened', 'false');
+                    loginModal.removeAttribute('data-opened');
                     codeModal.setAttribute('data-opened', 'true');
                 }
             })
