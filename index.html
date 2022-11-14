@@ -63,6 +63,17 @@
 <script src="assets/base/js/intractive-components.js"></script>
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
 <script>
+    //public
+    const exitAccountItems = document.querySelectorAll('.exit-account');
+
+    exitAccountItems.forEach(item => {
+        item.addEventListener('click', () => {
+            localStorage.removeItem('logged-in')
+            localStorage.removeItem('login-token')
+            document.location.reload();
+        })
+    })
+
     // Pubic Api Calls
     const loginForm = document.getElementById('login-form');
     const loginCodeForm = document.getElementById('login-code-form');
