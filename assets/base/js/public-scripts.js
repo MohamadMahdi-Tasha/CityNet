@@ -12,6 +12,7 @@ const intractiveButtonsBorder = document.querySelectorAll('.intractive-buttons-b
 const innerPageTogglers = document.querySelectorAll('.inner-page-toggler');
 const collapseToggler = document.querySelectorAll('.my-collapse-toggler');
 const switchButton = document.querySelectorAll('.switch-button');
+const exitAccountItems = document.querySelectorAll('.exit-account');
 
 // Functions
 // A Function That Takes English Abbreviation Of Currency And Returns Persian Name Of It
@@ -207,5 +208,14 @@ switchButton.forEach(button => {
             previousCityIntractiveComponent.setAttribute('data-selected-city', selectedCityOfNextCityIntractiveComponent)
             nextCityIntractiveComponent.setAttribute('data-selected-city', selectedCityOfPreviousCityIntractiveComponent)
         }
+    })
+})
+
+// Adding Event Listener On Each Exit From Account Buttons That Listens To Click That Removes 'logged-in', 'login-token' Local Storage Items
+exitAccountItems.forEach(item => {
+    item.addEventListener('click', () => {
+        localStorage.removeItem('logged-in')
+        localStorage.removeItem('login-token')
+        document.location.reload();
     })
 })
