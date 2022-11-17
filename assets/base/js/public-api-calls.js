@@ -70,8 +70,10 @@ loginForm.addEventListener('submit', (event) => {
       if (result.data.msg === thereIsNoUseWithThisNumberArabic) {      
         setErrorOnComponent(phoneNumberComponent, 'همچین شماره ای در سیستم ثبت نشده!');        
       } else if (result.data.result === "success") {      
+        const numberInputInCodeModal = codeModal.querySelector('#mobile-number-input-code-modal input')
         loginModal.removeAttribute('data-opened');        
         codeModal.setAttribute('data-opened', 'true'); 
+        numberInputInCodeModal.focus();
       }
     })
     .catch(error => {console.log('error', error)});    
@@ -101,7 +103,7 @@ loginCodeForm.addEventListener('submit', (event) => {
   const innerSpinner = document.createElement('span');
   innerSpinner.className = 'spinner-border text-white'  
   innerSpinner.setAttribute('role', 'status');
-
+ 
   // Removing Text Content Of Submit Button In Form And Appending Created Spinner To Submit Button As a Child
   loginCodeSubmitButton.textContent = '';  
   loginCodeSubmitButton.appendChild(innerSpinner);
@@ -126,11 +128,14 @@ loginCodeForm.addEventListener('submit', (event) => {
       // Setting Text Content Of Submit Button And Removing Spinner Element      
       loginCodeSubmitButton.textContent = 'ورود';      
       innerSpinner.remove();
-
-      // Setting 'logged-in' And 'login-toke' Items In Local Stoarge Then Relode The Page      
-      localStorage.setItem('logged-in', 'true');      
-      localStorage.setItem('login-token', result.data.token);      
-      document.location.reload();    
+      if (result.data.token !== null) {
+        // Setting 'logged-in' And 'login-toke' Items In Local Stoarge Then Relode The Page      
+        localStorage.setItem('logged-in', 'true');      
+        localStorage.setItem('login-token', result.data.token);      
+        document.location.reload();    
+      } else if (result.data.token === null){
+        setErrorOnComponent(mobileNumberInputCodeModal, 'شماره وارد شده اشتباه میباشد');
+      }
     })    
 
     .catch(error => console.log('error', error));    
