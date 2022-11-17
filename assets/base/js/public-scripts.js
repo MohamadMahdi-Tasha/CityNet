@@ -80,12 +80,15 @@ dropDownsTogglers.forEach(toggler => {
         dropDownHolderOfToggler.toggleAttribute('data-opened')
         toggler.toggleAttribute('data-opened');
 
-        if (openedDropDownToggler.classList.contains('intractive-component')) {
-          openedDropDownToggler.classList.remove('focused')
-        }
+        if (openedDropDownToggler !== null) {
+            if (openedDropDownToggler.classList.contains('intractive-component')) {
+              openedDropDownToggler.classList.remove('focused')
+            }
 
-        openedDropDownHolder.removeAttribute('data-opened');
-        openedDropDownToggler.removeAttribute('data-opened');
+            openedDropDownHolder.removeAttribute('data-opened');
+            openedDropDownToggler.removeAttribute('data-opened');
+
+        }
     })
 
     buttonsInClickedDropDown.forEach(button => button.addEventListener('click', () => {
