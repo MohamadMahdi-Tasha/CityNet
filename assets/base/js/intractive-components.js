@@ -16,12 +16,32 @@ function setErrorOnComponent(component, errorText) {
 
         componentElement.classList.add('errored');
         componentErrorElement.textContent = errorText
-    } else if (componentType === 'calender') {
+    }
+    else if (componentType === 'calender') {
         const componentElement = component.firstElementChild
         const componentErrorElement = component.lastElementChild.firstElementChild
 
         componentElement.classList.add('errored');
         componentErrorElement.textContent = errorText
+    }
+}
+
+function setSuccsesOnComponent(component) {
+    const componentType = component.getAttribute('type');
+
+    if (componentType === 'city') {
+        const componentElement = component.firstElementChild.firstElementChild;
+        const componentErrorElement = component.firstElementChild.nextElementSibling.firstElementChild;
+
+        componentElement.classList.remove('errored');
+        componentErrorElement.textContent = ''
+    }
+    else if (componentType === 'calender') {
+        const componentElement = component.firstElementChild
+        const componentErrorElement = component.lastElementChild.firstElementChild
+
+        componentElement.classList.remove('errored');
+        componentErrorElement.textContent = ''
     }
 }
 
