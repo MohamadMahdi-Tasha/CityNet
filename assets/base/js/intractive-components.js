@@ -7,6 +7,15 @@ const plusMinusButton = document.querySelectorAll('.plus-minus-button');
 const passengerClassSelectButton = document.querySelectorAll('.passenger-class-select-button');
 const inputIntractiveComponent = document.querySelectorAll('.intractive-component.input');
 
+// Functions
+
+// intractive components  
+// A Function That Adds 'errored' Class Name To Component And Sets Text Content Of Error Holder To Given Text In Parametre
+function setErrorOnComponent(component, errorText) {
+  component.classList.add('errored')
+        component.nextElementSibling.firstElementChild.textContent = errorText
+}
+
 // Adding Event Listener On Each Calendar Interactive Component That Focus To Input Init And Adds Event Listener Of 'focus' And 'blur' To It
 // That Adds Or Removes Class Name Of 'focused' From It
 calenderIntractiveComponent.forEach(component => {
