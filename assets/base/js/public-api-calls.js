@@ -61,10 +61,13 @@ loginForm.addEventListener('submit', (event) => {
     .then(result => { 
       // Variable
       const thereIsNoUseWithThisNumberArabic = 'لم یتم العثور علی مستخدم برقم الهاتف هذا';   
+
       // Setting Text Content Of Submit Button
       submitButtonOfLoginForm.textContent = 'ورود';      
+
       // Removing Spinner In Submit Button
       innerSpinner.remove();
+
       // If Returned Data Shows That 'There Is No Number Submited With This In System' Then Set Error       
       // To Phone Number Component With Some Text. Otherwise Close Login Modal And Open Code Modal      
       if (result.data.msg === thereIsNoUseWithThisNumberArabic) {      
@@ -128,6 +131,7 @@ loginCodeForm.addEventListener('submit', (event) => {
       // Setting Text Content Of Submit Button And Removing Spinner Element      
       loginCodeSubmitButton.textContent = 'ورود';      
       innerSpinner.remove();
+
       if (result.data.token !== null) {
         // Setting 'logged-in' And 'login-toke' Items In Local Stoarge Then Relode The Page      
         localStorage.setItem('logged-in', 'true');      
@@ -149,6 +153,7 @@ window.addEventListener('load', () => {
   const loggedInLocalStoargeItem = localStorage.getItem('logged-in');  
   const loggedOutOnlyItems = document.querySelectorAll('.logged-out-only-item');  
   const loggedInOnlyItems = document.querySelectorAll('.logged-in-only-item');  
+
   if (loggedInLocalStoargeItem !== null) {  
     htmlElement.setAttribute('data-logged-in', 'true');    
     loggedOutOnlyItems.forEach(item =>  item.remove())    
