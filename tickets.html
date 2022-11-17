@@ -13,7 +13,8 @@
     <!--A Meta Tag For Setting Character Set Of Page-->
     <meta charset="UTF-8">
     <!--A Meta Tag For Responsiveness-->
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <!--A Meta Tag For Better Reloading-->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--A Meta Tag For Seo-->
@@ -41,6 +42,7 @@
 <my-modal type="city"></my-modal>
 <my-modal type="flight"></my-modal>
 <my-modal type="login-code"></my-modal>
+<my-modal type="loader"></my-modal>
 <!--Mobile  Nav-->
 <mobile-nav></mobile-nav>
 <!--Header-->
@@ -74,7 +76,8 @@
                     <span id="passenger-class-top-side"></span>
                 </h6>
             </div>
-            <button data-target="flight-select-modal" class="toggler ripple-button bg-blue-lighten1 col-lg-auto col-12 border-0 p-3 text-white rounded-3 font-small toggler">
+            <button data-target="flight-select-modal"
+                    class="toggler ripple-button bg-blue-lighten1 col-lg-auto col-12 border-0 p-3 text-white rounded-3 font-small toggler">
                 تغییر جستجو
                 <i class="bi me-2 bi-arrow-clockwise"></i>
             </button>
@@ -91,7 +94,9 @@
                         <h6 class="mb-0 font-small fw-bold"></h6>
                     </div>
                     <div class="d-flex align-items-center justify-content-evenly">
-                        <button class="border-0 font-small ripple-button bg-transparent flight-prev-next-day px-2 py-1 rounded-3"><i class="bi bi-chevron-right ms-1"></i>روز قبل</button>
+                        <button class="border-0 font-small ripple-button bg-transparent flight-prev-next-day px-2 py-1 rounded-3">
+                            <i class="bi bi-chevron-right ms-1"></i>روز قبل
+                        </button>
                         <div class="text-center">
                             <h6 class="font-small text-grey-lighten1">
                                 <span>دوشنبه</span>
@@ -105,19 +110,24 @@
                                 <span>2022</span>
                             </h6>
                         </div>
-                        <button class="border-0 font-small ripple-button bg-transparent flight-prev-next-day px-2 py-1 rounded-3">روز بعد<i class="bi bi-chevron-left me-1"></i></button>
+                        <button class="border-0 font-small ripple-button bg-transparent flight-prev-next-day px-2 py-1 rounded-3">
+                            روز بعد<i class="bi bi-chevron-left me-1"></i></button>
                     </div>
                 </div>
                 <div data-opened class="my-collapse-holder bg-white rounded-3">
-                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">جستجوی شماره پرواز<i class="bi bi-chevron-down"></i></button>
+                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">
+                        جستجوی شماره پرواز<i class="bi bi-chevron-down"></i></button>
                     <div class="my-collapse p-3 rounded-3">
-                        <intractive-component type="input" input-type="text" placeholder="تهران به مشهد"></intractive-component>
+                        <intractive-component type="input" input-type="text"
+                                              placeholder="تهران به مشهد"></intractive-component>
                     </div>
                 </div>
                 <div data-opened class="my-collapse-holder bg-white rounded-3">
-                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">هواپیمایی<i class="bi bi-chevron-down"></i></button>
+                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">
+                        هواپیمایی<i class="bi bi-chevron-down"></i></button>
                     <div class="my-collapse p-3 rounded-3">
-                        <div class="rounded-2 bg-light-orange p-2 mb-3"><p class="text-warning-base font-small mb-0">توجه:ممکن است ایرلاین انتخوابی در بین مسیر باشد.</p></div>
+                        <div class="rounded-2 bg-light-orange p-2 mb-3"><p class="text-warning-base font-small mb-0">
+                            توجه:ممکن است ایرلاین انتخوابی در بین مسیر باشد.</p></div>
                         <div class="selected-airlines-tag-holder"></div>
                         <div class="d-flex flex-column gap-3">
                             <div class="d-flex justify-content-between align-items-center">
@@ -152,7 +162,8 @@
                     </div>
                 </div>
                 <div data-opened class="my-collapse-holder bg-white rounded-3">
-                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">نوع پرواز<i class="bi bi-chevron-down"></i></button>
+                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">
+                        نوع پرواز<i class="bi bi-chevron-down"></i></button>
                     <div class="my-collapse p-3 rounded-3 d-flex flex-column gap-3">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="d-flex align-items-center">
@@ -185,16 +196,19 @@
                     </div>
                 </div>
                 <div data-opened class="my-collapse-holder bg-white rounded-3">
-                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">تعداد توقف<i class="bi bi-chevron-down"></i></button>
+                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">
+                        تعداد توقف<i class="bi bi-chevron-down"></i></button>
                     <div class="my-collapse p-3 rounded">
                         <h6 class="font-small text-grey-base">تهران به مشهد</h6>
                         <h6 class="font-small text-center text-grey-base mb-0">تمامی پرواز ها بدون توقف میباشند</h6>
                     </div>
                 </div>
                 <div data-opened class="my-collapse-holder bg-white rounded-3">
-                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">فرودگاه ها<i class="bi bi-chevron-down"></i></button>
+                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">
+                        فرودگاه ها<i class="bi bi-chevron-down"></i></button>
                     <div class="my-collapse p-3 rounded-3">
-                        <intractive-component type="input" input-type="text" placeholder="جستجو فرودگاه"></intractive-component>
+                        <intractive-component type="input" input-type="text"
+                                              placeholder="جستجو فرودگاه"></intractive-component>
                         <div class="d-flex flex-column gap-3 mt-3">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="d-flex align-items-center">
@@ -214,7 +228,8 @@
                     </div>
                 </div>
                 <div class="my-collapse-holder bg-white rounded-3">
-                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">ساعت پرواز<i class="bi bi-chevron-down"></i></button>
+                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">
+                        ساعت پرواز<i class="bi bi-chevron-down"></i></button>
                     <div class="my-collapse p-3 rounded-3">
                         <h6 class="text-center text-grey-darken2 font-small mb-0">
                             <span>استانبول</span>
@@ -227,7 +242,8 @@
                                 24
                             </h6>
                             <div class="col-9">
-                                <div class="col-12 d-flex align-items-center justify-content-center text-grey-lighten1"><i class="bi bi-brightness-low text-center"></i></div>
+                                <div class="col-12 d-flex align-items-center justify-content-center text-grey-lighten1">
+                                    <i class="bi bi-brightness-low text-center"></i></div>
                                 <div class="col-12 slider-range"></div>
                             </div>
                             <h6 class="d-flex flex-column text-grey-darken2">
@@ -239,9 +255,11 @@
                     </div>
                 </div>
                 <div class="my-collapse-holder bg-white rounded-3">
-                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">ساعت رسیدن<i class="bi bi-chevron-down"></i></button>
+                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">
+                        ساعت رسیدن<i class="bi bi-chevron-down"></i></button>
                     <div class="my-collapse p-3 rounded-3">
-                        <div class="rounded-2 bg-light-orange p-2 mb-3"><p class="text-warning-base font-small mb-0">پروازهایی که ساعت رسیدن ندارند، در انتهای نتایج نمایش داده می‌شوند.</p></div>
+                        <div class="rounded-2 bg-light-orange p-2 mb-3"><p class="text-warning-base font-small mb-0">
+                            پروازهایی که ساعت رسیدن ندارند، در انتهای نتایج نمایش داده می‌شوند.</p></div>
                         <h6 class="text-center text-grey-darken2 font-small mb-0">
                             <span>استانبول</span>
                             به
@@ -253,7 +271,8 @@
                                 24
                             </h6>
                             <div class="col-9">
-                                <div class="col-12 d-flex align-items-center justify-content-center text-grey-lighten1"><i class="bi bi-brightness-low text-center"></i></div>
+                                <div class="col-12 d-flex align-items-center justify-content-center text-grey-lighten1">
+                                    <i class="bi bi-brightness-low text-center"></i></div>
                                 <div class="col-12 slider-range"></div>
                             </div>
                             <h6 class="d-flex flex-column text-grey-darken2">
@@ -265,15 +284,18 @@
                     </div>
                 </div>
                 <div class="my-collapse-holder bg-white rounded-3">
-                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">مدت زمان توقف<i class="bi bi-chevron-down"></i></button>
+                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">
+                        مدت زمان توقف<i class="bi bi-chevron-down"></i></button>
                     <div class="my-collapse p-3 rounded-3">
                         <h6 class="text-center text-grey-darken2 font-small mb-0">تمامی پروازها بدون توقف می‌باشند</h6>
                     </div>
                 </div>
                 <div class="my-collapse-holder bg-white rounded-3">
-                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">مدت زمان پرواز<i class="bi bi-chevron-down"></i></button>
+                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">
+                        مدت زمان پرواز<i class="bi bi-chevron-down"></i></button>
                     <div class="my-collapse p-3 rounded-3">
-                        <div class="rounded-2 bg-light-orange p-2 mb-3"><p class="text-warning-base font-small mb-0">پروازهایی که ساعت رسیدن ندارند، در انتهای نتایج نمایش داده می‌شوند.</p></div>
+                        <div class="rounded-2 bg-light-orange p-2 mb-3"><p class="text-warning-base font-small mb-0">
+                            پروازهایی که ساعت رسیدن ندارند، در انتهای نتایج نمایش داده می‌شوند.</p></div>
                         <h6 class="text-center text-grey-darken2 font-small mb-0">
                             <span>استانبول</span>
                             به
@@ -285,7 +307,8 @@
                                 02
                             </h6>
                             <div class="col-9">
-                                <div class="col-12 d-flex align-items-center justify-content-center text-grey-lighten1"><i class="bi bi-brightness-low text-center"></i></div>
+                                <div class="col-12 d-flex align-items-center justify-content-center text-grey-lighten1">
+                                    <i class="bi bi-brightness-low text-center"></i></div>
                                 <div class="col-12 slider-range"></div>
                             </div>
                             <h6 class="d-flex flex-column text-grey-darken2">
@@ -297,11 +320,14 @@
                     </div>
                 </div>
                 <div class="my-collapse-holder bg-white rounded-3">
-                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">بازه قیمتی<i class="bi bi-chevron-down"></i></button>
+                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">
+                        بازه قیمتی<i class="bi bi-chevron-down"></i></button>
                     <div class="my-collapse p-3 rounded-3">
                         <div class="d-flex gap-3 mb-3">
-                            <intractive-component type="input" input-type="number" placeholder="از"></intractive-component>
-                            <intractive-component type="input" input-type="number" placeholder="تا"></intractive-component>
+                            <intractive-component type="input" input-type="number"
+                                                  placeholder="از"></intractive-component>
+                            <intractive-component type="input" input-type="number"
+                                                  placeholder="تا"></intractive-component>
                         </div>
                         <div class="slider-range mb-3"></div>
                         <div class="d-flex align-items-center justify-content-between">
@@ -322,8 +348,12 @@
                     <div class="d-flex col-lg-auto col-12 flex-lg-row flex-column gap-3 align-items-center">
                         <i class="bi bi-filter text-grey-darken3"></i>
                         <h6 class="mb-0 font-small text-grey-darken3">ترتیب بر اساس</h6>
-                        <button class="flight-filter-button active p-3 font-small border-0 rounded-3 col-lg-auto col-12">ارزان ترین قیمت</button>
-                        <button class="flight-filter-button p-3 font-small border-0 rounded-3 col-lg-auto col-12">ساعت حرکت</button>
+                        <button class="flight-filter-button active p-3 font-small border-0 rounded-3 col-lg-auto col-12">
+                            ارزان ترین قیمت
+                        </button>
+                        <button class="flight-filter-button p-3 font-small border-0 rounded-3 col-lg-auto col-12">ساعت
+                            حرکت
+                        </button>
                     </div>
                     <div class="d-flex align-items-center">
                         <h6 class="mb-0 font-small text-grey-darken3">
@@ -335,9 +365,33 @@
                     </div>
                 </header>
                 <ul class="list-unstyled p-0 ms-lg-3 ms-0 d-flex flex-column gap-3" id="ticket-component-list" data-filter="cheapest">
-                    <li>
-                        <ticket-component icon-src="assets/base/img/img-logo.png" name="sepehran Airlines" systemic number-of-sits="9" flight-number="IS 4340" mode="economy" start-time="05:45" start-location="تهران (THR)" start-location-en="Tehran" start-location-fa="تهران" end-time="07:15" end-location="مشهد (MHD)" end-location-en="Mashhad" end-location-fa="مشهد" price="11,330,060" start-loaction-abbr="THR" end-loaction-abbr="MHD" route-duration-hour="1" route-duration-minute="5" start-date="2022-11-10" start-date-en="10 november" start-date-fa="پنجشنبه 19 ابان" end-date-en="10 november" end-date-fa="پنجشنبه 19 ابان" plane-model="IS 4340"></ticket-component>
-                    </li>
+                    <li><ticket-component
+                            icon-src="assets/base/img/img-logo.png"
+                            name="sepehran Airlines"
+                            systemic
+                            number-of-sits="9"
+                            flight-number="IS 4340"
+                            mode="economy"
+                            start-time="05:45"
+                            start-location="تهران (THR)"
+                            start-location-en="Tehran"
+                            start-location-fa="تهران"
+                            end-time="07:15"
+                            end-location="مشهد (MHD)"
+                            end-location-en="Mashhad"
+                            end-location-fa="مشهد"
+                            price="11,330,060"
+                            start-loaction-abbr="THR"
+                            end-loaction-abbr="MHD"
+                            route-duration-hour="1"
+                            route-duration-minute="5"
+                            start-date="2022-11-10"
+                            start-date-en="10 november"
+                            start-date-fa="پنجشنبه 19 ابان"
+                            end-date-en="10 november"
+                            end-date-fa="پنجشنبه 19 ابان"
+                            plane-model="IS 4340"
+                    ></ticket-component></li>
                 </ul>
             </main>
         </main>
@@ -352,6 +406,8 @@
 <script src="assets/plugins/date-picker/datepicker.min.js"></script>
 <script src="assets/plugins/jquery/jquery-3.6.0.js"></script>
 <script src="assets/plugins/jquery-ui/jquery-ui.js"></script>
+<script src="assets/base/js/component/flight.js"></script>
+<script src="assets/base/js/component/selected-city.js"></script>
 <script src="assets/base/js/component/ticket-component.js"></script>
 <script src="assets/base/js/component/header.js"></script>
 <script src="assets/base/js/component/mobile-nav.js"></script>
@@ -361,9 +417,9 @@
 <script src="assets/base/js/component/flight-details.js"></script>
 <script src="assets/base/js/public-scripts.js"></script>
 <script src="assets/base/js/intractive-components.js"></script>
-<script src="assets/base/js/component/flight.js"></script>
 <script src="assets/base/js/pages/scripts/ticket.js"></script>
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
 <script src="assets/base/js/public-api-calls.js"></script>
+<script src="assets/base/js/pages/api-calls/tickets.js"></script>
 </body>
 </html>

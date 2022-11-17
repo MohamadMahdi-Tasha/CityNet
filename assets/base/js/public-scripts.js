@@ -1,5 +1,5 @@
 // Variables
-const dropDownsTogglers  = document.querySelectorAll('.my-drop-down-toggler');
+const dropDownsTogglers = document.querySelectorAll('.my-drop-down-toggler');
 const currencyChangerButtons = document.querySelectorAll('.currency-changer');
 const htmlElement = document.querySelector('html');
 const currencyHeaderPersian = document.getElementById('currency-header-per');
@@ -20,11 +20,21 @@ function persianNameByEnAbbrevationCurrency(englishAbrevation) {
     let stringToReturn;
 
     switch (englishAbrevation) {
-        case "IRR":stringToReturn = "ریال";break;
-        case "USD":stringToReturn = "دلار";break;
-        case "EUR":stringToReturn = "یورو";break;
-        case "TRY":stringToReturn = "لیر ترکیه";break;
-        case "IQD":stringToReturn = "دینار عراق";break;
+        case "IRR":
+            stringToReturn = "ریال";
+            break;
+        case "USD":
+            stringToReturn = "دلار";
+            break;
+        case "EUR":
+            stringToReturn = "یورو";
+            break;
+        case "TRY":
+            stringToReturn = "لیر ترکیه";
+            break;
+        case "IQD":
+            stringToReturn = "دینار عراق";
+            break;
     }
 
     return stringToReturn;
@@ -54,7 +64,7 @@ window.addEventListener('keydown', (event) => {
         const openedModals = document.querySelectorAll('.my-modal-holder[data-opened]');
         const openedDropDowns = document.querySelectorAll('.my-drop-down-holder[data-opened]')
 
-        openedModals.forEach(modal =>  modal.removeAttribute('data-opened'))
+        openedModals.forEach(modal => modal.removeAttribute('data-opened'))
         openedDropDowns.forEach(dropdown => {
             if (dropdown.parentElement.tagName.toLowerCase() !== 'intractive-component') {
                 dropdown.removeAttribute('data-opened')
@@ -82,12 +92,10 @@ dropDownsTogglers.forEach(toggler => {
 
         if (openedDropDownToggler !== null) {
             if (openedDropDownToggler.classList.contains('intractive-component')) {
-              openedDropDownToggler.classList.remove('focused')
+                openedDropDownToggler.classList.remove('focused');
             }
-
             openedDropDownHolder.removeAttribute('data-opened');
             openedDropDownToggler.removeAttribute('data-opened');
-
         }
     })
 
@@ -119,7 +127,7 @@ togglers.forEach(toggle => {
 
         targetElementOfClickedToggle.toggleAttribute('data-opened')
         if (targetElementOfClickedToggle.parentElement.tagName.toLowerCase() === 'my-modal') {
-            const firstInputInModal = targetElementOfClickedToggle.querySelector('input:first-of-type');
+            const firstInputInModal = targetElementOfClickedToggle.querySelector('intractive-component[type="input"] input:first-of-type');
             firstInputInModal.focus();
         }
     })

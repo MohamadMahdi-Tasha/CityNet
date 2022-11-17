@@ -7,13 +7,22 @@ const plusMinusButton = document.querySelectorAll('.plus-minus-button');
 const passengerClassSelectButton = document.querySelectorAll('.passenger-class-select-button');
 const inputIntractiveComponent = document.querySelectorAll('.intractive-component.input');
 
-// Functions
-
-// intractive components  
-// A Function That Adds 'errored' Class Name To Component And Sets Text Content Of Error Holder To Given Text In Parametre
 function setErrorOnComponent(component, errorText) {
-  component.classList.add('errored')
-        component.nextElementSibling.firstElementChild.textContent = errorText
+    const componentType = component.getAttribute('type');
+
+    if (componentType === 'city') {
+        const componentElement = component.firstElementChild.firstElementChild;
+        const componentErrorElement = component.firstElementChild.nextElementSibling.firstElementChild;
+
+        componentElement.classList.add('errored');
+        componentErrorElement.textContent = errorText
+    } else if (componentType === 'calender') {
+        const componentElement = component.firstElementChild
+        const componentErrorElement = component.lastElementChild.firstElementChild
+
+        componentElement.classList.add('errored');
+        componentErrorElement.textContent = errorText
+    }
 }
 
 // Adding Event Listener On Each Calendar Interactive Component That Focus To Input Init And Adds Event Listener Of 'focus' And 'blur' To It

@@ -37,6 +37,7 @@ class intractiveComponent extends HTMLElement {
                     </div>
                 </div>
                     </div>
+                    <div class="error-holder text-error-darken2 mt-2"><h6 class="mb-0 font-small"></h6></div>
                 `
             } else {
                 this.innerHTML = `
@@ -58,6 +59,7 @@ class intractiveComponent extends HTMLElement {
                     <div id="${randomDataPickerParentId}">
                         <date-picker @select="select" mode="single"></date-picker>
                     </div>
+                    <div class="error-holder text-error-darken2 mt-2"><h6 class="mb-0 font-small"></h6></div>
                 `
                 // Defining New Vue Component For Calendar Component
                 new Vue({
@@ -162,6 +164,7 @@ class intractiveComponent extends HTMLElement {
                             </div>
                         </div>
                     </div>
+                    <div class="error-holder text-error-darken2 mt-2"><h6 class="mb-0 font-small"></h6></div>
                 </div>
             `
         } else if (this.getAttribute('type') === "input") {
