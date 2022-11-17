@@ -148,10 +148,12 @@ loginCodeForm.addEventListener('submit', (event) => {
   
 // Adding Event Listener Of 'load' To Window That ...
 window.addEventListener('load', () => {
+  // Variables
   const loggedInLocalStoargeItem = localStorage.getItem('logged-in');  
   const loggedOutOnlyItems = document.querySelectorAll('.logged-out-only-item');  
   const loggedInOnlyItems = document.querySelectorAll('.logged-in-only-item');  
 
+  // Checking If Logged In Item Exists In Local Stoarge
   if (loggedInLocalStoargeItem !== null) { 
     const headersOfDataToSend = new Headers();
     const loginTokenLocalStoarge = localStorage.getItem('login-token');
@@ -178,7 +180,7 @@ window.addEventListener('load', () => {
 
         const userMobileNumber = result.data.user.mobile;
         const userNameFromApi = result.data.user.card_info.name;
-        const userCash = result.data.user.wallets[0].amount;
+        const userCash = result.data.user.wallet;
         let nameToSet;
 
         (userNameFromApi !== null) ? nameToSet = userNameFromApi : nameToSet = '--'
