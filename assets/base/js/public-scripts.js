@@ -74,8 +74,18 @@ dropDownsTogglers.forEach(toggler => {
     const buttonsInClickedDropDown = dropDown.querySelectorAll('button:not(.my-drop-down-toggler)');
 
     toggler.addEventListener('click', () => {
+        const openedDropDownHolder = document.querySelector('.my-drop-down-holder[data-opened]');
+        const openedDropDownToggler = document.querySelector('.my-drop-down-toggler[data-opened]');
+
         dropDownHolderOfToggler.toggleAttribute('data-opened')
         toggler.toggleAttribute('data-opened');
+
+        if (openedDropDownToggler.classList.contains('intractive-component')) {
+          openedDropDownToggler.classList.remove('focused')
+        }
+
+        openedDropDownHolder.removeAttribute('data-opened');
+        openedDropDownToggler.removeAttribute('data-opened');
     })
 
     buttonsInClickedDropDown.forEach(button => button.addEventListener('click', () => {
