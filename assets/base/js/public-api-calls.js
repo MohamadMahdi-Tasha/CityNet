@@ -146,19 +146,53 @@ loginCodeForm.addEventListener('submit', (event) => {
 })
 
   
-// Adding Event Listener Of 'load' To Window That Checks If 'logged-in' Local Stoarge Item Exists 
-// If It Is Then Set 'data-logged-in' Attribute Of Html Element To 'true' And Remove Items That Only Appear 
-// When User Is Logged Out. Otherwise Set The Attribute To 'false' And Remove Logged In Items 
+// Adding Event Listener Of 'load' To Window That ...
 window.addEventListener('load', () => {
   const loggedInLocalStoargeItem = localStorage.getItem('logged-in');  
   const loggedOutOnlyItems = document.querySelectorAll('.logged-out-only-item');  
   const loggedInOnlyItems = document.querySelectorAll('.logged-in-only-item');  
 
-  if (loggedInLocalStoargeItem !== null) {  
+  if (loggedInLocalStoargeItem !== null) { 
+    const headersOfDataToSend = new Headers();
+    const loginTokenLocalStoarge = localStorage.getItem('login-token');
+
     htmlElement.setAttribute('data-logged-in', 'true');    
-    loggedOutOnlyItems.forEach(item =>  item.remove())    
-  } else {  
+    loggedOutOnlyItems.forEach(item =>  item.remove());  
+
+    headersOfDataToSend.append("Accept", "application/json");
+    headersOfDataToSend.append("debug", "true");
+    headersOfDataToSend.append("Authorization", `Bearer ${loginTokenLocalStoarge}`);
+
+    const optionsToSend = {
+      method: 'GET',
+      headers: headersOfDataToSend,
+      redirect: 'follow'
+    };
+
+    fetch("https://www.newcash.me/api/v1/user/sync", optionsToSend)
+      .then(response => response.json())
+      .then(result => {
+        const headerUserName = document.getElementById('header-user-name');
+        const headerUserNumber = document.getElementById('header-user-number')
+        const headerUserCash = document.getElementById('header-user-cash');
+
+        const userMobileNumber = result.data.user.mobile;
+        const userNameFromApi = result.data.user.card_info.name;
+        const userCash = result.data.user.wallets[0].amount;
+        let nameToSet;
+
+        (userNameFromApi !== null) ? nameToSet = userNameFromApi : nameToSet = '--'
+
+        headerUserName.textContent = nameToSet;
+        headerUserNumber.textContent = userMobileNumber;
+        headerUserCash.textContent = userCash;
+
+        console.log(result)
+      })
+      .catch(error => console.log('error', error));
+  } else {    
     htmlElement.setAttribute('data-logged-in', 'false');    
-    loggedInOnlyItems.forEach(item =>  item.remove())    
+    loggedInOnlyItems.forEach(item =>  item.remove());  
   }  
+
 })
