@@ -830,6 +830,10 @@ input[type='number'] {
     transition: .3s;
 }
 
+.my-drop-down-toggler + .intractive-component.my-drop-down {
+    top: 50px;
+}
+
 /*Realated To Js*/
 .my-drop-down-holder[data-opened] .my-drop-down {opacity: 1;transform: translateY(0);pointer-events: visible}
 .my-drop-down-holder:not([data-opened]) .my-drop-down {opacity: 0;transform: translateY(-10px);pointer-events: none}
