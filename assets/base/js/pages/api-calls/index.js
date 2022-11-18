@@ -53,7 +53,7 @@ searchForTicketButton.addEventListener('click', () => {
         }
 
         // Setting 'informationToSearchInTickets' Object In Local Storage As An Item
-        localStorage.setItem('informationToSearchInTickets', JSON.stringify(informationToSearchInTickets));
+        localStorage.setItem('information-to-search-in-tickets-page', JSON.stringify(informationToSearchInTickets));
 
         // Setting Link To Created Anchor Tag
         newLinkElement.setAttribute('href', 'tickets.html');

@@ -4,11 +4,11 @@ class Modal extends HTMLElement {
         if (this.getAttribute('type') === 'log-in') {
             this.innerHTML = `
                 <div id="login-modal" class="my-modal-holder position-fixed inset-0 d-flex justify-content-center align-items-center">
-                    <div data-target="login-modal" class="toggler my-modal-bg position-fixed inset-0"></div>
+                    <div ${(this.getAttribute('no-close') === null) ? 'data-target="login-modal"' : ''}  class="${(this.getAttribute('no-close') === null) ? 'toggler' : ''} my-modal-bg position-fixed inset-0"></div>
                     <div class="my-modal bg-white shadow rounded-3 p-3 col-lg-5 col-12">
                         <div class="mb-2" dir="ltr">
-                            <div class="d-flex align-items-center justify-content-between col-6">
-                                <button data-target="login-modal" class="toggler my-modal-close-button d-flex justify-content-center align-items-center bg-grey-lighten2 border-0 rounded-3"><i class="bi bi-x"></i></button>
+                            <div class="d-flex align-items-center ${(this.getAttribute('no-close') === null) ? 'justify-content-between col-6' : 'justify-content-center col-12'}">
+                                ${(this.getAttribute('no-close') === null) ? '<button data-target="login-modal" class="toggler my-modal-close-button d-flex justify-content-center align-items-center bg-grey-lighten2 border-0 rounded-3"><i class="bi bi-x"></i></button>' : ''}
                                 <h6 class="fw-bold text-black mb-0">ورود</h6>
                             </div>
                         </div>
