@@ -29,6 +29,7 @@ window.addEventListener('load', () => {
     fetch("https://www.newcash.me/api/v2/airfare/flights/search", optionsToSend)
         .then(response => response.json())
         .then(result => {
+						console.log(result)
             loaderModal.removeAttribute('data-opened');
             if (result.message === 'Unauthenticated.') {
                 loginModal.toggleAttribute('data-opened');

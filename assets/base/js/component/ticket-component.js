@@ -31,7 +31,7 @@ class TicketComponent extends HTMLElement {
                             </div>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-lg-start justify-content-between align-items-center col-lg-6 col-12">
+                    <div class="d-flex justify-content-center align-items-center col-lg-6 col-12">
                         <div>
                             <h6 class="fw-bold text-grey-darken3 text-start">${this.getAttribute('start-time')}</h6>
                             <h6 class="font-small text-grey-darken3 mb-0 text-start">${this.getAttribute('start-location')}</h6>
