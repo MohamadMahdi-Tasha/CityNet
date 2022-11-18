@@ -35,7 +35,7 @@ searchForTicketButton.addEventListener('click', () => {
         }
 
         localStorage.setItem('informationToSearchInTickets', JSON.stringify(informationToSearchInTickets));
-        newLinkElement.setAttribute('a', 'tickets.html');
+        newLinkElement.setAttribute('href', 'tickets.html');
         newLinkElement.click()
     }
 })
