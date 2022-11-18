@@ -3,12 +3,13 @@ const searchForTicketButton = document.getElementById('search-for-ticket-button'
 const startCityIntractiveComponents = document.getElementById('start-city-intractive-components')
 const endCityIntractiveComponents = document.getElementById('end-city-intractive-components')
 const startDateIntractiveComponents = document.getElementById('start-date-intractive-components')
-const passangerCountIntractiveComponents = document.getElementById('start-date-intractive-components')
+const passangerCountIntractiveComponents = document.getElementById('passanger-count-intractive-components')
 
 searchForTicketButton.addEventListener('click', () => {
     const startCityIntractiveComponentsInnerButton = startCityIntractiveComponents.firstElementChild.firstElementChild
     const endCityIntractiveComponentsInnerButton = endCityIntractiveComponents.firstElementChild.firstElementChild
     const startDateIntractiveComponentsInnerButton = startDateIntractiveComponents.firstElementChild
+    const passangerCountIntractiveComponentsInnerButton = passangerCountIntractiveComponents.firstElementChild.firstElementChild
 
     if (startCityIntractiveComponentsInnerButton.getAttribute('data-selected-city') === 'null') {setErrorOnComponent(startCityIntractiveComponents, 'لطفا شهر مبدا را انتخواب کنید')}
     else if (startCityIntractiveComponentsInnerButton.getAttribute('data-selected-city') !== 'null') {setSuccsesOnComponent(startCityIntractiveComponents)}
@@ -16,6 +17,8 @@ searchForTicketButton.addEventListener('click', () => {
     else if (endCityIntractiveComponentsInnerButton.getAttribute('data-selected-city') !== 'null') {setSuccsesOnComponent(endCityIntractiveComponents)}
     if (startDateIntractiveComponentsInnerButton.getAttribute('data-date') === 'null') {setErrorOnComponent(startDateIntractiveComponents, 'لطفا تاریخ پرواز را مشخص کنید')}
     else if (startDateIntractiveComponentsInnerButton.getAttribute('data-date') !== 'null') {setSuccsesOnComponent(startDateIntractiveComponents)}
+    if (passangerCountIntractiveComponentsInnerButton.getAttribute('data-passenger-count') === '0') {setErrorOnComponent(passangerCountIntractiveComponents, 'تعداد مسافرین صفر نمیتواند باشد')}
+    else if (passangerCountIntractiveComponentsInnerButton.getAttribute('data-passenger-count') !== '0') {setSuccsesOnComponent(passangerCountIntractiveComponents)}
 
     if (document.querySelectorAll('.intractive-component.errored').length === 0) {
         const dataDate = startDateIntractiveComponentsInnerButton.getAttribute('data-date');

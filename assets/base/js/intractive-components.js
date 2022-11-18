@@ -2,47 +2,49 @@
 const calenderIntractiveComponent = document.querySelectorAll('.intractive-component.calender');
 const dropDownButtonsInIntractiveComponents = document.querySelectorAll('.intractive-component.dropdown ~ .my-drop-down button');
 const cityComponentDropDownButtons = document.querySelectorAll('.city-component-drop-down-button');
-const intractiveComponents = document.querySelectorAll('.intractive-component:not(.calender, .dropdown, .input)');
+const intractiveComponents = document.querySelectorAll('.intractive-component:not(.calender, .dropdown, .input, .passenger-count)');
 const plusMinusButton = document.querySelectorAll('.plus-minus-button');
 const passengerClassSelectButton = document.querySelectorAll('.passenger-class-select-button');
 const inputIntractiveComponent = document.querySelectorAll('.intractive-component.input');
 
 function setErrorOnComponent(component, errorText) {
     const componentType = component.getAttribute('type');
+    let componentElement;
+    let componentErrorElement;
 
     if (componentType === 'city') {
-        const componentElement = component.firstElementChild.firstElementChild;
-        const componentErrorElement = component.firstElementChild.nextElementSibling.firstElementChild;
-
-        componentElement.classList.add('errored');
-        componentErrorElement.textContent = errorText
+        componentElement = component.firstElementChild.firstElementChild;
+        componentErrorElement = component.firstElementChild.nextElementSibling.firstElementChild;
+    } else if (componentType === 'calender') {
+        componentElement = component.firstElementChild
+        componentErrorElement = component.lastElementChild.firstElementChild
+    } else if (componentType === 'passenger-count') {
+        componentElement = component.firstElementChild.firstElementChild;
+        componentErrorElement = component.firstElementChild.lastElementChild
     }
-    else if (componentType === 'calender') {
-        const componentElement = component.firstElementChild
-        const componentErrorElement = component.lastElementChild.firstElementChild
 
-        componentElement.classList.add('errored');
-        componentErrorElement.textContent = errorText
-    }
+    componentElement.classList.add('errored');
+    componentErrorElement.textContent = errorText
 }
 
 function setSuccsesOnComponent(component) {
     const componentType = component.getAttribute('type');
+    let componentElement;
+    let componentErrorElement;
 
     if (componentType === 'city') {
-        const componentElement = component.firstElementChild.firstElementChild;
-        const componentErrorElement = component.firstElementChild.nextElementSibling.firstElementChild;
-
-        componentElement.classList.remove('errored');
-        componentErrorElement.textContent = ''
+        componentElement = component.firstElementChild.firstElementChild;
+        componentErrorElement = component.firstElementChild.nextElementSibling.firstElementChild;
+    } else if (componentType === 'calender') {
+        componentElement = component.firstElementChild
+        componentErrorElement = component.lastElementChild.firstElementChild
+    } else if (componentType === 'passenger-count') {
+        componentElement = component.firstElementChild.firstElementChild;
+        componentErrorElement = component.firstElementChild.lastElementChild
     }
-    else if (componentType === 'calender') {
-        const componentElement = component.firstElementChild
-        const componentErrorElement = component.lastElementChild.firstElementChild
 
-        componentElement.classList.remove('errored');
-        componentErrorElement.textContent = ''
-    }
+    componentElement.classList.remove('errored');
+    componentErrorElement.textContent = ''
 }
 
 // Adding Event Listener On Each Calendar Interactive Component That Focus To Input Init And Adds Event Listener Of 'focus' And 'blur' To It
