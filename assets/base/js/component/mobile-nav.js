@@ -16,11 +16,11 @@ class MobileNav extends HTMLElement {
                 <div class="logged-in-only-item">
                     <hr class="text-white">
                     <div class="p-3 bg-grey-lighten3 rounded-3 mb-3">
-                        <h6 class="font-small text-grey-darken1">محمد مهدی تاشا</h6>
-                        <h6 class="font-small text-grey-darken1 mb-3">کاربر:<span>09000000000</span></h6>
+                        <h6 class="font-small text-grey-darken1 user-name"></h6>
+                        <h6 class="font-small text-grey-darken1 mb-3">کاربر:<span class="user-number"></span></h6>
                         <div class="d-flex align-items-center justify-content-between">
                             <h6 class="text-grey-darken1 font-small mb-0">کیف پول (<span>IRR</span>)</h6>
-                            <h6 class="text-grey-darken1 font-small mb-0">ریال <span class="text-primary-base">169,142,318</span></h6>
+                            <h6 class="text-grey-darken1 font-small mb-0">ریال <span class="text-primary-base user-cash"></span></h6>
                         </div>
                     </div>
                     <ul class="list-unstyled mb-0 p-0 gap-3 d-flex flex-column">

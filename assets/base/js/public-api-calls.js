@@ -176,20 +176,20 @@ window.addEventListener('load', () => {
         fetch("https://www.newcash.me/api/v1/user/sync", optionsToSend)
             .then(response => response.json())
             .then(result => {
-                const headerUserName = document.getElementById('header-user-name');
-                const headerUserNumber = document.getElementById('header-user-number')
-                const headerUserCash = document.getElementById('header-user-cash');
+                const userNameElements = document.querySelectorAll('.user-name');
+                const userNumberElements = document.querySelectorAll('.user-number')
+                const userCashElements = document.querySelectorAll('.user-cash');
 
                 const userMobileNumber = result.data.user.mobile;
                 const userNameFromApi = result.data.user.card_info.name;
-                const userCash = result.data.user.wallet;
+                const userCashFromApi = result.data.user.wallet;
                 let nameToSet;
 
                 (userNameFromApi !== null) ? nameToSet = userNameFromApi : nameToSet = '--'
 
-                headerUserName.textContent = nameToSet;
-                headerUserNumber.textContent = userMobileNumber;
-                headerUserCash.textContent = userCash;
+                userNameElements.forEach(element => element.textContent = nameToSet)
+                userNumberElements.forEach(element => element.textContent = userMobileNumber)
+                userCashElements.forEach(element => element.textContent = userCashFromApi)
             })
             .catch(error => console.log('error', error));
     } else {

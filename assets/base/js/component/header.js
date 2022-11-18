@@ -79,11 +79,11 @@ class Header extends HTMLElement {
                             </button>
                             <div class="my-drop-down auto-size left">
                                 <div class="px-3 py-2">
-                                    <h6 class="font-small fw-bold" id='header-user-name'></h6>
-                                    <h6 class="font-small-xl text-grey-darken1">کاربر:<span id='header-user-number'></span></h6>
+                                    <h6 class="font-small fw-bold user-name"></h6>
+                                    <h6 class="font-small-xl text-grey-darken1">کاربر:<span class='user-number'></span></h6>
                                     <div class="d-flex justify-content-between gap-2 p-3 rounded-3 bg-grey-lighten3">
                                         <h6 class="font-small text-grey-darken1 mb-0">کیف پول (<span>IRR</span>)</h6>
-                                        <h6 class="font-small text-grey-lighten1 mb-0">ریال <span class="text-primary-base" id='header-user-cash'></span></h6>
+                                        <h6 class="font-small text-grey-lighten1 mb-0">ریال <span class="text-primary-base user-cash"></span></h6>
                                     </div>
                                 </div>
                                 <hr class="m-0">
