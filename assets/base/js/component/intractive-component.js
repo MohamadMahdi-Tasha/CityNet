@@ -97,7 +97,7 @@ class intractiveComponent extends HTMLElement {
         } else if (this.getAttribute('type') === "passenger-count") {
             this.innerHTML = `
                 <div class="my-drop-down-holder">
-                    <button data-passenger-count="1" data-adult-count="0" data-child-count="0" data-infant-count="0" data-passenger-class="اکونومی" class="my-drop-down-toggler will-not-close col-12 passenger-count intractive-component bg-white text-end p-3 position-relative">
+                    <button data-passenger-count="1" data-adult-count="1" data-child-count="0" data-infant-count="0" data-passenger-class="اکونومی" class="my-drop-down-toggler will-not-close col-12 passenger-count intractive-component bg-white text-end p-3 position-relative">
                         <span class="my-placeholder position-absolute font-small">مسافران/کلاس کابین</span>
                         <div class="d-flex align-items-center">
                             <i class="bi bi-person text-darkGrey-lighten2 ms-2"></i>
@@ -120,7 +120,7 @@ class intractiveComponent extends HTMLElement {
                                 <button class="plus-minus-button border-0 bg-grey-lighten3 rounded-3 text-grey-darken1">-</button>
                             </div>
                         </div>
-                        <div class="kid d-flex mb-3 align-items-center justify-content-between">
+                        <div class="child d-flex mb-3 align-items-center justify-content-between">
                             <h6 class="font-small mb-0">
                                 کودک
                                 <span class="text-darkGrey-lighten2">
@@ -136,7 +136,7 @@ class intractiveComponent extends HTMLElement {
                                 <button class="plus-minus-button border-0 bg-grey-lighten3 rounded-3 text-grey-darken1">-</button>
                             </div>
                         </div>
-                        <div class="new-born d-flex mb-3 align-items-center justify-content-between">
+                        <div class="infant d-flex mb-3 align-items-center justify-content-between">
                             <h6 class="font-small mb-0">
                                 نوزاد
                                 <span class="text-darkGrey-lighten2">(-2)</span> 

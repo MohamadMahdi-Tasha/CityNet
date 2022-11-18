@@ -140,28 +140,32 @@ cityComponentDropDownButtons.forEach(button => {
     })
 })
 
-// Adding Event Listener On Each Plus And Minus Buttons In Passenger Select Component That Checks If Number Is Less Than 9 Or More Than 0 Add 1 To It Or
-// Remove 1 From It And Then Gets All Those Numbers And Pushes Converted Text Content Of Them To Number Into 'arrayOfCalculatedNumbers' Array
-// And Sets Attribute Of 'data-passenger-count' And Text Content Of Passengers Count Text In Component To Sum Of Elements In 'arrayOfCalculatedNumbers' Variable
 plusMinusButton.forEach(button => {
     button.addEventListener('click', () => {
-        const parentOfGrandParentOfClickedButton = button.parentElement.parentElement.parentElement
-        const numberTarget = button.parentElement.firstElementChild.nextElementSibling;
-        const componentOfClickedButton = parentOfGrandParentOfClickedButton.previousElementSibling
-        const convertedToNumberValueOfTarget = Number(numberTarget.textContent)
-        const allCalculatedNumbersInComponentOfClickedButton = parentOfGrandParentOfClickedButton.querySelectorAll('.calculated-numbers');
-        const arrayOfCalculatedNumbers = [];
-        const passengersCountInComponentOfCLickedItem = componentOfClickedButton.querySelector('.passengers-count');
+        const numberToAddOrRemove = button.parentElement.querySelector('.calculated-numbers');
+        const dropDownOfComponent = button.parentElement.parentElement.parentElement
+        const componentOfClickedButton = dropDownOfComponent.previousElementSibling;
+        const passengersCountInComponent = componentOfClickedButton.querySelector('span.passengers-count');
+        const adultNumber = Number(dropDownOfComponent.querySelector('.adult .calculated-numbers').textContent);
+        const childNumber = Number(dropDownOfComponent.querySelector('.child .calculated-numbers').textContent);
+        const infantNumber = Number(dropDownOfComponent.querySelector('.infant .calculated-numbers').textContent);
+        const allPassangersCount = adultNumber + childNumber + infantNumber ;
 
         if (button.textContent === '+') {
-            if (convertedToNumberValueOfTarget < 9) {numberTarget.textContent =  convertedToNumberValueOfTarget + 1;}
+            if (Number(numberToAddOrRemove.textContent) < 9) {
+                numberToAddOrRemove.textContent = Number(numberToAddOrRemove.textContent) + 1
+            }
         } else {
-            if (convertedToNumberValueOfTarget > 0) {numberTarget.textContent =  convertedToNumberValueOfTarget - 1;}
+            if (Number(numberToAddOrRemove.textContent) > 0) {
+                numberToAddOrRemove.textContent = Number(numberToAddOrRemove.textContent) - 1
+            }
         }
 
-        allCalculatedNumbersInComponentOfClickedButton.forEach(number => arrayOfCalculatedNumbers.push(Number(number.textContent)))
-        componentOfClickedButton.setAttribute('data-passenger-count', arrayOfCalculatedNumbers.reduce((a, b) => a + b))
-        passengersCountInComponentOfCLickedItem.textContent = arrayOfCalculatedNumbers.reduce((a, b) => a + b)
+        componentOfClickedButton.setAttribute('data-passanger-count', allPassangersCount)
+        componentOfClickedButton.setAttribute('data-adult-count', adultNumber)
+        componentOfClickedButton.setAttribute('data-child-count', childNumber)
+        componentOfClickedButton.setAttribute('data-infant-count', infantNumber)
+        passengersCountInComponent.textContent = allPassangersCount;
     })
 })
 
