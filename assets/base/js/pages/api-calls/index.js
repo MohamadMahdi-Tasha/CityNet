@@ -9,6 +9,27 @@ const persianToEnglishNumber = string => string.replace(/[۰-۹]/g, d => '۰۱۲
 const todaysDatePerisan = new Date().toLocaleDateString('fa-IR',{year:'numeric',month:'2-digit',day:'2-digit',formatMatcher:'basic'});
 const todaysDateEnglish = persianToEnglishNumber(todaysDatePerisan)
 
+function returnCityIdBasedOnAbbr(abbrevation) {
+    let idToReturn;
+
+    switch (abbrevation) {
+        case 'THR':idToReturn = '82';break;
+        case 'KIH':idToReturn = '87';break;
+        case 'DXD':idToReturn = '73';break;
+        case 'MHD':idToReturn = '81';break;
+        case 'AWZ':idToReturn = '90';break;
+        case 'TBZ':idToReturn = '85';break;
+        case 'GSM':idToReturn = '98';break;
+        case 'SYZ':idToReturn = '84';break;
+        case 'MCT':idToReturn = '75';break;
+        case 'RAS':idToReturn = '100';break;
+        case 'IFN':idToReturn = '83';break;
+        case 'NJF':idToReturn = '66';break;
+    }
+
+    return idToReturn;
+}
+
 // Adding Event Listener Of Click To Search Button For Ticket That ...
 searchForTicketButton.addEventListener('click', () => {
     // Variables
@@ -43,13 +64,16 @@ searchForTicketButton.addEventListener('click', () => {
         const startCity = startCityIntractiveComponentsInnerButton.getAttribute('data-selected-city');
         const endCity = endCityIntractiveComponentsInnerButton.getAttribute('data-selected-city');
         const newLinkElement = document.createElement('a');
+        const startCityId = returnCityIdBasedOnAbbr(startCity);
+        const endCityId = returnCityIdBasedOnAbbr(endCity);
+
         const informationToSearchInTickets = {
             date: dataDate,
             adult_count: adultCount,
             child_count: childCount,
             infant_count: infantCount,
-            from: startCity,
-            to: endCity
+            from: startCityId,
+            to: endCityId
         }
 
         // Setting 'informationToSearchInTickets' Object In Local Storage As An Item

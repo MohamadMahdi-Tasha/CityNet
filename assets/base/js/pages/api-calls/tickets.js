@@ -16,8 +16,8 @@ window.addEventListener('load', () => {
     searchParametresToSend.append("adult_count", informationToSearchInTickets.adult_count);
     searchParametresToSend.append("child_count", informationToSearchInTickets.child_count);
     searchParametresToSend.append("infant_count", informationToSearchInTickets.infant_count);
-    searchParametresToSend.append("from", "81");
-    searchParametresToSend.append("to", "82");
+    searchParametresToSend.append("from", informationToSearchInTickets.from);
+    searchParametresToSend.append("to", informationToSearchInTickets.to);
 
     const optionsToSend = {
         method: 'POST',

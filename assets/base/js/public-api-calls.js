@@ -176,6 +176,7 @@ window.addEventListener('load', () => {
         fetch("https://www.newcash.me/api/v1/user/sync", optionsToSend)
             .then(response => response.json())
             .then(result => {
+                console.log(result)
                 const userNameElements = document.querySelectorAll('.user-name');
                 const userNumberElements = document.querySelectorAll('.user-number')
                 const userCashElements = document.querySelectorAll('.user-cash');
