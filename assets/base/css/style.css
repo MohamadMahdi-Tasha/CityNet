@@ -360,7 +360,7 @@ input[type='radio']:before {
 }
 
 .home-second-section {
-    margin-top: -15rem;
+    margin-top: -10rem;
     padding: 0 10rem;
 }
 
@@ -830,7 +830,7 @@ input[type='number'] {
     transition: .3s;
 }
 
-.my-drop-down-toggler + .intractive-component.my-drop-down {
+.intractive-component.my-drop-down-toggler ~ .my-drop-down {
     top: 50px;
 }
 
