@@ -56,7 +56,7 @@ window.addEventListener('load', () => {
                     ticketComponentElement.setAttribute('end-location', ticket.to_airport)
                     ticketComponentElement.setAttribute('end-location-en', 'number/string')
                     ticketComponentElement.setAttribute('end-location-fa', 'number/string')
-                    ticketComponentElement.setAttribute('price', ticket.price)
+                    ticketComponentElement.setAttribute('price', Number(ticket.price).toLocaleString())
                     ticketComponentElement.setAttribute('start-loaction-abbr', 'number/string')
                     ticketComponentElement.setAttribute('end-loaction-abbr', 'number/string')
                     ticketComponentElement.setAttribute('route-duration-hour', 'number/string')
