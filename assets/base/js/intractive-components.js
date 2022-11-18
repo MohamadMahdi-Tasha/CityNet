@@ -166,10 +166,10 @@ plusMinusButton.forEach(button => {
             }
         }
 
-        componentOfClickedButton.setAttribute('data-passanger-count', allPassangersCount)
         componentOfClickedButton.setAttribute('data-adult-count', adultNumber)
         componentOfClickedButton.setAttribute('data-child-count', childNumber)
         componentOfClickedButton.setAttribute('data-infant-count', infantNumber)
+        componentOfClickedButton.setAttribute('data-passenger-count', allPassangersCount)
         passengersCountInComponent.textContent = allPassangersCount;
     })
 })

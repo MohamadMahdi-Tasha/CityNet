@@ -9,12 +9,15 @@ const persianToEnglishNumber = string => string.replace(/[۰-۹]/g, d => '۰۱۲
 const todaysDatePerisan = new Date().toLocaleDateString('fa-IR',{year:'numeric',month:'2-digit',day:'2-digit',formatMatcher:'basic'});
 const todaysDateEnglish = persianToEnglishNumber(todaysDatePerisan)
 
+// Adding Event Listener Of Click To Search Button For Ticket That ...
 searchForTicketButton.addEventListener('click', () => {
+    // Variables
     const startCityIntractiveComponentsInnerButton = startCityIntractiveComponents.firstElementChild.firstElementChild
     const endCityIntractiveComponentsInnerButton = endCityIntractiveComponents.firstElementChild.firstElementChild
     const startDateIntractiveComponentsInnerButton = startDateIntractiveComponents.firstElementChild
     const passangerCountIntractiveComponentsInnerButton = passangerCountIntractiveComponents.firstElementChild.firstElementChild
 
+    // Handling Errors Their And Succses
     if (startCityIntractiveComponentsInnerButton.getAttribute('data-selected-city') === 'null') {setErrorOnComponent(startCityIntractiveComponents, 'لطفا شهر مبدا را انتخواب کنید')}
     else if (startCityIntractiveComponentsInnerButton.getAttribute('data-selected-city') !== 'null') {setSuccsesOnComponent(startCityIntractiveComponents)}
 
@@ -30,7 +33,9 @@ searchForTicketButton.addEventListener('click', () => {
     if (passangerCountIntractiveComponentsInnerButton.getAttribute('data-passenger-count') === '0') {setErrorOnComponent(passangerCountIntractiveComponents, 'تعداد مسافرین صفر نمیتواند باشد')}
     else if (passangerCountIntractiveComponentsInnerButton.getAttribute('data-passenger-count') !== '0') {setSuccsesOnComponent(passangerCountIntractiveComponents)}
 
+    // If There Is No Error Then ...
     if (document.querySelectorAll('.intractive-component.errored').length === 0) {
+        // Variables
         const dataDate = startDateIntractiveComponentsInnerButton.getAttribute('data-date');
         const adultCount = passangerCountIntractiveComponents.firstElementChild.firstElementChild.getAttribute('data-adult-count');
         const childCount = passangerCountIntractiveComponents.firstElementChild.firstElementChild.getAttribute('data-child-count');
@@ -47,8 +52,13 @@ searchForTicketButton.addEventListener('click', () => {
             to: endCity
         }
 
+        // Setting 'informationToSearchInTickets' Object In Local Storage As An Item
         localStorage.setItem('informationToSearchInTickets', JSON.stringify(informationToSearchInTickets));
+
+        // Setting Link To Created Anchor Tag
         newLinkElement.setAttribute('href', 'tickets.html');
+
+        // Clicking On Created Anchor Tag To Go To Another Page
         newLinkElement.click()
     }
 })
