@@ -30,8 +30,6 @@ window.addEventListener('load', () => {
         .then(response => response.json())
         .then(result => {
             loaderModal.removeAttribute('data-opened');
-            console.log(result)
-
             if (result.message === 'Unauthenticated.') {
                 loginModal.toggleAttribute('data-opened');
                 document.querySelector('#mobile-number-input-login-modal input').focus()
