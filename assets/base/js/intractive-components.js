@@ -140,6 +140,11 @@ cityComponentDropDownButtons.forEach(button => {
     })
 })
 
+// Adding Event Listener On Each Plus And Minus Buttons That Listens To Click And Checks If Clicked Button Is '+'. If It Is Then
+// if Number Is Less Than 9 Add 1 To Number . Otherwise If Clicked Button Is '-' Then if Number Is Less Than 0 remove 1 from Number.
+// Then Set Attribute Of  'data-passanger-count' Of Component To Sum Of 'adultNumber', 'childNumber' and 'infantNumber' Variables
+// Then Set 'data-adult-count', 'data-child-count' and 'data-infant-count' To 'adultNumber', 'childNumber' and 'infantNumber' Variables
+// And In Last Set Text Content Of Inner Number To Change In Component To Sum Of 'adultNumber', 'childNumber' and 'infantNumber' Variables Again :))
 plusMinusButton.forEach(button => {
     button.addEventListener('click', () => {
         const numberToAddOrRemove = button.parentElement.querySelector('.calculated-numbers');
