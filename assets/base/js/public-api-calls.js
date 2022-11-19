@@ -71,7 +71,7 @@ loginForm.addEventListener('submit', (event) => {
             // If Returned Data Shows That 'There Is No Number Submited With This In System' Then Set Error
             // To Phone Number Component With Some Text. Otherwise Close Login Modal And Open Code Modal
             if (result.data.msg === thereIsNoUseWithThisNumberArabic) {
-                setErrorOnComponent(phoneNumberComponent, 'همچین شماره ای در سیستم ثبت نشده!');
+                setErrorOnComponent(phoneNumberComponent.parentElement, 'همچین شماره ای در سیستم ثبت نشده!');
             } else if (result.data.result === "success") {
                 const numberInputInCodeModal = codeModal.querySelector('#mobile-number-input-code-modal input')
                 loginModal.removeAttribute('data-opened');
