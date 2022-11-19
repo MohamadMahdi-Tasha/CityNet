@@ -15,6 +15,20 @@ const dataFromHtmlElementFlightDate = htmlElement.getAttribute('data-flight-date
 const dataFromHtmlElementPassengerCount = htmlElement.getAttribute('data-passenger-count')
 const dataFromHtmlElementPassengerClass = htmlElement.getAttribute('data-passengers-class')
 
+const informationToSearchInTicketsPageLocalStoarge = localStorage.getItem('information-to-search-in-tickets-page');
+const dataFromLocalStoargeStartPlace = informationToSearchInTicketsPageLocalStoarge.from;
+const dataFromLocalStoargeEndPlace = informationToSearchInTicketsPageLocalStoarge.to;
+const dataFromLocalStoargeAdultCount = informationToSearchInTicketsPageLocalStoarge.adult_count;
+const dataFromLocalStoargeChildCount = informationToSearchInTicketsPageLocalStoarge.child_count;
+const dataFromLocalStoargeInfantCount = informationToSearchInTicketsPageLocalStoarge.infant_count;
+const dataFromLocalStoargeFlightDate = informationToSearchInTicketsPageLocalStoarge.date;
+
+// Setting Attributes Of Html Element Based On local Stoarge Item
+htmlElement.setAttribute('data-start-place', dataFromLocalStoargeStartPlace)
+htmlElement.setAttribute('data-end-place', dataFromLocalStoargeEndPlace)
+htmlElement.setAttribute('data-flight-date-en', dataFromLocalStoargeFlightDate)
+htmlElement.setAttribute('data-passenger-count', Number(dataFromLocalStoargeAdultCount) + Number(dataFromLocalStoargeChildCount) + Number(dataFromLocalStoargeInfantCount))
+
 // Setting Text Content Of Some Elements Based On Attributes From Html Element
 passengerCountTopSide.textContent = dataFromHtmlElementPassengerCount;
 passengerClassTopSide.textContent = dataFromHtmlElementPassengerClass;
