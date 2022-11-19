@@ -18,6 +18,7 @@
 //     "needs_captcha": 0
 // }
 
+// A Function That Returns Abbreviation From English Name Of City
 function abbrevationFromEnglishNameOfCity(city) {
     let abbrevationToReturn;
 
@@ -39,6 +40,7 @@ function abbrevationFromEnglishNameOfCity(city) {
     return abbrevationToReturn;
 }
 
+// A Function That Returns Persian Name From Abbreviation Of City
 function persianNameFromAbbrevation(abbrevation) {
     let persianNameToReturn;
 
