@@ -1,4 +1,26 @@
+// {
+//     "start_time": "19:10:00",
+//     "arrival_time": "20:25:00",
+//     "capacity": 9,
+//     "price": 938000,
+//     "airline_title": "Saha Airlines",
+//     "airline_icon": "https://newcash.me/flights_logos/Saha_Airlines.png",
+//     "air_plane": "Boeing 737 (All Series-Stage 3)",
+//     "seat_class": "Economy",
+//     "is_systemic": false,
+//     "flight_id": "a:9:{s:9:\"sessionId\";s:36:\"9f544866-4026-4fd8-a0dc-eec6dd751af2\";s:13:\"combinationId\";i:0;s:16:\"recommendationId\";i:0;s:11:\"subsystemId\";i:16;s:13:\"subsystemName\";s:6:\"sepehr\";s:12:\"flightNumber\";s:3:\"171\";s:4:\"from\";s:3:\"MHD\";s:2:\"to\";s:3:\"THR\";s:4:\"date\";s:10:\"2022-12-01\";}",
+//     "flight_number": "171",
+//     "flight_duration": "01:15",
+//     "from_airport": "Mashhad",
+//     "to_airport": "Tehran",
+//     "child_price": null,
+//     "infant_price": null,
+//     "needs_captcha": 0
+// }
+
+// Adding Event Listener Of Load To Window That ..
 window.addEventListener('load', () => {
+    // Variables
     const loaderModal = document.getElementById('loader-modal');
     const loginModal = document.getElementById('login-modal');
 
@@ -11,6 +33,7 @@ window.addEventListener('load', () => {
     headersOfDataToSend.append("Authorization", `Bearer ${loginToken}`);
     headersOfDataToSend.append("Content-Type", "application/x-www-form-urlencoded");
 
+    // Options To Search In Tickets Search Api
     const searchParametresToSend = new URLSearchParams();
     searchParametresToSend.append("date", informationToSearchInTickets.date);
     searchParametresToSend.append("adult_count", informationToSearchInTickets.adult_count);
@@ -26,18 +49,23 @@ window.addEventListener('load', () => {
         redirect: 'follow'
     };
 
+    // Fetching Search Tickets Api
     fetch("https://www.newcash.me/api/v2/airfare/flights/search", optionsToSend)
         .then(response => response.json())
         .then(result => {
-						console.log(result)
+            // Closing Loader Modal
             loaderModal.removeAttribute('data-opened');
+
+            // If User Is Unauthenticated Then Open Login Modal Then Focus To First Input Of It
             if (result.message === 'Unauthenticated.') {
                 loginModal.toggleAttribute('data-opened');
                 document.querySelector('#mobile-number-input-login-modal input').focus()
             } else {
+                // Variables
                 const ticketComponentList = document.getElementById('ticket-component-list');
                 const returnedTickets = result.data.tickets;
 
+                // For Each Returned Ticket That Creates 'li','ticket-component' Element Then Sets Attributes On Created 'ticket-component'
                 returnedTickets.forEach(ticket => {
                     const listItemElement = document.createElement('li');
                     const ticketComponentElement = document.createElement('ticket-component');
@@ -68,29 +96,11 @@ window.addEventListener('load', () => {
                     ticketComponentElement.setAttribute('end-date-fa', 'number/string')
                     ticketComponentElement.setAttribute('plane-model', 'number/string')
 
+                    // Appending Children To Their Parents
                     listItemElement.appendChild(ticketComponentElement);
                     ticketComponentList.appendChild(listItemElement);
                 })
             }
-            // {
-            //     "start_time": "19:10:00",
-            //     "arrival_time": "20:25:00",
-            //     "capacity": 9,
-            //     "price": 938000,
-            //     "airline_title": "Saha Airlines",
-            //     "airline_icon": "https://newcash.me/flights_logos/Saha_Airlines.png",
-            //     "air_plane": "Boeing 737 (All Series-Stage 3)",
-            //     "seat_class": "Economy",
-            //     "is_systemic": false,
-            //     "flight_id": "a:9:{s:9:\"sessionId\";s:36:\"9f544866-4026-4fd8-a0dc-eec6dd751af2\";s:13:\"combinationId\";i:0;s:16:\"recommendationId\";i:0;s:11:\"subsystemId\";i:16;s:13:\"subsystemName\";s:6:\"sepehr\";s:12:\"flightNumber\";s:3:\"171\";s:4:\"from\";s:3:\"MHD\";s:2:\"to\";s:3:\"THR\";s:4:\"date\";s:10:\"2022-12-01\";}",
-            //     "flight_number": "171",
-            //     "flight_duration": "01:15",
-            //     "from_airport": "Mashhad",
-            //     "to_airport": "Tehran",
-            //     "child_price": null,
-            //     "infant_price": null,
-            //     "needs_captcha": 0
-            // }
         })
         .catch(error => console.log('error', error));
 })
