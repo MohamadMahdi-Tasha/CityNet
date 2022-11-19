@@ -18,6 +18,48 @@
 //     "needs_captcha": 0
 // }
 
+function abbrevationFromEnglishNameOfCity(city) {
+    let abbrevationToReturn;
+
+    switch (city) {
+        case 'Tehran': abbrevationToReturn = 'THR';break;
+        case 'Kish Island': abbrevationToReturn = 'KIH';break;
+        case 'Dubai': abbrevationToReturn = 'DXB';break;
+        case 'Mashhad': abbrevationToReturn = 'MHD';break;
+        case 'Ahwaz': abbrevationToReturn = 'AWZ';break;
+        case 'Tabriz': abbrevationToReturn = 'TBZ';break;
+        case 'Qeshm Island': abbrevationToReturn = 'GSM';break;
+        case 'Shiraz': abbrevationToReturn = 'SYZ';break;
+        case 'Muscat': abbrevationToReturn = 'MCT';break;
+        case 'Rasht': abbrevationToReturn = 'RAS';break;
+        case 'Isfahan': abbrevationToReturn = 'IFN';break;
+        case 'Najaf': abbrevationToReturn = 'NJF';break;
+    }
+
+    return abbrevationToReturn;
+}
+
+function persianNameFromAbbrevation(abbrevation) {
+    let persianNameToReturn;
+
+    switch (abbrevation) {
+        case 'THR': persianNameToReturn = 'تهران';break;
+        case 'KIH': persianNameToReturn = 'کیش';break;
+        case 'DXB': persianNameToReturn = 'دوبی';break;
+        case 'MHD': persianNameToReturn = 'مشهد';break;
+        case 'AWZ': persianNameToReturn = 'اهواز';break;
+        case 'TBZ': persianNameToReturn = 'تبریز';break;
+        case 'GSM': persianNameToReturn = 'قشم';break;
+        case 'SYZ': persianNameToReturn = 'شیراز';break;
+        case 'MCT': persianNameToReturn = 'مسقط';break;
+        case 'RAS': persianNameToReturn = 'رشت';break;
+        case 'IFN': persianNameToReturn = 'اصفهان';break;
+        case 'NJF': persianNameToReturn = 'نجف';break;
+    }
+
+    return persianNameToReturn;
+}
+
 // Adding Event Listener Of Load To Window That ..
 window.addEventListener('load', () => {
     // Variables
@@ -77,16 +119,16 @@ window.addEventListener('load', () => {
                     ticketComponentElement.setAttribute('flight-number', ticket.flight_number)
                     ticketComponentElement.setAttribute('mode', ticket.seat_class)
                     ticketComponentElement.setAttribute('start-time', ticket.start_time.slice(0,5))
-                    ticketComponentElement.setAttribute('start-location', ticket.from_airport)
-                    ticketComponentElement.setAttribute('start-location-en', 'number/string')
-                    ticketComponentElement.setAttribute('start-location-fa', 'number/string')
+                    ticketComponentElement.setAttribute('start-location', `(${abbrevationFromEnglishNameOfCity(ticket.from_airport)}) ${persianNameFromAbbrevation(abbrevationFromEnglishNameOfCity(ticket.from_airport))}`)
+                    ticketComponentElement.setAttribute('start-location-en', ticket.from_airport)
+                    ticketComponentElement.setAttribute('start-location-fa', persianNameFromAbbrevation(abbrevationFromEnglishNameOfCity(ticket.from_airport)))
                     ticketComponentElement.setAttribute('end-time', ticket.arrival_time.slice(0,5))
-                    ticketComponentElement.setAttribute('end-location', ticket.to_airport)
-                    ticketComponentElement.setAttribute('end-location-en', 'number/string')
-                    ticketComponentElement.setAttribute('end-location-fa', 'number/string')
+                    ticketComponentElement.setAttribute('end-location', `(${abbrevationFromEnglishNameOfCity(ticket.to_airport)}) ${persianNameFromAbbrevation(abbrevationFromEnglishNameOfCity(ticket.to_airport))}`)
+                    ticketComponentElement.setAttribute('end-location-en', ticket.to_airport)
+                    ticketComponentElement.setAttribute('end-location-fa', persianNameFromAbbrevation(abbrevationFromEnglishNameOfCity(ticket.to_airport)))
                     ticketComponentElement.setAttribute('price', Number(ticket.price).toLocaleString())
-                    ticketComponentElement.setAttribute('start-loaction-abbr', 'number/string')
-                    ticketComponentElement.setAttribute('end-loaction-abbr', 'number/string')
+                    ticketComponentElement.setAttribute('start-loaction-abbr', abbrevationFromEnglishNameOfCity(ticket.from_airport))
+                    ticketComponentElement.setAttribute('end-loaction-abbr', abbrevationFromEnglishNameOfCity(ticket.to_airport))
                     ticketComponentElement.setAttribute('route-duration-hour', 'number/string')
                     ticketComponentElement.setAttribute('route-duration-minute', 'number/string')
                     ticketComponentElement.setAttribute('start-date', 'number/string')
