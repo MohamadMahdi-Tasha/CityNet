@@ -6,6 +6,7 @@ const startDateIntractiveComponents = document.getElementById('start-date-intrac
 const passangerCountIntractiveComponents = document.getElementById('passanger-count-intractive-components')
 const todaysDate = new Date()
 
+// A Function That Returns Id Of City From Given Abbreviation In Parameter
 function returnCityIdBasedOnAbbr(abbrevation) {
     let idToReturn;
 
