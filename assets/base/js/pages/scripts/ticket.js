@@ -9,33 +9,6 @@ const ticketComponentBottomAccardionTogglers = document.querySelectorAll('.ticke
 const ticketPageAsideMobileTopSideToggle = document.querySelector('.ticket-page-aside-mobile-top-side-toggle');
 const ticketPageAside = document.querySelector('.ticket-page-aside');
 
-const dataFromHtmlElementStartPlace = htmlElement.getAttribute('data-start-place')
-const dataFromHtmlElementEndPlace = htmlElement.getAttribute('data-end-place')
-const dataFromHtmlElementFlightDate = htmlElement.getAttribute('data-flight-date-en')
-const dataFromHtmlElementPassengerCount = htmlElement.getAttribute('data-passenger-count')
-const dataFromHtmlElementPassengerClass = htmlElement.getAttribute('data-passengers-class')
-
-const informationToSearchInTicketsPageLocalStoarge = localStorage.getItem('information-to-search-in-tickets-page');
-const dataFromLocalStoargeStartPlace = informationToSearchInTicketsPageLocalStoarge.from;
-const dataFromLocalStoargeEndPlace = informationToSearchInTicketsPageLocalStoarge.to;
-const dataFromLocalStoargeAdultCount = informationToSearchInTicketsPageLocalStoarge.adult_count;
-const dataFromLocalStoargeChildCount = informationToSearchInTicketsPageLocalStoarge.child_count;
-const dataFromLocalStoargeInfantCount = informationToSearchInTicketsPageLocalStoarge.infant_count;
-const dataFromLocalStoargeFlightDate = informationToSearchInTicketsPageLocalStoarge.date;
-
-// Setting Attributes Of Html Element Based On local Stoarge Item
-htmlElement.setAttribute('data-start-place', dataFromLocalStoargeStartPlace)
-htmlElement.setAttribute('data-end-place', dataFromLocalStoargeEndPlace)
-htmlElement.setAttribute('data-flight-date-en', dataFromLocalStoargeFlightDate)
-htmlElement.setAttribute('data-passenger-count', Number(dataFromLocalStoargeAdultCount) + Number(dataFromLocalStoargeChildCount) + Number(dataFromLocalStoargeInfantCount))
-
-// Setting Text Content Of Some Elements Based On Attributes From Html Element
-passengerCountTopSide.textContent = dataFromHtmlElementPassengerCount;
-passengerClassTopSide.textContent = dataFromHtmlElementPassengerClass;
-startPlaceTopSide.textContent = dataFromHtmlElementStartPlace;
-endPlaceTopSide.textContent = dataFromHtmlElementEndPlace;
-flightDateTopSide.textContent = dataFromHtmlElementFlightDate;
-
 // Adding Event Listener On Window That Listens To Scroll That Checks If Inner Width Of Page Is 991 pixels Or Less Than It Checks If
 // Space From Top Side Of Window To Where It Is Not Equal To 0. If Its Not Then Again Checks If Aside Element (Right Side ELement That Applies Some Filters)
 // Has Class Name Of 'Showing' If It Has Replaced It With 'scrolled' Class Name Other Wise Add 'scrolled' Class Name To Aside Element

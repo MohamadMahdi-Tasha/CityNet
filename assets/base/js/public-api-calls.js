@@ -135,13 +135,13 @@ loginCodeForm.addEventListener('submit', (event) => {
             loginCodeSubmitButton.textContent = 'ورود';
             innerSpinner.remove();
 
-            if (result.data.token !== null) {
+            if (result.data.token === null) {
+                setErrorOnComponent(mobileNumberInputCodeModal.parentElement, 'شماره وارد شده اشتباه میباشد');
+            } else {
                 // Setting 'logged-in' And 'login-toke' Items In Local Stoarge Then Relode The Page
                 localStorage.setItem('logged-in', 'true');
                 localStorage.setItem('login-token', result.data.token);
                 document.location.reload();
-            } else if (result.data.token === null) {
-                setErrorOnComponent(mobileNumberInputCodeModal, 'شماره وارد شده اشتباه میباشد');
             }
         })
         .catch(error => console.log('error', error));
