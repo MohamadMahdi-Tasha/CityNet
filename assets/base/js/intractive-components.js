@@ -143,10 +143,6 @@ plusMinusButton.forEach(button => {
         const dropDownOfComponent = button.parentElement.parentElement.parentElement
         const componentOfClickedButton = dropDownOfComponent.previousElementSibling;
         const passengersCountInComponent = componentOfClickedButton.querySelector('span.passengers-count');
-        const adultNumber = Number(dropDownOfComponent.querySelector('.adult .calculated-numbers').textContent);
-        const childNumber = Number(dropDownOfComponent.querySelector('.child .calculated-numbers').textContent);
-        const infantNumber = Number(dropDownOfComponent.querySelector('.infant .calculated-numbers').textContent);
-        const allPassangersCount = adultNumber + childNumber + infantNumber ;
 
         if (button.textContent === '+') {
             if (Number(numberToAddOrRemove.textContent) < 9) {
@@ -158,11 +154,11 @@ plusMinusButton.forEach(button => {
             }
         }
 
-        componentOfClickedButton.setAttribute('data-adult-count', adultNumber)
-        componentOfClickedButton.setAttribute('data-child-count', childNumber)
-        componentOfClickedButton.setAttribute('data-infant-count', infantNumber)
-        componentOfClickedButton.setAttribute('data-passenger-count', allPassangersCount)
-        passengersCountInComponent.textContent = allPassangersCount;
+        componentOfClickedButton.setAttribute('data-adult-count', Number(dropDownOfComponent.querySelector('.adult .calculated-numbers').textContent))
+        componentOfClickedButton.setAttribute('data-child-count', Number(dropDownOfComponent.querySelector('.child .calculated-numbers').textContent))
+        componentOfClickedButton.setAttribute('data-infant-count', Number(dropDownOfComponent.querySelector('.infant .calculated-numbers').textContent))
+        componentOfClickedButton.setAttribute('data-passenger-count', Number(document.querySelector('.adult .calculated-numbers').textContent) + Number(document.querySelector('.child .calculated-numbers').textContent) + Number(document.querySelector('.infant .calculated-numbers').textContent))
+        passengersCountInComponent.textContent = Number(document.querySelector('.adult .calculated-numbers').textContent) + Number(document.querySelector('.child .calculated-numbers').textContent) + Number(document.querySelector('.infant .calculated-numbers').textContent);
     })
 })
 
