@@ -7,6 +7,7 @@ const plusMinusButton = document.querySelectorAll('.plus-minus-button');
 const passengerClassSelectButton = document.querySelectorAll('.passenger-class-select-button');
 const inputIntractiveComponent = document.querySelectorAll('.intractive-component.input');
 
+// A Function That Takes Component And Checks Type Of Component Then Return Component Inner Div Or Button And Error Element Of It As Object
 function returnComponentElementsBasedOnComponentType(component) {
     const componentType = component.getAttribute('type');
     let componentElement;
@@ -29,6 +30,9 @@ function returnComponentElementsBasedOnComponentType(component) {
     return {componentElement, componentErrorElement};
 }
 
+// A Function That Takes Component And Error Text As Parameter And Adds Class Of 'errored' To 'componentElement' Element Returned From
+// 'returnComponentElementsBasedOnComponentType' Function On Component In Parameter. Then Sets Text Content Of 'componentErrorElement' Element Returned From
+// 'returnComponentElementsBasedOnComponentType' Function On Component Again To 'errorText' From Parameter
 function setErrorOnComponent(component, errorText) {
     const returnComponentElementsBasedOnComponentTypeOnComponent = returnComponentElementsBasedOnComponentType(component);
 
@@ -36,6 +40,9 @@ function setErrorOnComponent(component, errorText) {
     returnComponentElementsBasedOnComponentTypeOnComponent.componentErrorElement.textContent = errorText
 }
 
+// A Function That Takes Component And Error Text As Parameter And Removes Class Of 'errored' From 'componentElement' Element Returned From
+// 'returnComponentElementsBasedOnComponentType' Function On Component In Parameter. Then Sets Text Content Of 'componentErrorElement' Element Returned From
+// 'returnComponentElementsBasedOnComponentType' Function On Component Again To ''
 function setSuccsesOnComponent(component) {
     const returnComponentElementsBasedOnComponentTypeOnComponent = returnComponentElementsBasedOnComponentType(component);
 
