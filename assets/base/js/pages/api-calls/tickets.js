@@ -123,7 +123,11 @@ window.addEventListener('load', () => {
             } else {
                 // Variables
                 const ticketComponentList = document.getElementById('ticket-component-list');
+                const retunedTicketsNumberElement = document.getElementById('retuned-tickets-number');
                 const returnedTickets = result.data.tickets;
+
+                // Setting Number Of Returned Tickets
+                retunedTicketsNumberElement.textContent = returnedTickets.length
 
                 // For Each Returned Ticket That Creates 'li','ticket-component' Element Then Sets Attributes On Created 'ticket-component'
                 returnedTickets.forEach(ticket => {
