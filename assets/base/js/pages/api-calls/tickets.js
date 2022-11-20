@@ -147,14 +147,14 @@ window.addEventListener('load', () => {
                     ticketComponentElement.setAttribute('price', Number(ticket.price).toLocaleString())
                     ticketComponentElement.setAttribute('start-loaction-abbr', abbrevationFromEnglishNameOfCity(ticket.from_airport))
                     ticketComponentElement.setAttribute('end-loaction-abbr', abbrevationFromEnglishNameOfCity(ticket.to_airport))
-                    ticketComponentElement.setAttribute('route-duration-hour', 'number/string')
-                    ticketComponentElement.setAttribute('route-duration-minute', 'number/string')
-                    ticketComponentElement.setAttribute('start-date', 'number/string')
+                    ticketComponentElement.setAttribute('route-duration-hour', getRouteDuration(ticket.start_time.slice(0,5), ticket.arrival_time.slice(0,5)).hour)
+                    ticketComponentElement.setAttribute('route-duration-minute', getRouteDuration(ticket.start_time.slice(0,5), ticket.arrival_time.slice(0,5)).minute)
+                    ticketComponentElement.setAttribute('start-date', htmlElement.getAttribute('data-flight-date-en'))
                     ticketComponentElement.setAttribute('start-date-en', 'number/string')
                     ticketComponentElement.setAttribute('start-date-fa', 'number/string')
                     ticketComponentElement.setAttribute('end-date-en', 'number/string')
                     ticketComponentElement.setAttribute('end-date-fa', 'number/string')
-                    ticketComponentElement.setAttribute('plane-model', 'number/string')
+                    ticketComponentElement.setAttribute('plane-model', ticket.air_plane)
 
                     // Appending Children To Their Parents
                     listItemElement.appendChild(ticketComponentElement);
