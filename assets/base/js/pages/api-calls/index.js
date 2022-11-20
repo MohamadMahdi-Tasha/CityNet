@@ -71,7 +71,9 @@ searchForTicketButton.addEventListener('click', () => {
             child_count: childCount,
             infant_count: infantCount,
             from: startCityId,
-            to: endCityId
+            to: endCityId,
+            fromCityAbbrevation: startCity,
+            toCityAbbrevation: endCity
         }
 
         // Setting 'informationToSearchInTickets' Object In Local Storage As An Item

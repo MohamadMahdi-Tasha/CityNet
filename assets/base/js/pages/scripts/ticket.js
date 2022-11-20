@@ -1,6 +1,5 @@
 // Variables
 const passengerCountTopSide = document.getElementById('passenger-count-top-side');
-const passengerClassTopSide = document.getElementById('passenger-class-top-side');
 const startPlaceTopSide = document.getElementById('start-place-top-side');
 const endPlaceTopSide = document.getElementById('end-place-top-side');
 const flightDateTopSide = document.getElementById('flight-date-top-side');
@@ -8,6 +7,19 @@ const flightFilterButtons = document.querySelectorAll('.flight-filter-button');
 const ticketComponentBottomAccardionTogglers = document.querySelectorAll('.ticket-component-bottom-accardion-toggler');
 const ticketPageAsideMobileTopSideToggle = document.querySelector('.ticket-page-aside-mobile-top-side-toggle');
 const ticketPageAside = document.querySelector('.ticket-page-aside');
+const informationToSearchInTicketsPage = JSON.parse(localStorage.getItem('information-to-search-in-tickets-page'));
+
+// Setting Attributes Of Pages Given Data From Data Stored In Local Storage
+htmlElement.setAttribute('data-start-place', `(${informationToSearchInTicketsPage.fromCityAbbrevation}) ${persianNameFromAbbrevation(informationToSearchInTicketsPage.fromCityAbbrevation)}`)
+htmlElement.setAttribute('data-end-place', `(${informationToSearchInTicketsPage.toCityAbbrevation}) ${persianNameFromAbbrevation(informationToSearchInTicketsPage.toCityAbbrevation)}`)
+htmlElement.setAttribute('data-flight-date-en', informationToSearchInTicketsPage.date)
+htmlElement.setAttribute('data-passenger-count', Number(informationToSearchInTicketsPage.adult_count) + Number(informationToSearchInTicketsPage.child_count) + Number(informationToSearchInTicketsPage.infant_count))
+
+// Setting Text Content Of Top Side Elements By Returned Attribute Value From Html Elements That Just Set Above
+passengerCountTopSide.textContent = htmlElement.getAttribute('data-passenger-count')
+startPlaceTopSide.textContent = htmlElement.getAttribute('data-start-place')
+endPlaceTopSide.textContent = htmlElement.getAttribute('data-end-place')
+flightDateTopSide.textContent = htmlElement.getAttribute('data-flight-date-en')
 
 // Adding Event Listener On Window That Listens To Scroll That Checks If Inner Width Of Page Is 991 pixels Or Less Than It Checks If
 // Space From Top Side Of Window To Where It Is Not Equal To 0. If Its Not Then Again Checks If Aside Element (Right Side ELement That Applies Some Filters)
