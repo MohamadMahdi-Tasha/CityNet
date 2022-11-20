@@ -154,10 +154,10 @@ window.addEventListener('load', () => {
                     ticketComponentElement.setAttribute('route-duration-hour', getRouteDuration(ticket.start_time.slice(0,5), ticket.arrival_time.slice(0,5)).hour)
                     ticketComponentElement.setAttribute('route-duration-minute', getRouteDuration(ticket.start_time.slice(0,5), ticket.arrival_time.slice(0,5)).minute)
                     ticketComponentElement.setAttribute('start-date', htmlElement.getAttribute('data-flight-date-en'))
-                    ticketComponentElement.setAttribute('start-date-en', 'number/string')
-                    ticketComponentElement.setAttribute('start-date-fa', 'number/string')
-                    ticketComponentElement.setAttribute('end-date-en', 'number/string')
-                    ticketComponentElement.setAttribute('end-date-fa', 'number/string')
+                    ticketComponentElement.setAttribute('start-date-en', htmlElement.getAttribute('data-flight-date-en'))
+                    ticketComponentElement.setAttribute('start-date-fa', `${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('YYYY')} ${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('MMMM')} ${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('DD')}`)
+                    ticketComponentElement.setAttribute('end-date-en', htmlElement.getAttribute('data-flight-date-en'))
+                    ticketComponentElement.setAttribute('end-date-fa', `${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('YYYY')} ${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('MMMM')} ${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('DD')}`)
                     ticketComponentElement.setAttribute('plane-model', ticket.air_plane)
 
                     // Appending Children To Their Parents
