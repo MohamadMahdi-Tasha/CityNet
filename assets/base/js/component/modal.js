@@ -3,7 +3,7 @@ class Modal extends HTMLElement {
     connectedCallback() {
         if (this.getAttribute('type') === 'log-in') {
             this.innerHTML = `
-                <div id="login-modal" class="my-modal-holder position-fixed inset-0 d-flex justify-content-center align-items-center">
+                <div id="login-modal" class="my-modal-holder position-fixed inset-0 d-flex justify-content-center align-items-center ${(this.getAttribute('no-close') !== null) ? 'no-close' : ''}">
                     <div ${(this.getAttribute('no-close') === null) ? 'data-target="login-modal"' : ''}  class="${(this.getAttribute('no-close') === null) ? 'toggler' : ''} my-modal-bg position-fixed inset-0"></div>
                     <div class="my-modal bg-white shadow rounded-3 p-3 col-lg-5 col-12">
                         <div class="mb-2" dir="ltr">
@@ -39,7 +39,7 @@ class Modal extends HTMLElement {
             `
         } else if (this.getAttribute('type') === 'loader') {
             this.innerHTML = `
-                <div data-opened id="loader-modal" class="my-modal-holder position-fixed inset-0 d-flex justify-content-center align-items-center">
+                <div data-opened id="loader-modal" class="my-modal-holder position-fixed inset-0 d-flex justify-content-center align-items-center no-close">
                     <div class="my-modal-bg position-fixed inset-0"></div>
                     <div class="my-modal bg-white shadow rounded-3 p-3 col-lg-auto col-12">
                         <h5 class="text-grey-darken2">لطفا منتظر بمانید!</h5>

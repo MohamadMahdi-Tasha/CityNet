@@ -59,7 +59,7 @@ window.addEventListener('load', () => {
 window.addEventListener('keydown', (event) => {
     const clickedKey = event.key.toLowerCase();
     if (clickedKey === 'escape') {
-        const openedModals = document.querySelectorAll('.my-modal-holder[data-opened]');
+        const openedModals = document.querySelectorAll('.my-modal-holder[data-opened]:not(.no-close)');
         const openedDropDowns = document.querySelectorAll('.my-drop-down-holder[data-opened]')
 
         openedModals.forEach(modal => modal.removeAttribute('data-opened'))
