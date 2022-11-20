@@ -62,6 +62,22 @@ function persianNameFromAbbrevation(abbrevation) {
     return persianNameToReturn;
 }
 
+// A Function That Returns Hour And Minute Duration From Start And EndTime Given In Parameter
+function getRouteDuration(startTime, EndTime) {
+    const startTimeHour = Number(startTime.slice(0, 2));
+    const startTimeMinute = Number(startTime.slice(3, 5));
+    const endTimeHour = Number(EndTime.slice(0, 2));
+    const endTimeMinute = Number(EndTime.slice(3, 5));
+
+    let hour;
+    let minute;
+
+    (startTimeHour > endTimeHour) ? hour = startTimeHour - endTimeHour : hour = endTimeHour - startTimeHour;
+    (startTimeMinute > endTimeMinute) ? minute = startTimeMinute - endTimeMinute : minute = endTimeMinute - startTimeMinute;
+
+    return {hour, minute}
+}
+
 // Adding Event Listener Of Load To Window That ..
 window.addEventListener('load', () => {
     // Variables
