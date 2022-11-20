@@ -189,6 +189,12 @@ class flightDetails extends HTMLElement {
                                         </tbody>
                                     </table>
                             </div>
+                            <div class="d-flex justify-content-end">
+                                <div class="d-flex p-2 col-lg-4 col-7 bg-green-light align-items-center justify-content-between rounded-bottom">
+                                    <h6 class="mb-0 font-small text-green-base">جمع</h6>
+                                    <h6 class="mb-0 font-small text-green-base">ریال ${this.getAttribute('price')}</h6>
+                                </div>
+                            </div>
             `
         } else if (this.getAttribute('type') === "rules") {
             this.innerHTML = `
@@ -260,4 +266,4 @@ class flightDetails extends HTMLElement {
     }
 }
 
-window.customElements.define(   'flight-details', flightDetails);
+window.customElements.define('flight-details', flightDetails);
