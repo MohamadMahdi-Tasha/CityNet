@@ -28,6 +28,7 @@
 <!--Modals-->
 <my-modal type="log-in"></my-modal>
 <my-modal type="login-code"></my-modal>
+<my-modal type="loader"></my-modal>
 <!--Mobile Nav-->
 <mobile-nav></mobile-nav>
 <!--Header-->
@@ -49,17 +50,17 @@
                 </thead>
                 <tbody class="col-lg-auto col-6">
                 <tr class="d-lg-table-row d-flex flex-column">
-                    <th class="border-bottom-0 font-small text-grey-darken3 text-center bb-lg" scope="row">1</th>
-                    <td class="border-bottom-0 font-small text-grey-darken3 text-center bb-lg">2</td>
-                    <td class="border-bottom-0 font-small text-grey-darken3 text-center bb-lg">3</td>
-                    <td class="border-bottom-0 font-small text-grey-darken3 text-center bb-lg">4</td>
+                    <th class="border-bottom-0 font-small text-grey-darken3 text-center bb-lg" id="user-name-app-topside-table" scope="row">--</th>
+                    <td class="border-bottom-0 font-small text-grey-darken3 text-center bb-lg" id="user-name-topside-table">--</td>
+                    <td class="border-bottom-0 font-small text-grey-darken3 text-center bb-lg" id="user-number-topside-table">--</td>
+                    <td class="border-bottom-0 font-small text-grey-darken3 text-center bb-lg" id="user-email-topside-table">--</td>
                 </tr>
                 </tbody>
             </table>
             <div class="bg-grey-lighten3 p-4 rounded-3 col-lg-3 col-12">
                 <h6 class="text-center font-small text-grey-darken1">موجودی کیف پول ریال</h6>
                 <h6 class="text-center font-small mb-0 text-info-darken1">
-                    <span class="fw-bold">169,1432,3181</span>
+                    <span class="fw-bold" id="user-wallet-topside">--</span>
                     IRR
                 </h6>
             </div>
@@ -286,5 +287,57 @@
 <script src="assets/base/js/intractive-components.js"></script>
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
 <script src="assets/base/js/public-api-calls.js"></script>
+<script>
+    window.addEventListener('load', () => {
+        const headersToSendData = new Headers();
+        const loginToken = localStorage.getItem('login-token');
+
+        headersToSendData.append("Accept", "application/json");
+        headersToSendData.append("debug", "true");
+        headersToSendData.append("Authorization", `Bearer ${loginToken}`);
+
+        const optionsToSendData = {
+            method: 'GET',
+            headers: headersToSendData,
+            redirect: 'follow'
+        };
+
+        fetch("https://www.newcash.me/api/v1/user/sync", optionsToSendData)
+            .then(response => response.json())
+            .then(result => {
+                console.log(result)
+
+                const loaderModal = document.getElementById('loader-modal');
+                loaderModal.removeAttribute('data-opened')
+
+                if (result.message === 'Unauthenticated.') {
+                    const loginModal = document.getElementById('login-modal');
+                    const inputInLoginModal  = loginModal.querySelector('input:first-of-type');
+
+                    loginModal.toggleAttribute('data-opened');
+                    inputInLoginModal.focus()
+                } else {
+                    const userData = result.data.user;
+                    const userNumber = userData.mobile;
+                    const userWallet = userData.wallet;
+                    const userName = userData.card_info.name;
+                    let userNameToSet;
+
+                    (userName === null) ? userNameToSet = '--' : userNameToSet = userName
+
+                    const userNameAppTopsideTable = document.getElementById('user-name-app-topside-table')
+                    const userNameTopsideTable = document.getElementById('user-name-topside-table')
+                    const userNumberTopsideTable = document.getElementById('user-number-topside-table')
+                    const userWalletTopside = document.getElementById('user-wallet-topside');
+
+                    userNameAppTopsideTable.textContent = userNameToSet;
+                    userNameTopsideTable.textContent = userNameToSet;
+                    userNumberTopsideTable.textContent = userNumber;
+                    userWalletTopside.textContent = userWallet;
+                }
+            })
+            .catch(error => console.log('error', error));
+    })
+</script>
 </body>
 </html>
