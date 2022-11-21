@@ -2,10 +2,10 @@
 const calenderIntractiveComponent = document.querySelectorAll('.intractive-component.calender');
 const dropDownButtonsInIntractiveComponents = document.querySelectorAll('.intractive-component.dropdown ~ .my-drop-down button');
 const cityComponentDropDownButtons = document.querySelectorAll('.city-component-drop-down-button');
-const intractiveComponents = document.querySelectorAll('.intractive-component:not(.calender, .dropdown, .input, .passenger-count)');
+const intractiveComponents = document.querySelectorAll('.intractive-component:not(.calender, .dropdown, .input, .passenger-count, .search)');
 const plusMinusButton = document.querySelectorAll('.plus-minus-button');
 const passengerClassSelectButton = document.querySelectorAll('.passenger-class-select-button');
-const inputIntractiveComponent = document.querySelectorAll('.intractive-component.input');
+const inputAndSearchIntractiveComponent = document.querySelectorAll('.intractive-component:is(.input, .search)');
 
 // A Function That Takes Component And Checks Type Of Component Then Return Component Inner Div Or Button And Error Element Of It As Object
 function returnComponentElementsBasedOnComponentType(component) {
@@ -188,7 +188,7 @@ passengerClassSelectButton.forEach(button => {
 // Adding Event Listener On Each Input Intractive Component That Listenes To Click And Focuses To Inner Input Of It And Adds Event Listener On
 // Inner Input Of It That Adds Class Of 'focused' To Component And Then Adds Event Listener Input On Inner Input That Setts Attribute Of 'data-value' Of Component
 // To Value Typed In Inner Input And After That Adds Event Listener Of Blur On Inner Input That Removes Class Of 'focused' If Value Of Inner Input Is Empty
-inputIntractiveComponent.forEach(component => {
+inputAndSearchIntractiveComponent.forEach(component => {
     const inputInComponent = component.querySelector('input');
 
     component.addEventListener('click', () => inputInComponent.focus())
