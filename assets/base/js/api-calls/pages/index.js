@@ -61,7 +61,6 @@ searchForTicketButton.addEventListener('click', () => {
         const infantCount = passangerCountIntractiveComponents.firstElementChild.firstElementChild.getAttribute('data-infant-count');
         const startCity = startCityIntractiveComponentsInnerButton.getAttribute('data-selected-city');
         const endCity = endCityIntractiveComponentsInnerButton.getAttribute('data-selected-city');
-        const newLinkElement = document.createElement('a');
         const startCityId = returnCityIdBasedOnAbbr(startCity);
         const endCityId = returnCityIdBasedOnAbbr(endCity);
 
@@ -79,10 +78,7 @@ searchForTicketButton.addEventListener('click', () => {
         // Setting 'informationToSearchInTickets' Object In Local Storage As An Item
         localStorage.setItem('information-to-search-in-tickets-page', JSON.stringify(informationToSearchInTickets));
 
-        // Setting Link To Created Anchor Tag
-        newLinkElement.setAttribute('href', 'tickets.html');
-
-        // Clicking On Created Anchor Tag To Go To Another Page
-        newLinkElement.click()
+        // Opening New Page
+        window.open('tickets.html', '_self')
     }
 })
