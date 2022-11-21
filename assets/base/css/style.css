@@ -407,7 +407,7 @@ intractive-component[type='text'] input{
     overflow: auto;
 }
 
-.top-side-right-side-ticket-buy > passanger-information:not(:first-of-type) > div:first-of-type {
+.top-side-right-side-ticket-buy > passanger-information > div:first-of-type {
     border-top: 1px solid #dee2e6;
 }
 
