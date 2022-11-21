@@ -407,6 +407,10 @@ intractive-component[type='text'] input{
     overflow: auto;
 }
 
+.top-side-right-side-ticket-buy > passanger-information:not(:first-of-type) > div:first-of-type {
+    border-top: 1px solid #dee2e6;
+}
+
 .primary-submit-button .ripple-button--inner-span {
     background-color: rgba(221, 153, 51, .2);
 }
