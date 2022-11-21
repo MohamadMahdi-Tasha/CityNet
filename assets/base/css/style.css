@@ -405,7 +405,6 @@ intractive-component[type='text'] input{
 .select-person-table-holder {
     height: 250px;
     overflow: auto;
-    padding-left: 1rem;
 }
 
 .primary-submit-button .ripple-button--inner-span {

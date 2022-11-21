@@ -120,20 +120,7 @@ class Modal extends HTMLElement {
                                   <th class="font-small text-grey-darken1 bg-transparent" scope="col"> </th>
                                 </tr>
                               </thead>
-                              <tbody>
-                                <tr >
-                                  <th class="font-small vertical-align text-center text-grey-darken3" scope="row">1</th>
-                                  <td class="font-small vertical-align text-center text-grey-darken3">male</td>
-                                  <td class="font-small vertical-align text-center text-grey-darken3">HAMID</td>
-                                  <td class="font-small vertical-align text-center text-grey-darken3">ALINEJAD</td>
-                                  <td class="font-small vertical-align text-center text-grey-darken3">IQ</td>
-                                  <td class="font-small vertical-align text-center text-grey-darken3">--</td>
-                                  <td class="font-small vertical-align text-center text-grey-darken3">1995/04/24</td>
-                                  <td class="font-small vertical-align text-center text-grey-darken3">--</td>
-                                  <td class="font-small vertical-align text-center text-grey-darken3">2027/07/07</td>
-                                  <td><button class="submit-button rounded-4 ripple-button font-small col-12">انتخاب</button></td>
-                                </tr>
-                              </tbody>
+                              <tbody id="tbody-select-person-modal"></tbody>
                             </table>
                         </div>
                     </div>

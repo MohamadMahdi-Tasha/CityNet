@@ -90,7 +90,7 @@ class flightDetails extends HTMLElement {
                 `
             } else {
                 this.innerHTML = `
-                    <div class="bg-grey-lighten3 rounded-top">
+                    <div class="bg-grey-lighten3 rounded border">
                         <div class="p-3 d-flex justify-content-between align-items-center">
                             <h6 class="mb-0 font-small text-grey-darken3">
                                 <span>${this.getAttribute('start-loaction-abbr')}</span>
@@ -105,7 +105,7 @@ class flightDetails extends HTMLElement {
                                 دقیقه
                             </h6>
                         </div>
-                        <div class="bg-white p-3 border rounded-bottom">
+                        <div class="bg-white p-3 border-top rounded-bottom">
                             <div>
                                 <div class="d-flex gap-3 mb-3">
                                     <h6 class="mb-0 font-small text-grey-darken4">
