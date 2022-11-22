@@ -4,7 +4,7 @@ class flightDetails extends HTMLElement {
         if (this.getAttribute('type') === "details") {
             if (this.getAttribute('small') === null) {
                 this.innerHTML = `
-                        <div">
+                        <div>
                             <div class="p-3 d-flex flex-lg-row flex-column gap-3 justify-content-between align-items-lg-center align-items-start border border-bottom-0 bg-grey-lighten3 rounded-top">
                                 <div class="d-flex align-items-center">
                                     <h6 class="mb-0 font-small">

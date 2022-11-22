@@ -65,13 +65,16 @@ class TicketComponent extends HTMLElement {
                             </div>
                             <button onclick="
                                 localStorage.setItem('selected-ticket', JSON.stringify({
+                                    icon: '${this.getAttribute('icon-src')}',
                                     name: '${this.getAttribute('name')}',
-                                    price: '${this.getAttribute('price')}',
-                                    capacity: '${this.getAttribute('number-of-sits')}',
+                                    flightNumber: '${this.getAttribute('flight-number')}',
                                     startTime: '${this.getAttribute('start-time')}',
                                     endTime: '${this.getAttribute('end-time')}',
-                                    from: '${this.getAttribute('start-loaction-abbr')}',
-                                    to: '${this.getAttribute('end-loaction-abbr')}',
+                                    price: '${this.getAttribute('price')}',
+                                    startLocation: '${this.getAttribute('start-loaction-abbr')}',
+                                    endLocation: '${this.getAttribute('end-loaction-abbr')}',
+                                    date: '${this.getAttribute('start-date')}',
+                                    planeModel: '${this.getAttribute('plane-model')}',
                                 }));
                                 window.open('ticket-buy.html', '_self');
                             " class="rounded-4 ticket-component-search-button px-5 submit-button col-lg-auto col-12 ripple-button">جستجو</button>

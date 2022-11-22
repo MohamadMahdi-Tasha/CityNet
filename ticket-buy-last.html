@@ -2,22 +2,17 @@
 <html lang="fa"
       data-currency=""
       data-logged-in=""
-      data-start-city=""
       data-contract-number=""
-      data-end-city=""
-      data-flight-date=""
-      data-price=""
-      data-route-hour=""
-      data-route-minute=""
-      data-start-time=""
-      data-end-time=""
-      data-airplane=""
-      data-airplane-model=""
-      data-flight-number=""
-      data-systemic=""
-      data-passengers-count=""
-      data-email=""
-      data-mobile=""
+      data-selected-ticket-icon=""
+      data-selected-ticket-name=""
+      data-selected-ticket-flight-number=""
+      data-selected-ticket-start-time=""
+      data-selected-ticket-end-time=""
+      data-selected-ticket-price=""
+      data-selected-ticket-start-loaction=""
+      data-selected-ticket-end-loaction=""
+      data-selected-ticket-date=""
+      data-selected-ticket-plane-model=""
 >
 <head>
     <!--A Meta Tag For Setting Character Set Of Page-->
@@ -72,32 +67,24 @@
                 </div>
                 <h6 class="bg-white rounded-3 px-3 py-lg-2 py-3 font-small mb-0 col-lg-auto col-12 text-lg-end text-center">
                     شماره قرارداد:
-                    <span>279836</span>
+                    <span id="contract-number"></span>
                 </h6>
             </div>
             <div data-opened class="my-collapse-holder shadow bg-white rounded-3">
-                <button class="my-collapse-toggler ripple-button rounded-3 border-0 col-12 d-flex bg-info-darken2 text-white justify-content-between align-items-center font-small p-3">
+                <button data-opened class="my-collapse-toggler ripple-button rounded-3 border-0 col-12 d-flex bg-info-darken2 text-white justify-content-between align-items-center font-small p-3">
                     <span>
                         <i class="bi bi-airplane rotate-270 ms-2"></i>
                         پرواز
                     </span>
                     <span>
-                        <span>THR</span>
-                        <i class="bi bi-airplane rotate-270 ms-2"></i>
-                        <span>KIH</span>
+                        <span class="start-location-abbr"></span>
+                        <i class="bi bi-airplane rotate-270 mx-3"></i>
+                        <span class="end-location-abbr"></span>
                         <i class="bi bi-chevron-down me-3"></i>
                     </span>
                 </button>
                 <div class="my-collapse p-3 rounded-3 d-flex flex-column gap-4">
-                    <flight-details icon-src="assets/base/img/img-logo.png" name="sepehran Airlines" systemic
-                                    number-of-sits="9" flight-number="IS 4340" mode="economy" start-time="05:45"
-                                    start-location="تهران (THR)" start-location-en="Tehran" start-location-fa="تهران"
-                                    end-time="07:15" end-location="مشهد (MHD)" end-location-en="Mashhad"
-                                    end-location-fa="مشهد" price="11,330,060" start-loaction-abbr="THR"
-                                    end-loaction-abbr="MHD" route-duration-hour="1" route-duration-minute="5"
-                                    start-date="2022-11-10" start-date-en="10 november" start-date-fa="پنجشنبه 19 ابان"
-                                    end-date-en="10 november" end-date-fa="پنجشنبه 19 ابان" plane-model="IS 4340"
-                                    type="details"></flight-details>
+                    <flight-details id="flight-details" type="details"></flight-details>
                     <div class="row flex-lg-row flex-column gx-3 gy-3">
                         <div class="col-lg-6 col-12">
                             <h6 class="font-small mb-3"><i class="bi bi-clipboard ms-2"></i>قوانین</h6>
@@ -394,25 +381,21 @@
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
 <script src="assets/base/js/api-calls/public-api-calls.js"></script>
 <script>
-    const informationToSearchInTicketsPage = JSON.parse(localStorage.getItem('information-to-search-in-tickets-page'));
+    window.addEventListener('load', () => {
+        const selectedTicket = JSON.parse(localStorage.getItem('selected-ticket'));
 
-
-    htmlElement.setAttribute('data-start-city', `(${informationToSearchInTicketsPage.fromCityAbbrevation}) ${persianNameFromAbbrevation(informationToSearchInTicketsPage.fromCityAbbrevation)}`)
-    htmlElement.setAttribute('data-contract-number', '')
-    htmlElement.setAttribute('data-end-city', '')
-    htmlElement.setAttribute('data-flight-date', '')
-    htmlElement.setAttribute('data-price', '')
-    htmlElement.setAttribute('data-route-hour', '')
-    htmlElement.setAttribute('data-route-minute', '')
-    htmlElement.setAttribute('data-start-time', '')
-    htmlElement.setAttribute('data-end-time', '')
-    htmlElement.setAttribute('data-airplane', '')
-    htmlElement.setAttribute('data-airplane-model', '')
-    htmlElement.setAttribute('data-flight-number', '')
-    htmlElement.setAttribute('data-systemic', '')
-    htmlElement.setAttribute('data-passengers-count', '')
-    htmlElement.setAttribute('data-email', '')
-    htmlElement.setAttribute('data-mobile', '')
+        htmlElement.setAttribute('data-contract-number', '279836')
+        htmlElement.setAttribute('data-selected-ticket-icon', selectedTicket.icon)
+        htmlElement.setAttribute('data-selected-ticket-name', selectedTicket.name)
+        htmlElement.setAttribute('data-selected-ticket-flight-number', selectedTicket.flightNumber)
+        htmlElement.setAttribute('data-selected-ticket-start-time', selectedTicket.startTime)
+        htmlElement.setAttribute('data-selected-ticket-end-time', selectedTicket.endTime)
+        htmlElement.setAttribute('data-selected-ticket-price', selectedTicket.price)
+        htmlElement.setAttribute('data-selected-ticket-start-loaction', selectedTicket.startLocation)
+        htmlElement.setAttribute('data-selected-ticket-end-loaction', selectedTicket.endLocation)
+        htmlElement.setAttribute('data-selected-ticket-date', selectedTicket.date)
+        htmlElement.setAttribute('data-selected-ticket-plane-model', selectedTicket.planeModel)
+    })
 </script>
 </body>
 </html>
