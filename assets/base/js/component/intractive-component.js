@@ -40,7 +40,11 @@ class intractiveComponent extends HTMLElement {
             }
         } else if (this.getAttribute('type') === "calender"){
             if (this.getAttribute('disabled') === null) {
-                const randomDataPickerParentId = `data-picker-parent-number-${Math.ceil(Math.random() * 100)}`
+                const allCalenderComponents = document.querySelectorAll('intractive-component[type="calender"]');
+                let calenderComponentsArray = [];
+                allCalenderComponents.forEach(component => calenderComponentsArray.push(component))
+                const numberOfThisCalenderComponent = calenderComponentsArray.indexOf(this);
+
                 this.innerHTML = `
                     <button data-date="null" class="my-drop-down-toggler col-12 calender intractive-component bg-white text-end p-3 position-relative">
                         <span class="my-placeholder position-absolute font-small">
@@ -48,14 +52,14 @@ class intractiveComponent extends HTMLElement {
                             ${this.getAttribute('placeholder')}
                         </span>
                     </button>
-                    <div id="${randomDataPickerParentId}">
+                    <div id="calender-intractive-component-date-picker-holder-number-${numberOfThisCalenderComponent}">
                         <date-picker :modal="true" locale="en" @select="select" mode="single"></date-picker>
                     </div>
                     <div class="error-holder text-error-darken2 mt-2"><h6 class="mb-0 font-small"></h6></div>
                 `
                 // Defining New Vue Component For Calendar Component
                 new Vue({
-                    el:`#${randomDataPickerParentId}`,
+                    el:`#calender-intractive-component-date-picker-holder-number-${numberOfThisCalenderComponent}`,
                     components: {datePicker},
                     methods: {
                         select(date) {
