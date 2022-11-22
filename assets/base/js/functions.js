@@ -158,3 +158,25 @@ function persianNameByEnAbbrevationCurrency(englishAbrevation) {
 
     return stringToReturn;
 }
+
+// A Function That Takes Abrevation And Returnes English Name
+function englishNameFromAbrevation(abrevation) {
+    let stringToReturn;
+
+    switch (abrevation) {
+        case 'THR':stringToReturn = 'Tehran';break;
+        case 'KIH':stringToReturn = 'Kish Island';break;
+        case 'DXD':stringToReturn = 'Dubai';break;
+        case 'MHD':stringToReturn = 'Mashahad';break;
+        case 'AWZ':stringToReturn = 'Ahwaz';break;
+        case 'TBZ':stringToReturn = 'Tabriz';break;
+        case 'GSM':stringToReturn = 'Qeshm Island';break;
+        case 'SYZ':stringToReturn = 'Shiraz';break;
+        case 'MCT':stringToReturn = 'Muscat';break;
+        case 'RAS':stringToReturn = 'Rasht';break;
+        case 'IFN':stringToReturn = 'Isfahan';break;
+        case 'NJF':stringToReturn = 'Najaf';break;
+    }
+
+    return stringToReturn;
+}

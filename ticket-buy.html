@@ -104,9 +104,7 @@
                         <button data-target-page="flight-rules" class="intractive-buttons-btn inner-page-toggler ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">قوانین</button>
                         <button data-target-page="flight-weight" class="intractive-buttons-btn inner-page-toggler ticket-buy font-small text-secondary-lighten1 border-0 bg-transparent ripple-button d-flex flex-column align-items-center justify-content-center">مقدار بار</button>
                     </div>
-                    <div class="inner-page bg-grey-lighten3 rounded active" id="flight-detail">
-                        <flight-details small icon-src="assets/base/img/img-logo.png" name="sepehran Airlines" systemic number-of-sits="9" flight-number="IS 4340" mode="economy" start-time="05:45" start-location="تهران (THR)" start-location-en="Tehran" start-location-fa="تهران" end-time="07:15" end-location="مشهد (MHD)" end-location-en="Mashhad" end-location-fa="مشهد" price="11,330,060" start-loaction-abbr="THR" end-loaction-abbr="MHD" route-duration-hour="1" route-duration-minute="5" start-date="2022-11-10" start-date-en="10 november" start-date-fa="پنجشنبه 19 ابان" end-date-en="10 november" end-date-fa="پنجشنبه 19 ابان" plane-model="IS 4340" type="details"></flight-details>
-                    </div>
+                    <div class="inner-page bg-grey-lighten3 rounded active" id="flight-detail"></div>
                     <div class="inner-page bg-grey-lighten3 rounded" id="flight-rules">
                         <flight-details type="rules"></flight-details>
                     </div>
@@ -167,6 +165,7 @@
 <script src="assets/plugins/bootstrap/bootstrap.bundle.min.js"></script>
 <script src="assets/plugins/vue/vue.js"></script>
 <script src="assets/plugins/date-picker/datepicker.min.js"></script>
+<script src="assets/plugins/persian-date/persian-date.min.js"></script>
 <script src="assets/base/js/functions.js"></script>
 <script src="assets/base/js/component/passenger-information.js"></script>
 <script src="assets/base/js/component/header.js"></script>
@@ -182,9 +181,12 @@
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
 <script>
     const informationToSearchInTicketsPage = JSON.parse(localStorage.getItem('information-to-search-in-tickets-page'));
+    const selectedTicket = JSON.parse(localStorage.getItem('selected-ticket'));
     const passengersCount = Number(informationToSearchInTicketsPage.adult_count) + Number(informationToSearchInTicketsPage.child_count) + Number(informationToSearchInTicketsPage.infant_count);
     const topSideRightSideTicketBuy = document.querySelector('.top-side-right-side-ticket-buy');
     const numberOfPassengersElement = document.getElementById('number-of-passengers-element');
+    const flightDetailElement = document.getElementById('flight-detail');
+    const newDetailsFlightDetailComponent = document.createElement('flight-details');
 
     numberOfPassengersElement.textContent = passengersCount;
 
@@ -196,6 +198,38 @@
     else if (passengersCount === 6) {topSideRightSideTicketBuy.querySelectorAll('passanger-information:not(:first-of-type, :nth-of-type(2), :nth-of-type(3), :nth-of-type(4), :nth-of-type(5), :nth-of-type(6))').forEach(component => component.remove())}
     else if (passengersCount === 7) {topSideRightSideTicketBuy.querySelectorAll('passanger-information:not(:first-of-type, :nth-of-type(2), :nth-of-type(3), :nth-of-type(4), :nth-of-type(5), :nth-of-type(6), :nth-of-type(7))').forEach(component => component.remove())}
     else if (passengersCount === 8) {topSideRightSideTicketBuy.querySelectorAll('passanger-information:not(:first-of-type, :nth-of-type(2), :nth-of-type(3), :nth-of-type(4), :nth-of-type(5), :nth-of-type(6), :nth-of-type(8))').forEach(component => component.remove())}
+
+    newDetailsFlightDetailComponent.setAttribute('type', 'details');
+    newDetailsFlightDetailComponent.toggleAttribute('small');
+    newDetailsFlightDetailComponent.setAttribute('icon-src', selectedTicket.icon);
+    newDetailsFlightDetailComponent.setAttribute('name', selectedTicket.name);
+    newDetailsFlightDetailComponent.setAttribute('flight-number', selectedTicket.flightNumber);
+    newDetailsFlightDetailComponent.setAttribute('mode', 'اکونومی');
+    newDetailsFlightDetailComponent.setAttribute('start-time', selectedTicket.startTime);
+    newDetailsFlightDetailComponent.setAttribute('end-time', selectedTicket.endTime);
+    newDetailsFlightDetailComponent.setAttribute('start-location', `(${selectedTicket.startLocation}) ${persianNameFromAbbrevation(selectedTicket.startLocation)}`);
+    newDetailsFlightDetailComponent.setAttribute('start-location-fa', persianNameFromAbbrevation(selectedTicket.startLocation));
+    newDetailsFlightDetailComponent.setAttribute('start-location-en', englishNameFromAbrevation(selectedTicket.startLocation));
+    newDetailsFlightDetailComponent.setAttribute('start-loaction-abbr', selectedTicket.startLocation);
+    newDetailsFlightDetailComponent.setAttribute('end-location', `(${selectedTicket.endLocation}) ${persianNameFromAbbrevation(selectedTicket.endLocation)}`);
+    newDetailsFlightDetailComponent.setAttribute('end-location-fa', persianNameFromAbbrevation(selectedTicket.endLocation));
+    newDetailsFlightDetailComponent.setAttribute('end-location-en', englishNameFromAbrevation(selectedTicket.endLocation));
+    newDetailsFlightDetailComponent.setAttribute('end-loaction-abbr', selectedTicket.endLocation);
+    newDetailsFlightDetailComponent.setAttribute('start-time', selectedTicket.startTime);
+    newDetailsFlightDetailComponent.setAttribute('end-time', selectedTicket.endTime);
+    newDetailsFlightDetailComponent.setAttribute('start-location', selectedTicket.endTime);
+    newDetailsFlightDetailComponent.setAttribute('price', selectedTicket.price);
+    newDetailsFlightDetailComponent.setAttribute('route-duration-hour', getRouteDuration(selectedTicket.startTime, selectedTicket.endTime).hour);
+    newDetailsFlightDetailComponent.setAttribute('route-duration-minute', getRouteDuration(selectedTicket.startTime, selectedTicket.endTime).minute);
+    newDetailsFlightDetailComponent.setAttribute('start-date', selectedTicket.date);
+    newDetailsFlightDetailComponent.setAttribute('start-date-en', selectedTicket.date);
+    newDetailsFlightDetailComponent.setAttribute('start-date-fa', `${new persianDate(selectedTicket.date).format('YYYY')} ${new persianDate(selectedTicket.date).format('MMMM')} ${new persianDate(selectedTicket.date).format('DD')}`);
+    newDetailsFlightDetailComponent.setAttribute('end-date', selectedTicket.date);
+    newDetailsFlightDetailComponent.setAttribute('end-date-en', selectedTicket.date);
+    newDetailsFlightDetailComponent.setAttribute('end-date-fa', `${new persianDate(selectedTicket.date).format('YYYY')} ${new persianDate(selectedTicket.date).format('MMMM')} ${new persianDate(selectedTicket.date).format('DD')}`);
+    newDetailsFlightDetailComponent.setAttribute('plane-model', selectedTicket.planeModel);
+
+    flightDetailElement.appendChild(newDetailsFlightDetailComponent)
 </script>
 </body>
 </html>
