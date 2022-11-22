@@ -46,14 +46,19 @@
                         <h6 class="mb-0 font-small text-info-base">مشخصات مسافران</h6>
                         <h6 class="mb-0 font-small text-grey-darken1">
                             <i class="bi bi-person"></i>
-                            <span>1</span>
-                            بزرگسال
+                            <span id="number-of-passengers-element"></span>
+                            مسافر
                         </h6>
                     </div>
-                    <passanger-information></passanger-information>
-                    <passanger-information></passanger-information>
-                    <passanger-information></passanger-information>
-                    <passanger-information></passanger-information>
+                    <passanger-information title="1"></passanger-information>
+                    <passanger-information title="2"></passanger-information>
+                    <passanger-information title="3"></passanger-information>
+                    <passanger-information title="4"></passanger-information>
+                    <passanger-information title="5"></passanger-information>
+                    <passanger-information title="6"></passanger-information>
+                    <passanger-information title="7"></passanger-information>
+                    <passanger-information title="8"></passanger-information>
+                    <passanger-information title="9"></passanger-information>
                 </div>
                 <div class="bg-white rounded-3 p-3">
                     <div>
@@ -175,5 +180,22 @@
 <script src="assets/base/js/pages/ticket-buy.js"></script>
 <script src="assets/base/js/api-calls/public-api-calls.js"></script>
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
+<script>
+    const informationToSearchInTicketsPage = JSON.parse(localStorage.getItem('information-to-search-in-tickets-page'));
+    const passengersCount = Number(informationToSearchInTicketsPage.adult_count) + Number(informationToSearchInTicketsPage.child_count) + Number(informationToSearchInTicketsPage.infant_count);
+    const topSideRightSideTicketBuy = document.querySelector('.top-side-right-side-ticket-buy');
+    const numberOfPassengersElement = document.getElementById('number-of-passengers-element');
+
+    numberOfPassengersElement.textContent = passengersCount;
+
+    if (passengersCount === 1) {topSideRightSideTicketBuy.querySelectorAll('passanger-information:not(:first-of-type)').forEach(component => component.remove())}
+    else if (passengersCount === 2) {topSideRightSideTicketBuy.querySelectorAll('passanger-information:not(:first-of-type, :nth-of-type(2))').forEach(component => component.remove())}
+    else if (passengersCount === 3) {topSideRightSideTicketBuy.querySelectorAll('passanger-information:not(:first-of-type, :nth-of-type(2), :nth-of-type(3))').forEach(component => component.remove())}
+    else if (passengersCount === 4) {topSideRightSideTicketBuy.querySelectorAll('passanger-information:not(:first-of-type, :nth-of-type(2), :nth-of-type(3), :nth-of-type(4))').forEach(component => component.remove())}
+    else if (passengersCount === 5) {topSideRightSideTicketBuy.querySelectorAll('passanger-information:not(:first-of-type, :nth-of-type(2), :nth-of-type(3), :nth-of-type(4), :nth-of-type(5))').forEach(component => component.remove())}
+    else if (passengersCount === 6) {topSideRightSideTicketBuy.querySelectorAll('passanger-information:not(:first-of-type, :nth-of-type(2), :nth-of-type(3), :nth-of-type(4), :nth-of-type(5), :nth-of-type(6))').forEach(component => component.remove())}
+    else if (passengersCount === 7) {topSideRightSideTicketBuy.querySelectorAll('passanger-information:not(:first-of-type, :nth-of-type(2), :nth-of-type(3), :nth-of-type(4), :nth-of-type(5), :nth-of-type(6), :nth-of-type(7))').forEach(component => component.remove())}
+    else if (passengersCount === 8) {topSideRightSideTicketBuy.querySelectorAll('passanger-information:not(:first-of-type, :nth-of-type(2), :nth-of-type(3), :nth-of-type(4), :nth-of-type(5), :nth-of-type(6), :nth-of-type(8))').forEach(component => component.remove())}
+</script>
 </body>
 </html>
