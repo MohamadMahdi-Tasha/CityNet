@@ -7,49 +7,6 @@ const plusMinusButton = document.querySelectorAll('.plus-minus-button');
 const passengerClassSelectButton = document.querySelectorAll('.passenger-class-select-button');
 const inputAndSearchIntractiveComponent = document.querySelectorAll('.intractive-component:is(.input, .search)');
 
-// A Function That Takes Component And Checks Type Of Component Then Return Component Inner Div Or Button And Error Element Of It As Object
-function returnComponentElementsBasedOnComponentType(component) {
-    const componentType = component.getAttribute('type');
-    let componentElement;
-    let componentErrorElement;
-
-    if (componentType === 'city') {
-        componentElement = component.firstElementChild.firstElementChild;
-        componentErrorElement = component.firstElementChild.nextElementSibling.firstElementChild;
-    } else if (componentType === 'calender') {
-        componentElement = component.firstElementChild
-        componentErrorElement = component.lastElementChild.firstElementChild
-    } else if (componentType === 'passenger-count') {
-        componentElement = component.firstElementChild.firstElementChild;
-        componentErrorElement = component.firstElementChild.lastElementChild
-    } else if (componentType === 'input')  {
-        componentElement = component.firstElementChild;
-        componentErrorElement = component.firstElementChild.nextElementSibling
-    }
-
-    return {componentElement, componentErrorElement};
-}
-
-// A Function That Takes Component And Error Text As Parameter And Adds Class Of 'errored' To 'componentElement' Element Returned From
-// 'returnComponentElementsBasedOnComponentType' Function On Component In Parameter. Then Sets Text Content Of 'componentErrorElement' Element Returned From
-// 'returnComponentElementsBasedOnComponentType' Function On Component Again To 'errorText' From Parameter
-function setErrorOnComponent(component, errorText) {
-    const returnComponentElementsBasedOnComponentTypeOnComponent = returnComponentElementsBasedOnComponentType(component);
-
-    returnComponentElementsBasedOnComponentTypeOnComponent.componentElement.classList.add('errored');
-    returnComponentElementsBasedOnComponentTypeOnComponent.componentErrorElement.textContent = errorText
-}
-
-// A Function That Takes Component And Error Text As Parameter And Removes Class Of 'errored' From 'componentElement' Element Returned From
-// 'returnComponentElementsBasedOnComponentType' Function On Component In Parameter. Then Sets Text Content Of 'componentErrorElement' Element Returned From
-// 'returnComponentElementsBasedOnComponentType' Function On Component Again To ''
-function setSuccsesOnComponent(component) {
-    const returnComponentElementsBasedOnComponentTypeOnComponent = returnComponentElementsBasedOnComponentType(component);
-
-    returnComponentElementsBasedOnComponentTypeOnComponent.componentElement.classList.remove('errored');
-    returnComponentElementsBasedOnComponentTypeOnComponent.componentErrorElement.textContent = ''
-}
-
 // Adding Event Listener On Each Calendar Interactive Component That Focus To Input Init And Adds Event Listener Of 'focus' And 'blur' To It
 // That Adds Or Removes Class Name Of 'focused' From It
 calenderIntractiveComponent.forEach(component => {

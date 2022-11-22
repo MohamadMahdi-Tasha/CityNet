@@ -14,31 +14,6 @@ const collapseToggler = document.querySelectorAll('.my-collapse-toggler');
 const switchButton = document.querySelectorAll('.switch-button');
 const exitAccountItems = document.querySelectorAll('.exit-account');
 
-// A Function That Takes English Abbreviation Of Currency And Returns Persian Name Of It
-function persianNameByEnAbbrevationCurrency(englishAbrevation) {
-    let stringToReturn;
-
-    switch (englishAbrevation) {
-        case "IRR":
-            stringToReturn = "ریال";
-            break;
-        case "USD":
-            stringToReturn = "دلار";
-            break;
-        case "EUR":
-            stringToReturn = "یورو";
-            break;
-        case "TRY":
-            stringToReturn = "لیر ترکیه";
-            break;
-        case "IQD":
-            stringToReturn = "دینار عراق";
-            break;
-    }
-
-    return stringToReturn;
-}
-
 // Adding Event Listener Of Load To Window That Checks If Selected Currency Is Included (selected-currency : Name Of Setted Currency) If It Is Then Set It In Header
 // Otherwise Create One In Local Storage And Set It
 window.addEventListener('load', () => {

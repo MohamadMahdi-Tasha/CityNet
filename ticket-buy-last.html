@@ -381,6 +381,7 @@
 <!--Js Linkings-->
 <noscript>لطفا جاوااسکریپت مرورگر خود را فعال کنید</noscript>
 <script src="assets/plugins/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="assets/base/js/functions.js"></script>
 <script src="assets/base/js/component/header.js"></script>
 <script src="assets/base/js/component/mobile-nav.js"></script>
 <script src="assets/base/js/component/intractive-component.js"></script>
@@ -392,5 +393,26 @@
 <script src="assets/base/js/intractive-components.js"></script>
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
 <script src="assets/base/js/api-calls/public-api-calls.js"></script>
+<script>
+    const informationToSearchInTicketsPage = JSON.parse(localStorage.getItem('information-to-search-in-tickets-page'));
+
+
+    htmlElement.setAttribute('data-start-city', `(${informationToSearchInTicketsPage.fromCityAbbrevation}) ${persianNameFromAbbrevation(informationToSearchInTicketsPage.fromCityAbbrevation)}`)
+    htmlElement.setAttribute('data-contract-number', '')
+    htmlElement.setAttribute('data-end-city', '')
+    htmlElement.setAttribute('data-flight-date', '')
+    htmlElement.setAttribute('data-price', '')
+    htmlElement.setAttribute('data-route-hour', '')
+    htmlElement.setAttribute('data-route-minute', '')
+    htmlElement.setAttribute('data-start-time', '')
+    htmlElement.setAttribute('data-end-time', '')
+    htmlElement.setAttribute('data-airplane', '')
+    htmlElement.setAttribute('data-airplane-model', '')
+    htmlElement.setAttribute('data-flight-number', '')
+    htmlElement.setAttribute('data-systemic', '')
+    htmlElement.setAttribute('data-passengers-count', '')
+    htmlElement.setAttribute('data-email', '')
+    htmlElement.setAttribute('data-mobile', '')
+</script>
 </body>
 </html>

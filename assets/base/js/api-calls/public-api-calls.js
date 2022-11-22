@@ -2,19 +2,6 @@
 const loginForm = document.getElementById('login-form');
 const loginCodeForm = document.getElementById('login-code-form');
 
-// A Function That Takes Number As Parametre And Checks Of First Character Of Given Number Is Equal To '0'
-// Then Number To Return Equals To Sliced Value Of Given Number From Index Of 1 Which Is Second Character Of String 
-// Till The Last Or Lenght Of Given Number. Otherwise Number To Return Equals To Given Number
-function returnNumberToSend(number) {
-    let numberToReturn;
-
-    (number[0] === '0')
-        ? numberToReturn = number.slice(1, number.length)
-        : numberToReturn = number
-
-    return numberToReturn;
-}
-
 // Adding Event Listener On Login Form In Login Modal That Listenes To Submit Event And ...
 loginForm.addEventListener('submit', (event) => {
     // Preventing From Defult Action Which Refreshes The Page

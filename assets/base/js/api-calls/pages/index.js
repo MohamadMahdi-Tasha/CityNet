@@ -6,28 +6,6 @@ const startDateIntractiveComponents = document.getElementById('start-date-intrac
 const passangerCountIntractiveComponents = document.getElementById('passanger-count-intractive-components')
 const todaysDate = new Date()
 
-// A Function That Returns Id Of City From Given Abbreviation In Parameter
-function returnCityIdBasedOnAbbr(abbrevation) {
-    let idToReturn;
-
-    switch (abbrevation) {
-        case 'THR':idToReturn = '82';break;
-        case 'KIH':idToReturn = '87';break;
-        case 'DXD':idToReturn = '73';break;
-        case 'MHD':idToReturn = '81';break;
-        case 'AWZ':idToReturn = '90';break;
-        case 'TBZ':idToReturn = '85';break;
-        case 'GSM':idToReturn = '98';break;
-        case 'SYZ':idToReturn = '84';break;
-        case 'MCT':idToReturn = '75';break;
-        case 'RAS':idToReturn = '100';break;
-        case 'IFN':idToReturn = '83';break;
-        case 'NJF':idToReturn = '66';break;
-    }
-
-    return idToReturn;
-}
-
 // Adding Event Listener Of Click To Search Button For Ticket That ...
 searchForTicketButton.addEventListener('click', () => {
     // Variables
