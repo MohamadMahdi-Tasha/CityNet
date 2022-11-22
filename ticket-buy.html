@@ -50,6 +50,10 @@
                             بزرگسال
                         </h6>
                     </div>
+                    <passanger-information></passanger-information>
+                    <passanger-information></passanger-information>
+                    <passanger-information></passanger-information>
+                    <passanger-information></passanger-information>
                 </div>
                 <div class="bg-white rounded-3 p-3">
                     <div>
@@ -171,21 +175,5 @@
 <script src="assets/base/js/pages/ticket-buy.js"></script>
 <script src="assets/base/js/api-calls/public-api-calls.js"></script>
 <script src="assets/plugins/ripple-button/ripple-Button.js"></script>
-<script>
-    window.addEventListener('load', () => {
-        const informationToSearchInTicketsPage = JSON.parse(localStorage.getItem('information-to-search-in-tickets-page'));
-        const adultCount = Number(informationToSearchInTicketsPage.adult_count);
-        const childCount = Number(informationToSearchInTicketsPage.child_count);
-        const infantCount = Number(informationToSearchInTicketsPage.infant_count);
-        const allPassengersCount = adultCount + childCount + infantCount;
-        const topSideRightSideTicketBuy = document.querySelector('.top-side-right-side-ticket-buy');
-
-        for(var i = 0; i < allPassengersCount; i++){
-            const createdPassangerInformation = document.createElement('passanger-information');
-
-            topSideRightSideTicketBuy.appendChild(createdPassangerInformation);
-        }
-    })
-</script>
 </body>
 </html>

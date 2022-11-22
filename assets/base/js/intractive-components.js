@@ -106,7 +106,9 @@ plusMinusButton.forEach(button => {
 
         if (button.textContent === '+') {
             if (Number(numberToAddOrRemove.textContent) < 9) {
-                numberToAddOrRemove.textContent = Number(numberToAddOrRemove.textContent) + 1
+                if (Number(document.querySelector('.adult .calculated-numbers').textContent) + Number(document.querySelector('.child .calculated-numbers').textContent) + Number(document.querySelector('.infant .calculated-numbers').textContent) < 9) {
+                    numberToAddOrRemove.textContent = Number(numberToAddOrRemove.textContent) + 1
+                }
             }
         } else {
             if (Number(numberToAddOrRemove.textContent) > 0) {
