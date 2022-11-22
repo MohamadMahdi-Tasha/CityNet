@@ -49,7 +49,7 @@ class intractiveComponent extends HTMLElement {
                         </span>
                     </button>
                     <div id="${randomDataPickerParentId}">
-                        <date-picker locale="en" @select="select" mode="single"></date-picker>
+                        <date-picker :modal="true" locale="en" @select="select" mode="single"></date-picker>
                     </div>
                     <div class="error-holder text-error-darken2 mt-2"><h6 class="mb-0 font-small"></h6></div>
                 `
