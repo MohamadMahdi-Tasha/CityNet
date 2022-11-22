@@ -4,6 +4,65 @@ const addSecondPhoneEmailButton = document.getElementById('add-second-phone-emai
 const secondPhoneEmail = document.getElementById('second-phone-email');
 const addSecondPhoneEmailRemoveButton = document.getElementById('second-phone-email-remove-btn');
 
+// Adding event Listener On Load Of Window That ..
+window.addEventListener('load', () => {
+    // Variables
+    const informationToSearchInTicketsPage = JSON.parse(localStorage.getItem('information-to-search-in-tickets-page'));
+    const selectedTicket = JSON.parse(localStorage.getItem('selected-ticket'));
+    const passengersCount = Number(informationToSearchInTicketsPage.adult_count) + Number(informationToSearchInTicketsPage.child_count) + Number(informationToSearchInTicketsPage.infant_count);
+    const topSideRightSideTicketBuy = document.querySelector('.top-side-right-side-ticket-buy');
+    const numberOfPassengersElement = document.getElementById('number-of-passengers-element');
+    const flightDetailElement = document.getElementById('flight-detail');
+    const newDetailsFlightDetailComponent = document.createElement('flight-details');
+
+    // Setting text Content Of Numbers Of Passengers Count
+    numberOfPassengersElement.textContent = passengersCount;
+
+    // If Passenger Count Is equal To 'n' Then Remove All Next 'passanger-information'
+    if (passengersCount === 1) {topSideRightSideTicketBuy.querySelectorAll('passanger-information:not(:first-of-type)').forEach(component => component.remove())}
+    else if (passengersCount === 2) {topSideRightSideTicketBuy.querySelectorAll('passanger-information:not(:first-of-type, :nth-of-type(2))').forEach(component => component.remove())}
+    else if (passengersCount === 3) {topSideRightSideTicketBuy.querySelectorAll('passanger-information:not(:first-of-type, :nth-of-type(2), :nth-of-type(3))').forEach(component => component.remove())}
+    else if (passengersCount === 4) {topSideRightSideTicketBuy.querySelectorAll('passanger-information:not(:first-of-type, :nth-of-type(2), :nth-of-type(3), :nth-of-type(4))').forEach(component => component.remove())}
+    else if (passengersCount === 5) {topSideRightSideTicketBuy.querySelectorAll('passanger-information:not(:first-of-type, :nth-of-type(2), :nth-of-type(3), :nth-of-type(4), :nth-of-type(5))').forEach(component => component.remove())}
+    else if (passengersCount === 6) {topSideRightSideTicketBuy.querySelectorAll('passanger-information:not(:first-of-type, :nth-of-type(2), :nth-of-type(3), :nth-of-type(4), :nth-of-type(5), :nth-of-type(6))').forEach(component => component.remove())}
+    else if (passengersCount === 7) {topSideRightSideTicketBuy.querySelectorAll('passanger-information:not(:first-of-type, :nth-of-type(2), :nth-of-type(3), :nth-of-type(4), :nth-of-type(5), :nth-of-type(6), :nth-of-type(7))').forEach(component => component.remove())}
+    else if (passengersCount === 8) {topSideRightSideTicketBuy.querySelectorAll('passanger-information:not(:first-of-type, :nth-of-type(2), :nth-of-type(3), :nth-of-type(4), :nth-of-type(5), :nth-of-type(6), :nth-of-type(8))').forEach(component => component.remove())}
+
+    // Setting Attributes Of Created 'flight-details' Element
+    newDetailsFlightDetailComponent.setAttribute('type', 'details');
+    newDetailsFlightDetailComponent.toggleAttribute('small');
+    newDetailsFlightDetailComponent.setAttribute('icon-src', selectedTicket.icon);
+    newDetailsFlightDetailComponent.setAttribute('name', selectedTicket.name);
+    newDetailsFlightDetailComponent.setAttribute('flight-number', selectedTicket.flightNumber);
+    newDetailsFlightDetailComponent.setAttribute('mode', 'اکونومی');
+    newDetailsFlightDetailComponent.setAttribute('start-time', selectedTicket.startTime);
+    newDetailsFlightDetailComponent.setAttribute('end-time', selectedTicket.endTime);
+    newDetailsFlightDetailComponent.setAttribute('start-location', `(${selectedTicket.startLocation}) ${persianNameFromAbbrevation(selectedTicket.startLocation)}`);
+    newDetailsFlightDetailComponent.setAttribute('start-location-fa', persianNameFromAbbrevation(selectedTicket.startLocation));
+    newDetailsFlightDetailComponent.setAttribute('start-location-en', englishNameFromAbrevation(selectedTicket.startLocation));
+    newDetailsFlightDetailComponent.setAttribute('start-loaction-abbr', selectedTicket.startLocation);
+    newDetailsFlightDetailComponent.setAttribute('end-location', `(${selectedTicket.endLocation}) ${persianNameFromAbbrevation(selectedTicket.endLocation)}`);
+    newDetailsFlightDetailComponent.setAttribute('end-location-fa', persianNameFromAbbrevation(selectedTicket.endLocation));
+    newDetailsFlightDetailComponent.setAttribute('end-location-en', englishNameFromAbrevation(selectedTicket.endLocation));
+    newDetailsFlightDetailComponent.setAttribute('end-loaction-abbr', selectedTicket.endLocation);
+    newDetailsFlightDetailComponent.setAttribute('start-time', selectedTicket.startTime);
+    newDetailsFlightDetailComponent.setAttribute('end-time', selectedTicket.endTime);
+    newDetailsFlightDetailComponent.setAttribute('start-location', selectedTicket.endTime);
+    newDetailsFlightDetailComponent.setAttribute('price', selectedTicket.price);
+    newDetailsFlightDetailComponent.setAttribute('route-duration-hour', getRouteDuration(selectedTicket.startTime, selectedTicket.endTime).hour);
+    newDetailsFlightDetailComponent.setAttribute('route-duration-minute', getRouteDuration(selectedTicket.startTime, selectedTicket.endTime).minute);
+    newDetailsFlightDetailComponent.setAttribute('start-date', selectedTicket.date);
+    newDetailsFlightDetailComponent.setAttribute('start-date-en', selectedTicket.date);
+    newDetailsFlightDetailComponent.setAttribute('start-date-fa', `${new persianDate(selectedTicket.date).format('YYYY')} ${new persianDate(selectedTicket.date).format('MMMM')} ${new persianDate(selectedTicket.date).format('DD')}`);
+    newDetailsFlightDetailComponent.setAttribute('end-date', selectedTicket.date);
+    newDetailsFlightDetailComponent.setAttribute('end-date-en', selectedTicket.date);
+    newDetailsFlightDetailComponent.setAttribute('end-date-fa', `${new persianDate(selectedTicket.date).format('YYYY')} ${new persianDate(selectedTicket.date).format('MMMM')} ${new persianDate(selectedTicket.date).format('DD')}`);
+    newDetailsFlightDetailComponent.setAttribute('plane-model', selectedTicket.planeModel);
+
+    // Apending Created 'flight-details' Element To Its Parent
+    flightDetailElement.appendChild(newDetailsFlightDetailComponent)
+})
+
 // Adding Event Listener On Each Select Person From List That Listenes To Click And Checks If User Is Logged In. If It Is Then Show The Select Person Modal Otherwise Show
 // Login Modal
 selectPersonFromListBtn.forEach(button => {
