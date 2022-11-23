@@ -21,6 +21,11 @@ searchForTicketButton.addEventListener('click', () => {
     if (endCityIntractiveComponentsInnerButton.getAttribute('data-selected-city') === 'null') {setErrorOnComponent(endCityIntractiveComponents, 'لطفا شهر مقصد را انتخواب کنید')}
     else if (endCityIntractiveComponentsInnerButton.getAttribute('data-selected-city') !== 'null') {setSuccsesOnComponent(endCityIntractiveComponents)}
 
+    if (startCityIntractiveComponentsInnerButton.getAttribute('data-selected-city') === endCityIntractiveComponentsInnerButton.getAttribute('data-selected-city')) {
+        setErrorOnComponent(startCityIntractiveComponents, 'شهر مبدا و مقصد یکی نمیتواند باشد')
+        setErrorOnComponent(endCityIntractiveComponents, 'شهر مبدا و مقصد یکی نمیتواند باشد')
+    }
+
     if (startDateIntractiveComponentsInnerButton.getAttribute('data-date') === 'null') {setErrorOnComponent(startDateIntractiveComponents, 'لطفا تاریخ پرواز را مشخص کنید')}
     else if (startDateIntractiveComponentsInnerButton.getAttribute('data-date') !== 'null') {setSuccsesOnComponent(startDateIntractiveComponents)}
 
