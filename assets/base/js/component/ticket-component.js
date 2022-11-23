@@ -1,11 +1,13 @@
 class TicketComponent extends HTMLElement {
     constructor() {super();}
     connectedCallback() {
-        const allTicketComponent = document.querySelectorAll('.ticket-component');
+        const allTicketComponent = document.querySelectorAll('ticket-component');
         const ticketComponentElementsArray = [];
 
         allTicketComponent.forEach(component => ticketComponentElementsArray.push(component));
         const numberOfThisComponent = ticketComponentElementsArray.indexOf(this);
+
+        console.log(allTicketComponent)
 
         this.innerHTML = `
             <div class="bg-white p-3 rounded-3 ticket-component">
