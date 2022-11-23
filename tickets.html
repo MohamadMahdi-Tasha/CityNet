@@ -41,7 +41,7 @@
 <my-modal type="city"></my-modal>
 <my-modal type="flight"></my-modal>
 <my-modal type="login-code"></my-modal>
-<!--<my-modal type="loader"></my-modal>-->
+<my-modal type="loader"></my-modal>
 <!--Mobile  Nav-->
 <mobile-nav></mobile-nav>
 <!--Header-->
@@ -417,7 +417,7 @@
             if (toggler.textContent === 'روز قبل') {newDate = subtractDays(1, currentDay)}
             else {newDate = addDays(1, currentDay)}
 
-            let object = {
+            let newInformationToSearchInTicketsPageToSet = {
                 date: `${newDate.getFullYear()}-${newDate.getMonth() + 1}-${newDate.getDate()}`,
                 adult_count: informationToSearchInTicketsPage.adult_count,
                 child_count: informationToSearchInTicketsPage.child_count,
@@ -427,7 +427,8 @@
                 fromCityAbbrevation: informationToSearchInTicketsPage.fromCityAbbrevation,
                 toCityAbbrevation: informationToSearchInTicketsPage.toCityAbbrevation
             }
-            localStorage.setItem('information-to-search-in-tickets-page', JSON.stringify(object))
+
+            localStorage.setItem('information-to-search-in-tickets-page', JSON.stringify(newInformationToSearchInTicketsPageToSet))
 
             document.location.reload();
         })
