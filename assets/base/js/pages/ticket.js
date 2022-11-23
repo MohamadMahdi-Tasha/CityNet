@@ -4,7 +4,6 @@ const startPlaceTopSide = document.getElementById('start-place-top-side');
 const endPlaceTopSide = document.getElementById('end-place-top-side');
 const flightDateTopSide = document.getElementById('flight-date-top-side');
 const flightFilterButtons = document.querySelectorAll('.flight-filter-button');
-const ticketComponentBottomAccardionTogglers = document.querySelectorAll('.ticket-component-bottom-accardion-toggler');
 const ticketPageAsideMobileTopSideToggle = document.querySelector('.ticket-page-aside-mobile-top-side-toggle');
 const ticketPageAside = document.querySelector('.ticket-page-aside');
 const informationToSearchInTicketsPage = JSON.parse(localStorage.getItem('information-to-search-in-tickets-page'));
@@ -55,22 +54,6 @@ flightFilterButtons.forEach(button => {
         } else {
             ticketComponentList.setAttribute('data-filter', 'time');
         }
-    })
-})
-
-// Adding Event Listener On Each Accardion Togglers That Listenes To Click That Toggles Attribute Of 'data-opened' To Clicked Toggler
-// And Target Of Clicked Toggler And Removes It From Accardion Item And Toggler That Haves Attribute Of 'data-opened'
-ticketComponentBottomAccardionTogglers.forEach(toggler => {
-    toggler.addEventListener('click', () => {
-        const accardionTarget = toggler.getAttribute('data-accardion-target');
-        const accardionTargetElement = document.getElementById(accardionTarget);
-        const openedAccardion = document.querySelector('.ticket-component-bottom-accardion[data-opened]')
-        const openedToggler = document.querySelector('.ticket-component-bottom-accardion-toggler[data-opened]');
-
-        toggler.toggleAttribute('data-opened');
-        accardionTargetElement.toggleAttribute('data-opened');
-        openedToggler.removeAttribute('data-opened');
-        openedAccardion.removeAttribute('data-opened');
     })
 })
 

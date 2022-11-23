@@ -49,10 +49,10 @@ class TicketComponent extends HTMLElement {
                 </div>
                 <div class="d-flex flex-lg-row flex-column gap-3 align-items-center justify-content-between">
                     <div class="d-flex justify-content-lg-start justify-content-between col-lg-auto col-12">
-                        <button data-accardion-target="weight-${this.getAttribute('flight-number')}" class="bg-transparent font-small border-0 ticket-component-bottom-accardion-toggler">بار مجاز<i class="bi bi-chevron-down me-2"></i></button>
-                        <button data-accardion-target="rules-${this.getAttribute('flight-number')}" class="bg-transparent font-small border-0 ticket-component-bottom-accardion-toggler">قوانین<i class="bi bi-chevron-down me-2"></i></button>
-                        <button data-accardion-target="details-${this.getAttribute('flight-number')}" class="bg-transparent font-small border-0 ticket-component-bottom-accardion-toggler">جزییات<i class="bi bi-chevron-down me-2"></i></button>
-                        <button data-accardion-target="price-${this.getAttribute('flight-number')}" class="bg-transparent font-small border-0 ticket-component-bottom-accardion-toggler">قیمت<i class="bi bi-chevron-down me-2"></i></button>
+                        <button onclick="handleAcardionTogglerClick(this)" data-accardion-target="weight-${this.getAttribute('flight-number')}" class="bg-transparent font-small border-0 ticket-component-bottom-accardion-toggler">بار مجاز<i class="bi bi-chevron-down me-2"></i></button>
+                        <button onclick="handleAcardionTogglerClick(this)" data-accardion-target="rules-${this.getAttribute('flight-number')}" class="bg-transparent font-small border-0 ticket-component-bottom-accardion-toggler">قوانین<i class="bi bi-chevron-down me-2"></i></button>
+                        <button onclick="handleAcardionTogglerClick(this)" data-accardion-target="details-${this.getAttribute('flight-number')}" class="bg-transparent font-small border-0 ticket-component-bottom-accardion-toggler">جزییات<i class="bi bi-chevron-down me-2"></i></button>
+                        <button onclick="handleAcardionTogglerClick(this)" data-accardion-target="price-${this.getAttribute('flight-number')}" class="bg-transparent font-small border-0 ticket-component-bottom-accardion-toggler">قیمت<i class="bi bi-chevron-down me-2"></i></button>
                     </div>
                     <div class="col-lg-auto col-12">
                         <div class="d-flex flex-lg-row flex-column-reverse gap-3 align-items-center">
@@ -95,3 +95,17 @@ class TicketComponent extends HTMLElement {
 }
 
 window.customElements.define('ticket-component', TicketComponent);
+
+// A Function That Listenes To Click That Toggles Attribute Of 'data-opened' To Clicked Toggler
+// And Target Of Clicked Toggler And Removes It From Accardion Item And Toggler That Haves Attribute Of 'data-opened'
+function handleAcardionTogglerClick(toggler) {
+    const accardionTarget = toggler.getAttribute('data-accardion-target');
+    const accardionTargetElement = document.getElementById(accardionTarget);
+    const openedAccardion = document.querySelector('.ticket-component-bottom-accardion[data-opened]')
+    const openedToggler = document.querySelector('.ticket-component-bottom-accardion-toggler[data-opened]');
+
+    toggler.toggleAttribute('data-opened');
+    accardionTargetElement.toggleAttribute('data-opened');
+    openedToggler.removeAttribute('data-opened');
+    openedAccardion.removeAttribute('data-opened');
+}
