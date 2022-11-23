@@ -114,18 +114,16 @@
                     <div class="my-collapse p-3 rounded-3">
                         <div class="rounded-2 bg-light-orange p-2 mb-3"><p class="text-warning-base font-small mb-0">
                             توجه:ممکن است ایرلاین انتخوابی در بین مسیر باشد.</p></div>
-                        <div class="selected-airlines-tag-holder"></div>
                         <div class="d-flex flex-column gap-3" id="airplanes-components-holder"></div>
                     </div>
                 </div>
                 <div class="my-collapse-holder bg-white rounded-3">
-                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">
-                        ساعت پرواز<i class="bi bi-chevron-down"></i></button>
+                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">ساعت پرواز<i class="bi bi-chevron-down"></i></button>
                     <div class="my-collapse p-3 rounded-3">
                         <h6 class="text-center text-grey-darken2 font-small mb-0">
-                            <span>استانبول</span>
+                            <span class="from-persian"></span>
                             به
-                            <span>انکارار</span>
+                            <span class="to-persian"></span>
                         </h6>
                         <div class="d-flex align-items-center justify-content-between">
                             <h6 class="d-flex flex-column text-grey-darken2">
@@ -152,9 +150,9 @@
                         <div class="rounded-2 bg-light-orange p-2 mb-3"><p class="text-warning-base font-small mb-0">
                             پروازهایی که ساعت رسیدن ندارند، در انتهای نتایج نمایش داده می‌شوند.</p></div>
                         <h6 class="text-center text-grey-darken2 font-small mb-0">
-                            <span>استانبول</span>
+                            <span class="from-persian"></span>
                             به
-                            <span>انکارار</span>
+                            <span class="to-persian"></span>
                         </h6>
                         <div class="d-flex align-items-center justify-content-between">
                             <h6 class="d-flex flex-column text-grey-darken2">
@@ -181,9 +179,9 @@
                         <div class="rounded-2 bg-light-orange p-2 mb-3"><p class="text-warning-base font-small mb-0">
                             پروازهایی که ساعت رسیدن ندارند، در انتهای نتایج نمایش داده می‌شوند.</p></div>
                         <h6 class="text-center text-grey-darken2 font-small mb-0">
-                            <span>استانبول</span>
+                            <span class="from-persian"></span>
                             به
-                            <span>انکارار</span>
+                            <span class="to-persian"></span>
                         </h6>
                         <div class="d-flex align-items-center justify-content-between">
                             <h6 class="d-flex flex-column text-grey-darken2">
@@ -283,6 +281,8 @@
 <script src="assets/base/js/pages/ticket.js"></script>
 <script>
     const prevOrNextDayToggler = document.querySelectorAll('.prev-or-next-day-toggler');
+    const fromPersian = document.querySelectorAll('.from-persian');
+    const toPersian = document.querySelectorAll('.to-persian');
 
     window.addEventListener('load', () => {
         const startLocationRightSideAside = document.getElementById('start-location-right-side-aside');
@@ -290,6 +290,7 @@
         const dateFaRightSideAside = document.getElementById('date-fa-right-side-aside');
         const dateEnRightSideAside = document.getElementById('date-en-right-side-aside');
         const searchFlightNumber = document.getElementById('search-flight-number');
+        const informationToSearchInTicketsPage = JSON.parse(localStorage.getItem('information-to-search-in-tickets-page'));
 
         startLocationRightSideAside.textContent = htmlElement.getAttribute('data-start-place')
         endLocationRightSideAside.textContent = htmlElement.getAttribute('data-end-place')
@@ -297,6 +298,9 @@
         dateFaRightSideAside.textContent = `${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('YYYY')} ${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('MMMM')} ${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('DD')}`
         searchFlightNumber.setAttribute('placeholder', `${htmlElement.getAttribute('data-end-place')} به ${htmlElement.getAttribute('data-start-place')}`)
         searchFlightNumber.querySelector('.my-placeholder').textContent = `${htmlElement.getAttribute('data-end-place')} به ${htmlElement.getAttribute('data-start-place')}`
+
+        fromPersian.forEach(item => item.textContent = persianNameFromAbbrevation(informationToSearchInTicketsPage.fromCityAbbrevation))
+        toPersian.forEach(item => item.textContent = persianNameFromAbbrevation(informationToSearchInTicketsPage.toCityAbbrevation))
     })
 
     function subtractDays(numOfDays, date = new Date()) {
