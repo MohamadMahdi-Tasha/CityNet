@@ -105,8 +105,7 @@
                     <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">
                         جستجوی شماره پرواز<i class="bi bi-chevron-down"></i></button>
                     <div class="my-collapse p-3 rounded-3">
-                        <intractive-component type="input" input-type="text"
-                                              placeholder="تهران به مشهد"></intractive-component>
+                        <intractive-component id="search-flight-number" type="input" input-type="text" placeholder=""></intractive-component>
                     </div>
                 </div>
                 <div data-opened class="my-collapse-holder bg-white rounded-3">
@@ -391,11 +390,14 @@
         const endLocationRightSideAside = document.getElementById('end-location-right-side-aside');
         const dateFaRightSideAside = document.getElementById('date-fa-right-side-aside');
         const dateEnRightSideAside = document.getElementById('date-en-right-side-aside');
+        const searchFlightNumber = document.getElementById('search-flight-number');
 
         startLocationRightSideAside.textContent = htmlElement.getAttribute('data-start-place')
         endLocationRightSideAside.textContent = htmlElement.getAttribute('data-end-place')
         dateEnRightSideAside.textContent = htmlElement.getAttribute('data-flight-date-en');
         dateFaRightSideAside.textContent = `${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('YYYY')} ${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('MMMM')} ${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('DD')}`
+        searchFlightNumber.setAttribute('placeholder', `${htmlElement.getAttribute('data-end-place')} به ${htmlElement.getAttribute('data-start-place')}`)
+        searchFlightNumber.querySelector('.my-placeholder').textContent = `${htmlElement.getAttribute('data-end-place')} به ${htmlElement.getAttribute('data-start-place')}`
     })
 
     function subtractDays(numOfDays, date = new Date()) {
