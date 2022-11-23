@@ -1,6 +1,12 @@
 class TicketComponent extends HTMLElement {
     constructor() {super();}
     connectedCallback() {
+        const allTicketComponent = document.querySelectorAll('.ticket-component');
+        const ticketComponentElementsArray = [];
+
+        allTicketComponent.forEach(component => ticketComponentElementsArray.push(component));
+        const numberOfThisComponent = ticketComponentElementsArray.indexOf(this);
+
         this.innerHTML = `
             <div class="bg-white p-3 rounded-3 ticket-component">
                 <div class="bg-grey-lighten3 mb-3 rounded-4 p-3 d-flex flex-lg-row flex-column align-items-center justify-content-between">
@@ -49,10 +55,10 @@ class TicketComponent extends HTMLElement {
                 </div>
                 <div class="d-flex flex-lg-row flex-column gap-3 align-items-center justify-content-between">
                     <div class="d-flex justify-content-lg-start justify-content-between col-lg-auto col-12">
-                        <button onclick="handleAcardionTogglerClick(this)" data-accardion-target="weight-${this.getAttribute('flight-number')}" class="bg-transparent font-small border-0 ticket-component-bottom-accardion-toggler">بار مجاز<i class="bi bi-chevron-down me-2"></i></button>
-                        <button onclick="handleAcardionTogglerClick(this)" data-accardion-target="rules-${this.getAttribute('flight-number')}" class="bg-transparent font-small border-0 ticket-component-bottom-accardion-toggler">قوانین<i class="bi bi-chevron-down me-2"></i></button>
-                        <button onclick="handleAcardionTogglerClick(this)" data-accardion-target="details-${this.getAttribute('flight-number')}" class="bg-transparent font-small border-0 ticket-component-bottom-accardion-toggler">جزییات<i class="bi bi-chevron-down me-2"></i></button>
-                        <button onclick="handleAcardionTogglerClick(this)" data-accardion-target="price-${this.getAttribute('flight-number')}" class="bg-transparent font-small border-0 ticket-component-bottom-accardion-toggler">قیمت<i class="bi bi-chevron-down me-2"></i></button>
+                        <button onclick="handleAcardionTogglerClick(this)" data-accardion-target="weight-number-${numberOfThisComponent}" class="bg-transparent font-small border-0 ticket-component-bottom-accardion-toggler">بار مجاز<i class="bi bi-chevron-down me-2"></i></button>
+                        <button onclick="handleAcardionTogglerClick(this)" data-accardion-target="rules-number-${numberOfThisComponent}" class="bg-transparent font-small border-0 ticket-component-bottom-accardion-toggler">قوانین<i class="bi bi-chevron-down me-2"></i></button>
+                        <button onclick="handleAcardionTogglerClick(this)" data-accardion-target="details-number-${numberOfThisComponent}" class="bg-transparent font-small border-0 ticket-component-bottom-accardion-toggler">جزییات<i class="bi bi-chevron-down me-2"></i></button>
+                        <button onclick="handleAcardionTogglerClick(this)" data-accardion-target="price-number-${numberOfThisComponent}" class="bg-transparent font-small border-0 ticket-component-bottom-accardion-toggler">قیمت<i class="bi bi-chevron-down me-2"></i></button>
                     </div>
                     <div class="col-lg-auto col-12">
                         <div class="d-flex flex-lg-row flex-column-reverse gap-3 align-items-center">
@@ -82,10 +88,10 @@ class TicketComponent extends HTMLElement {
                     </div>
                 </div>
                 <div class="d-flex flex-column gap-3">
-                    <div id="weight-${this.getAttribute('flight-number')}" class="mt-3 ticket-component-bottom-accardion bg-grey-lighten3 rounded"><flight-details flight-number="${this.getAttribute('flight-number')}" end-loaction-abbr="${this.getAttribute('end-loaction-abbr')}" start-loaction-abbr="${this.getAttribute('start-loaction-abbr')}" type="weight"></flight-details></div>
-                    <div id="rules-${this.getAttribute('flight-number')}" class="mt-3 ticket-component-bottom-accardion bg-grey-lighten3 rounded"><flight-details type="rules"></flight-details></div>
-                    <div id="details-${this.getAttribute('flight-number')}" class="mt-3 ticket-component-bottom-accardion bg-grey-lighten3 rounded"><flight-details icon-src="${this.getAttribute('icon-src')}" name="${this.getAttribute('name')}" systemic number-of-sits="${this.getAttribute('number-of-sits')}" flight-number="${this.getAttribute('flight-number')}" mode="${this.getAttribute('mode')}" start-time="${this.getAttribute('start-time')}" start-location="${this.getAttribute('start-location')}" start-location-en="${this.getAttribute('start-location-en')}" start-location-fa="${this.getAttribute('start-location-fa')}" end-time="${this.getAttribute('end-time')}" end-location="${this.getAttribute('end-location')}" end-location-en="${this.getAttribute('end-location-en')}" end-location-fa="${this.getAttribute('end-location-fa')}" price="${this.getAttribute('price')}" start-loaction-abbr="${this.getAttribute('start-loaction-abbr')}" end-loaction-abbr="${this.getAttribute('end-loaction-abbr')}" route-duration-hour="${this.getAttribute('route-duration-hour')}" route-duration-minute="${this.getAttribute('route-duration-minute')}" start-date="${this.getAttribute('start-date')}" start-date-en="${this.getAttribute('start-date-en')}" start-date-fa="${this.getAttribute('start-date-fa')}" end-date-en="${this.getAttribute('end-date-en')}" end-date-fa="${this.getAttribute('end-date-fa')}" plane-model="${this.getAttribute('plane-model')}" type="details"></flight-details></div>
-                    <div class="ticket-component-bottom-accardion mt-3" id="price-${this.getAttribute('flight-number')}">
+                    <div id="weight-number-${numberOfThisComponent}" class="mt-3 ticket-component-bottom-accardion bg-grey-lighten3 rounded"><flight-details flight-number="${this.getAttribute('flight-number')}" end-loaction-abbr="${this.getAttribute('end-loaction-abbr')}" start-loaction-abbr="${this.getAttribute('start-loaction-abbr')}" type="weight"></flight-details></div>
+                    <div id="rules-number-${numberOfThisComponent}" class="mt-3 ticket-component-bottom-accardion bg-grey-lighten3 rounded"><flight-details type="rules"></flight-details></div>
+                    <div id="details-number-${numberOfThisComponent}" class="mt-3 ticket-component-bottom-accardion bg-grey-lighten3 rounded"><flight-details icon-src="${this.getAttribute('icon-src')}" name="${this.getAttribute('name')}" systemic number-of-sits="${this.getAttribute('number-of-sits')}" flight-number="${this.getAttribute('flight-number')}" mode="${this.getAttribute('mode')}" start-time="${this.getAttribute('start-time')}" start-location="${this.getAttribute('start-location')}" start-location-en="${this.getAttribute('start-location-en')}" start-location-fa="${this.getAttribute('start-location-fa')}" end-time="${this.getAttribute('end-time')}" end-location="${this.getAttribute('end-location')}" end-location-en="${this.getAttribute('end-location-en')}" end-location-fa="${this.getAttribute('end-location-fa')}" price="${this.getAttribute('price')}" start-loaction-abbr="${this.getAttribute('start-loaction-abbr')}" end-loaction-abbr="${this.getAttribute('end-loaction-abbr')}" route-duration-hour="${this.getAttribute('route-duration-hour')}" route-duration-minute="${this.getAttribute('route-duration-minute')}" start-date="${this.getAttribute('start-date')}" start-date-en="${this.getAttribute('start-date-en')}" start-date-fa="${this.getAttribute('start-date-fa')}" end-date-en="${this.getAttribute('end-date-en')}" end-date-fa="${this.getAttribute('end-date-fa')}" plane-model="${this.getAttribute('plane-model')}" type="details"></flight-details></div>
+                    <div class="ticket-component-bottom-accardion mt-3" id="price-number-${numberOfThisComponent}">
                         <flight-details flight-number="${this.getAttribute('flight-number')}" end-loaction-abbr="${this.getAttribute('end-loaction-abbr')}" start-loaction-abbr="${this.getAttribute('start-loaction-abbr')}" type="price" price="${this.getAttribute('price')}"></flight-details>
                     </div>
                 </div>
