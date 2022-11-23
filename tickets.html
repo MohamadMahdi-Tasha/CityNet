@@ -384,15 +384,17 @@
 <script src="assets/base/js/api-calls/pages/tickets.js"></script>
 <script src="assets/base/js/pages/ticket.js"></script>
 <script>
-    const startLocationRightSideAside = document.getElementById('start-location-right-side-aside');
-    const endLocationRightSideAside = document.getElementById('end-location-right-side-aside');
-    const dateFaRightSideAside = document.getElementById('date-fa-right-side-aside');
-    const dateEnRightSideAside = document.getElementById('date-en-right-side-aside');
+    window.addEventListener('load', () => {
+        const startLocationRightSideAside = document.getElementById('start-location-right-side-aside');
+        const endLocationRightSideAside = document.getElementById('end-location-right-side-aside');
+        const dateFaRightSideAside = document.getElementById('date-fa-right-side-aside');
+        const dateEnRightSideAside = document.getElementById('date-en-right-side-aside');
 
-    startLocationRightSideAside.textContent = htmlElement.getAttribute('data-start-place')
-    endLocationRightSideAside.textContent = htmlElement.getAttribute('data-end-place')
-    dateEnRightSideAside.textContent = htmlElement.getAttribute('data-flight-date-en');
-    dateFaRightSideAside.textContent = `${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('YYYY')} ${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('MMMM')} ${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('DD')}`
+        startLocationRightSideAside.textContent = htmlElement.getAttribute('data-start-place')
+        endLocationRightSideAside.textContent = htmlElement.getAttribute('data-end-place')
+        dateEnRightSideAside.textContent = htmlElement.getAttribute('data-flight-date-en');
+        dateFaRightSideAside.textContent = `${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('YYYY')} ${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('MMMM')} ${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('DD')}`
+    })
 </script>
 </body>
 </html>
