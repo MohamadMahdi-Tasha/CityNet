@@ -45,6 +45,8 @@ window.addEventListener('load', () => {
                 const ticketComponentList = document.getElementById('ticket-component-list');
                 const retunedTicketsNumberElement = document.getElementById('retuned-tickets-number');
                 const returnedTickets = result.data.tickets;
+                const listOfCompanysInTickets = [];
+                const airplanesComponentsHolder = document.getElementById('airplanes-components-holder');
 
                 // Setting Number Of Returned Tickets
                 retunedTicketsNumberElement.textContent = returnedTickets.length
@@ -84,7 +86,26 @@ window.addEventListener('load', () => {
                     listItemElement.appendChild(ticketComponentElement);
                     ticketComponentList.appendChild(listItemElement);
                 })
+
+                document.querySelectorAll('ticket-component').forEach(component => listOfCompanysInTickets.push(component.getAttribute('name')))
+
+                removeDuplicates(listOfCompanysInTickets).forEach(item => {
+                    const newAirplanesComponent = document.createElement('airplanes-component');
+                    const pricesOfThisCompanyAll = document.querySelectorAll(`ticket-component[name="${item}"]`)
+                    const pricesOfThisCompany = document.querySelector(`ticket-component[name="${item}"]`)
+                    const pricesArrayOfThisCompany = [];
+
+                    pricesOfThisCompanyAll.forEach(item => pricesArrayOfThisCompany.push(item.getAttribute('price')))
+
+                    newAirplanesComponent.setAttribute('title', item);
+                    newAirplanesComponent.setAttribute('price', pricesArrayOfThisCompany.sort()[0]);
+                    newAirplanesComponent.setAttribute('icon', pricesOfThisCompany.getAttribute('icon-src'));
+                    airplanesComponentsHolder.appendChild(newAirplanesComponent)
+                })
+
             }
         })
         .catch(error => console.log('error', error));
 })
+
+const removeDuplicates = array => array.filter((item, index) => array.indexOf(item) === index);

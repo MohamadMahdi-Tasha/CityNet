@@ -115,102 +115,7 @@
                         <div class="rounded-2 bg-light-orange p-2 mb-3"><p class="text-warning-base font-small mb-0">
                             توجه:ممکن است ایرلاین انتخوابی در بین مسیر باشد.</p></div>
                         <div class="selected-airlines-tag-holder"></div>
-                        <div class="d-flex flex-column gap-3">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <div class="d-flex align-items-center mb-1">
-                                        <input type="checkbox" class="ms-2">
-                                        <label class="font-small">Sepehran Airlines</label>
-                                    </div>
-                                    <h6 class="mb-0 font-small text-grey-base me-3">
-                                        از
-                                        <span>9,989,180</span>
-                                        ریال
-                                    </h6>
-                                </div>
-                                <img width="50px" height="50px" src="assets/base/img/img-logo.png" alt="Logo">
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <div class="d-flex align-items-center mb-1">
-                                        <input type="checkbox" class="ms-2">
-                                        <label class="font-small">Sepehran Airlines</label>
-                                    </div>
-                                    <h6 class="mb-0 font-small text-grey-base me-3">
-                                        از
-                                        <span>9,989,180</span>
-                                        ریال
-                                    </h6>
-                                </div>
-                                <img width="50px" height="50px" src="assets/base/img/img-logo.png" alt="Logo">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div data-opened class="my-collapse-holder bg-white rounded-3">
-                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">
-                        نوع پرواز<i class="bi bi-chevron-down"></i></button>
-                    <div class="my-collapse p-3 rounded-3 d-flex flex-column gap-3">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex align-items-center">
-                                <input type="checkbox" class="ms-2">
-                                <label class="font-small">
-                                    سیستمی
-                                    <span class="text-grey-base">(<span>6</span>)</span>
-                                </label>
-                            </div>
-                            <h6 class="mb-0 text-grey-base font-small">
-                                از
-                                <span>9,989,180</span>
-                                ریال
-                            </h6>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex align-items-center">
-                                <input type="checkbox" class="ms-2">
-                                <label class="font-small">
-                                    سیستمی
-                                    <span class="text-grey-base">(<span>6</span>)</span>
-                                </label>
-                            </div>
-                            <h6 class="mb-0 text-grey-base font-small">
-                                از
-                                <span>9,989,180</span>
-                                ریال
-                            </h6>
-                        </div>
-                    </div>
-                </div>
-                <div data-opened class="my-collapse-holder bg-white rounded-3">
-                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">
-                        تعداد توقف<i class="bi bi-chevron-down"></i></button>
-                    <div class="my-collapse p-3 rounded">
-                        <h6 class="font-small text-grey-base">تهران به مشهد</h6>
-                        <h6 class="font-small text-center text-grey-base mb-0">تمامی پرواز ها بدون توقف میباشند</h6>
-                    </div>
-                </div>
-                <div data-opened class="my-collapse-holder bg-white rounded-3">
-                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">
-                        فرودگاه ها<i class="bi bi-chevron-down"></i></button>
-                    <div class="my-collapse p-3 rounded-3">
-                        <intractive-component type="input" input-type="text"
-                                              placeholder="جستجو فرودگاه"></intractive-component>
-                        <div class="d-flex flex-column gap-3 mt-3">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="d-flex align-items-center">
-                                    <input type="checkbox" class="ms-2">
-                                    <label class="font-small text-grey-base">Mehrabad Intl</label>
-                                </div>
-                                <h6 class="mb-0 font-small text-grey-lighten2">THR</h6>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="d-flex align-items-center">
-                                    <input type="checkbox" class="ms-2">
-                                    <label class="font-small text-grey-base">Mehrabad Intl</label>
-                                </div>
-                                <h6 class="mb-0 font-small text-grey-lighten2">THR</h6>
-                            </div>
-                        </div>
+                        <div class="d-flex flex-column gap-3" id="airplanes-components-holder"></div>
                     </div>
                 </div>
                 <div class="my-collapse-holder bg-white rounded-3">
@@ -267,13 +172,6 @@
                             </h6>
                         </div>
                         <h6 class="text-center text-grey-darken2 font-small mb-0">از ساعت ۰۰ تا ۲۴</h6>
-                    </div>
-                </div>
-                <div class="my-collapse-holder bg-white rounded-3">
-                    <button class="my-collapse-toggler ripple-button rounded-3 bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3">
-                        مدت زمان توقف<i class="bi bi-chevron-down"></i></button>
-                    <div class="my-collapse p-3 rounded-3">
-                        <h6 class="text-center text-grey-darken2 font-small mb-0">تمامی پروازها بدون توقف می‌باشند</h6>
                     </div>
                 </div>
                 <div class="my-collapse-holder bg-white rounded-3">
@@ -372,6 +270,7 @@
 <script src="assets/base/js/component/header.js"></script>
 <script src="assets/base/js/component/mobile-nav.js"></script>
 <script src="assets/base/js/component/intractive-component.js"></script>
+<script src="assets/base/js/component/airplanes-component.js"></script>
 <script src="assets/base/js/component/footer.js"></script>
 <script src="assets/base/js/component/modal.js"></script>
 <script src="assets/base/js/component/flight-details.js"></script>
