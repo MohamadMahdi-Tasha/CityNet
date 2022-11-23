@@ -413,12 +413,17 @@
             const currentDay = new Date(htmlElement.getAttribute('data-flight-date-en'))
             const informationToSearchInTicketsPage = JSON.parse(localStorage.getItem('information-to-search-in-tickets-page'));
             let newDate;
+            let dateToSet;
+            let monthToSet;
 
             if (toggler.textContent === 'روز قبل') {newDate = subtractDays(1, currentDay)}
             else {newDate = addDays(1, currentDay)}
 
+            ((newDate.getMonth() + 1).toString().length === 1) ? monthToSet = `0${newDate.getMonth() + 1}` : monthToSet = newDate.getMonth() + 1;
+            ((newDate.getDate()).toString().length === 1) ? dateToSet = `0${newDate.getDate()}` : dateToSet = newDate.getDate();
+
             let newInformationToSearchInTicketsPageToSet = {
-                date: `${newDate.getFullYear()}-${newDate.getMonth() + 1}-${newDate.getDate()}`,
+                date: `${newDate.getFullYear()}-${monthToSet}-${dateToSet}`,
                 adult_count: informationToSearchInTicketsPage.adult_count,
                 child_count: informationToSearchInTicketsPage.child_count,
                 infant_count: informationToSearchInTicketsPage.infant_count,
