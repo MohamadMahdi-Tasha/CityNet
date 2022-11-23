@@ -87,25 +87,29 @@ window.addEventListener('load', () => {
                     ticketComponentList.appendChild(listItemElement);
                 })
 
+                // For Each Ticket-component Push Attribute Of 'name' Of It To 'listOfCompanysInTickets' Array
                 document.querySelectorAll('ticket-component').forEach(component => listOfCompanysInTickets.push(component.getAttribute('name')))
 
+                // For Each Name Of Ticekt-components Without Any Duplicate ..
                 removeDuplicates(listOfCompanysInTickets).forEach(item => {
+                    // Variables
                     const newAirplanesComponent = document.createElement('airplanes-component');
                     const pricesOfThisCompanyAll = document.querySelectorAll(`ticket-component[name="${item}"]`)
                     const pricesOfThisCompany = document.querySelector(`ticket-component[name="${item}"]`)
                     const pricesArrayOfThisCompany = [];
 
+                    // For Each 'pricesOfThisCompanyAll' Push Attribute Of 'price' Of Result To 'pricesArrayOfThisCompany' Array
                     pricesOfThisCompanyAll.forEach(item => pricesArrayOfThisCompany.push(item.getAttribute('price')))
 
+                    // Setting Attributes On Created Element
                     newAirplanesComponent.setAttribute('title', item);
                     newAirplanesComponent.setAttribute('price', pricesArrayOfThisCompany.sort()[0]);
                     newAirplanesComponent.setAttribute('icon', pricesOfThisCompany.getAttribute('icon-src'));
+
+                    // Appending Created Element To Its Parent
                     airplanesComponentsHolder.appendChild(newAirplanesComponent)
                 })
-
             }
         })
         .catch(error => console.log('error', error));
 })
-
-const removeDuplicates = array => array.filter((item, index) => array.indexOf(item) === index);

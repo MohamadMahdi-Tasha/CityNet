@@ -180,3 +180,6 @@ function englishNameFromAbrevation(abrevation) {
 
     return stringToReturn;
 }
+
+// A Function That Removes Duplicated Values Of Given Array Bye Filter On Array
+const removeDuplicates = array => array.filter((item, index) => array.indexOf(item) === index);
