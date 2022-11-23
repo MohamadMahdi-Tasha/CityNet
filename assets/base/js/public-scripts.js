@@ -20,10 +20,12 @@ window.addEventListener('load', () => {
     const currencyToSelectInLocalStoarge = localStorage.getItem('selected-currency');
 
     if (currencyToSelectInLocalStoarge !== null) {
+        htmlElement.setAttribute('data-currency', currencyToSelectInLocalStoarge)
         currencyHeaderPersian.textContent = persianNameByEnAbbrevationCurrency(currencyToSelectInLocalStoarge);
         currencyHeaderEnglish.textContent = currencyToSelectInLocalStoarge;
     } else {
         localStorage.setItem('selected-currency', 'IRR');
+        htmlElement.setAttribute('data-currency', 'IRR')
         currencyHeaderPersian.textContent = persianNameByEnAbbrevationCurrency(localStorage.getItem('selected-currency'));
         currencyHeaderEnglish.textContent = localStorage.getItem('selected-currency');
     }
