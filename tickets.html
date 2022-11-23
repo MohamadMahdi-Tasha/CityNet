@@ -41,7 +41,7 @@
 <my-modal type="city"></my-modal>
 <my-modal type="flight"></my-modal>
 <my-modal type="login-code"></my-modal>
-<my-modal type="loader"></my-modal>
+<!--<my-modal type="loader"></my-modal>-->
 <!--Mobile  Nav-->
 <mobile-nav></mobile-nav>
 <!--Header-->
@@ -93,12 +93,12 @@
                         <h6 class="mb-0 font-small fw-bold" id="end-location-right-side-aside"></h6>
                     </div>
                     <div class="d-flex align-items-center justify-content-evenly">
-                        <button class="border-0 font-small ripple-button bg-transparent flight-prev-next-day px-2 py-1 rounded-3"><i class="bi bi-chevron-right ms-1"></i>روز قبل</button>
+                        <button class="prev-or-next-day-toggler border-0 font-small ripple-button bg-transparent flight-prev-next-day px-2 py-1 rounded-3"><i class="bi bi-chevron-right ms-1"></i>روز قبل</button>
                         <div class="text-center">
                             <h6 class="font-small text-grey-lighten1" id="date-fa-right-side-aside"></h6>
                             <h6 class="font-small text-grey-lighten1 mb-0" id="date-en-right-side-aside"></h6>
                         </div>
-                        <button class="border-0 font-small ripple-button bg-transparent flight-prev-next-day px-2 py-1 rounded-3">روز بعد<i class="bi bi-chevron-left me-1"></i></button>
+                        <button class="prev-or-next-day-toggler border-0 font-small ripple-button bg-transparent flight-prev-next-day px-2 py-1 rounded-3">روز بعد<i class="bi bi-chevron-left me-1"></i></button>
                     </div>
                 </div>
                 <div data-opened class="my-collapse-holder bg-white rounded-3">
@@ -384,6 +384,8 @@
 <script src="assets/base/js/api-calls/pages/tickets.js"></script>
 <script src="assets/base/js/pages/ticket.js"></script>
 <script>
+    const prevOrNextDayToggler = document.querySelectorAll('.prev-or-next-day-toggler');
+
     window.addEventListener('load', () => {
         const startLocationRightSideAside = document.getElementById('start-location-right-side-aside');
         const endLocationRightSideAside = document.getElementById('end-location-right-side-aside');
@@ -394,6 +396,41 @@
         endLocationRightSideAside.textContent = htmlElement.getAttribute('data-end-place')
         dateEnRightSideAside.textContent = htmlElement.getAttribute('data-flight-date-en');
         dateFaRightSideAside.textContent = `${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('YYYY')} ${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('MMMM')} ${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('DD')}`
+    })
+
+    function subtractDays(numOfDays, date = new Date()) {
+        date.setDate(date.getDate() - numOfDays);
+        return date;
+    }
+
+    function addDays(numOfDays, date = new Date()) {
+        date.setDate(date.getDate() + numOfDays);
+        return date;
+    }
+
+    prevOrNextDayToggler.forEach(toggler => {
+        toggler.addEventListener('click', () => {
+            const currentDay = new Date(htmlElement.getAttribute('data-flight-date-en'))
+            const informationToSearchInTicketsPage = JSON.parse(localStorage.getItem('information-to-search-in-tickets-page'));
+            let newDate;
+
+            if (toggler.textContent === 'روز قبل') {newDate = subtractDays(1, currentDay)}
+            else {newDate = addDays(1, currentDay)}
+
+            let object = {
+                date: `${newDate.getFullYear()}-${newDate.getMonth() + 1}-${newDate.getDate()}`,
+                adult_count: informationToSearchInTicketsPage.adult_count,
+                child_count: informationToSearchInTicketsPage.child_count,
+                infant_count: informationToSearchInTicketsPage.infant_count,
+                from: informationToSearchInTicketsPage.from,
+                to: informationToSearchInTicketsPage.to,
+                fromCityAbbrevation: informationToSearchInTicketsPage.fromCityAbbrevation,
+                toCityAbbrevation: informationToSearchInTicketsPage.toCityAbbrevation
+            }
+            localStorage.setItem('information-to-search-in-tickets-page', JSON.stringify(object))
+
+            document.location.reload();
+        })
     })
 </script>
 </body>
