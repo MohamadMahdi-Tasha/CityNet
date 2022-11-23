@@ -88,29 +88,17 @@
                 </div>
                 <div class="bg-white p-3 rounded-3">
                     <div class="d-flex align-items-center justify-content-evenly mb-3">
-                        <h6 class="mb-0 font-small fw-bold"></h6>
+                        <h6 class="mb-0 font-small fw-bold" id="start-location-right-side-aside"></h6>
                         <i class="bi bi-arrow-left"></i>
-                        <h6 class="mb-0 font-small fw-bold"></h6>
+                        <h6 class="mb-0 font-small fw-bold" id="end-location-right-side-aside"></h6>
                     </div>
                     <div class="d-flex align-items-center justify-content-evenly">
-                        <button class="border-0 font-small ripple-button bg-transparent flight-prev-next-day px-2 py-1 rounded-3">
-                            <i class="bi bi-chevron-right ms-1"></i>روز قبل
-                        </button>
+                        <button class="border-0 font-small ripple-button bg-transparent flight-prev-next-day px-2 py-1 rounded-3"><i class="bi bi-chevron-right ms-1"></i>روز قبل</button>
                         <div class="text-center">
-                            <h6 class="font-small text-grey-lighten1">
-                                <span>دوشنبه</span>
-                                <span>31</span>
-                                <span>مرداد</span>
-                            </h6>
-                            <h6 class="font-small text-grey-lighten1 mb-0">
-                                <span>Aug</span>
-                                <span>22</span>
-                                ,
-                                <span>2022</span>
-                            </h6>
+                            <h6 class="font-small text-grey-lighten1" id="date-fa-right-side-aside"></h6>
+                            <h6 class="font-small text-grey-lighten1 mb-0" id="date-en-right-side-aside"></h6>
                         </div>
-                        <button class="border-0 font-small ripple-button bg-transparent flight-prev-next-day px-2 py-1 rounded-3">
-                            روز بعد<i class="bi bi-chevron-left me-1"></i></button>
+                        <button class="border-0 font-small ripple-button bg-transparent flight-prev-next-day px-2 py-1 rounded-3">روز بعد<i class="bi bi-chevron-left me-1"></i></button>
                     </div>
                 </div>
                 <div data-opened class="my-collapse-holder bg-white rounded-3">
@@ -395,5 +383,16 @@
 <script src="assets/base/js/api-calls/pages/index.js"></script>
 <script src="assets/base/js/api-calls/pages/tickets.js"></script>
 <script src="assets/base/js/pages/ticket.js"></script>
+<script>
+    const startLocationRightSideAside = document.getElementById('start-location-right-side-aside');
+    const endLocationRightSideAside = document.getElementById('end-location-right-side-aside');
+    const dateFaRightSideAside = document.getElementById('date-fa-right-side-aside');
+    const dateEnRightSideAside = document.getElementById('date-en-right-side-aside');
+
+    startLocationRightSideAside.textContent = htmlElement.getAttribute('data-start-place')
+    endLocationRightSideAside.textContent = htmlElement.getAttribute('data-end-place')
+    dateEnRightSideAside.textContent = htmlElement.getAttribute('data-flight-date-en');
+    dateFaRightSideAside.textContent = `${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('YYYY')} ${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('MMMM')} ${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('DD')}`
+</script>
 </body>
 </html>
