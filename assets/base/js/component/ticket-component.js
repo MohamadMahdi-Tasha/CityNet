@@ -106,6 +106,8 @@ function handleAcardionTogglerClick(toggler) {
 
     toggler.toggleAttribute('data-opened');
     accardionTargetElement.toggleAttribute('data-opened');
-    openedToggler.removeAttribute('data-opened');
-    openedAccardion.removeAttribute('data-opened');
+    if (openedToggler !== null) {
+        openedToggler.removeAttribute('data-opened');
+        openedAccardion.removeAttribute('data-opened');
+    }
 }
