@@ -5,7 +5,7 @@ const allRippleButtons = document.querySelectorAll('.ripple-button');
 // A Function That That Creates Span Element.
 // Then Assigns Class Name To Created Span And Sets Top And Left Positions Of It Based On Clicked Position
 // After That Appends It To Clicked Button And Listens To AnimationEnd Event On Created Span Which Removes It
-function createRipple(itemToAppend) {
+function createRipple(itemToAppend, event) {
     const innerSpan = document.createElement("span");
 
     innerSpan.className = "ripple-button--inner-span";
@@ -19,4 +19,4 @@ function createRipple(itemToAppend) {
 }
 
 // Adding Event Listener Of Click On Mouse On Each Ripple Button That Calls 'createRipple' Function
-allRippleButtons.forEach(item => {item.addEventListener('mousedown', (event) => {createRipple(item)})})
+allRippleButtons.forEach(item => {item.addEventListener('mousedown', (event) => {createRipple(item, event)})})
