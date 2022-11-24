@@ -10,6 +10,8 @@ window.addEventListener('load', () => {
     const flightDetailsHolder = document.getElementById('flight-details-holder');
     const flightDetails = document.createElement('flight-details');
     const selectedTicket = JSON.parse(localStorage.getItem('selected-ticket'));
+    const personInformation = JSON.parse(localStorage.getItem('person-information'));
+    const passangersTobdy = document.getElementById('passengers-tbody');
 
     // Setting Attributes Of Created 'flight-details' Element
     flightDetails.setAttribute('type', 'details');
@@ -40,4 +42,61 @@ window.addEventListener('load', () => {
     flightDetails.setAttribute('plane-model', selectedTicket.planeModel);
 
     flightDetailsHolder.appendChild(flightDetails)
+
+    personInformation.slice(1, personInformation.length).forEach(passenger => {
+        const classNameOfTHAndTD = 'border-bottom-0 bb-lg font-small p-3';
+        const tableRow = document.createElement('tr');
+        const numberOfItemElement = document.createElement('th')
+        const nameAndLastNameElement = document.createElement('td')
+        const ageElement = document.createElement('td')
+        const genderElement = document.createElement('td')
+        const nationalityElement = document.createElement('td')
+        const nationalNumberElement = document.createElement('td')
+        const birthdayElement = document.createElement('td')
+        const passportNumberElement = document.createElement('td')
+        const passportExpireDateElement = document.createElement('td')
+
+        numberOfItemElement.className = classNameOfTHAndTD;
+        nameAndLastNameElement.className = classNameOfTHAndTD;
+        ageElement.className = classNameOfTHAndTD;
+        genderElement.className = classNameOfTHAndTD;
+        nationalityElement.className = classNameOfTHAndTD;
+        nationalNumberElement.className = classNameOfTHAndTD;
+        birthdayElement.className = classNameOfTHAndTD;
+        passportNumberElement.className = classNameOfTHAndTD;
+        passportExpireDateElement.className = classNameOfTHAndTD;
+
+        const ageNumber = new Date().getFullYear() - new Date(passenger.birthday).getFullYear()
+        let age;
+        let genderToSet;
+
+        if (ageNumber > 12) {age = 'adult'}
+        else if (ageNumber < 12 && ageNumber > 2) {age = 'kid'}
+        else if (ageNumber < 2) {age = 'child'}
+
+        (passenger.gender === 'female') ? genderToSet = 'خانم' : genderToSet = 'اقا'
+
+        numberOfItemElement.textContent = personInformation.indexOf(passenger);
+        nameAndLastNameElement.textContent = `${passenger.name} ${passenger.lastName}`
+        ageElement.textContent = age;
+        genderElement.textContent = genderToSet;
+        nationalityElement.textContent = passenger.nationality;
+        nationalNumberElement.textContent = passenger.nationalityNumber;
+        birthdayElement.textContent = passenger.birthday;
+        passportNumberElement.textContent = passenger.passportNumber;
+        passportExpireDateElement.textContent = passenger.passportExpireDate;
+
+        tableRow.appendChild(numberOfItemElement)
+        tableRow.appendChild(nameAndLastNameElement)
+        tableRow.appendChild(ageElement)
+        tableRow.appendChild(genderElement)
+        tableRow.appendChild(nationalityElement)
+        tableRow.appendChild(nationalNumberElement)
+        tableRow.appendChild(birthdayElement)
+        tableRow.appendChild(passportNumberElement)
+        tableRow.appendChild(passportExpireDateElement)
+        passangersTobdy.appendChild(tableRow)
+
+        console.log(passenger)
+    })
 })
