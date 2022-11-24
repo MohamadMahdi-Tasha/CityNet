@@ -231,11 +231,7 @@ continueBuyingButton.addEventListener('click', () => {
         const mobileNumber2 = document.getElementById('mobile-number-2').firstElementChild.getAttribute('data-value');
         const email1 = document.getElementById('email-1').firstElementChild.getAttribute('data-value');
         const email2 = document.getElementById('email-2').firstElementChild.getAttribute('data-value');
-
-        let personInformation = [{
-            email: {email1,email2},
-            mobileNumber: {mobileNumber1,mobileNumber2}
-        }];
+        let personInformation = [{email: {email1,email2}, mobileNumber: {mobileNumber1,mobileNumber2}}];
 
         // Setting Information Of Persons
         allPassengerInformation.forEach(component => {
