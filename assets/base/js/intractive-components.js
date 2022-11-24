@@ -152,6 +152,9 @@ inputAndSearchIntractiveComponent.forEach(component => {
 
     component.addEventListener('click', () => inputInComponent.focus())
     inputInComponent.addEventListener('focus', () => component.classList.add('focused'))
-    inputInComponent.addEventListener('input', () => component.setAttribute('data-value', inputInComponent.value))
+    inputInComponent.addEventListener('input', () => {
+        component.setAttribute('data-value', inputInComponent.value);
+        if (inputInComponent.value === '') {component.setAttribute('data-value', 'null')}
+    })
     inputInComponent.addEventListener('blur', () => {if (inputInComponent.value === '') {component.classList.remove('focused')}})
 })
