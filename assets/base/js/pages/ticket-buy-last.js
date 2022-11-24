@@ -12,6 +12,11 @@ window.addEventListener('load', () => {
     const selectedTicket = JSON.parse(localStorage.getItem('selected-ticket'));
     const personInformation = JSON.parse(localStorage.getItem('person-information'));
     const passangersTobdy = document.getElementById('passengers-tbody');
+    const priceElement1 = document.getElementById('price-element-1')
+    const priceElement2 = document.getElementById('price-element-2')
+    const priceElement3 = document.getElementById('price-element-3')
+    const fromPersian = document.getElementById('from-persian');
+    const toPersian = document.getElementById('to-persian');
 
     // Setting Attributes Of Created 'flight-details' Element
     flightDetails.setAttribute('type', 'details');
@@ -96,7 +101,11 @@ window.addEventListener('load', () => {
         tableRow.appendChild(passportNumberElement)
         tableRow.appendChild(passportExpireDateElement)
         passangersTobdy.appendChild(tableRow)
-
-        console.log(passenger)
     })
+
+    priceElement1.textContent = selectedTicket.price
+    priceElement2.textContent = selectedTicket.price
+    priceElement3.textContent = selectedTicket.price
+    fromPersian.textContent = englishNameFromAbrevation(selectedTicket.startLocation)
+    toPersian.textContent = englishNameFromAbrevation(selectedTicket.endLocation)
 })
