@@ -96,10 +96,10 @@ window.addEventListener('load', () => {
                         ticketComponentElement.setAttribute('end-loaction-abbr', abbrevationFromEnglishNameOfCity(ticket.to_airport))
                         ticketComponentElement.setAttribute('route-duration-hour', getRouteDuration(ticket.start_time.slice(0,5), ticket.arrival_time.slice(0,5)).hour)
                         ticketComponentElement.setAttribute('route-duration-minute', getRouteDuration(ticket.start_time.slice(0,5), ticket.arrival_time.slice(0,5)).minute)
-                        ticketComponentElement.setAttribute('start-date', new Date(htmlElement.getAttribute('data-flight-date-en')))
-                        ticketComponentElement.setAttribute('start-date-en', new Date(new Date(htmlElement.getAttribute('data-flight-date-en'))).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }))
+                        ticketComponentElement.setAttribute('start-date', htmlElement.getAttribute('data-flight-date-en'))
+                        ticketComponentElement.setAttribute('start-date-en', new Date(htmlElement.getAttribute('data-flight-date-en')).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }))
                         ticketComponentElement.setAttribute('start-date-fa', `${new persianDate(new Date(htmlElement.getAttribute('data-flight-date-en'))).format('YYYY')} ${new persianDate(new Date(htmlElement.getAttribute('data-flight-date-en'))).format('MMMM')} ${new persianDate(new Date(htmlElement.getAttribute('data-flight-date-en'))).format('DD')}`)
-                        ticketComponentElement.setAttribute('end-date-en', new Date(new Date(htmlElement.getAttribute('data-flight-date-en'))).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }))
+                        ticketComponentElement.setAttribute('end-date-en', new Date(htmlElement.getAttribute('data-flight-date-en')).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }))
                         ticketComponentElement.setAttribute('end-date-fa', `${new persianDate(new Date(htmlElement.getAttribute('data-flight-date-en'))).format('YYYY')} ${new persianDate(new Date(htmlElement.getAttribute('data-flight-date-en'))).format('MMMM')} ${new persianDate(new Date(htmlElement.getAttribute('data-flight-date-en'))).format('DD')}`)
                         ticketComponentElement.setAttribute('plane-model', ticket.air_plane)
 

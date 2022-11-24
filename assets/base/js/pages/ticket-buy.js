@@ -45,18 +45,16 @@ window.addEventListener('load', () => {
     newDetailsFlightDetailComponent.setAttribute('end-location-fa', persianNameFromAbbrevation(selectedTicket.endLocation));
     newDetailsFlightDetailComponent.setAttribute('end-location-en', englishNameFromAbrevation(selectedTicket.endLocation));
     newDetailsFlightDetailComponent.setAttribute('end-loaction-abbr', selectedTicket.endLocation);
-    newDetailsFlightDetailComponent.setAttribute('start-time', selectedTicket.startTime);
-    newDetailsFlightDetailComponent.setAttribute('end-time', selectedTicket.endTime);
     newDetailsFlightDetailComponent.setAttribute('start-location', selectedTicket.endTime);
     newDetailsFlightDetailComponent.setAttribute('price', selectedTicket.price);
     newDetailsFlightDetailComponent.setAttribute('route-duration-hour', getRouteDuration(selectedTicket.startTime, selectedTicket.endTime).hour);
     newDetailsFlightDetailComponent.setAttribute('route-duration-minute', getRouteDuration(selectedTicket.startTime, selectedTicket.endTime).minute);
     newDetailsFlightDetailComponent.setAttribute('start-date', selectedTicket.date);
-    newDetailsFlightDetailComponent.setAttribute('start-date-en', selectedTicket.date);
-    newDetailsFlightDetailComponent.setAttribute('start-date-fa', `${new persianDate(selectedTicket.date).format('YYYY')} ${new persianDate(selectedTicket.date).format('MMMM')} ${new persianDate(selectedTicket.date).format('DD')}`);
+    newDetailsFlightDetailComponent.setAttribute('start-date-en', new Date(selectedTicket.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));
+    newDetailsFlightDetailComponent.setAttribute('start-date-fa', `${new persianDate(new Date(selectedTicket.date)).format('YYYY')} ${new persianDate(new Date(selectedTicket.date)).format('MMMM')} ${new persianDate(new Date(selectedTicket.date)).format('DD')}`);
     newDetailsFlightDetailComponent.setAttribute('end-date', selectedTicket.date);
-    newDetailsFlightDetailComponent.setAttribute('end-date-en', selectedTicket.date);
-    newDetailsFlightDetailComponent.setAttribute('end-date-fa', `${new persianDate(selectedTicket.date).format('YYYY')} ${new persianDate(selectedTicket.date).format('MMMM')} ${new persianDate(selectedTicket.date).format('DD')}`);
+    newDetailsFlightDetailComponent.setAttribute('end-date-en', new Date(selectedTicket.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));
+    newDetailsFlightDetailComponent.setAttribute('end-date-fa', `${new persianDate(new Date(selectedTicket.date)).format('YYYY')} ${new persianDate(new Date(selectedTicket.date)).format('MMMM')} ${new persianDate(new Date(selectedTicket.date)).format('DD')}`);
     newDetailsFlightDetailComponent.setAttribute('plane-model', selectedTicket.planeModel);
 
     // Apending Created 'flight-details' Element To Its Parent
