@@ -219,6 +219,7 @@ continueBuyingButton.addEventListener('click', () => {
     })
     passportExpireDateComponents.forEach(component => {
         if (component.firstElementChild.getAttribute('data-date') === 'null') {setErrorOnComponent(component, 'لطفا تاریخ انقضای گذرنامه فرد را بنویسید')}
+        else if (new Date() > new Date(component.firstElementChild.getAttribute('data-date'))) {setErrorOnComponent(component, 'لطفا تاریخ انقضای گذرنامه را منطقی وارد کنید')}
         else if (component.firstElementChild.getAttribute('data-date') !== 'null') {setSuccsesOnComponent(component)}
     })
 
@@ -226,7 +227,15 @@ continueBuyingButton.addEventListener('click', () => {
     if (document.querySelectorAll('.intractive-component.errored').length === 0) {
         // Variables
         const allPassengerInformation = document.querySelectorAll('passanger-information');
-        const personInformation = [];
+        const mobileNumber1 = document.getElementById('mobile-number-1').firstElementChild.getAttribute('data-value');
+        const mobileNumber2 = document.getElementById('mobile-number-2').firstElementChild.getAttribute('data-value');
+        const email1 = document.getElementById('email-1').firstElementChild.getAttribute('data-value');
+        const email2 = document.getElementById('email-2').firstElementChild.getAttribute('data-value');
+
+        let personInformation = [{
+            email: {email1,email2},
+            mobileNumber: {mobileNumber1,mobileNumber2}
+        }];
 
         // Setting Information Of Persons
         allPassengerInformation.forEach(component => {
@@ -255,6 +264,6 @@ continueBuyingButton.addEventListener('click', () => {
         })
 
         // Setting Persons Information In Local Storage
-        localStorage.setItem('person-information', personInformation)
+        localStorage.setItem('person-information', JSON.stringify(personInformation))
     }
 })
