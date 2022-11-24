@@ -17,6 +17,10 @@ window.addEventListener('load', () => {
     const priceElement3 = document.getElementById('price-element-3')
     const fromPersian = document.getElementById('from-persian');
     const toPersian = document.getElementById('to-persian');
+    const email1 = document.getElementById('email-1')
+    const email2 = document.getElementById('email-2')
+    const phone1 = document.getElementById('phone-1')
+    const phone2 = document.getElementById('phone-2')
 
     // Setting Attributes Of Created 'flight-details' Element
     flightDetails.setAttribute('type', 'details');
@@ -108,4 +112,19 @@ window.addEventListener('load', () => {
     priceElement3.textContent = selectedTicket.price
     fromPersian.textContent = englishNameFromAbrevation(selectedTicket.startLocation)
     toPersian.textContent = englishNameFromAbrevation(selectedTicket.endLocation)
+
+    let email1ToSet;
+    let email2ToSet;
+    let phone1ToSet;
+    let phone2ToSet;
+
+    (personInformation[0].one.email1 === null) ? email1ToSet = '--' : email1ToSet = personInformation[0].one.email1;
+    (personInformation[0].two.email2 === null) ? email2ToSet = '--' : email2ToSet = personInformation[0].two.email2;
+    (personInformation[0].one.mobileNumber1 === null) ? phone1ToSet = '--' : phone1ToSet = personInformation[0].one.mobileNumber1;
+    (personInformation[0].two.mobileNumber2 === null) ? phone2ToSet = '--' : phone2ToSet = personInformation[0].two.mobileNumber2;
+
+    email1.textContent = email1ToSet
+    phone1.textContent = phone1ToSet
+    email2.textContent = email2ToSet
+    phone2.textContent = phone2ToSet
 })
