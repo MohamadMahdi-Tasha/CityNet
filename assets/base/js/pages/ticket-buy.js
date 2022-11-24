@@ -4,6 +4,7 @@ const addSecondPhoneEmailButton = document.getElementById('add-second-phone-emai
 const secondPhoneEmail = document.getElementById('second-phone-email');
 const addSecondPhoneEmailRemoveButton = document.getElementById('second-phone-email-remove-btn');
 const continueBuyingButton = document.getElementById('continue-buying-button');
+const selectPersonButton = document.querySelectorAll('.select-person-button');
 
 // Adding event Listener On Load Of Window That ..
 window.addEventListener('load', () => {
@@ -71,7 +72,7 @@ selectPersonFromListBtn.forEach(button => {
             loginModal.toggleAttribute('data-opened')
         } else {
             // Variables
-            const selectPersonModal = document.getElementById('select-person-modal');
+            const selectPersonModal = button.previousElementSibling.firstElementChild;
             const headersToSendData = new Headers();
             const loginToken = localStorage.getItem('login-token');
 
@@ -96,7 +97,7 @@ selectPersonFromListBtn.forEach(button => {
                 .then(result => {
                     // Variables
                     const persons = result.data.persons;
-                    const tbodySelectPersonModal = document.getElementById('tbody-select-person-modal');
+                    const tbodySelectPersonModal = selectPersonModal.querySelector('tbody')
 
                     // Removing All Children Of Table Body
                     tbodySelectPersonModal.innerHTML  = '';
@@ -128,6 +129,9 @@ selectPersonFromListBtn.forEach(button => {
                         const buttonSelectPersonHolderElement = document.createElement('td');
                         const buttonSelectPersonElement  = document.createElement('button');
 
+                        // Setting On Click For Created Button That Calls 'handleSelectPersonButtonActions' Function
+                        buttonSelectPersonElement.setAttribute('onclick', 'handleSelectPersonButtonActions(this)')
+
                         // Setting Text Content Of Each Created Element
                         genderOfPersonElement.textContent = genderOfPerson
                         firstNameOfPersonElement.textContent = firstNameOfPerson
@@ -149,7 +153,7 @@ selectPersonFromListBtn.forEach(button => {
                         birthDateOfPersonElement.className = styleOfTableDElements;
                         passportNumberOfPersonElement.className = styleOfTableDElements;
                         passportExpireDateOfPersonElement.className = styleOfTableDElements;
-                        buttonSelectPersonElement.className = "submit-button rounded-4 ripple-button font-small col-12";
+                        buttonSelectPersonElement.className = "submit-button select-person-button rounded-4 ripple-button font-small col-12";
 
                         // Appending Children To Their Parents
                         taleRowElement.appendChild(numberOfItemElement);
@@ -233,6 +237,7 @@ continueBuyingButton.addEventListener('click', () => {
         const email2 = document.getElementById('email-2').firstElementChild.getAttribute('data-value');
         let personInformation = [{email: {email1,email2}, mobileNumber: {mobileNumber1,mobileNumber2}}];
         const headersToSendData = new Headers();
+
         // Setting Information Of Persons
         allPassengerInformation.forEach(component => {
             const name = component.querySelector('intractive-component[placeholder="نام انگلیسی"]').firstElementChild.getAttribute('data-value');
@@ -280,17 +285,78 @@ continueBuyingButton.addEventListener('click', () => {
                 redirect: 'follow'
             };
 
-            // Fetching Insert Person Api That Logs Result To Console
+            // Fetching Insert Person Api That ...
             fetch("https://www.newcash.me/api/v1/airfare/person/insert", optionsToSendData)
                 .then(response => response.json())
-                .then(result => console.log(result))
+                .then(result => {
+                    // Opening New Page In This Tab
+                    window.open('ticket-buy-last.html', '_self');
+                })
                 .catch(error => console.log('error', error));
         })
 
         // Setting Persons Information In Local Storage
         localStorage.setItem('person-information', JSON.stringify(personInformation))
-
-        // Opening New Page In This Tab
-        window.open('ticket-buy-last.html', '_self');
     }
 })
+
+function handleSelectPersonButtonActions(element) {
+    const tableRow = element.parentElement.parentElement
+    const modalHolder = tableRow.parentElement.parentElement.parentElement.parentElement.parentElement;
+    const gender = tableRow.firstElementChild.nextElementSibling;
+    const name = gender.nextElementSibling;
+    const lastName = name.nextElementSibling;
+    const birthday = lastName.nextElementSibling.nextElementSibling.nextElementSibling;
+    const passportNumber = birthday.nextElementSibling;
+    const passportExpireDate = passportNumber.nextElementSibling;
+    const intractiveComponentsHolder = modalHolder.parentElement.parentElement.nextElementSibling;
+    const selectedItemInformations = {
+        gender: gender.textContent,
+        name: name.textContent,
+        lastName: lastName.textContent,
+        birthday: birthday.textContent,
+        passportNumber: passportNumber.textContent,
+        passportExpireDate: passportExpireDate.textContent
+    }
+    const nameComponent = intractiveComponentsHolder.querySelector('.name-component')
+    const lastnameComponent = intractiveComponentsHolder.querySelector('.last-name-component')
+    const birthdayComponent = intractiveComponentsHolder.querySelector('.birthday-component')
+    const genderComponent = intractiveComponentsHolder.querySelector('.gender-component')
+    const passportNumberComponent = intractiveComponentsHolder.querySelector('.passport-number-component')
+    const passportExpireDateComponent = intractiveComponentsHolder.querySelector('.passport-expire-date-component')
+    const createdH6InBirthdayComponent = document.createElement('h6')
+    const createdH6InExpireDateComponent = document.createElement('h6')
+    let genderToSet;
+
+    (selectedItemInformations.gender === 'male') ? genderToSet = 'مرد' : genderToSet = 'زن'
+
+    createdH6InBirthdayComponent.className = 'font-small text-black-lighten3 selected-date mb-0';
+    createdH6InBirthdayComponent.textContent = selectedItemInformations.birthday.replace( new RegExp("\\/","gm"),"-")
+    birthdayComponent.firstElementChild.appendChild(createdH6InBirthdayComponent);
+
+    createdH6InExpireDateComponent.className = 'font-small text-black-lighten3 selected-date mb-0';
+    createdH6InExpireDateComponent.textContent = selectedItemInformations.passportExpireDate.replace( new RegExp("\\/","gm"),"-");
+    passportExpireDateComponent.firstElementChild.appendChild(createdH6InExpireDateComponent)
+
+    nameComponent.firstElementChild.classList.add('focused');
+    lastnameComponent.firstElementChild.classList.add('focused');
+    birthdayComponent.firstElementChild.classList.add('focused');
+    passportNumberComponent.firstElementChild.classList.add('focused');
+    passportExpireDateComponent.firstElementChild.classList.add('focused');
+    genderComponent.firstElementChild.firstElementChild.classList.add('focused');
+
+    nameComponent.firstElementChild.querySelector('input').value = selectedItemInformations.name
+    lastnameComponent.firstElementChild.querySelector('input').value = selectedItemInformations.lastName
+    passportNumberComponent.firstElementChild.querySelector('input').value = selectedItemInformations.passportNumber
+    genderComponent.firstElementChild.firstElementChild.querySelector('h6:first-of-type').textContent = genderToSet;
+
+    nameComponent.firstElementChild.setAttribute('data-value', selectedItemInformations.name)
+    lastnameComponent.firstElementChild.setAttribute('data-value', selectedItemInformations.lastName)
+    passportNumberComponent.firstElementChild.setAttribute('data-value', selectedItemInformations.lastName)
+    genderComponent.firstElementChild.firstElementChild.setAttribute('data-value', genderToSet)
+
+    genderComponent.firstElementChild.firstElementChild.nextElementSibling.querySelector('.buy-ticket-drop-down-button.active').classList.remove('active');
+    genderComponent.firstElementChild.firstElementChild.nextElementSibling.querySelectorAll('.buy-ticket-drop-down-button').forEach(button => {if (button.textContent === genderToSet) {button.classList.add('active')}})
+
+    modalHolder.removeAttribute('data-opened');
+}

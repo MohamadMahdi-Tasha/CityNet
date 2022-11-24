@@ -1,16 +1,23 @@
 class passengerInformation extends HTMLElement {
     constructor() {super();}
     connectedCallback() {
+        const allPassengerInformationComponents = document.querySelectorAll('passanger-information');
+        const allPassengerInformationComponentsArray = [];
+
+        allPassengerInformationComponents.forEach(component => allPassengerInformationComponentsArray.push(component));
+        const numberOfThisInArray = allPassengerInformationComponentsArray.indexOf(this);
+
         this.innerHTML = `
             <div class="py-3">
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <h6 class="mb-0 font-small text-grey-darken1">${this.getAttribute('title')}</h6>
+                            <my-modal type="select-person" inner-id="select-person-modal-${numberOfThisInArray}"></my-modal>
                             <button class="select-person-from-list-btn font-small border-0 rounded-3 px-3 py-2 text-grey-darken1 bg-grey-lighten2 ripple-button"><i class="bi bi-plus ms-2"></i>انتخاب از لیست</button>
                         </div>
                         <div class="d-flex flex-column gap-4">
                             <div class="row flex-lg-row flex-column gx-3 gy-3">
-                                <intractive-component class="col-lg-6 col-12" type="input" input-type="text" placeholder="نام انگلیسی"></intractive-component>
-                                <intractive-component class="col-lg-6 col-12" type="input" input-type="text" placeholder="نام خانوادگی انگلیسی"></intractive-component>
+                                <intractive-component class="col-lg-6 col-12 name-component" type="input" input-type="text" placeholder="نام انگلیسی"></intractive-component>
+                                <intractive-component class="col-lg-6 col-12 last-name-component" type="input" input-type="text" placeholder="نام خانوادگی انگلیسی"></intractive-component>
                             </div>
                             <div class="row flex-lg-row flex-column gx-3 gy-3">
                                 <intractive-component class="col-lg-4 col-12" type="dropdown" placeholder="ملیت">
@@ -213,17 +220,17 @@ class passengerInformation extends HTMLElement {
                                     </ul>
                                 </intractive-component>
                                 <intractive-component class="col-lg-4 col-12" type="input" input-type="number" placeholder="شماره ملی"></intractive-component>
-                                <intractive-component class="col-lg-4 col-12" type="calender" placeholder="تاریخ تولد"></intractive-component>
+                                <intractive-component class="col-lg-4 col-12 birthday-component" type="calender" placeholder="تاریخ تولد"></intractive-component>
                             </div>
                             <div class="row flex-lg-row flex-column gx-3 gy-3">
-                                <intractive-component class="col-lg-4 col-12" type="dropdown" placeholder="جنسیت">
+                                <intractive-component class="col-lg-4 col-12 gender-component" type="dropdown" placeholder="جنسیت">
                                     <ul class="list-unstyled m-0 p-0 dropdown-component-ul">
                                         <li><button class="active ripple-button font-small text-grey-darken1 buy-ticket-drop-down-button col-12 bg-transparent border-0 p-2 text-end">زن</button></li>
                                         <li><button class="ripple-button font-small text-grey-darken1 buy-ticket-drop-down-button col-12 bg-transparent border-0 p-2 text-end">مرد</button></li>
                                     </ul>
                                 </intractive-component>
-                                <intractive-component class="col-lg-4 col-12" type="input" input-type="number" placeholder="شماره گذرنامه"></intractive-component>
-                                <intractive-component class="col-lg-4 col-12" type="calender" placeholder="تاریخ انقضای گذرنامه"></intractive-component>
+                                <intractive-component class="col-lg-4 col-12 passport-number-component" type="input" input-type="number" placeholder="شماره گذرنامه"></intractive-component>
+                                <intractive-component class="col-lg-4 col-12 passport-expire-date-component" type="calender" placeholder="تاریخ انقضای گذرنامه"></intractive-component>
                             </div>
                         </div>
                     </div>

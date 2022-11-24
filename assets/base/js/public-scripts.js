@@ -71,6 +71,7 @@ dropDownsTogglers.forEach(toggler => {
     buttonsInClickedDropDown.forEach(button => button.addEventListener('click', () => {
         const dropDownHolderOfButton = button.parentElement.parentElement;
         dropDownHolderOfButton.removeAttribute('data-opened')
+        toggler.removeAttribute('data-opened')
     }))
 })
 
@@ -97,7 +98,7 @@ togglers.forEach(toggle => {
         targetElementOfClickedToggle.toggleAttribute('data-opened')
         if (targetElementOfClickedToggle.parentElement.tagName.toLowerCase() === 'my-modal') {
             const firstInputInModal = targetElementOfClickedToggle.querySelector('intractive-component[type="input"] input:first-of-type');
-            firstInputInModal.focus();
+            if (firstInputInModal !== null) {firstInputInModal.focus();}
         }
     })
 })
