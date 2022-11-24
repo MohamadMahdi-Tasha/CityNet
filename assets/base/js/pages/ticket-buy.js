@@ -3,6 +3,7 @@ const selectPersonFromListBtn = document.querySelectorAll('.select-person-from-l
 const addSecondPhoneEmailButton = document.getElementById('add-second-phone-email-btn');
 const secondPhoneEmail = document.getElementById('second-phone-email');
 const addSecondPhoneEmailRemoveButton = document.getElementById('second-phone-email-remove-btn');
+const continueBuyingButton = document.getElementById('continue-buying-button');
 
 // Adding event Listener On Load Of Window That ..
 window.addEventListener('load', () => {
@@ -182,4 +183,78 @@ addSecondPhoneEmailButton.addEventListener('click', () => {
 addSecondPhoneEmailRemoveButton.addEventListener('click', () => {
     secondPhoneEmail.classList.add('d-none')
     addSecondPhoneEmailButton.classList.remove('d-none');
+})
+
+// Adding Event Listner To Submit Button That Listnes To Click And
+continueBuyingButton.addEventListener('click', () => {
+    // Varibles
+    const nameComponents = document.querySelectorAll('passanger-information intractive-component[placeholder="نام انگلیسی"]')
+    const lastNameComponents = document.querySelectorAll('passanger-information intractive-component[placeholder="نام خانوادگی انگلیسی"]')
+    const nationalityNumberComponents = document.querySelectorAll('passanger-information intractive-component[placeholder="شماره ملی"]')
+    const birthdayComponents = document.querySelectorAll('passanger-information intractive-component[placeholder="تاریخ تولد"]')
+    const passportNumberComponents = document.querySelectorAll('passanger-information intractive-component[placeholder="شماره گذرنامه"]')
+    const passportExpireDateComponents = document.querySelectorAll('passanger-information intractive-component[placeholder="تاریخ انقضای گذرنامه"]')
+
+    // Handling Errors And Their Succses
+    nameComponents.forEach(component => {
+        if (component.firstElementChild.getAttribute('data-value') === 'null') {setErrorOnComponent(component, 'لطفا نام فرد را بنویسید')}
+        else if (component.firstElementChild.getAttribute('data-value') !== 'null') {setSuccsesOnComponent(component)}
+    })
+    lastNameComponents.forEach(component => {
+        if (component.firstElementChild.getAttribute('data-value') === 'null') {setErrorOnComponent(component, 'لطفا نام خانوادگی فرد را بنویسید')}
+        else if (component.firstElementChild.getAttribute('data-value') !== 'null') {setSuccsesOnComponent(component)}
+    })
+    nationalityNumberComponents.forEach(component => {
+        if (component.firstElementChild.getAttribute('data-value') === 'null') {setErrorOnComponent(component, 'لطفا شماره ملی فرد را بنویسید')}
+        else if (component.firstElementChild.getAttribute('data-value') !== 'null') {setSuccsesOnComponent(component)}
+    })
+    birthdayComponents.forEach(component => {
+        if (component.firstElementChild.getAttribute('data-date') === 'null') {setErrorOnComponent(component, 'لطفا تاریخ تولد فرد را بنویسید')}
+        else if (new Date() < new Date(component.firstElementChild.getAttribute('data-date'))) {setErrorOnComponent(component, 'لطفا تاریخ تولد را منطقی وارد کنید')}
+        else if (component.firstElementChild.getAttribute('data-date') !== 'null') {setSuccsesOnComponent(component)}
+    })
+    passportNumberComponents.forEach(component => {
+        if (component.firstElementChild.getAttribute('data-value') === 'null') {setErrorOnComponent(component, 'لطفا شماره گذرنامه فرد را بنویسید')}
+        else if (component.firstElementChild.getAttribute('data-value') !== 'null') {setSuccsesOnComponent(component)}
+    })
+    passportExpireDateComponents.forEach(component => {
+        if (component.firstElementChild.getAttribute('data-date') === 'null') {setErrorOnComponent(component, 'لطفا تاریخ انقضای گذرنامه فرد را بنویسید')}
+        else if (component.firstElementChild.getAttribute('data-date') !== 'null') {setSuccsesOnComponent(component)}
+    })
+
+    // If There Is No Error Then ...
+    if (document.querySelectorAll('.intractive-component.errored').length === 0) {
+        // Variables
+        const allPassengerInformation = document.querySelectorAll('passanger-information');
+        const personInformation = [];
+
+        // Setting Information Of Persons
+        allPassengerInformation.forEach(component => {
+            const name = component.querySelector('intractive-component[placeholder="نام انگلیسی"]').firstElementChild.getAttribute('data-value');
+            const lastName = component.querySelector('intractive-component[placeholder="نام خانوادگی انگلیسی"]').firstElementChild.getAttribute('data-value');
+            const nationality = component.querySelector('intractive-component[placeholder="ملیت"]').firstElementChild.firstElementChild.getAttribute('data-value');
+            const gender = component.querySelector('intractive-component[placeholder="جنسیت"]').firstElementChild.firstElementChild.getAttribute('data-value');
+            const nationalityNumber = component.querySelector('intractive-component[placeholder="شماره ملی"]').firstElementChild.getAttribute('data-value');
+            const birthday = component.querySelector('intractive-component[placeholder="تاریخ تولد"]').firstElementChild.getAttribute('data-date');
+            const passportNumber = component.querySelector('intractive-component[placeholder="شماره گذرنامه"]').firstElementChild.getAttribute('data-value');
+            const passportExpireDate = component.querySelector('intractive-component[placeholder="تاریخ انقضای گذرنامه"]').firstElementChild.getAttribute('data-date');
+            let genderToSet;
+
+            (gender === 'زن') ? genderToSet = 'female' : genderToSet = 'male'
+
+            personInformation.push({
+                name: name,
+                lastName: lastName,
+                nationality: nationality,
+                gender: genderToSet,
+                nationalityNumber: nationalityNumber,
+                birthday: birthday,
+                passportNumber: passportNumber,
+                passportExpireDate: passportExpireDate,
+            })
+        })
+
+        // Setting Persons Information In Local Storage
+        localStorage.setItem('person-information', personInformation)
+    }
 })
