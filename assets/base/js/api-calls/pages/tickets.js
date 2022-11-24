@@ -56,7 +56,15 @@ window.addEventListener('load', () => {
                     const titleOfTherIsNoTicket = document.createElement('h6');
                     const paragraphOfTherIsNoTicket = document.createElement('p');
 
+                    titleOfTherIsNoTicket.textContent = 'توجه';
+                    paragraphOfTherIsNoTicket.innerHTML = 'در تاریخ جستجوی شما پروازی وجود ندارد و یا ظرفیت آنها تکمیل شده است. <br> همواره شما می توانید از طریق دکمه‌های روز بعد و روز قبل و یا جستجوی مجدد تاریخ جستجوی خود را تغییر دهید.'
 
+                    thereIsNoTicketDiv.className = 'p-3 rounded-3 warning-holder ms-lg-3 ms-0';
+                    titleOfTherIsNoTicket.className = 'fw-bold';
+                    paragraphOfTherIsNoTicket.className = 'font-small mb-0';
+
+                    thereIsNoTicketDiv.appendChild(titleOfTherIsNoTicket)
+                    thereIsNoTicketDiv.appendChild(paragraphOfTherIsNoTicket)
                     ticketComponentList.replaceWith(thereIsNoTicketDiv)
                 } else {
                     // For Each Returned Ticket That Creates 'li','ticket-component' Element Then Sets Attributes On Created 'ticket-component'
