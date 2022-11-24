@@ -14,10 +14,13 @@ const collapseToggler = document.querySelectorAll('.my-collapse-toggler');
 const switchButton = document.querySelectorAll('.switch-button');
 const exitAccountItems = document.querySelectorAll('.exit-account');
 
-// Adding Event Listener Of Load To Window That Checks If Selected Currency Is Included (selected-currency : Name Of Setted Currency) If It Is Then Set It In Header
-// Otherwise Create One In Local Storage And Set It
+// Adding Event Listener Of Load To Window
+// 1) Checks If Selected Currency Is Included (selected-currency : Name Of Setted Currency) If It Is Then Set It In Header
+// Otherwise Create One In Local Storage And Set It.
+// 2) Removing Attribute Of 'onclick' Of Each Collapse Toggler
 window.addEventListener('load', () => {
     const currencyToSelectInLocalStoarge = localStorage.getItem('selected-currency');
+    const myCollapseToggler = document.querySelectorAll('.my-collapse-toggler');
 
     if (currencyToSelectInLocalStoarge !== null) {
         htmlElement.setAttribute('data-currency', currencyToSelectInLocalStoarge)
@@ -29,6 +32,8 @@ window.addEventListener('load', () => {
         currencyHeaderPersian.textContent = persianNameByEnAbbrevationCurrency(localStorage.getItem('selected-currency'));
         currencyHeaderEnglish.textContent = localStorage.getItem('selected-currency');
     }
+
+    myCollapseToggler.forEach(toggler => toggler.removeAttribute('onclick'))
 })
 
 // Added Event Listener Of Keydown Which Is When Keyboard Key Is Pressed That Checks If Clicked Key Was Escape Key.
