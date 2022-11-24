@@ -261,5 +261,8 @@ continueBuyingButton.addEventListener('click', () => {
 
         // Setting Persons Information In Local Storage
         localStorage.setItem('person-information', JSON.stringify(personInformation))
+
+        // Opening New Page In This Tab
+        window.open('ticket-buy-last.html', '_self');
     }
 })
