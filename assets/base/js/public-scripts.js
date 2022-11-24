@@ -160,11 +160,8 @@ innerPageTogglers.forEach(toggler => {
     })
 })
 
-// Adding Event Listener On Each Collapse Toggler That Toggles Attribute Of 'data-opened' To Its Parent Element
-collapseToggler.forEach(toggler => toggler.addEventListener('click', () => {
-    toggler.parentElement.toggleAttribute('data-opened')
-    toggler.toggleAttribute('data-opened')
-}))
+// Adding Event Listener On Each Collapse Toggler That Calls 'handlingCollapseTogglerAction' Function
+collapseToggler.forEach(toggler => toggler.addEventListener('click', () => {handlingCollapseTogglerAction(toggler)}))
 
 // Adding Event Listener On Each Switch Button That Listens To Click And Checks If Tag Name Of Last Child Of Previous And Next Select City Components
 // Are 'selected-city' Which Is Custom Element Then It Toggles Class Of 'rotated' To Clicked Button Then Replaces Last Child And Attribute Of 'data-selected-city' Of Previous And

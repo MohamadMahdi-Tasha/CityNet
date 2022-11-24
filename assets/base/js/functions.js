@@ -195,3 +195,9 @@ function addDays(numOfDays, date = new Date()) {
     date.setDate(date.getDate() + numOfDays);
     return date;
 }
+
+// A Function That Toggles Attribute Of 'data-opened' To Its Parent Element And Itself
+function handlingCollapseTogglerAction(toggler) {
+    toggler.parentElement.toggleAttribute('data-opened')
+    toggler.toggleAttribute('data-opened')
+}
