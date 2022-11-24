@@ -207,7 +207,7 @@ class flightDetails extends HTMLElement {
                             </button>
                     </div>
                     <div class="bg-white border-top my-collapse-holder">
-                        <button onclick="handlingCollapseTogglerAction(this)" class="my-collapse-toggler ripple-button bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3 text-grey-darken3">
+                        <button onmousedown="createRipple(this, event)" onclick="handlingCollapseTogglerAction(this)" class="my-collapse-toggler ripple-button bg-white border-0 col-12 d-flex justify-content-between align-items-center font-small p-3 text-grey-darken3">
                             جریمه کنسلی و قوانین (بزرگسال)
                             <i class="bi bi-chevron-down"></i>
                         </button>

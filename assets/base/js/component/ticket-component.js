@@ -71,7 +71,7 @@ class TicketComponent extends HTMLElement {
                                     ریال
                                 </h6>
                             </div>
-                            <button onclick="
+                            <button onmousedown="createRipple(this, event)" onclick="
                                 localStorage.setItem('selected-ticket', JSON.stringify({
                                     icon: '${this.getAttribute('icon-src')}',
                                     name: '${this.getAttribute('name')}',
