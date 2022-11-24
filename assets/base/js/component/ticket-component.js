@@ -7,8 +7,6 @@ class TicketComponent extends HTMLElement {
         allTicketComponent.forEach(component => ticketComponentElementsArray.push(component));
         const numberOfThisComponent = ticketComponentElementsArray.indexOf(this);
 
-        console.log(allTicketComponent)
-
         this.innerHTML = `
             <div class="bg-white p-3 rounded-3 ticket-component">
                 <div class="bg-grey-lighten3 mb-3 rounded-4 p-3 d-flex flex-lg-row flex-column align-items-center justify-content-between">

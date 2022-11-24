@@ -54,7 +54,7 @@ window.addEventListener('load', () => {
     startLocationRightSideAside.textContent = htmlElement.getAttribute('data-start-place')
     endLocationRightSideAside.textContent = htmlElement.getAttribute('data-end-place')
     dateEnRightSideAside.textContent = htmlElement.getAttribute('data-flight-date-en');
-    dateFaRightSideAside.textContent = `${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('YYYY')} ${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('MMMM')} ${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('DD')}`
+    dateFaRightSideAside.textContent = `${new persianDate(new Date(htmlElement.getAttribute('data-flight-date-en'))).format('YYYY')} ${new persianDate(new Date(htmlElement.getAttribute('data-flight-date-en'))).format('MMMM')} ${new persianDate(new Date(htmlElement.getAttribute('data-flight-date-en'))).format('DD')}`
     searchFlightNumber.setAttribute('placeholder', `${htmlElement.getAttribute('data-end-place')} به ${htmlElement.getAttribute('data-start-place')}`)
     searchFlightNumber.querySelector('.my-placeholder').textContent = `${htmlElement.getAttribute('data-end-place')} به ${htmlElement.getAttribute('data-start-place')}`
 
