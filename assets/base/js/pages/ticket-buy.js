@@ -232,7 +232,7 @@ continueBuyingButton.addEventListener('click', () => {
         const email1 = document.getElementById('email-1').firstElementChild.getAttribute('data-value');
         const email2 = document.getElementById('email-2').firstElementChild.getAttribute('data-value');
         let personInformation = [{email: {email1,email2}, mobileNumber: {mobileNumber1,mobileNumber2}}];
-
+        const headersToSendData = new Headers();
         // Setting Information Of Persons
         allPassengerInformation.forEach(component => {
             const name = component.querySelector('intractive-component[placeholder="نام انگلیسی"]').firstElementChild.getAttribute('data-value');
@@ -243,6 +243,8 @@ continueBuyingButton.addEventListener('click', () => {
             const birthday = component.querySelector('intractive-component[placeholder="تاریخ تولد"]').firstElementChild.getAttribute('data-date');
             const passportNumber = component.querySelector('intractive-component[placeholder="شماره گذرنامه"]').firstElementChild.getAttribute('data-value');
             const passportExpireDate = component.querySelector('intractive-component[placeholder="تاریخ انقضای گذرنامه"]').firstElementChild.getAttribute('data-date');
+            const searchParametresToSendData = new URLSearchParams();
+            const loginToken = localStorage.getItem('login-token');
             let genderToSet;
 
             (gender === 'زن') ? genderToSet = 'female' : genderToSet = 'male'
@@ -257,6 +259,32 @@ continueBuyingButton.addEventListener('click', () => {
                 passportNumber: passportNumber,
                 passportExpireDate: passportExpireDate,
             })
+
+            // Setting Data To Fetch
+            headersToSendData.append("Accept", "application/json");
+            headersToSendData.append("debug", "true");
+            headersToSendData.append("Authorization", `Bearer ${loginToken}`);
+            headersToSendData.append("Content-Type", "application/x-www-form-urlencoded");
+
+            searchParametresToSendData.append("name", name);
+            searchParametresToSendData.append("last_name", lastName);
+            searchParametresToSendData.append("passport", passportNumber);
+            searchParametresToSendData.append("gender", genderToSet);
+            searchParametresToSendData.append("birthday", birthday.replace( new RegExp("\\-","gm"),"/"));
+            searchParametresToSendData.append("expire_date", passportExpireDate.replace( new RegExp("\\-","gm"),"/"));
+
+            const optionsToSendData = {
+                method: 'POST',
+                headers: headersToSendData,
+                body: searchParametresToSendData,
+                redirect: 'follow'
+            };
+
+            // Fetching Insert Person Api That Logs Result To Console
+            fetch("https://www.newcash.me/api/v1/airfare/person/insert", optionsToSendData)
+                .then(response => response.json())
+                .then(result => console.log(result))
+                .catch(error => console.log('error', error));
         })
 
         // Setting Persons Information In Local Storage
