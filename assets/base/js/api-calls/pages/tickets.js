@@ -51,18 +51,23 @@ window.addEventListener('load', () => {
                 // Setting Number Of Returned Tickets
                 retunedTicketsNumberElement.textContent = returnedTickets.length
 
+                // When There Is No Result To Show ..
                 if (returnedTickets.length === 0) {
+                    //  Variables
                     const thereIsNoTicketDiv = document.createElement('div');
                     const titleOfTherIsNoTicket = document.createElement('h6');
                     const paragraphOfTherIsNoTicket = document.createElement('p');
 
+                    // Setting Text Contents Of Created Variables
                     titleOfTherIsNoTicket.textContent = 'توجه';
                     paragraphOfTherIsNoTicket.innerHTML = 'در تاریخ جستجوی شما پروازی وجود ندارد و یا ظرفیت آنها تکمیل شده است. <br> همواره شما می توانید از طریق دکمه‌های روز بعد و روز قبل و یا جستجوی مجدد تاریخ جستجوی خود را تغییر دهید.'
 
+                    // Setting Class Names Of Created Variables
                     thereIsNoTicketDiv.className = 'p-3 rounded-3 warning-holder ms-lg-3 ms-0';
                     titleOfTherIsNoTicket.className = 'fw-bold';
                     paragraphOfTherIsNoTicket.className = 'font-small mb-0';
 
+                    // Appending Children To Their Parents In Created Variables
                     thereIsNoTicketDiv.appendChild(titleOfTherIsNoTicket)
                     thereIsNoTicketDiv.appendChild(paragraphOfTherIsNoTicket)
                     ticketComponentList.replaceWith(thereIsNoTicketDiv)
