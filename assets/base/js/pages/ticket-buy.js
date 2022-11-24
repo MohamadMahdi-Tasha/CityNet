@@ -299,7 +299,9 @@ continueBuyingButton.addEventListener('click', () => {
     }
 })
 
+// A Function For Handling Click Of Select Person Button That Takes Element As Parameter
 function handleSelectPersonButtonActions(element) {
+    // Variables
     const tableRow = element.parentElement.parentElement
     const modalHolder = tableRow.parentElement.parentElement.parentElement.parentElement.parentElement;
     const gender = tableRow.firstElementChild.nextElementSibling;
@@ -327,18 +329,25 @@ function handleSelectPersonButtonActions(element) {
     const createdH6InExpireDateComponent = document.createElement('h6')
     let genderToSet;
 
+    // If gender Of Selected Information Equals To 'male' Then Gender To Set Equals 'مرد'
+    // Otherwise It Equals To 'زن'
     (selectedItemInformations.gender === 'male') ? genderToSet = 'مرد' : genderToSet = 'زن'
 
+    // Creating H6 For Birthday Component And Adding Attributes To It
     createdH6InBirthdayComponent.className = 'font-small text-black-lighten3 selected-date mb-0';
     createdH6InBirthdayComponent.textContent = selectedItemInformations.birthday.replace( new RegExp("\\/","gm"),"-")
+
+    // If Date Was Selected Replace Otherwise Append It To Last Element Of birthday Component
     if (!birthdayComponent.firstElementChild.lastElementChild.classList.contains('selected-date')) {birthdayComponent.firstElementChild.appendChild(createdH6InBirthdayComponent);}
     else {birthdayComponent.firstElementChild.lastElementChild.replaceWith(createdH6InBirthdayComponent);}
 
+    // Creating H6 For Expire Date Of Passport Component And Adding Attributes To It
     createdH6InExpireDateComponent.className = 'font-small text-black-lighten3 selected-date mb-0';
     createdH6InExpireDateComponent.textContent = selectedItemInformations.passportExpireDate.replace( new RegExp("\\/","gm"),"-");
     if (!passportExpireDateComponent.firstElementChild.lastElementChild.classList.contains('selected-date')) {passportExpireDateComponent.firstElementChild.appendChild(createdH6InExpireDateComponent);}
     else {passportExpireDateComponent.firstElementChild.lastElementChild.replaceWith(createdH6InExpireDateComponent);}
 
+    /// Adding Class Names To Components
     nameComponent.firstElementChild.classList.add('focused', 'disabled');
     lastnameComponent.firstElementChild.classList.add('focused', 'disabled');
     birthdayComponent.firstElementChild.classList.add('focused', 'disabled');
@@ -346,11 +355,13 @@ function handleSelectPersonButtonActions(element) {
     passportExpireDateComponent.firstElementChild.classList.add('focused', 'disabled');
     genderComponent.firstElementChild.firstElementChild.classList.add('focused', 'disabled');
 
+    // Setting Value Of Inputs In Input Intractive Components
     nameComponent.firstElementChild.querySelector('input').value = selectedItemInformations.name
     lastnameComponent.firstElementChild.querySelector('input').value = selectedItemInformations.lastName
     passportNumberComponent.firstElementChild.querySelector('input').value = selectedItemInformations.passportNumber
     genderComponent.firstElementChild.firstElementChild.querySelector('h6:first-of-type').textContent = genderToSet;
 
+    // Setting Attribute Of Values
     nameComponent.firstElementChild.setAttribute('data-value', selectedItemInformations.name)
     lastnameComponent.firstElementChild.setAttribute('data-value', selectedItemInformations.lastName)
     lastnameComponent.firstElementChild.setAttribute('data-value', selectedItemInformations.lastName)
@@ -359,8 +370,10 @@ function handleSelectPersonButtonActions(element) {
     passportExpireDateComponent.firstElementChild.setAttribute('data-date', selectedItemInformations.passportExpireDate.replace( new RegExp("\\/","gm"),"-"))
     birthdayComponent.firstElementChild.setAttribute('data-date', selectedItemInformations.birthday.replace( new RegExp("\\/","gm"),"-"))
 
+    // Removing Class Of 'active' From Button That Haves It (In Drop Down) Then Adding It To Button Which Has Text Content Of  'genderToSet' Variable
     genderComponent.firstElementChild.firstElementChild.nextElementSibling.querySelector('.buy-ticket-drop-down-button.active').classList.remove('active');
     genderComponent.firstElementChild.firstElementChild.nextElementSibling.querySelectorAll('.buy-ticket-drop-down-button').forEach(button => {if (button.textContent === genderToSet) {button.classList.add('active')}})
 
+    // Closing Modal
     modalHolder.removeAttribute('data-opened');
 }
