@@ -51,64 +51,73 @@ window.addEventListener('load', () => {
                 // Setting Number Of Returned Tickets
                 retunedTicketsNumberElement.textContent = returnedTickets.length
 
-                // For Each Returned Ticket That Creates 'li','ticket-component' Element Then Sets Attributes On Created 'ticket-component'
-                returnedTickets.forEach(ticket => {
-                    const listItemElement = document.createElement('li');
-                    const ticketComponentElement = document.createElement('ticket-component');
+                if (returnedTickets.length === 0) {
+                    const thereIsNoTicketDiv = document.createElement('div');
+                    const titleOfTherIsNoTicket = document.createElement('h6');
+                    const paragraphOfTherIsNoTicket = document.createElement('p');
 
-                    ticketComponentElement.setAttribute('icon-src', ticket.airline_icon)
-                    ticketComponentElement.setAttribute('name', ticket.airline_title)
-                    if (ticket.is_systemic) {ticketComponentElement.setAttribute('systemic', 'true')}
-                    ticketComponentElement.setAttribute('number-of-sits', ticket.capacity)
-                    ticketComponentElement.setAttribute('flight-number', ticket.flight_number)
-                    ticketComponentElement.setAttribute('mode', ticket.seat_class)
-                    ticketComponentElement.setAttribute('start-time', ticket.start_time.slice(0,5))
-                    ticketComponentElement.setAttribute('start-location', `(${abbrevationFromEnglishNameOfCity(ticket.from_airport)}) ${persianNameFromAbbrevation(abbrevationFromEnglishNameOfCity(ticket.from_airport))}`)
-                    ticketComponentElement.setAttribute('start-location-en', ticket.from_airport)
-                    ticketComponentElement.setAttribute('start-location-fa', persianNameFromAbbrevation(abbrevationFromEnglishNameOfCity(ticket.from_airport)))
-                    ticketComponentElement.setAttribute('end-time', ticket.arrival_time.slice(0,5))
-                    ticketComponentElement.setAttribute('end-location', `(${abbrevationFromEnglishNameOfCity(ticket.to_airport)}) ${persianNameFromAbbrevation(abbrevationFromEnglishNameOfCity(ticket.to_airport))}`)
-                    ticketComponentElement.setAttribute('end-location-en', ticket.to_airport)
-                    ticketComponentElement.setAttribute('end-location-fa', persianNameFromAbbrevation(abbrevationFromEnglishNameOfCity(ticket.to_airport)))
-                    ticketComponentElement.setAttribute('price', Number(ticket.price).toLocaleString())
-                    ticketComponentElement.setAttribute('start-loaction-abbr', abbrevationFromEnglishNameOfCity(ticket.from_airport))
-                    ticketComponentElement.setAttribute('end-loaction-abbr', abbrevationFromEnglishNameOfCity(ticket.to_airport))
-                    ticketComponentElement.setAttribute('route-duration-hour', getRouteDuration(ticket.start_time.slice(0,5), ticket.arrival_time.slice(0,5)).hour)
-                    ticketComponentElement.setAttribute('route-duration-minute', getRouteDuration(ticket.start_time.slice(0,5), ticket.arrival_time.slice(0,5)).minute)
-                    ticketComponentElement.setAttribute('start-date', htmlElement.getAttribute('data-flight-date-en'))
-                    ticketComponentElement.setAttribute('start-date-en', new Date(htmlElement.getAttribute('data-flight-date-en')).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }))
-                    ticketComponentElement.setAttribute('start-date-fa', `${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('YYYY')} ${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('MMMM')} ${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('DD')}`)
-                    ticketComponentElement.setAttribute('end-date-en', new Date(htmlElement.getAttribute('data-flight-date-en')).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }))
-                    ticketComponentElement.setAttribute('end-date-fa', `${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('YYYY')} ${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('MMMM')} ${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('DD')}`)
-                    ticketComponentElement.setAttribute('plane-model', ticket.air_plane)
 
-                    // Appending Children To Their Parents
-                    listItemElement.appendChild(ticketComponentElement);
-                    ticketComponentList.appendChild(listItemElement);
-                })
+                    ticketComponentList.replaceWith(thereIsNoTicketDiv)
+                } else {
+                    // For Each Returned Ticket That Creates 'li','ticket-component' Element Then Sets Attributes On Created 'ticket-component'
+                    returnedTickets.forEach(ticket => {
+                        const listItemElement = document.createElement('li');
+                        const ticketComponentElement = document.createElement('ticket-component');
 
-                // For Each Ticket-component Push Attribute Of 'name' Of It To 'listOfCompanysInTickets' Array
-                document.querySelectorAll('ticket-component').forEach(component => listOfCompanysInTickets.push(component.getAttribute('name')))
+                        ticketComponentElement.setAttribute('icon-src', ticket.airline_icon)
+                        ticketComponentElement.setAttribute('name', ticket.airline_title)
+                        if (ticket.is_systemic) {ticketComponentElement.setAttribute('systemic', 'true')}
+                        ticketComponentElement.setAttribute('number-of-sits', ticket.capacity)
+                        ticketComponentElement.setAttribute('flight-number', ticket.flight_number)
+                        ticketComponentElement.setAttribute('mode', ticket.seat_class)
+                        ticketComponentElement.setAttribute('start-time', ticket.start_time.slice(0,5))
+                        ticketComponentElement.setAttribute('start-location', `(${abbrevationFromEnglishNameOfCity(ticket.from_airport)}) ${persianNameFromAbbrevation(abbrevationFromEnglishNameOfCity(ticket.from_airport))}`)
+                        ticketComponentElement.setAttribute('start-location-en', ticket.from_airport)
+                        ticketComponentElement.setAttribute('start-location-fa', persianNameFromAbbrevation(abbrevationFromEnglishNameOfCity(ticket.from_airport)))
+                        ticketComponentElement.setAttribute('end-time', ticket.arrival_time.slice(0,5))
+                        ticketComponentElement.setAttribute('end-location', `(${abbrevationFromEnglishNameOfCity(ticket.to_airport)}) ${persianNameFromAbbrevation(abbrevationFromEnglishNameOfCity(ticket.to_airport))}`)
+                        ticketComponentElement.setAttribute('end-location-en', ticket.to_airport)
+                        ticketComponentElement.setAttribute('end-location-fa', persianNameFromAbbrevation(abbrevationFromEnglishNameOfCity(ticket.to_airport)))
+                        ticketComponentElement.setAttribute('price', Number(ticket.price).toLocaleString())
+                        ticketComponentElement.setAttribute('start-loaction-abbr', abbrevationFromEnglishNameOfCity(ticket.from_airport))
+                        ticketComponentElement.setAttribute('end-loaction-abbr', abbrevationFromEnglishNameOfCity(ticket.to_airport))
+                        ticketComponentElement.setAttribute('route-duration-hour', getRouteDuration(ticket.start_time.slice(0,5), ticket.arrival_time.slice(0,5)).hour)
+                        ticketComponentElement.setAttribute('route-duration-minute', getRouteDuration(ticket.start_time.slice(0,5), ticket.arrival_time.slice(0,5)).minute)
+                        ticketComponentElement.setAttribute('start-date', htmlElement.getAttribute('data-flight-date-en'))
+                        ticketComponentElement.setAttribute('start-date-en', new Date(htmlElement.getAttribute('data-flight-date-en')).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }))
+                        ticketComponentElement.setAttribute('start-date-fa', `${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('YYYY')} ${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('MMMM')} ${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('DD')}`)
+                        ticketComponentElement.setAttribute('end-date-en', new Date(htmlElement.getAttribute('data-flight-date-en')).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }))
+                        ticketComponentElement.setAttribute('end-date-fa', `${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('YYYY')} ${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('MMMM')} ${new persianDate(htmlElement.getAttribute('data-flight-date-en')).format('DD')}`)
+                        ticketComponentElement.setAttribute('plane-model', ticket.air_plane)
 
-                // For Each Name Of Ticekt-components Without Any Duplicate ..
-                removeDuplicates(listOfCompanysInTickets).forEach(item => {
-                    // Variables
-                    const newAirplanesComponent = document.createElement('airplanes-component');
-                    const pricesOfThisCompanyAll = document.querySelectorAll(`ticket-component[name="${item}"]`)
-                    const pricesOfThisCompany = document.querySelector(`ticket-component[name="${item}"]`)
-                    const pricesArrayOfThisCompany = [];
+                        // Appending Children To Their Parents
+                        listItemElement.appendChild(ticketComponentElement);
+                        ticketComponentList.appendChild(listItemElement);
+                    })
 
-                    // For Each 'pricesOfThisCompanyAll' Push Attribute Of 'price' Of Result To 'pricesArrayOfThisCompany' Array
-                    pricesOfThisCompanyAll.forEach(item => pricesArrayOfThisCompany.push(item.getAttribute('price')))
+                    // For Each Ticket-component Push Attribute Of 'name' Of It To 'listOfCompanysInTickets' Array
+                    document.querySelectorAll('ticket-component').forEach(component => listOfCompanysInTickets.push(component.getAttribute('name')))
 
-                    // Setting Attributes On Created Element
-                    newAirplanesComponent.setAttribute('title', item);
-                    newAirplanesComponent.setAttribute('price', pricesArrayOfThisCompany.sort()[0]);
-                    newAirplanesComponent.setAttribute('icon', pricesOfThisCompany.getAttribute('icon-src'));
+                    // For Each Name Of Ticekt-components Without Any Duplicate ..
+                    removeDuplicates(listOfCompanysInTickets).forEach(item => {
+                        // Variables
+                        const newAirplanesComponent = document.createElement('airplanes-component');
+                        const pricesOfThisCompanyAll = document.querySelectorAll(`ticket-component[name="${item}"]`)
+                        const pricesOfThisCompany = document.querySelector(`ticket-component[name="${item}"]`)
+                        const pricesArrayOfThisCompany = [];
 
-                    // Appending Created Element To Its Parent
-                    airplanesComponentsHolder.appendChild(newAirplanesComponent)
-                })
+                        // For Each 'pricesOfThisCompanyAll' Push Attribute Of 'price' Of Result To 'pricesArrayOfThisCompany' Array
+                        pricesOfThisCompanyAll.forEach(item => pricesArrayOfThisCompany.push(item.getAttribute('price')))
+
+                        // Setting Attributes On Created Element
+                        newAirplanesComponent.setAttribute('title', item);
+                        newAirplanesComponent.setAttribute('price', pricesArrayOfThisCompany.sort()[0]);
+                        newAirplanesComponent.setAttribute('icon', pricesOfThisCompany.getAttribute('icon-src'));
+
+                        // Appending Created Element To Its Parent
+                        airplanesComponentsHolder.appendChild(newAirplanesComponent)
+                    })
+                }
             }
         })
         .catch(error => console.log('error', error));
