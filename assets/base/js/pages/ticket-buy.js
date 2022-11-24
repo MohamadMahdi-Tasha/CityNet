@@ -236,6 +236,12 @@ continueBuyingButton.addEventListener('click', () => {
         const email2 = document.getElementById('email-2').firstElementChild.getAttribute('data-value');
         let personInformation = [{email: {email1,email2}, mobileNumber: {mobileNumber1,mobileNumber2}}];
         const headersToSendData = new Headers();
+        const innerSpinner = document.createElement('spinner');
+
+        // Making Spinner That Make User To Wait
+        innerSpinner.className = 'text-white spinner-border';
+        continueBuyingButton.textContent = '';
+        continueBuyingButton.appendChild(innerSpinner)
 
         // Setting Information Of Persons
         allPassengerInformation.forEach(component => {
