@@ -26,9 +26,6 @@ body {
     scroll-behavior: smooth;
     overflow-x: hidden;
     background-color: #f5f6fa !important;
-
-    /*For Debuging Purposes*/
-    margin-bottom: 500vh !important;
 }
 
 /*Styles*/
